@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. SILICON AUDIT PORTAL — Staff Directory</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "secondary-container": "#4069f2",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#1d4ed8",
+            "surface-tint": "#575f6e",
+            "surface-dim": "#d2d9f4",
+            "background": "#faf8ff",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-primary-container": "#7c8495",
+            "inverse-surface": "#283044",
+            "on-tertiary-container": "#997f6a",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-surface-variant": "#45474c",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "outline": "#75777c",
+            "on-secondary-fixed": "#001551",
+            "on-secondary-container": "#fffbff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "outline-variant": "#c5c6cc",
+            "tertiary": "#000000",
+            "on-background": "#131b2e",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed": "#dce1ff",
+            "on-tertiary-fixed": "#281809",
+            "primary-fixed-dim": "#bfc6d9",
+            "primary-container": "#141c29",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary": "#ffffff",
+            "on-surface": "#131b2e",
+            "tertiary-fixed": "#fddcc4",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-highest": "#dae2fd",
+            "error": "#ba1a1a",
+            "tertiary-container": "#281809",
+            "primary-fixed": "#dbe2f5",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface-variant": "#dae2fd",
+            "inverse-primary": "#bfc6d9",
+            "primary": "#000000",
+            "on-primary-fixed": "#141c29",
+            "on-tertiary": "#ffffff",
+            /* Institutional system tokens */
+            "primary-navy": "#0B1320",
+            "surface-slate-tech": "#141C29",
+            "text-main": "#0F172A",
+            "text-muted": "#475569",
+            "form-border": "#64748B",
+            "card-border": "#E2E8F0",
+            "status-success-bg": "#ECFDF5",
+            "status-success-text": "#047857",
+            "status-danger-bg": "#FEF2F2",
+            "status-danger-text": "#B91C1C",
+            "status-warning-bg": "#FFFBEB",
+            "status-warning-text": "#B45309",
+            "status-info-bg": "#EFF6FF",
+            "status-info-text": "#1D4ED8"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.5rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #0F172A;
+      background-color: #FAF8FF;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    /* Accessibility 2px Focus Ring */
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Strict 44px min touch target baseline */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased bg-[#FAF8FF]">
+<!-- TOP APP BAR -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-6 max-w-full bg-[#0B1320] border-b border-[#141C29]">
+<!-- Brand Insignia & Isolated Logo Plate -->
+<div class="flex items-center gap-6">
+<div class="h-10 px-3 bg-[#FFFFFF] rounded flex items-center justify-center border border-[#E2E8F0]">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD73LbNwrJurl27G19Vk0QkZSS4JGxvOnuZJvx4wpFQ5deItpc4zsrhlkhLBHrU4cguDCjMF1w-AdWm98BKLBbH5dEGtIDbefvi-sLBXZBSDSkiFpFKdP5CafrPYQKmCOHf6txiaKgy66ydb94ums0kRfFX_AypWqa3-ipOsrV8s6Ec4UvGqg_7dOcdceuUen2lIO-KH0FWspiw8T_c7kviWbc7qcaPAVjYqnjs8NOMVFfQeHyFVLdD3Q"/>
+</div>
+<div class="hidden lg:flex items-center gap-3">
+<span class="text-xs text-[#93C5FD] tracking-wider uppercase font-medium">Audit &amp; Risk Portal</span>
+<span class="text-xs text-[#75777C]">|</span>
+<span class="text-xs text-[#C5C6CC]">SecOps Governance &amp; Administrative Control</span>
+</div>
+</div>
+<!-- User Identity & System Timestamp Cluster -->
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center gap-2 text-xs text-[#C5C6CC] font-normal">
+<span class="material-symbols-outlined text-[16px] text-[#93C5FD]">schedule</span>
+<span>13:30 WAT · 05 Oct 2026</span>
+</div>
+<div class="hidden md:flex items-center text-xs text-[#FFFFFF] font-medium bg-[#141C29] px-3 py-1.5 rounded border border-[#75777C]/40">
+        Role: Super Admin | Babatunde Lawal
+      </div>
+<div class="flex items-center gap-3">
+<!-- Notification Action -->
+<button aria-label="Notifications" class="touch-target w-11 h-11 flex items-center justify-center rounded text-[#C5C6CC] hover:text-[#FFFFFF] hover:bg-[#141C29] transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<!-- User Initials Badge -->
+<div class="w-10 h-10 rounded bg-[#1D4ED8] text-[#FFFFFF] flex items-center justify-center font-medium text-sm tracking-wide border border-[#93C5FD]/30" title="Babatunde Lawal (Super Admin)">
+          BL
+        </div>
+</div>
+</div>
+</header>
+<!-- WORKSPACE CONTAINER WITH PERSISTENT SIDE NAVIGATION -->
+<div class="flex flex-1 w-full">
+<!-- PERSISTENT SIDE NAVIGATION -->
+<aside class="w-80 flex-shrink-0 bg-[#141C29] border-r border-[#0B1320] flex flex-col justify-between" style="min-height: calc(100vh - 4rem);">
+<div class="p-6">
+<!-- Academy Credential Plate -->
+<div class="mb-6 pb-6 border-b border-[#0B1320]">
+<div class="text-[#FFFFFF] font-semibold text-sm tracking-tight">A.J. Silicon Academy</div>
+<div class="text-[#C5C6CC] text-xs font-normal mt-0.5">Lagos Institutional Directorate</div>
+</div>
+<!-- Navigation Groups -->
+<nav aria-label="Administrative Navigation" class="space-y-6">
+<div>
+<div class="px-3 mb-2 text-xs font-medium text-[#75777C] uppercase tracking-wider">Functional Scopes</div>
+<ul class="space-y-1">
+<li>
+<a class="touch-target flex items-center gap-3 px-3 py-2.5 rounded text-[#C5C6CC] hover:text-[#FFFFFF] hover:bg-[#0B1320] transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">school</span>
+<span>Academics</span>
+</a>
+</li>
+<li>
+<a class="touch-target flex items-center gap-3 px-3 py-2.5 rounded text-[#C5C6CC] hover:text-[#FFFFFF] hover:bg-[#0B1320] transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span>Candidates</span>
+</a>
+</li>
+<li>
+<!-- Active Sidebar Item: Staff and Roles -->
+<a aria-current="page" class="touch-target flex items-center gap-3 px-3 py-2.5 rounded bg-[#0B1320] text-[#FFFFFF] font-medium text-sm border-l-4 border-[#1D4ED8]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#93C5FD]">badge</span>
+<span>Staff &amp; Roles</span>
+</a>
+</li>
+<li>
+<a class="touch-target flex items-center gap-3 px-3 py-2.5 rounded text-[#C5C6CC] hover:text-[#FFFFFF] hover:bg-[#0B1320] transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">security</span>
+<span>Security &amp; Operations</span>
+</a>
+</li>
+<li>
+<a class="touch-target flex items-center gap-3 px-3 py-2.5 rounded text-[#C5C6CC] hover:text-[#FFFFFF] hover:bg-[#0B1320] transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+<span>Finance</span>
+</a>
+</li>
+<li>
+<a class="touch-target flex items-center gap-3 px-3 py-2.5 rounded text-[#C5C6CC] hover:text-[#FFFFFF] hover:bg-[#0B1320] transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">settings_suggest</span>
+<span>System</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<!-- Footer Rail Session Info -->
+<div class="p-6 border-t border-[#0B1320] bg-[#0E1520]">
+<div class="flex items-center gap-2 text-xs text-[#93C5FD] font-medium mb-1">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Access Protocol: Level-4 Super Admin</span>
+</div>
+<div class="text-[11px] text-[#75777C]">Enforced TLS 1.3 · IP Pin Lagos NG</div>
+</div>
+</aside>
+<!-- MAIN ADMINISTRATIVE WORKSPACE CANVAS -->
+<main class="flex-1 min-w-0 bg-[#FAF8FF] px-8 py-8 flex flex-col max-w-[1440px]">
+<!-- BREADCRUMB NAVIGATION -->
+<nav aria-label="Breadcrumb" class="mb-4">
+<ol class="flex items-center space-x-2 text-xs text-[#475569]">
+<li>
+<a class="hover:text-[#0F172A] transition-colors" href="#">Staff &amp; Governance</a>
+</li>
+<li class="flex items-center">
+<span class="material-symbols-outlined text-[14px] text-[#75777C]">chevron_right</span>
+</li>
+<li>
+<a class="hover:text-[#0F172A] transition-colors" href="#">Access Control</a>
+</li>
+<li class="flex items-center">
+<span class="material-symbols-outlined text-[14px] text-[#75777C]">chevron_right</span>
+</li>
+<li>
+<span aria-current="page" class="font-medium text-[#0F172A]">Staff</span>
+</li>
+</ol>
+</nav>
+<!-- PAGE HEADER -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0] mb-6">
+<div>
+<h1 class="text-[28px] leading-9 font-semibold text-[#0F172A] tracking-tight">Staff</h1>
+<p class="text-sm leading-5 text-[#475569] mt-1 max-w-3xl">
+            Manage administrative personnel, assigned scopes, security enforcement, and governance permissions.
+          </p>
+</div>
+<div>
+<button class="touch-target inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#0B1320] hover:bg-[#1E293B] text-[#FFFFFF] rounded text-sm font-medium transition-colors shadow-sm focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ Invite staff</span>
+</button>
+</div>
+</div>
+<!-- SECTION 1: SEARCH AND FILTERS BAR -->
+<section aria-labelledby="filter-heading" class="bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-4 mb-6 shadow-sm">
+<h2 class="sr-only" id="filter-heading">Staff Directory Search and Filters</h2>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Input and Dropdown Cluster -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
+<!-- Search Text Input -->
+<div class="relative flex-1 min-w-[280px]">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="touch-target w-full pl-10 pr-4 py-2 bg-[#FFFFFF] border border-[#64748B] rounded text-sm text-[#0F172A] placeholder-[#475569] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]" id="staff-search-input" placeholder="Search staff by name, email, or role..." type="text"/>
+</div>
+<!-- Role Dropdown Filter -->
+<div class="w-full sm:w-52">
+<label class="sr-only" for="role-filter">Filter by Role</label>
+<select class="touch-target w-full px-3 py-2 bg-[#FFFFFF] border border-[#64748B] rounded text-sm text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]" id="role-filter">
+<option value="">All Roles</option>
+<option value="super-admin">Super Admin</option>
+<option value="academic-director">Academic Director</option>
+<option value="security-officer">Security Officer</option>
+<option value="operations-manager">Operations Manager</option>
+<option value="support-agent">Support Agent</option>
+<option value="instructor">Instructor</option>
+</select>
+</div>
+<!-- Status Dropdown Filter -->
+<div class="w-full sm:w-52">
+<label class="sr-only" for="status-filter">Filter by Status</label>
+<select class="touch-target w-full px-3 py-2 bg-[#FFFFFF] border border-[#64748B] rounded text-sm text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]" id="status-filter">
+<option value="">All Statuses</option>
+<option value="active">Active</option>
+<option value="invited">Invited</option>
+<option value="suspended">Suspended</option>
+<option value="expiring">Access expiring soon</option>
+</select>
+</div>
+</div>
+<!-- Total Count Display & Reset -->
+<div class="flex items-center justify-between sm:justify-end gap-4 border-t lg:border-t-0 pt-3 lg:pt-0 border-[#E2E8F0]">
+<span class="text-xs text-[#475569] font-medium whitespace-nowrap">Showing 8 staff members</span>
+<button class="touch-target inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-[#1D4ED8] hover:text-[#0B1320] transition-colors rounded hover:bg-[#EFF6FF]" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset filters</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 2: STAFF DIRECTORY MASTER TABLE -->
+<section aria-labelledby="directory-table-heading" class="bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] overflow-hidden shadow-sm flex flex-col mb-8">
+<h2 class="sr-only" id="directory-table-heading">Staff Directory Table</h2>
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse min-w-[1100px]">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0]">
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider" scope="col">
+<button class="inline-flex items-center gap-1 hover:text-[#0F172A]" type="button">
+<span>Name</span>
+<span class="material-symbols-outlined text-[16px]">unfold_more</span>
+</button>
+</th>
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider" scope="col">Masked Email</th>
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider" scope="col">Roles</th>
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider" scope="col">Scope Summary</th>
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider" scope="col">Two-Factor Enabled</th>
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider" scope="col">
+<button class="inline-flex items-center gap-1 hover:text-[#0F172A]" type="button">
+<span>Last Active</span>
+<span class="material-symbols-outlined text-[16px]">unfold_more</span>
+</button>
+</th>
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider" scope="col">Status</th>
+<th class="py-3 px-4 text-xs font-semibold text-[#475569] uppercase tracking-wider text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm text-[#0F172A]">
+<!-- ROW 1: Super Admin (Active) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#0B1320] text-[#FFFFFF] flex items-center justify-center font-medium text-xs">
+                      BL
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Babatunde Lawal</div>
+<div class="text-xs text-[#475569]">ID: STF-LOS-001</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-1">b•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-1', 'b.lawal@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#0B1320] text-[#FFFFFF]">
+                    Super Admin
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Global write &amp; governance, key escrow, systemic authorization
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#047857] font-medium">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">verified_user</span>
+<span>Enforced (Hardware/App)</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  05 Oct 2026, 13:28 WAT
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors" type="button">
+                      Edit
+                    </button>
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#0F172A] hover:bg-[#E2E8F0] rounded transition-colors" type="button">
+                      Manage access
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Chukwudi Nnamdi - Security Officer (Active) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#1D4ED8] text-[#FFFFFF] flex items-center justify-center font-medium text-xs">
+                      CN
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Chukwudi Nnamdi</div>
+<div class="text-xs text-[#475569]">ID: STF-LOS-014</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-2">c•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-2', 'c.nnamdi@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#141C29] text-[#FFFFFF]">
+                    Security Officer
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Security alerts &amp; leak investigations, telemetry logs review
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#047857] font-medium">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">verified_user</span>
+<span>Enforced (Hardware/App)</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  05 Oct 2026, 11:42 WAT
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors" type="button">
+                      Edit
+                    </button>
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#0F172A] hover:bg-[#E2E8F0] rounded transition-colors" type="button">
+                      Manage access
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Dr. Olayinka Adeleke - Academic Director (Active) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#475569] text-[#FFFFFF] flex items-center justify-center font-medium text-xs">
+                      OA
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Dr. Olayinka Adeleke</div>
+<div class="text-xs text-[#475569]">ID: STF-LOS-004</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-3">o•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-3', 'o.adeleke@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#141C29] text-[#FFFFFF]">
+                    Academic Director
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Courseware authoring &amp; certificate issuance, syllabus governance
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#047857] font-medium">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">verified_user</span>
+<span>Enforced (Hardware/App)</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  04 Oct 2026, 18:15 WAT
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors" type="button">
+                      Edit
+                    </button>
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#0F172A] hover:bg-[#E2E8F0] rounded transition-colors" type="button">
+                      Manage access
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Tunde Bakare - Support Agent (Active, Pending 2FA) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#64748B] text-[#FFFFFF] flex items-center justify-center font-medium text-xs">
+                      TB
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Tunde Bakare</div>
+<div class="text-xs text-[#475569]">ID: STF-LOS-022</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-4">t•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-4', 't.bakare@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#E2E8F0] text-[#0F172A]">
+                    Support Agent
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Tickets &amp; candidate inquiry triage, proctoring escalations
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#B45309] font-medium">
+<span class="material-symbols-outlined text-[16px] text-[#B45309]">warning</span>
+<span>Pending setup</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  03 Oct 2026, 09:20 WAT
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors" type="button">
+                      Edit
+                    </button>
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#0F172A] hover:bg-[#E2E8F0] rounded transition-colors" type="button">
+                      Manage access
+                    </button>
+</div>
+</td>
+</tr>
+<!-- STATE VARIANT 2: INVITATION PENDING ROW -->
+<!-- Zainab Aliyu — Content Auditor (Invited, countdown banner, resend action) -->
+<tr class="bg-[#FFFDF7] hover:bg-[#FFFBEB] transition-colors border-l-4 border-l-[#B45309]">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#E2E8F0] text-[#475569] flex items-center justify-center font-medium text-xs border border-[#64748B]">
+                      ZA
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Zainab Aliyu</div>
+<div class="text-xs text-[#B45309] font-medium flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[12px]">hourglass_top</span>
+<span>Expires in 3 days</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-5">z•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-5', 'z.aliyu@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#E2E8F0] text-[#0F172A]">
+                    Content Auditor
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Read-only syllabus verification, question pool evaluation
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#475569] font-normal">
+<span class="material-symbols-outlined text-[16px] text-[#75777C]">schedule</span>
+<span>Not enrolled</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  Never (Invited)
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">mail</span>
+<span>Invited</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target inline-flex items-center gap-1 px-3 py-1 text-xs font-medium bg-[#FFFFFF] border border-[#B45309] text-[#B45309] hover:bg-[#FFFBEB] rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">send</span>
+<span>Resend invite</span>
+</button>
+<button class="touch-target px-2 py-1 text-xs text-[#64748B] hover:text-[#B91C1C]" type="button">
+                      Cancel
+                    </button>
+</div>
+</td>
+</tr>
+<!-- STATE VARIANT 3: ACCESS EXPIRING SOON ROW -->
+<!-- Dapo Adeyemi — Visiting Instructor (Contract expiration, warning badge, extend access action) -->
+<tr class="bg-[#FEFBF9] hover:bg-[#FFFBEB]/70 transition-colors border-l-4 border-l-[#B45309]">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#283044] text-[#FFFFFF] flex items-center justify-center font-medium text-xs">
+                      DA
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Dapo Adeyemi</div>
+<div class="text-xs text-[#475569]">Visiting Instructor (AAIA Lab)</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-6">d•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-6', 'd.adeyemi@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#E2E8F0] text-[#0F172A]">
+                    Lead Faculty
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Live cohort mentorship, audit simulation room control
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#047857] font-medium">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">verified_user</span>
+<span>Enforced (Hardware/App)</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  04 Oct 2026, 17:02 WAT
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>Access expiring (12 Oct 2026)</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target inline-flex items-center gap-1 px-3 py-1 text-xs font-medium bg-[#FFFFFF] border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">update</span>
+<span>Extend access</span>
+</button>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline" type="button">
+                      Manage
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 7: Suspended State Example for complete compliance -->
+<tr class="hover:bg-[#F8FAFC] transition-colors opacity-80">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#E2E8F0] text-[#64748B] flex items-center justify-center font-medium text-xs">
+                      IO
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Ibrahim Olawale</div>
+<div class="text-xs text-[#475569]">ID: STF-LOS-031</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-7">i•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-7', 'i.olawale@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#E2E8F0] text-[#475569]">
+                    Support Agent
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Revoked — pending periodic governance clearance
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#75777C]">
+<span class="material-symbols-outlined text-[16px]">do_not_disturb_on</span>
+<span>Revoked</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  28 Sep 2026, 14:10 WAT
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">block</span>
+<span>Suspended</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors" type="button">
+                      Reactivate
+                    </button>
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#B91C1C] hover:bg-[#FEF2F2] rounded transition-colors" type="button">
+                      Audit log
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 8: Ngozi Eze — Operations Manager (Active) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-[#141C29] text-[#FFFFFF] flex items-center justify-center font-medium text-xs">
+                      NE
+                    </div>
+<div>
+<div class="font-medium text-[#0F172A]">Ngozi Eze</div>
+<div class="text-xs text-[#475569]">ID: STF-LOS-009</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-2 font-mono text-xs text-[#0F172A]">
+<span id="email-8">n•••••••••@ajsilicon.com</span>
+<button class="touch-target px-2 py-1 text-xs text-[#1D4ED8] hover:underline inline-flex items-center gap-1 font-sans" onclick="toggleReveal('email-8', 'n.eze@ajsilicon.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#141C29] text-[#FFFFFF]">
+                    Operations Manager
+                  </span>
+</td>
+<td class="py-3 px-4 max-w-xs text-xs text-[#475569]">
+                  Exam venue scheduling, proctor rosters &amp; facilities
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 text-xs text-[#047857] font-medium">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">verified_user</span>
+<span>Enforced (Hardware/App)</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-xs text-[#475569]">
+                  05 Oct 2026, 08:30 WAT
+                </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors" type="button">
+                      Edit
+                    </button>
+<button class="touch-target px-2.5 py-1 text-xs font-medium text-[#0F172A] hover:bg-[#E2E8F0] rounded transition-colors" type="button">
+                      Manage access
+                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- TABLE PAGINATION FOOTER -->
+<div class="p-4 border-t border-[#E2E8F0] bg-[#FFFFFF] flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-xs text-[#475569]">
+            Showing <span class="font-medium text-[#0F172A]">1</span> to <span class="font-medium text-[#0F172A]">8</span> of <span class="font-medium text-[#0F172A]">8</span> results
+          </div>
+<div class="inline-flex items-center space-x-1">
+<button class="touch-target inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium rounded text-[#75777C] bg-[#F1F5F9] cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<button aria-current="page" class="touch-target w-9 h-9 flex items-center justify-center rounded text-xs font-semibold bg-[#0B1320] text-[#FFFFFF]" type="button">
+              1
+            </button>
+<button class="touch-target w-9 h-9 flex items-center justify-center rounded text-xs font-medium text-[#0F172A] hover:bg-[#E2E8F0]" type="button">
+              2
+            </button>
+<button class="touch-target inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium rounded text-[#0F172A] hover:bg-[#E2E8F0]" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SYSTEM PREVIEW PANELS (EXPANDABLE AUDIT & EDGE STATES) -->
+<section aria-labelledby="state-previews-heading" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+<h2 class="sr-only" id="state-previews-heading">Directory Loading and Zero-Results Previews</h2>
+<!-- PREVIEW A: Table Loading Skeleton State -->
+<div class="bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#475569]">sync</span>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-[#475569]">Table Loading Skeleton State</h3>
+</div>
+<span class="text-[11px] text-[#75777C] font-mono">Simulated Sync</span>
+</div>
+<div class="space-y-4 animate-pulse">
+<!-- Simulated Row Skeleton 1 -->
+<div class="flex items-center justify-between gap-4 py-2 border-b border-[#F1F5F9]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-[#E2E8F0]"></div>
+<div class="space-y-1.5">
+<div class="w-32 h-3 bg-[#E2E8F0] rounded"></div>
+<div class="w-20 h-2 bg-[#F1F5F9] rounded"></div>
+</div>
+</div>
+<div class="w-24 h-4 bg-[#E2E8F0] rounded"></div>
+<div class="w-20 h-5 bg-[#F1F5F9] rounded"></div>
+</div>
+<!-- Simulated Row Skeleton 2 -->
+<div class="flex items-center justify-between gap-4 py-2 border-b border-[#F1F5F9]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-[#E2E8F0]"></div>
+<div class="space-y-1.5">
+<div class="w-28 h-3 bg-[#E2E8F0] rounded"></div>
+<div class="w-16 h-2 bg-[#F1F5F9] rounded"></div>
+</div>
+</div>
+<div class="w-28 h-4 bg-[#E2E8F0] rounded"></div>
+<div class="w-20 h-5 bg-[#F1F5F9] rounded"></div>
+</div>
+<!-- Simulated Row Skeleton 3 -->
+<div class="flex items-center justify-between gap-4 py-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-[#E2E8F0]"></div>
+<div class="space-y-1.5">
+<div class="w-36 h-3 bg-[#E2E8F0] rounded"></div>
+<div class="w-24 h-2 bg-[#F1F5F9] rounded"></div>
+</div>
+</div>
+<div class="w-20 h-4 bg-[#E2E8F0] rounded"></div>
+<div class="w-20 h-5 bg-[#F1F5F9] rounded"></div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-xs text-[#475569]">
+<span>Active background sync: Node LOS-SEC-01</span>
+<span class="text-[#1D4ED8]">Polling 30s</span>
+</div>
+</div>
+<!-- PREVIEW B: Filter Zero-Results Empty State -->
+<div class="bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-6 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#475569]">filter_alt_off</span>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-[#475569]">Filter Zero-Results Empty State</h3>
+</div>
+<span class="text-[11px] text-[#75777C] font-mono">Zero Query Match</span>
+</div>
+<div class="py-6 text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-[#F1F5F9] flex items-center justify-center text-[#64748B] mb-3">
+<span class="material-symbols-outlined text-[24px]">person_search</span>
+</div>
+<h4 class="text-sm font-semibold text-[#0F172A]">No staff members found</h4>
+<p class="text-xs text-[#475569] max-w-xs mt-1">
+              Your criteria didn't match any staff records in the Lagos directory. Try modifying your search term or clearing the active filters.
+            </p>
+<div class="mt-4 flex items-center gap-3">
+<button class="touch-target px-4 py-1.5 text-xs font-medium text-[#FFFFFF] bg-[#0B1320] hover:bg-[#1E293B] rounded transition-colors" type="button">
+                Clear all filters
+              </button>
+<button class="touch-target px-4 py-1.5 text-xs font-medium text-[#1D4ED8] hover:bg-[#EFF6FF] rounded border border-[#1D4ED8] transition-colors" type="button">
+                View audit log
+              </button>
+</div>
+</div>
+<div class="pt-3 border-t border-[#E2E8F0] text-center text-[11px] text-[#75777C]">
+            Verified: Access directory database partition intact.
+          </div>
+</div>
+</section>
+</main>
+</div>
+<!-- INSTITUTIONAL CLOSURE FOOTER -->
+<footer class="w-full py-6 px-6 border-t border-[#141C29] bg-[#0B1320] flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+<div class="text-xs text-[#C5C6CC]">
+      © 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. Accredited ISACA Lagos Elite Partner. All Sessions Digitally Watermarked.
+    </div>
+<div class="flex flex-wrap items-center justify-center gap-4 text-xs">
+<a class="text-[#C5C6CC] hover:text-[#FFFFFF] hover:underline transition-colors" href="#">Zero-Trust Protocol</a>
+<span class="text-[#75777C]">·</span>
+<a class="text-[#C5C6CC] hover:text-[#FFFFFF] hover:underline transition-colors" href="#">ISACA Lagos Charter</a>
+<span class="text-[#75777C]">·</span>
+<a class="text-[#C5C6CC] hover:text-[#FFFFFF] hover:underline transition-colors" href="#">Automated Verification Gateway</a>
+<span class="text-[#75777C]">·</span>
+<a class="text-[#C5C6CC] hover:text-[#FFFFFF] hover:underline transition-colors" href="#">Forensic Integrity Policy</a>
+<span class="text-[#75777C]">·</span>
+<a class="text-[#C5C6CC] hover:text-[#FFFFFF] hover:underline transition-colors" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- SENSITIVE FIELD INTERACTIVE REVEAL SCRIPT -->
+<script>
+    function toggleReveal(elementId, realValue, btn) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+
+      const isMasked = el.textContent.includes('•');
+      if (isMasked) {
+        el.textContent = realValue;
+        btn.innerHTML = `
+          <span class="material-symbols-outlined text-[14px]">visibility_off</span>
+          <span>Mask</span>
+        `;
+      } else {
+        const parts = realValue.split('@');
+        const firstLetter = parts[0].charAt(0);
+        const domain = parts[1] || 'ajsilicon.com';
+        el.textContent = `${firstLetter}•••••••••@${domain}`;
+        btn.innerHTML = `
+          <span class="material-symbols-outlined text-[14px]">visibility</span>
+          <span>Reveal</span>
+        `;
+      }
+    }
+  </script>
+</body></html>

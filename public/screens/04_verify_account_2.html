@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 Verify account - Specification & Interactive State Matrix</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#050A10',
+              sidebar: '#0B1320',
+              linkDark: '#93C5FD',
+              focusRing: '#2563EB',
+              border: '#64748B',
+              slateBg: '#F8FAFC',
+              cardBorder: '#E2E8F0',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F1F5F9;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .otp-input {
+      width: 48px;
+      height: 52px;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.15s ease-in-out;
+    }
+    .focus-ring:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #2563EB;
+    }
+  </style>
+</head>
+<body class="p-6 md:p-10 space-y-12 max-w-[1600px] mx-auto">
+
+  <!-- SPECIFICATION HEADER -->
+  <header class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider bg-slate-900 text-white rounded">SPEC-ENG-2026-V5</span>
+        <span class="text-xs font-medium text-slate-500">Screen 04 · Verification Security Gate</span>
+      </div>
+      <h1 class="text-2xl font-bold text-slate-900 mt-2">Verify Account Specification</h1>
+      <p class="text-sm text-slate-600 mt-1">Multi-factor 6-digit OTP delivery, timer validation, error boundaries, lockout states & 390px mobile viewport.</p>
+    </div>
+    <div class="flex items-center gap-2 text-xs text-slate-600 bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-lg">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+      <span>All 6 Required States Rendered & Spec Compliant</span>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       STATE 1: WAITING (DEFAULT, TIMER RUNNING)
+       ========================================== -->
+  <section class="space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">1</span>
+        <h2 class="text-base font-semibold text-slate-900">State 1: Waiting (Default, Timer Running)</h2>
+      </div>
+      <span class="text-xs text-slate-500">Desktop 1440px · 60-Second Timer Active · Auto-Advance Active · CTA Disabled</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+      <!-- Public Top Bar -->
+      <nav class="bg-[#050A10] border-b border-[#0B1320] px-8 py-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <!-- Logo on white plate -->
+          <div class="bg-white px-2.5 py-1 rounded border border-slate-200/40 flex items-center justify-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2dEsC1eG1W8hBYVI7B2-3TR01YW6HnVrs68_GAUqYsiZn6Iun0uX8o1QnIOa8oCkWQQWZc4Vq0l-g7d6mbOCltdVAZKxWmqAU2fUSQxOpZQLYIL2ENB87YCTCcD_bSv6CZ3ZKL6p-s4blwtqgBAbrtnA7sY9S9ztex7KY4KxvV8I1ScuRDQ1AZg6ZhoqivwLfa74g8VTdwLLK2m8bRNRKpvJBYjU5n691XRYxltjFX6YHl4WWv3D8sq6eD107FszQd_g" alt="A.J. SILICON" class="h-6 w-auto object-contain">
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Workshops</a>
+          <a href="#" class="text-sm font-semibold text-[#93C5FD] hover:underline focus-ring rounded px-1">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Center Card Form Area -->
+      <div class="py-16 px-4 bg-[#F8FAFC] flex justify-center">
+        <div class="w-full max-w-[460px] bg-white rounded-xl border border-[#E2E8F0] p-8 shadow-sm">
+          
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 text-slate-700 mb-3 border border-slate-200">
+              <span class="material-symbols-outlined text-[24px]">mark_email_read</span>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-900">Verify your account</h2>
+            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+              We sent a 6-digit verification code to<br>
+              <strong class="font-semibold text-slate-900">c****e@lagoscommercial.ng</strong> and <strong class="font-semibold text-slate-900">+234 80* *** **47</strong>
+            </p>
+          </div>
+
+          <!-- Form Content -->
+          <form class="space-y-6" onsubmit="event.preventDefault();">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider text-center mb-3">
+                Enter 6-digit security code
+              </label>
+              
+              <!-- 6-digit OTP Input group -->
+              <div class="flex justify-between items-center gap-2 max-w-[340px] mx-auto">
+                <input type="text" maxlength="1" value="7" class="otp-input border-2 border-[#64748B] text-slate-900 bg-white focus-ring">
+                <input type="text" maxlength="1" value="0" class="otp-input border-2 border-[#64748B] text-slate-900 bg-white focus-ring">
+                <input type="text" maxlength="1" value="4" class="otp-input border-2 border-[#64748B] text-slate-900 bg-white focus-ring">
+                <input type="text" maxlength="1" value="" placeholder="-" class="otp-input border-2 border-[#64748B] text-slate-400 bg-white focus:border-[#2563EB] focus-ring">
+                <input type="text" maxlength="1" value="" placeholder="-" class="otp-input border-2 border-slate-300 text-slate-400 bg-white focus:border-[#2563EB] focus-ring">
+                <input type="text" maxlength="1" value="" placeholder="-" class="otp-input border-2 border-slate-300 text-slate-400 bg-white focus:border-[#2563EB] focus-ring">
+              </div>
+              <p class="text-center text-xs text-slate-500 mt-2">Auto-advance active</p>
+            </div>
+
+            <!-- Resend & Change Links -->
+            <div class="space-y-2 text-center text-sm">
+              <div class="flex items-center justify-center gap-1.5 text-slate-600">
+                <span class="material-symbols-outlined text-[18px] text-slate-400">schedule</span>
+                <span>Resend code in <strong class="font-mono font-medium text-slate-800">0:42</strong></span>
+              </div>
+              <div>
+                <a href="#" class="text-xs font-medium text-blue-700 hover:text-blue-900 underline focus-ring rounded">Change email or phone</a>
+              </div>
+            </div>
+
+            <!-- Submit Button (Disabled until 6 digits entered) -->
+            <button type="button" disabled class="w-full h-11 min-h-[44px] bg-slate-200 text-slate-400 font-semibold text-sm rounded-lg cursor-not-allowed flex items-center justify-center gap-2 border border-slate-300">
+              <span class="material-symbols-outlined text-[18px]">verified_user</span>
+              <span>Verify account</span>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATE 2: WRONG CODE (INCORRECT OTP)
+       ========================================== -->
+  <section class="space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center text-xs font-bold">2</span>
+        <h2 class="text-base font-semibold text-slate-900">State 2: Wrong Code</h2>
+      </div>
+      <span class="text-xs text-slate-500">Error Border #DC2626 · Icon + Text Message · Attempt Decrement Counter</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+      <!-- Public Top Bar -->
+      <nav class="bg-[#050A10] border-b border-[#0B1320] px-8 py-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="bg-white px-2.5 py-1 rounded border border-slate-200/40 flex items-center justify-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9dvtBsUhfucrmopKVkhqmiFL48-0As7flPTgW38mqmSU44FMqso-gN4ZVRbm2asP4H0WYoy4v_Hd3kzMkjS1eNfPEVGidegrUwONHRTInRtesNxLRbGjwF1oYzOsMi3uYnH25zc29SmxhKpmtv6iqhhxXhMFK3u9ZVhw3jk-Zn5PmAAqB5J-SvtSZWyeY-HpSTsZjilMsKP5N4A1u4SNeyKUTs283fpRSXzVh2P2slF0NON2zYT1q0R3anf-OlmZrj5U" alt="A.J. SILICON" class="h-6 w-auto object-contain">
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Workshops</a>
+          <a href="#" class="text-sm font-semibold text-[#93C5FD] hover:underline focus-ring rounded px-1">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Center Card Form Area -->
+      <div class="py-16 px-4 bg-[#F8FAFC] flex justify-center">
+        <div class="w-full max-w-[460px] bg-white rounded-xl border border-red-200 p-8 shadow-sm">
+          
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-50 text-red-600 mb-3 border border-red-200">
+              <span class="material-symbols-outlined text-[24px]">gpp_maybe</span>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-900">Verify your account</h2>
+            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+              We sent a 6-digit verification code to<br>
+              <strong class="font-semibold text-slate-900">c****e@lagoscommercial.ng</strong> and <strong class="font-semibold text-slate-900">+234 80* *** **47</strong>
+            </p>
+          </div>
+
+          <form class="space-y-6" onsubmit="event.preventDefault();">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider text-center mb-3">
+                Enter 6-digit security code
+              </label>
+              
+              <!-- 6-digit OTP Input group with red error borders -->
+              <div class="flex justify-between items-center gap-2 max-w-[340px] mx-auto">
+                <input type="text" maxlength="1" value="7" class="otp-input border-2 border-red-600 text-red-700 bg-red-50/50 focus-ring">
+                <input type="text" maxlength="1" value="0" class="otp-input border-2 border-red-600 text-red-700 bg-red-50/50 focus-ring">
+                <input type="text" maxlength="1" value="4" class="otp-input border-2 border-red-600 text-red-700 bg-red-50/50 focus-ring">
+                <input type="text" maxlength="1" value="9" class="otp-input border-2 border-red-600 text-red-700 bg-red-50/50 focus-ring">
+                <input type="text" maxlength="1" value="1" class="otp-input border-2 border-red-600 text-red-700 bg-red-50/50 focus-ring">
+                <input type="text" maxlength="1" value="8" class="otp-input border-2 border-red-600 text-red-700 bg-red-50/50 focus-ring">
+              </div>
+
+              <!-- Inline error message pairing icon with text -->
+              <div class="mt-3 bg-red-50 border border-red-200 rounded-lg p-3 flex items-center justify-center gap-2 text-red-800 text-xs font-medium">
+                <span class="material-symbols-outlined text-[18px] text-red-600">error</span>
+                <span>That code is not correct. 2 attempts left.</span>
+              </div>
+            </div>
+
+            <!-- Resend & Change Links -->
+            <div class="space-y-2 text-center text-sm">
+              <div class="flex items-center justify-center gap-1.5 text-slate-600">
+                <span class="material-symbols-outlined text-[18px] text-slate-400">schedule</span>
+                <span>Resend code in <strong class="font-mono font-medium text-slate-800">0:28</strong></span>
+              </div>
+              <div>
+                <a href="#" class="text-xs font-medium text-blue-700 hover:text-blue-900 underline focus-ring rounded">Change email or phone</a>
+              </div>
+            </div>
+
+            <!-- Submit Button (Active because 6 digits are entered) -->
+            <button type="button" class="w-full h-11 min-h-[44px] bg-[#050A10] hover:bg-slate-800 text-white font-semibold text-sm rounded-lg flex items-center justify-center gap-2 focus-ring transition-colors shadow">
+              <span class="material-symbols-outlined text-[18px]">verified_user</span>
+              <span>Verify account</span>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATE 3: EXPIRED CODE (TIMER ZERO, RESEND ACTIVE)
+       ========================================== -->
+  <section class="space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs font-bold">3</span>
+        <h2 class="text-base font-semibold text-slate-900">State 3: Expired Code</h2>
+      </div>
+      <span class="text-xs text-slate-500">Timer Expired · Amber Warning Banner · Active Resend Code CTA</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+      <!-- Public Top Bar -->
+      <nav class="bg-[#050A10] border-b border-[#0B1320] px-8 py-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="bg-white px-2.5 py-1 rounded border border-slate-200/40 flex items-center justify-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg84nJtZRa0viMlzmima0z6QlminTMy2BFxhwrO4eLXHkZNiLqiqtuwct5yoG_nVyuY6kauv1WqfrAIpnKWrPEumMC-Q0BXL9OqL3JfU-6VjMOZzshJuPf7DeZgYbyAeR9bDzXdbZyfVjJfeninQdjZb4Ui8SyNyNeP28WoBjCnPqWPSm0t9z8SCfkcR6qsmo7AHXSiIyEUOSYmTTWyChC6j8rFeAi15zhzjdJTwjh7dvllxwuegXrCF7ioHMAKNYexLU" alt="A.J. SILICON" class="h-6 w-auto object-contain">
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Workshops</a>
+          <a href="#" class="text-sm font-semibold text-[#93C5FD] hover:underline focus-ring rounded px-1">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Center Card Form Area -->
+      <div class="py-16 px-4 bg-[#F8FAFC] flex justify-center">
+        <div class="w-full max-w-[460px] bg-white rounded-xl border border-amber-200 p-8 shadow-sm">
+          
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-50 text-amber-600 mb-3 border border-amber-200">
+              <span class="material-symbols-outlined text-[24px]">hourglass_disabled</span>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-900">Verify your account</h2>
+            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+              We sent a 6-digit verification code to<br>
+              <strong class="font-semibold text-slate-900">c****e@lagoscommercial.ng</strong> and <strong class="font-semibold text-slate-900">+234 80* *** **47</strong>
+            </p>
+          </div>
+
+          <form class="space-y-6" onsubmit="event.preventDefault();">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider text-center mb-3">
+                Enter 6-digit security code
+              </label>
+              
+              <!-- 6-digit OTP Input group in expired stale state -->
+              <div class="flex justify-between items-center gap-2 max-w-[340px] mx-auto opacity-75">
+                <input type="text" maxlength="1" value="4" class="otp-input border-2 border-slate-400 text-slate-600 bg-slate-50 focus-ring">
+                <input type="text" maxlength="1" value="8" class="otp-input border-2 border-slate-400 text-slate-600 bg-slate-50 focus-ring">
+                <input type="text" maxlength="1" value="2" class="otp-input border-2 border-slate-400 text-slate-600 bg-slate-50 focus-ring">
+                <input type="text" maxlength="1" value="0" class="otp-input border-2 border-slate-400 text-slate-600 bg-slate-50 focus-ring">
+                <input type="text" maxlength="1" value="9" class="otp-input border-2 border-slate-400 text-slate-600 bg-slate-50 focus-ring">
+                <input type="text" maxlength="1" value="3" class="otp-input border-2 border-slate-400 text-slate-600 bg-slate-50 focus-ring">
+              </div>
+
+              <!-- Inline expired message with icon -->
+              <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3 flex items-center justify-center gap-2 text-amber-900 text-xs font-medium">
+                <span class="material-symbols-outlined text-[18px] text-amber-600">timer_off</span>
+                <span>This code has expired. Request a new one.</span>
+              </div>
+            </div>
+
+            <!-- Resend active link at zero timer -->
+            <div class="space-y-2 text-center text-sm">
+              <div class="flex items-center justify-center gap-1.5">
+                <button type="button" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-900 underline focus-ring rounded py-1 px-2">
+                  <span class="material-symbols-outlined text-[18px]">replay</span>
+                  <span>Resend code now</span>
+                </button>
+              </div>
+              <div>
+                <a href="#" class="text-xs font-medium text-slate-600 hover:text-slate-900 underline focus-ring rounded">Change email or phone</a>
+              </div>
+            </div>
+
+            <!-- Submit Button (Disabled because code expired) -->
+            <button type="button" disabled class="w-full h-11 min-h-[44px] bg-slate-200 text-slate-400 font-semibold text-sm rounded-lg cursor-not-allowed flex items-center justify-center gap-2 border border-slate-300">
+              <span class="material-symbols-outlined text-[18px]">verified_user</span>
+              <span>Verify account</span>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATE 4: TOO MANY ATTEMPTS (LOCKED 15 MIN)
+       ========================================== -->
+  <section class="space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-white flex items-center justify-center text-xs font-bold">4</span>
+        <h2 class="text-base font-semibold text-slate-900">State 4: Too Many Attempts (Locked for 15 minutes)</h2>
+      </div>
+      <span class="text-xs text-slate-500">Security Lockout Active · All Inputs Disabled · Verify Button Disabled</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+      <!-- Public Top Bar -->
+      <nav class="bg-[#050A10] border-b border-[#0B1320] px-8 py-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="bg-white px-2.5 py-1 rounded border border-slate-200/40 flex items-center justify-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB31oFNlDoHap_fe0BY_LQx69SAIuCUTMvatkbBlGtafHGD3Ub6O2sm4peEjdVz5pSqGKrPkGJ0vNZ-qSfYigyG-2n7QUvXCP7dSeeDe9JCPW0Am7q12CChemWvVDFdOoEZmUtiXPSXVAkbej4Nz2un2I7-9prX9aiNyNL80g49sJW9_LjQkSKDd3sUNsuzzIxqKgRnNPUBB_HaZ0o8s0W1YlQIX8ekfjuxfVxIrN6oSVB6X39RiLffn6JgumzASdx2FFo" alt="A.J. SILICON" class="h-6 w-auto object-contain">
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Workshops</a>
+          <a href="#" class="text-sm font-semibold text-[#93C5FD] hover:underline focus-ring rounded px-1">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Center Card Form Area -->
+      <div class="py-16 px-4 bg-[#F8FAFC] flex justify-center">
+        <div class="w-full max-w-[460px] bg-white rounded-xl border border-slate-300 p-8 shadow-sm">
+          
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-red-700 mb-3 border border-red-300">
+              <span class="material-symbols-outlined text-[24px]">lock_clock</span>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-900">Account Temporarily Locked</h2>
+            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+              Multi-factor verification attempts exceeded.<br>
+              Account security protocol engaged for <strong>c****e@lagoscommercial.ng</strong>.
+            </p>
+          </div>
+
+          <form class="space-y-6" onsubmit="event.preventDefault();">
+            <div>
+              <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider text-center mb-3">
+                Security code entry suspended
+              </label>
+              
+              <!-- 6-digit OTP Input group disabled -->
+              <div class="flex justify-between items-center gap-2 max-w-[340px] mx-auto opacity-50 cursor-not-allowed">
+                <input type="text" disabled value="•" class="otp-input border-2 border-slate-300 text-slate-400 bg-slate-100 cursor-not-allowed">
+                <input type="text" disabled value="•" class="otp-input border-2 border-slate-300 text-slate-400 bg-slate-100 cursor-not-allowed">
+                <input type="text" disabled value="•" class="otp-input border-2 border-slate-300 text-slate-400 bg-slate-100 cursor-not-allowed">
+                <input type="text" disabled value="•" class="otp-input border-2 border-slate-300 text-slate-400 bg-slate-100 cursor-not-allowed">
+                <input type="text" disabled value="•" class="otp-input border-2 border-slate-300 text-slate-400 bg-slate-100 cursor-not-allowed">
+                <input type="text" disabled value="•" class="otp-input border-2 border-slate-300 text-slate-400 bg-slate-100 cursor-not-allowed">
+              </div>
+
+              <!-- Lockout message with icon -->
+              <div class="mt-4 bg-slate-100 border border-slate-300 rounded-lg p-3.5 flex items-center justify-center gap-2.5 text-slate-800 text-xs font-medium">
+                <span class="material-symbols-outlined text-[20px] text-red-600">lock</span>
+                <span>Too many attempts. Try again in <strong class="font-mono text-slate-900 font-semibold">14:32</strong>.</span>
+              </div>
+            </div>
+
+            <!-- Resend inactive & help link -->
+            <div class="space-y-2 text-center text-sm">
+              <p class="text-xs text-slate-500">Resend disabled during cooldown period.</p>
+              <div>
+                <a href="#" class="text-xs font-medium text-slate-700 hover:text-slate-900 underline focus-ring rounded">Contact support for urgent access</a>
+              </div>
+            </div>
+
+            <!-- Submit Button (Disabled during lockout) -->
+            <button type="button" disabled class="w-full h-11 min-h-[44px] bg-slate-200 text-slate-400 font-semibold text-sm rounded-lg cursor-not-allowed flex items-center justify-center gap-2 border border-slate-300">
+              <span class="material-symbols-outlined text-[18px]">lock</span>
+              <span>Verify button disabled</span>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATE 5: VERIFIED (SUCCESS CONFIRMATION)
+       ========================================== -->
+  <section class="space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">5</span>
+        <h2 class="text-base font-semibold text-slate-900">State 5: Verified</h2>
+      </div>
+      <span class="text-xs text-slate-500">Success State · Success Icon + Text "Account verified" · Single CTA "Continue"</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+      <!-- Public Top Bar -->
+      <nav class="bg-[#050A10] border-b border-[#0B1320] px-8 py-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="bg-white px-2.5 py-1 rounded border border-slate-200/40 flex items-center justify-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCILfzUWK8pAQ905VFMUeNbbcil5LcZ6I7RwO8wOL-Qi0yuhxXDl_QDnFtuH1GBXOD0z4S2yBHqHuKiu2IueD_tQY9sAuU3INapg7DMuDPHQab0dpsgqbGynZikdAVrnp3oABXm9aHAYUMKkrsRlcS6xJHP7hfPFMLkSqSFh3jJvCDWpsmziA9QBHg3TPweBheagMaUmgnObkx0URFzZd_XsHucZVKAml0KU7oEwhHyT2tUVhj7_XJWisMKA-x_ZUDFQ1U" alt="A.J. SILICON" class="h-6 w-auto object-contain">
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Workshops</a>
+          <a href="#" class="text-sm font-semibold text-[#93C5FD] hover:underline focus-ring rounded px-1">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Center Card Form Area -->
+      <div class="py-16 px-4 bg-[#F8FAFC] flex justify-center">
+        <div class="w-full max-w-[460px] bg-white rounded-xl border border-emerald-200 p-8 shadow-sm text-center">
+          
+          <!-- Success Icon + Text -->
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 mb-4 border border-emerald-200">
+            <span class="material-symbols-outlined text-[36px]">check_circle</span>
+          </div>
+
+          <h2 class="text-2xl font-bold text-slate-900">Account verified</h2>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed max-w-[340px] mx-auto">
+            Your identity has been confirmed for <strong>c****e@lagoscommercial.ng</strong>. Your student profile and hardware license binding are now active.
+          </p>
+
+          <div class="mt-6 p-4 bg-emerald-50/60 border border-emerald-100 rounded-lg text-left text-xs text-emerald-900 space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-emerald-600">verified</span>
+              <span>2FA Authentication & Hardware Device Bound</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-emerald-600">lock_open</span>
+              <span>Single active session token provisioned</span>
+            </div>
+          </div>
+
+          <!-- Single Primary Action "Continue" -->
+          <div class="mt-8">
+            <button type="button" class="w-full h-11 min-h-[44px] bg-[#050A10] hover:bg-slate-800 text-white font-semibold text-sm rounded-lg flex items-center justify-center gap-2 focus-ring transition-colors shadow">
+              <span>Continue</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATE 6: MOBILE 390PX VIEWPORT (WAITING)
+       ========================================== -->
+  <section class="space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">6</span>
+        <h2 class="text-base font-semibold text-slate-900">State 6: Mobile 390px (Waiting State)</h2>
+      </div>
+      <span class="text-xs text-slate-500">Mobile Device Frame · 390px Fixed Container · 44px Touch Targets · Clean Responsive Layout</span>
+    </div>
+
+    <div class="flex justify-center p-4 bg-slate-200 rounded-xl">
+      <!-- 390px Mobile Viewport Container -->
+      <div class="w-[390px] bg-[#F8FAFC] border-4 border-slate-800 rounded-[36px] overflow-hidden shadow-2xl flex flex-col min-h-[780px]">
+        
+        <!-- Mobile Status Bar -->
+        <div class="bg-[#050A10] text-white px-6 pt-3 pb-2 flex justify-between items-center text-xs font-medium">
+          <span>09:41</span>
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+            <span class="material-symbols-outlined text-[14px]">wifi</span>
+            <span class="material-symbols-outlined text-[14px]">battery_full</span>
+          </div>
+        </div>
+
+        <!-- Mobile Public Header with Logo Plate -->
+        <header class="bg-[#050A10] border-b border-[#0B1320] px-4 py-3 flex items-center justify-between">
+          <div class="bg-white px-2 py-0.5 rounded border border-slate-200/40 flex items-center justify-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx0cvRFKmgbXX-dCQtfpe7DYhCy5GeKR9Hr4E_lxENwE2xknlybiixpR0vfJl4Vh8UcUFLEs_PZFdQz3usMXjlka5g3Hvkp0cnpl9oAzHfg97tMltNyvst6oBrNVZPZV4kcPFhw7Z9mmLOlcCXLQGHY03ZPsOairr_1hAL7NuRQN1BtFT_nF_rgoXQzcNuNi-ebvCEJYxzBoOojTGjBqcByCIofyfUIGXgiDRcmIDLVO2J_QlUDEAsvmwCZf_n0vpJA7Y" alt="A.J. SILICON" class="h-5 w-auto object-contain">
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="#" class="text-xs font-semibold text-[#93C5FD] focus-ring px-1">Log in</a>
+          </div>
+        </header>
+
+        <!-- Mobile Main Form Body -->
+        <main class="flex-1 p-5 flex flex-col justify-between">
+          <div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm space-y-5">
+            
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 mb-2 border border-slate-200">
+                <span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+              </div>
+              <h2 class="text-xl font-bold text-slate-900">Verify your account</h2>
+              <p class="text-xs text-slate-600 mt-1 leading-normal">
+                We sent a 6-digit code to<br>
+                <strong class="text-slate-800">c****e@lagoscommercial.ng</strong><br>
+                and <strong class="text-slate-800">+234 80* *** **47</strong>
+              </p>
+            </div>
+
+            <!-- OTP Input for mobile -->
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 uppercase tracking-wider text-center mb-2.5">
+                Enter 6-digit security code
+              </label>
+              
+              <div class="flex justify-between items-center gap-1 max-w-[310px] mx-auto">
+                <input type="text" maxlength="1" value="7" class="w-10 h-12 text-center text-lg font-bold border-2 border-[#64748B] text-slate-900 rounded-lg bg-white focus-ring">
+                <input type="text" maxlength="1" value="0" class="w-10 h-12 text-center text-lg font-bold border-2 border-[#64748B] text-slate-900 rounded-lg bg-white focus-ring">
+                <input type="text" maxlength="1" value="4" class="w-10 h-12 text-center text-lg font-bold border-2 border-[#64748B] text-slate-900 rounded-lg bg-white focus-ring">
+                <input type="text" maxlength="1" value="" placeholder="-" class="w-10 h-12 text-center text-lg font-bold border-2 border-[#64748B] text-slate-400 rounded-lg bg-white focus-ring">
+                <input type="text" maxlength="1" value="" placeholder="-" class="w-10 h-12 text-center text-lg font-bold border-2 border-slate-300 text-slate-400 rounded-lg bg-white focus-ring">
+                <input type="text" maxlength="1" value="" placeholder="-" class="w-10 h-12 text-center text-lg font-bold border-2 border-slate-300 text-slate-400 rounded-lg bg-white focus-ring">
+              </div>
+              <p class="text-center text-[10px] text-slate-400 mt-1.5">Auto-advance active</p>
+            </div>
+
+            <!-- Resend & Change Links -->
+            <div class="space-y-1.5 text-center text-xs">
+              <div class="flex items-center justify-center gap-1 text-slate-600">
+                <span class="material-symbols-outlined text-[16px] text-slate-400">schedule</span>
+                <span>Resend code in <strong class="font-mono font-medium text-slate-800">0:42</strong></span>
+              </div>
+              <div>
+                <a href="#" class="text-xs font-medium text-blue-700 hover:text-blue-900 underline focus-ring py-1 inline-block">Change email or phone</a>
+              </div>
+            </div>
+
+            <!-- Submit Button (Disabled until 6 digits) -->
+            <button type="button" disabled class="w-full h-11 min-h-[44px] bg-slate-200 text-slate-400 font-semibold text-xs rounded-lg cursor-not-allowed flex items-center justify-center gap-1.5 border border-slate-300">
+              <span class="material-symbols-outlined text-[16px]">verified_user</span>
+              <span>Verify account</span>
+            </button>
+          </div>
+
+          <!-- Bottom Safe Area Indicator -->
+          <div class="pt-4 pb-2 flex justify-center">
+            <div class="w-32 h-1 bg-slate-400 rounded-full"></div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

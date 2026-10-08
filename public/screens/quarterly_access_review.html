@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Audit Portal - Quarterly Access Review</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f2f3ff",
+            "on-primary-fixed": "#141c29",
+            "on-background": "#131b2e",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-primary-container": "#7c8495",
+            "tertiary-container": "#281809",
+            "surface": "#faf8ff",
+            "on-tertiary-container": "#997f6a",
+            "on-tertiary": "#ffffff",
+            "secondary": "#1d4ed8",
+            "tertiary": "#000000",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container": "#eaedff",
+            "surface-tint": "#575f6e",
+            "on-surface-variant": "#45474c",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-secondary-container": "#fffbff",
+            "on-tertiary-fixed": "#281809",
+            "surface-bright": "#faf8ff",
+            "outline": "#75777c",
+            "secondary-fixed": "#dce1ff",
+            "error": "#ba1a1a",
+            "inverse-primary": "#bfc6d9",
+            "primary-fixed": "#dbe2f5",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#283044",
+            "outline-variant": "#c5c6cc",
+            "primary-fixed-dim": "#bfc6d9",
+            "surface-dim": "#d2d9f4",
+            "background": "#faf8ff",
+            "on-tertiary-fixed-variant": "#584231",
+            "secondary-container": "#4069f2",
+            "surface-variant": "#dae2fd",
+            "on-surface": "#131b2e",
+            "on-error-container": "#93000a",
+            "primary-container": "#141c29",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary": "#000000",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#001551",
+            "on-primary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1.5rem",
+            "space-xs": "0.5rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "code-snippet": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A] antialiased min-h-screen flex flex-col">
+<!-- TOP APP BAR (STAFF SHELL) -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-6 bg-[#0B1320] text-white">
+<!-- Brand Anchor Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-white px-3 py-1.5 rounded flex items-center justify-center h-10 border border-slate-200">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdvjkAM8blbsrQA7bT10sD-ChcNNW3XH9J_nqDcSsUgsTPZ0oA7QnYbT7B4cnmzwztZNeZ-_5T7abJO23g4EBLfsMWAOJJrF3qasRYQtSoK0xocd41qJsqT5rDBUSniGj552eGHU3dbPm8EONyidZgsLHn_DsecS_Ih6IypqfC6mjJ7mhpRLjBPXQBJcAajkhTRT0r5xtXDUrE0cTpv6zM4NZq-AM41azOwMoS1cInZyd3MGfqaNrEBQ"/>
+</div>
+<div class="h-6 w-px bg-slate-700 hidden md:block"></div>
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-300 hidden md:inline-block">Staff Administration &amp; Governance</span>
+</div>
+<!-- Center/Right Shell Metadata & User Anchor -->
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2 text-slate-300 text-xs">
+<span class="material-symbols-outlined text-slate-400 text-base">schedule</span>
+<span>14:15 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-4 w-px bg-slate-700 hidden lg:block"></div>
+<div class="text-xs text-slate-200 font-medium">
+        Role: Super Admin | Babatunde Lawal
+      </div>
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-slate-300 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-[#0B1320]" type="button">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center justify-center w-11 h-11 bg-slate-800 border border-slate-700 rounded text-sm font-semibold text-white select-none">
+        BL
+      </div>
+</div>
+</header>
+<!-- APP BODY LAYOUT -->
+<div class="flex flex-1 w-full">
+<!-- SIDEBAR NAVIGATION RAIL -->
+<aside class="w-72 bg-[#0B1320] border-r border-slate-800 flex flex-col justify-between shrink-0 min-h-[calc(100vh-4rem)]">
+<div class="p-4 space-y-6">
+<!-- Scope Section Header -->
+<div class="px-3 pt-2">
+<p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Governance Scope</p>
+</div>
+<!-- Navigation Group -->
+<div class="space-y-1">
+<div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">shield_person</span>
+<span>Staff &amp; Roles</span>
+</div>
+<div class="pl-4 space-y-1">
+<a class="flex items-center gap-3 px-3 min-h-[44px] text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">badge</span>
+<span>Staff Directory</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">manage_accounts</span>
+<span>Roles</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">edit_attributes</span>
+<span>Role Editor</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span>Approvals</span>
+</a>
+<!-- Active Sub-Item -->
+<a class="flex items-center gap-3 px-3 min-h-[44px] text-xs font-semibold text-white bg-slate-900 border-l-2 border-[#1D4ED8] rounded-r transition-colors" href="#">
+<span class="material-symbols-outlined text-sm text-[#93C5FD]">rule_settings</span>
+<span>Quarterly Access Review</span>
+</a>
+</div>
+</div>
+<!-- Secondary Groups -->
+<div class="space-y-1">
+<div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+<span>Audit &amp; Compliance</span>
+</div>
+<div class="pl-4 space-y-1">
+<a class="flex items-center gap-3 px-3 min-h-[44px] text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">history</span>
+<span>Audit Trail &amp; Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">gavel</span>
+<span>NDPA Policy Directives</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Rail Footer Compliance Badge -->
+<div class="p-4 border-t border-slate-800 bg-[#0B1320] space-y-2">
+<div class="flex items-center gap-2 text-[12px] text-slate-400">
+<span class="material-symbols-outlined text-sm text-[#047857]">check_circle</span>
+<span>Access Review Cycle: Q3 2026</span>
+</div>
+<p class="text-[11px] text-slate-500">Super Admin Session Verified</p>
+</div>
+</aside>
+<!-- MAIN CONTENT VIEWPORT -->
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-[1280px] mx-auto space-y-8">
+<!-- BREADCRUMB -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[#475569]">
+<a class="hover:text-[#1D4ED8] hover:underline" href="#">Staff &amp; Governance</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-[#1D4ED8] hover:underline" href="#">Access Control</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-[#0F172A] font-medium">Quarterly Access Review</span>
+</nav>
+<!-- PAGE HEADER -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-2xl font-semibold text-[#0F172A] tracking-tight">Quarterly Access Review</h1>
+<p class="text-sm text-[#475569] mt-1">Review and re-certify active administrative and staff privileges in accordance with institutional governance policy.</p>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-6 min-h-[44px] bg-[#0B1320] text-white text-sm font-medium rounded hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span>Submit review</span>
+</button>
+</div>
+<!-- AUDIT STATE VARIANTS INTERACTIVE SWITCHER -->
+<div class="bg-white border border-[#E2E8F0] p-4 rounded-xl flex flex-wrap items-center justify-between gap-4 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#475569]">layers</span>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#475569]">Audit Board State Variant:</span>
+</div>
+<div class="inline-flex rounded-lg border border-[#64748B] p-0.5 bg-[#F8FAFC]">
+<button class="min-h-[38px] px-4 rounded text-xs font-medium bg-[#0B1320] text-white transition-colors" id="tab-in-progress" onclick="setVariant('in-progress')" type="button">
+              Variant 1: In Progress
+            </button>
+<button class="min-h-[38px] px-4 rounded text-xs font-medium text-[#475569] hover:text-[#0F172A] transition-colors" id="tab-overdue" onclick="setVariant('overdue')" type="button">
+              Variant 2: Overdue Callout
+            </button>
+<button class="min-h-[38px] px-4 rounded text-xs font-medium text-[#475569] hover:text-[#0F172A] transition-colors" id="tab-completed" onclick="setVariant('completed')" type="button">
+              Variant 3: Completed &amp; Signed
+            </button>
+</div>
+</div>
+<!-- VARIANT NOTICES CONTAINER -->
+<div id="notice-container">
+<!-- Overdue Callout Banner (Hidden in default) -->
+<div class="hidden border border-[#B45309] bg-[#FFFBEB] p-4 rounded-xl flex items-start gap-3" id="banner-overdue">
+<span class="material-symbols-outlined text-[#B45309] text-xl mt-0.5">warning</span>
+<div>
+<h2 class="text-sm font-semibold text-[#B45309]">Campaign Overdue: 4 days past deadline (Due 01 Oct 2026). Mandatory institutional compliance escalation triggered.</h2>
+<p class="text-xs text-[#92400E] mt-0.5">Unreviewed administrative privileges risk immediate automated suspension pursuant to A.J. Silicon Internal Security Standard 4.2.</p>
+</div>
+</div>
+<!-- Completed Callout Banner (Hidden in default) -->
+<div class="hidden border border-[#047857] bg-[#ECFDF5] p-4 rounded-xl flex items-start justify-between gap-3" id="banner-completed">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#047857] text-xl mt-0.5">verified</span>
+<div>
+<h2 class="text-sm font-semibold text-[#047857]">Q3 2026 Access Review Completed and Signed by Babatunde Lawal on 05 Oct 2026 • Cryptographic audit stamp recorded</h2>
+<p class="text-xs text-[#065F46] mt-0.5">All 24 staff privileges have been verified. Access privileges are legally recertified through 31 Dec 2026.</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 text-xs font-semibold text-[#1D4ED8] underline hover:text-blue-800 min-h-[44px] px-2" href="#">
+<span>View audit trail</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- 1. CAMPAIGN HEADER METRICS & PROGRESS -->
+<section class="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-6">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-xs">event_note</span>
+                Active Governance Cycle
+              </span>
+<h2 class="text-lg font-semibold text-[#0F172A] mt-2">Q3 2026 Institutional Access Recertification</h2>
+<p class="text-xs text-[#475569] mt-0.5">Due date: 15 Oct 2026</p>
+</div>
+<div class="w-full lg:w-72">
+<div class="flex items-center justify-between text-xs font-medium text-[#0F172A] mb-1.5">
+<span id="progress-text">18 of 24 staff reviewed</span>
+<span class="font-semibold" id="progress-percent">75% completed</span>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+<div class="h-full bg-[#0B1320] rounded-full transition-all duration-300" id="progress-bar-fill" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+<!-- SUMMARY METRICS CARDS -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-[#E2E8F0]">
+<!-- Metric 1 -->
+<div class="p-4 border border-[#E2E8F0] rounded-lg bg-[#F8FAFC]">
+<span class="text-xs font-medium text-[#475569] uppercase tracking-wider">Total Accounts</span>
+<div class="text-2xl font-semibold text-[#0F172A] mt-1">24</div>
+<span class="text-[11px] text-[#475569] mt-0.5 inline-block">Staff &amp; Admin entities</span>
+</div>
+<!-- Metric 2 -->
+<div class="p-4 border border-[#047857]/30 rounded-lg bg-[#ECFDF5]">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-[#047857] uppercase tracking-wider">Roles Recertified</span>
+<span class="material-symbols-outlined text-sm text-[#047857]">check_circle</span>
+</div>
+<div class="text-2xl font-semibold text-[#047857] mt-1" id="metric-recertified">18</div>
+<span class="text-[11px] text-[#047857] mt-0.5 inline-block">Privileges confirmed</span>
+</div>
+<!-- Metric 3 -->
+<div class="p-4 border border-[#B45309]/30 rounded-lg bg-[#FFFBEB]">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-[#B45309] uppercase tracking-wider">Pending</span>
+<span class="material-symbols-outlined text-sm text-[#B45309]">pending</span>
+</div>
+<div class="text-2xl font-semibold text-[#B45309] mt-1" id="metric-pending">6</div>
+<span class="text-[11px] text-[#B45309] mt-0.5 inline-block">Awaiting super admin action</span>
+</div>
+<!-- Metric 4 -->
+<div class="p-4 border border-[#B91C1C]/30 rounded-lg bg-[#FEF2F2]">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-[#B91C1C] uppercase tracking-wider">Revocations Flagged</span>
+<span class="material-symbols-outlined text-sm text-[#B91C1C]">person_remove</span>
+</div>
+<div class="text-2xl font-semibold text-[#B91C1C] mt-1">2</div>
+<span class="text-[11px] text-[#B91C1C] mt-0.5 inline-block">Dormant &amp; obsolete roles</span>
+</div>
+</div>
+</section>
+<!-- 2. MAIN WORKSPACE: TABLE & SUMMARY OF CHANGES PANEL -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- TABLE COLUMN (8 COLS) -->
+<div class="xl:col-span-8 bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<!-- TABLE CONTROLS BAR -->
+<div class="p-4 border-b border-[#E2E8F0] bg-white flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Search Bar -->
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[#64748B] text-lg pointer-events-none">search</span>
+<input class="w-full min-h-[44px] pl-10 pr-3 bg-white border border-[#64748B] rounded text-xs text-[#0F172A] placeholder-[#475569] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" placeholder="Search staff by name, email, or role..." type="text"/>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+<select class="min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-xs text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<option>Department: All Departments</option>
+<option>Governance &amp; Audit</option>
+<option>Cybersecurity Lab</option>
+<option>Instruction &amp; Content</option>
+</select>
+<select class="min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-xs text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<option>Sort: Last Active Date</option>
+<option>Staff Name (A-Z)</option>
+<option>Review Status</option>
+</select>
+</div>
+</div>
+<!-- TABLE ELEMENT -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[12px] uppercase font-medium text-[#475569] tracking-wider">
+<th class="py-3 px-4">Staff Member &amp; ID</th>
+<th class="py-3 px-4">Masked Email</th>
+<th class="py-3 px-4">Assigned Roles</th>
+<th class="py-3 px-4">Last Active</th>
+<th class="py-3 px-4">Review Status</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-xs">
+<!-- ROW 1: Chukwudi Nnamdi -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4">
+<div class="font-semibold text-[#0F172A]">Chukwudi Nnamdi</div>
+<div class="text-[11px] text-[#475569] font-mono mt-0.5">STF-LOS-014</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[#0F172A]" id="email-1">c••••••••@ajsilicon.com</span>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-blue-800" onclick="toggleReveal('email-1', 'c.nnamdi@ajsilicon.com', this)" title="Reveal sensitive email" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-800 border border-slate-300">Security Officer</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-800 border border-slate-300">Instructor</span>
+</div>
+</td>
+<td class="py-4 px-4 text-[#475569]">
+<span>Today, 13:10 WAT</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                        Reviewed
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center justify-end gap-1 action-buttons">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#047857] text-[#047857] hover:bg-[#ECFDF5] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Keep Role" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-[#0F172A] hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Change Role" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEF2F2] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Remove Role" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Ngozi Eze -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4">
+<div class="font-semibold text-[#0F172A]">Ngozi Eze</div>
+<div class="text-[11px] text-[#475569] font-mono mt-0.5">STF-LOS-009</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[#0F172A]" id="email-2">n••••••••@ajsilicon.com</span>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-blue-800" onclick="toggleReveal('email-2', 'n.eze@ajsilicon.com', this)" title="Reveal sensitive email" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-800 border border-slate-300">Question Author</span>
+</td>
+<td class="py-4 px-4 text-[#475569]">
+<span>28 Sep 2026</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                        Reviewed
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center justify-end gap-1 action-buttons">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#047857] text-[#047857] hover:bg-[#ECFDF5] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Keep Role" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-[#0F172A] hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Change Role" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEF2F2] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Remove Role" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Dapo Adeyemi (Revocation flagged) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors bg-red-50/20">
+<td class="py-4 px-4">
+<div class="font-semibold text-[#0F172A]">Dapo Adeyemi</div>
+<div class="text-[11px] text-[#475569] font-mono mt-0.5">STF-LOS-022</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[#0F172A]" id="email-3">d••••••••@ajsilicon.com</span>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-blue-800" onclick="toggleReveal('email-3', 'd.adeyemi@ajsilicon.com', this)" title="Reveal sensitive email" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-red-100 text-red-900 border border-red-300">Instructor (Flagged for Removal)</span>
+</td>
+<td class="py-4 px-4">
+<div class="text-[#B91C1C] font-medium">14 Aug 2026</div>
+<div class="text-[11px] text-[#B91C1C]">52 days inactive</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-xs">person_remove</span>
+                        Role Modification Flagged
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center justify-end gap-1 action-buttons">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-slate-400 hover:text-[#047857] hover:border-[#047857] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Keep Role" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-[#0F172A] hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Change Role" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Confirm Removal" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Zainab Aliyu (Role Change Flagged) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4">
+<div class="font-semibold text-[#0F172A]">Zainab Aliyu</div>
+<div class="text-[11px] text-[#475569] font-mono mt-0.5">STF-LOS-031</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[#0F172A]" id="email-4">z••••••••@ajsilicon.com</span>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-blue-800" onclick="toggleReveal('email-4', 'z.aliyu@ajsilicon.com', this)" title="Reveal sensitive email" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-1.5 text-[11px]">
+<span class="line-through text-[#64748B]">Content Manager</span>
+<span class="material-symbols-outlined text-xs text-[#1D4ED8]">arrow_forward</span>
+<span class="font-semibold text-[#1D4ED8]">Question Author</span>
+</div>
+</td>
+<td class="py-4 px-4 text-[#475569]">
+<span>02 Oct 2026</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-xs">edit_note</span>
+                        Role Modification Flagged
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center justify-end gap-1 action-buttons">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-[#475569] hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Keep Role" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Modify Assignment" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEF2F2] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Remove Role" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Olumide Balogun (Pending) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4">
+<div class="font-semibold text-[#0F172A]">Olumide Balogun</div>
+<div class="text-[11px] text-[#475569] font-mono mt-0.5">STF-LOS-018</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[#0F172A]" id="email-5">o••••••••@ajsilicon.com</span>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-blue-800" onclick="toggleReveal('email-5', 'o.balogun@ajsilicon.com', this)" title="Reveal sensitive email" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-800 border border-slate-300">Instructor</span>
+</td>
+<td class="py-4 px-4 text-[#475569]">
+<span>04 Oct 2026</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-xs">pending</span>
+                        Pending
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center justify-end gap-1 action-buttons">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#047857] text-[#047857] hover:bg-[#ECFDF5] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Keep Role" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-[#0F172A] hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Change Role" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEF2F2] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" title="Remove Role" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- TABLE PAGINATION FOOTER -->
+<div class="p-4 border-t border-[#E2E8F0] bg-[#F8FAFC] flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="text-xs text-[#475569]">Showing 1 to 5 of 24 staff members</span>
+<div class="flex items-center gap-2">
+<button class="min-h-[44px] px-3 border border-[#64748B] rounded text-xs text-[#0F172A] bg-white hover:bg-slate-100 disabled:opacity-50" disabled="" type="button">
+                  Previous
+                </button>
+<div class="flex items-center gap-1">
+<button class="min-h-[44px] min-w-[44px] rounded bg-[#0B1320] text-white text-xs font-medium" type="button">1</button>
+<button class="min-h-[44px] min-w-[44px] rounded border border-slate-300 bg-white text-[#0F172A] text-xs hover:bg-slate-100" type="button">2</button>
+<button class="min-h-[44px] min-w-[44px] rounded border border-slate-300 bg-white text-[#0F172A] text-xs hover:bg-slate-100" type="button">3</button>
+<button class="min-h-[44px] min-w-[44px] rounded border border-slate-300 bg-white text-[#0F172A] text-xs hover:bg-slate-100" type="button">4</button>
+<button class="min-h-[44px] min-w-[44px] rounded border border-slate-300 bg-white text-[#0F172A] text-xs hover:bg-slate-100" type="button">5</button>
+</div>
+<button class="min-h-[44px] px-3 border border-[#64748B] rounded text-xs text-[#0F172A] bg-white hover:bg-slate-100" type="button">
+                  Next
+                </button>
+</div>
+</div>
+</div>
+<!-- SUMMARY OF CHANGES SIDE PANEL (4 COLS) -->
+<div class="xl:col-span-4 bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1D4ED8]">fact_check</span>
+<h3 class="text-sm font-semibold text-[#0F172A]">Changes Pending Submission (3)</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">Action Required</span>
+</div>
+<!-- List of staged decisions -->
+<div class="space-y-3">
+<!-- Change 1 -->
+<div class="p-3 border border-[#B91C1C]/40 bg-[#FEF2F2] rounded-lg">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold text-[#0F172A]">Dapo Adeyemi</span>
+<span class="block text-[11px] text-[#475569] font-mono">STF-LOS-022</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-[#B91C1C]">
+<span class="material-symbols-outlined text-xs">delete</span>
+                    Remove role
+                  </span>
+</div>
+<div class="mt-2 text-xs text-[#0F172A]">
+                  Remove role <strong class="text-[#B91C1C]">"Instructor"</strong>
+</div>
+<div class="mt-1 text-[11px] text-[#B91C1C]">
+                  Justification: Inactive &gt;45 days (52 days elapsed)
+                </div>
+</div>
+<!-- Change 2 -->
+<div class="p-3 border border-[#B45309]/40 bg-[#FFFBEB] rounded-lg">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold text-[#0F172A]">Zainab Aliyu</span>
+<span class="block text-[11px] text-[#475569] font-mono">STF-LOS-031</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-[#B45309]">
+<span class="material-symbols-outlined text-xs">edit</span>
+                    Change role
+                  </span>
+</div>
+<div class="mt-2 text-xs text-[#0F172A]">
+                  Change role from <span class="line-through text-slate-500">"Content Manager"</span> to <strong class="text-[#1D4ED8]">"Question Author"</strong>
+</div>
+<div class="mt-1 text-[11px] text-[#92400E]">
+                  Departmental re-allocation approved by Academic Board
+                </div>
+</div>
+<!-- Change 3 -->
+<div class="p-3 border border-[#047857]/40 bg-[#ECFDF5] rounded-lg">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold text-[#0F172A]">Chukwudi Nnamdi</span>
+<span class="block text-[11px] text-[#475569] font-mono">STF-LOS-014</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-[#047857]">
+<span class="material-symbols-outlined text-xs">verified</span>
+                    Keep privileges
+                  </span>
+</div>
+<div class="mt-2 text-xs text-[#0F172A]">
+                  Keep current privileges re-certified
+                </div>
+<div class="mt-1 text-[11px] text-[#047857]">
+                  Active dual roles: Security Officer &amp; Instructor
+                </div>
+</div>
+</div>
+<!-- MANDATORY CERTIFICATION & ATTESTATION -->
+<div class="pt-4 border-t border-[#E2E8F0] space-y-4">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<div class="flex items-center min-h-[44px]">
+<input class="w-5 h-5 text-[#0B1320] border-[#64748B] rounded focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="certification-check" type="checkbox"/>
+</div>
+<span class="text-xs text-[#0F172A] leading-relaxed pt-3">
+                  I certify as Super Admin that all privilege attestations conform to NDPA and institutional governance directives.
+                </span>
+</label>
+<!-- SUBMIT BUTTON -->
+<button class="w-full min-h-[44px] flex items-center justify-center gap-2 px-6 bg-[#0B1320] text-white text-sm font-medium rounded hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-colors disabled:opacity-50" id="panel-submit-button" type="button">
+<span class="material-symbols-outlined text-lg">verified</span>
+<span>Submit review</span>
+</button>
+<p class="text-[11px] text-[#475569] text-center">
+                Sign-off recorded under Super Admin: <strong>Babatunde Lawal</strong>
+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- INSTITUTIONAL CLOSURE FOOTER -->
+<footer class="w-full py-6 px-8 border-t border-slate-800 bg-[#0B1320] text-slate-400 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-3">
+<span class="font-medium text-slate-300">A.J. Silicon Audit Portal</span>
+<span class="text-slate-600">|</span>
+<span>© 2026 A.J. Silicon Information Security Training &amp; Governance Ltd. All Sessions Digitally Watermarked.</span>
+</div>
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-white underline transition-colors" href="#">Zero-Trust Protocol</a>
+<a class="hover:text-white underline transition-colors" href="#">Automated Verification Gateway</a>
+<a class="hover:text-white underline transition-colors" href="#">Forensic Integrity Policy</a>
+<a class="hover:text-white underline transition-colors" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- INTERACTIVE LOGIC: REVEAL TOGGLES & STATE VARIANTS -->
+<script>
+    function toggleReveal(id, fullEmail, btn) {
+      const el = document.getElementById(id);
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (el.getAttribute('data-revealed') === 'true') {
+        el.innerText = fullEmail.slice(0, 1) + '••••••••' + fullEmail.slice(fullEmail.indexOf('@'));
+        el.setAttribute('data-revealed', 'false');
+        icon.innerText = 'visibility';
+        btn.setAttribute('title', 'Reveal sensitive email');
+      } else {
+        el.innerText = fullEmail;
+        el.setAttribute('data-revealed', 'true');
+        icon.innerText = 'visibility_off';
+        btn.setAttribute('title', 'Mask email');
+      }
+    }
+
+    function setVariant(state) {
+      // Buttons state styles
+      const tabs = ['in-progress', 'overdue', 'completed'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        if (t === state) {
+          btn.className = 'min-h-[38px] px-4 rounded text-xs font-medium bg-[#0B1320] text-white transition-colors';
+        } else {
+          btn.className = 'min-h-[38px] px-4 rounded text-xs font-medium text-[#475569] hover:text-[#0F172A] transition-colors';
+        }
+      });
+
+      const bannerOverdue = document.getElementById('banner-overdue');
+      const bannerCompleted = document.getElementById('banner-completed');
+      const progressBar = document.getElementById('progress-bar-fill');
+      const progressText = document.getElementById('progress-text');
+      const progressPercent = document.getElementById('progress-percent');
+      const metricRecertified = document.getElementById('metric-recertified');
+      const metricPending = document.getElementById('metric-pending');
+      const submitBtn = document.getElementById('panel-submit-button');
+      const certCheck = document.getElementById('certification-check');
+      const actionButtons = document.querySelectorAll('.action-buttons button');
+
+      if (state === 'in-progress') {
+        bannerOverdue.classList.add('hidden');
+        bannerCompleted.classList.add('hidden');
+        progressBar.style.width = '75%';
+        progressText.innerText = '18 of 24 staff reviewed';
+        progressPercent.innerText = '75% completed';
+        metricRecertified.innerText = '18';
+        metricPending.innerText = '6';
+        submitBtn.disabled = false;
+        certCheck.disabled = false;
+        actionButtons.forEach(b => {
+          b.disabled = false;
+          b.classList.remove('opacity-40', 'cursor-not-allowed');
+        });
+      } else if (state === 'overdue') {
+        bannerOverdue.classList.remove('hidden');
+        bannerCompleted.classList.add('hidden');
+        progressBar.style.width = '75%';
+        progressText.innerText = '18 of 24 staff reviewed';
+        progressPercent.innerText = '75% completed';
+        metricRecertified.innerText = '18';
+        metricPending.innerText = '6';
+        submitBtn.disabled = false;
+        certCheck.disabled = false;
+        actionButtons.forEach(b => {
+          b.disabled = false;
+          b.classList.remove('opacity-40', 'cursor-not-allowed');
+        });
+      } else if (state === 'completed') {
+        bannerOverdue.classList.add('hidden');
+        bannerCompleted.classList.remove('hidden');
+        progressBar.style.width = '100%';
+        progressText.innerText = '24 of 24 staff reviewed';
+        progressPercent.innerText = '100% completed';
+        metricRecertified.innerText = '24';
+        metricPending.innerText = '0';
+        submitBtn.disabled = true;
+        certCheck.checked = true;
+        certCheck.disabled = true;
+        actionButtons.forEach(b => {
+          b.disabled = true;
+          b.classList.add('opacity-40', 'cursor-not-allowed');
+        });
+      }
+    }
+  </script>
+</body></html>

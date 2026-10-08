@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>29 Programme home — Specification Board | A.J. Silicon Academy</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#82f5c1",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#0e1c2f",
+            "surface-variant": "#d5e3fc",
+            "error": "#ba1a1a",
+            "surface-tint": "#525f75",
+            "outline": "#75777d",
+            "secondary": "#006c4a",
+            "on-surface": "#0d1c2e",
+            "secondary-fixed-dim": "#68dba9",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#bac7e1",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "primary": "#000000",
+            "surface-dim": "#ccdbf3",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-container": "#c76c00",
+            "surface-bright": "#f8f9ff",
+            "outline-variant": "#c5c6cd",
+            "on-secondary-fixed": "#002114",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#44474c",
+            "on-primary-container": "#77849c",
+            "primary-fixed": "#d6e3fe",
+            "surface-container": "#e6eeff",
+            "on-error": "#ffffff",
+            "on-background": "#0d1c2e",
+            "surface-container-highest": "#d5e3fc",
+            "tertiary-container": "#2f1500",
+            "on-primary-fixed-variant": "#3a475c",
+            "surface": "#f8f9ff",
+            "inverse-surface": "#233144",
+            "on-secondary-fixed-variant": "#005137",
+            "surface-container-high": "#dce9ff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#000000",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary-fixed": "#2f1500",
+            "primary-container": "#0e1c2f",
+            "on-secondary-container": "#00714e",
+            "background": "#f8f9ff",
+            "secondary-fixed": "#85f8c4",
+            "tertiary-fixed": "#ffdcc3",
+            "tertiary-fixed-dim": "#ffb77d",
+            "inverse-primary": "#bac7e1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem",
+            "gutter-mobile": "1rem",
+            "gutter": "2rem",
+            "margin-mobile": "1.25rem",
+            "margin": "3rem",
+            "space-xl": "3rem",
+            "space-lg": "2rem",
+            "space-xs": "0.375rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "label-badge": ["Inter"],
+            "display-hero-mobile": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "title-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "telemetry-code": ["JetBrains Mono"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-hero": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-badge": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "telemetry-code": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 font-headline-sm antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen pb-24">
+<!-- ========================================== -->
+<!-- SPECIFICATION BOARD HEADER & METRICS BAR   -->
+<!-- ========================================== -->
+<header class="w-full bg-[#0B1320] border-b border-slate-800 text-white sticky top-0 z-50 shadow-md">
+<div class="max-w-[1720px] mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="bg-white px-3 py-1.5 rounded-lg flex items-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYimBqOdBuLpB5U7fmJhLn9a4tH07WrE1IpaaV1hP_qapRzHgyKvIiIW3sn27HqJt3l37CkvuzXCRRogHYuQqLSNO8m1eaBfLjVserMyT9qKAxmHyQ5fBzJWZNWnVNx7ByWpPDkOKSk4xo1Dzg4q_Ql1VAje2rIKSXA7utrS-o-BF0uNfurUBG9kN5YukxnW47bZZ4GV77OI3gTEzqrAHINfUn9t9lpKYJmNpuYAWsdVx_jESw4IV5glOlxer2Q4Zs3EE"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code text-blue-300 font-semibold uppercase tracking-wider">DOC-REF: AJ-SPEC-29</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="font-label-badge text-label-badge text-slate-300">SYSTEM VERIFIED: PRODUCTION READY</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-semibold text-white tracking-tight">29 Programme home · Specification Board</h1>
+</div>
+</div>
+<!-- Specification Tokens Summary -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="px-3 py-1.5 rounded bg-slate-800/80 border border-slate-700 font-telemetry-code text-telemetry-code text-slate-300">
+<span class="text-slate-400">Auth:</span> Chinedu Eze (CE) · CISA Cohort 14
+        </div>
+<div class="px-3 py-1.5 rounded bg-slate-800/80 border border-slate-700 font-telemetry-code text-telemetry-code text-slate-300">
+<span class="text-slate-400">Standard:</span> ISO/IEC 27001 &amp; SOC 2 Type II
+        </div>
+<div class="px-3 py-1.5 rounded bg-blue-950/80 border border-blue-800 font-telemetry-code text-telemetry-code text-blue-200">
+          4 Distinct Canvas States
+        </div>
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- MAIN SPECIFICATION BOARD WORKSPACE         -->
+<!-- ========================================== -->
+<main class="max-w-[1720px] mx-auto px-6 py-8 space-y-16">
+<!-- BOARD OVERVIEW CALLOUT -->
+<div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-1">
+<div class="font-label-badge text-label-badge text-blue-700 uppercase tracking-widest font-semibold">Institutional Blueprint &amp; Visual Verification</div>
+<p class="font-body-md text-body-md text-slate-700 max-w-4xl">
+          Comprehensive production implementation of the A.J. Silicon Student Application Shell and Programme Home interface. This specification board renders all four core platform conditions: 
+          <strong>Default Active Enrolment</strong>, <strong>Sequential Lock Enforcement</strong>, <strong>100% Programme Completion</strong>, and the <strong>Mobile 390px Viewport</strong>.
+        </p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="px-3 py-1.5 rounded border border-emerald-300 bg-emerald-50 text-emerald-800 font-label-badge text-label-badge flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span> 44px Min Touch Targets Locked
+        </span>
+</div>
+</div>
+<!-- ---------------------------------------------------- -->
+<!-- VARIANT 1: DEFAULT STATE (Desktop 1440px Container) -->
+<!-- ---------------------------------------------------- -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded-full bg-[#0B1320] text-white font-telemetry-code text-telemetry-code font-bold">01</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-slate-900">Variant 1: Default Enrolment State (Desktop 1440px Canvas)</h2>
+<p class="font-body-sm text-body-sm text-slate-500">Active progress at 35% (7 of 20 lessons completed). Enrolled in CISA Exam Prep, Cohort 14.</p>
+</div>
+</div>
+<span class="font-telemetry-code text-telemetry-code px-2.5 py-1 bg-slate-200 text-slate-700 rounded font-medium">Viewport: 1440px × 880px</span>
+</div>
+<!-- Application Frame Container -->
+<div class="w-full bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden flex flex-col min-h-[820px]">
+<!-- STUDENT APPLICATION TOP BAR -->
+<header class="w-full bg-[#0B1320] h-16 px-6 flex items-center justify-between text-white shrink-0 border-b border-slate-800">
+<div class="flex items-center gap-6">
+<!-- White rounded contrast plate for official logo -->
+<div class="bg-white px-3 py-1.5 rounded-lg flex items-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCDEIjYtEcNjaAA-aBEyIrzRXaoUhA-VKZbF7UYebcp5qIpL9eHDRlo8_Nj4DeMMxck_LrPAAivkSO53A6Urywa21qmRSSuznMpNZvoz9yynXWdvoL8lAl-n49_Dy8PeVzQrxqXMHccvmmVbWuHQ28uKsZo2hcE5T6mHaftYxdkskWc36b5XpXS4A-8uoW62joQetEqeYi4C60WWYogQEhZqS1b5CHezSugUYw-0espaYMcWAveoGovN8By_r43uMQj9Q"/>
+</div>
+<div class="h-6 w-px bg-slate-700"></div>
+<span class="font-title-md text-title-md font-semibold text-slate-100 tracking-tight">Student Portal</span>
+</div>
+<!-- Signed-in student indicator (CE - Chinedu Eze) -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors cursor-pointer h-11 px-2">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="font-body-sm text-body-sm hidden sm:inline">Assurance Helpdesk</span>
+</div>
+<div class="h-6 w-px bg-slate-700"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<div class="font-title-md text-title-md font-semibold text-white leading-tight">Chinedu Eze</div>
+<div class="font-label-badge text-label-badge text-slate-400">CISA Cohort 14 · Candidate</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-blue-900 border border-blue-400 text-white flex items-center justify-center font-telemetry-code text-telemetry-code font-bold shadow-inner">
+                CE
+              </div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY (Sidebar + Workspace Canvas) -->
+<div class="flex flex-1 w-full bg-[#F8FAFC]">
+<!-- LEFT NAVIGATION SIDEBAR -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] flex flex-col justify-between p-4 shrink-0">
+<div class="space-y-6">
+<!-- Enrolled Program Card in Sidebar -->
+<div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
+<div class="font-label-badge text-label-badge text-blue-700 font-semibold uppercase tracking-wider">Active Enrolment</div>
+<div class="font-title-md text-title-md font-semibold text-slate-900 mt-1">CISA Exam Prep</div>
+<div class="font-body-sm text-body-sm text-slate-500 mt-0.5">Cohort 14 (12 Oct – 18 Dec 2026, virtual)</div>
+</div>
+<!-- Nav items with strict 44px min height touch target -->
+<nav class="space-y-1">
+<a class="h-11 px-3 flex items-center gap-3 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-body-md text-body-md transition-colors" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- ACTIVE NAV ITEM -->
+<a class="h-11 px-3 flex items-center gap-3 rounded-lg bg-blue-50 text-blue-700 font-title-md text-title-md border-l-4 border-[#1D4ED8] transition-colors" href="#programme-home">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-body-md text-body-md transition-colors" href="#practice-exams">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-body-md text-body-md transition-colors" href="#extend-access">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-body-md text-body-md transition-colors" href="#settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sign Out -->
+<div class="pt-4 border-t border-slate-200">
+<button class="h-11 w-full px-3 flex items-center gap-3 rounded-lg text-slate-600 hover:bg-red-50 hover:text-red-700 font-body-md text-body-md transition-colors text-left">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+</aside>
+<!-- MAIN PROGRAMME CANVAS -->
+<div class="flex-1 p-8 space-y-8 overflow-y-auto">
+<!-- PROGRAMME HEADER BLOCK -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm space-y-6">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 font-label-badge text-label-badge font-semibold uppercase">ISACA Accredited Curriculum</span>
+<span class="font-telemetry-code text-telemetry-code text-slate-400">ID: CISA-2026-C14</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-semibold text-slate-900 mt-2">CISA Exam Prep</h1>
+<p class="font-body-md text-body-md text-slate-600 mt-1">Cohort 14 · Virtual Track (12 Oct 2026 – 18 Dec 2026) · West Africa Time (WAT)</p>
+</div>
+<!-- Overall Progress Meter Box -->
+<div class="bg-slate-50 border border-slate-200 rounded-lg p-4 min-w-[280px]">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-sm text-body-sm font-medium text-slate-700">Programme Progress</span>
+<span class="font-title-md text-title-md font-bold text-blue-700">35%</span>
+</div>
+<div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full rounded-full transition-all duration-300" style="width: 35%;"></div>
+</div>
+<div class="flex items-center justify-between mt-2 font-telemetry-code text-telemetry-code text-slate-500">
+<span>7 of 20 lessons completed</span>
+<span>13 remaining</span>
+</div>
+</div>
+</div>
+<!-- TAB NAVIGATION BAR (44px min touch target) -->
+<div class="border-b border-slate-200 flex items-center gap-6 overflow-x-auto">
+<button class="h-11 px-1 border-b-2 border-[#1D4ED8] text-[#1D4ED8] font-title-md text-title-md flex items-center gap-2 whitespace-nowrap">
+<span>Curriculum</span>
+</button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-title-md text-title-md flex items-center gap-2 whitespace-nowrap">
+<span>Live classes</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-label-badge text-label-badge">3 upcoming</span>
+</button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-title-md text-title-md flex items-center gap-2 whitespace-nowrap">
+<span>Recordings</span>
+<span class="font-telemetry-code text-telemetry-code text-slate-400">(12 available)</span>
+</button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-title-md text-title-md flex items-center gap-2 whitespace-nowrap">
+<span>Practice</span>
+</button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-title-md text-title-md flex items-center gap-2 whitespace-nowrap">
+<span>Resources</span>
+</button>
+</div>
+</div>
+<!-- TWO-COLUMN WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: CURRICULUM LIST (8 cols) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- MODULE 1: Domain 1 (Completed 100%) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-semibold text-slate-900">Module 1: Domain 1 — Information System Auditing Process</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-500 mt-0.5">Audit management, evidence standards, methodology and fieldwork validation</p>
+</div>
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-[#ECFDF5] border border-emerald-200 text-[#047857] font-label-badge text-label-badge shrink-0">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed · 100%</span>
+</div>
+</div>
+<!-- Module 1 Lessons -->
+<div class="divide-y divide-slate-100">
+<!-- Lesson 1 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-900">Lesson 1: Audit Standards, Guidelines &amp; Code of Professional Ethics</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">45 mins · Lecture Video &amp; Syllabus Notes</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-[#047857] font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed</span>
+</span>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 hover:bg-slate-50 font-body-sm text-body-sm">Review</button>
+</div>
+</div>
+<!-- Lesson 2 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-900">Lesson 2: Business Processes &amp; Risk Assessment</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">60 mins · Interactive Slide Deck</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-[#047857] font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed</span>
+</span>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 hover:bg-slate-50 font-body-sm text-body-sm">Review</button>
+</div>
+</div>
+<!-- Lesson 3 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-900">Lesson 3: Audit Execution &amp; Evidence Collection</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">50 mins · Lecture Video</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-[#047857] font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed</span>
+</span>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 hover:bg-slate-50 font-body-sm text-body-sm">Review</button>
+</div>
+</div>
+<!-- Lesson 4 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-900">Lesson 4: Domain 1 Diagnostic Knowledge Check</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">30 mins · 25 Drill Questions</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-[#047857] font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed</span>
+</span>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 hover:bg-slate-50 font-body-sm text-body-sm">Review</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE 2: Domain 2 (In Progress · 35%) -->
+<div class="bg-white border-2 border-blue-200 rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 bg-blue-50/50 border-b border-blue-100 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-semibold text-slate-900">Module 2: Domain 2 — Governance &amp; Management of IT</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-600 mt-0.5">Strategic alignment, IT structure, risk management, and governance assurance</p>
+</div>
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-amber-50 border border-amber-200 text-[#B45309] font-label-badge text-label-badge shrink-0">
+<span class="material-symbols-outlined text-[16px]">timelapse</span>
+<span>In Progress · 35%</span>
+</div>
+</div>
+<div class="divide-y divide-slate-100">
+<!-- Lesson 1 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-900">Lesson 1: IT Governance Frameworks &amp; COBIT 2019 Alignment</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">55 mins · Video</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-[#047857] font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed</span>
+</span>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 hover:bg-slate-50 font-body-sm text-body-sm">Review</button>
+</div>
+</div>
+<!-- Lesson 2 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-900">Lesson 2: Enterprise Risk Appetite &amp; Strategic Alignment</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">50 mins · Slide Workpaper</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-[#047857] font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed</span>
+</span>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 hover:bg-slate-50 font-body-sm text-body-sm">Review</button>
+</div>
+</div>
+<!-- Lesson 3 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-900">Lesson 3: Information Security Governance Policies</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">65 mins · Video</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-[#047857] font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Completed</span>
+</span>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 hover:bg-slate-50 font-body-sm text-body-sm">Review</button>
+</div>
+</div>
+<!-- Lesson 4: CURRENT IN PROGRESS -->
+<div class="p-4 flex items-center justify-between bg-blue-50/40 border-l-4 border-[#1D4ED8]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-blue-100 text-blue-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<div>
+<div class="font-title-md text-title-md font-semibold text-slate-900">Lesson 4: Resource Management &amp; IT Assurance</div>
+<div class="font-telemetry-code text-telemetry-code text-blue-700 font-medium">50 mins · Video · 22 mins remaining</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5 text-blue-700 font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+<span>In progress</span>
+</span>
+<button class="h-11 px-5 bg-[#0B1320] text-white rounded font-body-md text-body-md font-medium hover:bg-slate-900 flex items-center gap-2 shadow-sm transition-all focus:ring-2 focus:ring-blue-600 focus:outline-none">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Resume</span>
+</button>
+</div>
+</div>
+<!-- Lesson 5 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[18px]">quiz</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-700">Lesson 5: Domain 2 Review Drill &amp; Case Studies</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">45 mins · Quiz</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-slate-500 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+<span>Not started</span>
+</span>
+<button class="h-11 px-4 border border-slate-200 rounded text-slate-400 bg-slate-50 font-body-sm text-body-sm cursor-not-allowed">Start drill</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE 3: Domain 3 (Not Started) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div>
+<div class="font-title-md text-title-md font-semibold text-slate-800">Module 3: Domain 3 — Information Systems Acquisition, Development &amp; Implementation</div>
+<p class="font-body-sm text-body-sm text-slate-500 mt-0.5">Project governance, SDLC security reviews, and migration verification</p>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 border border-slate-200 text-slate-600 font-label-badge text-label-badge shrink-0">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+<span>Not started · 0%</span>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-700">Lesson 1: Project Governance &amp; Business Realization</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">55 mins · Video</div>
+</div>
+</div>
+<span class="flex items-center gap-1.5 text-slate-500 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+<span>Not started</span>
+</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: STICKY SIDE PANEL (4 cols) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- NEXT LIVE CLASS CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-700 text-[20px]">event</span>
+<span class="font-title-md text-title-md font-semibold text-slate-900">Next Live Class</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-amber-50 border border-amber-200 text-amber-800 font-label-badge text-label-badge font-semibold">Starts in 2 days</span>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="font-telemetry-code text-telemetry-code text-slate-500">Saturday, 24 Oct 2026 · 10:00 AM WAT</div>
+<div class="font-title-md text-title-md font-semibold text-slate-900">IT Governance Controls &amp; Risk Appetite Case Study</div>
+<div class="font-body-sm text-body-sm text-slate-600 flex items-center gap-1.5 pt-1">
+<span class="material-symbols-outlined text-[16px] text-slate-400">person</span>
+<span>Lead Instructor: Babatunde Adeleke, CISA, CRISC</span>
+</div>
+</div>
+<div class="pt-2">
+<button class="h-11 w-full bg-[#0B1320] text-white rounded font-body-md text-body-md font-medium hover:bg-slate-900 flex items-center justify-center gap-2 shadow-sm transition-all focus:ring-2 focus:ring-blue-600">
+<span class="material-symbols-outlined text-[18px]">video_call</span>
+<span>Join class (Opens 09:45 WAT)</span>
+</button>
+<p class="font-telemetry-code text-telemetry-code text-center text-slate-400 mt-2">Classroom room unlocks 15 mins before session</p>
+</div>
+</div>
+<!-- LICENCE METER CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-semibold text-slate-900">Enrolment Licence</span>
+<span class="px-2 py-0.5 rounded bg-[#ECFDF5] border border-emerald-200 text-[#047857] font-label-badge text-label-badge font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Active</span>
+</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-slate-600">62 of 120 days used</span>
+<span class="font-telemetry-code text-telemetry-code text-slate-800 font-semibold">58 days left</span>
+</div>
+<!-- Licence Meter Bar (51.6%) -->
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-slate-800 h-full rounded-full" style="width: 51.6%;"></div>
+</div>
+<div class="flex items-center justify-between font-telemetry-code text-telemetry-code text-slate-500">
+<span>Valid until 17 Apr 2027</span>
+<span>Standard Institutional</span>
+</div>
+</div>
+<button class="h-11 w-full bg-white border border-[#CBD5E1] text-[#0F172A] rounded font-body-md text-body-md font-medium hover:border-slate-400 hover:bg-slate-50 flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">autorenew</span>
+<span>Extend access</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ---------------------------------------------------- -->
+<!-- VARIANT 2: LOCKED LESSONS (Sequential Enforcement)  -->
+<!-- ---------------------------------------------------- -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded-full bg-blue-700 text-white font-telemetry-code text-telemetry-code font-bold">02</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-slate-900">Variant 2: Locked Lessons State (Prerequisite Enforcement)</h2>
+<p class="font-body-sm text-body-sm text-slate-500">Demonstrates strict sequential compliance policy preventing drill unlocking prior to prerequisite completion.</p>
+</div>
+</div>
+<span class="font-telemetry-code text-telemetry-code px-2.5 py-1 bg-blue-100 text-blue-800 rounded font-medium">State: Gated / Prerequisite Lock</span>
+</div>
+<div class="w-full bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Reusable mini top bar for state context -->
+<div class="w-full bg-[#0B1320] h-12 px-6 flex items-center justify-between text-white shrink-0">
+<div class="flex items-center gap-3">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-slate-400">Context:</span>
+<span class="font-body-sm text-body-sm text-white font-medium">Sequential Curriculum Enforcement Simulation · Student View</span>
+</div>
+<span class="font-telemetry-code text-telemetry-code text-blue-300">Policy: CISA-SEQ-ENFORCE-V2</span>
+</div>
+<div class="p-8 space-y-6 bg-[#F8FAFC]">
+<!-- INFO NOTIFICATION BANNER -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[22px] shrink-0 mt-0.5">lock_clock</span>
+<div class="space-y-1">
+<div class="font-title-md text-title-md font-semibold text-blue-900">Sequential Curriculum Enforcement Active</div>
+<p class="font-body-md text-body-md text-blue-900 leading-normal">
+                Sequential Curriculum Enforcement: Complete the previous lesson to unlock subsequent lecture videos, slide workpapers, and domain review drills.
+              </p>
+</div>
+</div>
+<!-- CURRICULUM DRILL LIST WITH GATED ROWS -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 space-y-4">
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm divide-y divide-slate-100">
+<div class="p-4 bg-slate-50 flex items-center justify-between">
+<span class="font-title-md text-title-md font-semibold text-slate-900">Module 2: Domain 2 — Governance &amp; Management of IT</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-amber-50 text-[#B45309] border border-amber-200">In Progress</span>
+</div>
+<!-- Unlocked Active Lesson -->
+<div class="p-4 flex items-center justify-between bg-blue-50/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-blue-100 text-blue-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</div>
+<div>
+<div class="font-title-md text-title-md font-medium text-slate-900">Lesson 4: Resource Management &amp; IT Assurance</div>
+<div class="font-telemetry-code text-telemetry-code text-blue-700">50 mins · Current Requirement</div>
+</div>
+</div>
+<button class="h-11 px-5 bg-[#0B1320] text-white rounded font-body-md text-body-md font-medium hover:bg-slate-900">Resume Lesson</button>
+</div>
+<!-- LOCKED LESSON 5 -->
+<div class="p-4 bg-slate-50/70 border-l-4 border-slate-300">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-200 text-slate-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-medium text-slate-500">Lesson 5: Domain 2 Review Drill &amp; Case Studies</span>
+<span class="px-2 py-0.5 rounded bg-slate-200 text-slate-700 font-label-badge text-label-badge">Locked</span>
+</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">45 mins · 30 Practice Drill Items</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-slate-500 font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Locked</span>
+</span>
+<button class="h-11 px-4 bg-slate-100 border border-slate-200 text-slate-400 rounded font-body-md text-body-md cursor-not-allowed flex items-center gap-2" disabled="">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Start Drill</span>
+</button>
+</div>
+</div>
+<!-- Explicit Tooltip / Prerequisite Callout -->
+<div class="mt-3 ml-11 p-2.5 rounded bg-slate-100 border border-slate-200 text-slate-700 font-body-sm text-body-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">info</span>
+<span>Complete <strong>Lesson 4: Resource Management &amp; IT Assurance</strong> to unlock this drill.</span>
+</div>
+</div>
+<!-- LOCKED MODULE 3 LESSON 1 -->
+<div class="p-4 bg-slate-50/70 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-200 text-slate-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-medium text-slate-500">Module 3 · Lesson 1: Project Governance &amp; Business Realization</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-400">55 mins · Prerequisites required</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-slate-500 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Locked</span>
+</span>
+<button class="h-11 px-4 bg-slate-100 border border-slate-200 text-slate-400 rounded font-body-md text-body-md cursor-not-allowed" disabled="">Access</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL CONTINUITY -->
+<div class="lg:col-span-4 space-y-4">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-3">
+<span class="font-label-badge text-label-badge text-slate-500 uppercase">Sequential Rule Matrix</span>
+<ul class="font-body-sm text-body-sm text-slate-600 space-y-2">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-blue-700 text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span>Lectures must reach 95% playtime before completion flags trigger.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-blue-700 text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span>Knowledge drill requires ≥75% grade score to open next domain.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ---------------------------------------------------- -->
+<!-- VARIANT 3: COMPLETED PROGRAMME (100% Certificate)   -->
+<!-- ---------------------------------------------------- -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-700 text-white font-telemetry-code text-telemetry-code font-bold">03</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-slate-900">Variant 3: Completed Programme State (100% Readiness)</h2>
+<p class="font-body-sm text-body-sm text-slate-500">Student has cleared all 5 CISA domains. Certificate generation and exam simulator unlocked.</p>
+</div>
+</div>
+<span class="font-telemetry-code text-telemetry-code px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded font-medium">Progress: 100% Verified</span>
+</div>
+<div class="w-full bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Application Top Bar -->
+<header class="w-full bg-[#0B1320] h-14 px-6 flex items-center justify-between text-white shrink-0">
+<div class="flex items-center gap-4">
+<div class="bg-white px-2.5 py-1 rounded flex items-center">
+<img alt="A.J. Silicon Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1TKL1fWZMx0Ml4LXUOroEewvAuNoHNiiZONm2M_qOPK4v1CMpHRgIpSce0j19TReFcrX3N7JmwTP62zqGT-vrtLj1a-QX7sFL6HufvxdOR8wcSI_0bXUyWkmVsC1jqg9YVX1d7c7nQ_lciCo0Ku6Bw7-3zQSeT5zehhb1DwbdpCChcLI7KmNUZAAYFexcK2GaeMMGMba6wWNmXk7r2_sPK9Vb7U5yOdCwhhnmLdIRRyZjAudQq5DuxRKZjCloaLuftaA"/>
+</div>
+<span class="font-title-md text-title-md font-semibold text-slate-200">CISA Exam Prep · Final Candidate Record</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code text-emerald-400">CERT-ID: AJ-CISA-8842-NGA</span>
+</div>
+</header>
+<div class="p-8 space-y-6 bg-[#F8FAFC]">
+<!-- FULL COMPLETION HERO CALLOUT -->
+<div class="bg-[#ECFDF5] border border-emerald-300 rounded-xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#047857] text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-title-md text-title-md font-semibold text-[#047857]">Curriculum Complete: CISA Exam Readiness Achieved</span>
+</div>
+<p class="font-body-md text-body-md text-slate-700 max-w-3xl">
+                You have reviewed all 5 ISACA CISA Domains and passed all module quizzes. Your completion certificate has been generated and sealed cryptographically.
+              </p>
+<div class="flex items-center gap-4 pt-1 font-telemetry-code text-telemetry-code text-emerald-900">
+<span>Verified: 20 of 20 lessons completed</span>
+<span>·</span>
+<span>Audit Readiness Score: 94.2%</span>
+</div>
+</div>
+<!-- Action Buttons with 44px min height -->
+<div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+<button class="h-11 px-5 bg-[#0B1320] text-white rounded font-body-md text-body-md font-semibold hover:bg-slate-900 flex items-center justify-center gap-2 shadow-sm transition-all focus:ring-2 focus:ring-blue-600">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>View Certificate</span>
+</button>
+<button class="h-11 px-5 bg-white border border-[#CBD5E1] text-[#0F172A] rounded font-body-md text-body-md font-semibold hover:bg-slate-50 flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+<span>Launch Full Exam Simulator</span>
+</button>
+</div>
+</div>
+<!-- TWO-COLUMN WORKSPACE (COMPLETED STATE) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT 8 COLS: COMPLETED MODULE BREAKDOWN -->
+<div class="lg:col-span-8 space-y-4">
+<!-- Module 1 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#047857] text-[22px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-title-md text-title-md font-semibold text-slate-900">Domain 1: Information System Auditing Process</div>
+<div class="font-body-sm text-body-sm text-slate-500">4 of 4 lessons complete · Diagnostic score: 96%</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-[#ECFDF5] border border-emerald-200 text-[#047857] font-label-badge text-label-badge font-semibold">100% Passed</span>
+</div>
+<!-- Module 2 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#047857] text-[22px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-title-md text-title-md font-semibold text-slate-900">Domain 2: Governance &amp; Management of IT</div>
+<div class="font-body-sm text-body-sm text-slate-500">5 of 5 lessons complete · Diagnostic score: 91%</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-[#ECFDF5] border border-emerald-200 text-[#047857] font-label-badge text-label-badge font-semibold">100% Passed</span>
+</div>
+<!-- Module 3 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#047857] text-[22px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-title-md text-title-md font-semibold text-slate-900">Domain 3: Information Systems Acquisition, Development &amp; Implementation</div>
+<div class="font-body-sm text-body-sm text-slate-500">4 of 4 lessons complete · Diagnostic score: 94%</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-[#ECFDF5] border border-emerald-200 text-[#047857] font-label-badge text-label-badge font-semibold">100% Passed</span>
+</div>
+</div>
+<!-- RIGHT 4 COLS: POST-GRADUATION STATS -->
+<div class="lg:col-span-4 space-y-4">
+<!-- Concluded Class card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-2">
+<div class="font-title-md text-title-md font-semibold text-slate-900">Cohort 14 Status</div>
+<p class="font-body-sm text-body-sm text-slate-600">Cohort 14 Concluded · Revision Recordings Available in library.</p>
+<button class="h-11 w-full mt-2 border border-slate-300 bg-white text-slate-700 rounded font-body-md text-body-md font-medium hover:bg-slate-50 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_lesson</span>
+<span>Open Class Archive</span>
+</button>
+</div>
+<!-- Access remaining -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-semibold text-slate-900">Simulator Licence</span>
+<span class="font-telemetry-code text-telemetry-code text-slate-500">12 days left</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 90%;"></div>
+</div>
+<div class="font-body-sm text-body-sm text-slate-600">108 of 120 days used. Valid until 17 Apr 2027.</div>
+<button class="h-11 w-full bg-white border border-[#CBD5E1] text-[#0F172A] rounded font-body-md text-body-md font-medium hover:border-slate-400 hover:bg-slate-50 flex items-center justify-center gap-2">
+<span>Extend access</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ---------------------------------------------------- -->
+<!-- VARIANT 4: MOBILE VIEWPORT (Plain 390px Wide Frame) -->
+<!-- ---------------------------------------------------- -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded-full bg-slate-700 text-white font-telemetry-code text-telemetry-code font-bold">04</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-slate-900">Variant 4: Mobile Viewport (390px Plain Frame)</h2>
+<p class="font-body-sm text-body-sm text-slate-500">Strictly a plain 390px wide frame with NO phone status bar, NO home indicator, and NO device chrome.</p>
+</div>
+</div>
+<span class="font-telemetry-code text-telemetry-code px-2.5 py-1 bg-slate-200 text-slate-800 rounded font-medium">Width: 390px (Mobile Strict)</span>
+</div>
+<!-- Plain 390px Frame Container -->
+<div class="flex justify-center p-6 bg-slate-200/60 rounded-2xl border border-slate-300">
+<div class="w-[390px] bg-[#F8FAFC] border border-[#CBD5E1] rounded-xl shadow-lg flex flex-col overflow-hidden">
+<!-- MOBILE TOP BAR (Logo Plate + Profile Avatar) -->
+<header class="w-full bg-[#0B1320] h-14 px-4 flex items-center justify-between text-white shrink-0">
+<div class="bg-white px-2 py-1 rounded flex items-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMTn8Ez1sT1y9JLd5HCijw9sFR61_2s1re0eDeMJITMDBIVtaBknTmATR4RzKyeDiTKjQ0nVr-MtwPN0i9PE7wJ0LNbsrmpSOkIaTjVSHYzMk45pyrzKYem5lSS7J_0aggFLI8R7cXTtET15BCObdUiC2pJNggEobMRRXJFAmBgKmbiqjAty3Du9W3OeSRQH1IrEk1Yc3yChNK1NUMs6PD91SHTWOAo2UNt6L-TkgcdpvTxMW5_7gejuRpIHXA9M-6M54"/>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="text-right">
+<div class="font-body-sm text-body-sm font-semibold text-white leading-tight">Chinedu Eze</div>
+<div class="font-label-badge text-label-badge text-slate-400">Cohort 14</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-blue-900 border border-blue-400 text-white flex items-center justify-center font-telemetry-code text-telemetry-code font-bold">
+                CE
+              </div>
+</div>
+</header>
+<!-- MOBILE PROGRAMME HEADER -->
+<div class="p-4 bg-white border-b border-slate-200 space-y-3">
+<div>
+<span class="font-label-badge text-label-badge text-blue-700 font-semibold uppercase">Enrolled Course</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-slate-900 mt-0.5">CISA Exam Prep</h3>
+<p class="font-body-sm text-body-sm text-slate-500">Cohort 14 · Virtual · WAT</p>
+</div>
+<!-- 35% Progress Bar -->
+<div class="space-y-1.5 pt-1">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-slate-600 font-medium">35% completed</span>
+<span class="font-telemetry-code text-telemetry-code text-slate-500">7 of 20 lessons</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full rounded-full" style="width: 35%;"></div>
+</div>
+</div>
+</div>
+<!-- COMPACT HORIZONTAL TAB STRIP (44px target) -->
+<div class="bg-white border-b border-slate-200 px-3 flex items-center gap-4 overflow-x-auto custom-scrollbar">
+<button class="h-11 px-1 border-b-2 border-[#1D4ED8] text-[#1D4ED8] font-title-md text-title-md whitespace-nowrap shrink-0">
+              Curriculum
+            </button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 font-title-md text-title-md whitespace-nowrap shrink-0">
+              Live (3)
+            </button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 font-title-md text-title-md whitespace-nowrap shrink-0">
+              Recordings
+            </button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 font-title-md text-title-md whitespace-nowrap shrink-0">
+              Practice
+            </button>
+<button class="h-11 px-1 border-b-2 border-transparent text-slate-600 font-title-md text-title-md whitespace-nowrap shrink-0">
+              Resources
+            </button>
+</div>
+<!-- MOBILE SCROLLABLE CONTENT -->
+<div class="p-4 space-y-4 overflow-y-auto max-h-[580px]">
+<!-- NEXT LIVE CLASS MOBILE CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-title-md text-title-md font-semibold text-slate-900">
+<span class="material-symbols-outlined text-blue-700 text-[18px]">event</span>
+<span>Next Live Class</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-amber-50 border border-amber-200 text-amber-800 font-label-badge text-label-badge">In 2 days</span>
+</div>
+<div class="font-body-sm text-body-sm font-semibold text-slate-800">IT Governance Controls &amp; Risk Appetite Case Study</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-500">Sat, 24 Oct 2026 · 10:00 AM WAT</div>
+<button class="h-11 w-full bg-[#0B1320] text-white rounded font-body-md text-body-md font-medium flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">video_call</span>
+<span>Join class (Opens 09:45 WAT)</span>
+</button>
+</div>
+<!-- LICENCE MINI SUMMARY CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-3.5 shadow-sm flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="font-body-sm text-body-sm font-semibold text-slate-900">Licence: 62 of 120 days used</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-500">Ends 17 Apr 2027 · Active</div>
+</div>
+<button class="h-11 px-3 border border-slate-300 rounded text-slate-700 font-body-sm text-body-sm">Extend</button>
+</div>
+<!-- GROUPED CURRICULUM ACCORDIONS -->
+<div class="space-y-3">
+<!-- Module 1 (Completed) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<div class="p-3.5 bg-slate-50 flex items-center justify-between">
+<div>
+<div class="font-title-md text-title-md font-semibold text-slate-900">Module 1: Domain 1</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-500">4 lessons · 100%</div>
+</div>
+<span class="flex items-center gap-1 text-[#047857] font-label-badge text-label-badge font-semibold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Done</span>
+</span>
+</div>
+</div>
+<!-- Module 2 (In Progress) -->
+<div class="bg-white border-2 border-blue-200 rounded-xl overflow-hidden shadow-sm space-y-2 p-3.5">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2">
+<div>
+<div class="font-title-md text-title-md font-semibold text-slate-900">Module 2: Domain 2</div>
+<div class="font-telemetry-code text-telemetry-code text-blue-700">3 of 5 lessons completed</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200 font-label-badge text-label-badge">In Progress</span>
+</div>
+<!-- Current Resume Item -->
+<div class="bg-blue-50/50 rounded-lg p-3 space-y-2 border border-blue-100">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-700 text-[20px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-body-md text-body-md font-semibold text-slate-900 leading-snug">Lesson 4: Resource Management &amp; IT Assurance</span>
+</div>
+<div class="font-telemetry-code text-telemetry-code text-slate-500 pl-7">50 mins · 22 mins remaining</div>
+<button class="h-11 w-full bg-[#0B1320] text-white rounded font-body-md text-body-md font-semibold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Resume (44px target)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM NAVIGATION BAR (Strict 44px min height targets) -->
+<div class="bg-white border-t border-slate-200 h-16 grid grid-cols-4 items-center shrink-0">
+<button class="h-11 flex flex-col items-center justify-center text-slate-500 hover:text-slate-900">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-badge text-label-badge">Home</span>
+</button>
+<button class="h-11 flex flex-col items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-badge text-label-badge font-semibold">Modules</span>
+</button>
+<button class="h-11 flex flex-col items-center justify-center text-slate-500 hover:text-slate-900">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span class="font-label-badge text-label-badge">Simulator</span>
+</button>
+<button class="h-11 flex flex-col items-center justify-center text-slate-500 hover:text-slate-900">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="font-label-badge text-label-badge">Account</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ========================================== -->
+<!-- INSTITUTIONAL FOOTER                       -->
+<!-- ========================================== -->
+<footer class="w-full bg-[#0B1320] border-t border-slate-800 text-slate-400 py-10 mt-16">
+<div class="max-w-[1720px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="space-y-1 text-center md:text-left">
+<div class="font-body-sm text-body-sm font-medium text-slate-300">
+          © 2026 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+        </div>
+<div class="font-telemetry-code text-telemetry-code text-slate-500">
+          Curriculum aligned with ISACA CISA Examination Content Outline (ECO). All dates calibrated to West Africa Time (WAT).
+        </div>
+</div>
+<div class="flex flex-wrap items-center gap-6 font-body-sm text-body-sm">
+<a class="hover:text-white transition-colors" href="#protocol">Audit Protocol</a>
+<a class="hover:text-white transition-colors" href="#verification">Verification Registry</a>
+<a class="hover:text-white transition-colors" href="#ledger">Public Ledger Key</a>
+<a class="hover:text-white transition-colors" href="#telemetry">System Telemetry</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. SILICON AUDIT PORTAL - Dual-Control Governance Approvals</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#dce1ff",
+            "primary-fixed": "#dbe2f5",
+            "on-surface": "#131b2e",
+            "surface-variant": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "tertiary": "#000000",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-container": "#997f6a",
+            "surface-tint": "#575f6e",
+            "inverse-surface": "#283044",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-secondary-fixed": "#001551",
+            "outline": "#75777c",
+            "background": "#faf8ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "secondary": "#1d4ed8",
+            "on-primary-fixed": "#141c29",
+            "on-surface-variant": "#45474c",
+            "on-secondary-container": "#fffbff",
+            "surface-container-highest": "#dae2fd",
+            "surface-container": "#eaedff",
+            "on-background": "#131b2e",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface": "#faf8ff",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed": "#fddcc4",
+            "surface-dim": "#d2d9f4",
+            "primary-container": "#141c29",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#281809",
+            "primary": "#000000",
+            "outline-variant": "#c5c6cc",
+            "error": "#ba1a1a",
+            "tertiary-container": "#281809",
+            "inverse-primary": "#bfc6d9",
+            "surface-bright": "#faf8ff",
+            "on-primary-container": "#7c8495",
+            "surface-container-low": "#f2f3ff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#4069f2",
+            "primary-fixed-dim": "#bfc6d9",
+            /* Institutional tokens defined in prompt */
+            "audit-navy": "#0B1320",
+            "audit-slate-tech": "#1E293B",
+            "audit-border": "#E2E8F0",
+            "audit-field-border": "#64748B",
+            "audit-pass-mint": "#047857",
+            "audit-pass-bg": "#ECFDF5",
+            "audit-fail-crimson": "#B91C1C",
+            "audit-fail-bg": "#FEF2F2",
+            "audit-warn-amber": "#B45309",
+            "audit-warn-bg": "#FFFBEB",
+            "audit-info-blue": "#1D4ED8",
+            "audit-info-bg": "#EFF6FF",
+            "audit-text": "#0F172A",
+            "audit-muted": "#475569"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-md": "1.5rem",
+            "space-xl": "3rem",
+            "margin": "2rem",
+            "gutter": "1.5rem",
+            "space-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Minimal focus outline rule */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col font-body-md text-audit-text bg-[#FAF8FF] antialiased selection:bg-secondary-fixed selection:text-audit-navy">
+<!-- ================= TOP APP BAR (Shared Component Anchor) ================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-6 bg-audit-navy border-b border-[#1E293B] flex-shrink-0">
+<!-- Brand Anchor & Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded-[4px] flex items-center justify-center border border-audit-border shadow-sm">
+<img alt="A.J. SILICON" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByuVdppw4k5-fHpgCm3rDMdy_2aXWJ0dXAwXgGA57MH9URUk6tTwgq-BjdKcpGc7h52z6WZm-pri4sBHCB2A4ZyVNafZwnSlVM8Enq9ADsoG4yXUqH12Ij3kiuaHQDv9wb2OTHTdthbLruO62mlyJn--89l5b77uu5tCC3UUEaScZd2MLJizGpZ5SKOh6tV7GjWjKMpEJS0zdIIZHkOxF3uihxhBGh528NH0fQs87t9nwyTnTlyu9ldA"/>
+</div>
+<!-- Institutional Identifier -->
+<div class="hidden lg:flex items-center gap-3 pl-2 border-l border-[#1E293B]">
+<span class="font-headline-sm text-headline-sm font-semibold tracking-wide text-on-primary">A.J. SILICON AUDIT PORTAL</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium tracking-wider uppercase bg-[#141C29] text-secondary-fixed border border-[#3F4756]">
+          Enterprise Dual-Control
+        </span>
+</div>
+</div>
+<!-- Center/Right User Context & Strict Plain Text Info -->
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4 text-on-primary">
+<div class="text-right">
+<div class="font-label-md text-label-md text-on-primary font-medium tracking-tight">
+            Role: Finance Manager  |  <span class="text-secondary-fixed font-semibold">Olufemi Adebayo</span>
+</div>
+<div class="font-label-sm text-label-sm text-[#93C5FD]">
+            13:50 WAT · 05 Oct 2026
+          </div>
+</div>
+</div>
+<!-- Action Items & Initials Badge -->
+<div class="flex items-center gap-3">
+<button aria-label="Security notifications" class="relative w-11 h-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-outline-variant hover:text-on-primary hover:bg-[#1E293B] transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-audit-warn-amber ring-2 ring-audit-navy"></span>
+</button>
+<!-- Plain Initials Badge OA (No role switcher) -->
+<div class="w-11 h-11 min-h-[44px] min-w-[44px] rounded-lg bg-[#141C29] border border-[#3F4756] flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-bold tracking-wider select-none shadow-inner" title="Olufemi Adebayo (OA)">
+          OA
+        </div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN FRAME: SIDEBAR + CONTENT CANVAS ================= -->
+<div class="flex-1 flex overflow-hidden">
+<!-- ================= PERSISTENT NAVIGATION SIDEBAR ================= -->
+<aside class="w-80 h-[calc(100vh-4rem)] bg-audit-navy border-r border-[#1E293B] flex flex-col justify-between p-4 flex-shrink-0 select-none overflow-y-auto">
+<div class="space-y-6">
+<!-- Institutional Header in Rail -->
+<div class="px-3 py-2 bg-[#141C29] rounded-lg border border-[#1E293B]">
+<div class="font-label-md text-label-md text-on-primary font-bold">A.J. Silicon Academy</div>
+<div class="font-label-sm text-label-sm text-[#93C5FD]">Lagos Governance Campus · Floor 4</div>
+</div>
+<!-- Navigation Group: Core Governance -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-outline-variant">
+            Core Governance
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span>Security Telemetry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+<span>Audit Trail &amp; Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span>SecOps Governance</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: Staff & Roles [ACTIVE SECTION] -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-secondary-fixed">
+            Staff &amp; Roles
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+<span>Staff Directory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="shield">shield</span>
+<span>Roles</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="manage_accounts">manage_accounts</span>
+<span>Role Editor</span>
+</a>
+<!-- APPROVALS (STRICT ACTIVE BLUEPRINT) -->
+<a class="flex items-center justify-between px-3 py-2.5 min-h-[44px] bg-[#141C29] text-secondary-fixed font-semibold rounded border-l-2 border-audit-pass-mint text-label-md font-label-md shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl text-audit-pass-mint" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span>Approvals</span>
+</div>
+<span class="inline-flex items-center justify-center px-2 py-0.5 text-[11px] font-bold rounded-full bg-audit-warn-amber text-on-primary">
+                3
+              </span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: Academics & Candidates -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-outline-variant">
+            Academics &amp; Cohorts
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+<span>Candidate Cohorts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="school">school</span>
+<span>Exam Simulation</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: Finance & System -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-outline-variant">
+            Finance &amp; Ledger
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Finance &amp; Ledger</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-outline-variant hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span>System</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Rail Footer & Terminal Lock CTA -->
+<div class="pt-4 border-t border-[#1E293B] space-y-3">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline-variant px-1">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint"></span>
+            Terminal: Zero-Trust
+          </span>
+<span class="text-[11px] font-mono">v4.9.2</span>
+</div>
+<button class="w-full min-h-[44px] h-11 flex items-center justify-center gap-2 px-3 bg-[#141C29] hover:bg-[#1E293B] text-on-primary border border-[#3F4756] rounded text-label-md font-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+<span>Lock Terminal Session</span>
+</button>
+</div>
+</aside>
+<!-- ================= WORKSPACE CANVAS ================= -->
+<main class="flex-1 overflow-y-auto bg-[#FAF8FF] flex flex-col">
+<div class="p-8 max-w-[1400px] w-full mx-auto space-y-6">
+<!-- Breadcrumb Bar -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-label-sm font-label-sm text-audit-muted">
+<span>Staff &amp; Governance</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span>Governance Controls</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="text-audit-text font-semibold">Approvals</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-2 border-b border-audit-border">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-audit-text tracking-tight">Approvals</h1>
+<p class="font-body-sm text-body-sm text-audit-muted mt-1 max-w-3xl">
+              Review and authorize dual-control governance actions, financial exceptions, and elevated operational requests.
+            </p>
+</div>
+<button class="inline-flex items-center justify-center min-h-[44px] h-11 px-6 bg-audit-navy hover:bg-audit-slate-tech text-on-primary rounded-[6px] font-label-md text-label-md font-medium shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined mr-2 text-lg" data-icon="add">add</span>
+            + New approval request
+          </button>
+</div>
+<!-- Governance Mandate Banner -->
+<div class="p-4 rounded-xl bg-audit-info-bg border border-audit-info-blue flex items-start gap-3">
+<span class="material-symbols-outlined text-audit-info-blue text-2xl mt-0.5" data-icon="gavel">gavel</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-audit-info-blue">Institutional Dual-Control Enforcement:</span>
+<span class="font-body-sm text-body-sm text-audit-text ml-1">
+              You cannot approve your own request. Dual-control governance enforces independent review to prevent privilege escalation and ensure complete fiscal compliance.
+            </span>
+</div>
+</div>
+<!-- Navigation Tabs Container -->
+<div class="border-b border-audit-border flex items-center justify-between">
+<div class="flex items-center gap-2" role="tablist">
+<button class="min-h-[44px] px-5 py-3 border-b-2 border-audit-navy font-label-md text-label-md font-semibold text-audit-navy flex items-center gap-2.5 transition-colors" id="tab-awaiting" onclick="switchMainTab('awaiting')">
+<span>Awaiting my approval</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-audit-warn-amber text-on-primary">3</span>
+</button>
+<button class="min-h-[44px] px-5 py-3 border-b-2 border-transparent font-label-md text-label-md font-medium text-audit-muted hover:text-audit-text flex items-center gap-2.5 transition-colors" id="tab-requested" onclick="switchMainTab('requested')">
+<span>Requested by me</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 text-audit-muted">1</span>
+</button>
+<button class="min-h-[44px] px-5 py-3 border-b-2 border-transparent font-label-md text-label-md font-medium text-audit-muted hover:text-audit-text flex items-center gap-2.5 transition-colors" id="tab-history" onclick="switchMainTab('history')">
+<span>History</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 text-audit-muted">48</span>
+</button>
+</div>
+<div class="text-label-sm font-label-sm text-audit-muted hidden sm:block">
+            Showing dual-control queue • Refreshed real-time
+          </div>
+</div>
+<!-- Filter and Search Bar -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-audit-border flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3 flex-1 min-w-[280px]">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-audit-muted text-xl" data-icon="search">search</span>
+<input class="w-full h-11 pl-10 pr-4 text-audit-text font-body-sm bg-white border border-audit-field-border rounded-[6px] focus:border-audit-info-blue focus:ring-2 focus:ring-audit-info-blue focus:outline-none placeholder:text-audit-muted" placeholder="Search by requester, transaction reference, or scope..." type="text"/>
+</div>
+<select class="h-11 px-3 text-audit-text font-body-sm bg-white border border-audit-field-border rounded-[6px] focus:border-audit-info-blue focus:ring-2 focus:ring-audit-info-blue focus:outline-none">
+<option value="">All Request Types</option>
+<option value="refund">Financial Refund</option>
+<option value="role">Role Permission Escalation</option>
+<option value="bulk_revoke">Bulk Candidate Revoke</option>
+<option value="access_grant">Long Access Grant (90d)</option>
+<option value="kill_switch">Terminal Kill Switch</option>
+</select>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-audit-muted">Filter:</span>
+<button class="h-11 px-4 min-h-[44px] border border-audit-border rounded-[6px] text-label-md font-label-md text-audit-text hover:bg-slate-50 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+              Advanced Filter
+            </button>
+</div>
+</div>
+<!-- ================= MAIN DATA TABLE ================= -->
+<div class="bg-surface-container-lowest rounded-xl border border-audit-border overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-audit-border text-[12px] uppercase tracking-wider text-audit-muted font-semibold">
+<th class="py-3 px-4">Request Type</th>
+<th class="py-3 px-4">Requester</th>
+<th class="py-3 px-4">Summary</th>
+<th class="py-3 px-4">Amount / Scope</th>
+<th class="py-3 px-4">Time Waiting</th>
+<th class="py-3 px-4">Status</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-audit-border text-body-sm font-body-sm" id="approval-table-body">
+<!-- Row 1: Refund Exception (Awaiting Approval - Active Drawer Target) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors bg-blue-50/20">
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-warn-bg text-audit-warn-amber border border-audit-warn-amber">
+<span class="material-symbols-outlined text-sm" data-icon="currency_exchange">currency_exchange</span>
+                      Refund
+                    </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-audit-text">Babatunde Lawal</div>
+<div class="text-[12px] text-audit-muted">Billing Lead • <span class="font-mono">b.lawal@ajsilicon.ng</span></div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<div class="font-medium text-audit-text truncate">Executive Dual-Cohort CISA FastTrack Tuition</div>
+<div class="text-[12px] text-audit-muted truncate">Overcharge rebate approved by Lagos Campus Registrar</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap font-medium text-audit-text">
+                    ₦350,000
+                  </td>
+<td class="py-4 px-4 whitespace-nowrap text-audit-muted">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                      4h 15m
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-warn-bg text-audit-warn-amber border border-audit-warn-amber">
+<span class="material-symbols-outlined text-sm" data-icon="hourglass_top">hourglass_top</span>
+                      Pending Review
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-right">
+<button class="min-h-[44px] h-11 px-4 inline-flex items-center justify-center font-label-md text-label-md font-medium text-audit-info-blue hover:text-audit-navy hover:bg-slate-100 rounded-[6px] transition-colors border border-audit-info-blue" onclick="openDrawer('refund')" type="button">
+                      Review request
+                    </button>
+</td>
+</tr>
+<!-- Row 2: Role Change Request -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-info-bg text-audit-info-blue border border-audit-info-blue">
+<span class="material-symbols-outlined text-sm" data-icon="admin_panel_settings">admin_panel_settings</span>
+                      Role Change
+                    </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-audit-text">Ngozi Eze</div>
+<div class="text-[12px] text-audit-muted">Lead IT Auditor • <span class="font-mono">n.eze@ajsilicon.ng</span></div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<div class="font-medium text-audit-text truncate">Elevate Candidate Cohort Mentors</div>
+<div class="text-[12px] text-audit-muted truncate">Grant temporary Grade Modifier to Senior Instructors</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-audit-text font-medium">
+                    3 staff members
+                  </td>
+<td class="py-4 px-4 whitespace-nowrap text-audit-muted">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                      1d 2h
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-warn-bg text-audit-warn-amber border border-audit-warn-amber">
+<span class="material-symbols-outlined text-sm" data-icon="hourglass_top">hourglass_top</span>
+                      Pending Review
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-right">
+<button class="min-h-[44px] h-11 px-4 inline-flex items-center justify-center font-label-md text-label-md font-medium text-audit-info-blue hover:text-audit-navy hover:bg-slate-100 rounded-[6px] transition-colors border border-audit-info-blue" onclick="openDrawer('role')" type="button">
+                      Review request
+                    </button>
+</td>
+</tr>
+<!-- Row 3: Bulk Revoke Candidates -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-fail-bg text-audit-fail-crimson border border-audit-fail-crimson">
+<span class="material-symbols-outlined text-sm" data-icon="person_remove">person_remove</span>
+                      Bulk Revoke
+                    </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-audit-text">Chukwudi Nnamdi</div>
+<div class="text-[12px] text-audit-muted">Academy Operations Officer • <span class="font-mono">c.nnamdi@ajsilicon.ng</span></div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<div class="font-medium text-audit-text truncate">CRISC Oct Weekend Inactive Roster</div>
+<div class="text-[12px] text-audit-muted truncate">Unverified enrollment revocation post census cutoff</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-audit-text font-medium">
+                    14 candidates
+                  </td>
+<td class="py-4 px-4 whitespace-nowrap text-audit-muted">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                      18m ago
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-warn-bg text-audit-warn-amber border border-audit-warn-amber">
+<span class="material-symbols-outlined text-sm" data-icon="hourglass_top">hourglass_top</span>
+                      Pending Review
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-right">
+<button class="min-h-[44px] h-11 px-4 inline-flex items-center justify-center font-label-md text-label-md font-medium text-audit-info-blue hover:text-audit-navy hover:bg-slate-100 rounded-[6px] transition-colors border border-audit-info-blue" onclick="openDrawer('revoke')" type="button">
+                      Review request
+                    </button>
+</td>
+</tr>
+<!-- Row 4: Own Request State (Olufemi Adebayo - Cannot approve your own request) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors bg-slate-50/50">
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-purple-50 text-purple-700 border border-purple-300">
+<span class="material-symbols-outlined text-sm" data-icon="vpn_key">vpn_key</span>
+                      Long Access Grant
+                    </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-audit-text flex items-center gap-1.5">
+<span>Olufemi Adebayo</span>
+<span class="text-[10px] bg-slate-200 text-audit-muted px-1.5 py-0.2 rounded font-semibold uppercase">You</span>
+</div>
+<div class="text-[12px] text-audit-muted">Finance Manager • <span class="font-mono">o.adebayo@ajsilicon.ng</span></div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<div class="font-medium text-audit-text truncate">Annual Ledger Reconciliation Access</div>
+<div class="text-[12px] text-audit-muted truncate">Extended root query privileges for annual audit balance sheet</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-audit-text font-medium">
+                    90 days
+                  </td>
+<td class="py-4 px-4 whitespace-nowrap text-audit-muted">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                      3d 5h
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-warn-bg text-audit-warn-amber border border-audit-warn-amber">
+<span class="material-symbols-outlined text-sm" data-icon="lock_clock">lock_clock</span>
+                      Awaiting Peer Review
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-right">
+<!-- Disabled action with Lock & Tooltip -->
+<div class="inline-flex items-center justify-end relative group">
+<button class="min-h-[44px] h-11 px-4 inline-flex items-center gap-1.5 font-label-md text-label-md font-medium text-audit-muted bg-slate-100 rounded-[6px] border border-audit-border cursor-not-allowed opacity-80" disabled="" type="button">
+<span class="material-symbols-outlined text-base" data-icon="lock">lock</span>
+<span>Locked (Self-Request)</span>
+</button>
+<div class="absolute right-0 bottom-full mb-2 hidden group-hover:block z-30 w-72 p-2.5 bg-audit-navy text-on-primary text-xs rounded shadow-lg text-left">
+<strong>Dual-Control Violation:</strong> You cannot approve your own request. Independent peer authorization by an Audit Partner or SecOps Director is required.
+                      </div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Bar -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-audit-border flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-body-sm text-audit-muted">
+              Showing <span class="font-medium text-audit-text">1</span> to <span class="font-medium text-audit-text">4</span> of <span class="font-medium text-audit-text">4</span> active control entries
+            </div>
+<div class="flex items-center gap-2">
+<button class="min-h-[44px] px-3 py-2 border border-audit-border rounded-[6px] text-body-sm text-audit-muted opacity-50 cursor-not-allowed" disabled="">
+                Previous
+              </button>
+<button class="min-h-[44px] px-3.5 py-2 border border-audit-navy bg-audit-navy text-on-primary rounded-[6px] text-body-sm font-medium">
+                1
+              </button>
+<button class="min-h-[44px] px-3 py-2 border border-audit-border rounded-[6px] text-body-sm text-audit-muted opacity-50 cursor-not-allowed" disabled="">
+                Next
+              </button>
+</div>
+</div>
+</div>
+<!-- ================= GOVERNANCE AUDIT LOG STATE REVIEWS (APPROVED & REJECTED DEMONSTRATIONS) ================= -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<!-- Sample State 2: Approved State Demonstration Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-audit-border shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-audit-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-audit-pass-mint" data-icon="verified">verified</span>
+<span class="font-headline-sm text-headline-sm text-audit-text">Completed State: Authorized</span>
+</div>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-pass-bg text-audit-pass-mint border border-audit-pass-mint">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+                Approved
+              </span>
+</div>
+<div class="mt-4 space-y-2 text-body-sm text-audit-muted">
+<div><strong class="text-audit-text">Request:</strong> CISA Exam Simulation License Renewal (45 Candidates)</div>
+<div><strong class="text-audit-text">Authorized by:</strong> Dr. Kazeem Balogun (SecOps Director)</div>
+<div><strong class="text-audit-text">Digital Signature:</strong> <span class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">SIG-AJS-20261004-991204</span></div>
+<div><strong class="text-audit-text">Timestamp:</strong> 04 Oct 2026 · 16:42 WAT</div>
+<p class="pt-2 text-xs text-audit-muted italic border-t border-audit-border mt-3">
+                “Compliance requirements validated against 2026 academic calendar. Approved under Delegated Authority Schedule 4.”
+              </p>
+</div>
+</div>
+<!-- Sample State 3: Rejected State Demonstration Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-audit-border shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-audit-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-audit-fail-crimson" data-icon="cancel">cancel</span>
+<span class="font-headline-sm text-headline-sm text-audit-text">Completed State: Dismissed</span>
+</div>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-[12px] font-medium bg-audit-fail-bg text-audit-fail-crimson border border-audit-fail-crimson">
+<span class="material-symbols-outlined text-xs" data-icon="block">block</span>
+                Rejected
+              </span>
+</div>
+<div class="mt-4 space-y-2 text-body-sm text-audit-muted">
+<div><strong class="text-audit-text">Request:</strong> Emergency Security Bypass: Off-Cycle Cloud Sync</div>
+<div><strong class="text-audit-text">Rejected by:</strong> Olufemi Adebayo (Finance Manager)</div>
+<div><strong class="text-audit-text">Ref Reference:</strong> <span class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">REJ-AJS-20261003-0012</span></div>
+<div><strong class="text-audit-text">Mandatory Reason:</strong></div>
+<div class="p-3 bg-audit-fail-bg border border-audit-fail-crimson rounded text-xs text-audit-fail-crimson font-medium">
+                “Requested financial sync interval violates Section 7.3 of the Lagos Corporate Ledger Mandate. Requires signed concurrence from Campus Audit Lead prior to resubmission.”
+              </div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= INSTITUTIONAL CLOSURE FOOTER ================= -->
+<footer class="mt-auto w-full py-space-lg px-gutter border-t border-[#1E293B] bg-audit-navy flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-on-primary">
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary">
+            A.J. SILICON AUDIT &amp; GOVERNANCE
+          </div>
+<p class="font-body-sm text-body-sm text-outline-variant mt-1">
+            © 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. Lagos Elite Partner. All Sessions Digitally Watermarked.
+          </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4 text-label-sm font-label-sm text-outline-variant">
+<a class="hover:text-on-primary transition-colors" href="#">Zero-Trust Protocol</a>
+<span>·</span>
+<a class="hover:text-on-primary transition-colors" href="#">Forensic Integrity Policy</a>
+<span>·</span>
+<a class="hover:text-on-primary transition-colors" href="#">Automated Verification Gateway</a>
+<span>·</span>
+<a class="hover:text-on-primary transition-colors" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- ================= DETAIL DRAWER / INSPECTION PANEL (State 1: Pending Review) ================= -->
+<div class="fixed inset-0 bg-audit-navy/60 z-50 transition-opacity duration-200 flex justify-end" id="detail-drawer-backdrop" onclick="closeDrawer()">
+<div class="w-full max-w-2xl bg-surface-container-lowest h-full shadow-2xl flex flex-col z-50 overflow-hidden" id="detail-drawer" onclick="event.stopPropagation()">
+<!-- Drawer Header -->
+<div class="p-6 bg-audit-navy text-on-primary flex items-start justify-between border-b border-[#1E293B]">
+<div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-semibold uppercase bg-audit-warn-bg text-audit-warn-amber border border-audit-warn-amber">
+<span class="material-symbols-outlined text-xs" data-icon="hourglass_top">hourglass_top</span>
+              Dual-Control Authorization Required
+            </span>
+<span class="text-xs text-outline-variant font-mono">REQ-20261005-0841</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold mt-2 text-on-primary">
+            Refund Exception: ₦350,000
+          </h2>
+<p class="font-body-sm text-body-sm text-secondary-fixed mt-1">
+            Initiated by Babatunde Lawal (Billing Lead) · Submitted 05 Oct 2026, 09:35 WAT
+          </p>
+</div>
+<button aria-label="Close review drawer" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-outline-variant hover:text-on-primary hover:bg-[#1E293B]" onclick="closeDrawer()" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- Drawer Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Policy Trigger Alert -->
+<div class="p-4 rounded-lg bg-audit-info-bg border border-audit-info-blue">
+<div class="flex items-center gap-2 font-label-md text-label-md font-bold text-audit-info-blue">
+<span class="material-symbols-outlined text-lg" data-icon="shield">shield</span>
+            Policy Trigger: Mandatory Secondary Concurrence (Finance Reg §4.2)
+          </div>
+<p class="text-body-sm font-body-sm text-audit-text mt-1">
+            Any customer ledger reversal exceeding <strong>₦100,000</strong> requires unconditional dual-signoff by a designated Finance Manager independent of the initiation officer.
+          </p>
+</div>
+<!-- Transaction Details & Masked Sensitivity -->
+<div class="bg-[#F8FAFC] p-4 rounded-xl border border-audit-border space-y-3">
+<div class="font-label-md text-label-md font-semibold text-audit-text pb-2 border-b border-audit-border">
+            Ledger &amp; Gateway Details
+          </div>
+<div class="grid grid-cols-2 gap-4 text-body-sm font-body-sm">
+<div>
+<span class="text-audit-muted text-xs block">Target Candidate</span>
+<span class="font-medium text-audit-text">Engr. Tunde Adeleke</span>
+</div>
+<div>
+<span class="text-audit-muted text-xs block">Candidate ID / Email</span>
+<div class="flex items-center gap-2">
+<span class="font-mono text-audit-text" id="masked-id">AJS-••••-8921</span>
+<button class="text-xs text-audit-info-blue hover:underline font-medium" onclick="toggleMask()" type="button">Reveal</button>
+</div>
+</div>
+<div>
+<span class="text-audit-muted text-xs block">Payment Processor Ref</span>
+<span class="font-mono text-audit-text text-xs bg-white px-2 py-1 rounded border border-audit-border inline-block">
+                AJS-PAY-20261005-0042
+              </span>
+</div>
+<div>
+<span class="text-audit-muted text-xs block">Tuition Module</span>
+<span class="font-medium text-audit-text">Executive CISA FastTrack Q4</span>
+</div>
+</div>
+</div>
+<!-- Before / After State Diff -->
+<div>
+<div class="font-label-md text-label-md font-semibold text-audit-text mb-2">
+            Ledger Rebalance Impact (Before &amp; After State Diff)
+          </div>
+<div class="grid grid-cols-2 gap-4 text-xs">
+<!-- Before State -->
+<div class="p-3 bg-red-50/60 rounded-lg border border-red-200">
+<div class="font-semibold text-audit-fail-crimson uppercase tracking-wider mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="remove_circle">remove_circle</span>
+                Current State (Pre-Approval)
+              </div>
+<div class="space-y-1 text-audit-text font-mono">
+<div>Candidate Balance: <strong>₦0.00 (Settled)</strong></div>
+<div>Campus Reserve: <strong>₦4,250,000</strong></div>
+<div>Account Status: <strong>Enrolled Full Cohort</strong></div>
+<div>Audit Clearance: <strong>Pending Rebalance</strong></div>
+</div>
+</div>
+<!-- After State -->
+<div class="p-3 bg-green-50/60 rounded-lg border border-green-200">
+<div class="font-semibold text-audit-pass-mint uppercase tracking-wider mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                Proposed State (Post-Approval)
+              </div>
+<div class="space-y-1 text-audit-text font-mono">
+<div>Candidate Balance: <strong>-₦350,000 (Rebate)</strong></div>
+<div>Campus Reserve: <strong>₦3,900,000</strong></div>
+<div>Account Status: <strong>Executive Grant Applied</strong></div>
+<div>Audit Clearance: <strong>Fully Cleared</strong></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Requester Justification -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-audit-text mb-1">
+            Reason Provided by Requester
+          </label>
+<div class="p-3 bg-white rounded-lg border border-audit-border text-body-sm font-body-sm text-audit-text">
+            “Candidate was erroneously billed for both Lagos in-person physical materials and virtual sandbox tier during the September enrollment sweep. Registrar confirmed eligibility for single physical track waiver. Refund to be credited back through original Paystack card gateway channel.”
+          </div>
+</div>
+<!-- Dual Control Action & Mandatory Validation Comment -->
+<div class="pt-4 border-t border-audit-border space-y-4">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-audit-text" for="approval-comment">
+              Approver Governance Comment &amp; Audit Notation <span class="text-audit-fail-crimson">*</span>
+</label>
+<span class="text-xs text-audit-muted block mb-2">
+              A comprehensive reason is mandatory for both Approval and Rejection actions to satisfy the Lagos inspection trail.
+            </span>
+<textarea class="w-full p-3 font-body-sm text-audit-text bg-white border border-audit-field-border rounded-[6px] focus:border-audit-info-blue focus:ring-2 focus:ring-audit-info-blue focus:outline-none" id="approval-comment" placeholder="State regulatory justification, ledger line entry reference, or specific grounds for rejection..." required="" rows="3"></textarea>
+<p class="hidden text-xs text-audit-fail-crimson mt-1 font-medium" id="comment-error">
+              * Please provide an audit justification comment before proceeding.
+            </p>
+</div>
+<!-- Governance rule disclaimer inside drawer -->
+<div class="text-xs text-audit-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-base" data-icon="verified_user">verified_user</span>
+<span>Submitting will record Olufemi Adebayo's cryptographic watermark on the primary ledger log.</span>
+</div>
+</div>
+</div>
+<!-- Drawer Footer with Approve and Reject CTAs -->
+<div class="p-6 bg-[#F8FAFC] border-t border-audit-border flex items-center justify-between gap-4 flex-shrink-0">
+<button class="min-h-[44px] h-11 px-5 rounded-[6px] border border-audit-field-border text-audit-text font-label-md text-label-md font-medium hover:bg-slate-100 transition-colors" onclick="closeDrawer()" type="button">
+          Cancel
+        </button>
+<div class="flex items-center gap-3">
+<!-- Reject Button -->
+<button class="min-h-[44px] h-11 px-6 rounded-[6px] bg-audit-fail-bg border border-audit-fail-crimson text-audit-fail-crimson font-label-md text-label-md font-medium hover:bg-red-100 transition-colors flex items-center gap-2" onclick="executeDecision('reject')" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+            Reject Request
+          </button>
+<!-- Approve Button -->
+<button class="min-h-[44px] h-11 px-6 rounded-[6px] bg-audit-pass-mint text-on-primary font-label-md text-label-md font-medium hover:bg-[#036046] shadow-sm transition-colors flex items-center gap-2" onclick="executeDecision('approve')" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+            Approve Request
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= INLINE VANILLA LOGIC ================= -->
+<script>
+    // Drawer Management
+    const drawerBackdrop = document.getElementById('detail-drawer-backdrop');
+    const commentField = document.getElementById('approval-comment');
+    const commentError = document.getElementById('comment-error');
+    let isMasked = true;
+
+    function openDrawer(requestType) {
+      drawerBackdrop.classList.remove('hidden');
+      drawerBackdrop.style.display = 'flex';
+      commentError.classList.add('hidden');
+      commentField.value = '';
+    }
+
+    function closeDrawer() {
+      drawerBackdrop.style.display = 'none';
+    }
+
+    // Toggle Masking for Sensitive Identifier
+    function toggleMask() {
+      const el = document.getElementById('masked-id');
+      if (isMasked) {
+        el.innerText = 'AJS-CISA-8921-LAGOS';
+        isMasked = false;
+      } else {
+        el.innerText = 'AJS-••••-8921';
+        isMasked = true;
+      }
+    }
+
+    // Execute Decision Logic with Validation
+    function executeDecision(action) {
+      const commentValue = commentField.value.trim();
+      if (!commentValue) {
+        commentError.classList.remove('hidden');
+        commentField.focus();
+        return;
+      }
+
+      closeDrawer();
+      if (action === 'approve') {
+        alert('Dual-Control Authorization Recorded: Requisition REQ-20261005-0841 has been approved and timestamped under Olufemi Adebayo.');
+      } else {
+        alert('Decision Logged: Request rejected. Notification and audit log updated with your governance comment.');
+      }
+    }
+
+    // Tab Switching Micro-interaction
+    function switchMainTab(tab) {
+      const btnAwaiting = document.getElementById('tab-awaiting');
+      const btnRequested = document.getElementById('tab-requested');
+      const btnHistory = document.getElementById('tab-history');
+
+      [btnAwaiting, btnRequested, btnHistory].forEach(b => {
+        b.className = 'min-h-[44px] px-5 py-3 border-b-2 border-transparent font-label-md text-label-md font-medium text-audit-muted hover:text-audit-text flex items-center gap-2.5 transition-colors';
+      });
+
+      if (tab === 'awaiting') {
+        btnAwaiting.className = 'min-h-[44px] px-5 py-3 border-b-2 border-audit-navy font-label-md text-label-md font-semibold text-audit-navy flex items-center gap-2.5 transition-colors';
+      } else if (tab === 'requested') {
+        btnRequested.className = 'min-h-[44px] px-5 py-3 border-b-2 border-audit-navy font-label-md text-label-md font-semibold text-audit-navy flex items-center gap-2.5 transition-colors';
+      } else if (tab === 'history') {
+        btnHistory.className = 'min-h-[44px] px-5 py-3 border-b-2 border-audit-navy font-label-md text-label-md font-semibold text-audit-navy flex items-center gap-2.5 transition-colors';
+      }
+    }
+
+    // Set initial drawer state visible to demonstrate State 1
+    window.addEventListener('DOMContentLoaded', () => {
+      // Initially show drawer so reviewers immediately experience State 1 (Pending Review Drawer)
+      drawerBackdrop.style.display = 'flex';
+    });
+  </script>
+</body></html>

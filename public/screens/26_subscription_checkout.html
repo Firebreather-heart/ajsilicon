@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>26 Subscription checkout — Specification Board | A.J. Silicon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0B1320',
+            'surface-slate': '#1E293B',
+            'border-structural': '#E2E8F0',
+            'border-hairline': '#CBD5E1',
+            'text-main': '#0F172A',
+            'text-muted': '#475569',
+            'field-border': '#64748B',
+            'link-blue': '#1D4ED8',
+            'link-dark': '#93C5FD',
+            'danger-red': '#B91C1C',
+            'danger-bg': '#FEF2F2',
+            'success-green': '#047857',
+            'success-bg': '#ECFDF5',
+            'warning-amber': '#B45309',
+            'warning-bg': '#FFFBEB',
+            'info-blue': '#1D4ED8',
+            'info-bg': '#EFF6FF',
+            'canvas-bg': '#F8FAFC'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .spec-card {
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      background-color: #FFFFFF;
+    }
+    .focus-ring:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-custom {
+      animation: spin-slow 1s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-canvas-bg text-text-main font-sans antialiased min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- SPECIFICATION BOARD CONTROL HEADER                                        -->
+  <!-- ========================================================================= -->
+  <header class="bg-primary text-white border-b border-surface-slate px-6 py-5 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-[1720px] mx-auto flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-slate rounded text-xs font-semibold tracking-wider uppercase text-slate-200 border border-slate-600">
+          <span class="material-symbols-outlined text-[16px] text-success-green">verified</span>
+          SPEC-AJ-2026-SUB-CHK
+        </span>
+        <div>
+          <h1 class="text-xl font-bold font-display tracking-tight text-white flex items-center gap-2">
+            26 Subscription checkout
+            <span class="text-xs px-2 py-0.5 rounded font-normal text-text-muted bg-white border border-border-structural">Specification Board</span>
+          </h1>
+          <p class="text-xs text-slate-400">
+            A.J. Silicon Learning Platform · Candidate Portal · Lagos, Nigeria · Viewport 1440px Desktop
+          </p>
+        </div>
+      </div>
+
+      <!-- State quick-jumper buttons -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs font-medium uppercase tracking-wider text-slate-400 mr-1">States:</span>
+        <a href="#state-1" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-slate text-white text-xs font-medium hover:bg-link-blue transition-colors border border-slate-600">
+          <span class="w-2 h-2 rounded-full bg-success-green"></span>
+          State 1: With saved card
+        </a>
+        <a href="#state-2" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-slate text-white text-xs font-medium hover:bg-link-blue transition-colors border border-slate-600">
+          <span class="w-2 h-2 rounded-full bg-warning-amber"></span>
+          State 2: New card (Paystack form)
+        </a>
+        <a href="#state-3" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-slate text-white text-xs font-medium hover:bg-link-blue transition-colors border border-slate-600">
+          <span class="w-2 h-2 rounded-full bg-link-dark animate-pulse"></span>
+          State 3: Processing
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spec Meta & Token Guidance Strip -->
+  <section class="bg-white border-b border-border-structural px-6 py-3 text-xs">
+    <div class="max-w-[1720px] mx-auto flex flex-wrap items-center justify-between gap-4 text-text-muted">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5 text-text-main font-semibold">
+          <span class="material-symbols-outlined text-[18px] text-link-blue">tune</span>
+          Design Tokens Enforced
+        </span>
+        <span class="hidden sm:inline">Primary: <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded border border-border-structural font-mono text-text-main">#0B1320</code></span>
+        <span class="hidden sm:inline">Touch Target: <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded border border-border-structural font-mono text-text-main">&gt;=44px</code></span>
+        <span class="hidden md:inline">Border Radius: <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded border border-border-structural font-mono text-text-main">12px cards</code></span>
+        <span class="hidden md:inline">Focus Ring: <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded border border-border-structural font-mono text-text-main">2px #2563EB</code></span>
+        <span class="hidden lg:inline">Currency: <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded border border-border-structural font-mono text-text-main">₦15,000 strictly</code></span>
+      </div>
+      <div class="text-xs text-success-green flex items-center gap-1 bg-success-bg px-2.5 py-1 rounded border border-emerald-200">
+        <span class="material-symbols-outlined text-[16px]">check_circle</span>
+        Role Switcher Strictly Hidden · Verified Institutional Spec
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN SPECIFICATION BOARD CONTENT AREA                                      -->
+  <!-- ========================================================================= -->
+  <main class="max-w-[1720px] mx-auto p-6 space-y-16">
+
+    <!-- ======================================================================= -->
+    <!-- STATE 1: WITH SAVED CARD (SELECTED & ACTIVE CHECKBOX)                   -->
+    <!-- ======================================================================= -->
+    <article id="state-1" class="space-y-4 pt-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-border-structural pb-3">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-white text-xs font-bold">1</span>
+          <div>
+            <h2 class="text-lg font-bold font-display text-text-main">State 1: With saved card (Default state)</h2>
+            <p class="text-xs text-text-muted">Returning candidate with an active card on file. Radio card pre-selected, authorisation checkbox ticked, and "Subscribe" button active.</p>
+          </div>
+        </div>
+        <span class="px-3 py-1 rounded bg-success-bg text-success-green border border-emerald-200 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">lock_open</span>
+          Ready for Authorisation
+        </span>
+      </div>
+
+      <!-- Complete 1440px Desktop Shell Mockup -->
+      <div class="w-full bg-primary rounded-xl overflow-hidden shadow-2xl border border-surface-slate">
+        
+        <!-- STUDENT SHELL TOP BAR -->
+        <header class="w-full bg-primary text-white h-16 px-6 flex items-center justify-between border-b border-surface-slate">
+          <!-- Official Logo on Isolated White Contrast Plate -->
+          <div class="flex items-center gap-4">
+            <div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center shadow-sm">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_aTRI9zA_mLyy6qgLqKO_aY1wtRjaXvb10Nm3nfNPGLBU2sCOeBe_HlY6ZRaxv7z3ih4ijIFDKtKv51VIrclvh-qkzkeCcDVA9JKjPswh30iSH7j9Fk1zZXyfs80-qUVgFS2ZrAY46_ZBdywiEIX8cGRDnHG4X2RANkTl_mcAWF1QlD6s5cFk8daNxNn7evsfdrnhoo4vcfE_-HFw7KzHeC0mcR07a4kQXcwPKht0b6qaoAI6uH5dATj8e0uv8e236DU" alt="A.J. Silicon Logo" class="h-6 w-auto object-contain">
+            </div>
+            <div class="hidden sm:block border-l border-surface-slate pl-4 py-1">
+              <span class="text-xs uppercase font-semibold tracking-wider text-slate-400">Enterprise Audit Hub</span>
+            </div>
+          </div>
+
+          <!-- Signed-in student indicator on the right (No role switcher) -->
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-surface-slate text-white border border-slate-600 flex items-center justify-center font-semibold text-sm">
+                CE
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold text-white leading-tight">Chinedu Eze</div>
+                <div class="text-xs text-link-dark font-normal leading-tight">CISA Cohort 14 · Candidate</div>
+              </div>
+            </div>
+            <div class="h-6 w-px bg-surface-slate ml-2"></div>
+            <span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-white transition-colors" title="Institutional Secure Channel">security</span>
+          </div>
+        </header>
+
+        <!-- SHELL BODY: SIDEBAR + CONTENT -->
+        <div class="flex bg-canvas-bg min-h-[740px]">
+          
+          <!-- STUDENT SIDEBAR (320px fixed) -->
+          <aside class="w-80 bg-white border-r border-border-structural flex flex-col justify-between shrink-0 p-6">
+            <div class="space-y-6">
+              <!-- Enrolled Program Card -->
+              <div class="p-4 rounded-lg bg-canvas-bg border border-border-structural space-y-1.5">
+                <div class="text-[11px] font-semibold uppercase text-text-muted tracking-wider">Enrolled Program</div>
+                <div class="text-sm font-bold text-text-main font-display">CISA Exam Prep</div>
+                <div class="text-xs text-text-muted flex items-center gap-1.5 pt-1">
+                  <span class="material-symbols-outlined text-[16px] text-slate-400">calendar_month</span>
+                  <span>Cohort 14 (12 Oct – 18 Dec 2026, virtual)</span>
+                </div>
+              </div>
+
+              <!-- Navigation Items -->
+              <nav class="space-y-1">
+                <a href="#state-1" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  <span>Dashboard</span>
+                </a>
+                <a href="#state-1" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  <span>Modules</span>
+                </a>
+                <a href="#state-1" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">quiz</span>
+                  <span>Practice Exams</span>
+                </a>
+                <a href="#state-1" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                  <span>Extend Access</span>
+                </a>
+                
+                <!-- Active Settings Node -->
+                <div class="pt-2">
+                  <a href="#state-1" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm font-semibold text-primary bg-slate-100 border-l-4 border-primary">
+                    <span class="material-symbols-outlined text-[20px]">settings</span>
+                    <span>Settings</span>
+                  </a>
+                  <div class="ml-9 mt-1 space-y-1 border-l border-border-structural pl-3">
+                    <span class="block py-1 text-xs font-semibold text-link-blue">Payment methods / Subscriptions</span>
+                    <span class="block py-1 text-xs text-text-muted">Profile &amp; Credentials</span>
+                    <span class="block py-1 text-xs text-text-muted">Invoices &amp; Receipts</span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <!-- Footer: Sign Out -->
+            <div class="pt-6 border-t border-border-structural">
+              <a href="#state-1" class="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-danger-red transition-colors">
+                <span class="material-symbols-outlined text-[20px]">logout</span>
+                <span>Sign out</span>
+              </a>
+            </div>
+          </aside>
+
+          <!-- SCREEN CANVAS: SUBSCRIPTION CHECKOUT -->
+          <main class="flex-1 p-8 lg:p-12 overflow-y-auto">
+            <div class="max-w-4xl mx-auto space-y-8">
+              
+              <!-- Breadcrumb -->
+              <nav class="flex items-center gap-2 text-xs text-text-muted">
+                <a href="#state-1" class="text-link-blue hover:underline">Settings</a>
+                <span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+                <a href="#state-1" class="text-link-blue hover:underline">Payment methods &amp; subscriptions</a>
+                <span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+                <span class="text-text-main font-semibold" aria-current="page">Checkout</span>
+              </nav>
+
+              <!-- Page Title & Authority Subhead -->
+              <div class="space-y-1">
+                <h2 class="text-2xl font-bold font-display text-text-main tracking-tight">Checkout: Monthly Subscription</h2>
+                <p class="text-sm text-text-muted">Review your supplemental practice plan parameters and authorize automated card debits.</p>
+              </div>
+
+              <!-- Notice: Policy Callout -->
+              <div class="rounded-xl border border-blue-200 bg-info-bg p-4 flex items-start gap-3.5">
+                <span class="material-symbols-outlined text-link-blue text-[22px] shrink-0 mt-0.5">info</span>
+                <div class="text-sm text-text-main leading-relaxed">
+                  <strong class="font-semibold text-link-blue">Notice:</strong> 
+                  Recurring payments need a card. Bank transfer, USSD and QR are not available for subscriptions.
+                </div>
+              </div>
+
+              <!-- Main Checkout Grid: Plan Summary Card + Payment Selector -->
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Plan Summary Card (12px radius, card border #E2E8F0) -->
+                <section class="lg:col-span-5 spec-card p-6 space-y-6">
+                  <div class="border-b border-border-structural pb-4">
+                    <span class="text-[11px] uppercase font-semibold tracking-wider text-text-muted px-2 py-0.5 rounded bg-canvas-bg border border-border-structural">Study Tool Extension</span>
+                    <h3 class="text-lg font-bold font-display text-text-main mt-2">CISA Practice Plus</h3>
+                    <p class="text-xs text-text-muted mt-1 leading-relaxed">1,200+ ISACA Domain 1–5 adaptive question bank, full timed mock exams, and forensic answer walkthroughs.</p>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-baseline justify-between">
+                      <span class="text-sm text-text-muted">Billing rate</span>
+                      <span class="text-lg font-bold font-display text-text-main">₦15,000 <span class="text-xs font-normal text-text-muted">/ month</span></span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">First renewal date</span>
+                      <span class="font-semibold text-text-main">05 Nov 2026</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">Billing frequency</span>
+                      <span class="text-text-main">Monthly automated</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">Tax &amp; VAT (7.5%)</span>
+                      <span class="text-text-main font-mono">Included</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 border-t border-border-structural text-xs text-text-muted space-y-2">
+                    <div class="flex items-start gap-2">
+                      <span class="material-symbols-outlined text-[16px] text-success-green shrink-0 mt-0.5">verified_user</span>
+                      <span>Card tokenization secured via Paystack. Encrypted 256-bit PCI-DSS vault.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="material-symbols-outlined text-[16px] text-slate-400 shrink-0 mt-0.5">event_repeat</span>
+                      <span>You can cancel anytime via Candidate Settings before 05 Nov 2026.</span>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Payment Method & Authorisation Section -->
+                <section class="lg:col-span-7 space-y-6">
+                  
+                  <!-- Payment Method Selector Card -->
+                  <div class="spec-card p-6 space-y-4">
+                    <div class="flex items-center justify-between border-b border-border-structural pb-3">
+                      <h3 class="text-sm font-bold text-text-main uppercase tracking-wider">Payment method</h3>
+                      <span class="text-xs text-text-muted">Select billing source</span>
+                    </div>
+
+                    <div class="space-y-3">
+                      <!-- Option A: Saved Card (Selected) -->
+                      <label class="flex items-start gap-3.5 p-4 rounded-lg border-2 border-primary bg-slate-50 cursor-pointer min-h-[44px]">
+                        <input type="radio" name="payment_method_state1" checked class="mt-1 w-4 h-4 text-primary border-field-border focus-ring">
+                        <div class="flex-1">
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                              <span class="material-symbols-outlined text-primary text-[20px]">credit_card</span>
+                              <span class="text-sm font-bold text-text-main">Mastercard ending in 4242</span>
+                            </div>
+                            <!-- Default Badge -->
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-success-bg text-success-green border border-emerald-200">Default</span>
+                          </div>
+                          <div class="text-xs text-text-muted mt-1">Expires 08/28 · Tokenized automated renewals enabled</div>
+                        </div>
+                      </label>
+
+                      <!-- Option B: New Card (Unselected) -->
+                      <label class="flex items-start gap-3.5 p-4 rounded-lg border border-border-structural hover:border-slate-400 transition-colors cursor-pointer min-h-[44px]">
+                        <input type="radio" name="payment_method_state1" class="mt-1 w-4 h-4 text-primary border-field-border focus-ring">
+                        <div class="flex-1">
+                          <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-slate-400 text-[20px]">add_card</span>
+                            <span class="text-sm font-medium text-text-main">Use a new card</span>
+                          </div>
+                          <div class="text-xs text-text-muted mt-0.5">Authorise a new card via Paystack gateway</div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Mandatory Authorisation Checkbox Card -->
+                  <div class="spec-card p-6 space-y-6">
+                    <label class="flex items-start gap-3.5 cursor-pointer min-h-[44px]">
+                      <input type="checkbox" checked class="mt-1 w-5 h-5 rounded text-primary border-field-border focus-ring">
+                      <div class="text-sm text-text-main leading-snug">
+                        <strong class="font-semibold">Charge my card automatically each month until I cancel. I can cancel anytime.</strong>
+                        <p class="text-xs text-text-muted mt-1">By subscribing, you authorize A.J. Silicon to debit ₦15,000 monthly from your selected card, beginning today and renewing on the 5th of each month.</p>
+                      </div>
+                    </label>
+
+                    <!-- Primary Action & Cancel Link -->
+                    <div class="pt-4 border-t border-border-structural flex flex-col sm:flex-row items-center gap-4">
+                      <button type="button" class="w-full sm:w-auto min-h-[44px] px-8 py-3 bg-primary hover:bg-surface-slate text-white font-semibold text-sm rounded cursor-pointer transition-colors focus-ring flex items-center justify-center gap-2 shadow-sm">
+                        <span class="material-symbols-outlined text-[18px]">verified</span>
+                        <span>Subscribe</span>
+                      </button>
+
+                      <a href="#state-1" class="text-sm text-link-blue hover:underline font-medium min-h-[44px] inline-flex items-center justify-center px-4">
+                        Cancel and return to Payment methods
+                      </a>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+
+            </div>
+          </main>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ======================================================================= -->
+    <!-- STATE 2: NEW CARD (PAYSTACK EMBEDDED FORM & DISABLED UNTIL VALID)       -->
+    <!-- ======================================================================= -->
+    <article id="state-2" class="space-y-4 pt-8">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-border-structural pb-3">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center justify-center w-7 h-7 rounded-full bg-link-blue text-white text-xs font-bold">2</span>
+          <div>
+            <h2 class="text-lg font-bold font-display text-text-main">State 2: New card (Paystack card form placeholder &amp; disabled state)</h2>
+            <p class="text-xs text-text-muted">The user selects "Use a new card". The card form placeholder appears and the mandatory recurring authorization checkbox is unticked, disabling the Subscribe button.</p>
+          </div>
+        </div>
+        <span class="px-3 py-1 rounded bg-warning-bg text-warning-amber border border-amber-200 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">pending</span>
+          Requires Checkbox Authorisation
+        </span>
+      </div>
+
+      <!-- Complete 1440px Desktop Shell Mockup -->
+      <div class="w-full bg-primary rounded-xl overflow-hidden shadow-2xl border border-surface-slate">
+        
+        <!-- STUDENT SHELL TOP BAR -->
+        <header class="w-full bg-primary text-white h-16 px-6 flex items-center justify-between border-b border-surface-slate">
+          <div class="flex items-center gap-4">
+            <div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center shadow-sm">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsUA-TC6aJilllDNdkxAzSrNSzJi8AzGE5_hhKlUpHDJRXi9nsvwNfNV1hJwiGlq8210XKr7VutTqq_ACUVB0XLHuFTWAjVDnEgRJri7fXCiXBq9TwIQUCtSiqdvRChsFL_oyv18NnjzxOdJhzGYJ4wVJv3Y7rIAxARI70oq-ifqQUx319QxH4WuTJGYwi22GudAsuKJWCoABKNO4x3RK3RatZ3GStJfyUTrk9ehv_yX8sXn2vEfMF8z8aNteUi-lwrm0" alt="A.J. Silicon Logo" class="h-6 w-auto object-contain">
+            </div>
+            <div class="hidden sm:block border-l border-surface-slate pl-4 py-1">
+              <span class="text-xs uppercase font-semibold tracking-wider text-slate-400">Enterprise Audit Hub</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-surface-slate text-white border border-slate-600 flex items-center justify-center font-semibold text-sm">
+                CE
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold text-white leading-tight">Chinedu Eze</div>
+                <div class="text-xs text-link-dark font-normal leading-tight">CISA Cohort 14 · Candidate</div>
+              </div>
+            </div>
+            <div class="h-6 w-px bg-surface-slate ml-2"></div>
+            <span class="material-symbols-outlined text-slate-400">security</span>
+          </div>
+        </header>
+
+        <!-- SHELL BODY -->
+        <div class="flex bg-canvas-bg min-h-[740px]">
+          
+          <!-- SIDEBAR -->
+          <aside class="w-80 bg-white border-r border-border-structural flex flex-col justify-between shrink-0 p-6">
+            <div class="space-y-6">
+              <div class="p-4 rounded-lg bg-canvas-bg border border-border-structural space-y-1.5">
+                <div class="text-[11px] font-semibold uppercase text-text-muted tracking-wider">Enrolled Program</div>
+                <div class="text-sm font-bold text-text-main font-display">CISA Exam Prep</div>
+                <div class="text-xs text-text-muted flex items-center gap-1.5 pt-1">
+                  <span class="material-symbols-outlined text-[16px] text-slate-400">calendar_month</span>
+                  <span>Cohort 14 (12 Oct – 18 Dec 2026, virtual)</span>
+                </div>
+              </div>
+
+              <nav class="space-y-1">
+                <a href="#state-2" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  <span>Dashboard</span>
+                </a>
+                <a href="#state-2" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  <span>Modules</span>
+                </a>
+                <a href="#state-2" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">quiz</span>
+                  <span>Practice Exams</span>
+                </a>
+                <a href="#state-2" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted hover:bg-slate-50 hover:text-text-main">
+                  <span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                  <span>Extend Access</span>
+                </a>
+                <div class="pt-2">
+                  <a href="#state-2" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm font-semibold text-primary bg-slate-100 border-l-4 border-primary">
+                    <span class="material-symbols-outlined text-[20px]">settings</span>
+                    <span>Settings</span>
+                  </a>
+                  <div class="ml-9 mt-1 space-y-1 border-l border-border-structural pl-3">
+                    <span class="block py-1 text-xs font-semibold text-link-blue">Payment methods / Subscriptions</span>
+                    <span class="block py-1 text-xs text-text-muted">Profile &amp; Credentials</span>
+                    <span class="block py-1 text-xs text-text-muted">Invoices &amp; Receipts</span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <div class="pt-6 border-t border-border-structural">
+              <a href="#state-2" class="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-danger-red">
+                <span class="material-symbols-outlined text-[20px]">logout</span>
+                <span>Sign out</span>
+              </a>
+            </div>
+          </aside>
+
+          <!-- SCREEN CANVAS -->
+          <main class="flex-1 p-8 lg:p-12 overflow-y-auto">
+            <div class="max-w-4xl mx-auto space-y-8">
+              
+              <!-- Breadcrumb -->
+              <nav class="flex items-center gap-2 text-xs text-text-muted">
+                <a href="#state-2" class="text-link-blue hover:underline">Settings</a>
+                <span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+                <a href="#state-2" class="text-link-blue hover:underline">Payment methods &amp; subscriptions</a>
+                <span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+                <span class="text-text-main font-semibold">Checkout</span>
+              </nav>
+
+              <!-- Page Title -->
+              <div class="space-y-1">
+                <h2 class="text-2xl font-bold font-display text-text-main tracking-tight">Checkout: Monthly Subscription</h2>
+                <p class="text-sm text-text-muted">Review your supplemental practice plan parameters and authorize automated card debits.</p>
+              </div>
+
+              <!-- Notice Callout Banner -->
+              <div class="rounded-xl border border-blue-200 bg-info-bg p-4 flex items-start gap-3.5">
+                <span class="material-symbols-outlined text-link-blue text-[22px] shrink-0 mt-0.5">info</span>
+                <div class="text-sm text-text-main leading-relaxed">
+                  <strong class="font-semibold text-link-blue">Notice:</strong> 
+                  Recurring payments need a card. Bank transfer, USSD and QR are not available for subscriptions.
+                </div>
+              </div>
+
+              <!-- Grid -->
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Plan Summary Card -->
+                <section class="lg:col-span-5 spec-card p-6 space-y-6">
+                  <div class="border-b border-border-structural pb-4">
+                    <span class="text-[11px] uppercase font-semibold tracking-wider text-text-muted px-2 py-0.5 rounded bg-canvas-bg border border-border-structural">Study Tool Extension</span>
+                    <h3 class="text-lg font-bold font-display text-text-main mt-2">CISA Practice Plus</h3>
+                    <p class="text-xs text-text-muted mt-1 leading-relaxed">1,200+ ISACA Domain 1–5 adaptive question bank, full timed mock exams, and forensic answer walkthroughs.</p>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-baseline justify-between">
+                      <span class="text-sm text-text-muted">Billing rate</span>
+                      <span class="text-lg font-bold font-display text-text-main">₦15,000 <span class="text-xs font-normal text-text-muted">/ month</span></span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">First renewal date</span>
+                      <span class="font-semibold text-text-main">05 Nov 2026</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">Billing frequency</span>
+                      <span class="text-text-main">Monthly automated</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">Tax &amp; VAT (7.5%)</span>
+                      <span class="text-text-main font-mono">Included</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 border-t border-border-structural text-xs text-text-muted space-y-2">
+                    <div class="flex items-start gap-2">
+                      <span class="material-symbols-outlined text-[16px] text-success-green shrink-0 mt-0.5">verified_user</span>
+                      <span>Card tokenization secured via Paystack. Encrypted 256-bit PCI-DSS vault.</span>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Payment Method Section with Paystack Embed -->
+                <section class="lg:col-span-7 space-y-6">
+                  
+                  <div class="spec-card p-6 space-y-4">
+                    <div class="flex items-center justify-between border-b border-border-structural pb-3">
+                      <h3 class="text-sm font-bold text-text-main uppercase tracking-wider">Payment method</h3>
+                      <span class="text-xs text-text-muted">Enter new card credentials</span>
+                    </div>
+
+                    <div class="space-y-3">
+                      <!-- Option A: Saved Card (Unselected) -->
+                      <label class="flex items-start gap-3.5 p-4 rounded-lg border border-border-structural hover:border-slate-400 cursor-pointer min-h-[44px]">
+                        <input type="radio" name="payment_method_state2" class="mt-1 w-4 h-4 text-primary border-field-border focus-ring">
+                        <div class="flex-1">
+                          <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-text-main">Mastercard ending in 4242</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-success-bg text-success-green border border-emerald-200">Default</span>
+                          </div>
+                          <div class="text-xs text-text-muted mt-1">Expires 08/28</div>
+                        </div>
+                      </label>
+
+                      <!-- Option B: New Card (Selected) -->
+                      <div class="rounded-lg border-2 border-primary bg-slate-50 p-4 space-y-4">
+                        <label class="flex items-center gap-3.5 cursor-pointer">
+                          <input type="radio" name="payment_method_state2" checked class="w-4 h-4 text-primary border-field-border focus-ring">
+                          <span class="text-sm font-bold text-text-main">Use a new card</span>
+                        </label>
+
+                        <!-- Embedded Specification Placeholder: "Paystack card form" -->
+                        <div class="border border-border-hairline bg-white rounded-lg p-5 space-y-4 shadow-sm">
+                          <div class="flex items-center justify-between border-b border-border-structural pb-2.5">
+                            <div class="flex items-center gap-2">
+                              <span class="material-symbols-outlined text-link-blue text-[20px]">credit_card</span>
+                              <span class="text-xs font-bold uppercase tracking-wider text-text-main">Paystack card form</span>
+                            </div>
+                            <span class="text-[11px] font-semibold text-success-green bg-success-bg px-2 py-0.5 rounded border border-emerald-200">Secured by Paystack</span>
+                          </div>
+
+                          <!-- Card Number Input -->
+                          <div class="space-y-1">
+                            <label class="block text-xs font-semibold text-text-main">Card number</label>
+                            <div class="relative">
+                              <input type="text" placeholder="•••• •••• •••• ••••" class="w-full h-11 px-3.5 pl-10 text-sm font-mono border border-field-border rounded focus-ring bg-white placeholder-slate-400">
+                              <span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-slate-400">credit_card</span>
+                            </div>
+                          </div>
+
+                          <!-- Expiry + CVV row -->
+                          <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                              <label class="block text-xs font-semibold text-text-main">Expiry date</label>
+                              <input type="text" placeholder="MM / YY" class="w-full h-11 px-3.5 text-sm font-mono border border-field-border rounded focus-ring bg-white placeholder-slate-400">
+                            </div>
+                            <div class="space-y-1">
+                              <div class="flex items-center justify-between">
+                                <label class="block text-xs font-semibold text-text-main">CVV</label>
+                                <span class="text-[11px] text-slate-400">3 digits</span>
+                              </div>
+                              <input type="password" maxlength="4" placeholder="•••" class="w-full h-11 px-3.5 text-sm font-mono border border-field-border rounded focus-ring bg-white placeholder-slate-400">
+                            </div>
+                          </div>
+
+                          <div class="text-[11px] text-text-muted flex items-center gap-1.5 pt-1">
+                            <span class="material-symbols-outlined text-[15px] text-success-green">lock</span>
+                            <span>Direct PCI-DSS Level 1 tokenized vault submission. Your card details never touch A.J. Silicon servers.</span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Mandatory Authorisation Checkbox (Unticked -> Disabled State) -->
+                  <div class="spec-card p-6 space-y-6">
+                    <label class="flex items-start gap-3.5 cursor-pointer min-h-[44px]">
+                      <input type="checkbox" class="mt-1 w-5 h-5 rounded text-primary border-field-border focus-ring">
+                      <div class="text-sm text-text-main leading-snug">
+                        <strong class="font-semibold">Charge my card automatically each month until I cancel. I can cancel anytime.</strong>
+                        <p class="text-xs text-text-muted mt-1">Please accept the recurring billing terms to activate the subscription button.</p>
+                      </div>
+                    </label>
+
+                    <!-- Primary Action (Disabled with dimmed state & Helper message) -->
+                    <div class="pt-4 border-t border-border-structural space-y-2">
+                      <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <button type="button" disabled class="w-full sm:w-auto min-h-[44px] px-8 py-3 bg-slate-200 text-slate-400 font-semibold text-sm rounded cursor-not-allowed flex items-center justify-center gap-2 border border-border-structural">
+                          <span class="material-symbols-outlined text-[18px]">lock</span>
+                          <span>Subscribe</span>
+                        </button>
+
+                        <a href="#state-2" class="text-sm text-link-blue hover:underline font-medium min-h-[44px] inline-flex items-center justify-center px-4">
+                          Cancel and return to Payment methods
+                        </a>
+                      </div>
+                      
+                      <!-- Helper message indicating disabled-until-valid requirement -->
+                      <p class="text-xs text-warning-amber font-medium flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-[16px]">info</span>
+                        Checkbox must be ticked to enable Subscribe.
+                      </p>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+
+            </div>
+          </main>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ======================================================================= -->
+    <!-- STATE 3: PROCESSING (TOKENIZATION & SPINNER ACTIVE)                     -->
+    <!-- ======================================================================= -->
+    <article id="state-3" class="space-y-4 pt-8 pb-12">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-border-structural pb-3">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center justify-center w-7 h-7 rounded-full bg-success-green text-white text-xs font-bold">3</span>
+          <div>
+            <h2 class="text-lg font-bold font-display text-text-main">State 3: Processing (Authorising payment)</h2>
+            <p class="text-xs text-text-muted">The user clicks "Subscribe". The button renders a spinner with "Processing payment..." and form controls lock into disabled/dimmed states to prevent duplicate debits.</p>
+          </div>
+        </div>
+        <span class="px-3 py-1 rounded bg-info-bg text-link-blue border border-blue-200 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 animate-pulse">
+          <span class="material-symbols-outlined text-[16px]">hourglass_empty</span>
+          Authorising Transaction
+        </span>
+      </div>
+
+      <!-- Complete 1440px Desktop Shell Mockup -->
+      <div class="w-full bg-primary rounded-xl overflow-hidden shadow-2xl border border-surface-slate">
+        
+        <!-- STUDENT SHELL TOP BAR -->
+        <header class="w-full bg-primary text-white h-16 px-6 flex items-center justify-between border-b border-surface-slate">
+          <div class="flex items-center gap-4">
+            <div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center shadow-sm">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3CwWRbyJy1p6C00lV-e8H0G2xH2XQNkOb6PE-6MWg90If-d_Gtbmy2D4dHuz0AfKKMd9fav2P8MvLqwEN61qnRjSX2yb8zLwJv6GZDOF1LCkRAix67DgXo52SYCnMg2sIRpp8_BwIbjv_Uyf5S8KkOzAopECdLoIHC1RXnd9-Jr0cyXbxRf1skFcnz80OZikIX7S3VBmcCs5vGYO4TrrKGwdTg8Ief8apqyqVtYB5z7fLQt7gbJGoVypKhgF2yO-1qkk" alt="A.J. Silicon Logo" class="h-6 w-auto object-contain">
+            </div>
+            <div class="hidden sm:block border-l border-surface-slate pl-4 py-1">
+              <span class="text-xs uppercase font-semibold tracking-wider text-slate-400">Enterprise Audit Hub</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-surface-slate text-white border border-slate-600 flex items-center justify-center font-semibold text-sm">
+                CE
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold text-white leading-tight">Chinedu Eze</div>
+                <div class="text-xs text-link-dark font-normal leading-tight">CISA Cohort 14 · Candidate</div>
+              </div>
+            </div>
+            <div class="h-6 w-px bg-surface-slate ml-2"></div>
+            <span class="material-symbols-outlined text-slate-400">security</span>
+          </div>
+        </header>
+
+        <!-- SHELL BODY -->
+        <div class="flex bg-canvas-bg min-h-[740px]">
+          
+          <!-- SIDEBAR (Non-interactive during submission) -->
+          <aside class="w-80 bg-white border-r border-border-structural flex flex-col justify-between shrink-0 p-6 pointer-events-none opacity-80">
+            <div class="space-y-6">
+              <div class="p-4 rounded-lg bg-canvas-bg border border-border-structural space-y-1.5">
+                <div class="text-[11px] font-semibold uppercase text-text-muted tracking-wider">Enrolled Program</div>
+                <div class="text-sm font-bold text-text-main font-display">CISA Exam Prep</div>
+                <div class="text-xs text-text-muted flex items-center gap-1.5 pt-1">
+                  <span class="material-symbols-outlined text-[16px] text-slate-400">calendar_month</span>
+                  <span>Cohort 14 (12 Oct – 18 Dec 2026, virtual)</span>
+                </div>
+              </div>
+
+              <nav class="space-y-1">
+                <div class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted">
+                  <span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  <span>Dashboard</span>
+                </div>
+                <div class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted">
+                  <span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  <span>Modules</span>
+                </div>
+                <div class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted">
+                  <span class="material-symbols-outlined text-[20px]">quiz</span>
+                  <span>Practice Exams</span>
+                </div>
+                <div class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm text-text-muted">
+                  <span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                  <span>Extend Access</span>
+                </div>
+                <div class="pt-2">
+                  <div class="flex items-center gap-3 px-3.5 py-2.5 rounded text-sm font-semibold text-primary bg-slate-100 border-l-4 border-primary">
+                    <span class="material-symbols-outlined text-[20px]">settings</span>
+                    <span>Settings</span>
+                  </div>
+                  <div class="ml-9 mt-1 space-y-1 border-l border-border-structural pl-3">
+                    <span class="block py-1 text-xs font-semibold text-link-blue">Payment methods / Subscriptions</span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <div class="pt-6 border-t border-border-structural">
+              <span class="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted">
+                <span class="material-symbols-outlined text-[20px]">logout</span>
+                <span>Sign out</span>
+              </span>
+            </div>
+          </aside>
+
+          <!-- SCREEN CANVAS (Form locked to prevent double billing) -->
+          <main class="flex-1 p-8 lg:p-12 overflow-y-auto">
+            <div class="max-w-4xl mx-auto space-y-8">
+              
+              <!-- Breadcrumb -->
+              <nav class="flex items-center gap-2 text-xs text-text-muted opacity-60">
+                <span>Settings</span>
+                <span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+                <span>Payment methods &amp; subscriptions</span>
+                <span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+                <span class="text-text-main font-semibold">Checkout</span>
+              </nav>
+
+              <!-- Page Title -->
+              <div class="space-y-1">
+                <h2 class="text-2xl font-bold font-display text-text-main tracking-tight">Checkout: Monthly Subscription</h2>
+                <p class="text-sm text-text-muted">Review your supplemental practice plan parameters and authorize automated card debits.</p>
+              </div>
+
+              <!-- Notice Callout Banner -->
+              <div class="rounded-xl border border-blue-200 bg-info-bg p-4 flex items-start gap-3.5 opacity-80">
+                <span class="material-symbols-outlined text-link-blue text-[22px] shrink-0 mt-0.5">info</span>
+                <div class="text-sm text-text-main leading-relaxed">
+                  <strong class="font-semibold text-link-blue">Notice:</strong> 
+                  Recurring payments need a card. Bank transfer, USSD and QR are not available for subscriptions.
+                </div>
+              </div>
+
+              <!-- Grid -->
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Plan Summary Card -->
+                <section class="lg:col-span-5 spec-card p-6 space-y-6 opacity-75">
+                  <div class="border-b border-border-structural pb-4">
+                    <span class="text-[11px] uppercase font-semibold tracking-wider text-text-muted px-2 py-0.5 rounded bg-canvas-bg border border-border-structural">Study Tool Extension</span>
+                    <h3 class="text-lg font-bold font-display text-text-main mt-2">CISA Practice Plus</h3>
+                    <p class="text-xs text-text-muted mt-1 leading-relaxed">1,200+ ISACA Domain 1–5 adaptive question bank, full timed mock exams, and forensic answer walkthroughs.</p>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-baseline justify-between">
+                      <span class="text-sm text-text-muted">Billing rate</span>
+                      <span class="text-lg font-bold font-display text-text-main">₦15,000 <span class="text-xs font-normal text-text-muted">/ month</span></span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">First renewal date</span>
+                      <span class="font-semibold text-text-main">05 Nov 2026</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">Billing frequency</span>
+                      <span class="text-text-main">Monthly automated</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-text-muted">Tax &amp; VAT (7.5%)</span>
+                      <span class="text-text-main font-mono">Included</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 border-t border-border-structural text-xs text-text-muted space-y-2">
+                    <div class="flex items-start gap-2">
+                      <span class="material-symbols-outlined text-[16px] text-success-green shrink-0 mt-0.5">verified_user</span>
+                      <span>Card tokenization secured via Paystack. Encrypted 256-bit PCI-DSS vault.</span>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Processing Payment Section (Locked Controls) -->
+                <section class="lg:col-span-7 space-y-6">
+                  
+                  <div class="spec-card p-6 space-y-4 opacity-60 pointer-events-none">
+                    <div class="flex items-center justify-between border-b border-border-structural pb-3">
+                      <h3 class="text-sm font-bold text-text-main uppercase tracking-wider">Payment method</h3>
+                      <span class="text-xs text-text-muted">Locked during processing</span>
+                    </div>
+
+                    <div class="space-y-3">
+                      <div class="flex items-start gap-3.5 p-4 rounded-lg border-2 border-primary bg-slate-50">
+                        <input type="radio" checked disabled class="mt-1 w-4 h-4 text-primary">
+                        <div class="flex-1">
+                          <div class="flex items-center justify-between">
+                            <span class="text-sm font-bold text-text-main">Mastercard ending in 4242</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-success-bg text-success-green border border-emerald-200">Default</span>
+                          </div>
+                          <div class="text-xs text-text-muted mt-1">Expires 08/28</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Authorisation Checkbox (Locked) & Processing Button -->
+                  <div class="spec-card p-6 space-y-6 border-blue-300 shadow-md">
+                    <div class="flex items-start gap-3.5 pointer-events-none opacity-80 min-h-[44px]">
+                      <input type="checkbox" checked disabled class="mt-1 w-5 h-5 rounded text-primary">
+                      <div class="text-sm text-text-main leading-snug">
+                        <strong class="font-semibold">Charge my card automatically each month until I cancel. I can cancel anytime.</strong>
+                        <p class="text-xs text-text-muted mt-1">Authorisation token confirmed. Transmitting cryptographic signature to payment switch.</p>
+                      </div>
+                    </div>
+
+                    <!-- Processing Action with Live Spinner -->
+                    <div class="pt-4 border-t border-border-structural space-y-2">
+                      <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <button type="button" disabled class="w-full sm:w-auto min-h-[44px] px-8 py-3 bg-primary text-white font-semibold text-sm rounded cursor-wait flex items-center justify-center gap-2.5 shadow-sm">
+                          <svg class="animate-spin-custom h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <span>Processing payment...</span>
+                        </button>
+
+                        <span class="text-sm text-text-muted font-medium min-h-[44px] inline-flex items-center justify-center px-4 cursor-not-allowed opacity-50">
+                          Cancel
+                        </span>
+                      </div>
+                      
+                      <p class="text-xs text-text-muted flex items-center gap-1.5 pt-1">
+                        <span class="material-symbols-outlined text-[16px] text-link-blue">sync</span>
+                        Authorising tokenization with Paystack. Please do not refresh.
+                      </p>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+
+            </div>
+          </main>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- INSTITUTIONAL CLOSURE FOOTER                                              -->
+  <!-- ========================================================================= -->
+  <footer class="w-full bg-white border-t border-border-structural py-6 px-8 text-xs text-text-muted mt-12">
+    <div class="max-w-[1720px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 A.J. Silicon Academy. All Rights Reserved. Accredited Institutional Learning &amp; Certification Engine.
+      </div>
+      <div class="flex items-center gap-6">
+        <span>ISO/IEC 27001 Certified System</span>
+        <span>•</span>
+        <span>SOC 2 Type II Assured</span>
+        <span>•</span>
+        <span>Paystack Recurring Settlement Adapter v2.4</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

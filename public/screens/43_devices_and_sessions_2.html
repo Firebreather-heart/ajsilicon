@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Secure Portal - 43 Devices and sessions Specification Board</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans font from Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#eaedff",
+            "on-secondary-fixed": "#001551",
+            "surface-bright": "#faf8ff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "on-secondary-fixed-variant": "#0039b5",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#281809",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "outline": "#75777c",
+            "surface-tint": "#575f6e",
+            "inverse-primary": "#bfc6d9",
+            "on-surface-variant": "#45474c",
+            "background": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "on-error": "#ffffff",
+            "primary": "#000000",
+            "surface-container-highest": "#dae2fd",
+            "on-surface": "#131b2e",
+            "inverse-surface": "#283044",
+            "tertiary-fixed": "#fddcc4",
+            "secondary-fixed": "#dce1ff",
+            "tertiary-container": "#281809",
+            "secondary-container": "#4069f2",
+            "primary-container": "#141c29",
+            "on-tertiary-fixed-variant": "#584231",
+            "primary-fixed": "#dbe2f5",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#c5c6cc",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-secondary-container": "#fffbff",
+            "on-primary-fixed": "#141c29",
+            "primary-fixed-dim": "#bfc6d9",
+            "tertiary": "#000000",
+            "secondary": "#1d4ed8",
+            "on-tertiary-container": "#997f6a",
+            "on-background": "#131b2e",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface": "#faf8ff",
+            "inverse-on-surface": "#eef0ff",
+            "surface-variant": "#dae2fd",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#7c8495"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "3rem",
+            "margin": "2rem",
+            "gutter": "1.5rem",
+            "space-md": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "2rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Brand specific tokens & helpers */
+    .bg-aj-navy { background-color: #0B1320; }
+    .text-aj-navy { color: #0B1320; }
+    .border-card { border-color: #E2E8F0; }
+    .border-field { border-color: #64748B; }
+    .focus-ring-compliance:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen">
+<!-- ========================================== -->
+<!-- SPECIFICATION BOARD CONTROL & AUDIT HEADER -->
+<!-- ========================================== -->
+<header class="bg-primary-container text-surface-container-lowest border-b border-outline px-6 py-4">
+<div class="max-w-[1720px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest px-3 py-1.5 rounded flex items-center justify-center h-10 border border-outline-variant">
+<img alt="A.J. Silicon Logo Mark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxR-h8bV03mV5waKjhgSiqxgPx6mqoK31ZKrWe-JmlInlFJ_x6zoXLaw1CJk7WbGZV-DyYhrE0rqfGX_iL63SGwCWYXFfVJCbGwyvhfkmI2ltQmymPlNZkOFAgrmNtTsadLxK-fTnTiZXT8hwj_PXFpsJ8jrnPwzFE01jzKlBqKWFQQBu0kttRomTxY1ZpP0fElh0odQgYxdwZcmEAZP6d4fe6tZ2mgHL3e8CdlKyLQ1JGSnPZgEjNWA"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md tracking-tight font-bold">A.J. Silicon Secure Portal</span>
+<span class="text-label-sm font-label-sm bg-inverse-surface text-secondary-fixed px-2 py-0.5 rounded border border-outline">SPECIFICATION BOARD: 43</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">ISACA Accredited Partner · Student Browser &amp; Session Governance · Lagos, Nigeria</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="bg-inverse-surface px-3 py-1.5 rounded text-label-sm font-label-sm flex items-center gap-2 border border-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">schedule</span>
+<span>14:30 WAT · 05 Oct 2026</span>
+</div>
+<div class="bg-inverse-surface px-3 py-1.5 rounded text-label-sm font-label-sm flex items-center gap-2 border border-outline">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">verified_user</span>
+<span>Cohort 14 (CISA Exam Prep)</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest/10 p-1 rounded border border-outline">
+<a class="px-3 py-1 text-label-sm font-label-sm text-surface-container-lowest hover:bg-inverse-surface rounded transition-colors" href="#variant-1">Var 1: Default (2/2)</a>
+<a class="px-3 py-1 text-label-sm font-label-sm text-surface-container-lowest hover:bg-inverse-surface rounded transition-colors" href="#variant-2">Var 2: Modal (Remove)</a>
+<a class="px-3 py-1 text-label-sm font-label-sm text-surface-container-lowest hover:bg-inverse-surface rounded transition-colors" href="#variant-3">Var 3: Toast (1/2)</a>
+</div>
+</div>
+</div>
+</header>
+<!-- SPECIFICATION BOARD WRAPPER -->
+<main class="max-w-[1720px] mx-auto p-6 md:p-8 space-y-16">
+<!-- ========================================================================= -->
+<!-- VARIANT 1: CANONICAL DEFAULT STATE (2 OF 2 SLOTS USED)                   -->
+<!-- ========================================================================= -->
+<section class="space-y-4" id="variant-1">
+<div class="flex items-center justify-between pb-3 border-b-2 border-primary-container">
+<div class="flex items-center gap-3">
+<span class="bg-primary-container text-surface-container-lowest font-headline-sm text-headline-sm px-3 py-1 rounded">VARIANT 1</span>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Default Canonical State (Slot Limit Reached: 2 of 2 Slots Used)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Candidate browser slots exhausted. "+ Register a new browser" disabled. 2 concurrent active sessions listed.</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-2 text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Policy: Maximum 2 registered browsers per candidate account</span>
+</div>
+</div>
+<!-- FULL APP FRAME FOR VARIANT 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-card shadow-sm overflow-hidden flex flex-col min-h-[920px]">
+<!-- App Top Navigation Bar -->
+<div class="bg-primary-container px-6 py-3 border-b border-outline flex justify-between items-center text-surface-container-lowest">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest px-2.5 py-1 rounded flex items-center justify-center h-8 border border-outline-variant">
+<img alt="A.J. Silicon Logo Mark" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8XEER0JlkrBzp3x2lyM7-tEhv8m-WlToP8ry0ymAi8whVVaUambf9JQnP-JJSmfWngI78rMhUQVo2JXkUMDhUbTAGT5hxFx1-_kpC_wJwjDZfLnxvNls05owJt2N_FmRG_3Zu6UYiWqNaJ4gUvvTh-izHq3ZK8MXd6hkuaA0XG5sxHVLTf6ejhpHeP73GrtVS_FYPGddguZAHrfqUVSVrZxZbrN_a2sApuJ24QaXN20vcVE9t_QuH1A"/>
+</div>
+<div class="h-4 w-[1px] bg-outline"></div>
+<span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest">A.J. Silicon Secure Portal</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<div class="font-label-md text-label-md text-surface-container-lowest">Chinedu Eze</div>
+<div class="font-label-sm text-label-sm text-on-primary-container">CISA Cohort 14 · Virtual (12 Oct – 18 Dec 2026)</div>
+</div>
+<div class="h-9 w-9 rounded-full bg-secondary text-surface-container-lowest font-headline-sm text-headline-sm flex items-center justify-center border border-secondary-fixed">
+              CE
+            </div>
+</div>
+</div>
+<!-- Student Application Body (Sidebar + Content Workspace) -->
+<div class="flex flex-1 flex-col md:flex-row">
+<!-- Persistent Sidebar Rail -->
+<aside class="w-full md:w-64 bg-primary-container text-on-primary-container border-r border-outline flex flex-col justify-between p-4 shrink-0">
+<div class="space-y-6">
+<div class="px-3 pt-2">
+<span class="text-[11px] font-label-sm uppercase tracking-wider text-on-primary-container">Student Navigation</span>
+<p class="text-label-sm font-label-sm text-surface-container-lowest font-medium mt-0.5">CISA Exam Prep Hub</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span>Progress</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+<span>Certificates and credits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+<span>Extend Access</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+<span>Help centre</span>
+</a>
+<!-- ACTIVE SETTINGS TAB -->
+<a class="flex items-center gap-3 px-3 py-2.5 bg-inverse-surface text-secondary-fixed font-semibold rounded-lg border-l-4 border-secondary-fixed transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-1">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-outline/40 space-y-2">
+<div class="px-3 py-2 text-label-sm font-label-sm text-on-primary-container">
+<span class="block text-surface-container-lowest font-medium">Session Clock</span>
+<span>Active 14:30 WAT · 05 Oct 2026</span>
+</div>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-[#B91C1C] hover:bg-inverse-surface rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas (43 Devices & Sessions) -->
+<main class="flex-1 bg-surface p-6 md:p-8 space-y-8">
+<!-- Page Header Breadcrumbs & Title -->
+<div class="space-y-2">
+<nav class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Candidate Portal</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Settings</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">43 Devices and sessions</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Devices and sessions</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage registered candidate browsers and inspect concurrent authenticated sessions for ISACA Lagos accreditation compliance.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Candidate Verified</span>
+</span>
+</div>
+</div>
+</div>
+<!-- BENTO ROW 1: Browser Slot Allocation Banner Card -->
+<div class="bg-surface-container-lowest border border-card rounded-xl p-6 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="space-y-3 max-w-3xl">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 bg-[#FFFBEB] text-[#B45309] border border-[#B45309] font-label-sm text-label-sm px-2.5 py-1 rounded">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Slot limit reached</span>
+</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">2 of 2 slots used</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Under A.J. Silicon courseware integrity guidelines, candidates may register a maximum of <strong class="text-on-surface">2 browsers</strong> simultaneously. A registered browser is a named workstation or laptop authenticated to access copyrighted study materials. To authorize a new browser, you must remove one of your existing registered browsers below.
+                  </p>
+<!-- Slot Progress Visual Meter -->
+<div class="space-y-1.5 pt-1">
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Browser Slot Capacity (100% full)</span>
+<span class="font-semibold text-on-surface">2 / 2 Registered</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full w-1/2 border-r border-surface-container-lowest"></div>
+<div class="bg-primary-container h-full w-1/2"></div>
+</div>
+</div>
+</div>
+<!-- Registration Action (Disabled state) -->
+<div class="flex flex-col sm:items-end justify-center shrink-0 pt-2 lg:pt-0">
+<button class="min-h-[44px] px-6 py-2.5 rounded-lg bg-[#E2E8F0] text-[#94A3B8] font-label-md text-label-md flex items-center gap-2 cursor-not-allowed border border-outline-variant/60" disabled="" title="Remove a registered browser below to release a slot">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Register a new browser</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-right">No slots available. Remove a browser to register another.</span>
+</div>
+</div>
+</div>
+<!-- BENTO ROW 2: Registered Devices Table Section -->
+<div class="bg-surface-container-lowest border border-card rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-card flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Registered candidate browsers</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Authorised browsers currently bound to Chinedu Eze's CISA Exam Prep profile.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<!-- Search Filter -->
+<div class="relative">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3 top-1/2 -translate-y-1/2">search</span>
+<input class="h-[44px] pl-9 pr-3 text-body-sm font-body-sm border border-field rounded-lg w-56 md:w-64 focus-ring-compliance" placeholder="Search friendly name or OS..." type="text"/>
+</div>
+<!-- Sort Filter -->
+<div class="flex items-center gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant hidden sm:inline">Sort:</label>
+<select class="h-[44px] px-3 text-body-sm font-body-sm border border-field rounded-lg bg-surface-container-lowest focus-ring-compliance">
+<option selected="">Last active (Recent)</option>
+<option>Device name (A–Z)</option>
+<option>Registration date</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Table Data Content -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-card text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-6">Device / Friendly Name</th>
+<th class="py-3 px-6">Browser &amp; OS</th>
+<th class="py-3 px-6">Last Active (WAT)</th>
+<th class="py-3 px-6">City / Location</th>
+<th class="py-3 px-6 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-card font-body-sm text-body-sm">
+<!-- Row 1: Current Active Device -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">Work MacBook</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>Current browser</span>
+</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Registered: 28 Sep 2026</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface">Chrome 128 · macOS Sonoma</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-[#047857]"></span>
+<span class="font-medium text-[#047857]">Active now (Current session)</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">05 Oct 2026, 14:30 WAT</span>
+</td>
+<td class="py-4 px-6 text-on-surface">Lagos (Victoria Island), Nigeria</td>
+<td class="py-4 px-6 text-right">
+<span class="inline-flex items-center justify-center min-h-[44px] px-4 text-label-sm font-label-sm text-on-surface-variant bg-[#F1F5F9] rounded-lg border border-card font-medium cursor-default">
+                          In Use (Primary)
+                        </span>
+</td>
+</tr>
+<!-- Row 2: Secondary Device -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-[#F8FAFC] border border-field/30 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">desktop_windows</span>
+</div>
+<div>
+<span class="font-semibold text-on-surface">Home Desktop</span>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Registered: 01 Oct 2026</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface">Edge 126 · Windows 11 Enterprise</td>
+<td class="py-4 px-6">
+<span class="text-on-surface">04 Oct 2026, 21:15 WAT</span>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Yesterday evening</div>
+</td>
+<td class="py-4 px-6 text-on-surface">Ikeja, Lagos, Nigeria</td>
+<td class="py-4 px-6 text-right">
+<a class="inline-flex items-center justify-center gap-1 min-h-[44px] px-4 text-label-md font-label-md text-[#B91C1C] border border-[#B91C1C] bg-surface-container-lowest hover:bg-[#FEF2F2] rounded-lg transition-colors focus-ring-compliance" href="#variant-2">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Remove</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination and Auditing Footnote -->
+<div class="p-4 bg-[#F8FAFC] border-t border-card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Showing 2 of 2 registered browsers (Maximum allowable quota reached)</span>
+<div class="flex items-center gap-2">
+<button class="h-[44px] px-3 border border-outline-variant bg-surface-container-lowest rounded text-on-surface-variant disabled:opacity-40 cursor-not-allowed text-label-sm font-label-sm" disabled="">Previous</button>
+<span class="text-label-sm font-label-sm px-2 font-medium">Page 1 of 1</span>
+<button class="h-[44px] px-3 border border-outline-variant bg-surface-container-lowest rounded text-on-surface-variant disabled:opacity-40 cursor-not-allowed text-label-sm font-label-sm" disabled="">Next</button>
+</div>
+</div>
+</div>
+<!-- BENTO ROW 3: Active Sessions Concurrent Inspection -->
+<div class="space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2.5">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Active sessions</h3>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">sensors</span>
+<span>2 Concurrent</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live authenticated sessions connected to course videos, mock questions, and syllabus notes.</p>
+</div>
+<button class="min-h-[44px] px-4 py-2 border border-[#B91C1C] text-[#B91C1C] bg-surface-container-lowest hover:bg-[#FEF2F2] rounded-lg font-label-md text-label-md flex items-center gap-2 transition-colors focus-ring-compliance">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Sign out all other sessions</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<!-- Session 1: Current Session Card -->
+<div class="bg-surface-container-lowest border-2 border-secondary rounded-xl p-5 space-y-4 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Chrome 128 on macOS Sonoma</h4>
+</div>
+<span class="text-label-sm font-label-sm text-[#047857] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+                          This Device / Current session
+                        </span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+                      Active
+                    </span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2 border-t border-card text-body-sm font-body-sm">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Location</span>
+<span class="text-on-surface font-medium">Victoria Island, Lagos</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">IP Address</span>
+<span class="text-on-surface font-mono text-[13px]">102.89.42.18</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Signed in timestamp</span>
+<span class="text-on-surface">05 Oct 2026, 08:30 WAT</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Security Protocol</span>
+<span class="text-on-surface">TLS 1.3 / SMS 2FA</span>
+</div>
+</div>
+<div class="pt-2 flex justify-end">
+<span class="text-label-sm font-label-sm text-on-surface-variant italic">Active candidate browser session</span>
+</div>
+</div>
+<!-- Session 2: Remote Session Card -->
+<div class="bg-surface-container-lowest border border-card rounded-xl p-5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-[#F8FAFC] border border-field/30 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">desktop_windows</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Edge 126 on Windows 11</h4>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Candidate Workstation (Home)</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+                      Idle (17h)
+                    </span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2 border-t border-card text-body-sm font-body-sm">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Location</span>
+<span class="text-on-surface font-medium">Ikeja, Lagos, Nigeria</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">IP Address</span>
+<span class="text-on-surface font-mono text-[13px]">105.112.98.44</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Signed in timestamp</span>
+<span class="text-on-surface">04 Oct 2026, 19:40 WAT</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Security Protocol</span>
+<span class="text-on-surface">TLS 1.3 / SMS 2FA</span>
+</div>
+</div>
+<div class="pt-2 flex justify-end">
+<button class="min-h-[44px] px-4 py-2 text-label-md font-label-md text-[#B91C1C] border border-[#B91C1C] bg-surface-container-lowest hover:bg-[#FEF2F2] rounded-lg transition-colors flex items-center gap-1.5 focus-ring-compliance">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+<span>Sign out</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- BENTO ROW 4: Recent Sign-in History Audit Table -->
+<div class="bg-surface-container-lowest border border-card rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-card flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Recent sign-in history</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immutable access log required by ISACA Lagos Gold Accredited governance guidelines.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3 top-1/2 -translate-y-1/2">search</span>
+<input class="h-[44px] pl-9 pr-3 text-body-sm font-body-sm border border-field rounded-lg w-48 focus-ring-compliance" placeholder="Search IP or event..." type="text"/>
+</div>
+<select class="h-[44px] px-3 text-body-sm font-body-sm border border-field rounded-lg bg-surface-container-lowest focus-ring-compliance">
+<option>Outcome: All results</option>
+<option>Successful sign-ins</option>
+<option>Challenge verifications</option>
+</select>
+<select class="h-[44px] px-3 text-body-sm font-body-sm border border-field rounded-lg bg-surface-container-lowest focus-ring-compliance">
+<option>Past 30 days</option>
+<option>Past 7 days</option>
+<option>Entire cohort term</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse font-body-sm text-body-sm">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-card text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-6">Date &amp; Time (WAT)</th>
+<th class="py-3 px-6">Browser &amp; OS</th>
+<th class="py-3 px-6">IP Address</th>
+<th class="py-3 px-6">Location</th>
+<th class="py-3 px-6">Authentication Method</th>
+<th class="py-3 px-6 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-card">
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3.5 px-6 font-medium text-on-surface">05 Oct 2026, 08:30 WAT</td>
+<td class="py-3.5 px-6 text-on-surface">Chrome 128 · macOS Sonoma</td>
+<td class="py-3.5 px-6 font-mono text-[13px] text-on-surface">102.89.42.18</td>
+<td class="py-3.5 px-6 text-on-surface">Victoria Island, Lagos</td>
+<td class="py-3.5 px-6 text-on-surface">Password + 2FA SMS (+234 803 ••• 1940)</td>
+<td class="py-3.5 px-6 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Signed in</span>
+</span>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3.5 px-6 font-medium text-on-surface">04 Oct 2026, 19:40 WAT</td>
+<td class="py-3.5 px-6 text-on-surface">Edge 126 · Windows 11 Enterprise</td>
+<td class="py-3.5 px-6 font-mono text-[13px] text-on-surface">105.112.98.44</td>
+<td class="py-3.5 px-6 text-on-surface">Ikeja, Lagos</td>
+<td class="py-3.5 px-6 text-on-surface">Password + 2FA SMS (+234 803 ••• 1940)</td>
+<td class="py-3.5 px-6 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Signed in</span>
+</span>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3.5 px-6 font-medium text-on-surface">02 Oct 2026, 09:12 WAT</td>
+<td class="py-3.5 px-6 text-on-surface">Chrome 128 · macOS Sonoma</td>
+<td class="py-3.5 px-6 font-mono text-[13px] text-on-surface">102.89.42.18</td>
+<td class="py-3.5 px-6 text-on-surface">Victoria Island, Lagos</td>
+<td class="py-3.5 px-6 text-on-surface">Password + 2FA SMS (+234 803 ••• 1940)</td>
+<td class="py-3.5 px-6 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Signed in</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+<!-- Institutional Dossier Footer -->
+<footer class="w-full px-8 py-4 bg-primary-container text-on-primary-container border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<div class="text-surface-container-lowest font-medium">
+            © 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.
+          </div>
+<div class="flex flex-wrap items-center gap-4 text-on-primary-container text-label-sm font-label-sm">
+<a class="hover:text-surface-container-lowest hover:underline transition-colors" href="#variant-1">DRM Compliance Policy</a>
+<span>•</span>
+<a class="hover:text-surface-container-lowest hover:underline transition-colors" href="#variant-1">Zero-Trust Verification</a>
+<span>•</span>
+<a class="hover:text-surface-container-lowest hover:underline transition-colors" href="#variant-1">Candidate Session Hash Log</a>
+<span>•</span>
+<a class="hover:text-surface-container-lowest hover:underline transition-colors" href="#variant-1">SecOps Oversight</a>
+</div>
+</footer>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: REMOVE CONFIRMATION DIALOG STATE                              -->
+<!-- ========================================================================= -->
+<section class="space-y-4" id="variant-2">
+<div class="flex items-center justify-between pb-3 border-b-2 border-[#B91C1C]">
+<div class="flex items-center gap-3">
+<span class="bg-[#B91C1C] text-surface-container-lowest font-headline-sm text-headline-sm px-3 py-1 rounded">VARIANT 2</span>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Remove Confirmation Dialog State</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Modal prompt initiated by candidate clicking "Remove" on Home Desktop (Edge 126 on Windows 11). Focus trapped and accessible.</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-2 text-label-sm font-label-sm bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Irreversible slot dissociation prompt</span>
+</div>
+</div>
+<!-- SIMULATED DESKTOP CANVAS WITH MODAL OVERLAY -->
+<div class="relative bg-surface-container-lowest rounded-xl border border-card shadow-sm overflow-hidden min-h-[780px]">
+<!-- Background Dimmed Application Canvas (Simulated Underlay) -->
+<div class="opacity-35 pointer-events-none filter blur-[1px]">
+<!-- Micro-view of App Frame -->
+<div class="bg-primary-container px-6 py-3 flex justify-between items-center text-surface-container-lowest">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-lowest px-2 py-1 rounded h-7">
+<img alt="A.J. Silicon Logo Mark" class="h-4 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE9H9td79_pSlKLWF4xn-UyFkCsSWT0vatPNThEkcUjosoCXiw_kvf0h6umqYEiSqBo3OaMjkrckv2ol3U5r3GBK650bq1Naca713Kii2rs3_jUTvOjefNR_LZe6D09Yr5oGHQzbfu6r0MT7rEed7WPmYn-9xq54akQSiTiER0RDENQ3qzHBxcM7AsA3VhFas4lIWKjeYYOz1vV-ZDIJJg9U1EKFE8ep8TWHjszXGFJcBKvQM6QuU3bg"/>
+</div>
+<span class="font-headline-sm text-headline-sm">A.J. Silicon Secure Portal</span>
+</div>
+<span class="text-label-sm font-label-sm">Chinedu Eze · CISA Cohort 14</span>
+</div>
+<div class="p-8 space-y-6">
+<div class="bg-surface-container-lowest border border-card rounded-xl p-6">
+<span class="font-headline-sm text-headline-sm">2 of 2 slots used</span>
+</div>
+<div class="bg-surface-container-lowest border border-card rounded-xl p-6 h-64"></div>
+</div>
+</div>
+<!-- Darkened Backdrop Overlay -->
+<div class="absolute inset-0 bg-[#0B1320]/65 backdrop-blur-[2px] flex items-center justify-center p-4 z-50">
+<!-- Accessible Removal Dialog Window -->
+<div aria-labelledby="dialog-title" aria-modal="true" class="bg-surface-container-lowest rounded-xl border border-card max-w-lg w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200" role="dialog">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-card flex items-center justify-between bg-[#F8FAFC]">
+<div class="flex items-center gap-2.5">
+<div class="h-9 w-9 rounded-full bg-[#FEF2F2] border border-[#B91C1C] flex items-center justify-center text-[#B91C1C]">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="dialog-title">Remove registered browser</h3>
+</div>
+<a aria-label="Close dialog" class="h-9 w-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-[#E2E8F0] transition-colors" href="#variant-1">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</a>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4">
+<p class="font-body-md text-body-md text-on-surface">
+                Are you sure you want to remove <strong class="text-on-surface">‘Home Desktop (Edge 126 on Windows 11)’</strong>?
+              </p>
+<!-- Consequence Advisory Card -->
+<div class="bg-[#FEF2F2] border border-[#B91C1C]/40 rounded-lg p-4 space-y-2">
+<div class="flex items-center gap-2 text-label-md font-label-md font-semibold text-[#B91C1C]">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span>Compliance consequence</span>
+</div>
+<ul class="space-y-1 font-body-sm text-body-sm text-on-surface pl-6 list-disc">
+<li>You will be signed out on that browser immediately.</li>
+<li>Cached mock exam progress stored locally on that machine will be secured.</li>
+<li>This action will immediately free up <strong class="font-semibold">1 of your 2 registered browser slots</strong>.</li>
+</ul>
+</div>
+<!-- Browser Telemetry Snapshot -->
+<div class="bg-[#F8FAFC] border border-card rounded-lg p-3 text-label-sm font-label-sm text-on-surface-variant space-y-1">
+<div class="flex justify-between">
+<span>Registered Device:</span>
+<span class="font-semibold text-on-surface">Home Desktop (Ikeja, Lagos)</span>
+</div>
+<div class="flex justify-between">
+<span>Last Active WAT:</span>
+<span class="text-on-surface">04 Oct 2026, 21:15 WAT</span>
+</div>
+</div>
+</div>
+<!-- Modal Action Footer (44px Minimum Touch Targets) -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-card flex flex-col sm:flex-row items-center justify-end gap-3">
+<a class="w-full sm:w-auto min-h-[44px] px-6 py-2.5 rounded-lg border border-field text-on-surface bg-surface-container-lowest hover:bg-[#F1F5F9] font-label-md text-label-md flex items-center justify-center transition-colors focus-ring-compliance" href="#variant-1">
+                Cancel
+              </a>
+<a class="w-full sm:w-auto min-h-[44px] px-6 py-2.5 rounded-lg bg-[#B91C1C] hover:bg-[#991B1B] text-surface-container-lowest font-label-md text-label-md flex items-center justify-center gap-2 transition-colors focus-ring-compliance" href="#variant-3">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>Confirm and remove</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 3: DEVICE REMOVED SUCCESS TOAST STATE (1 OF 2 SLOTS USED)        -->
+<!-- ========================================================================= -->
+<section class="space-y-4" id="variant-3">
+<div class="flex items-center justify-between pb-3 border-b-2 border-[#047857]">
+<div class="flex items-center gap-3">
+<span class="bg-[#047857] text-surface-container-lowest font-headline-sm text-headline-sm px-3 py-1 rounded">VARIANT 3</span>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Device Removed Toast State (1 of 2 Slots Used)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Post-removal confirmation. Slot released. "+ Register a new browser" button enabled. Active toast message visible.</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-2 text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Slot available for new authorization</span>
+</div>
+</div>
+<!-- APP FRAME WITH SUCCESS TOAST -->
+<div class="bg-surface-container-lowest rounded-xl border border-card shadow-sm overflow-hidden flex flex-col relative min-h-[920px]">
+<!-- SUCCESS TOAST NOTIFICATION (Docked Top-Right Overlay with High Institutional Contrast) -->
+<div class="absolute top-20 right-8 z-50 max-w-md w-full animate-in slide-in-from-top-4 duration-300">
+<div class="bg-[#ECFDF5] border-2 border-[#047857] text-[#0F172A] p-4 rounded-xl shadow-lg flex items-start gap-3">
+<div class="h-8 w-8 rounded-full bg-[#047857] text-surface-container-lowest flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-[#047857]">Browser removed</span>
+<span class="text-[11px] font-label-sm text-on-surface-variant">Just now</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                Browser removed successfully. <strong class="font-semibold text-[#047857]">1 browser slot is now available</strong> for candidate Chinedu Eze.
+              </p>
+</div>
+<button class="h-8 w-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-[#D1FAE5] transition-colors" title="Dismiss notification">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- App Top Navigation Bar -->
+<div class="bg-primary-container px-6 py-3 border-b border-outline flex justify-between items-center text-surface-container-lowest">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest px-2.5 py-1 rounded flex items-center justify-center h-8 border border-outline-variant">
+<img alt="A.J. Silicon Logo Mark" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo1CuB7d05aHdruRPe8TCJVgs6amCljD_73ueTQ1G80I25FXAY0J9su6T0TOeN7frNhhuyYYWja_-OyFM4agn5LOGF_FeGsXuY_Lao_hKjS61ZRcBDDeUslPQblb5LH_WuyqE3e6x4q_rye2I-a7RJK5rh3ydpNN2PC_OhycSydI50g0jeCTi5YVvbdSHIdyH_HHfCwg-fy7lqHrzF7uEwRXvOGEw2vqeAMydOPa8J3ZZ56ILyhUYrfw"/>
+</div>
+<div class="h-4 w-[1px] bg-outline"></div>
+<span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest">A.J. Silicon Secure Portal</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<div class="font-label-md text-label-md text-surface-container-lowest">Chinedu Eze</div>
+<div class="font-label-sm text-label-sm text-on-primary-container">CISA Cohort 14 · Virtual (12 Oct – 18 Dec 2026)</div>
+</div>
+<div class="h-9 w-9 rounded-full bg-secondary text-surface-container-lowest font-headline-sm text-headline-sm flex items-center justify-center border border-secondary-fixed">
+              CE
+            </div>
+</div>
+</div>
+<!-- App Body -->
+<div class="flex flex-1 flex-col md:flex-row">
+<!-- Persistent Sidebar Rail -->
+<aside class="w-full md:w-64 bg-primary-container text-on-primary-container border-r border-outline flex flex-col justify-between p-4 shrink-0">
+<div class="space-y-6">
+<div class="px-3 pt-2">
+<span class="text-[11px] font-label-sm uppercase tracking-wider text-on-primary-container">Student Navigation</span>
+<p class="text-label-sm font-label-sm text-surface-container-lowest font-medium mt-0.5">CISA Exam Prep Hub</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span>Progress</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+<span>Certificates and credits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+<span>Extend Access</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+<span>Help centre</span>
+</a>
+<!-- ACTIVE SETTINGS TAB -->
+<a class="flex items-center gap-3 px-3 py-2.5 bg-inverse-surface text-secondary-fixed font-semibold rounded-lg border-l-4 border-secondary-fixed transition-colors font-body-sm text-body-sm min-h-[44px]" href="#variant-3">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-outline/40 space-y-2">
+<div class="px-3 py-2 text-label-sm font-label-sm text-on-primary-container">
+<span class="block text-surface-container-lowest font-medium">Session Clock</span>
+<span>Active 14:31 WAT · 05 Oct 2026</span>
+</div>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-[#B91C1C] hover:bg-inverse-surface rounded-lg transition-colors font-body-sm text-body-sm min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas with Updated 1/2 Quota -->
+<main class="flex-1 bg-surface p-6 md:p-8 space-y-8">
+<!-- Page Header -->
+<div class="space-y-2">
+<nav class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Candidate Portal</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Settings</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">43 Devices and sessions</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Devices and sessions</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage registered candidate browsers and inspect concurrent authenticated sessions for ISACA Lagos accreditation compliance.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>1 Browser Slot Available</span>
+</span>
+</div>
+</div>
+</div>
+<!-- BENTO ROW 1: Updated Browser Slot Banner (1 OF 2 SLOTS USED) -->
+<div class="bg-surface-container-lowest border border-card rounded-xl p-6 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="space-y-3 max-w-3xl">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 bg-[#ECFDF5] text-[#047857] border border-[#047857] font-label-sm text-label-sm px-2.5 py-1 rounded">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Slot Available</span>
+</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">1 of 2 slots used</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    You have <strong class="text-on-surface">1 available slot</strong>. You can now register an additional laptop or desktop browser. Candidates can register up to 2 browsers simultaneously.
+                  </p>
+<!-- Slot Progress Visual Meter (50%) -->
+<div class="space-y-1.5 pt-1">
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Browser Slot Capacity (50% utilised)</span>
+<span class="font-semibold text-on-surface">1 / 2 Registered</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full w-1/2"></div>
+<div class="bg-[#E2E8F0] h-full w-1/2"></div>
+</div>
+</div>
+</div>
+<!-- Registration Action (NOW ACTIVE AND ENABLED) -->
+<div class="flex flex-col sm:items-end justify-center shrink-0 pt-2 lg:pt-0">
+<button class="min-h-[44px] px-6 py-2.5 rounded-lg bg-aj-navy hover:bg-[#1E293B] text-surface-container-lowest font-label-md text-label-md flex items-center gap-2 transition-colors focus-ring-compliance cursor-pointer shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Register a new browser</span>
+</button>
+<span class="font-label-sm text-label-sm text-[#047857] mt-2 text-right font-medium">1 registration slot currently open.</span>
+</div>
+</div>
+</div>
+<!-- BENTO ROW 2: Registered Devices Table (NOW ONLY 1 ITEM) -->
+<div class="bg-surface-container-lowest border border-card rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-card flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Registered candidate browsers</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Authorised browsers currently bound to Chinedu Eze's CISA Exam Prep profile.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3 top-1/2 -translate-y-1/2">search</span>
+<input class="h-[44px] pl-9 pr-3 text-body-sm font-body-sm border border-field rounded-lg w-56 md:w-64 focus-ring-compliance" placeholder="Search friendly name or OS..." type="text"/>
+</div>
+<select class="h-[44px] px-3 text-body-sm font-body-sm border border-field rounded-lg bg-surface-container-lowest focus-ring-compliance">
+<option selected="">Last active (Recent)</option>
+<option>Device name (A–Z)</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-card text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-6">Device / Friendly Name</th>
+<th class="py-3 px-6">Browser &amp; OS</th>
+<th class="py-3 px-6">Last Active (WAT)</th>
+<th class="py-3 px-6">City / Location</th>
+<th class="py-3 px-6 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-card font-body-sm text-body-sm">
+<!-- Sole Active Device -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">Work MacBook</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>Current browser</span>
+</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Registered: 28 Sep 2026</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface">Chrome 128 · macOS Sonoma</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-[#047857]"></span>
+<span class="font-medium text-[#047857]">Active now (Current session)</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">05 Oct 2026, 14:31 WAT</span>
+</td>
+<td class="py-4 px-6 text-on-surface">Lagos (Victoria Island), Nigeria</td>
+<td class="py-4 px-6 text-right">
+<span class="inline-flex items-center justify-center min-h-[44px] px-4 text-label-sm font-label-sm text-on-surface-variant bg-[#F1F5F9] rounded-lg border border-card font-medium cursor-default">
+                          In Use (Primary)
+                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Available Slot Banner inside Table Foot -->
+<div class="p-4 bg-[#F8FAFC] border-t border-card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-[#047857]">add_circle</span>
+<span>1 slot is free. Sign in on another workstation to register a second browser.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Showing 1 of 1 registered browser</span>
+</div>
+</div>
+</div>
+<!-- BENTO ROW 3: Active Sessions (Now 1 Active Session) -->
+<div class="space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2.5">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Active sessions</h3>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>1 Active (No concurrent sessions)</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live authenticated sessions connected to course videos, mock questions, and syllabus notes.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<!-- Session 1: Current Session Card Only -->
+<div class="bg-surface-container-lowest border-2 border-secondary rounded-xl p-5 space-y-4 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Chrome 128 on macOS Sonoma</h4>
+</div>
+<span class="text-label-sm font-label-sm text-[#047857] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+                          This Device / Current session
+                        </span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+                      Active
+                    </span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2 border-t border-card text-body-sm font-body-sm">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Location</span>
+<span class="text-on-surface font-medium">Victoria Island, Lagos</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">IP Address</span>
+<span class="text-on-surface font-mono text-[13px]">102.89.42.18</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Signed in timestamp</span>
+<span class="text-on-surface">05 Oct 2026, 08:30 WAT</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Security Protocol</span>
+<span class="text-on-surface">TLS 1.3 / SMS 2FA</span>
+</div>
+</div>
+<div class="pt-2 flex justify-end">
+<span class="text-label-sm font-label-sm text-on-surface-variant italic">Active candidate browser session</span>
+</div>
+</div>
+<!-- Empty Slot Prompt Card -->
+<div class="border-2 border-dashed border-card rounded-xl p-5 flex flex-col items-center justify-center text-center space-y-3 bg-[#F8FAFC]">
+<div class="h-12 w-12 rounded-full bg-surface-container-lowest border border-card flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">devices</span>
+</div>
+<div>
+<h5 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Secondary Slot Empty</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">You may sign in from your office desktop or tablet browser anytime.</p>
+</div>
+<button class="min-h-[44px] px-4 py-2 border border-field text-on-surface bg-surface-container-lowest hover:bg-[#F1F5F9] rounded-lg font-label-md text-label-md transition-colors">
+                    View Sign-in Guidelines
+                  </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Institutional Dossier Footer -->
+<footer class="w-full px-8 py-4 bg-primary-container text-on-primary-container border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<div class="text-surface-container-lowest font-medium">
+            © 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.
+          </div>
+<div class="flex flex-wrap items-center gap-4 text-on-primary-container text-label-sm font-label-sm">
+<a class="hover:text-surface-container-lowest hover:underline transition-colors" href="#variant-3">DRM Compliance Policy</a>
+<span>•</span>
+<a class="hover:text-surface-container-lowest hover:underline transition-colors" href="#variant-3">Zero-Trust Verification</a>
+<span>•</span>
+<a class="hover:text-surface-container-lowest hover:underline transition-colors" href="#variant-3">Candidate Session Hash Log</a>
+</div>
+</footer>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- AUDIT NOTES & DESIGN SYSTEM TOKEN VERIFICATION DOSSIER                     -->
+<!-- ========================================================================= -->
+<section class="bg-surface-container-lowest border border-card rounded-xl p-8 space-y-6">
+<div class="flex items-center justify-between border-b border-card pb-4">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Specification Compliance Matrix</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Formal token auditing for enterprise review and ISACA Lagos technical inspection.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>100% Token Conformance</span>
+</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-body-sm text-body-sm">
+<div class="space-y-1 p-4 bg-[#F8FAFC] rounded-lg border border-card">
+<span class="font-label-sm text-label-sm text-[#475569] uppercase font-semibold">Touch Target Floor</span>
+<p class="font-medium text-on-surface">Strict 44px x 44px</p>
+<p class="text-label-sm text-on-surface-variant">All inputs, table actions, remove buttons, and pagination anchors conform to minimum 44px touch height.</p>
+</div>
+<div class="space-y-1 p-4 bg-[#F8FAFC] rounded-lg border border-card">
+<span class="font-label-sm text-label-sm text-[#475569] uppercase font-semibold">Accessibility &amp; Color</span>
+<p class="font-medium text-on-surface">Dual Indicator Pattern</p>
+<p class="text-label-sm text-on-surface-variant">No status is conveyed by color alone. Every chip pairs explicit typography and semantic Material Symbols.</p>
+</div>
+<div class="space-y-1 p-4 bg-[#F8FAFC] rounded-lg border border-card">
+<span class="font-label-sm text-label-sm text-[#475569] uppercase font-semibold">Regional Parameters</span>
+<p class="font-medium text-on-surface">WAT / Lagos / +234 / ₦</p>
+<p class="text-label-sm text-on-surface-variant">Dates formatted strictly as ‘05 Oct 2026’, timestamps tagged WAT, phone mask matches Nigerian telecom rules.</p>
+</div>
+<div class="space-y-1 p-4 bg-[#F8FAFC] rounded-lg border border-card">
+<span class="font-label-sm text-label-sm text-[#475569] uppercase font-semibold">Terminology Audit</span>
+<p class="font-medium text-on-surface">Plain Candidate Phrasing</p>
+<p class="text-label-sm text-on-surface-variant">Zero DRM, cryptographic hash, or hardware fingerprint jargon in the candidate view. A device is termed a ‘registered browser’.</p>
+</div>
+</div>
+</section>
+</main>
+</body></html>

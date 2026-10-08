@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Refunds &amp; Settlement Reversals | A.J. Silicon Secure Portal</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#dbe2f5",
+            "on-background": "#131b2e",
+            "tertiary-container": "#281809",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface": "#faf8ff",
+            "on-tertiary-fixed": "#281809",
+            "background": "#faf8ff",
+            "surface-variant": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#fddcc4",
+            "on-surface": "#131b2e",
+            "tertiary": "#000000",
+            "on-primary-fixed": "#141c29",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed": "#001551",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "inverse-surface": "#283044",
+            "on-secondary-container": "#fffbff",
+            "outline-variant": "#c5c6cc",
+            "surface-container-highest": "#dae2fd",
+            "primary-container": "#141c29",
+            "outline": "#75777c",
+            "surface-tint": "#575f6e",
+            "on-primary": "#ffffff",
+            "primary": "#000000",
+            "secondary": "#1d4ed8",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary-container": "#7c8495",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#997f6a",
+            "surface-container-high": "#e2e7ff",
+            "surface-bright": "#faf8ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-container": "#eaedff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "secondary-container": "#4069f2",
+            "surface-container-low": "#f2f3ff",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-surface-variant": "#45474c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "space-xs": "0.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Institutional Focus Ring Standard */
+    *:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+    .table-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .table-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A] antialiased">
+<!-- TOP SHELL NAVIGATION (Authoritative Institutional Navy #0B1320) -->
+<header class="bg-[#0B1320] text-surface-container-lowest h-16 w-full fixed top-0 left-0 z-50 px-6 flex items-center justify-between border-b border-[#1E293B]">
+<!-- Brand Anchor Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-white h-10 px-3 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Logo Mark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnxIJCEpSgJXD1n5JbibvuINMQOJOp4eYqZVmKGRLyivB6ZdkcqU1Sy2fH4gfllnVHW2vW_RxeYtiUeV-Z07DB_aHYfJAbwPjMUyLG7Jdt8sC9x5AKROCtLD_yFpNtI6TOkjNzZhLct6HnIxiCVviE_nG4AvSWYrQ5HWBmV6DZvdbhpeTCKbIw_EcY_HDBJ4lD8eENc7By_yjqnblgHFN9Mu826kDV8k2J3OqiGV3FueLpCJUyVyVL0Q"/>
+</div>
+<div class="h-6 w-[1px] bg-[#334155]"></div>
+<span class="font-headline-sm text-headline-sm text-white tracking-tight font-semibold">Secure Portal</span>
+</div>
+<!-- Telemetry & Identity Badges -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-[#94A3B8] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>12:45 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-5 w-[1px] bg-[#334155]"></div>
+<div class="text-[#E2E8F0] font-body-sm text-body-sm">
+        Role: <span class="font-medium text-white">Finance Manager</span> | Femi Adebayo
+      </div>
+<!-- Action Icons -->
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="w-11 h-11 rounded flex items-center justify-center text-[#94A3B8] hover:text-white hover:bg-[#1E293B] transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<!-- User Avatar Badge (Initials FA) -->
+<div class="w-9 h-9 rounded bg-[#1E293B] border border-[#475569] text-[#93C5FD] font-semibold flex items-center justify-center text-sm" title="Femi Adebayo (Finance Manager)">
+          FA
+        </div>
+</div>
+</div>
+</header>
+<!-- WORKSPACE WRAPPER (Sidebar + Main Content Layout) -->
+<div class="flex pt-16 min-h-[calc(100vh-64px)]">
+<!-- INSTITUTIONAL SIDEBAR NAVIGATION (260px Fixed) -->
+<aside class="w-64 bg-[#0B1320] border-r border-[#1E293B] flex flex-col justify-between fixed top-16 bottom-0 left-0 z-40 overflow-y-auto">
+<div class="p-4 space-y-6">
+<!-- Navigation Group: Finance & Operations (Active Group) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold text-[#94A3B8] uppercase tracking-wider">
+            Finance &amp; Operations
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">card_membership</span>
+<span>Subscriptions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+<span>Coupons</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span>Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">request_quote</span>
+<span>Invoicing &amp; Receipts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+<span>Webhooks &amp; Reconciliation</span>
+</a>
+<!-- Refunds: ACTIVE STATE -->
+<a class="flex items-center gap-3 px-3 py-2 bg-[#1E293B] text-[#93C5FD] rounded-lg text-sm font-semibold border-l-4 border-[#2563EB] min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+<span>Refunds</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+<span>Settlements</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: Audit & Governance -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold text-[#94A3B8] uppercase tracking-wider">
+            Audit &amp; Governance
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>ISACA Compliance Trail</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg text-sm font-medium transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span>Four-Eyes Governance Log</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Sidebar Footer / Lock Terminal -->
+<div class="p-4 border-t border-[#1E293B]">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded bg-[#1E293B] hover:bg-[#334155] text-[#E2E8F0] font-medium text-sm transition-colors min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Lock Terminal</span>
+</button>
+</div>
+</aside>
+<!-- CONTENT CANVAS (Desktop 1440px viewport bounded at 1280px container) -->
+<main class="ml-64 flex-1 p-8 max-w-[1280px] w-full">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="mb-3">
+<ol class="flex items-center gap-2 text-sm text-[#64748B]">
+<li><span class="hover:underline cursor-pointer">Finance &amp; Operations</span></li>
+<li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+<li><span class="hover:underline cursor-pointer">Settlements &amp; Billing</span></li>
+<li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+<li aria-current="page" class="font-medium text-[#0F172A]">Refunds</li>
+</ol>
+</nav>
+<!-- Page Header with Primary Action -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-[#0F172A] tracking-tight">
+            Refunds &amp; Settlement Reversals
+          </h1>
+<p class="font-body-md text-body-md text-[#475569] mt-1 max-w-3xl">
+            Audit refund requests, verify candidate licence usage evidence against institutional refund policy, and execute dual-signoff Paystack reversals.
+          </p>
+</div>
+<div>
+<button class="inline-flex items-center justify-center gap-2 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium rounded-md min-h-[44px] shadow-sm transition-colors text-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export refunds ledger</span>
+</button>
+</div>
+</div>
+<!-- State Filter Tabs -->
+<div class="mt-6 border-b border-[#E2E8F0] flex gap-8">
+<button class="flex items-center gap-2 pb-3 border-b-2 border-[#0B1320] text-[#0F172A] font-semibold text-sm" type="button">
+<span>Requests</span>
+<span class="bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] text-xs font-semibold px-2 py-0.5 rounded-full">4 Pending</span>
+</button>
+<button class="flex items-center gap-2 pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] font-medium text-sm transition-colors" type="button">
+<span>Approved</span>
+<span class="text-xs text-[#64748B]">(42)</span>
+</button>
+<button class="flex items-center gap-2 pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] font-medium text-sm transition-colors" type="button">
+<span>Rejected</span>
+<span class="text-xs text-[#64748B]">(12)</span>
+</button>
+<button class="flex items-center gap-2 pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] font-medium text-sm transition-colors" type="button">
+<span>Disputes</span>
+<span class="text-xs text-[#64748B]">(0)</span>
+</button>
+</div>
+<!-- Search & Audit Filters Bar -->
+<div class="mt-6 bg-white border border-[#E2E8F0] rounded-xl p-4 flex flex-wrap items-center justify-between gap-4">
+<div class="flex-1 min-w-[320px] relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-md border border-[#64748B] text-sm text-[#0F172A] placeholder-[#475569] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" placeholder="Search reference, candidate name, email..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<select class="h-11 px-3 pr-8 rounded-md border border-[#64748B] bg-white text-sm text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]">
+<option>All Approval States</option>
+<option>Awaiting First Approval</option>
+<option>Awaiting Second Approval</option>
+<option>Completed</option>
+<option>Rejected</option>
+</select>
+</div>
+<div class="relative">
+<select class="h-11 px-3 pr-8 rounded-md border border-[#64748B] bg-white text-sm text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]">
+<option>Amount Threshold: All</option>
+<option>&gt; ₦100,000 (Four-Eyes Required)</option>
+<option>≤ ₦100,000 (Single Officer)</option>
+</select>
+</div>
+<button class="h-11 px-4 border border-[#64748B] hover:bg-[#F1F5F9] rounded-md text-sm font-medium text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span>More Filters</span>
+</button>
+</div>
+</div>
+<!-- AUDIT DOSSIER TABLE (High Density Structured Data) -->
+<div class="mt-4 bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto table-scrollbar">
+<table class="w-full text-left border-collapse text-sm">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[12px] font-semibold text-[#475569] uppercase tracking-wider">
+<th class="py-3.5 px-4">Reference ID</th>
+<th class="py-3.5 px-4">Candidate / User</th>
+<th class="py-3.5 px-4">Programme / Invoice</th>
+<th class="py-3.5 px-4 text-right">Amount Requested</th>
+<th class="py-3.5 px-4">Policy Qualification</th>
+<th class="py-3.5 px-4">Requested By</th>
+<th class="py-3.5 px-4">Status</th>
+<th class="py-3.5 px-4">Date &amp; Elapsed</th>
+<th class="py-3.5 px-4 text-center">Inspect</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0]">
+<!-- Row 1: Selected Case (Chinedu Eze) -->
+<tr class="bg-[#EFF6FF]/60 hover:bg-[#EFF6FF] border-l-4 border-l-[#2563EB] transition-colors">
+<td class="py-3.5 px-4 font-mono font-medium text-[#0F172A]">RFD-20261005-014</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Chinedu Eze</div>
+<div class="text-xs text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span id="masked-1">c••••••••@gmail.com</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium flex items-center" onclick="document.getElementById('masked-1').innerText = document.getElementById('masked-1').innerText.includes('•') ? 'chinedu.eze@gmail.com' : 'c••••••••@gmail.com'" type="button">
+<span class="material-symbols-outlined text-[13px] mr-0.5">visibility</span> Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CISA Exam Prep Cohort 14</td>
+<td class="py-3.5 px-4 text-right font-semibold text-[#0F172A]">₦450,000</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 100% Eligible
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">
+                  Zainab Abubakar<br/><span class="text-[#64748B]">(Support Agent)</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span> Awaiting Second Approval
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">
+                  05 Oct 2026 09:30 WAT<br/><span class="text-[#64748B]">3 hrs ago</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button aria-label="Inspect Chinedu Eze refund case" class="w-8 h-8 rounded hover:bg-[#DBEAFE] text-[#1D4ED8] flex items-center justify-center mx-auto" type="button">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Amara Okafor -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono font-medium text-[#0F172A]">RFD-20261004-008</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Amara Okafor</div>
+<div class="text-xs text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span id="masked-2">a••••••••@zenithbank.com</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium flex items-center" onclick="document.getElementById('masked-2').innerText = document.getElementById('masked-2').innerText.includes('•') ? 'amara.okafor@zenithbank.com' : 'a••••••••@zenithbank.com'" type="button">
+<span class="material-symbols-outlined text-[13px] mr-0.5">visibility</span> Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CRISC Masterclass</td>
+<td class="py-3.5 px-4 text-right font-semibold text-[#0F172A]">₦300,000</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Verified In-Scope
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">Candidate Self-Service</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">pending</span> Awaiting First Approval
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">
+                  04 Oct 2026 15:10 WAT<br/><span class="text-[#64748B]">1 day ago</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button aria-label="Inspect Amara Okafor refund case" class="w-8 h-8 rounded hover:bg-[#F1F5F9] text-[#64748B] flex items-center justify-center mx-auto" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Babatunde Adeleke -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono font-medium text-[#0F172A]">RFD-20261002-003</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Babatunde Adeleke</div>
+<div class="text-xs text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span id="masked-3">b••••••••@firstbankgroup.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium flex items-center" onclick="document.getElementById('masked-3').innerText = document.getElementById('masked-3').innerText.includes('•') ? 'babatunde.adeleke@firstbankgroup.ng' : 'b••••••••@firstbankgroup.ng'" type="button">
+<span class="material-symbols-outlined text-[13px] mr-0.5">visibility</span> Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CISM Executive Prep</td>
+<td class="py-3.5 px-4 text-right font-semibold text-[#0F172A]">₦620,000</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Approved Full
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">
+                  Zainab Abubakar<br/><span class="text-[#64748B]">(Support Agent)</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">task_alt</span> Completed (Settled)
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">
+                  02 Oct 2026 11:20 WAT<br/><span class="text-[#64748B]">3 days ago</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button aria-label="Inspect Babatunde Adeleke refund case" class="w-8 h-8 rounded hover:bg-[#F1F5F9] text-[#64748B] flex items-center justify-center mx-auto" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Olufemi Balogun -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono font-medium text-[#0F172A]">RFD-20261001-002</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Olufemi Balogun</div>
+<div class="text-xs text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span id="masked-4">o••••••••@accessbankplc.com</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium flex items-center" onclick="document.getElementById('masked-4').innerText = document.getElementById('masked-4').innerText.includes('•') ? 'olufemi.balogun@accessbankplc.com' : 'o••••••••@accessbankplc.com'" type="button">
+<span class="material-symbols-outlined text-[13px] mr-0.5">visibility</span> Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">Data Analytics Track</td>
+<td class="py-3.5 px-4 text-right font-semibold text-[#0F172A]">₦85,000</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded-full text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">cancel</span> Syllabus &gt; 35%
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">Candidate Self-Service</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">block</span> Rejected (Policy breach)
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">
+                  01 Oct 2026 14:05 WAT<br/><span class="text-[#64748B]">4 days ago</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button aria-label="Inspect Olufemi Balogun refund case" class="w-8 h-8 rounded hover:bg-[#F1F5F9] text-[#64748B] flex items-center justify-center mx-auto" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Status Footer -->
+<div class="px-6 py-3.5 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-between text-sm text-[#475569]">
+<div>Showing 1–4 of 18 refund cases</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 border border-[#E2E8F0] rounded text-xs text-[#94A3B8] cursor-not-allowed bg-white" disabled="" type="button">Previous</button>
+<button class="px-3 py-1.5 border border-[#64748B] rounded text-xs font-medium text-[#0F172A] bg-white hover:bg-[#F1F5F9]" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- AUDIT INSPECTION DOSSIER: ACTIVE CASE (Chinedu Eze - ₦450,000) -->
+<section class="mt-8 bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<!-- Case Inspection Banner & Meta -->
+<div class="p-6 border-b border-[#E2E8F0] bg-[#F8FAFC] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 bg-[#0B1320] text-white font-mono text-xs font-semibold rounded">REF: RFD-20261005-014</span>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span> Awaiting Second Approval
+              </span>
+<span class="text-xs text-[#64748B] font-mono">ENROL-20260928-891</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-[#0F172A] mt-2">
+              Chinedu Eze · CISA Exam Prep Cohort 14
+            </h2>
+<p class="text-sm text-[#475569] mt-0.5">
+              Candidate contact: chinedu.eze@gmail.com · Phone: +234 803 491 8820 · Registered: 28 Sep 2026
+            </p>
+</div>
+<div class="text-right">
+<div class="text-xs text-[#64748B] uppercase font-semibold">Gross Claim Requested</div>
+<div class="text-2xl font-bold text-[#0F172A]">₦450,000</div>
+<div class="text-xs text-[#047857] font-medium">Eligible Net Reversal: ₦416,250</div>
+</div>
+</div>
+<!-- 3-Column Dossier Matrix -->
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#E2E8F0]">
+<!-- Block 1: Payment & Gateway Telemetry -->
+<div class="pr-0 md:pr-4 space-y-4">
+<div class="flex items-center gap-2 text-sm font-semibold text-[#0F172A]">
+<span class="material-symbols-outlined text-[#1D4ED8]">account_balance_wallet</span>
+<span>Payment &amp; Gateway Telemetry</span>
+</div>
+<div class="space-y-2.5 text-sm">
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Paystack Reference</span>
+<span class="font-mono font-medium text-[#0F172A]">pstk_891024801</span>
+</div>
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Payment Timestamp</span>
+<span class="text-[#0F172A]">28 Sep 2026, 14:15 WAT</span>
+</div>
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Payment Channel</span>
+<span class="text-[#0F172A]">Mastercard (•••• 4921)</span>
+</div>
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Settled Gross</span>
+<span class="font-medium text-[#0F172A]">₦450,000</span>
+</div>
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Statutory 7.5% VAT (FIRS)</span>
+<span class="text-[#B91C1C] font-mono">-₦33,750</span>
+</div>
+<div class="p-2.5 bg-[#FFFBEB] border border-[#B45309] rounded text-xs text-[#B45309] leading-relaxed">
+<strong>Statutory Note:</strong> Value Added Tax (VAT) of ₦33,750 was remitted during month-end FIRS reconciliation and is legally non-reversible per standard fiscal policy.
+              </div>
+</div>
+</div>
+<!-- Block 2: Usage Evidence Dossier -->
+<div class="pt-4 md:pt-0 px-0 md:px-4 space-y-4">
+<div class="flex items-center gap-2 text-sm font-semibold text-[#0F172A]">
+<span class="material-symbols-outlined text-[#1D4ED8]">analytics</span>
+<span>Licence Usage Dossier</span>
+</div>
+<div class="space-y-3 text-sm">
+<div>
+<div class="flex justify-between text-xs text-[#475569] mb-1">
+<span>Licence Active Period</span>
+<span class="font-semibold text-[#0F172A]">7 / 90 Days (7.7%)</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#2563EB] h-2 rounded-full" style="width: 7.7%"></div>
+</div>
+<div class="text-[11px] text-[#64748B] mt-0.5">Threshold: ≤ 14 calendar days from enrolment</div>
+</div>
+<div>
+<div class="flex justify-between text-xs text-[#475569] mb-1">
+<span>Courseware Syllabus Accessed</span>
+<span class="font-semibold text-[#0F172A]">2 / 25 Modules (8%)</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#047857] h-2 rounded-full" style="width: 8%"></div>
+</div>
+<div class="text-[11px] text-[#64748B] mt-0.5">Threshold: ≤ 20% syllabus accessed</div>
+</div>
+<div class="pt-2 border-t border-[#F1F5F9] space-y-1.5">
+<div class="flex justify-between">
+<span class="text-[#64748B]">Proctored Mock Exams:</span>
+<span class="font-semibold text-[#047857]">0 Attempted (Pass)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#64748B]">Live Masterclasses Attended:</span>
+<span class="text-[#0F172A]">1 Session</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#64748B]">Digital Materials Downloaded:</span>
+<span class="text-[#0F172A]">Domain 1 Slide Deck</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Block 3: Institutional Policy Verification -->
+<div class="pt-4 md:pt-0 pl-0 md:pl-4 space-y-4">
+<div class="flex items-center gap-2 text-sm font-semibold text-[#0F172A]">
+<span class="material-symbols-outlined text-[#1D4ED8]">verified</span>
+<span>Policy Rules Verification</span>
+</div>
+<div class="space-y-2 text-xs">
+<div class="p-2.5 rounded border border-[#047857] bg-[#ECFDF5] flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#047857] mt-0.5">check_circle</span>
+<div>
+<div class="font-semibold text-[#047857]">Rule 1: Time Elapsed ≤ 14 Days</div>
+<div class="text-[#065F46] mt-0.5">Request initiated at 7 days. Compliant.</div>
+</div>
+</div>
+<div class="p-2.5 rounded border border-[#047857] bg-[#ECFDF5] flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#047857] mt-0.5">check_circle</span>
+<div>
+<div class="font-semibold text-[#047857]">Rule 2: Consumption ≤ 20%</div>
+<div class="text-[#065F46] mt-0.5">8% modules completed. Compliant.</div>
+</div>
+</div>
+<div class="p-2.5 rounded border border-[#047857] bg-[#ECFDF5] flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#047857] mt-0.5">check_circle</span>
+<div>
+<div class="font-semibold text-[#047857]">Rule 3: Zero Mock Exams Attempted</div>
+<div class="text-[#065F46] mt-0.5">No proprietary exam question banks viewed. Compliant.</div>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-[#E2E8F0] text-center">
+<span class="inline-block text-xs font-semibold text-[#047857]">Overall Verdict: Eligible for Pro-rated Tuition Reversal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Four-Eyes Dual-Signoff Stepper Component -->
+<div class="p-6 bg-[#F8FAFC] border-t border-[#E2E8F0]">
+<!-- Threshold Notice Banner -->
+<div class="mb-5 p-3.5 bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg flex items-center gap-3 text-sm text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[20px]">security</span>
+<div>
+<span class="font-semibold">Dual-Signoff Required:</span> Refund amount (₦450,000) exceeds the single-officer settlement threshold (₦100,000). Mandates First Sign-off (Finance Officer) + Second Sign-off (Finance Manager / Super Admin) prior to Paystack gateway execution.
+            </div>
+</div>
+<!-- Audit Timeline Stages -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Step 1: Initiated -->
+<div class="bg-white p-4 rounded-lg border border-[#047857] relative">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-[#047857] uppercase tracking-wider">Step 1: Initiation</span>
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed
+                </span>
+</div>
+<div class="font-semibold text-sm text-[#0F172A]">Zainab Abubakar</div>
+<div class="text-xs text-[#64748B]">Support Operations Lead</div>
+<div class="text-xs text-[#475569] mt-2 font-mono">05 Oct 2026 · 09:30 WAT</div>
+<div class="text-xs text-[#64748B] mt-1 italic">"Candidate relocation conflict confirmed."</div>
+</div>
+<!-- Step 2: First Sign-off -->
+<div class="bg-white p-4 rounded-lg border border-[#047857] relative">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-[#047857] uppercase tracking-wider">Step 2: First Approval</span>
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Approved
+                </span>
+</div>
+<div class="font-semibold text-sm text-[#0F172A]">Ngozi Okonjo</div>
+<div class="text-xs text-[#64748B]">Senior Finance Officer</div>
+<div class="text-xs text-[#475569] mt-2 font-mono">05 Oct 2026 · 11:15 WAT</div>
+<div class="text-xs text-[#64748B] mt-1 italic">"Bank settlement match verified. Less VAT."</div>
+</div>
+<!-- Step 3: Second Sign-off (CURRENT USER ACTION) -->
+<div class="bg-white p-4 rounded-lg border-2 border-[#2563EB] shadow-sm relative">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-[#1D4ED8] uppercase tracking-wider">Step 3: Second Approval</span>
+<span class="inline-flex items-center gap-1 text-xs font-bold text-[#B45309] bg-[#FFFBEB] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span> Pending Action
+                </span>
+</div>
+<div class="font-semibold text-sm text-[#0F172A]">Femi Adebayo (You)</div>
+<div class="text-xs text-[#64748B]">Finance Manager</div>
+<div class="text-xs text-[#1D4ED8] mt-2 font-medium">Dual-Key Reversal Authorization</div>
+<div class="text-xs text-[#475569] mt-1">Pending final sign-off &amp; gateway disbursement</div>
+</div>
+</div>
+<!-- Explicit 44px Action Bar Controls -->
+<div class="mt-6 pt-5 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-4">
+<div class="text-sm text-[#475569]">
+              Reversal Payload: <strong class="text-[#0F172A]">₦416,250</strong> to Mastercard ending in <strong>4921</strong>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-11 px-4 border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded-md text-sm font-medium transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">contact_support</span>
+<span>Request more information</span>
+</button>
+<button class="h-11 px-5 bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] rounded-md text-sm font-medium transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Reject refund</span>
+</button>
+<button class="h-11 px-6 bg-[#047857] hover:bg-[#065F46] text-white rounded-md text-sm font-medium shadow-sm transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Approve refund (₦416,250 net)</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- AUDIT STATE VARIANTS SHOWCASE (Institutional Reference Demonstration) -->
+<section class="mt-10 pt-8 border-t border-[#E2E8F0]">
+<div class="mb-4">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-[#0F172A]">
+            Dual-Signoff Lifecycle State Models
+          </h3>
+<p class="text-sm text-[#475569]">
+            Architectural inspection views illustrating state machines across pending, waiting, and finalized stages.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- STATE VARIANT 1: Awaiting First Approval -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-[#F1F5F9]">
+<span class="text-xs font-mono font-semibold text-[#64748B]">RFD-20261004-008</span>
+<span class="inline-flex items-center gap-1 h-5 px-2 rounded-full text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[12px]">schedule</span> Awaiting First Approval
+              </span>
+</div>
+<div>
+<div class="text-sm font-bold text-[#0F172A]">Amara Okafor · ₦300,000</div>
+<div class="text-xs text-[#64748B]">CRISC Masterclass (Zenith Bank Plc)</div>
+</div>
+<!-- Progress visualization -->
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0] space-y-1.5 text-xs">
+<div class="flex justify-between text-[#475569]">
+<span>Support Intake:</span>
+<span class="text-[#047857] font-medium">Logged (Self-Service)</span>
+</div>
+<div class="flex justify-between text-[#475569]">
+<span>First Officer Sign-off:</span>
+<span class="text-[#B45309] font-medium">Pending Review</span>
+</div>
+<div class="flex justify-between text-[#94A3B8]">
+<span>Manager Second Sign-off:</span>
+<span>Awaiting Step 1</span>
+</div>
+</div>
+<div class="text-xs text-[#64748B] pt-1">
+              Gateway Execution: <strong>Locked</strong> pending officer compliance sign-off.
+            </div>
+</div>
+<!-- STATE VARIANT 2: Awaiting Second Approval (Four-Eyes Active) -->
+<div class="bg-white border border-[#2563EB] rounded-xl p-5 shadow-sm space-y-3 bg-[#EFF6FF]/20">
+<div class="flex items-center justify-between pb-2 border-b border-[#DBEAFE]">
+<span class="text-xs font-mono font-semibold text-[#1D4ED8]">RFD-20261005-014</span>
+<span class="inline-flex items-center gap-1 h-5 px-2 rounded-full text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[12px]">how_to_reg</span> Four-Eyes Active (1/2)
+              </span>
+</div>
+<div>
+<div class="text-sm font-bold text-[#0F172A]">Chinedu Eze · ₦450,000</div>
+<div class="text-xs text-[#64748B]">CISA Prep (Step 1 by Ngozi Okonjo Approved)</div>
+</div>
+<!-- Progress visualization -->
+<div class="bg-[#EFF6FF] p-3 rounded border border-[#BFDBFE] space-y-1.5 text-xs">
+<div class="flex justify-between text-[#0F172A]">
+<span>Support Intake:</span>
+<span class="text-[#047857] font-medium">Zainab Abubakar (PASS)</span>
+</div>
+<div class="flex justify-between text-[#0F172A]">
+<span>First Officer Sign-off:</span>
+<span class="text-[#047857] font-medium">Ngozi Okonjo (PASS)</span>
+</div>
+<div class="flex justify-between text-[#1D4ED8] font-bold">
+<span>Manager Second Sign-off:</span>
+<span class="text-[#B45309]">Actionable by You</span>
+</div>
+</div>
+<div class="text-xs text-[#1D4ED8] font-medium pt-1">
+              Paystack Reversal: Ready for batch broadcast upon manager key authorization.
+            </div>
+</div>
+<!-- STATE VARIANT 3: Completed (Settled via Paystack) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-[#F1F5F9]">
+<span class="text-xs font-mono font-semibold text-[#64748B]">RFD-20261002-003</span>
+<span class="inline-flex items-center gap-1 h-5 px-2 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[12px]">done_all</span> Settled (Complete)
+              </span>
+</div>
+<div>
+<div class="text-sm font-bold text-[#0F172A]">Babatunde Adeleke · ₦620,000</div>
+<div class="text-xs text-[#64748B]">CISM Executive Prep (First Bank Group)</div>
+</div>
+<!-- Progress visualization -->
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0] space-y-1.5 text-xs">
+<div class="flex justify-between text-[#475569]">
+<span>Dual Approval:</span>
+<span class="text-[#047857] font-medium">Verified by 2 Keys</span>
+</div>
+<div class="flex justify-between text-[#475569]">
+<span>Paystack Reversal ID:</span>
+<span class="font-mono text-[#0F172A]">rfnd_918204910</span>
+</div>
+<div class="flex justify-between text-[#475569]">
+<span>Settlement Webhook:</span>
+<span class="text-[#047857] font-medium">HTTP 200 Confirmed</span>
+</div>
+</div>
+<div class="text-xs text-[#047857] font-medium pt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">receipt</span>
+<span>Reversal receipt dispatched to candidate email.</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- INSTITUTIONAL DOSSIER FOOTER -->
+<footer class="w-full bg-[#0B1320] text-[#94A3B8] border-t border-[#1E293B] z-30">
+<div class="max-w-[1280px] mx-auto px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-body-sm">
+<div class="flex items-center gap-3">
+<span class="font-semibold text-white">A.J. Silicon Secure Operations</span>
+<span class="text-[#475569]">|</span>
+<span>© 2026 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture.</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-white transition-colors" href="#">DRM Compliance Policy</a>
+<a class="hover:text-white transition-colors" href="#">Zero-Trust Verification</a>
+<a class="hover:text-white transition-colors" href="#">Candidate Session Hash Log</a>
+<a class="hover:text-white transition-colors" href="#">SecOps Oversight</a>
+</div>
+</div>
+</footer>
+</body></html>

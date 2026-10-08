@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy - Learning Platform Status &amp; System States</title>
+<!-- Font Configuration -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Engine -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-dim": "#d2d9f4",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary-container": "#141c29",
+            "on-surface": "#131b2e",
+            "surface-bright": "#faf8ff",
+            "primary": "#000000",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f2f3ff",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-error": "#ffffff",
+            "tertiary-container": "#281809",
+            "secondary-container": "#4069f2",
+            "inverse-surface": "#283044",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-tertiary-fixed": "#281809",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "outline-variant": "#c5c6cc",
+            "tertiary": "#000000",
+            "tertiary-fixed": "#fddcc4",
+            "surface-container": "#eaedff",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-primary-container": "#7c8495",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#dce1ff",
+            "outline": "#75777c",
+            "primary-fixed": "#dbe2f5",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-tertiary-container": "#997f6a",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed": "#001551",
+            "on-background": "#131b2e",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-tint": "#575f6e",
+            "background": "#faf8ff",
+            "on-secondary-container": "#fffbff",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-variant": "#dae2fd",
+            "surface-container-high": "#e2e7ff",
+            "inverse-primary": "#bfc6d9",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#45474c",
+            "on-primary-fixed": "#141c29"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-lg": "2rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "1rem",
+            "space-xl": "3rem",
+            "space-md": "1.5rem"
+          },
+          fontFamily: {
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .institutional-btn:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-[#0F172A] bg-[#FAF8FF] antialiased selection:bg-[#E2E7FF]">
+<!-- System Showcase Navigation Hub -->
+<aside class="sticky top-0 z-50 bg-[#0B1320] text-white border-b border-[#283044] px-4 py-2.5 shadow-sm">
+<div class="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#93C5FD] text-[20px]">tune</span>
+<span class="font-label-md text-label-md text-white font-medium">State Switcher:</span>
+</div>
+<nav aria-label="Frame Navigation" class="flex flex-wrap items-center gap-2">
+<button class="state-btn active-tab px-3 py-1.5 rounded text-xs font-medium bg-[#1D4ED8] text-white transition-colors duration-150" onclick="switchFrame('frame-1')" type="button">1. Empty States</button>
+<button class="state-btn px-3 py-1.5 rounded text-xs font-medium bg-[#1E293B] text-[#93C5FD] hover:bg-[#334155] transition-colors duration-150" onclick="switchFrame('frame-2')" type="button">2. 404 Not Found</button>
+<button class="state-btn px-3 py-1.5 rounded text-xs font-medium bg-[#1E293B] text-[#93C5FD] hover:bg-[#334155] transition-colors duration-150" onclick="switchFrame('frame-3')" type="button">3. 500 Error</button>
+<button class="state-btn px-3 py-1.5 rounded text-xs font-medium bg-[#1E293B] text-[#93C5FD] hover:bg-[#334155] transition-colors duration-150" onclick="switchFrame('frame-4')" type="button">4. Maintenance</button>
+<button class="state-btn px-3 py-1.5 rounded text-xs font-medium bg-[#1E293B] text-[#93C5FD] hover:bg-[#334155] transition-colors duration-150" onclick="switchFrame('frame-5a')" type="button">5A. Room Not Open</button>
+<button class="state-btn px-3 py-1.5 rounded text-xs font-medium bg-[#1E293B] text-[#93C5FD] hover:bg-[#334155] transition-colors duration-150" onclick="switchFrame('frame-5b')" type="button">5B. Class Ended</button>
+</nav>
+<div class="hidden lg:flex items-center gap-2 text-xs text-[#C5C6CC]">
+<span class="inline-block w-2 h-2 rounded-full bg-[#047857]"></span>
+<span>Lagos Instance: 14:30 WAT · 05 Oct 2026</span>
+</div>
+</div>
+</aside>
+<!-- Global Application Shell Template Structure -->
+<div class="min-h-screen flex flex-col justify-between">
+<div>
+<!-- TopAppBar (Institutional Header Component from System JSON) -->
+<header class="w-full bg-[#0B1320] text-white">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+<!-- Logo Mount Plate (High-Contrast White Plate) -->
+<div class="flex items-center gap-6">
+<div class="h-10 px-3 bg-white rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Academy Brand Logo" class="h-6 w-auto max-w-[150px] object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxtU6CRo_KPPPNcdSrd0Q_3HiR_6HAGsL-NdZygeJmDrLAjRb0NPzJH0xILYz5w2aOerf-lzzs1D15QqeBq7Q5gzH1mxAaz2LADXJ96BZZaeNQ6pSy90ou3ALflw3K2ChjVmfPYvvdmFjxOwGJYOc_0rrCXnRe_rmle8JfW-9-ksukH-NhcnpBYrfnyox6yzaM2c_2txIVP4NJns8Fr1yQu_Hr6UJZOtHRmRvyA0979SAgYZiJX-Mzqg"/>
+</div>
+<div class="hidden xl:block text-left border-l border-[#334155] pl-4">
+<div class="font-label-md text-label-md text-white font-medium">A.J. Silicon Learning Platform</div>
+<div class="font-label-sm text-label-sm text-[#93C5FD]">Governance &amp; IT Risk Audit Academy · Lagos</div>
+</div>
+</div>
+<!-- Institutional Session & Candidate Context Telemetry -->
+<div class="flex items-center gap-3">
+<div class="hidden md:flex flex-col text-right">
+<span class="font-label-md text-label-md text-white font-medium">Chinedu Eze</span>
+<span class="font-label-sm text-label-sm text-[#93C5FD]">CISA Cohort 14 · Virtual</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#475569] flex items-center justify-center text-white font-semibold text-sm">
+              CE
+            </div>
+<div class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#141C29] border border-[#334155] text-xs text-[#93C5FD]">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">verified_user</span>
+<span>SOC 2 Type II</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Portal Workspace Layout -->
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Student Application Shell Sidebar Navigation -->
+<aside aria-label="Student Navigation" class="lg:col-span-3 bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm">
+<div class="mb-4 pb-3 border-b border-[#E2E8F0]">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-[#475569] mb-1 font-semibold">Active Enrolment</div>
+<div class="font-body-md text-body-md font-semibold text-[#0B1320]">CISA Exam Prep</div>
+<div class="font-label-sm text-label-sm text-[#475569] mt-0.5">12 Oct 2026 – 18 Dec 2026</div>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+                Cohort 14 (Lagos WAT)
+              </div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#programme-home">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#live-classes">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+<span>Live classes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#practice-exams">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span>Practice Exams</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#recordings">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+<span>Recordings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#progress">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span>Progress</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#certificates">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Certificates &amp; credits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#extend-access">
+<span class="material-symbols-outlined text-[20px]">history_toggle_off</span>
+<span>Extend Access</span>
+</a>
+</nav>
+<div class="mt-4 pt-3 border-t border-[#E2E8F0] space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#help-centre">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span>Help centre</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] transition-colors" href="#settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium text-[#B91C1C] hover:bg-[#FEF2F2] transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+<div class="mt-4 p-2.5 bg-[#F8FAFC] border border-[#E2E8F0] rounded text-[11px] text-[#475569]">
+<div class="font-medium text-[#0F172A]">System Clock</div>
+<div>14:30 WAT · 05 Oct 2026</div>
+</div>
+</aside>
+<!-- Primary Interactive Canvas: Content States -->
+<main class="lg:col-span-9 space-y-6">
+<!-- ========================================== -->
+<!-- FRAME 1: EMPTY STATES SET (ONE BOARD)      -->
+<!-- ========================================== -->
+<section class="state-frame block" id="frame-1">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm mb-6">
+<div class="border-b border-[#E2E8F0] pb-4 mb-6">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] mb-2">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+                    FRAME 1: Audit Platform Empty States Board
+                  </div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A]">Candidate Empty States Board</h1>
+<p class="font-body-md text-body-md text-[#475569] mt-1">Standardized institutional zero-records layouts across key audit courseware entities.</p>
+</div>
+<!-- 5 Distinct Cards Bento/Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1: No programmes -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#0B1320] mb-4">
+<span class="material-symbols-outlined text-[28px]">menu_book</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A] mb-2">No active programmes enrolled</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">You are not currently enrolled in any training programmes or cohorts.</p>
+</div>
+<button class="institutional-btn w-full min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors flex items-center justify-center" type="button">
+                      Browse programme catalogue
+                    </button>
+</div>
+<!-- Card 2: No recordings -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#0B1320] mb-4">
+<span class="material-symbols-outlined text-[28px]">videocam_off</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A] mb-2">No lecture recordings available</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">Recordings of your live classes will appear here within 24 hours of each session concluding.</p>
+</div>
+<button class="institutional-btn w-full min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors flex items-center justify-center" type="button">
+                      View class schedule
+                    </button>
+</div>
+<!-- Card 3: No results -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#0B1320] mb-4">
+<span class="material-symbols-outlined text-[28px]">assignment</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A] mb-2">No practice exam attempts recorded</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">You have not completed any mock exams or diagnostic domain drills yet.</p>
+</div>
+<button class="institutional-btn w-full min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors flex items-center justify-center" type="button">
+                      Start practice exam
+                    </button>
+</div>
+<!-- Card 4: No notifications -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#0B1320] mb-4">
+<span class="material-symbols-outlined text-[28px]">notifications_none</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A] mb-2">No new notifications</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">You are completely up to date with class notices, reminders and administrative announcements.</p>
+</div>
+<button class="institutional-btn w-full min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors flex items-center justify-center" type="button">
+                      Notification settings
+                    </button>
+</div>
+<!-- Card 5: No tickets (Full row span for balanced grid) -->
+<div class="md:col-span-2 bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-[#64748B] transition-colors">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 shrink-0 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#0B1320]">
+<span class="material-symbols-outlined text-[28px]">support_agent</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">No support tickets submitted</h2>
+<p class="font-body-sm text-body-sm text-[#475569]">You have no open or past technical support enquiries with the academy help desk.</p>
+</div>
+</div>
+<button class="institutional-btn min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors shrink-0 flex items-center justify-center" type="button">
+                      Submit a ticket
+                    </button>
+</div>
+</div>
+<!-- Institutional Metadata Audit Line -->
+<div class="mt-6 pt-4 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#475569]">
+<span class="font-mono">Reference: AJS-SYS-EMP-001 · A.J. Silicon Learning Platform</span>
+<span>ISACA CISA Accreditations Compliant · Lagos, Nigeria</span>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 2: 404 PAGE NOT FOUND               -->
+<!-- ========================================== -->
+<section class="state-frame hidden" id="frame-2">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309] mb-6">
+<span class="material-symbols-outlined text-[16px]">search_off</span>
+                    HTTP 404 · Resource Unresolved
+                  </div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] mb-3">Page not found</h1>
+<p class="font-body-md text-body-md text-[#475569] mb-6">The page or resource you requested could not be found or may have been moved to a new destination.</p>
+<!-- Technical Inspection Block -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4 mb-8">
+<div class="text-xs font-semibold uppercase tracking-wider text-[#475569] mb-1">Diagnostic Log Entry</div>
+<div class="font-mono text-sm text-[#0F172A] break-all bg-white p-2.5 rounded border border-[#E2E8F0]">
+                      Requested URL: /portal/curriculum/cisa/domain-06-forensics <span class="text-[#B91C1C] font-semibold">(Status 404 Not Found)</span>
+</div>
+<div class="mt-2 text-xs text-[#475569]">
+                      Audit Trail: Requested endpoint does not match any current courseware module in Cohort 14 syllabus.
+                    </div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<button class="institutional-btn min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">home</span>
+                      Return to dashboard
+                    </button>
+<button class="institutional-btn min-h-[44px] px-6 bg-transparent hover:bg-[#F1F5F9] text-[#0F172A] border border-[#64748B] rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+                      Browse programme home
+                    </button>
+</div>
+<div class="pt-6 border-t border-[#E2E8F0] text-xs text-[#475569]">
+<span class="font-mono">Reference: AJS-ERR-404-NOTFND</span> · Need assistance? <a class="text-[#1D4ED8] underline hover:text-[#0B1320]" href="mailto:admissions@ajsilicon.com">admissions@ajsilicon.com</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 3: 500 SERVER ERROR                  -->
+<!-- ========================================== -->
+<section class="state-frame hidden" id="frame-3">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-semibold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] mb-6">
+<span class="material-symbols-outlined text-[16px]">report</span>
+                    System Exception · 500
+                  </div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] mb-3">Internal server error</h1>
+<p class="font-body-md text-body-md text-[#475569] mb-6">Our systems encountered an unexpected service error while processing your request.</p>
+<!-- Neutral Diagnostic Card -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-5 mb-8 space-y-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#047857] text-[20px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-[#0F172A]">
+                        The operational error has been automatically logged for engineering review. No candidate data or assessment submissions were affected.
+                      </p>
+</div>
+<div class="bg-white border border-[#E2E8F0] rounded p-3 font-mono text-xs text-[#475569]">
+<div>Incident code: <strong class="text-[#0F172A]">AJS-500-SRV-8820</strong></div>
+<div>Timestamp: <strong>05 Oct 2026, 14:30 WAT</strong></div>
+<div>Subsystem: Virtual Classroom Telemetry Router #04</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<button class="institutional-btn min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                      Retry request
+                    </button>
+<button class="institutional-btn min-h-[44px] px-6 bg-transparent hover:bg-[#F1F5F9] text-[#0F172A] border border-[#64748B] rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                      Contact support
+                    </button>
+</div>
+<div class="pt-6 border-t border-[#E2E8F0] text-xs text-[#475569]">
+<span class="font-mono">Reference: AJS-ERR-500-SRV01</span> · Support desk operates Monday to Friday, 08:00 – 17:00 WAT
+                  </div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 4: MAINTENANCE PAGE                  -->
+<!-- ========================================== -->
+<section class="state-frame hidden" id="frame-4">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] mb-6">
+<span class="material-symbols-outlined text-[16px]">build_circle</span>
+                    Scheduled Platform Maintenance
+                  </div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] mb-3">Scheduled platform maintenance</h1>
+<p class="font-body-md text-body-md text-[#475569] mb-6">The student learning platform is temporarily offline for scheduled infrastructure maintenance and database upgrades.</p>
+<!-- Time Callout Banner -->
+<div class="bg-[#F8FAFC] border-2 border-[#1D4ED8] rounded-xl p-5 mb-6">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="font-label-md text-label-md text-[#475569] font-medium">Estimated Service Restoration:</span>
+<span class="font-headline-sm text-headline-sm text-[#1D4ED8] font-bold">Back at 14:00 WAT today</span>
+</div>
+</div>
+<!-- Notice Block -->
+<div class="bg-[#ECFDF5] border border-[#047857] rounded-lg p-4 mb-8">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#047857] text-[20px] shrink-0 mt-0.5">check_circle</span>
+<div class="font-body-sm text-body-sm text-[#047857]">
+                        All candidate progress, exam timers and submission histories remain safely saved and will resume normally once maintenance concludes.
+                      </div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<button class="institutional-btn min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">published_with_changes</span>
+                      Check status
+                    </button>
+</div>
+<div class="pt-6 border-t border-[#E2E8F0] text-xs text-[#475569]">
+<span class="font-mono">Reference: AJS-SYS-MNT-202610</span> · Urgent enquiries: <a class="text-[#1D4ED8] underline hover:text-[#0B1320]" href="mailto:support@ajsilicon.com">support@ajsilicon.com</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 5A: CLASS LINK NOT OPEN YET          -->
+<!-- ========================================== -->
+<section class="state-frame hidden" id="frame-5a">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309] mb-6">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                    Virtual Room Status · Locked
+                  </div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] mb-3">Class meeting room is not open yet</h1>
+<p class="font-body-md text-body-md text-[#475569] mb-6">The virtual classroom link for this session activates 15 minutes prior to the scheduled lecture start time.</p>
+<!-- Session Context Card -->
+<div class="border border-[#E2E8F0] rounded-xl p-5 mb-6 bg-[#F8FAFC]">
+<div class="text-xs uppercase tracking-wider text-[#475569] font-semibold mb-2">Session Particulars</div>
+<div class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">
+                      CISA Domain 2: IT Governance &amp; Management Frameworks (COBIT 2019)
+                    </div>
+<div class="flex items-center gap-2 text-sm text-[#475569] mt-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Scheduled: <strong>06 Oct 2026, 10:00 WAT</strong></span>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-between flex-wrap gap-2 text-xs">
+<span class="px-2.5 py-1 rounded bg-[#EFF6FF] text-[#1D4ED8] font-medium border border-[#1D4ED8]">
+                        Room unlock time: 09:45 WAT · Host verified entrance only
+                      </span>
+<span class="text-[#475569]">Faculty: Lead Risk Consultant</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<button class="institutional-btn min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">event</span>
+                      Add to calendar (.ics)
+                    </button>
+<button class="institutional-btn min-h-[44px] px-6 bg-transparent hover:bg-[#F1F5F9] text-[#0F172A] border border-[#64748B] rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                      Return to live classes
+                    </button>
+</div>
+<div class="pt-6 border-t border-[#E2E8F0] text-xs text-[#475569]">
+<span class="font-mono">Reference: AJS-CLS-NOTOPEN-02</span> · Candidate identity verified via AJS-Lagos authentication token.
+                  </div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 5B: CLASS MEETING ENDED              -->
+<!-- ========================================== -->
+<section class="state-frame hidden" id="frame-5b">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-semibold bg-[#F1F5F9] text-[#475569] border border-[#64748B] mb-6">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                    Session Concluded
+                  </div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] mb-3">Class meeting has ended</h1>
+<p class="font-body-md text-body-md text-[#475569] mb-6">The live session for this lecture has concluded and virtual meeting room entry is no longer available.</p>
+<!-- Session Context Card -->
+<div class="border border-[#E2E8F0] rounded-xl p-5 mb-6 bg-[#F8FAFC]">
+<div class="text-xs uppercase tracking-wider text-[#475569] font-semibold mb-2">Concluded Session Record</div>
+<div class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">
+                      CISA Domain 1: Information System Auditing Process
+                    </div>
+<div class="flex items-center gap-2 text-sm text-[#475569] mt-2">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span>Concluded: <strong>05 Oct 2026, 16:30 WAT</strong></span>
+</div>
+<!-- Verified Notice -->
+<div class="mt-4 p-3 bg-white border border-[#E2E8F0] rounded flex items-start gap-2 text-xs text-[#0F172A]">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[18px] shrink-0">info</span>
+<span>The verified recording of this lecture will be published to your Recordings library within 24 hours.</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<button class="institutional-btn min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">video_library</span>
+                      Go to recordings library
+                    </button>
+<button class="institutional-btn min-h-[44px] px-6 bg-transparent hover:bg-[#F1F5F9] text-[#0F172A] border border-[#64748B] rounded-[6px] font-medium text-sm transition-colors inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_view_week</span>
+                      View upcoming classes
+                    </button>
+</div>
+<div class="pt-6 border-t border-[#E2E8F0] text-xs text-[#475569]">
+<span class="font-mono">Reference: AJS-CLS-ENDED-01</span> · Attendance registered to Chinedu Eze (CE).
+                  </div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</div>
+<!-- Institutional Footer (Component Anchor from System JSON) -->
+<footer class="w-full bg-[#FFFFFF] border-t border-[#E2E8F0] mt-12">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-3">
+<span class="font-headline-sm text-headline-sm uppercase font-semibold text-[#0B1320] tracking-tight">A.J. Silicon Academy</span>
+<span class="text-xs text-[#475569]">| Enterprise Audit &amp; Cybersecurity Governance</span>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-xs font-medium text-[#475569]">
+<a class="hover:text-[#0B1320] transition-colors" href="#iso-registry">ISO/IEC 27001 Registry</a>
+<span class="text-[#CBD5E1]">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#soc-telemetry">SOC 2 Type II Telemetry</a>
+<span class="text-[#CBD5E1]">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#trust-seal">Cryptographic Trust Seal</a>
+<span class="text-[#CBD5E1]">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#audit-trail">Audit Trail Standards</a>
+<span class="text-[#CBD5E1]">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#privacy">Privacy Policy</a>
+<span class="text-[#CBD5E1]">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#terms">Institutional Terms</a>
+</div>
+</div>
+<div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#475569]">
+<p>© 2025 A.J. Silicon Academy. All Rights Reserved. Accredited Institutional Governance Platform. ISO/IEC 27001 Certified &amp; SOC 2 Type II Assured.</p>
+<p class="font-mono">West Africa Technical Operations Center · Lagos, Nigeria</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- Frame Controller Script -->
+<script>
+    function switchFrame(frameId) {
+      // Hide all frames
+      const frames = document.querySelectorAll('.state-frame');
+      frames.forEach(frame => frame.classList.add('hidden'));
+
+      // Show selected frame
+      const target = document.getElementById(frameId);
+      if (target) {
+        target.classList.remove('hidden');
+      }
+
+      // Update switcher active buttons
+      const buttons = document.querySelectorAll('.state-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-[#1D4ED8]', 'text-white');
+        btn.classList.add('bg-[#1E293B]', 'text-[#93C5FD]');
+      });
+
+      const activeBtn = event.currentTarget;
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-[#1E293B]', 'text-[#93C5FD]');
+        activeBtn.classList.add('bg-[#1D4ED8]', 'text-white');
+      }
+    }
+  </script>
+</body></html>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Audit Portal - Webhooks and Reconciliation</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#b7c4ff",
+            "outline-variant": "#c5c6cc",
+            "surface": "#faf8ff",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-background": "#131b2e",
+            "on-secondary-fixed": "#001551",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-tertiary-container": "#997f6a",
+            "on-surface-variant": "#45474c",
+            "outline": "#75777c",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#281809",
+            "primary-container": "#141c29",
+            "secondary": "#1d4ed8",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-tint": "#575f6e",
+            "on-secondary-container": "#fffbff",
+            "on-primary-fixed": "#141c29",
+            "on-secondary-fixed-variant": "#0039b5",
+            "background": "#faf8ff",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "on-primary-container": "#7c8495",
+            "on-tertiary-fixed": "#281809",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#283044",
+            "secondary-container": "#4069f2",
+            "surface-variant": "#dae2fd",
+            "primary-fixed": "#dbe2f5",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "primary": "#000000",
+            "surface-container": "#eaedff",
+            "surface-container-low": "#f2f3ff",
+            "tertiary-fixed": "#fddcc4",
+            "tertiary": "#000000",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "on-error-container": "#93000a",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            /* Institutional tokens from Design System */
+            "brand-navy": "#0B1320",
+            "brand-border": "#E2E8F0",
+            "brand-field-border": "#64748B",
+            "brand-text-main": "#0F172A",
+            "brand-text-muted": "#475569",
+            "brand-success": "#047857",
+            "brand-success-bg": "#ECFDF5",
+            "brand-danger": "#B91C1C",
+            "brand-danger-bg": "#FEF2F2",
+            "brand-warning": "#B45309",
+            "brand-warning-bg": "#FFFBEB",
+            "brand-info": "#1D4ED8",
+            "brand-info-bg": "#EFF6FF",
+            "surface-navy-dark": "#0B1320",
+            "surface-slate-tech": "#1E293B",
+            "audit-pass-mint": "#047857"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "space-xl": "3rem",
+            "space-xs": "0.5rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "space-sm": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Institutional focus ring */
+    .focus-ring-inst:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-w-[1440px] flex flex-col min-h-screen">
+<!-- ========================================================================= -->
+<!-- TOP APP BAR (Shared Component: TopNavBar with mandatory style_* mapping) -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-gutter max-w-full bg-[#0B1320] border-b border-[#1E293B]">
+<!-- Left: Brand Logo Capsule & System Product Name -->
+<div class="flex items-center gap-4">
+<div class="h-10 px-3 bg-white rounded flex items-center justify-center">
+<img alt="A.J. Silicon Academy Insignia" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUaP3LNpf-uOnRDDb22_2h7DEmMrEwkcEe5MfbqkZLPFXMP_2OXEwu43I-PZHE3ArhMfhuXWR6zA_6rtODJDjts2ngL12wYXB4mPL86RWf5eybeIEmfwSkr4EqyaM0nnXQPSZKGsA2K-xhi9ezrRZrFgwK5hXIPxP_y7muG8PCtyqYaM96XwMZqYGcMQB82GAzBYFSwzndVNdg4UWpnxoRjQz-9nCjwl6wvuNqLH41YajiGFc1FJcSww"/>
+</div>
+<div class="h-6 w-px bg-[#1E293B]"></div>
+<span class="text-headline-sm font-headline-sm font-bold text-on-primary tracking-wide">
+        A.J. SILICON AUDIT PORTAL
+      </span>
+</div>
+<!-- Center/Right User Context: Strict plain text role, time, notifications & profile badge -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-label-md font-label-md text-outline-variant">
+<span class="material-symbols-outlined text-[18px] text-[#93C5FD]">schedule</span>
+<span class="text-on-primary font-code-snippet text-code-snippet">12:35 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-4 w-px bg-[#1E293B]"></div>
+<!-- Plain Text Role (Strictly NO role switcher) -->
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-brand-success"></span>
+<span class="text-label-md font-label-md text-on-primary">
+          Role: <strong class="font-semibold text-white">Finance Officer</strong> | Ngozi Okonjo
+        </span>
+</div>
+<div class="flex items-center gap-3">
+<!-- Notification Action -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] focus-ring-inst transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<!-- User Avatar Badge "NO" -->
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#64748B] flex items-center justify-center text-on-primary font-label-md font-bold text-label-md" title="Ngozi Okonjo (Finance Officer)">
+          NO
+        </div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE LAYOUT (SIDEBAR + CONTENT CANVAS) -->
+<!-- ========================================================================= -->
+<div class="flex flex-1 w-full overflow-hidden">
+<!-- ======================================================================= -->
+<!-- SIDEBAR NAVIGATION (Staff Application Shell) -->
+<!-- ======================================================================= -->
+<aside class="w-80 flex-shrink-0 bg-[#0B1320] border-r border-[#1E293B] flex flex-col justify-between py-6">
+<div class="px-4 space-y-6">
+<!-- Section Header: Finance & Settlements -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-[#93C5FD]">
+            Finance &amp; Settlements
+          </div>
+<nav class="space-y-1">
+<!-- Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] text-label-md font-label-md transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Subscriptions -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] text-label-md font-label-md transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="autorenew">autorenew</span>
+<span>Subscriptions</span>
+</a>
+<!-- Coupons -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] text-label-md font-label-md transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="confirmation_number">confirmation_number</span>
+<span>Coupons</span>
+</a>
+<!-- Transactions -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] text-label-md font-label-md transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+<span>Transactions</span>
+</a>
+<!-- Invoicing & Receipts -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] text-label-md font-label-md transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt">receipt</span>
+<span>Invoicing &amp; Receipts</span>
+</a>
+<!-- ACTIVE ITEM: Webhooks & Reconciliation -->
+<a aria-current="page" class="flex items-center justify-between px-3 py-2.5 rounded bg-[#1E293B] text-on-primary border-l-4 border-audit-pass-mint text-label-md font-label-md min-h-[44px]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-brand-success" data-icon="sync_alt">sync_alt</span>
+<span class="font-semibold">Webhooks &amp; Reconciliation</span>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-brand-danger text-on-primary">
+                3
+              </span>
+</a>
+<!-- Settlements -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] text-label-md font-label-md transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance">account_balance</span>
+<span>Settlements</span>
+</a>
+<!-- Audit Trail -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-outline-variant hover:text-on-primary hover:bg-[#1E293B] text-label-md font-label-md transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="history_edu">history_edu</span>
+<span>Audit Trail</span>
+</a>
+</nav>
+</div>
+<!-- System Diagnostic status -->
+<div class="border-t border-[#1E293B] pt-4 px-3 space-y-2">
+<div class="text-[11px] uppercase tracking-wider text-outline-variant font-bold">Inbound Listener</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-outline-variant">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-brand-success"></span>
+              Paystack Webhook Hook
+            </span>
+<span class="text-label-sm font-label-sm text-on-primary font-code-snippet">200 OK</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-outline-variant">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-brand-success"></span>
+              Flutterwave v3 Hook
+            </span>
+<span class="text-label-sm font-label-sm text-on-primary font-code-snippet">200 OK</span>
+</div>
+</div>
+</div>
+<!-- Footer Rail Status -->
+<div class="px-6 pt-4 border-t border-[#1E293B] space-y-1">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-brand-success" data-icon="verified_user">verified_user</span>
+<span>Zero-Trust Inbound Auth</span>
+</div>
+<div class="text-label-sm font-label-sm text-[#75777c]">System Release 4.9.2</div>
+</div>
+</aside>
+<!-- ======================================================================= -->
+<!-- PRIMARY CANVAS CONTENT -->
+<!-- ======================================================================= -->
+<main class="flex-1 overflow-y-auto px-margin py-6 bg-surface">
+<div class="max-w-[1280px] mx-auto space-y-6">
+<!-- 1. Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-body-sm font-body-sm text-brand-text-muted">
+<span>Finance &amp; Operations</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Settlements &amp; Integrations</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-brand-text-main font-semibold">Webhooks and reconciliation</span>
+</nav>
+<!-- 2. Page Header -->
+<div class="flex items-start justify-between pb-4 border-b border-brand-border">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-brand-text-main font-bold">
+              Webhooks and Reconciliation
+            </h1>
+<p class="text-body-md font-body-md text-brand-text-muted mt-1 max-w-3xl">
+              Inspect inbound Paystack and Flutterwave gateway events, verify cryptographic signatures, and triage reconciliation exceptions.
+            </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-11 px-4 inline-flex items-center gap-2 rounded bg-white border border-[#64748B] text-brand-text-main hover:bg-[#F1F5F9] focus-ring-inst text-label-md font-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="refresh">refresh</span>
+<span>Re-sync gateway ledger</span>
+</button>
+<button class="h-11 px-6 inline-flex items-center gap-2 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] focus-ring-inst text-label-md font-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+<span>+ Test webhook ping</span>
+</button>
+</div>
+</div>
+<!-- 3. Telemetry Metric Summary Bento Grid -->
+<div class="grid grid-cols-4 gap-4">
+<!-- Total Inbound (24h) -->
+<div class="p- space-y-1 bg-white rounded-xl border border-brand-border p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-brand-text-muted">
+<span>TOTAL INBOUND (24H)</span>
+<span class="material-symbols-outlined text-[#1D4ED8] text-[20px]" data-icon="inbox">inbox</span>
+</div>
+<div class="text-display font-display text-brand-text-main tracking-tight font-bold">
+              1,420
+            </div>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-brand-success font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>99.8% valid signature</span>
+</div>
+</div>
+<!-- Auto-Reconciled -->
+<div class="p- space-y-1 bg-white rounded-xl border border-brand-border p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-brand-text-muted">
+<span>AUTO-RECONCILED</span>
+<span class="material-symbols-outlined text-brand-success text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="text-display font-display text-brand-text-main tracking-tight font-bold">
+              ₦42,850,000
+            </div>
+<div class="text-label-sm font-label-sm text-brand-text-muted">
+              1,417 transactions matched to order
+            </div>
+</div>
+<!-- Unresolved Exceptions -->
+<div class="p- space-y-1 bg-brand-danger-bg rounded-xl border border-[#B91C1C] p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-brand-danger font-bold">
+<span>UNRESOLVED EXCEPTIONS</span>
+<span class="material-symbols-outlined text-brand-danger text-[20px]" data-icon="warning">warning</span>
+</div>
+<div class="text-display font-display text-brand-danger tracking-tight font-bold">
+              3
+            </div>
+<div class="text-label-sm font-label-sm text-brand-danger font-medium">
+              Requiring manual finance action
+            </div>
+</div>
+<!-- Webhook Latency -->
+<div class="p- space-y-1 bg-white rounded-xl border border-brand-border p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-brand-text-muted">
+<span>WEBHOOK LATENCY</span>
+<span class="material-symbols-outlined text-[#64748B] text-[20px]" data-icon="timer">timer</span>
+</div>
+<div class="text-display font-display text-brand-text-main tracking-tight font-bold">
+              184ms
+            </div>
+<div class="text-label-sm font-label-sm text-brand-text-muted">
+              Average response &amp; HMAC verify
+            </div>
+</div>
+</div>
+<!-- 4. Interactive State Switcher Preview (Variants Display Tabs) -->
+<div class="bg-white rounded-xl border border-brand-border overflow-hidden shadow-sm">
+<div class="border-b border-brand-border px-6 pt-4 bg-[#F8FAFC] flex items-center justify-between">
+<!-- Tabs -->
+<div class="flex items-center gap-8 -mb-px">
+<button class="pb-3 border-b-2 border-brand-danger text-brand-danger font-semibold text-label-md font-label-md flex items-center gap-2 focus-ring-inst" id="tab-exceptions" onclick="showVariant('exceptions')" type="button">
+<span>Exceptions</span>
+<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-brand-danger text-white">3 Active</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-brand-text-muted hover:text-brand-text-main font-medium text-label-md font-label-md flex items-center gap-2 focus-ring-inst" id="tab-all-events" onclick="showVariant('all-events')" type="button">
+<span>All events</span>
+<span class="text-xs bg-[#E2E8F0] px-2 py-0.5 rounded text-brand-text-muted">1,420</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-brand-text-muted hover:text-brand-text-main font-medium text-label-md font-label-md flex items-center gap-2 focus-ring-inst" id="tab-healthy" onclick="showVariant('healthy')" type="button">
+<span>Healthy State (Preview)</span>
+<span class="material-symbols-outlined text-brand-success text-[16px]">check_circle</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-brand-text-muted hover:text-brand-text-main font-medium text-label-md font-label-md flex items-center gap-2 focus-ring-inst" id="tab-retrying" onclick="showVariant('retrying')" type="button">
+<span>Retrying Webhook (Preview)</span>
+<span class="material-symbols-outlined text-[#B45309] text-[16px]">refresh</span>
+</button>
+</div>
+<div class="text-label-sm font-label-sm text-brand-text-muted pb-3">
+              Environment: <span class="font-code-snippet font-bold text-brand-text-main">Production (LIVE_NG)</span>
+</div>
+</div>
+<!-- VARIANT 1: Exceptions Present (Default View) -->
+<div class="p-6 space-y-6" id="view-exceptions">
+<!-- Exception Alert Banner -->
+<div class="bg-brand-warning-bg border border-brand-warning rounded-lg p-4 flex items-start justify-between">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-warning text-[24px] mt-0.5" data-icon="report">report</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-brand-text-main font-semibold">
+                    3 Inbound Transactions Requiring Reconciliation
+                  </h3>
+<p class="text-body-sm font-body-sm text-brand-text-muted mt-0.5">
+                    Gateways confirmed payments, but discrepancies were flagged during internal verification. Automatic course access is paused until manual resolution.
+                  </p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-semibold text-brand-warning px-2.5 py-1 bg-white border border-brand-warning rounded">
+                Action Required
+              </span>
+</div>
+<!-- Exception Cards Breakdown -->
+<div class="space-y-4">
+<!-- Exception Card 1: Payment with no matching order -->
+<div class="border border-brand-border rounded-xl p-5 bg-white hover:border-[#64748B] transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<span class="p-2 rounded bg-brand-danger-bg text-brand-danger material-symbols-outlined text-[20px]" data-icon="link_off">link_off</span>
+<div>
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm font-semibold text-brand-text-main">
+                          Exception 1: Payment with no matching order
+                        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-danger-bg text-brand-danger border border-brand-danger">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                          Unmatched Cart
+                        </span>
+<span class="text-label-sm font-label-sm text-brand-text-muted font-code-snippet">
+                          Ref: pstk_891024801
+                        </span>
+</div>
+<p class="text-body-sm font-body-sm text-brand-text-muted mt-1">
+                        Received <strong class="text-brand-text-main">₦450,000</strong> from 
+                        <span class="font-medium text-brand-text-main">Chinedu Eze</span> 
+                        (<span class="font-code-snippet" id="cust-email-1">c••••••••@gmail.com</span>
+<button class="text-brand-info underline text-xs ml-1 hover:text-[#2563EB] focus-ring-inst" onclick="toggleMask('cust-email-1', 'chinedu.eze@gtbank.com')" type="button">Reveal</button>) 
+                        via <span class="font-medium">Paystack</span>. Candidate checkout session timed out prior to callback latch.
+                      </p>
+<div class="flex items-center gap-4 mt-2 text-label-sm font-label-sm text-brand-text-muted">
+<span>Time: 12:18:42 WAT</span>
+<span>•</span>
+<span class="text-brand-success font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> SHA-512 Valid
+                        </span>
+<span>•</span>
+<span>Gateway Status: success</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="h-11 px-3 rounded border border-brand-field-border text-brand-text-main hover:bg-[#F1F5F9] focus-ring-inst text-label-md font-label-md inline-flex items-center gap-1.5" onclick="openPayloadModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">code</span>
+<span>View Payload</span>
+</button>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] focus-ring-inst text-label-md font-label-md inline-flex items-center gap-1.5" onclick="openMatchModal('pstk_891024801', '₦450,000', 'Chinedu Eze')" type="button">
+<span class="material-symbols-outlined text-[18px]">join_inner</span>
+<span>Match to order</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Exception Card 2: Duplicate event -->
+<div class="border border-brand-border rounded-xl p-5 bg-white hover:border-[#64748B] transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<span class="p-2 rounded bg-brand-warning-bg text-brand-warning material-symbols-outlined text-[20px]" data-icon="copy_all">copy_all</span>
+<div>
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm font-semibold text-brand-text-main">
+                          Exception 2: Duplicate event
+                        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-warning-bg text-brand-warning border border-brand-warning">
+<span class="material-symbols-outlined text-[14px]">block</span>
+                          Idempotency Block
+                        </span>
+<span class="text-label-sm font-label-sm text-brand-text-muted font-code-snippet">
+                          Ref: flw_ref_992014
+                        </span>
+</div>
+<p class="text-body-sm font-body-sm text-brand-text-muted mt-1">
+                        Webhook dispatched twice within 4 seconds by Flutterwave gateway. System idempotency key <span class="font-code-snippet">idemp_live_884910</span> correctly blocked duplicate credit of <strong>₦180,000</strong>.
+                      </p>
+<div class="flex items-center gap-4 mt-2 text-label-sm font-label-sm text-brand-text-muted">
+<span>Time: 11:42:10 WAT</span>
+<span>•</span>
+<span class="text-brand-success font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> SHA-256 Valid
+                        </span>
+<span>•</span>
+<span>Duplicate Packet #2 Discarded</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="h-11 px-4 rounded border border-brand-field-border text-brand-text-main hover:bg-[#F1F5F9] focus-ring-inst text-label-md font-label-md inline-flex items-center gap-1.5" onclick="openReviewModal('flw_ref_992014', 'Duplicate Event - Idempotency Verified')" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Mark reviewed</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Exception Card 3: Amount mismatch -->
+<div class="border border-brand-border rounded-xl p-5 bg-white hover:border-[#64748B] transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<span class="p-2 rounded bg-brand-danger-bg text-brand-danger material-symbols-outlined text-[20px]" data-icon="difference">difference</span>
+<div>
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm font-semibold text-brand-text-main">
+                          Exception 3: Amount mismatch
+                        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-danger-bg text-brand-danger border border-brand-danger">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                          ₦15,000 Variance
+                        </span>
+<span class="text-label-sm font-label-sm text-brand-text-muted font-code-snippet">
+                          Ref: pstk_31094821
+                        </span>
+</div>
+<p class="text-body-sm font-body-sm text-brand-text-muted mt-1">
+<strong>₦300,000 billed</strong> at checkout vs <strong>₦285,000 recorded</strong> on Proforma Invoice #INV-2026-904 for candidate <span class="font-medium text-brand-text-main">Amara Okafor</span> due to expired promo code race condition.
+                      </p>
+<div class="flex items-center gap-4 mt-2 text-label-sm font-label-sm text-brand-text-muted">
+<span>Time: 10:15:04 WAT</span>
+<span>•</span>
+<span class="text-brand-success font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> SHA-512 Valid
+                        </span>
+<span>•</span>
+<span>Gateway: Paystack Live</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] focus-ring-inst text-label-md font-label-md inline-flex items-center gap-1.5" onclick="openReviewModal('pstk_31094821', 'Amount Mismatch Settlement')" type="button">
+<span class="material-symbols-outlined text-[18px]">balance</span>
+<span>Adjust &amp; Mark reviewed</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Exception Card 4: Enrolment failed after payment -->
+<div class="border border-brand-border rounded-xl p-5 bg-white hover:border-[#64748B] transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<span class="p-2 rounded bg-brand-danger-bg text-brand-danger material-symbols-outlined text-[20px]" data-icon="sync_problem">sync_problem</span>
+<div>
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm font-semibold text-brand-text-main">
+                          Exception 4: Enrolment failed after payment
+                        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-danger-bg text-brand-danger border border-brand-danger">
+<span class="material-symbols-outlined text-[14px]">timer_off</span>
+                          Provisioning Timeout
+                        </span>
+<span class="text-label-sm font-label-sm text-brand-text-muted font-code-snippet">
+                          Ref: pstk_740192834
+                        </span>
+</div>
+<p class="text-body-sm font-body-sm text-brand-text-muted mt-1">
+                        Payment success HTTP 200 logged for <strong>₦620,000</strong> (Candidate: <span class="font-medium text-brand-text-main">Tunde Adeleke</span>), but courseware license provisioning endpoint returned HTTP 504 Gateway Timeout.
+                      </p>
+<div class="flex items-center gap-4 mt-2 text-label-sm font-label-sm text-brand-text-muted">
+<span>Time: 09:04:18 WAT</span>
+<span>•</span>
+<span>Attempts: 2/5</span>
+<span>•</span>
+<span class="text-brand-warning font-medium">Next retry scheduled</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="h-11 px-4 rounded bg-brand-warning text-white hover:bg-[#853a06] focus-ring-inst text-label-md font-label-md inline-flex items-center gap-1.5" onclick="triggerRetry('pstk_740192834')" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>Retry processing now</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- VARIANT 2: Healthy (No Exceptions) View (Hidden by default) -->
+<div class="p-8 hidden space-y-6 text-center" id="view-healthy">
+<div class="max-w-lg mx-auto py-8">
+<div class="w-16 h-16 rounded-full bg-brand-success-bg border-2 border-brand-success text-brand-success flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-[36px]" data-icon="check_circle">check_circle</span>
+</div>
+<h2 class="text-headline-md font-headline-md font-bold text-brand-text-main">
+                Queue Healthy &amp; Balanced
+              </h2>
+<p class="text-body-md font-body-md text-brand-text-muted mt-2">
+                All webhooks processed and balanced. 0 pending exceptions in queue. Cryptographic signatures across 1,420 events validated.
+              </p>
+<div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded bg-brand-success-bg text-brand-success text-label-md font-label-md border border-brand-success">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Ledger Synchronized with Access Bank &amp; GTBank Accounts</span>
+</div>
+</div>
+</div>
+<!-- VARIANT 3: Retrying State View (Hidden by default) -->
+<div class="p-8 hidden space-y-6" id="view-retrying">
+<div class="max-w-2xl mx-auto border border-brand-warning bg-brand-warning-bg rounded-xl p-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-white border border-brand-warning flex items-center justify-center text-brand-warning animate-spin">
+<span class="material-symbols-outlined text-[24px]">progress_activity</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm font-semibold text-brand-text-main">
+                      Retrying Webhook Dispatch
+                    </h3>
+<span class="text-label-sm font-label-sm font-bold text-brand-warning font-code-snippet">
+                      Attempt 3 of 5
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-brand-text-muted mt-1 font-code-snippet">
+                    Reference: pstk_740192834 · Endpoint: /api/v1/licensing/provision
+                  </p>
+<!-- Exponential Backoff Bar -->
+<div class="mt-4 space-y-2">
+<div class="flex justify-between text-label-sm font-label-sm text-brand-text-muted">
+<span>Exponential backoff delay: 15s</span>
+<span>Next retry window: 6s remaining</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-brand-warning h-full rounded-full transition-all duration-500" style="width: 60%"></div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-end gap-3">
+<button class="h-11 px-4 rounded border border-brand-field-border text-brand-text-muted bg-white opacity-60 cursor-not-allowed text-label-md font-label-md" disabled="" type="button">
+                      Payload Edit Locked
+                    </button>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] text-label-md font-label-md" onclick="showVariant('exceptions')" type="button">
+                      Return to Exception List
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- VARIANT 4: All Events Table View (Hidden by default) -->
+<div class="p-6 hidden space-y-4" id="view-all-events">
+<!-- Search & Filters Toolbar -->
+<div class="grid grid-cols-12 gap-3 items-center">
+<div class="col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[#64748B] text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-white border border-brand-field-border rounded text-body-sm font-body-sm text-brand-text-main placeholder-[#475569] focus-ring-inst" placeholder="Search reference, event ID, customer..." type="text"/>
+</div>
+<div class="col-span-2">
+<select class="w-full h-11 bg-white border border-brand-field-border rounded px-3 text-body-sm font-body-sm text-brand-text-main focus-ring-inst">
+<option>All Gateways</option>
+<option>Paystack</option>
+<option>Flutterwave</option>
+</select>
+</div>
+<div class="col-span-2">
+<select class="w-full h-11 bg-white border border-brand-field-border rounded px-3 text-body-sm font-body-sm text-brand-text-main focus-ring-inst">
+<option>All Event Types</option>
+<option>charge.success</option>
+<option>transfer.success</option>
+<option>subscription.create</option>
+<option>invoice.payment_failed</option>
+</select>
+</div>
+<div class="col-span-2">
+<select class="w-full h-11 bg-white border border-brand-field-border rounded px-3 text-body-sm font-body-sm text-brand-text-main focus-ring-inst">
+<option>All Statuses</option>
+<option>Success</option>
+<option>Exception</option>
+<option>Retrying</option>
+</select>
+</div>
+<div class="col-span-1">
+<button class="w-full h-11 flex items-center justify-center rounded border border-brand-field-border bg-white text-brand-text-main hover:bg-[#F1F5F9] focus-ring-inst" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto border border-brand-border rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-brand-border text-label-sm font-label-sm font-medium text-brand-text-muted uppercase tracking-wider">
+<th class="py-3 px-4">Time (WAT)</th>
+<th class="py-3 px-4">Event Type</th>
+<th class="py-3 px-4">Gateway Reference</th>
+<th class="py-3 px-4">Signature Valid</th>
+<th class="py-3 px-4">Processing Result</th>
+<th class="py-3 px-4">Attempts</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-brand-border text-body-sm font-body-sm bg-white">
+<!-- Row 1 -->
+<tr class="hover:bg-[#F8FAFC] min-h-[48px]">
+<td class="py-3 px-4 font-code-snippet">12:31:02</td>
+<td class="py-3 px-4 font-semibold text-brand-text-main">charge.success</td>
+<td class="py-3 px-4">
+<div class="inline-flex items-center gap-1 font-code-snippet">
+<span>pstk_901824119</span>
+<button class="text-brand-text-muted hover:text-brand-text-main" title="Copy" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-brand-success font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                        SHA-512 Valid
+                      </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-success-bg text-brand-success border border-brand-success">
+                        Success
+                      </span>
+</td>
+<td class="py-3 px-4 font-code-snippet">1/5</td>
+<td class="py-3 px-4 text-right">
+<button class="text-brand-info font-medium hover:underline text-label-sm font-label-sm" onclick="openPayloadModal()" type="button">View payload</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#F8FAFC] min-h-[48px] bg-brand-danger-bg/20">
+<td class="py-3 px-4 font-code-snippet">12:18:42</td>
+<td class="py-3 px-4 font-semibold text-brand-text-main">charge.success</td>
+<td class="py-3 px-4">
+<div class="inline-flex items-center gap-1 font-code-snippet font-semibold">
+<span>pstk_891024801</span>
+<button class="text-brand-text-muted hover:text-brand-text-main" title="Copy" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-brand-success font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                        SHA-512 Valid
+                      </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-danger-bg text-brand-danger border border-brand-danger">
+                        Exception
+                      </span>
+</td>
+<td class="py-3 px-4 font-code-snippet">1/5</td>
+<td class="py-3 px-4 text-right space-x-2">
+<button class="text-brand-info font-medium hover:underline text-label-sm font-label-sm" onclick="openPayloadModal()" type="button">View payload</button>
+<button class="text-brand-danger font-medium hover:underline text-label-sm font-label-sm" onclick="showVariant('exceptions')" type="button">Inspect exception</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#F8FAFC] min-h-[48px]">
+<td class="py-3 px-4 font-code-snippet">12:02:15</td>
+<td class="py-3 px-4 font-semibold text-brand-text-main">subscription.create</td>
+<td class="py-3 px-4">
+<div class="inline-flex items-center gap-1 font-code-snippet">
+<span>flw_sub_301988</span>
+<button class="text-brand-text-muted hover:text-brand-text-main" title="Copy" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-brand-success font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                        SHA-256 Valid
+                      </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-success-bg text-brand-success border border-brand-success">
+                        Success
+                      </span>
+</td>
+<td class="py-3 px-4 font-code-snippet">1/5</td>
+<td class="py-3 px-4 text-right">
+<button class="text-brand-info font-medium hover:underline text-label-sm font-label-sm" onclick="openPayloadModal()" type="button">View payload</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#F8FAFC] min-h-[48px] bg-brand-warning-bg/20">
+<td class="py-3 px-4 font-code-snippet">11:42:10</td>
+<td class="py-3 px-4 font-semibold text-brand-text-main">charge.success</td>
+<td class="py-3 px-4">
+<div class="inline-flex items-center gap-1 font-code-snippet">
+<span>flw_ref_992014</span>
+<button class="text-brand-text-muted hover:text-brand-text-main" title="Copy" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-brand-success font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                        SHA-256 Valid
+                      </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-warning-bg text-brand-warning border border-brand-warning">
+                        Exception
+                      </span>
+</td>
+<td class="py-3 px-4 font-code-snippet">2/5</td>
+<td class="py-3 px-4 text-right space-x-2">
+<button class="text-brand-info font-medium hover:underline text-label-sm font-label-sm" onclick="openPayloadModal()" type="button">View payload</button>
+<button class="text-brand-danger font-medium hover:underline text-label-sm font-label-sm" onclick="showVariant('exceptions')" type="button">Inspect exception</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-[#F8FAFC] min-h-[48px]">
+<td class="py-3 px-4 font-code-snippet">11:15:33</td>
+<td class="py-3 px-4 font-semibold text-brand-text-main">invoice.payment_failed</td>
+<td class="py-3 px-4">
+<div class="inline-flex items-center gap-1 font-code-snippet">
+<span>pstk_inv_44019</span>
+<button class="text-brand-text-muted hover:text-brand-text-main" title="Copy" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-brand-success font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                        SHA-512 Valid
+                      </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm font-medium bg-brand-info-bg text-brand-info border border-brand-info">
+                        Logged (Declined)
+                      </span>
+</td>
+<td class="py-3 px-4 font-code-snippet">1/5</td>
+<td class="py-3 px-4 text-right">
+<button class="text-brand-info font-medium hover:underline text-label-sm font-label-sm" onclick="openPayloadModal()" type="button">View payload</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Bar -->
+<div class="flex items-center justify-between pt-2">
+<span class="text-label-sm font-label-sm text-brand-text-muted">
+                Showing 1 to 5 of 1,420 events
+              </span>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 rounded border border-brand-border bg-white text-brand-text-muted hover:bg-[#F1F5F9] text-label-sm font-label-sm" type="button">Previous</button>
+<button class="h-9 w-9 rounded bg-[#0B1320] text-white text-label-sm font-label-sm font-semibold" type="button">1</button>
+<button class="h-9 w-9 rounded border border-brand-border bg-white text-brand-text-main hover:bg-[#F1F5F9] text-label-sm font-label-sm" type="button">2</button>
+<button class="h-9 w-9 rounded border border-brand-border bg-white text-brand-text-main hover:bg-[#F1F5F9] text-label-sm font-label-sm" type="button">3</button>
+<button class="h-9 px-3 rounded border border-brand-border bg-white text-brand-text-main hover:bg-[#F1F5F9] text-label-sm font-label-sm" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ========================================================================= -->
+<!-- MODAL / DRAWER: PAYLOAD VIEWER DRAWER -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 bg-[#0B1320]/60 backdrop-blur-none flex items-center justify-end hidden" id="payload-modal">
+<div class="w-[640px] h-full bg-white shadow-2xl flex flex-col border-l border-brand-border">
+<!-- Drawer Header -->
+<div class="p-6 bg-[#0B1320] text-white flex items-center justify-between border-b border-[#1E293B]">
+<div>
+<div class="text-label-sm font-label-sm text-[#93C5FD]">WEBHOOK PAYLOAD INSPECTION</div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-white mt-0.5">charge.success</h2>
+<div class="text-label-sm font-label-sm text-outline-variant font-code-snippet">Event ID: evt_live_9401284091</div>
+</div>
+<button class="w-11 h-11 flex items-center justify-center rounded text-outline-variant hover:text-white hover:bg-[#1E293B] focus-ring-inst" onclick="closePayloadModal()" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Action Sub-header -->
+<div class="px-6 py-3 bg-[#F8FAFC] border-b border-brand-border flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 rounded border border-brand-field-border bg-white text-brand-text-main hover:bg-[#F1F5F9] text-label-sm font-label-sm inline-flex items-center gap-1.5 focus-ring-inst" onclick="copyPayload()" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy Payload</span>
+</button>
+<button class="h-9 px-3 rounded border border-brand-field-border bg-white text-brand-text-main hover:bg-[#F1F5F9] text-label-sm font-label-sm inline-flex items-center gap-1.5 focus-ring-inst" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Download JSON</span>
+</button>
+</div>
+<button class="h-9 px-3 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] text-label-sm font-label-sm inline-flex items-center gap-1.5 focus-ring-inst" onclick="triggerRetry('pstk_891024801')" type="button">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Replay Webhook</span>
+</button>
+</div>
+<!-- Payload Body -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4">
+<!-- Cryptographic Headers Check -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg p-3 space-y-1">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-bold text-[#1D4ED8]">HTTP HEADER: x-paystack-signature</span>
+<span class="inline-flex items-center gap-1 text-brand-success font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span> HMAC VALID
+            </span>
+</div>
+<div class="text-code-snippet font-code-snippet text-brand-text-muted break-all">
+            4b21697e889a7f3408c69784fa7dcda12dca043510c4d8778f7e2716499be12a1f0a2105156a02e6e16be4d8
+          </div>
+</div>
+<!-- Masked Sensitive Field Callout -->
+<div class="border border-brand-border rounded p-3 bg-white flex items-center justify-between text-body-sm font-body-sm">
+<div>
+<span class="text-brand-text-muted">Customer Email:</span>
+<span class="font-code-snippet font-semibold ml-2" id="drawer-email">c••••••••@gmail.com</span>
+</div>
+<button class="text-brand-info underline text-label-sm font-label-sm hover:text-[#2563EB] focus-ring-inst" onclick="toggleMask('drawer-email', 'chinedu.eze@gtbank.com')" type="button">
+            Reveal
+          </button>
+</div>
+<!-- Formatted Code Body -->
+<div class="rounded-lg bg-[#0B1320] text-[#E2E8F0] p-4 text-code-snippet font-code-snippet overflow-x-auto leading-relaxed border border-[#1E293B]">
+<pre><code>{
+  "event": "charge.success",
+  "data": {
+    "id": 309182410,
+    "domain": "live",
+    "status": "success",
+    "reference": "pstk_891024801",
+    "amount": 45000000,
+    "message": null,
+    "gateway_response": "Successful",
+    "paid_at": "2026-10-05T12:18:42.000Z",
+    "created_at": "2026-10-05T12:18:35.000Z",
+    "channel": "card",
+    "currency": "NGN",
+    "ip_address": "102.89.23.104",
+    "metadata": {
+      "cart_id": "cart_session_expired_881",
+      "cohort_code": "CRISC-OCT-2026",
+      "candidate_name": "Chinedu Eze"
+    },
+    "customer": {
+      "id": 918204,
+      "first_name": "Chinedu",
+      "last_name": "Eze",
+      "email": "chinedu.eze@gtbank.com",
+      "phone": "+2348030001294"
+    },
+    "authorization": {
+      "authorization_code": "AUTH_891024801",
+      "bin": "539983",
+      "last4": "2049",
+      "exp_month": "11",
+      "exp_year": "2028",
+      "channel": "card",
+      "card_type": "mastercard",
+      "bank": "Guaranty Trust Bank",
+      "country_code": "NG"
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<!-- Drawer Footer -->
+<div class="p-4 border-t border-brand-border bg-[#F8FAFC] flex justify-end">
+<button class="h-11 px-6 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] text-label-md font-label-md focus-ring-inst" onclick="closePayloadModal()" type="button">
+          Close Inspector
+        </button>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- MODAL: MATCH TO ORDER DIALOG -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 bg-[#0B1320]/60 flex items-center justify-center hidden p-4" id="match-modal">
+<div class="w-[600px] bg-white rounded-xl shadow-2xl border border-brand-border overflow-hidden">
+<div class="px-6 py-4 bg-[#0B1320] text-white flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm font-bold">Manual Order Reconciliation</h3>
+<button class="text-outline-variant hover:text-white" onclick="closeMatchModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-5">
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded p-3 text-body-sm font-body-sm">
+          Binding Inbound Reference: <strong class="font-code-snippet" id="match-ref-target">pstk_891024801</strong> 
+          (<span class="font-bold" id="match-amount-target">₦450,000</span>)
+        </div>
+<div>
+<label class="block text-label-md font-label-md font-semibold text-brand-text-main mb-1.5">
+            Search Candidate Order or Abandoned Cart *
+          </label>
+<input class="w-full h-11 px-3 border border-brand-field-border rounded text-body-sm font-body-sm focus-ring-inst" placeholder="Enter Order ID (e.g. ORD-2026-948) or Candidate Email..." type="text" value="ORD-2026-9824 (Chinedu Eze - CRISC Certification Course)"/>
+<p class="text-label-sm font-label-sm text-brand-text-muted mt-1">Found 1 matching pending enrolment order pending ledger confirmation.</p>
+</div>
+<div>
+<label class="block text-label-md font-label-md font-semibold text-brand-text-main mb-1.5">
+            Audit Reason for Manual Association *
+          </label>
+<textarea class="w-full p-3 border border-brand-field-border rounded text-body-sm font-body-sm focus-ring-inst" placeholder="Provide justification for compliance audit trail..." rows="3">Verified payment credit on GTBank statement. Cart expired due to network drop during 3D Secure OTP verification.</textarea>
+</div>
+</div>
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-brand-border flex items-center justify-end gap-3">
+<button class="h-11 px-5 rounded border border-brand-field-border text-brand-text-main hover:bg-[#F1F5F9] text-label-md font-label-md" onclick="closeMatchModal()" type="button">
+          Cancel
+        </button>
+<button class="h-11 px-6 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] text-label-md font-label-md focus-ring-inst" onclick="submitResolution()" type="button">
+          Bind &amp; Issue Enrolment License
+        </button>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- MODAL: MARK REVIEWED CONFIRMATION (With mandatory audit reason) -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 bg-[#0B1320]/60 flex items-center justify-center hidden p-4" id="review-modal">
+<div class="w-[560px] bg-white rounded-xl shadow-2xl border border-brand-border overflow-hidden">
+<div class="px-6 py-4 bg-[#0B1320] text-white flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm font-bold">Confirmation: Mark Exception Reviewed</h3>
+<button class="text-outline-variant hover:text-white" onclick="closeReviewModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-start gap-3 p-3 bg-brand-warning-bg border border-brand-warning rounded">
+<span class="material-symbols-outlined text-brand-warning text-[24px]">warning</span>
+<div class="text-body-sm font-body-sm text-brand-text-main">
+            You are about to dismiss the exception flag for <strong class="font-code-snippet" id="review-ref-target">flw_ref_992014</strong>. 
+            This action will clear the reconciliation alert.
+          </div>
+</div>
+<div>
+<label class="block text-label-md font-label-md font-semibold text-brand-text-main mb-1.5">
+            Audit Trail Mandatory Justification *
+          </label>
+<textarea class="w-full p-3 border border-brand-field-border rounded text-body-sm font-body-sm focus-ring-inst" id="review-reason-text" placeholder="Reason is required for audit trail *" required="" rows="3"></textarea>
+<span class="text-label-sm font-label-sm text-brand-danger font-medium mt-1 inline-block">
+            Reason is strictly recorded in the SecOps immutable audit log.
+          </span>
+</div>
+</div>
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-brand-border flex items-center justify-end gap-3">
+<button class="h-11 px-5 rounded border border-brand-field-border text-brand-text-main hover:bg-[#F1F5F9] text-label-md font-label-md" onclick="closeReviewModal()" type="button">
+          Cancel
+        </button>
+<button class="h-11 px-6 rounded bg-[#0B1320] text-white hover:bg-[#1E293B] text-label-md font-label-md focus-ring-inst" onclick="confirmReviewDismissal()" type="button">
+          Confirm Audit Review
+        </button>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- INSTITUTIONAL CLOSURE (Shared Component: Footer) -->
+<!-- ========================================================================= -->
+<footer class="w-full py-space-lg px-gutter border-t border-[#1E293B] bg-[#0B1320] flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-outline-variant text-body-sm font-body-sm">
+<div class="space-y-1">
+<div class="text-on-primary font-bold">
+        © 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. Accredited ISACA Lagos Elite Partner. All Sessions Digitally Watermarked.
+      </div>
+<div class="text-label-sm font-label-sm text-[#75777c]">
+        Staff Terminal Auth: Ngozi Okonjo (Finance Officer) · Session Integrity Level 4
+      </div>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-label-sm font-label-sm">
+<a class="text-outline-variant hover:text-on-primary transition-colors" href="#">Zero-Trust Protocol</a>
+<span class="text-[#75777c]">|</span>
+<a class="text-outline-variant hover:text-on-primary transition-colors" href="#">ISACA Lagos Charter</a>
+<span class="text-[#75777c]">|</span>
+<a class="text-outline-variant hover:text-on-primary transition-colors" href="#">Automated Verification Gateway</a>
+<span class="text-[#75777c]">|</span>
+<a class="text-outline-variant hover:text-on-primary transition-colors" href="#">Forensic Integrity Policy</a>
+<span class="text-[#75777c]">|</span>
+<a class="text-outline-variant hover:text-on-primary transition-colors" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- ========================================================================= -->
+<!-- INLINE JAVASCRIPT: MICRO-INTERACTIONS & VIEW CONTROLLERS -->
+<!-- ========================================================================= -->
+<script>
+    // Tab and Variant View Controller
+    function showVariant(variantName) {
+      const views = ['exceptions', 'all-events', 'healthy', 'retrying'];
+      views.forEach(v => {
+        const viewElem = document.getElementById(`view-${v}`);
+        const tabElem = document.getElementById(`tab-${v}`);
+        if (viewElem) viewElem.classList.add('hidden');
+        if (tabElem) {
+          tabElem.classList.remove('border-brand-danger', 'border-brand-success', 'border-brand-warning', 'text-brand-danger', 'text-brand-success', 'text-brand-warning', 'border-[#0B1320]', 'text-[#0B1320]');
+          tabElem.classList.add('border-transparent', 'text-brand-text-muted');
+        }
+      });
+
+      const activeView = document.getElementById(`view-${variantName}`);
+      const activeTab = document.getElementById(`tab-${variantName}`);
+      if (activeView) activeView.classList.remove('hidden');
+
+      if (activeTab) {
+        activeTab.classList.remove('border-transparent', 'text-brand-text-muted');
+        if (variantName === 'exceptions') {
+          activeTab.classList.add('border-brand-danger', 'text-brand-danger');
+        } else if (variantName === 'healthy') {
+          activeTab.classList.add('border-brand-success', 'text-brand-success');
+        } else if (variantName === 'retrying') {
+          activeTab.classList.add('border-brand-warning', 'text-brand-warning');
+        } else {
+          activeTab.classList.add('border-[#0B1320]', 'text-[#0B1320]', 'font-semibold');
+        }
+      }
+    }
+
+    // Masked sensitive field reveal helper
+    function toggleMask(elementId, clearValue) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      if (el.dataset.revealed === "true") {
+        el.innerText = "c••••••••@gmail.com";
+        el.dataset.revealed = "false";
+      } else {
+        el.innerText = clearValue;
+        el.dataset.revealed = "true";
+      }
+    }
+
+    // Payload Drawer Controls
+    function openPayloadModal() {
+      document.getElementById('payload-modal').classList.remove('hidden');
+    }
+    function closePayloadModal() {
+      document.getElementById('payload-modal').classList.add('hidden');
+    }
+    function copyPayload() {
+      alert("Payload JSON copied to clipboard for finance auditing.");
+    }
+
+    // Match to Order Dialog Controls
+    function openMatchModal(ref, amount, candidate) {
+      document.getElementById('match-ref-target').innerText = ref;
+      document.getElementById('match-amount-target').innerText = amount;
+      document.getElementById('match-modal').classList.remove('hidden');
+    }
+    function closeMatchModal() {
+      document.getElementById('match-modal').classList.add('hidden');
+    }
+    function submitResolution() {
+      alert("Order matched successfully. Provisional licence granted to candidate.");
+      closeMatchModal();
+    }
+
+    // Mark Reviewed Confirmation Controls
+    function openReviewModal(ref, context) {
+      document.getElementById('review-ref-target').innerText = ref;
+      document.getElementById('review-reason-text').value = '';
+      document.getElementById('review-modal').classList.remove('hidden');
+    }
+    function closeReviewModal() {
+      document.getElementById('review-modal').classList.add('hidden');
+    }
+    function confirmReviewDismissal() {
+      const val = document.getElementById('review-reason-text').value.trim();
+      if (!val) {
+        alert("Compliance requirement: Reason is required for audit trail.");
+        return;
+      }
+      alert("Audit entry committed. Exception cleared from active triage list.");
+      closeReviewModal();
+    }
+
+    // Retrying Trigger Simulator
+    function triggerRetry(ref) {
+      showVariant('retrying');
+    }
+  </script>
+</body></html>

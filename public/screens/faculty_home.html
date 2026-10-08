@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform — Faculty Home</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-background": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#45474c",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-variant": "#dae2fd",
+            "primary-container": "#141c29",
+            "secondary-container": "#4069f2",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-tint": "#575f6e",
+            "on-error-container": "#93000a",
+            "surface": "#faf8ff",
+            "primary-fixed": "#dbe2f5",
+            "tertiary-container": "#281809",
+            "outline-variant": "#c5c6cc",
+            "primary-fixed-dim": "#bfc6d9",
+            "outline": "#75777c",
+            "surface-container-highest": "#dae2fd",
+            "on-primary-container": "#7c8495",
+            "inverse-surface": "#283044",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-primary": "#ffffff",
+            "secondary": "#1d4ed8",
+            "surface-container": "#eaedff",
+            "on-secondary-fixed": "#001551",
+            "primary": "#000000",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed": "#281809",
+            "error": "#ba1a1a",
+            "surface-bright": "#faf8ff",
+            "background": "#faf8ff",
+            "tertiary": "#000000",
+            "tertiary-fixed": "#fddcc4",
+            "secondary-fixed": "#dce1ff",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-surface": "#131b2e",
+            "on-tertiary-container": "#997f6a",
+            "surface-dim": "#d2d9f4",
+            "on-primary-fixed": "#141c29",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-high": "#e2e7ff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-lg": "2rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.5rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "margin": "2rem",
+            "margin-mobile": "1rem"
+          },
+          fontFamily: {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0F172A;
+      background-color: #FAF8FF;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-body-md text-on-surface antialiased">
+<!-- Variant Control Bar (Presenter Switcher) -->
+<aside aria-label="Variant Switcher" class="bg-[#0B1320] border-b border-[#334155] px-4 py-2 text-white">
+<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-[#10B981]"></span>
+<span class="font-medium tracking-wide uppercase text-slate-300">Staff Portal State View:</span>
+</div>
+<div aria-label="State selector" class="inline-flex rounded bg-[#1E293B] p-1 border border-[#475569]" role="tablist">
+<button aria-selected="true" class="px-3 py-1.5 rounded font-medium text-xs transition-colors bg-[#0B1320] text-white border border-[#2563EB]" id="btn-v1" onclick="switchVariant('v1')" role="tab">
+          Variant 1: Default (3 Cohorts)
+        </button>
+<button aria-selected="false" class="px-3 py-1.5 rounded font-medium text-xs transition-colors text-slate-300 hover:text-white" id="btn-v2" onclick="switchVariant('v2')" role="tab">
+          Variant 2: Empty State (0 Cohorts)
+        </button>
+<button aria-selected="false" class="px-3 py-1.5 rounded font-medium text-xs transition-colors text-slate-300 hover:text-white" id="btn-v3" onclick="switchVariant('v3')" role="tab">
+          Variant 3: High Density (8 Cohorts + Paginated)
+        </button>
+</div>
+<span class="text-slate-400 hidden lg:inline">WAT Timezone Active · 10:15 WAT</span>
+</div>
+</aside>
+<!-- Staff Application Shell Top Bar -->
+<header class="bg-[#0B1320] text-white sticky top-0 z-40 h-16 border-b border-[#1E293B]">
+<div class="max-w-[1440px] h-full mx-auto px-6 flex items-center justify-between">
+<!-- Logo Plate -->
+<div class="flex items-center gap-4">
+<div class="bg-white h-10 px-3 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Academy Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-ghG3DXoeAcwLabrfFaXuh9i-S6-9pIrt48UaVO0fwwlUVIfSBODzXxOUqCn6DSzhl_QNV3LCnjxl_lrDthA_BKTrF1U547TmsLfqcumEvCTcPC6bU0aPxmP7jcTlJMmIHMK_-BvqUbQpdNYAGu8c0AvyxxE3nLTivT2EcKcpSjERwpMGPDPtd-U8j8dKy0NICW30SA9UDZyK2gGsDCx9uVbKBKL49j5dmvbQ3ucmCzSFBTHkkyJ9Mw"/>
+</div>
+<div class="h-6 w-[1px] bg-[#334155] hidden sm:block"></div>
+<span class="text-slate-200 text-sm font-medium tracking-tight hidden sm:inline">Enterprise Faculty Hub</span>
+</div>
+<!-- Staff Details & Utilities -->
+<div class="flex items-center gap-6">
+<!-- WAT Clock -->
+<div class="hidden md:flex items-center gap-2 text-xs text-slate-300 font-normal">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-slate-400">schedule</span>
+<span>10:15 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-6 w-[1px] bg-[#334155] hidden md:block"></div>
+<!-- Notification Bell (min 44px touch) -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-slate-300 hover:text-white hover:bg-[#1E293B] focus-ring transition-colors" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<!-- Signed-in Staff Info -->
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="text-sm font-medium text-white leading-tight">Adaeze Okonkwo</div>
+<div class="text-xs text-slate-300 leading-tight">Instructor</div>
+</div>
+<!-- Avatar plate -->
+<div aria-label="Adaeze Okonkwo avatar" class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#475569] text-white flex items-center justify-center font-medium text-sm select-none">
+            AO
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Portal Layout with Left Staff Rail -->
+<div class="flex-1 max-w-[1440px] w-full mx-auto flex">
+<!-- Left Navigation Rail -->
+<nav aria-label="Staff Navigation" class="w-64 flex-shrink-0 bg-white border-r border-[#E2E8F0] p-4 hidden lg:flex flex-col justify-between">
+<div class="space-y-6">
+<!-- Academics Section (Active Group) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">
+            Academics
+          </div>
+<ul class="space-y-1">
+<li>
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-medium bg-[#0B1320] text-white focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Faculty Home</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">groups</span>
+<span>Cohorts</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">menu_book</span>
+<span>Curriculum</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">quiz</span>
+<span>Question Bank</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">analytics</span>
+<span>Readiness Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">calendar_month</span>
+<span>Schedule</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Operations Section -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">
+            Operations
+          </div>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">how_to_reg</span>
+<span>Attendance Logs</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">task</span>
+<span>Audit Verifications</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Settings Section -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">
+            Settings
+          </div>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm font-normal text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-[#64748B]">settings</span>
+<span>Preferences</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Registry Support Footnote -->
+<div class="border-t border-[#E2E8F0] pt-4 px-3 text-xs text-[#64748B]">
+<div class="font-medium text-[#0F172A]">Lagos Academic Registry</div>
+<div class="mt-0.5">+234 1 280 9400</div>
+<div class="mt-1 text-[11px] text-[#64748B]">Accredited Provider #AJS-2026</div>
+</div>
+</nav>
+<!-- Main Workspace Canvas -->
+<main class="flex-1 min-w-0 p-6 lg:p-8">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="mb-4">
+<ol class="flex items-center space-x-2 text-xs text-[#64748B]">
+<li>
+<span>Staff Portal</span>
+</li>
+<li class="flex items-center">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] mx-1">chevron_right</span>
+<span>Academics</span>
+</li>
+<li aria-current="page" class="flex items-center text-[#0F172A] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] mx-1">chevron_right</span>
+<span>Faculty Home</span>
+</li>
+</ol>
+</nav>
+<!-- Page Header Pattern -->
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-6 border-b border-[#E2E8F0] gap-4 mb-8">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A]">Faculty home</h1>
+<div class="text-body-md font-body-md font-medium text-[#0F172A] mt-1">Good morning, Adaeze</div>
+<p class="text-body-sm font-body-sm text-[#475569] mt-0.5">
+            Academic cohort progress, upcoming live sessions, and faculty action items.
+          </p>
+</div>
+<div>
+<!-- Mandatory Primary Action Button (min 44px, #0B1320) -->
+<button class="inline-flex items-center justify-center h-[44px] px-6 rounded-md bg-[#0B1320] text-white text-sm font-medium hover:bg-[#1E293B] focus-ring shadow-sm transition-colors" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] mr-2">add_circle</span>
+<span>Schedule session</span>
+</button>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- VARIANT 1: DEFAULT STATE (3 COHORTS) -->
+<!-- ===================================================================== -->
+<div class="space-y-8" id="variant-1">
+<!-- Cohorts + Sidebar Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Primary Left Column: Cohorts List (8 cols) -->
+<div class="lg:col-span-8 space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] flex items-center gap-2">
+<span>My cohorts</span>
+<span class="text-xs font-normal text-[#475569] bg-white border border-[#E2E8F0] px-2 py-0.5 rounded">3 Active</span>
+</h2>
+<a class="text-sm font-medium text-[#1D4ED8] hover:underline flex items-center focus-ring" href="#">
+<span>View all cohorts</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+</a>
+</div>
+<!-- Cohort Card 1 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 hover:border-[#CBD5E1] transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-[#0F172A]">CISA Exam Prep — Cohort 14</h3>
+<p class="text-xs text-[#475569] mt-0.5">12 Oct 2026 to 18 Dec 2026 · 42 students enrolled</p>
+</div>
+<!-- Status Chip: Certified / On Track -->
+<div class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#ECFDF5] border border-[#047857] text-[#047857] text-xs font-medium self-start">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>On Track</span>
+</div>
+</div>
+<!-- Metric & Progress -->
+<div class="py-4">
+<div class="flex justify-between items-center text-xs font-medium text-[#475569] mb-1.5">
+<span>Average syllabus progress</span>
+<span class="text-[#0F172A]">68%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-2 border-t border-[#F8FAFC]">
+<span class="text-xs text-[#64748B]">Next Milestone: Mock Exam 1</span>
+<div class="flex items-center gap-4">
+<a class="text-xs font-medium text-[#1D4ED8] hover:underline focus-ring py-2" href="#">Cohort Roster</a>
+<a class="text-xs font-medium text-[#1D4ED8] hover:underline focus-ring py-2" href="#">Classroom</a>
+</div>
+</div>
+</article>
+<!-- Cohort Card 2 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 hover:border-[#CBD5E1] transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-[#0F172A]">CISM Information Security Management — Cohort 08</h3>
+<p class="text-xs text-[#475569] mt-0.5">19 Oct 2026 to 11 Dec 2026 · 28 students enrolled</p>
+</div>
+<!-- Status Chip: Warning / Needs Attention -->
+<div class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#FFFBEB] border border-[#B45309] text-[#B45309] text-xs font-medium self-start">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">warning</span>
+<span>Needs Attention</span>
+</div>
+</div>
+<!-- Metric & Progress -->
+<div class="py-4">
+<div class="flex justify-between items-center text-xs font-medium text-[#475569] mb-1.5">
+<span>Average syllabus progress</span>
+<span class="text-[#0F172A]">54%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-2 rounded-full overflow-hidden">
+<div class="bg-[#B45309] h-full rounded-full" style="width: 54%;"></div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-2 border-t border-[#F8FAFC]">
+<span class="text-xs text-[#B45309] flex items-center gap-1">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">error</span>
+<span>3 students low submission rate</span>
+</span>
+<div class="flex items-center gap-4">
+<a class="text-xs font-medium text-[#1D4ED8] hover:underline focus-ring py-2" href="#">Cohort Roster</a>
+<a class="text-xs font-medium text-[#1D4ED8] hover:underline focus-ring py-2" href="#">Classroom</a>
+</div>
+</div>
+</article>
+<!-- Cohort Card 3 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 hover:border-[#CBD5E1] transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-[#0F172A]">CRISC Risk &amp; Controls — Cohort 05</h3>
+<p class="text-xs text-[#475569] mt-0.5">02 Nov 2026 to 15 Jan 2027 · 35 students enrolled</p>
+</div>
+<!-- Status Chip: Informational / Enrolment Active -->
+<div class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-xs font-medium self-start">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">info</span>
+<span>Enrolment Active</span>
+</div>
+</div>
+<!-- Metric & Progress -->
+<div class="py-4">
+<div class="flex justify-between items-center text-xs font-medium text-[#475569] mb-1.5">
+<span>Average syllabus progress</span>
+<span class="text-[#0F172A]">12%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-2 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full rounded-full" style="width: 12%;"></div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-2 border-t border-[#F8FAFC]">
+<span class="text-xs text-[#64748B]">Induction live session pending</span>
+<div class="flex items-center gap-4">
+<a class="text-xs font-medium text-[#1D4ED8] hover:underline focus-ring py-2" href="#">Cohort Roster</a>
+<a class="text-xs font-medium text-[#1D4ED8] hover:underline focus-ring py-2" href="#">Classroom</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Secondary Right Column: Live Sessions & Action Items (4 cols) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Next Live Sessions -->
+<section aria-labelledby="live-sessions-heading" class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] mb-4 pb-2 border-b border-[#E2E8F0]" id="live-sessions-heading">
+                Next live sessions
+              </h2>
+<div class="space-y-4">
+<!-- Session 1 -->
+<div class="p-3.5 bg-[#FAF8FF] border border-[#E2E8F0] rounded-lg">
+<div class="text-xs font-semibold text-[#0F172A] leading-snug">
+                    CISA Domain 1: Auditing Information Systems
+                  </div>
+<div class="text-xs text-[#475569] mt-1">Today, 11:00 WAT</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Room: AJS-CISA-14</div>
+<div class="mt-3">
+<button class="w-full h-[44px] inline-flex items-center justify-center rounded bg-[#0B1320] text-white text-xs font-medium hover:bg-[#1E293B] focus-ring transition-colors" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] mr-1.5">videocam</span>
+<span>Start (Zoom)</span>
+</button>
+</div>
+</div>
+<!-- Session 2 -->
+<div class="p-3.5 bg-white border border-[#E2E8F0] rounded-lg">
+<div class="text-xs font-semibold text-[#0F172A] leading-snug">
+                    CISM Domain 2: Information Risk Governance
+                  </div>
+<div class="text-xs text-[#475569] mt-1">Tomorrow, 14:00 WAT</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Room: AJS-CISM-08</div>
+<div class="mt-3">
+<button class="w-full h-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-[#0F172A] text-xs font-medium hover:bg-[#F1F5F9] focus-ring transition-colors" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] mr-1.5">videocam</span>
+<span>Start</span>
+</button>
+</div>
+</div>
+<!-- Session 3 -->
+<div class="p-3.5 bg-white border border-[#E2E8F0] rounded-lg">
+<div class="text-xs font-semibold text-[#0F172A] leading-snug">
+                    CISA Domain 1 Revision &amp; Mock Q&amp;A
+                  </div>
+<div class="text-xs text-[#475569] mt-1">Wed 07 Oct 2026, 17:00 WAT</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Room: AJS-CISA-14</div>
+<div class="mt-3">
+<button class="w-full h-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-[#0F172A] text-xs font-medium hover:bg-[#F1F5F9] focus-ring transition-colors" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] mr-1.5">videocam</span>
+<span>Start</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Items -->
+<section aria-labelledby="action-items-heading" class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] mb-4 pb-2 border-b border-[#E2E8F0]" id="action-items-heading">
+                Action items
+              </h2>
+<ul class="space-y-3">
+<li class="flex items-start gap-2.5 text-xs">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#B45309] mt-0.5 flex-shrink-0">upload_file</span>
+<div>
+<span class="font-medium text-[#0F172A]">Content awaiting upload:</span>
+<span class="text-[#475569]"> Domain 2 Slide Deck (COBIT 2019 Alignment) — Due by 08 Oct 2026</span>
+</div>
+</li>
+<li class="flex items-start gap-2.5 text-xs">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#1D4ED8] mt-0.5 flex-shrink-0">quiz</span>
+<div>
+<span class="font-medium text-[#0F172A]">Questions flagged:</span>
+<span class="text-[#475569]"> 4 candidate review queries in CISA Domain 1 Question Bank</span>
+</div>
+</li>
+<li class="flex items-start gap-2.5 text-xs">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#B91C1C] mt-0.5 flex-shrink-0">crisis_alert</span>
+<div>
+<span class="font-medium text-[#0F172A]">Students at risk:</span>
+<span class="text-[#475569]"> 3 students below 40% diagnostic score in Cohort 14</span>
+</div>
+</li>
+</ul>
+</section>
+<!-- Quick Links -->
+<section aria-labelledby="quick-links-heading" class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h2 class="text-xs font-semibold uppercase tracking-wider text-[#64748B] mb-3" id="quick-links-heading">
+                Quick links
+              </h2>
+<ul class="space-y-2">
+<li>
+<a class="h-[44px] flex items-center justify-between text-xs text-[#0F172A] font-medium hover:text-[#1D4ED8] hover:bg-[#F8FAFC] px-2 rounded focus-ring transition-colors" href="#">
+<span class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#64748B]">event</span>
+<span>View full timetable</span>
+</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="h-[44px] flex items-center justify-between text-xs text-[#0F172A] font-medium hover:text-[#1D4ED8] hover:bg-[#F8FAFC] px-2 rounded focus-ring transition-colors" href="#">
+<span class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#64748B]">rule</span>
+<span>Question bank manager</span>
+</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="h-[44px] flex items-center justify-between text-xs text-[#0F172A] font-medium hover:text-[#1D4ED8] hover:bg-[#F8FAFC] px-2 rounded focus-ring transition-colors" href="#">
+<span class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#64748B]">grade</span>
+<span>Student gradebook</span>
+</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="h-[44px] flex items-center justify-between text-xs text-[#0F172A] font-medium hover:text-[#1D4ED8] hover:bg-[#F8FAFC] px-2 rounded focus-ring transition-colors" href="#">
+<span class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#64748B]">folder_open</span>
+<span>Learning repository</span>
+</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- VARIANT 2: NO COHORTS ASSIGNED (EMPTY STATE) -->
+<!-- ===================================================================== -->
+<div class="space-y-8 hidden" id="variant-2">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Cohorts Empty Area (8 cols) -->
+<div class="lg:col-span-8">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] mb-4">My cohorts</h2>
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-12 text-center flex flex-col items-center justify-center min-h-[380px]">
+<div class="w-16 h-16 rounded-full bg-[#FAF8FF] border border-[#E2E8F0] flex items-center justify-center text-[#64748B] mb-4">
+<span aria-hidden="true" class="material-symbols-outlined text-[32px]">calendar_today</span>
+</div>
+<h3 class="text-base font-semibold text-[#0F172A]">No cohorts assigned</h3>
+<p class="text-xs text-[#475569] max-w-md mt-2 leading-relaxed">
+                You are not currently assigned as lead instructor to any active cohorts. Contact the Academic Director to receive your cohort schedule.
+              </p>
+<div class="mt-6">
+<button class="h-[44px] px-6 rounded-md bg-[#0B1320] text-white text-xs font-medium hover:bg-[#1E293B] focus-ring transition-colors shadow-sm" type="button">
+                  Contact Academic Registry
+                </button>
+</div>
+</div>
+</div>
+<!-- Empty Right Column -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Live Sessions (Empty) -->
+<section aria-labelledby="live-empty-heading" class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] mb-4 pb-2 border-b border-[#E2E8F0]" id="live-empty-heading">
+                Next live sessions
+              </h2>
+<div class="p-6 text-center bg-[#FAF8FF] rounded border border-dashed border-[#E2E8F0]">
+<span aria-hidden="true" class="material-symbols-outlined text-[24px] text-[#64748B] mb-1">videocam_off</span>
+<p class="text-xs text-[#475569] mt-1 font-medium">No upcoming sessions scheduled.</p>
+</div>
+</section>
+<!-- Action Items (Empty) -->
+<section aria-labelledby="action-empty-heading" class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] mb-4 pb-2 border-b border-[#E2E8F0]" id="action-empty-heading">
+                Action items
+              </h2>
+<div class="p-6 text-center bg-[#FAF8FF] rounded border border-dashed border-[#E2E8F0]">
+<span aria-hidden="true" class="material-symbols-outlined text-[24px] text-[#047857] mb-1">task_alt</span>
+<p class="text-xs text-[#475569] mt-1 font-medium">No pending action items.</p>
+</div>
+</section>
+<!-- Quick Links -->
+<section class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h2 class="text-xs font-semibold uppercase tracking-wider text-[#64748B] mb-3">Quick links</h2>
+<ul class="space-y-2">
+<li>
+<a class="h-[44px] flex items-center justify-between text-xs text-[#0F172A] font-medium hover:text-[#1D4ED8] hover:bg-[#F8FAFC] px-2 rounded focus-ring" href="#">
+<span>View full timetable</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="h-[44px] flex items-center justify-between text-xs text-[#0F172A] font-medium hover:text-[#1D4ED8] hover:bg-[#F8FAFC] px-2 rounded focus-ring" href="#">
+<span>Question bank manager</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- VARIANT 3: HIGH DENSITY (8 CARDS WITH PAGINATION) -->
+<!-- ===================================================================== -->
+<div class="space-y-8 hidden" id="variant-3">
+<!-- Filter and Search Toolbar -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex-1 flex flex-col sm:flex-row items-center gap-3">
+<!-- Search -->
+<div class="w-full sm:w-72 relative">
+<input class="w-full h-[44px] pl-10 pr-3 text-xs bg-white border border-[#64748B] rounded focus-ring text-[#0F172A] placeholder-[#475569]" placeholder="Search cohorts..." type="text"/>
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] text-[#475569] absolute left-3 top-3 pointer-events-none">search</span>
+</div>
+<!-- Programme Filter Dropdown -->
+<div class="w-full sm:w-56">
+<select aria-label="Filter by Programme" class="w-full h-[44px] text-xs bg-white border border-[#64748B] rounded px-3 text-[#0F172A] focus-ring">
+<option value="all">All Programmes (14)</option>
+<option value="cisa">CISA Certification</option>
+<option value="cism">CISM Security</option>
+<option value="crisc">CRISC Risk Management</option>
+<option value="data">Data &amp; AI Auditing</option>
+</select>
+</div>
+</div>
+<!-- Sort -->
+<div class="flex items-center gap-2">
+<span class="text-xs text-[#64748B] whitespace-nowrap">Sort by:</span>
+<select aria-label="Sort cohorts" class="h-[44px] text-xs bg-white border border-[#64748B] rounded px-3 text-[#0F172A] focus-ring">
+<option selected="">Cohort start date</option>
+<option>Student headcount</option>
+<option>Completion rate</option>
+</select>
+</div>
+</div>
+<!-- 8 Cohorts Grid (2 columns on tablet/desktop) -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A]">My cohorts (14 Total)</h2>
+<span class="text-xs text-[#64748B]">Showing 1–8 of 14 cohorts</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Card 1 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">CISA Exam Prep — Cohort 14</h3>
+<div class="text-[11px] text-[#475569]">12 Oct 2026 – 18 Dec 2026 · 42 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#ECFDF5] border border-[#047857] text-[#047857] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>On Track</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">68%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 68%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">CISM Information Security — Cohort 08</h3>
+<div class="text-[11px] text-[#475569]">19 Oct 2026 – 11 Dec 2026 · 28 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#FFFBEB] border border-[#B45309] text-[#B45309] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">warning</span>
+<span>Needs Attention</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">54%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#B45309] h-full" style="width: 54%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">CRISC Risk &amp; Controls — Cohort 05</h3>
+<div class="text-[11px] text-[#475569]">02 Nov 2026 – 15 Jan 2027 · 35 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">info</span>
+<span>Enrolment Active</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">12%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full" style="width: 12%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">CISA Cohort 13 Weekend</h3>
+<div class="text-[11px] text-[#475569]">01 Aug 2026 – 24 Oct 2026 · 50 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#ECFDF5] border border-[#047857] text-[#047857] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>On Track</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">88%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 88%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">Data Analytics Cohort 03</h3>
+<div class="text-[11px] text-[#475569]">15 Sep 2026 – 30 Nov 2026 · 22 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#ECFDF5] border border-[#047857] text-[#047857] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>On Track</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">45%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 45%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">CISM Executive Cohort 07</h3>
+<div class="text-[11px] text-[#475569]">05 Oct 2026 – 20 Nov 2026 · 18 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#FFFBEB] border border-[#B45309] text-[#B45309] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">warning</span>
+<span>Needs Attention</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">20%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#B45309] h-full" style="width: 20%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+<!-- Card 7 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">CRISC Corporate Cohort 04</h3>
+<div class="text-[11px] text-[#475569]">01 Sep 2026 – 10 Dec 2026 · 30 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#ECFDF5] border border-[#047857] text-[#047857] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>On Track</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">72%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 72%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+<!-- Card 8 -->
+<article class="bg-white border border-[#E2E8F0] rounded-[12px] p-5">
+<div class="flex justify-between items-start gap-2 mb-2">
+<div>
+<h3 class="text-sm font-semibold text-[#0F172A]">AI Audit Cohort 01</h3>
+<div class="text-[11px] text-[#475569]">10 Nov 2026 – 22 Jan 2027 · 25 students</div>
+</div>
+<div class="inline-flex items-center gap-1 h-6 px-2 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-[11px] font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[12px]">info</span>
+<span>Enrolment Active</span>
+</div>
+</div>
+<div class="my-3">
+<div class="flex justify-between text-[11px] text-[#475569] mb-1">
+<span>Progress</span>
+<span class="font-medium text-[#0F172A]">5%</span>
+</div>
+<div class="w-full bg-[#F1F5F9] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full" style="width: 5%;"></div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-[#F1F5F9] text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Cohort Roster</a>
+<a class="text-[#1D4ED8] hover:underline focus-ring py-1" href="#">Classroom</a>
+</div>
+</article>
+</div>
+<!-- Pagination Controls (44px targets) -->
+<nav aria-label="Cohorts pagination" class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border border-[#E2E8F0] rounded-[12px] p-3 px-4">
+<span class="text-xs text-[#64748B]">Showing 1–8 of 14 cohorts</span>
+<div class="flex items-center gap-1">
+<button aria-disabled="true" class="h-[44px] px-3 rounded border border-[#E2E8F0] text-xs font-medium text-slate-300 cursor-not-allowed" disabled="" type="button">
+                Previous
+              </button>
+<button aria-current="page" class="h-[44px] w-[44px] rounded bg-[#0B1320] text-white text-xs font-medium focus-ring" type="button">
+                1
+              </button>
+<button class="h-[44px] w-[44px] rounded border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] text-xs font-medium focus-ring" type="button">
+                2
+              </button>
+<button class="h-[44px] px-3 rounded border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] text-xs font-medium focus-ring" type="button">
+                Next
+              </button>
+</div>
+</nav>
+</div>
+<!-- Complementary Side-by-side modules in Variant 3 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<!-- Next Live Sessions summary -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h3 class="text-sm font-semibold text-[#0F172A] mb-3 pb-2 border-b border-[#E2E8F0]">Next Live Session Queue</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-2.5 bg-[#FAF8FF] rounded border border-[#E2E8F0]">
+<div>
+<div class="text-xs font-medium text-[#0F172A]">CISA Domain 1: Auditing Information Systems</div>
+<div class="text-[11px] text-[#475569]">Today, 11:00 WAT · Room AJS-CISA-14</div>
+</div>
+<button class="h-[44px] px-4 rounded bg-[#0B1320] text-white text-xs font-medium hover:bg-[#1E293B] focus-ring" type="button">
+                  Start
+                </button>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-white rounded border border-[#E2E8F0]">
+<div>
+<div class="text-xs font-medium text-[#0F172A]">CISM Domain 2: Information Risk Governance</div>
+<div class="text-[11px] text-[#475569]">Tomorrow, 14:00 WAT · Room AJS-CISM-08</div>
+</div>
+<button class="h-[44px] px-4 rounded border border-[#64748B] text-[#0F172A] text-xs font-medium hover:bg-[#F1F5F9] focus-ring" type="button">
+                  Start
+                </button>
+</div>
+</div>
+</div>
+<!-- Pending Action Summary -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-6">
+<h3 class="text-sm font-semibold text-[#0F172A] mb-3 pb-2 border-b border-[#E2E8F0]">Action Items (Summary)</h3>
+<ul class="space-y-2 text-xs">
+<li class="flex items-start gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#B45309] mt-0.5">upload_file</span>
+<span class="text-[#475569]"><strong class="text-[#0F172A]">Domain 2 Slide Deck</strong> due by 08 Oct 2026</span>
+</li>
+<li class="flex items-start gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#1D4ED8] mt-0.5">quiz</span>
+<span class="text-[#475569]"><strong class="text-[#0F172A]">4 questions flagged</strong> in CISA Bank</span>
+</li>
+<li class="flex items-start gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-[#B91C1C] mt-0.5">crisis_alert</span>
+<span class="text-[#475569]"><strong class="text-[#0F172A]">3 students at risk</strong> (below 40% diagnostic)</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Institutional Global Footer -->
+<footer class="bg-white border-t border-[#E2E8F0] mt-auto">
+<div class="max-w-[1440px] mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
+<div>
+        © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+      </div>
+<ul class="flex flex-wrap items-center gap-6">
+<li><a class="hover:text-[#0F172A] underline focus-ring" href="#">Audit Protocol</a></li>
+<li><a class="hover:text-[#0F172A] underline focus-ring" href="#">Verification Registry</a></li>
+<li><a class="hover:text-[#0F172A] underline focus-ring" href="#">Governance Standards</a></li>
+<li><a class="hover:text-[#0F172A] underline focus-ring" href="#">Ethics &amp; Compliance</a></li>
+<li><a class="hover:text-[#0F172A] underline focus-ring" href="#">System Telemetry</a></li>
+</ul>
+</div>
+</footer>
+<!-- Micro-interaction JS for Switching between Board Variants -->
+<script>
+    function switchVariant(variantId) {
+      const v1 = document.getElementById('variant-1');
+      const v2 = document.getElementById('variant-2');
+      const v3 = document.getElementById('variant-3');
+
+      const b1 = document.getElementById('btn-v1');
+      const b2 = document.getElementById('btn-v2');
+      const b3 = document.getElementById('btn-v3');
+
+      // Hide all variants
+      v1.classList.add('hidden');
+      v2.classList.add('hidden');
+      v3.classList.add('hidden');
+
+      // Reset button styles
+      [b1, b2, b3].forEach(btn => {
+        btn.classList.remove('bg-[#0B1320]', 'text-white', 'border', 'border-[#2563EB]');
+        btn.classList.add('text-slate-300');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      // Show selected variant
+      if (variantId === 'v1') {
+        v1.classList.remove('hidden');
+        b1.classList.add('bg-[#0B1320]', 'text-white', 'border', 'border-[#2563EB]');
+        b1.classList.remove('text-slate-300');
+        b1.setAttribute('aria-selected', 'true');
+      } else if (variantId === 'v2') {
+        v2.classList.remove('hidden');
+        b2.classList.add('bg-[#0B1320]', 'text-white', 'border', 'border-[#2563EB]');
+        b2.classList.remove('text-slate-300');
+        b2.setAttribute('aria-selected', 'true');
+      } else if (variantId === 'v3') {
+        v3.classList.remove('hidden');
+        b3.classList.add('bg-[#0B1320]', 'text-white', 'border', 'border-[#2563EB]');
+        b3.classList.remove('text-slate-300');
+        b3.setAttribute('aria-selected', 'true');
+      }
+    }
+  </script>
+</body></html>

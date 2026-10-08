@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Secure Portal - Role Editor Specification</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#faf8ff",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#fddcc4",
+            "tertiary": "#000000",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#997f6a",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#281809",
+            "secondary-fixed-dim": "#b7c4ff",
+            "secondary": "#1d4ed8",
+            "error": "#ba1a1a",
+            "outline": "#75777c",
+            "surface-container": "#eaedff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "primary": "#000000",
+            "primary-fixed": "#dbe2f5",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "secondary-fixed": "#dce1ff",
+            "on-error": "#ffffff",
+            "on-background": "#131b2e",
+            "on-secondary-fixed-variant": "#0039b5",
+            "outline-variant": "#c5c6cc",
+            "secondary-container": "#4069f2",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-primary": "#bfc6d9",
+            "on-secondary-fixed": "#001551",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-secondary-container": "#fffbff",
+            "surface-container-highest": "#dae2fd",
+            "on-primary-container": "#7c8495",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#141c29",
+            "tertiary-container": "#281809",
+            "on-surface-variant": "#45474c",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "primary-container": "#0B1320",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-tint": "#575f6e",
+            "surface-variant": "#dae2fd",
+            "inverse-surface": "#283044"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-sm": "1rem",
+            "space-xl": "3rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Touch Target Strict Compliance */
+    .touch-target {
+      min-width: 44px;
+      min-height: 44px;
+    }
+    /* Custom Scrollbar for matrix viewport */
+    .matrix-scroll::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+    }
+    .matrix-scroll::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    .matrix-scroll::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col antialiased bg-[#F8FAFC]">
+<!-- Top App Bar (Authoritative 64px Fixed Navy Shell) -->
+<header class="bg-[#0B1320] text-white h-16 w-full fixed top-0 left-0 z-50 flex items-center justify-between px-6 border-b border-[#1E293B]">
+<div class="flex items-center gap-6">
+<!-- High Contrast Plate for Logo -->
+<div class="bg-white px-3 py-1.5 rounded flex items-center justify-center h-10 border border-[#E2E8F0]">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU5mduuw1xPKP0EqsKNhlWp337sSQuWFyPt0U-guS_UX8J_2CpN6BlQ6ZHPgkmJ4llcE-JJavH875VpK8-V0KR7bH1gSJ4RayZ-56Vtzgf4yy49LS48gUuOzd7gB54idcvpm0QEJIh-HVrvbVg1jN1qsFAT733jSy9HmwM72hC3gjJjTPeCzhbE9UV6MS3Fe8Obar8mXtFczJ1uEJrhzc890Cs4xS1TcUgNWs5q4JBXT3mBz5w3yXKFg"/>
+</div>
+<div class="h-6 w-[1px] bg-[#334155]"></div>
+<span class="text-white font-headline-sm text-headline-sm tracking-tight">Staff Operations Portal</span>
+</div>
+<!-- Top Right Meta & Identity -->
+<div class="flex items-center gap-6">
+<div class="text-right hidden md:block">
+<div class="font-label-md text-label-md text-white font-medium">Role: Super Admin | Babatunde Lawal</div>
+<div class="font-label-sm text-label-sm text-[#94A3B8]">13:45 WAT · 05 Oct 2026</div>
+</div>
+<div class="flex items-center gap-3">
+<!-- User Badge BL -->
+<div class="w-10 h-10 rounded bg-[#1E293B] border border-[#475569] flex items-center justify-center text-white font-label-md text-label-md font-semibold select-none">
+          BL
+        </div>
+</div>
+</div>
+</header>
+<!-- Shell Wrapper -->
+<div class="flex pt-16 min-h-screen">
+<!-- Left Navigation Rail (Persistent 256px) -->
+<aside class="w-64 bg-[#0B1320] text-slate-300 flex-shrink-0 fixed top-16 bottom-0 left-0 z-40 flex flex-col justify-between border-r border-[#1E293B] overflow-y-auto">
+<div class="p-4 space-y-6">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-[#94A3B8] font-semibold px-3 mb-2">Core Governance</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] text-body-sm font-body-sm touch-target" href="#">
+<span class="material-symbols-outlined text-[#94A3B8]">monitoring</span>
+<span>Executive Telemetry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] text-body-sm font-body-sm touch-target" href="#">
+<span class="material-symbols-outlined text-[#94A3B8]">quiz</span>
+<span>Exam Simulation Engine</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] text-body-sm font-body-sm touch-target" href="#">
+<span class="material-symbols-outlined text-[#94A3B8]">fact_check</span>
+<span>Audit &amp; Compliance Logs</span>
+</a>
+</nav>
+</div>
+<!-- Active Section: Staff & Roles -->
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-[#93C5FD] font-semibold px-3 mb-2 flex items-center justify-between">
+<span>Staff &amp; Roles</span>
+<span class="material-symbols-outlined text-sm text-[#93C5FD]">expand_more</span>
+</div>
+<nav class="space-y-1 pl-2 border-l border-[#334155] ml-3">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] text-body-sm font-body-sm touch-target" href="#">
+<span class="material-symbols-outlined text-base">group</span>
+<span>Staff Directory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] text-body-sm font-body-sm touch-target" href="#">
+<span class="material-symbols-outlined text-base">badge</span>
+<span>Roles</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded bg-[#1E293B] text-[#93C5FD] font-semibold text-body-sm font-body-sm touch-target" href="#">
+<span class="material-symbols-outlined text-base text-[#93C5FD]">admin_panel_settings</span>
+<span>Role Editor</span>
+</a>
+</nav>
+</div>
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-[#94A3B8] font-semibold px-3 mb-2">Finance &amp; Ledger</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] text-body-sm font-body-sm touch-target" href="#">
+<span class="material-symbols-outlined text-[#94A3B8]">account_balance_wallet</span>
+<span>Settlement Ledger</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Sidebar Terminal Action -->
+<div class="p-4 border-t border-[#1E293B] space-y-2">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#1E293B] hover:bg-[#334155] text-white text-body-sm font-body-sm rounded font-medium touch-target transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Lock Terminal</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Workspace (Offset by 256px sidebar) -->
+<main class="ml-64 flex-1 flex flex-col p-8 bg-[#F8FAFC] pb-24">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center text-label-sm font-label-sm text-[#475569] mb-4 space-x-2">
+<span>Staff &amp; Governance</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Access Control</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Roles</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">Role Editor</span>
+</nav>
+<!-- Page Header & Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0] mb-6">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] tracking-tight">Role Editor</h1>
+<p class="font-body-md text-body-md text-[#475569] mt-1">Configure granular access privileges, operational scopes, and authority matrices across system entities.</p>
+</div>
+<div class="flex items-center gap-3">
+<!-- State Switcher / Tab Preview for Specifications -->
+<div class="bg-white border border-[#CBD5E1] p-1 rounded-lg flex items-center shadow-sm">
+<span class="text-xs font-semibold px-2 text-[#475569] uppercase tracking-wider">Demo State:</span>
+<button class="px-3 py-1.5 text-xs font-medium rounded bg-[#0B1320] text-white" id="btn-tab-custom" onclick="setVariant('custom')">Custom (Editable)</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded text-[#475569] hover:text-[#0F172A]" id="btn-tab-unsaved" onclick="setVariant('unsaved')">Unsaved Changes</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded text-[#475569] hover:text-[#0F172A]" id="btn-tab-approval" onclick="setVariant('approval')">Approval Requested</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded text-[#475569] hover:text-[#0F172A]" id="btn-tab-builtin" onclick="setVariant('builtin')">Built-in (Read-Only)</button>
+</div>
+<button class="px-6 py-2.5 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-body-md font-body-md touch-target flex items-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-colors" id="main-action-btn" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span id="main-action-text">Save changes</span>
+</button>
+</div>
+</div>
+<!-- STATE BANNER CONTAINERS -->
+<!-- Variant 3: Unsaved Changes Banner (Default visible in 'unsaved' state) -->
+<div class="hidden mb-6 p-4 rounded-lg bg-[#FFFBEB] border border-[#B45309] text-[#B45309] flex items-center justify-between" id="banner-unsaved">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-2xl text-[#B45309]">warning</span>
+<div>
+<div class="text-body-sm font-semibold font-body-sm">You have unsaved changes</div>
+<div class="text-label-sm font-label-sm text-[#92400E]">4 permission rules have been modified from the baseline policy. Unsaved updates will not take effect until registered.</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 border border-[#B45309] text-[#B45309] hover:bg-[#FEF3C7] rounded text-body-sm font-medium touch-target transition-colors" onclick="setVariant('custom')">Discard changes</button>
+<button class="px-4 py-2 bg-[#B45309] hover:bg-[#92400E] text-white rounded text-body-sm font-medium touch-target transition-colors" onclick="setVariant('approval')">Submit changes</button>
+</div>
+</div>
+<!-- Variant 4: Approval Requested Banner -->
+<div class="hidden mb-6 p-4 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] flex items-center justify-between" id="banner-approval">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-2xl text-[#1D4ED8]">pending_actions</span>
+<div>
+<div class="text-body-sm font-semibold font-body-sm">Approval requested · Change request #CR-2026-088</div>
+<div class="text-label-sm font-label-sm text-[#1E40AF]">Change request #CR-2026-088 is awaiting second Super Admin sign-off from Babatunde Lawal or System Overseer. Current permissions remain in effect until approved.</div>
+</div>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#1D4ED8] rounded text-xs font-semibold text-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">schedule</span> Pending Sign-off
+        </div>
+</div>
+<!-- Variant 1: Built-in Role Banner -->
+<div class="hidden mb-6 p-4 rounded-lg bg-[#F1F5F9] border border-[#64748B] text-[#0F172A] flex items-center justify-between" id="banner-builtin">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-2xl text-[#64748B]">lock</span>
+<div>
+<div class="text-body-sm font-semibold font-body-sm">Built-in Role (Immutable Policy)</div>
+<div class="text-label-sm font-label-sm text-[#475569]">Built-in roles cannot be modified. Duplicate this role to create a custom variation with tailor-made access privileges.</div>
+</div>
+</div>
+<button class="px-4 py-2 bg-[#0B1320] text-white rounded text-body-sm font-medium touch-target hover:bg-[#1E293B] transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">content_copy</span> Duplicate Role
+        </button>
+</div>
+<!-- 2-Column Responsive Layout: Matrix Canvas (8-col) + Summary Impact Panel (4-col) -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Left: Configuration Form & Matrix (8 Columns) -->
+<div class="col-span-12 xl:col-span-8 space-y-8">
+<!-- Section 1: Role Header & Metadata Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-4 mb-6">
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1D4ED8]">tune</span>
+                Role Definition &amp; Meta
+              </h2>
+<!-- Role Type Indicator & Member Impact Counter -->
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]" id="role-badge">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span id="role-type-text">Custom Role</span>
+</span>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]" id="impact-counter-badge">
+<span class="material-symbols-outlined text-sm">group</span>
+<span id="impact-counter-text">Affects 3 assigned staff members</span>
+</span>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-body-sm font-semibold font-body-sm text-[#0F172A] mb-1" for="role-name-input">Role Title</label>
+<input class="w-full h-11 px-4 bg-white border border-[#64748B] rounded-[6px] text-body-md font-body-md text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="role-name-input" type="text" value="Senior Exam Lead"/>
+</div>
+<div>
+<label class="block text-body-sm font-semibold font-body-sm text-[#0F172A] mb-1" for="role-desc-input">Description &amp; Governance Scope</label>
+<textarea class="w-full p-3 bg-white border border-[#64748B] rounded-[6px] text-body-md font-body-md text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="role-desc-input" rows="2">Responsible for authoring high-stakes exam blueprints, moderation workflows, cohort proctoring allocations, and final result verification before release.</textarea>
+</div>
+</div>
+</div>
+<!-- Section 2: Comprehensive Permission Matrix Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0F172A]">table_chart</span>
+                  Granular Privilege Matrix
+                </h2>
+<p class="text-body-sm font-body-sm text-[#475569] mt-0.5">Control actions across all 20 system resources with explicit operational boundaries.</p>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#475569]">
+<span class="inline-flex items-center gap-1 text-[#B91C1C] font-medium bg-[#FEF2F2] px-2 py-1 rounded border border-[#B91C1C]">
+<span class="material-symbols-outlined text-sm">shield</span> Sensitive action
+                </span>
+</div>
+</div>
+<!-- Scrollable Matrix Table -->
+<div class="overflow-x-auto matrix-scroll">
+<table class="w-full text-left border-collapse min-w-[980px]">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0]">
+<th class="py-3 px-4 font-medium text-xs text-[#475569] uppercase tracking-wider sticky left-0 bg-[#F8FAFC] z-20 w-44" scope="col">Resource Entity</th>
+<th class="py-3 px-3 font-medium text-xs text-[#475569] uppercase tracking-wider w-36" scope="col">Scope Boundary</th>
+<th class="py-3 px-2 font-medium text-xs text-[#475569] uppercase tracking-wider text-center" scope="col">View</th>
+<th class="py-3 px-2 font-medium text-xs text-[#475569] uppercase tracking-wider text-center" scope="col">Create</th>
+<th class="py-3 px-2 font-medium text-xs text-[#475569] uppercase tracking-wider text-center" scope="col">Edit</th>
+<th class="py-3 px-2 font-medium text-xs text-[#B91C1C] uppercase tracking-wider text-center bg-red-50/40" scope="col">
+<div class="flex items-center justify-center gap-0.5"><span class="material-symbols-outlined text-xs">shield</span> Delete</div>
+</th>
+<th class="py-3 px-2 font-medium text-xs text-[#475569] uppercase tracking-wider text-center" scope="col">Publish</th>
+<th class="py-3 px-2 font-medium text-xs text-[#475569] uppercase tracking-wider text-center" scope="col">Export</th>
+<th class="py-3 px-2 font-medium text-xs text-[#B91C1C] uppercase tracking-wider text-center bg-red-50/40" scope="col">
+<div class="flex items-center justify-center gap-0.5"><span class="material-symbols-outlined text-xs">shield</span> Approve</div>
+</th>
+<th class="py-3 px-2 font-medium text-xs text-[#B91C1C] uppercase tracking-wider text-center bg-red-50/40" scope="col">
+<div class="flex items-center justify-center gap-0.5"><span class="material-symbols-outlined text-xs">shield</span> Reveal Sensitive</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm" id="matrix-body">
+<!-- Generated dynamically for 20 resources with strict classes -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right: Summary & Impact Panel (4 Columns - Sticky) -->
+<div class="col-span-12 xl:col-span-4 sticky top-24 space-y-6">
+<!-- Pending Modifications Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A] border-b border-[#E2E8F0] pb-3 mb-4 flex items-center justify-between">
+<span>Privilege Delta Summary</span>
+<span class="px-2 py-0.5 text-xs font-semibold rounded bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]" id="delta-count-badge">4 Updates</span>
+</h3>
+<div class="space-y-3 mb-6" id="delta-container">
+<div class="text-xs font-semibold text-[#475569] uppercase tracking-wider">Pending Permission Modifications:</div>
+<div class="p-3 bg-[#ECFDF5] border border-[#047857] rounded-lg text-xs space-y-1.5">
+<div class="font-semibold text-[#047857] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">add_circle</span> Added Privileges:
+                </div>
+<ul class="list-disc list-inside text-[#065F46] space-y-1 pl-1">
+<li><span class="font-medium">Exams</span>: <span class="underline">Approve</span></li>
+<li><span class="font-medium">Refunds</span>: <span class="underline">View</span></li>
+<li><span class="font-medium">Coupons</span>: <span class="underline">Create</span></li>
+</ul>
+</div>
+<div class="p-3 bg-[#FEF2F2] border border-[#B91C1C] rounded-lg text-xs space-y-1.5">
+<div class="font-semibold text-[#B91C1C] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">remove_circle</span> Removed Privileges:
+                </div>
+<ul class="list-disc list-inside text-[#991B1B] space-y-1 pl-1">
+<li><span class="font-medium">Security</span>: <span class="underline">Delete</span> (High Sensitivity)</li>
+</ul>
+</div>
+</div>
+<!-- Active Staff Impact Assessment -->
+<div class="border-t border-[#E2E8F0] pt-4 mb-6">
+<div class="text-xs font-semibold text-[#475569] uppercase tracking-wider mb-2 flex items-center justify-between">
+<span>Active Staff Impact</span>
+<span class="font-medium text-[#0F172A]">3 Members</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#475569] mb-3">Re-indexing permissions will modify the effective operational tokens for:</p>
+<ul class="space-y-2 text-xs">
+<li class="flex items-center justify-between p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="font-medium text-[#0F172A]">Babatunde Lawal</div>
+<span class="text-[#64748B] font-mono">STF-LOS-001</span>
+</li>
+<li class="flex items-center justify-between p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="font-medium text-[#0F172A]">Dr. O. Adeleke</div>
+<span class="text-[#64748B] font-mono">STF-LOS-004</span>
+</li>
+<li class="flex items-center justify-between p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="font-medium text-[#0F172A]">Ngozi Eze</div>
+<span class="text-[#64748B] font-mono">STF-LOS-009</span>
+</li>
+</ul>
+</div>
+<!-- Dual-Admin Governance Mandate Notice -->
+<div class="p-3 bg-[#FFFBEB] border border-[#B45309] rounded-lg text-xs text-[#92400E] mb-6 flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-[#B45309] flex-shrink-0 mt-0.5">verified_user</span>
+<span><strong>Governance Policy:</strong> Changes to elevated privileges require secondary Super Admin approval before deployment to active sessions.</span>
+</div>
+<!-- Panel Actions -->
+<div class="space-y-3">
+<button class="w-full h-11 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-body-sm font-body-sm touch-target flex items-center justify-center gap-2 shadow-sm focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-colors" id="btn-submit-panel" onclick="setVariant('approval')">
+<span class="material-symbols-outlined text-sm">assignment_turned_in</span>
+<span>Request Super Admin Approval</span>
+</button>
+<button class="w-full h-11 bg-transparent hover:bg-[#F1F5F9] text-[#0F172A] border border-[#64748B] rounded-[6px] font-medium text-body-sm font-body-sm touch-target flex items-center justify-center transition-colors" id="btn-discard-panel" onclick="setVariant('custom')">
+                Discard Changes
+              </button>
+</div>
+</div>
+<!-- Currency & Timestamp Audit Stamp Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 text-xs text-[#475569] space-y-2 shadow-sm">
+<div class="flex justify-between">
+<span>Financial Audit Limit:</span>
+<span class="font-semibold text-[#0F172A]">₦5,000,000.00 / tranche</span>
+</div>
+<div class="flex justify-between">
+<span>Last Modified:</span>
+<span class="font-semibold text-[#0F172A]">05 Oct 2026, 11:20 WAT</span>
+</div>
+<div class="flex justify-between">
+<span>Cryptographic Token:</span>
+<span class="font-mono text-[#0F172A]">SHA-256 [0x9F41...A2E]</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer (Institutional Dossier) -->
+<footer class="w-full bg-[#0B1320] text-slate-400 py-6 px-8 border-t border-[#1E293B] ml-64 z-30">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-label-sm font-label-sm">
+<div>
+        © 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.
+      </div>
+<div class="flex flex-wrap items-center gap-6 text-[#94A3B8]">
+<a class="hover:text-white transition-colors" href="#">DRM Compliance Policy</a>
+<a class="hover:text-white transition-colors" href="#">Zero-Trust Verification</a>
+<a class="hover:text-white transition-colors" href="#">Candidate Session Hash Log</a>
+<a class="hover:text-white transition-colors" href="#">Integrity Telemetry Docs</a>
+<a class="hover:text-white transition-colors" href="#">SecOps Oversight</a>
+</div>
+</div>
+</footer>
+<!-- Matrix Generator Script and State Simulation Engine -->
+<script>
+    // System Resources strictly matching the 20 required entities
+    const resources = [
+      { name: "Programmes", defaultScope: "All", defaultPerms: [1, 1, 1, 0, 1, 1, 0, 0] },
+      { name: "Cohorts", defaultScope: "All", defaultPerms: [1, 1, 1, 0, 1, 1, 0, 0] },
+      { name: "Content", defaultScope: "All", defaultPerms: [1, 1, 1, 0, 1, 0, 0, 0] },
+      { name: "Live sessions", defaultScope: "Assigned only", defaultPerms: [1, 1, 1, 0, 1, 0, 0, 0] },
+      { name: "Question bank", defaultScope: "All", defaultPerms: [1, 1, 1, 0, 1, 1, 1, 0] },
+      { name: "Exams", defaultScope: "All", defaultPerms: [1, 1, 1, 0, 1, 1, 1, 0], modified: "Approve added" },
+      { name: "Students", defaultScope: "Assigned only", defaultPerms: [1, 0, 1, 0, 0, 1, 0, 0] },
+      { name: "Enrolments", defaultScope: "All", defaultPerms: [1, 1, 1, 0, 0, 1, 1, 0] },
+      { name: "Payments", defaultScope: "Assigned only", defaultPerms: [1, 0, 0, 0, 0, 1, 0, 0] },
+      { name: "Subscriptions", defaultScope: "All", defaultPerms: [1, 0, 0, 0, 0, 1, 0, 0] },
+      { name: "Refunds", defaultScope: "Assigned only", defaultPerms: [1, 0, 0, 0, 0, 0, 0, 0], modified: "View added" },
+      { name: "Coupons", defaultScope: "Own only", defaultPerms: [1, 1, 0, 0, 0, 0, 0, 0], modified: "Create added" },
+      { name: "Certificates", defaultScope: "All", defaultPerms: [1, 0, 1, 0, 1, 1, 1, 0] },
+      { name: "Security", defaultScope: "Own only", defaultPerms: [1, 0, 0, 0, 0, 0, 0, 0], modified: "Delete removed" },
+      { name: "Audit", defaultScope: "All", defaultPerms: [1, 0, 0, 0, 0, 1, 0, 0] },
+      { name: "Reports", defaultScope: "All", defaultPerms: [1, 0, 0, 0, 0, 1, 0, 0] },
+      { name: "Messaging", defaultScope: "Assigned only", defaultPerms: [1, 1, 1, 0, 1, 0, 0, 0] },
+      { name: "Support", defaultScope: "Assigned only", defaultPerms: [1, 1, 1, 0, 0, 0, 0, 0] },
+      { name: "Staff and roles", defaultScope: "Own only", defaultPerms: [1, 0, 0, 0, 0, 0, 0, 0] },
+      { name: "Settings", defaultScope: "Own only", defaultPerms: [1, 0, 0, 0, 0, 0, 0, 0] }
+    ];
+
+    // Actions columns (index 3: Delete, index 6: Approve, index 7: Reveal Sensitive)
+    const actionIndices = [
+      { name: "View", sensitive: false },
+      { name: "Create", sensitive: false },
+      { name: "Edit", sensitive: false },
+      { name: "Delete", sensitive: true },
+      { name: "Publish", sensitive: false },
+      { name: "Export", sensitive: false },
+      { name: "Approve", sensitive: true },
+      { name: "Reveal sensitive", sensitive: true }
+    ];
+
+    let currentMode = 'custom'; // 'custom', 'unsaved', 'approval', 'builtin'
+
+    function renderMatrix() {
+      const tbody = document.getElementById("matrix-body");
+      tbody.innerHTML = "";
+
+      const isReadOnly = (currentMode === 'builtin' || currentMode === 'approval');
+
+      resources.forEach((res, rIdx) => {
+        const tr = document.createElement("tr");
+        tr.className = `hover:bg-[#F8FAFC] transition-colors ${res.modified && currentMode === 'unsaved' ? 'bg-amber-50/50' : ''}`;
+
+        // Column 1: Resource Entity
+        let tdEntity = document.createElement("td");
+        tdEntity.className = "py-3 px-4 font-medium text-[#0F172A] sticky left-0 bg-white group-hover:bg-[#F8FAFC] border-r border-[#E2E8F0]";
+        tdEntity.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span>${res.name}</span>
+            ${res.modified && (currentMode === 'unsaved' || currentMode === 'custom') ? `
+              <span class="w-2 h-2 rounded-full bg-[#1D4ED8]" title="Modified privilege"></span>
+            ` : ''}
+          </div>
+        `;
+        tr.appendChild(tdEntity);
+
+        // Column 2: Scope Selector
+        let tdScope = document.createElement("td");
+        tdScope.className = "py-2 px-3 border-r border-[#E2E8F0]";
+        tdScope.innerHTML = `
+          <select ${isReadOnly ? 'disabled' : ''} class="w-full text-xs py-1.5 px-2 bg-white border border-[#64748B] rounded focus:ring-1 focus:ring-[#2563EB] disabled:bg-slate-100 disabled:text-slate-500 disabled:border-slate-300">
+            <option value="All" ${res.defaultScope === 'All' ? 'selected' : ''}>All</option>
+            <option value="Assigned only" ${res.defaultScope === 'Assigned only' ? 'selected' : ''}>Assigned only</option>
+            <option value="Own only" ${res.defaultScope === 'Own only' ? 'selected' : ''}>Own only</option>
+          </select>
+        `;
+        tr.appendChild(tdScope);
+
+        // 8 Permission Checkbox Columns
+        actionIndices.forEach((action, aIdx) => {
+          let tdAction = document.createElement("td");
+          const isSensitive = action.sensitive;
+          tdAction.className = `py-2 px-2 text-center align-middle ${isSensitive ? 'bg-red-50/20' : ''}`;
+
+          let isChecked = res.defaultPerms[aIdx] === 1;
+
+          // For builtin, override to fixed demo profile
+          if (currentMode === 'builtin') {
+            // Instructor profile (Read/View, Edit assigned, Publish)
+            isChecked = (aIdx === 0 || (aIdx === 2 && rIdx < 5) || (aIdx === 4 && rIdx === 2));
+          }
+
+          tdAction.innerHTML = `
+            <div class="flex items-center justify-center touch-target">
+              <input type="checkbox" ${isChecked ? 'checked' : ''} ${isReadOnly ? 'disabled' : ''} 
+                class="w-4 h-4 rounded text-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-1 border-[#64748B] disabled:opacity-60 disabled:cursor-not-allowed">
+            </div>
+          `;
+          tr.appendChild(tdAction);
+        });
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function setVariant(mode) {
+      currentMode = mode;
+
+      // Update state switcher tab styles
+      ['custom', 'unsaved', 'approval', 'builtin'].forEach(m => {
+        const btn = document.getElementById(`btn-tab-${m}`);
+        if (m === mode) {
+          btn.className = "px-3 py-1.5 text-xs font-medium rounded bg-[#0B1320] text-white shadow-sm";
+        } else {
+          btn.className = "px-3 py-1.5 text-xs font-medium rounded text-[#475569] hover:text-[#0F172A]";
+        }
+      });
+
+      // Toggle State Banners
+      document.getElementById('banner-unsaved').classList.toggle('hidden', mode !== 'unsaved');
+      document.getElementById('banner-approval').classList.toggle('hidden', mode !== 'approval');
+      document.getElementById('banner-builtin').classList.toggle('hidden', mode !== 'builtin');
+
+      // Adjust Form Controls & Meta
+      const nameInput = document.getElementById('role-name-input');
+      const descInput = document.getElementById('role-desc-input');
+      const roleBadge = document.getElementById('role-badge');
+      const roleTypeText = document.getElementById('role-type-text');
+      const impactText = document.getElementById('impact-counter-text');
+      const mainBtn = document.getElementById('main-action-btn');
+      const mainText = document.getElementById('main-action-text');
+
+      if (mode === 'builtin') {
+        nameInput.value = "Instructor";
+        nameInput.disabled = true;
+        descInput.value = "Default institutional educator profile. Grants access to curriculum delivery, student grading, and moderated live discussions.";
+        descInput.disabled = true;
+        roleBadge.className = "inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#475569] border border-[#64748B]";
+        roleTypeText.innerHTML = "Built-in Role (Locked)";
+        impactText.innerHTML = "Affects 14 assigned staff members";
+        mainBtn.disabled = true;
+        mainBtn.className = "px-6 py-2.5 bg-slate-300 text-slate-500 rounded-[6px] font-medium text-body-md font-body-md cursor-not-allowed flex items-center gap-2";
+        mainText.innerHTML = "Locked role";
+      } else {
+        nameInput.value = "Senior Exam Lead";
+        nameInput.disabled = (mode === 'approval');
+        descInput.value = "Responsible for authoring high-stakes exam blueprints, moderation workflows, cohort proctoring allocations, and final result verification before release.";
+        descInput.disabled = (mode === 'approval');
+        roleBadge.className = "inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]";
+        roleTypeText.innerHTML = "Custom Role";
+        impactText.innerHTML = "Affects 3 assigned staff members";
+
+        if (mode === 'approval') {
+          mainBtn.disabled = true;
+          mainBtn.className = "px-6 py-2.5 bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] rounded-[6px] font-medium text-body-md font-body-md cursor-not-allowed flex items-center gap-2";
+          mainText.innerHTML = "Awaiting sign-off";
+        } else {
+          mainBtn.disabled = false;
+          mainBtn.className = "px-6 py-2.5 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-body-md font-body-md touch-target flex items-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-colors";
+          mainText.innerHTML = (mode === 'unsaved') ? "Save changes" : "Request approval";
+        }
+      }
+
+      renderMatrix();
+    }
+
+    // Initial load
+    renderMatrix();
+  </script>
+</body></html>

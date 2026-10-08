@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16 Public certificate verification</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0B1320',
+            link: '#1D4ED8',
+            'link-on-dark': '#93C5FD',
+            'focus-ring': '#2563EB',
+            danger: '#B91C1C',
+            'danger-fill': '#FEF2F2',
+            success: '#047857',
+            'success-fill': '#ECFDF5',
+            warning: '#B45309',
+            'warning-fill': '#FFFBEB',
+            info: '#1D4ED8',
+            'info-fill': '#EFF6FF',
+            'body-text': '#0F172A',
+            'muted-text': '#475569',
+            'form-border': '#64748B',
+            'card-border': '#E2E8F0',
+            'surface-navy': '#050A10',
+            'navy-border': '#1E293B',
+          },
+          borderRadius: {
+            card: '12px',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-[#F1F5F9] font-sans text-body-text antialiased min-h-screen py-10 px-4 sm:px-8 space-y-16">
+
+  <!-- SPECIFICATION BOARD HEADER -->
+  <header class="max-w-[1440px] mx-auto bg-white p-6 rounded-card border border-card-border shadow-sm">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-xs font-semibold tracking-wider uppercase text-muted-text">Design Specification · Screen 16</span>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-info-fill text-link border border-blue-200">Public Verification Flow</span>
+        </div>
+        <h1 class="text-2xl font-bold text-primary">Public Certificate Verification — Complete State Board</h1>
+        <p class="text-sm text-muted-text mt-1">Tokens: Primary #0B1320, Link #1D4ED8, Link-on-dark #93C5FD, Success #047857, Danger #B91C1C, Warning #B45309, Cards 12px, Min 44px touch targets.</p>
+      </div>
+      <div class="text-xs font-mono text-muted-text bg-slate-50 p-3 rounded-lg border border-slate-200 self-start md:self-auto">
+        Viewport: Desktop 1440px + Mobile 390px<br>
+        Top Bar: Public Simple Top Bar (No Sidebar)
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 1. STATE 1: EMPTY STATE (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-card-border flex items-center justify-between text-xs font-semibold text-muted-text">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px]">1</span>
+        <span>State 1: Empty Form (Default Entry State)</span>
+      </div>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <!-- Public Simple Top Bar -->
+    <nav class="w-full bg-[#0B1320] border-b border-navy-border px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-8">
+        <a href="#" class="inline-block bg-white px-3 py-1.5 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEaB89Slf4R_njaV_XROxCA9-je_yE1T9aKD8y_2T9dzKNrjR9xA4s7Id5QayPsTrpdFQXhEY4WxNb5JKoZ7HJYyJ0rfL5f-pkAhh7jY-bRHsWZMjybgkqNlgRWQIMKSrGVJwpAC7ieDxjWkMSe8uk4O3G2vrLj1Mfrw6Mf-iCOx7Zma0xpzWJqnCtcFjzseIXGpBjDnCNz5ktVeMknn0hdnY5yKJOjMe58M42B_cBunPaelLx61iSru86ViZEYff0HF8" alt="A.J. SILICON" class="h-6 w-auto object-contain block">
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Workshops</a>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <a href="#" class="text-sm font-medium text-link-on-dark hover:underline h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Log in</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-2xl mx-auto py-16 px-6">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-primary tracking-tight">Verify a certificate</h2>
+        <p class="text-base text-muted-text mt-2">Enter the unique credential identification number found on the certificate to validate accreditation authenticity.</p>
+      </div>
+
+      <!-- Verification Input Box -->
+      <div class="bg-white p-6 rounded-card border border-card-border shadow-sm">
+        <form class="space-y-4" onsubmit="return false;">
+          <div>
+            <label for="cert-id-empty" class="block text-sm font-semibold text-primary mb-1.5">Certificate ID</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  id="cert-id-empty" 
+                  placeholder="e.g. AJS-2027-CISA-8841" 
+                  class="w-full h-11 px-3.5 bg-white border border-form-border rounded-lg text-body-text placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-focus-ring text-base"
+                >
+              </div>
+              <button 
+                type="button" 
+                disabled 
+                class="h-11 px-6 bg-slate-200 text-slate-400 font-semibold rounded-lg text-base cursor-not-allowed transition-colors whitespace-nowrap min-w-[110px]"
+              >
+                Verify
+              </button>
+            </div>
+            <p class="text-xs text-muted-text mt-2">Certificate ID is case-insensitive and format: AJS-YYYY-PROG-XXXX</p>
+          </div>
+        </form>
+      </div>
+    </main>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 2. STATE 2: LOADING STATE (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-card-border flex items-center justify-between text-xs font-semibold text-muted-text">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px]">2</span>
+        <span>State 2: Loading State (In-flight Verification Request)</span>
+      </div>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <!-- Public Simple Top Bar -->
+    <nav class="w-full bg-[#0B1320] border-b border-navy-border px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-8">
+        <a href="#" class="inline-block bg-white px-3 py-1.5 rounded shadow-sm">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4DZEqBD3Ju1lK9sY9JvMb10ZbrN_Gn1WCVGd7zhxAPc9aNPjVEvplLETvACDfvSaBEXR4q-OW3Ckgub0mnJqSOG1qEwQApO3e4A2TGRt-R8CxcQ77NYSECNa4JkGQk9ozbXD3nN5bNXGNOnbehmFjbqBxMUixfNwDHMiJdk85mAg7KXHOcne-pivET41hHaQ3vipA7JkLdqumdFYxow44WoZJKhKpnose_E7IQolkp1xDIz2SBPUqxJadupQr5aECfFI" alt="A.J. SILICON" class="h-6 w-auto object-contain block">
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <span class="text-sm font-medium text-slate-300 h-11 flex items-center">Programmes</span>
+          <span class="text-sm font-medium text-slate-300 h-11 flex items-center">Workshops</span>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <span class="text-sm font-medium text-link-on-dark h-11 flex items-center">Log in</span>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-2xl mx-auto py-16 px-6">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-primary tracking-tight">Verify a certificate</h2>
+        <p class="text-base text-muted-text mt-2">Enter the unique credential identification number found on the certificate to validate accreditation authenticity.</p>
+      </div>
+
+      <!-- Verification Input Box -->
+      <div class="bg-white p-6 rounded-card border border-card-border shadow-sm">
+        <form class="space-y-4" onsubmit="return false;">
+          <div>
+            <label class="block text-sm font-semibold text-primary mb-1.5">Certificate ID</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  value="AJS-2027-CISA-8841" 
+                  disabled
+                  class="w-full h-11 px-3.5 bg-slate-50 border border-slate-300 rounded-lg text-body-text font-medium text-base cursor-not-allowed"
+                >
+              </div>
+              <button 
+                type="button" 
+                disabled 
+                class="h-11 px-6 bg-primary text-white font-semibold rounded-lg text-base flex items-center justify-center gap-2 cursor-wait whitespace-nowrap min-w-[110px]"
+              >
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Verifying...</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Loading Skeleton Result Card -->
+      <div class="mt-6 bg-white p-6 rounded-card border border-card-border shadow-sm animate-pulse space-y-4">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div class="h-5 bg-slate-200 rounded w-40"></div>
+          <div class="h-6 bg-slate-200 rounded-full w-24"></div>
+        </div>
+        <div class="space-y-3 pt-2">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="h-4 bg-slate-200 rounded col-span-1"></div>
+            <div class="h-4 bg-slate-200 rounded col-span-2"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="h-4 bg-slate-200 rounded col-span-1"></div>
+            <div class="h-4 bg-slate-200 rounded col-span-2"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="h-4 bg-slate-200 rounded col-span-1"></div>
+            <div class="h-4 bg-slate-200 rounded col-span-2"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. STATE 3: VALID STATE (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-card-border flex items-center justify-between text-xs font-semibold text-muted-text">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px]">3</span>
+        <span>State 3: Valid Result (Folake Adeyemi · CISA Exam Prep · Checkmark)</span>
+      </div>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <!-- Public Simple Top Bar -->
+    <nav class="w-full bg-[#0B1320] border-b border-navy-border px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-8">
+        <a href="#" class="inline-block bg-white px-3 py-1.5 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCchP-jl3NeZzAmRq8NkhXSbY0lOLymLt9bnUOWNshblyBbfFklTr_BkvHMXkaqBP57sGHuqpZq10ne1YshmG48TUSOwbLbmTmoXTy6Fuj5tZcmFV6ePJ2-NkxFxlGUd6R8Xx_gdnRg0I2wsCRAn_sP0R0y6Vz3-vOLv3qfk58dQ9Z3IPtqCSC2HXf55EF-76p9wPgIehAmlXOwnlSGrzRQ7J_XMOLedJ8Evaqs8jwTLOjgUrXYI743bWjRd3IHtjUbKqk" alt="A.J. SILICON" class="h-6 w-auto object-contain block">
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Workshops</a>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <a href="#" class="text-sm font-medium text-link-on-dark hover:underline h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Log in</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-2xl mx-auto py-16 px-6">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-primary tracking-tight">Verify a certificate</h2>
+        <p class="text-base text-muted-text mt-2">Enter the unique credential identification number found on the certificate to validate accreditation authenticity.</p>
+      </div>
+
+      <!-- Verification Input Box -->
+      <div class="bg-white p-6 rounded-card border border-card-border shadow-sm">
+        <form class="space-y-4" onsubmit="return false;">
+          <div>
+            <label for="cert-id-valid" class="block text-sm font-semibold text-primary mb-1.5">Certificate ID</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  id="cert-id-valid" 
+                  value="AJS-2027-CISA-8841" 
+                  class="w-full h-11 px-3.5 bg-white border border-form-border rounded-lg text-body-text font-medium text-base focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-focus-ring"
+                >
+              </div>
+              <button 
+                type="button" 
+                class="h-11 px-6 bg-primary hover:bg-slate-800 text-white font-semibold rounded-lg text-base transition-colors whitespace-nowrap min-w-[110px] focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+              >
+                Verify
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Valid Result Card -->
+      <div class="mt-6 bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+        <!-- Result Card Header -->
+        <div class="bg-slate-50 px-6 py-4 border-b border-card-border flex items-center justify-between flex-wrap gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted-text">Verification Result</span>
+            <span class="text-xs font-mono font-medium text-slate-500">ID: AJS-2027-CISA-8841</span>
+          </div>
+          <!-- Status Badge: Valid with check icon -->
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-success-fill border border-emerald-200 text-success text-sm font-semibold">
+            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+            <span>Valid</span>
+          </div>
+        </div>
+
+        <!-- Result Card Body -->
+        <div class="p-6 divide-y divide-slate-100">
+          <!-- Recipient Name -->
+          <div class="py-3.5 first:pt-0 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="text-sm font-medium text-muted-text">Recipient name</dt>
+            <dd class="text-base font-bold text-primary sm:col-span-2">Folake Adeyemi</dd>
+          </div>
+
+          <!-- Programme -->
+          <div class="py-3.5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="text-sm font-medium text-muted-text">Programme</dt>
+            <dd class="text-base font-semibold text-primary sm:col-span-2">CISA Exam Prep</dd>
+          </div>
+
+          <!-- Issue Date -->
+          <div class="py-3.5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="text-sm font-medium text-muted-text">Issue date</dt>
+            <dd class="text-base font-medium text-body-text sm:col-span-2">22 Jan 2027</dd>
+          </div>
+
+          <!-- Status Row (Paired with icon & text) -->
+          <div class="py-3.5 last:pb-0 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4 items-center">
+            <dt class="text-sm font-medium text-muted-text">Credential status</dt>
+            <dd class="sm:col-span-2 flex items-center gap-2">
+              <span class="material-symbols-outlined text-success text-xl">verified</span>
+              <span class="text-sm font-semibold text-success">Valid — Authenticated & in good standing</span>
+            </dd>
+          </div>
+        </div>
+
+        <!-- Institutional Footer Note -->
+        <div class="bg-slate-50 px-6 py-3 border-t border-card-border text-xs text-muted-text flex items-center gap-2">
+          <span class="material-symbols-outlined text-slate-400 text-base">info</span>
+          <span>Verified against the official A.J. Silicon Registry records in Lagos, Nigeria.</span>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. STATE 4: REVOKED STATE (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-card-border flex items-center justify-between text-xs font-semibold text-muted-text">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px]">4</span>
+        <span>State 4: Revoked Result (Status Revoked · Warning Icon · Revoke Date)</span>
+      </div>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <!-- Public Simple Top Bar -->
+    <nav class="w-full bg-[#0B1320] border-b border-navy-border px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-8">
+        <a href="#" class="inline-block bg-white px-3 py-1.5 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhpBRf27t-TfxsF0xBRcwK5qiCIiHODUAxUEpMN1M4jxzpwVUpkRo6oTnnK8STB4UJzZ7-k5irfauz5Cbbs2U7LHbf8LWTKx_BpHzZY08Yu4NkBTj6F82vTlr7jeFbFCI-y9JV-H4RpgzQoJ1dMJsEcdLFr_r-Szt8d6JcQVUDt0ac13g2tr10KSLeSwcI2Bz-kTMWW8ivaj_wSL1NJshp78Y5Wt5D5WM9_Tj0UgGbtpxBoHamD9uQMeqQApFvjV_Adpg" alt="A.J. SILICON" class="h-6 w-auto object-contain block">
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Workshops</a>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <a href="#" class="text-sm font-medium text-link-on-dark hover:underline h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Log in</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-2xl mx-auto py-16 px-6">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-primary tracking-tight">Verify a certificate</h2>
+        <p class="text-base text-muted-text mt-2">Enter the unique credential identification number found on the certificate to validate accreditation authenticity.</p>
+      </div>
+
+      <!-- Verification Input Box -->
+      <div class="bg-white p-6 rounded-card border border-card-border shadow-sm">
+        <form class="space-y-4" onsubmit="return false;">
+          <div>
+            <label for="cert-id-revoked" class="block text-sm font-semibold text-primary mb-1.5">Certificate ID</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  id="cert-id-revoked" 
+                  value="AJS-2025-CRISC-1092" 
+                  class="w-full h-11 px-3.5 bg-white border border-form-border rounded-lg text-body-text font-medium text-base focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-focus-ring"
+                >
+              </div>
+              <button 
+                type="button" 
+                class="h-11 px-6 bg-primary hover:bg-slate-800 text-white font-semibold rounded-lg text-base transition-colors whitespace-nowrap min-w-[110px] focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+              >
+                Verify
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Revoked Result Card -->
+      <div class="mt-6 bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+        <!-- Result Card Header -->
+        <div class="bg-slate-50 px-6 py-4 border-b border-card-border flex items-center justify-between flex-wrap gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted-text">Verification Result</span>
+            <span class="text-xs font-mono font-medium text-slate-500">ID: AJS-2025-CRISC-1092</span>
+          </div>
+          <!-- Status Badge: Revoked with warning icon -->
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-warning-fill border border-amber-300 text-warning text-sm font-semibold">
+            <span class="material-symbols-outlined text-[18px]">warning</span>
+            <span>Revoked</span>
+          </div>
+        </div>
+
+        <!-- Result Card Body -->
+        <div class="p-6 divide-y divide-slate-100">
+          <!-- Recipient Name -->
+          <div class="py-3.5 first:pt-0 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="text-sm font-medium text-muted-text">Recipient name</dt>
+            <dd class="text-base font-bold text-primary sm:col-span-2">Chinedu Eze</dd>
+          </div>
+
+          <!-- Programme -->
+          <div class="py-3.5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="text-sm font-medium text-muted-text">Programme</dt>
+            <dd class="text-base font-semibold text-primary sm:col-span-2">CRISC Risk & Information Systems</dd>
+          </div>
+
+          <!-- Issue Date -->
+          <div class="py-3.5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="text-sm font-medium text-muted-text">Issue date</dt>
+            <dd class="text-base font-medium text-body-text sm:col-span-2">14 Nov 2025</dd>
+          </div>
+
+          <!-- Revoke Date -->
+          <div class="py-3.5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="text-sm font-medium text-muted-text">Revoke date</dt>
+            <dd class="text-base font-semibold text-danger sm:col-span-2">08 Mar 2026</dd>
+          </div>
+
+          <!-- Status Row (Warning icon + text) -->
+          <div class="py-3.5 last:pb-0 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4 items-center">
+            <dt class="text-sm font-medium text-muted-text">Credential status</dt>
+            <dd class="sm:col-span-2 flex items-center gap-2">
+              <span class="material-symbols-outlined text-warning text-xl">warning</span>
+              <span class="text-sm font-semibold text-warning">Revoked — This certificate is no longer recognized or valid</span>
+            </dd>
+          </div>
+        </div>
+
+        <!-- Warning Callout Box -->
+        <div class="bg-warning-fill px-6 py-3 border-t border-amber-200 text-xs text-warning flex items-start gap-2">
+          <span class="material-symbols-outlined text-warning text-base flex-shrink-0 mt-0.5">error</span>
+          <span>Notice: This credential was revoked on 08 Mar 2026. For inquiries regarding revocation grounds or verification appeals, please contact our Registry office.</span>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. STATE 5: NOT FOUND STATE (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-card-border flex items-center justify-between text-xs font-semibold text-muted-text">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px]">5</span>
+        <span>State 5: Not Found (Error Alert · "No certificate matches this ID. Check the ID and try again.")</span>
+      </div>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <!-- Public Simple Top Bar -->
+    <nav class="w-full bg-[#0B1320] border-b border-navy-border px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-8">
+        <a href="#" class="inline-block bg-white px-3 py-1.5 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4bFiF_axdwiQbbZIX2-S7NNIknSmUKFirlXCEOQBgKZA706kWphLmwbAGLPnwaWmutedxw0_ycQ7G79oxcEEB48W2Ue94-zgj7Ee4UBbYd0fwFCPiyP2LdlP_qUYKPM95xobMXzp2wqfoL2PcM2RmyqtORzynG11dKYV8Txv0Yiz3cos95ppHUxN8cMUZQmMv8a7NSFrJqiPD8C9pTbTMHWqktYrGzvdfGwYHysE0cUCknQvxyXjYEs-iJcxo0BDaGjw" alt="A.J. SILICON" class="h-6 w-auto object-contain block">
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Programmes</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Workshops</a>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <a href="#" class="text-sm font-medium text-link-on-dark hover:underline h-11 flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Log in</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-2xl mx-auto py-16 px-6">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-primary tracking-tight">Verify a certificate</h2>
+        <p class="text-base text-muted-text mt-2">Enter the unique credential identification number found on the certificate to validate accreditation authenticity.</p>
+      </div>
+
+      <!-- Verification Input Box with Error Border -->
+      <div class="bg-white p-6 rounded-card border border-card-border shadow-sm">
+        <form class="space-y-4" onsubmit="return false;">
+          <div>
+            <label for="cert-id-notfound" class="block text-sm font-semibold text-primary mb-1.5">Certificate ID</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  id="cert-id-notfound" 
+                  value="AJS-9999-XXXX-0000" 
+                  class="w-full h-11 px-3.5 bg-danger-fill border border-danger rounded-lg text-body-text font-medium text-base focus:outline-none focus:ring-2 focus:ring-danger"
+                >
+              </div>
+              <button 
+                type="button" 
+                class="h-11 px-6 bg-primary hover:bg-slate-800 text-white font-semibold rounded-lg text-base transition-colors whitespace-nowrap min-w-[110px] focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+              >
+                Verify
+              </button>
+            </div>
+            <!-- Inline Error Message under the field -->
+            <p class="text-xs font-semibold text-danger flex items-center gap-1 mt-2">
+              <span class="material-symbols-outlined text-sm">error</span>
+              <span>No certificate found with this identification number.</span>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Not Found Result Card -->
+      <div class="mt-6 bg-white p-8 rounded-card border border-card-border shadow-sm text-center">
+        <div class="w-12 h-12 mx-auto rounded-full bg-danger-fill border border-red-200 flex items-center justify-center text-danger mb-4">
+          <span class="material-symbols-outlined text-2xl">search_off</span>
+        </div>
+        <h3 class="text-lg font-bold text-primary mb-1">No certificate matches this ID</h3>
+        <p class="text-base text-muted-text max-w-md mx-auto">No certificate matches this ID. Check the ID and try again.</p>
+        
+        <div class="mt-6 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-muted-text">
+          <span>Make sure you entered all letters and hyphens correctly.</span>
+          <span class="hidden sm:inline">•</span>
+          <a href="#" class="text-link hover:underline font-semibold h-11 inline-flex items-center focus:outline-none focus:ring-2 focus:ring-focus-ring">Contact support for assistance</a>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. STATE 6: MOBILE 390px (Valid State)     -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-slate-100 p-8 rounded-card border border-card-border shadow-sm flex flex-col items-center">
+    <div class="w-full mb-4 flex items-center justify-between text-xs font-semibold text-muted-text px-2 max-w-[390px]">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px]">6</span>
+        <span>State 6: Mobile 390px (Valid Variant)</span>
+      </div>
+      <span>Plain 390px Frame</span>
+    </div>
+
+    <!-- Plain 390px Frame: No phone status bar, no home indicator, no device chrome -->
+    <div class="w-[390px] bg-white rounded-none border border-slate-300 shadow-md overflow-hidden text-body-text">
+      <!-- Public Simple Top Bar (Mobile) -->
+      <nav class="w-full bg-[#0B1320] border-b border-navy-border px-4 py-2.5 flex items-center justify-between">
+        <a href="#" class="inline-block bg-white px-2 py-1 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-focus-ring">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB803pXIuk7cQrHEvwzG0sGYZZtm4-blvwQ6ZNQ_u4h92rxin9lzGI8ocVTlc-eaKRCliaHepu0tHfJNFD-gTv4fmc9CHEmOw_M7YZAbyk2wfiUSDZR7T0U-tfBqCPpVttQCkyRZIrVf12Dxb0UG7E9BS2Ej-KSu_b_A5l0SwNqRIE3s94v2EXMY1gaclGwMOkeWnDO4Yu03DPiEDbT9SNXl0--6SvDIJQ7iXRnINkm5AS-ezzUJIckJn_vzG22T6jL7rw" alt="A.J. SILICON" class="h-5 w-auto object-contain block">
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="#" class="text-xs font-medium text-slate-300 hover:text-white h-11 flex items-center px-1">Programmes</a>
+          <a href="#" class="text-xs font-medium text-link-on-dark hover:underline h-11 flex items-center px-1">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Content Area -->
+      <div class="p-4 py-8">
+        <div class="mb-6">
+          <h2 class="text-2xl font-bold text-primary tracking-tight">Verify a certificate</h2>
+          <p class="text-sm text-muted-text mt-1">Enter the unique credential ID to validate accreditation authenticity.</p>
+        </div>
+
+        <!-- Verification Input Box -->
+        <div class="bg-white p-4 rounded-card border border-card-border shadow-sm mb-6">
+          <form class="space-y-3" onsubmit="return false;">
+            <div>
+              <label for="cert-id-mobile" class="block text-xs font-semibold text-primary mb-1">Certificate ID</label>
+              <input 
+                type="text" 
+                id="cert-id-mobile" 
+                value="AJS-2027-CISA-8841" 
+                class="w-full h-11 px-3 bg-white border border-form-border rounded-lg text-body-text font-medium text-sm focus:outline-none focus:ring-2 focus:ring-focus-ring"
+              >
+            </div>
+            <button 
+              type="button" 
+              class="w-full h-11 bg-primary hover:bg-slate-800 text-white font-semibold rounded-lg text-sm transition-colors flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+            >
+              Verify
+            </button>
+          </form>
+        </div>
+
+        <!-- Mobile Result Card: Valid -->
+        <div class="bg-white rounded-card border border-card-border shadow-sm overflow-hidden">
+          <!-- Card Header with Valid Badge -->
+          <div class="bg-slate-50 px-4 py-3 border-b border-card-border flex items-center justify-between">
+            <span class="text-xs font-mono font-medium text-slate-500">AJS-2027-CISA-8841</span>
+            <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-success-fill border border-emerald-200 text-success text-xs font-semibold">
+              <span class="material-symbols-outlined text-[15px]">check_circle</span>
+              <span>Valid</span>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="p-4 space-y-3 divide-y divide-slate-100">
+            <div class="pt-1 first:pt-0">
+              <span class="block text-xs text-muted-text">Recipient name</span>
+              <span class="block text-base font-bold text-primary mt-0.5">Folake Adeyemi</span>
+            </div>
+
+            <div class="pt-3">
+              <span class="block text-xs text-muted-text">Programme</span>
+              <span class="block text-sm font-semibold text-primary mt-0.5">CISA Exam Prep</span>
+            </div>
+
+            <div class="pt-3">
+              <span class="block text-xs text-muted-text">Issue date</span>
+              <span class="block text-sm font-medium text-body-text mt-0.5">22 Jan 2027</span>
+            </div>
+
+            <div class="pt-3">
+              <span class="block text-xs text-muted-text">Credential status</span>
+              <div class="flex items-center gap-1.5 mt-1 text-success text-xs font-semibold">
+                <span class="material-symbols-outlined text-base">verified</span>
+                <span>Valid — In good standing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Institutional footer -->
+          <div class="bg-slate-50 px-4 py-2.5 border-t border-card-border text-[11px] text-muted-text flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-slate-400 text-sm">info</span>
+            <span>A.J. Silicon Registry · Lagos, Nigeria</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

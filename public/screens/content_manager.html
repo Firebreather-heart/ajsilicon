@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy — Content Manager</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#d2d9f4",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "inverse-surface": "#283044",
+            "primary-fixed-dim": "#bfc6d9",
+            "outline-variant": "#c5c6cc",
+            "surface-container": "#eaedff",
+            "surface": "#faf8ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#3f4756",
+            "tertiary-container": "#281809",
+            "primary-container": "#141c29",
+            "error-container": "#ffdad6",
+            "on-background": "#131b2e",
+            "primary-fixed": "#dbe2f5",
+            "tertiary": "#000000",
+            "background": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "secondary-container": "#4069f2",
+            "on-primary-fixed": "#141c29",
+            "on-primary-container": "#7c8495",
+            "surface-container-low": "#f2f3ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#997f6a",
+            "surface-variant": "#dae2fd",
+            "on-surface-variant": "#45474c",
+            "outline": "#75777c",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#dae2fd",
+            "surface-tint": "#575f6e",
+            "on-secondary-fixed": "#001551",
+            "secondary": "#1d4ed8",
+            "tertiary-fixed": "#fddcc4",
+            "primary": "#000000",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary-fixed": "#281809",
+            "surface-container-lowest": "#ffffff",
+            /* Institutional Strict Palettes */
+            "brand-navy": "#0B1320",
+            "brand-navy-hover": "#1E293B",
+            "ink-primary": "#0F172A",
+            "ink-muted": "#475569",
+            "line-border": "#E2E8F0",
+            "line-input": "#64748B",
+            "badge-pass-bg": "#ECFDF5",
+            "badge-pass-txt": "#047857",
+            "badge-sched-bg": "#EFF6FF",
+            "badge-sched-txt": "#1D4ED8",
+            "badge-warn-bg": "#FFFBEB",
+            "badge-warn-txt": "#B45309",
+            "badge-draft-bg": "#F1F5F9",
+            "badge-draft-txt": "#475569",
+            "badge-danger-bg": "#FEF2F2",
+            "badge-danger-txt": "#B91C1C"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .focus-ring-strict:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+    /* Minimal Custom Scrollbar for Tree and Panel */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #F8FAFC;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col bg-[#F8FAFC] text-ink-primary overflow-hidden">
+<!-- TOP APP BAR / STAFF SHELL HEADER (Fixed 64px, #0B1320) -->
+<header class="h-16 bg-[#0B1320] text-white flex items-center justify-between px-6 z-30 shrink-0 select-none">
+<div class="flex items-center gap-6">
+<!-- Isolated Logo Plate -->
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 shadow-sm border border-slate-200">
+<img alt="A.J. Silicon Academy" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0syw4IzavvLktYb4wGgGvqh2FyWfCzdI_ww0zy6fO2NvIGbFbv3D_gHJpPjrbZzs52EKHkNjQBnsshs_IHAEV_nvioq4pcKnUy--Db9T0H3-JGy0lRM4BpINT-YoRGoT7rSj08avAAaUdxBa4vbFOdJNCdZty84Yyoh67Pl9Y5w-YRQmBJ_d6LrgmGrY34fAUv8Nzjs96-QiHIlX3GLS_mSzPhizWmYDK596ooliu2pcuYJirjwZfYQ"/>
+</div>
+<div class="h-6 w-px bg-slate-700 hidden sm:block"></div>
+<div class="flex flex-col">
+<span class="text-white font-headline-sm text-sm tracking-wide">Enterprise Audit Academy</span>
+<span class="text-slate-400 text-xs font-normal">Staff Administration Environment</span>
+</div>
+</div>
+<!-- Right Metadata & Signed-In Staff Details -->
+<div class="flex items-center gap-6">
+<!-- Live Server Time -->
+<div class="hidden md:flex items-center gap-2 text-slate-300 font-label-md text-xs bg-[#141F32] px-3 py-1.5 rounded border border-slate-700/60">
+<span class="material-symbols-outlined text-[16px] text-slate-400">schedule</span>
+<span>10:15 WAT · 05 Oct 2026</span>
+</div>
+<!-- Live Connectivity / Telemetry Indicator -->
+<div class="hidden lg:flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-800/60 px-2.5 py-1 rounded">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>Audit Sync Active</span>
+</div>
+<!-- Staff Profile Summary -->
+<div class="flex items-center gap-3 border-l border-slate-700 pl-5">
+<div class="text-right hidden sm:block">
+<div class="text-sm font-medium text-white leading-tight">Tunde Bakare</div>
+<div class="text-xs text-slate-400 leading-tight">Content Manager</div>
+</div>
+<div aria-label="Staff Initials" class="w-9 h-9 rounded bg-[#1D4ED8] text-white flex items-center justify-center font-semibold text-xs tracking-wider border border-blue-400 shadow-sm">
+          TB
+        </div>
+</div>
+</div>
+</header>
+<!-- MAIN WRAPPER: SIDEBAR + CONTENT AREA -->
+<div class="flex flex-1 overflow-hidden relative">
+<!-- SIDEBAR RAIL / NAVIGATION (Width 256px, #0B1320 deep navy frame) -->
+<aside class="w-64 bg-[#0B1320] border-r border-slate-800 flex flex-col justify-between shrink-0 select-none z-20">
+<div class="p-4 flex flex-col gap-1 overflow-y-auto custom-scroll">
+<div class="px-3 pt-2 pb-2 text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+          Curriculum &amp; Registry
+        </div>
+<!-- Nav Item: Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm text-slate-300 hover:text-white hover:bg-[#152238] transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Nav Item: Content (Active Parent) -->
+<div class="mt-1">
+<div class="flex items-center justify-between px-3 py-2.5 rounded bg-[#17253D] text-white font-medium text-sm border-l-4 border-[#1D4ED8]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-blue-400">library_books</span>
+<span>Content</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-slate-400">expand_more</span>
+</div>
+<!-- Active Subtree -->
+<div class="mt-1 ml-4 pl-3 border-l border-slate-800 space-y-1">
+<a class="flex items-center justify-between px-3 py-2 rounded text-xs font-medium text-white bg-[#1F314F]" href="#">
+<span>Curriculum &amp; Lessons</span>
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-xs text-slate-400 hover:text-white hover:bg-[#152238] transition-colors" href="#">
+<span>Media Vault</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-xs text-slate-400 hover:text-white hover:bg-[#152238] transition-colors" href="#">
+<span>Assessments</span>
+</a>
+</div>
+</div>
+<!-- Nav Item: Cohorts -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm text-slate-300 hover:text-white hover:bg-[#152238] transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">groups</span>
+<span>Cohorts</span>
+</a>
+<!-- Nav Item: Students -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm text-slate-300 hover:text-white hover:bg-[#152238] transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">school</span>
+<span>Students</span>
+</a>
+<!-- Nav Item: Reports -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm text-slate-300 hover:text-white hover:bg-[#152238] transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">query_stats</span>
+<span>Reports</span>
+</a>
+<div class="px-3 pt-5 pb-2 text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+          Governance &amp; System
+        </div>
+<!-- Nav Item: Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-sm text-slate-300 hover:text-white hover:bg-[#152238] transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">settings</span>
+<span>Settings</span>
+</a>
+<!-- Restricted Action (System Ledger Key) -->
+<div class="flex items-center justify-between px-3 py-2.5 rounded text-sm text-slate-500 cursor-not-allowed group relative" title="Restricted to Lead Audit Registrar">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-600">vpn_key</span>
+<span>Cryptographic Keys</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-slate-600">lock</span>
+</div>
+</div>
+<!-- Sidebar Footer Info -->
+<div class="p-4 border-t border-slate-800 bg-[#090F1B] text-slate-400 text-xs flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span>ISO 27001 Log</span>
+<span class="text-slate-300 font-mono">v4.18.2</span>
+</div>
+<div class="text-[11px] text-slate-500">
+          Last sync: 05 Oct 2026, 10:14 WAT
+        </div>
+</div>
+</aside>
+<!-- WORKSPACE CANVAS (BREADCRUMB + PAGE HEADER + TWO-COLUMN INTERFACE) -->
+<main class="flex-1 flex flex-col min-w-0 bg-[#F8FAFC] overflow-hidden">
+<!-- SUB-BAR / BREADCRUMB & STATE SELECTOR BAR -->
+<div class="bg-white border-b border-line-border px-8 py-3 flex items-center justify-between shrink-0">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-label-md text-ink-muted">
+<a class="hover:text-ink-primary hover:underline transition-colors" href="#">Staff Portal</a>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span class="text-ink-muted">Content</span>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span class="font-medium text-ink-primary">Curriculum Manager</span>
+</nav>
+<!-- UI State Demonstration Switcher (Toggles mockup test cases requested) -->
+<div class="flex items-center gap-2 bg-[#F1F5F9] p-1 rounded-lg border border-slate-300">
+<span class="text-[11px] font-medium text-slate-600 px-2 uppercase tracking-wider">Preview View:</span>
+<button class="px-2.5 py-1 text-xs font-medium rounded bg-white text-ink-primary shadow-sm border border-slate-300 transition-all focus-ring-strict" id="btn-state-default" onclick="switchState('default')">
+            1. Standard Workspace
+          </button>
+<button class="px-2.5 py-1 text-xs font-medium rounded text-ink-muted hover:text-ink-primary transition-all focus-ring-strict" id="btn-state-reorder" onclick="switchState('reorder')">
+            2. Reordering Active
+          </button>
+<button class="px-2.5 py-1 text-xs font-medium rounded text-ink-muted hover:text-ink-primary transition-all focus-ring-strict" id="btn-state-publish" onclick="switchState('publish')">
+            3. Publish Modal
+          </button>
+<button class="px-2.5 py-1 text-xs font-medium rounded text-ink-muted hover:text-ink-primary transition-all focus-ring-strict" id="btn-state-empty" onclick="switchState('empty')">
+            4. Empty Programme
+          </button>
+</div>
+</div>
+<!-- PAGE HEADER -->
+<div class="bg-white border-b border-line-border px-8 py-5 flex items-center justify-between shrink-0">
+<div>
+<h1 class="font-headline-lg text-2xl font-bold text-ink-primary tracking-tight">Content manager</h1>
+<p class="font-body-sm text-sm text-ink-muted mt-0.5">
+            Curriculum structure, lesson scheduling and courseware publishing for accredited programmes.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 h-11 px-4 text-sm font-medium border border-line-input text-ink-primary rounded-lg bg-white hover:bg-slate-50 transition-colors focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Revision History</span>
+</button>
+<button class="inline-flex items-center gap-2 h-11 px-5 text-sm font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded-lg transition-colors focus-ring-strict shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add module</span>
+</button>
+</div>
+</div>
+<!-- MAIN SPLIT WORKSPACE: LEFT TREE + RIGHT INSPECTOR -->
+<div class="flex-1 flex min-h-0 overflow-hidden">
+<!-- ========================================== -->
+<!-- LEFT / CENTER COLUMN: CURRICULUM TREE VIEW -->
+<!-- ========================================== -->
+<section class="flex-1 flex flex-col border-r border-line-border bg-white min-w-0 overflow-hidden">
+<!-- PROGRAMME SELECTOR & METADATA BAR -->
+<div class="p-6 border-b border-line-border bg-[#F8FAFC]">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Programme Dropdown Selector -->
+<div class="flex-1 max-w-md">
+<label class="block text-xs font-semibold uppercase tracking-wider text-ink-muted mb-1.5" for="programme-select">
+                  Select Programme Syllabus
+                </label>
+<div class="relative">
+<select class="w-full h-11 pl-3.5 pr-10 bg-white border border-line-input rounded-lg text-sm font-medium text-ink-primary focus-ring-strict appearance-none" id="programme-select" onchange="onProgrammeChange(this.value)">
+<option selected="" value="cisa">CISA Exam Prep (Certified Information Systems Auditor)</option>
+<option value="crisc">CRISC Risk &amp; Controls Certification</option>
+<option value="cism">CISM Security Leadership Programme</option>
+<option value="aaia">AAIA Artificial Intelligence Audit (New)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-slate-500 text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Syllabus High-Density Telemetry Metrics -->
+<div class="flex items-center gap-4 bg-white p-3 rounded-lg border border-line-border text-xs">
+<div class="flex items-center gap-2 pr-4 border-r border-line-border">
+<span class="material-symbols-outlined text-blue-600 text-[18px]">domain</span>
+<span class="text-ink-muted">Domains:</span>
+<strong class="text-ink-primary font-semibold" id="meta-domains">5 Domains</strong>
+</div>
+<div class="flex items-center gap-2 pr-4 border-r border-line-border">
+<span class="material-symbols-outlined text-blue-600 text-[18px]">menu_book</span>
+<span class="text-ink-muted">Curriculum:</span>
+<strong class="text-ink-primary font-semibold" id="meta-lessons">31 Lessons</strong>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 text-[18px]">timer</span>
+<span class="text-ink-muted">Runtime:</span>
+<strong class="text-ink-primary font-semibold" id="meta-runtime">42 Hours total</strong>
+</div>
+</div>
+</div>
+<!-- CURRICULUM ACTIONS & SEARCH FILTER BAR -->
+<div class="mt-4 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 text-xs bg-white border border-line-input rounded-md focus-ring-strict placeholder:text-slate-400" placeholder="Filter modules &amp; lessons..." type="text"/>
+</div>
+<button class="h-9 px-3 text-xs font-medium border border-line-input rounded-md bg-white hover:bg-slate-50 text-ink-primary inline-flex items-center gap-1.5 focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[16px]">unfold_more</span>
+<span>Expand all</span>
+</button>
+<button class="h-9 px-3 text-xs font-medium border border-line-input rounded-md bg-white hover:bg-slate-50 text-ink-primary inline-flex items-center gap-1.5 focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[16px]">unfold_less</span>
+<span>Collapse all</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 text-xs font-medium bg-white border border-line-input text-ink-primary rounded-md hover:bg-slate-50 inline-flex items-center gap-1.5 focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Add lesson</span>
+</button>
+<span class="text-xs text-slate-400 hidden sm:inline">|</span>
+<span class="text-xs text-slate-500 font-normal">Pricing ref: ₦450,000 / candidate</span>
+</div>
+</div>
+</div>
+<!-- TREE VIEW CONTAINER (ACTIVE & DRAGGING CONTENT) -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4 custom-scroll" id="tree-container">
+<!-- MODULE 01 CARD -->
+<div class="border border-line-border rounded-xl bg-white shadow-sm overflow-hidden">
+<!-- Module Header -->
+<div class="px-5 py-3.5 bg-slate-50 border-b border-line-border flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="text-slate-400 hover:text-ink-primary cursor-grab" title="Drag to reorder Module 01" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<button class="text-slate-700 hover:text-ink-primary flex items-center gap-2 text-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+<span>Module 01: The Process of Auditing Information Systems</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Published
+                  </span>
+<span class="text-xs text-ink-muted">6 lessons · 4h 30m</span>
+<button class="text-slate-500 hover:text-ink-primary p-1 rounded" title="Module options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Module 01 Lesson List -->
+<div class="divide-y divide-line-border">
+<!-- Lesson 1.1 -->
+<div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-blue-600 text-[20px]">play_circle</span>
+<div class="truncate">
+<div class="text-sm font-medium text-ink-primary truncate">Lesson 1.1: Audit Charter, Strategy and Governance</div>
+<div class="text-xs text-ink-muted font-mono">CISA-M01-L01 · Video · 45 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                      Published
+                    </span>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Lesson 1.2 -->
+<div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-blue-600 text-[20px]">smart_display</span>
+<div class="truncate">
+<div class="text-sm font-medium text-ink-primary truncate">Lesson 1.2: Risk-Based Audit Planning</div>
+<div class="text-xs text-ink-muted font-mono">CISA-M01-L02 · Video &amp; Slides · 55 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                      Published
+                    </span>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- REORDER TARGET INDICATOR (Visible during state 'reorder') -->
+<div class="hidden px-5 py-2 bg-blue-50/70 border-y-2 border-blue-600 flex items-center justify-between animate-pulse" id="drop-indicator">
+<div class="flex items-center gap-2 text-xs font-semibold text-blue-800">
+<span class="material-symbols-outlined text-[18px] text-blue-600">move_down</span>
+<span>Drop to reorder into Module 01 (Position 1.3)</span>
+</div>
+<span class="text-[11px] bg-blue-200 text-blue-900 px-2 py-0.5 rounded font-mono">Target: Module 01</span>
+</div>
+<!-- Lesson 1.3 -->
+<div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-purple-600 text-[20px]">switch</span>
+<div class="truncate">
+<div class="text-sm font-medium text-ink-primary truncate">Lesson 1.3: Audit Evidence Gathering &amp; Data Analytics</div>
+<div class="text-xs text-ink-muted font-mono">CISA-M01-L03 · Interactive Deck · 40 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                      Published
+                    </span>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE 02 CARD -->
+<div class="border border-line-border rounded-xl bg-white shadow-sm overflow-hidden">
+<div class="px-5 py-3.5 bg-slate-50 border-b border-line-border flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="text-slate-400 hover:text-ink-primary cursor-grab" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<button class="text-slate-700 hover:text-ink-primary flex items-center gap-2 text-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+<span>Module 02: Governance and Management of IT</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Published
+                  </span>
+<span class="text-xs text-ink-muted">5 lessons · 3h 45m</span>
+<button class="text-slate-500 hover:text-ink-primary p-1 rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="divide-y divide-line-border">
+<!-- Lesson 2.1 -->
+<div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-blue-600 text-[20px]">play_circle</span>
+<div class="truncate">
+<div class="text-sm font-medium text-ink-primary truncate">Lesson 2.1: IT Governance Frameworks &amp; COBIT 2019</div>
+<div class="text-xs text-ink-muted font-mono">CISA-M02-L01 · Video · 60 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                      Published
+                    </span>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Lesson 2.2 -->
+<div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-amber-600 text-[20px]">co_present</span>
+<div class="truncate">
+<div class="text-sm font-medium text-ink-primary truncate">Lesson 2.2: Risk Management &amp; Controls Matrix</div>
+<div class="text-xs text-ink-muted font-mono">CISA-M02-L02 · Slide Deck · 35 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                      Published
+                    </span>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE 03 CARD (ACTIVE MODULE WITH LESSON 3.1 HIGHLIGHTED) -->
+<div class="border-2 border-blue-600/60 rounded-xl bg-white shadow-sm overflow-hidden">
+<div class="px-5 py-3.5 bg-blue-50/40 border-b border-line-border flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="text-slate-400 hover:text-ink-primary cursor-grab" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<button class="text-slate-800 hover:text-ink-primary flex items-center gap-2 text-sm font-bold" type="button">
+<span class="material-symbols-outlined text-[18px] text-blue-700">expand_more</span>
+<span>Module 03: Information Systems Acquisition, Development &amp; Implementation</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                    In Review / Scheduled
+                  </span>
+<span class="text-xs text-ink-muted">3 lessons · 2h 05m</span>
+<button class="text-slate-500 hover:text-ink-primary p-1 rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="divide-y divide-line-border">
+<!-- Lesson 3.1 (CURRENTLY ACTIVE IN RIGHT INSPECTOR) -->
+<div class="px-5 py-3.5 flex items-center justify-between bg-blue-50/80 border-l-4 border-blue-600 transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-blue-700 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-blue-700 text-[20px]">play_circle</span>
+<div class="truncate">
+<div class="text-sm font-semibold text-blue-900 truncate flex items-center gap-2">
+<span>Lesson 3.1: SDLC Methodologies &amp; DevSecOps</span>
+<span class="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded font-mono tracking-wide">ACTIVE IN INSPECTOR</span>
+</div>
+<div class="text-xs text-blue-700/80 font-mono">CISA-M03-L01 · Video · 50 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+                      Scheduled (12 Oct 2026)
+                    </span>
+<span class="material-symbols-outlined text-blue-700 text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Lesson 3.2 (Can be depicted as dragged in reorder state) -->
+<div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50 transition-colors group" id="lesson-3-2-card">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-amber-600 text-[20px]">co_present</span>
+<div class="truncate">
+<div class="text-sm font-medium text-ink-primary truncate">Lesson 3.2: System Architecture Review &amp; Assurance</div>
+<div class="text-xs text-ink-muted font-mono">CISA-M03-L02 · Slides · 45 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px] animate-spin">sync</span>
+                      Processing
+                    </span>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Lesson 3.3 -->
+<div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50 transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 cursor-grab text-[20px]">drag_indicator</span>
+<span class="material-symbols-outlined text-emerald-600 text-[20px]">quiz</span>
+<div class="truncate">
+<div class="text-sm font-medium text-ink-primary truncate">Lesson 3.3: Post-Implementation Audits &amp; Rollback Testing</div>
+<div class="text-xs text-ink-muted font-mono">CISA-M03-L03 · Reading &amp; Quiz · 30 mins</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 ml-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#475569] border border-slate-300">
+<span class="material-symbols-outlined text-[13px]">edit_note</span>
+                      Draft
+                    </span>
+<button class="text-blue-700 hover:text-blue-900 text-xs font-medium px-2 py-1 rounded hover:bg-blue-50 transition-colors" onclick="openPublishModal()" type="button">
+                      Quick Publish
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- EMPTY PROGRAMME STATE (Hidden by default; toggled via switcher) -->
+<div class="hidden flex-1 flex-col items-center justify-center p-12 text-center bg-white" id="empty-state-view">
+<div class="w-20 h-20 rounded-2xl bg-slate-100 border border-line-border flex items-center justify-center mb-5 text-slate-400">
+<span class="material-symbols-outlined text-[44px]">auto_stories</span>
+</div>
+<h2 class="font-headline-md text-xl font-bold text-ink-primary mb-2">No modules added yet</h2>
+<p class="font-body-md text-sm text-ink-muted max-w-md mb-6">
+              Structure this programme by creating the first syllabus domain module. Modules group structured lessons, exercises, and assessments.
+            </p>
+<div class="flex items-center gap-3">
+<button class="h-11 px-5 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] text-sm font-medium inline-flex items-center gap-2 focus-ring-strict shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add module</span>
+</button>
+<button class="h-11 px-4 rounded-lg border border-line-input text-ink-primary hover:bg-slate-50 text-sm font-medium inline-flex items-center gap-2 focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">file_upload</span>
+<span>Import syllabus template</span>
+</button>
+</div>
+</div>
+<!-- Bottom Audit Footer Bar for Tree -->
+<div class="px-6 py-3 bg-[#F8FAFC] border-t border-line-border flex items-center justify-between text-xs text-ink-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">security</span>
+<span>Audit Hash: <code class="text-slate-700 font-mono">0x9F41...BC21</code></span>
+</div>
+<span>Auto-saved at 10:14 WAT</span>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- RIGHT PANEL: LESSON SETTINGS / INSPECTOR PANEL -->
+<!-- ============================================== -->
+<aside class="w-[480px] bg-white flex flex-col shrink-0 overflow-hidden shadow-lg border-l border-line-border">
+<!-- Inspector Header -->
+<div class="p-5 border-b border-line-border bg-slate-50 flex items-center justify-between shrink-0">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-blue-700 bg-blue-100 px-2 py-0.5 rounded">
+                  Lesson Inspector
+                </span>
+<span class="text-xs text-ink-muted font-mono">CISA-M03-L01</span>
+</div>
+<h2 class="font-headline-sm text-base font-bold text-ink-primary leading-snug">
+                Lesson 3.1: SDLC Methodologies &amp; DevSecOps
+              </h2>
+</div>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" title="Close inspector" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Inspector Scrollable Form Fields -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 custom-scroll">
+<!-- Field: Lesson Title -->
+<div>
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2" for="lesson-title">
+                Lesson Title <span class="text-rose-600">*</span>
+</label>
+<input class="w-full h-11 px-3.5 bg-white border border-line-input rounded-md text-sm text-ink-primary focus-ring-strict" id="lesson-title" type="text" value="SDLC Methodologies &amp; DevSecOps"/>
+<p class="text-[11px] text-ink-muted mt-1.5">Displayed on candidate syllabus transcripts and certificates.</p>
+</div>
+<!-- Field: Description -->
+<div>
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2" for="lesson-desc">
+                Syllabus Scope &amp; Audit Objectives
+              </label>
+<textarea class="w-full p-3.5 bg-white border border-line-input rounded-md text-sm text-ink-primary focus-ring-strict resize-none" id="lesson-desc" rows="3">Detailed walkthrough of modern software development lifecycles, CI/CD security gates, and audit checkpoints against ISACA standards.</textarea>
+<p class="text-[11px] text-ink-muted mt-1.5">Outlines learning benchmarks and compliance evaluation criteria.</p>
+</div>
+<!-- Field: Content Type & Asset Attachment -->
+<div class="border border-line-border rounded-lg p-4 bg-slate-50">
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2">
+                Lesson Content Delivery
+              </label>
+<div class="grid grid-cols-3 gap-2 mb-3">
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-md border-2 border-blue-600 bg-white text-blue-700 font-medium text-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+<span>Video HLS</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-md border border-line-input bg-white text-ink-muted hover:text-ink-primary font-medium text-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">slideshow</span>
+<span>Slide Deck</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-md border border-line-input bg-white text-ink-muted hover:text-ink-primary font-medium text-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Quiz / Lab</span>
+</button>
+</div>
+<!-- Media Attachment Summary Card -->
+<div class="flex items-center justify-between p-3 bg-white rounded border border-line-border">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-blue-600 text-[24px]">video_file</span>
+<div class="truncate">
+<div class="text-xs font-medium text-ink-primary truncate font-mono">cisa-m03-l01-final.mp4</div>
+<div class="text-[11px] text-ink-muted">1.4 GB · DRM Encrypted · 1080p</div>
+</div>
+</div>
+<button class="text-xs font-medium text-blue-600 hover:text-blue-800 ml-2 hover:underline" type="button">
+                  Replace
+                </button>
+</div>
+</div>
+<!-- Field: Visibility Configuration -->
+<div>
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2">
+                Candidate Access &amp; Visibility
+              </label>
+<div class="space-y-2">
+<!-- Radio Option 1 -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-line-border hover:bg-slate-50 cursor-pointer transition-colors">
+<input class="mt-0.5 text-blue-600 focus:ring-blue-600 h-4 w-4 border-line-input" name="visibility" type="radio" value="published"/>
+<div>
+<div class="text-xs font-semibold text-ink-primary">Published to all enrolled candidates</div>
+<div class="text-[11px] text-ink-muted">Instantly accessible to candidates across all active cohorts.</div>
+</div>
+</label>
+<!-- Radio Option 2 (Active Selected) -->
+<label class="flex items-start gap-3 p-3 rounded-lg border-2 border-blue-600 bg-blue-50/30 cursor-pointer transition-colors">
+<input checked="" class="mt-0.5 text-blue-600 focus:ring-blue-600 h-4 w-4 border-line-input" name="visibility" type="radio" value="scheduled"/>
+<div>
+<div class="text-xs font-semibold text-blue-900 flex items-center gap-2">
+<span>Scheduled Release</span>
+<span class="text-[10px] bg-blue-200 text-blue-900 font-medium px-1.5 py-0.2 rounded">Current</span>
+</div>
+<div class="text-[11px] text-blue-700">Releases at a designated date and time to registered cohorts.</div>
+</div>
+</label>
+<!-- Radio Option 3 -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-line-border hover:bg-slate-50 cursor-pointer transition-colors">
+<input class="mt-0.5 text-blue-600 focus:ring-blue-600 h-4 w-4 border-line-input" name="visibility" type="radio" value="draft"/>
+<div>
+<div class="text-xs font-semibold text-ink-primary">Hidden Draft (Faculty Only)</div>
+<div class="text-[11px] text-ink-muted">Visible strictly to curriculum managers and assessors.</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Field: Release Date & Time -->
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2" for="release-date">
+                  Release Date
+                </label>
+<div class="relative">
+<input class="w-full h-11 pl-3.5 pr-9 bg-white border border-line-input rounded-md text-sm text-ink-primary focus-ring-strict" id="release-date" type="text" value="12 Oct 2026"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-400 text-[18px]">calendar_today</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2" for="release-time">
+                  Release Time
+                </label>
+<div class="relative">
+<input class="w-full h-11 pl-3.5 pr-9 bg-white border border-line-input rounded-md text-sm text-ink-primary focus-ring-strict font-mono" id="release-time" type="text" value="09:00 WAT"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-400 text-[18px]">schedule</span>
+</div>
+</div>
+</div>
+<!-- Field: Prerequisite Rule Dropdown -->
+<div>
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2" for="prereq-rule">
+                Prerequisite Lesson Dependency
+              </label>
+<div class="relative">
+<select class="w-full h-11 pl-3.5 pr-10 bg-white border border-line-input rounded-md text-xs font-medium text-ink-primary focus-ring-strict appearance-none" id="prereq-rule">
+<option selected="">Must complete Lesson 2.2: Risk Management &amp; Controls Matrix</option>
+<option>Must complete Lesson 2.1: IT Governance Frameworks &amp; COBIT 2019</option>
+<option>None (Direct Access)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-slate-500 text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Field: Minimum Watch Duration -->
+<div class="border border-line-border rounded-lg p-4 bg-slate-50 flex items-center justify-between">
+<div>
+<div class="text-xs font-semibold text-ink-primary">Minimum Completion Requirement</div>
+<div class="text-[11px] text-ink-muted">Audit rule for automated syllabus unlock</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-semibold bg-white border border-line-input text-ink-primary font-mono shadow-sm">
+                85% required
+              </span>
+</div>
+</div>
+<!-- Inspector Footer Actions (Minimum 44px Buttons) -->
+<div class="p-4 border-t border-line-border bg-slate-50 flex items-center justify-between gap-3 shrink-0">
+<button class="h-11 px-4 text-xs font-medium rounded-lg text-rose-700 bg-rose-50 border border-rose-300 hover:bg-rose-100 transition-colors focus-ring-strict inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">unpublished</span>
+<span>Unpublish</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="h-11 px-4 text-xs font-medium rounded-lg border border-line-input bg-white text-ink-primary hover:bg-slate-100 transition-colors focus-ring-strict" type="button">
+                Save changes
+              </button>
+<button class="h-11 px-5 text-xs font-medium rounded-lg text-white bg-[#0B1320] hover:bg-[#1E293B] transition-colors focus-ring-strict inline-flex items-center gap-1.5 shadow-sm" onclick="openPublishModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">publish</span>
+<span>Publish</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- ======================================================== -->
+<!-- MODAL OVERLAY: PUBLISH CONFIRMATION DIALOG (Accessible) -->
+<!-- ======================================================== -->
+<div aria-labelledby="modal-title" aria-modal="true" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity" id="publish-modal" role="dialog">
+<div class="bg-white rounded-xl border border-line-border max-w-lg w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="p-6 border-b border-line-border flex items-center justify-between bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-ink-primary" id="modal-title">
+              Confirm Lesson Publication
+            </h3>
+<p class="text-xs text-ink-muted">Accreditation Release Workflow</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-ink-primary p-1.5 rounded focus-ring-strict" onclick="closePublishModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4">
+<p class="text-sm text-ink-primary leading-relaxed">
+          Publishing <strong class="font-semibold text-slate-900">"Lesson 3.3: Post-Implementation Audits &amp; Rollback Testing"</strong> will make it immediately available to <strong class="font-semibold text-blue-700">42 enrolled candidates</strong> in CISA Cohort 14.
+        </p>
+<div class="p-3.5 bg-blue-50 border border-blue-200 rounded-lg flex items-start gap-3 text-xs text-blue-900">
+<span class="material-symbols-outlined text-blue-700 text-[18px] shrink-0 mt-0.5">info</span>
+<div>
+<span class="font-semibold">Notification dispatch is enabled:</span> Automated candidate portal alerts, email digests, and syllabus tracker progressions will trigger upon confirmation.
+          </div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-ink-primary uppercase tracking-wider mb-2" for="publish-reason">
+            Audit Justification &amp; Sign-off Note <span class="text-rose-600">*</span>
+</label>
+<input class="w-full h-11 px-3.5 bg-white border border-line-input rounded-md text-xs text-ink-primary focus-ring-strict" id="publish-reason" type="text" value="Formal sign-off by Lead Tutor Tunde Bakare for October Term"/>
+</div>
+<label class="flex items-start gap-3 pt-2 cursor-pointer">
+<input checked="" class="mt-0.5 rounded border-line-input text-blue-600 focus:ring-blue-600 h-4 w-4" type="checkbox"/>
+<span class="text-xs text-ink-primary leading-tight">
+            I confirm that this lesson syllabus complies with accredited governance standards and institutional quality checks.
+          </span>
+</label>
+</div>
+<!-- Modal Footer -->
+<div class="p-4 bg-slate-50 border-t border-line-border flex items-center justify-end gap-3">
+<button class="h-11 px-5 text-sm font-medium rounded-lg border border-line-input bg-white text-ink-primary hover:bg-slate-100 transition-colors focus-ring-strict" onclick="closePublishModal()" type="button">
+          Cancel
+        </button>
+<button class="h-11 px-6 text-sm font-medium rounded-lg text-white bg-[#0B1320] hover:bg-[#1E293B] transition-colors focus-ring-strict shadow-sm inline-flex items-center gap-2" onclick="closePublishModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">done</span>
+<span>Confirm &amp; Publish</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SCRIPT FOR STATE TOGGLING & MICRO-INTERACTIONS -->
+<script>
+    function resetSwitcherButtons() {
+      ['default', 'reorder', 'publish', 'empty'].forEach(st => {
+        const btn = document.getElementById(`btn-state-${st}`);
+        if (btn) {
+          btn.className = "px-2.5 py-1 text-xs font-medium rounded text-ink-muted hover:text-ink-primary transition-all focus-ring-strict";
+        }
+      });
+    }
+
+    function switchState(state) {
+      resetSwitcherButtons();
+      const activeBtn = document.getElementById(`btn-state-${state}`);
+      if (activeBtn) {
+        activeBtn.className = "px-2.5 py-1 text-xs font-medium rounded bg-white text-ink-primary shadow-sm border border-slate-300 transition-all focus-ring-strict";
+      }
+
+      const treeContainer = document.getElementById('tree-container');
+      const emptyStateView = document.getElementById('empty-state-view');
+      const dropIndicator = document.getElementById('drop-indicator');
+      const draggedCard = document.getElementById('lesson-3-2-card');
+      const publishModal = document.getElementById('publish-modal');
+      const progSelect = document.getElementById('programme-select');
+
+      // Hide temporary UI elements
+      dropIndicator.classList.add('hidden');
+      publishModal.classList.add('hidden');
+      if (draggedCard) {
+        draggedCard.classList.remove('bg-blue-100', 'border-2', 'border-blue-500', 'shadow-md', 'scale-[1.01]', 'opacity-90');
+      }
+
+      if (state === 'default') {
+        treeContainer.classList.remove('hidden');
+        emptyStateView.classList.add('hidden');
+        emptyStateView.classList.remove('flex');
+        progSelect.value = 'cisa';
+        updateMetadata('cisa');
+      } else if (state === 'reorder') {
+        treeContainer.classList.remove('hidden');
+        emptyStateView.classList.add('hidden');
+        emptyStateView.classList.remove('flex');
+        progSelect.value = 'cisa';
+        updateMetadata('cisa');
+        // Reveal drag and drop indicators
+        dropIndicator.classList.remove('hidden');
+        if (draggedCard) {
+          draggedCard.classList.add('bg-blue-100', 'border-2', 'border-blue-500', 'shadow-md', 'scale-[1.01]', 'opacity-90');
+        }
+      } else if (state === 'publish') {
+        treeContainer.classList.remove('hidden');
+        emptyStateView.classList.add('hidden');
+        emptyStateView.classList.remove('flex');
+        progSelect.value = 'cisa';
+        updateMetadata('cisa');
+        publishModal.classList.remove('hidden');
+      } else if (state === 'empty') {
+        treeContainer.classList.add('hidden');
+        emptyStateView.classList.remove('hidden');
+        emptyStateView.classList.add('flex');
+        progSelect.value = 'aaia';
+        updateMetadata('aaia');
+      }
+    }
+
+    function onProgrammeChange(val) {
+      if (val === 'aaia') {
+        switchState('empty');
+      } else {
+        switchState('default');
+      }
+    }
+
+    function updateMetadata(val) {
+      const d = document.getElementById('meta-domains');
+      const l = document.getElementById('meta-lessons');
+      const r = document.getElementById('meta-runtime');
+      if (val === 'aaia') {
+        d.textContent = '0 Domains';
+        l.textContent = '0 Lessons';
+        r.textContent = '0 Hours';
+      } else {
+        d.textContent = '5 Domains';
+        l.textContent = '31 Lessons';
+        r.textContent = '42 Hours total';
+      }
+    }
+
+    function openPublishModal() {
+      document.getElementById('publish-modal').classList.remove('hidden');
+    }
+
+    function closePublishModal() {
+      document.getElementById('publish-modal').classList.add('hidden');
+    }
+
+    // Escape key modal close support
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closePublishModal();
+      }
+    });
+  </script>
+</body></html>

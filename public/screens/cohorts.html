@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Secure Portal - Cohorts Management</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#281809",
+            "on-secondary-fixed": "#001551",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#584231",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#141c29",
+            "surface-tint": "#575f6e",
+            "on-secondary-container": "#fffbff",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#dbe2f5",
+            "surface-container-highest": "#dae2fd",
+            "on-background": "#131b2e",
+            "surface-variant": "#dae2fd",
+            "surface-container-low": "#f2f3ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-surface-variant": "#45474c",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary-container": "#997f6a",
+            "on-surface": "#131b2e",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-bright": "#faf8ff",
+            "error": "#ba1a1a",
+            "surface-dim": "#d2d9f4",
+            "secondary": "#1d4ed8",
+            "primary-container": "#141c29",
+            "on-primary-fixed-variant": "#3f4756",
+            "outline": "#75777c",
+            "tertiary-container": "#281809",
+            "secondary-container": "#4069f2",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#fddcc4",
+            "primary-fixed-dim": "#bfc6d9",
+            "surface-container": "#eaedff",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#7c8495",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "inverse-surface": "#283044",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary": "#000000",
+            "tertiary": "#000000",
+            "outline-variant": "#c5c6cc"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "space-xs": "0.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "code-snippet": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Focus styles complying strictly with 2px solid #2563EB and 2px offset */
+    *:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col font-body-md text-on-surface bg-surface antialiased overflow-x-hidden">
+<!-- TOP APP BAR (Shared Component JSON Source of Truth) -->
+<header class="bg-primary-container text-on-primary-container docked full-width top-0 z-50 shadow-sm border-b border-outline">
+<div class="flex justify-between items-center w-full px-6 py-2.5">
+<!-- Left: Institutional Brand Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQspYDD_ndia7QmF3uGyHQ3-2JZRWs5ryjVKXDx0aMJ0sIakRVn1NNJ8BvLpjDREMhpZDQcNsafVKh3lco7B8fSfRJ_iB0i4VOhqCAzC7XelVR4tH2kzpyeqObSLiYMmnARx5x1AJex91ON2FBTJu7izwi1r94ZcH3IggA4ELd3wtbnys9j1gdGWLVwwKo39SU3EronfKjJSDWrdgaWClAkKmfFpkrIrQUq6ca_zYJ2sB3z8weHrSriw"/>
+</div>
+<div class="hidden xl:flex items-center gap-1 text-label-sm font-label-sm text-surface-container-lowest font-medium border-l border-outline/40 pl-4">
+<span class="text-secondary-fixed">ISACA Gold Accredited Partner</span>
+<span class="text-on-primary-container mx-2">·</span>
+<span>Lagos Regulatory Center</span>
+</div>
+</div>
+<!-- Center Links (Desktop) -->
+<nav class="hidden lg:flex items-center space-x-6 text-label-md font-label-md">
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#vault">CISA Vault</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#crisc">CRISC Matrix</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#cism">CISM Ops</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#aaia">AAIA Lab</a>
+<a class="text-secondary-fixed font-semibold border-b-2 border-secondary-fixed pb-1" href="#secops">SecOps Governance</a>
+</nav>
+<!-- Right: Indicators, Timers & Authenticated Operator -->
+<div class="flex items-center space-x-5">
+<!-- Live WAT Clock -->
+<div class="flex items-center gap-2 text-label-sm font-label-sm bg-inverse-surface/80 text-surface-container-lowest px-3 py-1.5 rounded border border-outline/30">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">schedule</span>
+<span class="tracking-wide">11:55 WAT · 05 Oct 2026</span>
+</div>
+<!-- Plain text role label (No dropdown) -->
+<div class="hidden md:flex flex-col text-right">
+<span class="text-label-sm font-label-sm text-surface-container-lowest font-medium">Role: Operations Manager</span>
+<span class="text-[12px] text-on-primary-container">Olumide Adeyemi</span>
+</div>
+<!-- Action Icons & Avatar -->
+<div class="flex items-center space-x-3 pl-2 border-l border-outline/30">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-surface-container-lowest hover:bg-inverse-surface rounded transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="w-9 h-9 rounded bg-[#1E293B] border border-outline/60 flex items-center justify-center text-surface-container-lowest text-label-sm font-label-sm font-semibold tracking-wider">
+            OA
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- BODY LAYOUT WITH SIDE NAVIGATION -->
+<div class="flex-1 flex overflow-hidden">
+<!-- SIDE NAV BAR (Rail Architecture) -->
+<aside class="w-64 flex-shrink-0 bg-primary-container text-surface-container-lowest border-r border-outline flex flex-col justify-between p-4 z-40 select-none">
+<div class="space-y-6">
+<!-- Rail Branding / Portal Scope -->
+<div class="px-2 pt-1 pb-2 border-b border-outline/30">
+<div class="text-headline-sm font-headline-sm font-semibold tracking-tight text-surface-container-lowest">A.J. Silicon</div>
+<div class="text-label-sm font-label-sm text-on-primary-container">Audit &amp; Security Operations</div>
+</div>
+<!-- Navigation Group: Academics (ACTIVE ECOSYSTEM) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider uppercase text-on-primary-container">
+            Academics
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#programmes">
+<span class="material-symbols-outlined text-[20px]">school</span>
+<span>Programmes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#curricula">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Curricula</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#questions">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Question Bank</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#blueprints">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span>Exam Blueprints</span>
+</a>
+<!-- Active Tab: Cohorts -->
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm bg-inverse-surface text-secondary-fixed font-semibold rounded-lg border-l-4 border-secondary-fixed min-h-[44px]" href="#cohorts">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span>Cohorts</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: Governance & Ops -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider uppercase text-on-primary-container">
+            Governance &amp; Ops
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#telemetry">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span>Executive Telemetry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#paystack">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span>Paystack Settlements</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#audit">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Compliance Audit</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Rail Footer & Lock Terminal -->
+<div class="pt-4 border-t border-outline/30 space-y-3">
+<button class="w-full flex items-center justify-center gap-2 h-11 px-4 rounded border border-outline bg-[#0B1320] text-surface-container-lowest hover:bg-[#1E293B] text-label-md font-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Lock Terminal</span>
+</button>
+<div class="flex items-center justify-between px-2 text-[11px] text-on-primary-container">
+<span>SecOps Enforced</span>
+<span class="flex items-center gap-1 text-[#047857]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#047857]"></span>
+            Node Secure
+          </span>
+</div>
+</div>
+</aside>
+<!-- MAIN WORKSPACE CANVAS -->
+<main class="flex-1 overflow-y-auto bg-surface flex flex-col justify-between">
+<div class="p-8 max-w-[1400px] w-full mx-auto space-y-6">
+<!-- BREADCRUMB -->
+<nav aria-label="Breadcrumb" class="flex items-center space-x-2 text-label-sm font-label-sm text-[#475569]">
+<span class="hover:text-primary cursor-pointer">Academics</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Cohorts Management</span>
+</nav>
+<!-- PAGE HEADER & PRIMARY ACTION -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-2 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">Cohorts Management</h1>
+<p class="text-body-sm font-body-sm text-[#475569] mt-1">
+              Manage active training schedules, candidate capacity, faculty allocations, and waitlists across all professional programmes.
+            </p>
+</div>
+<div>
+<button class="min-h-[44px] px-6 bg-[#0B1320] text-[#FFFFFF] rounded-md text-label-md font-label-md flex items-center justify-center gap-2 hover:bg-[#1E293B] transition-colors shadow-sm" onclick="switchTab('new-cohort-view')" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>+ New cohort</span>
+</button>
+</div>
+</div>
+<!-- INTERACTIVE STATE SWITCHER BAR (Specification mandated previews) -->
+<div class="bg-surface-container-lowest p-1.5 rounded-lg border border-[#E2E8F0] shadow-sm flex flex-wrap gap-2 text-label-sm font-label-sm">
+<button class="tab-btn px-4 py-2 rounded font-medium transition-colors bg-[#0B1320] text-white" id="btn-tab-table" onclick="switchTab('table-view')">
+            1. Cohorts Table &amp; Management (Open &amp; Active)
+          </button>
+<button class="tab-btn px-4 py-2 rounded font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors" id="btn-tab-form" onclick="switchTab('new-cohort-view')">
+            2. New Cohort Configuration Form
+          </button>
+<button class="tab-btn px-4 py-2 rounded font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors" id="btn-tab-waitlist" onclick="switchTab('waitlist-view')">
+            3. Cohort Detail: Full with Waitlist (CISA Cohort 14)
+          </button>
+<button class="tab-btn px-4 py-2 rounded font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors" id="btn-tab-archived" onclick="switchTab('archived-view')">
+            4. Cohort Detail: Closed &amp; Archived (CRISC Cohort 05)
+          </button>
+</div>
+<!-- ========================================================================= -->
+<!-- VIEW 1: COHORTS MASTER TABLE & METRICS -->
+<!-- ========================================================================= -->
+<section class="space-y-6 view-section" id="table-view">
+<!-- Summary Metrics Bento Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#475569]">
+<span>Active Cohorts</span>
+<span class="material-symbols-outlined text-[#1D4ED8] text-[20px]">hub</span>
+</div>
+<div class="text-display font-display text-[#0F172A] mt-2">8</div>
+<div class="text-[12px] text-[#047857] flex items-center gap-1 mt-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>Across 4 accredited tracks</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#475569]">
+<span>Total Enrolled</span>
+<span class="material-symbols-outlined text-[#1D4ED8] text-[20px]">badge</span>
+</div>
+<div class="text-display font-display text-[#0F172A] mt-2">312</div>
+<div class="text-[12px] text-[#475569] mt-1 font-medium">
+                All candidates verified on Paystack
+              </div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#475569]">
+<span>Waitlisted Candidates</span>
+<span class="material-symbols-outlined text-[#B45309] text-[20px]">hourglass_top</span>
+</div>
+<div class="text-display font-display text-[#0F172A] mt-2">24</div>
+<div class="text-[12px] text-[#B45309] flex items-center gap-1 mt-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span>CISA Cohort 14 holding 8</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#475569]">
+<span>Average Utilization</span>
+<span class="material-symbols-outlined text-[#047857] text-[20px]">pie_chart</span>
+</div>
+<div class="text-display font-display text-[#0F172A] mt-2">88%</div>
+<div class="text-[12px] text-[#047857] mt-1 font-medium">
+                Optimum institutional classroom load
+              </div>
+</div>
+</div>
+<!-- Master Cohort Data Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<!-- Filters & Controls Bar -->
+<div class="p-4 border-b border-[#E2E8F0] bg-surface flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
+<!-- Search bar -->
+<div class="relative flex-1 max-w-md">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-[#475569]">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full h-11 pl-10 pr-4 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] placeholder-[#475569] focus:border-[#2563EB]" placeholder="Search cohort name, code or programme..." type="text"/>
+</div>
+<!-- Filter controls group -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Programme Filter -->
+<div class="flex items-center">
+<select aria-label="Programme" class="h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A]">
+<option>All Programmes</option>
+<option>CISA Exam Prep</option>
+<option>CISM Executive Track</option>
+<option>CRISC Risk Governance</option>
+<option>AAIA Audit Analytics</option>
+</select>
+</div>
+<!-- Mode Filter -->
+<div class="flex items-center">
+<select aria-label="Mode" class="h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A]">
+<option>All Modes</option>
+<option>Physical (Lagos Center)</option>
+<option>Virtual</option>
+<option>Hybrid</option>
+</select>
+</div>
+<!-- Status Filter -->
+<div class="flex items-center">
+<select aria-label="Status" class="h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A]">
+<option>All Statuses</option>
+<option>Open</option>
+<option>Full</option>
+<option>In Session</option>
+<option>Closed</option>
+</select>
+</div>
+<!-- Sort Filter -->
+<div class="flex items-center">
+<select aria-label="Sort" class="h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A]">
+<option>Start Date: Nearest</option>
+<option>Start Date: Farthest</option>
+<option>Capacity: Highest</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Table View -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-4" scope="col">Programme &amp; Code</th>
+<th class="py-3 px-4" scope="col">Schedule Dates</th>
+<th class="py-3 px-4" scope="col">Mode</th>
+<th class="py-3 px-4" scope="col">Capacity &amp; Load</th>
+<th class="py-3 px-4" scope="col">Faculty Lead</th>
+<th class="py-3 px-4" scope="col">Enrolment Status</th>
+<th class="py-3 px-4 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm">
+<!-- ROW 1: CISA Cohort 14 (Full with Waitlist) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-12">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-[#0F172A]">CISA Exam Prep</div>
+<div class="text-[13px] text-[#475569]">Cohort 14 (Saturday Executive)</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A]">12 Oct 2026 – 18 Dec 2026</div>
+<div class="text-[12px] text-[#475569]">Saturdays 09:00 – 16:00 WAT</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+                        Virtual
+                      </span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-[#0F172A]">45 / 45 seats</span>
+<span class="text-[#B45309] font-semibold">100% (8 Waitlisted)</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#B45309] h-2 rounded-full" style="width: 100%"></div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A] font-medium">Adaeze Okonkwo</div>
+<div class="text-[12px] text-[#475569]">Assistant: Kunle Adebayo</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                        Full (Waitlist Active)
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="min-h-[44px] px-3 text-label-sm font-label-sm text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors font-medium" onclick="switchTab('waitlist-view')" type="button">
+                          View details
+                        </button>
+<button class="min-h-[44px] px-2 text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="min-h-[44px] px-2 text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: CISM Cohort 15 (Open) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-12">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-[#0F172A]">CISM Executive Track</div>
+<div class="text-[13px] text-[#475569]">Cohort 15 (Weekday Intensive)</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A]">02 Nov 2026 – 22 Jan 2027</div>
+<div class="text-[12px] text-[#475569]">Tue &amp; Thu 18:00 – 21:00 WAT</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">apartment</span>
+                        Physical (Lagos)
+                      </span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-[#0F172A]">42 / 45 seats</span>
+<span class="text-[#047857]">93%</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#047857] h-2 rounded-full" style="width: 93%"></div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A] font-medium">Babatunde Lawal</div>
+<div class="text-[12px] text-[#475569]">Faculty Fellow</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                        Open for Enrolment
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="min-h-[44px] px-3 text-label-sm font-label-sm text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors font-medium" type="button">
+                          View details
+                        </button>
+<button class="min-h-[44px] px-2 text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="min-h-[44px] px-2 text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: AAIA Cohort 10 (Open Enrolment) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-12">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-[#0F172A]">AAIA Audit Analytics</div>
+<div class="text-[13px] text-[#475569]">Cohort 10 (Virtual Evening)</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A]">15 Nov 2026 – 10 Dec 2026</div>
+<div class="text-[12px] text-[#475569]">Mon, Wed, Fri 18:30 – 21:00 WAT</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">cell_merge</span>
+                        Hybrid
+                      </span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-[#0F172A]">18 / 35 seats</span>
+<span class="text-[#1D4ED8]">51%</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-2 rounded-full" style="width: 51%"></div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A] font-medium">Dr. Emeka Nwosu</div>
+<div class="text-[12px] text-[#475569]">Lead Fellow</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                        Open for Enrolment
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="min-h-[44px] px-3 text-label-sm font-label-sm text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors font-medium" type="button">
+                          View details
+                        </button>
+<button class="min-h-[44px] px-2 text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="min-h-[44px] px-2 text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: CRISC Cohort 05 (Closed & Archived) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-12 opacity-85">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-[#0F172A]">CRISC Risk Governance</div>
+<div class="text-[13px] text-[#475569]">Cohort 05 (Weekend Intensive)</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A]">06 Jun 2026 – 28 Aug 2026</div>
+<div class="text-[12px] text-[#475569]">Completed &amp; Concluded</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+                        Virtual
+                      </span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-[#0F172A]">40 / 40 seats</span>
+<span class="text-[#475569]">Finalized</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#64748B] h-2 rounded-full" style="width: 100%"></div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-[#0F172A] font-medium">Babatunde Lawal</div>
+<div class="text-[12px] text-[#475569]">Audit Lead</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#475569] border border-[#64748B]">
+<span class="material-symbols-outlined text-[14px]">archive</span>
+                        Closed &amp; Archived
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="min-h-[44px] px-3 text-label-sm font-label-sm text-[#1D4ED8] hover:bg-[#EFF6FF] rounded transition-colors font-medium" onclick="switchTab('archived-view')" type="button">
+                          Inspect dossier
+                        </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination -->
+<div class="p-4 border-t border-[#E2E8F0] bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="text-body-sm font-body-sm text-[#475569]">
+                Showing <span class="font-medium text-[#0F172A]">1</span> to <span class="font-medium text-[#0F172A]">4</span> of <span class="font-medium text-[#0F172A]">12</span> cohorts
+              </span>
+<div class="flex items-center gap-2">
+<button class="min-h-[44px] px-4 rounded border border-[#E2E8F0] text-body-sm font-body-sm text-[#94A3B8] cursor-not-allowed bg-[#F8FAFC]" disabled="" type="button">
+                  Previous
+                </button>
+<button class="min-h-[44px] px-4 rounded border border-[#64748B] text-body-sm font-body-sm text-[#0F172A] hover:bg-[#F1F5F9] transition-colors" type="button">
+                  Next
+                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VIEW 2: NEW COHORT CONFIGURATION FORM -->
+<!-- ========================================================================= -->
+<section class="space-y-6 view-section hidden" id="new-cohort-view">
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm p-6 max-w-4xl mx-auto">
+<div class="border-b border-[#E2E8F0] pb-4 mb-6">
+<h2 class="text-headline-md font-headline-md text-[#0F172A]">Configure New Academic Cohort</h2>
+<p class="text-body-sm font-body-sm text-[#475569] mt-1">
+                Define intake quotas, timetable parameters, virtual classroom credentials, and faculty assignments.
+              </p>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- Row: Programme & Cohort Title -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="programme-select">
+                    Accredited Programme <span class="text-error">*</span>
+</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="programme-select">
+<option>CISA Exam Prep PRG-CISA-2026</option>
+<option>CISM Executive Track PRG-CISM-2026</option>
+<option>CRISC Risk Governance PRG-CRISC-2026</option>
+<option>AAIA Audit Analytics Workshop PRG-AAIA-2026</option>
+</select>
+<span class="text-[12px] text-[#475569] mt-1 block">Tied to the standard 12-week ISACA syllabus blueprint.</span>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="cohort-name">
+                    Cohort Name &amp; Code <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="cohort-name" type="text" value="Cohort 16: Weekend Intensive"/>
+<span class="text-[12px] text-[#475569] mt-1 block">Displayed on candidate registration dossiers.</span>
+</div>
+</div>
+<!-- Row: Start Date, End Date, Timezone note -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="start-date">
+                    Start Date <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="start-date" type="date" value="2026-11-14"/>
+<span class="text-[12px] text-[#475569] mt-1 block">West Africa Time (WAT)</span>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="end-date">
+                    End Date <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="end-date" type="date" value="2027-02-06"/>
+<span class="text-[12px] text-[#475569] mt-1 block">Final mock exam date</span>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="delivery-mode">
+                    Delivery Mode <span class="text-error">*</span>
+</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="delivery-mode">
+<option>Virtual Classroom</option>
+<option>Physical (Lagos Learning Center)</option>
+<option>Hybrid Dual-Track</option>
+</select>
+</div>
+</div>
+<!-- Schedule Description & Quota -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="schedule-desc">
+                    Schedule Description <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="schedule-desc" type="text" value="Saturdays 09:00 – 16:00 WAT"/>
+<span class="text-[12px] text-[#475569] mt-1 block">Printed on candidate admission invoices.</span>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="seat-capacity">
+                    Seat Capacity (Max Limit 50) <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="seat-capacity" max="50" min="1" type="number" value="40"/>
+<span class="text-[12px] text-[#475569] mt-1 block">Once filled, registration automatically falls to waitlist.</span>
+</div>
+</div>
+<!-- Instructors -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="lead-instructor">
+                    Lead Faculty Instructor <span class="text-error">*</span>
+</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="lead-instructor">
+<option>Adaeze Okonkwo (Senior Audit Fellow)</option>
+<option>Babatunde Lawal (CISM / CRISC Lead)</option>
+<option>Dr. Emeka Nwosu (Analytics Specialist)</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="assistant-instructor">
+                    Assistant Instructor
+                  </label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="assistant-instructor">
+<option>Kunle Adebayo (Curriculum Associate)</option>
+<option>Fatima Bello (Academic Tutor)</option>
+<option>None assigned</option>
+</select>
+</div>
+</div>
+<!-- Virtual Classroom Configuration -->
+<div class="p-4 bg-surface rounded-lg border border-[#E2E8F0] space-y-4">
+<div class="text-label-md font-label-md font-semibold text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">video_camera_front</span>
+<span>Virtual Classroom &amp; Meeting Defaults</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1" for="meeting-id">Default Zoom Meeting ID</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A]" id="meeting-id" type="text" value="849 2018 9921"/>
+</div>
+<div class="flex items-center space-x-6 pt-6">
+<label class="flex items-center space-x-3 cursor-pointer min-h-[44px]">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Embed encrypted passcode</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer min-h-[44px]">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Auto-record lectures</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Price Override -->
+<div class="p-4 bg-surface rounded-lg border border-[#E2E8F0]">
+<label class="flex items-start space-x-3 cursor-pointer">
+<input class="w-5 h-5 mt-1 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" id="override-price-toggle" onchange="document.getElementById('override-field').classList.toggle('hidden', !this.checked)" type="checkbox"/>
+<div>
+<span class="text-label-md font-label-md font-semibold text-[#0F172A]">Override standard programme tuition</span>
+<p class="text-body-sm font-body-sm text-[#475569]">Standard CISA fee is ₦300,000. Enable if offering early-bird or subsidized corporate rate.</p>
+</div>
+</label>
+<div class="hidden mt-4 pl-8 max-w-sm" id="override-field">
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1" for="override-amount">Custom Fee Amount (NGN)</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-[#475569] font-medium">₦</span>
+<input class="w-full h-11 pl-8 pr-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A]" id="override-amount" type="text" value="280,000"/>
+</div>
+</div>
+</div>
+<!-- Form Action Buttons -->
+<div class="pt-4 border-t border-[#E2E8F0] flex justify-end gap-3">
+<button class="min-h-[44px] px-6 rounded-md border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] text-label-md font-label-md transition-colors" onclick="switchTab('table-view')" type="button">
+                  Cancel
+                </button>
+<button class="min-h-[44px] px-8 bg-[#0B1320] text-white rounded-md text-label-md font-label-md hover:bg-[#1E293B] transition-colors shadow-sm font-medium" onclick="switchTab('table-view')" type="button">
+                  Create cohort
+                </button>
+</div>
+</form>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VIEW 3: COHORT DETAIL: FULL WITH WAITLIST (CISA COHORT 14) -->
+<!-- ========================================================================= -->
+<section class="space-y-6 view-section hidden" id="waitlist-view">
+<!-- Detail Institutional Banner -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-[#E2E8F0] shadow-sm flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+<div>
+<div class="flex items-center gap-3 flex-wrap">
+<h2 class="text-headline-lg font-headline-lg text-[#0F172A]">CISA Cohort 14 (Saturday Executive)</h2>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                  Full (Waitlist Active)
+                </span>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+                  Virtual Classroom
+                </span>
+</div>
+<p class="text-body-sm font-body-sm text-[#475569] mt-2">
+                Curriculum: CISA 2026 Core Review · Schedule: Saturdays 09:00 – 16:00 WAT · Faculty: Adaeze Okonkwo
+              </p>
+</div>
+<!-- Destructive Action: Close Cohort -->
+<button class="min-h-[44px] px-4 rounded-md border border-[#B91C1C] text-[#B91C1C] bg-[#FEF2F2] hover:bg-[#FEE2E2] text-label-md font-label-md flex items-center gap-2 transition-colors" onclick="openLockModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>Close cohort &amp; lock roster</span>
+</button>
+</div>
+<!-- Capacity Ratio & Quick Indicators -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm text-[#475569]">Admitted Enrolment</span>
+<div class="text-headline-md font-headline-md text-[#0F172A] mt-1">45 / 45 Seats</div>
+<div class="text-[12px] text-[#047857] font-medium mt-1">100% Verified Paid Seats</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm text-[#475569]">Queued on Waitlist</span>
+<div class="text-headline-md font-headline-md text-[#B45309] mt-1">8 Candidates</div>
+<div class="text-[12px] text-[#475569] mt-1">Priority sequence based on queue timestamp</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm text-[#475569]">Programme Fee Collected</span>
+<div class="text-headline-md font-headline-md text-[#0F172A] mt-1">₦13,500,000</div>
+<div class="text-[12px] text-[#047857] font-medium mt-1">Direct Paystack Settlement</div>
+</div>
+</div>
+<!-- Tabs within Cohort 14 -->
+<div class="space-y-4">
+<div class="border-b border-[#E2E8F0] flex gap-8">
+<button class="pb-3 text-label-md font-label-md font-semibold text-[#1D4ED8] border-b-2 border-[#1D4ED8]">
+                Waitlist Management (8 candidates)
+              </button>
+<button class="pb-3 text-label-md font-label-md font-medium text-[#475569] hover:text-[#0F172A] transition-colors">
+                Enrolled Roster Summary (45 candidates)
+              </button>
+<button class="pb-3 text-label-md font-label-md font-medium text-[#475569] hover:text-[#0F172A] transition-colors">
+                Schedule &amp; Lecture Sessions (12)
+              </button>
+</div>
+<!-- Waitlist Candidates Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-4 bg-surface border-b border-[#E2E8F0] flex justify-between items-center">
+<div class="text-label-md font-label-md font-semibold text-[#0F172A]">
+                  Priority Waitlist Queue
+                </div>
+<div class="text-label-sm font-label-sm text-[#475569]">
+                  Promoting a candidate will dispatch an automated 24hr Paystack checkout invoice.
+                </div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-4" scope="col">Priority #</th>
+<th class="py-3 px-4" scope="col">Candidate Full Name</th>
+<th class="py-3 px-4" scope="col">Organization / Corporate</th>
+<th class="py-3 px-4" scope="col">Queue Timestamp</th>
+<th class="py-3 px-4" scope="col">Contact Phone</th>
+<th class="py-3 px-4 text-right" scope="col">Queue Operations</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm">
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-4 font-bold text-[#1D4ED8]">#1</td>
+<td class="py-3 px-4">
+<div class="font-semibold text-[#0F172A]">Chidiebere Nnamdi</div>
+<div class="text-[12px] text-[#475569]">c.nnamdi@zenithbank.com</div>
+</td>
+<td class="py-3 px-4 text-[#0F172A]">Zenith Bank Plc (IT Internal Audit)</td>
+<td class="py-3 px-4 text-[#475569]">02 Oct 2026, 09:14 WAT</td>
+<td class="py-3 px-4 text-[#0F172A]">+234 803 219 4012</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="min-h-[44px] px-3 bg-[#0B1320] text-white hover:bg-[#1E293B] rounded text-label-sm font-label-sm transition-colors" type="button">
+                            Promote to Enrolled (Send Payment Link)
+                          </button>
+<button class="min-h-[44px] px-3 border border-[#64748B] text-[#475569] hover:text-[#B91C1C] hover:border-[#B91C1C] rounded text-label-sm font-label-sm transition-colors" type="button">
+                            Remove
+                          </button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-4 font-bold text-[#1D4ED8]">#2</td>
+<td class="py-3 px-4">
+<div class="font-semibold text-[#0F172A]">Fatima Bello</div>
+<div class="text-[12px] text-[#475569]">f.bello@firs.gov.ng</div>
+</td>
+<td class="py-3 px-4 text-[#0F172A]">Federal Inland Revenue Service (IT Audit)</td>
+<td class="py-3 px-4 text-[#475569]">02 Oct 2026, 14:32 WAT</td>
+<td class="py-3 px-4 text-[#0F172A]">+234 812 884 9021</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="min-h-[44px] px-3 bg-[#0B1320] text-white hover:bg-[#1E293B] rounded text-label-sm font-label-sm transition-colors" type="button">
+                            Promote to Enrolled (Send Payment Link)
+                          </button>
+<button class="min-h-[44px] px-3 border border-[#64748B] text-[#475569] hover:text-[#B91C1C] hover:border-[#B91C1C] rounded text-label-sm font-label-sm transition-colors" type="button">
+                            Remove
+                          </button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-4 font-bold text-[#1D4ED8]">#3</td>
+<td class="py-3 px-4">
+<div class="font-semibold text-[#0F172A]">Tunde Balogun</div>
+<div class="text-[12px] text-[#475569]">balogun.t@firstbank.ng</div>
+</td>
+<td class="py-3 px-4 text-[#0F172A]">First Bank of Nigeria (SecOps)</td>
+<td class="py-3 px-4 text-[#475569]">03 Oct 2026, 11:05 WAT</td>
+<td class="py-3 px-4 text-[#0F172A]">+234 802 119 5543</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="min-h-[44px] px-3 bg-[#0B1320] text-white hover:bg-[#1E293B] rounded text-label-sm font-label-sm transition-colors" type="button">
+                            Promote to Enrolled (Send Payment Link)
+                          </button>
+<button class="min-h-[44px] px-3 border border-[#64748B] text-[#475569] hover:text-[#B91C1C] hover:border-[#B91C1C] rounded text-label-sm font-label-sm transition-colors" type="button">
+                            Remove
+                          </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Admitted Roster Summary Mini Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm p-5 space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]">Enrolled Candidate Roster Samples</h3>
+<p class="text-body-sm font-body-sm text-[#475569]">Displaying verified candidate payment &amp; diagnostic readiness parameters.</p>
+</div>
+<div class="relative w-72">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#475569]">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</span>
+<input class="w-full h-11 pl-9 pr-3 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A]" placeholder="Filter enrolled candidates..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-label-sm font-label-sm text-[#475569] uppercase">
+<th class="py-3 px-4">Candidate</th>
+<th class="py-3 px-4">Registration Date</th>
+<th class="py-3 px-4">Paystack Ref</th>
+<th class="py-3 px-4">Attendance Rate</th>
+<th class="py-3 px-4">Readiness Index</th>
+<th class="py-3 px-4 text-right">Dossier</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm">
+<tr>
+<td class="py-3 px-4 font-medium text-[#0F172A]">Bayo Adesanya</td>
+<td class="py-3 px-4 text-[#475569]">18 Sep 2026</td>
+<td class="py-3 px-4">
+<span class="font-mono text-label-sm text-[#475569]">PST_992••••41</span>
+<button class="ml-2 text-[12px] text-[#1D4ED8] hover:underline font-medium" type="button">Reveal</button>
+</td>
+<td class="py-3 px-4 text-[#047857] font-medium">100% (4/4 Sessions)</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 text-[12px] font-medium text-[#047857] bg-[#ECFDF5] px-2 py-0.5 rounded border border-[#047857]">
+                          84% Prepared
+                        </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-medium" type="button">Inspect</button>
+</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-medium text-[#0F172A]">Oluwaseun Bakare</td>
+<td class="py-3 px-4 text-[#475569]">20 Sep 2026</td>
+<td class="py-3 px-4">
+<span class="font-mono text-label-sm text-[#475569]">PST_481••••19</span>
+<button class="ml-2 text-[12px] text-[#1D4ED8] hover:underline font-medium" type="button">Reveal</button>
+</td>
+<td class="py-3 px-4 text-[#047857] font-medium">100% (4/4 Sessions)</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 text-[12px] font-medium text-[#1D4ED8] bg-[#EFF6FF] px-2 py-0.5 rounded border border-[#1D4ED8]">
+                          78% Prepared
+                        </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-medium" type="button">Inspect</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VIEW 4: COHORT DETAIL: CLOSED & ARCHIVED (CRISC COHORT 05) -->
+<!-- ========================================================================= -->
+<section class="space-y-6 view-section hidden" id="archived-view">
+<!-- Read-only Archival Notice Banner -->
+<div class="bg-[#F8FAFC] border-2 border-[#CBD5E1] p-6 rounded-xl space-y-3">
+<div class="flex items-center gap-2 text-[#0F172A]">
+<span class="material-symbols-outlined text-[24px] text-[#64748B]">archive</span>
+<h2 class="text-headline-md font-headline-md font-bold">CRISC Cohort 05 (Completed 28 Aug 2026)</h2>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#475569] border border-[#64748B]">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                Closed &amp; Archived
+              </span>
+</div>
+<p class="text-body-sm font-body-sm text-[#475569]">
+              This cohort completed on 28 Aug 2026. Roster and attendance records are archived and cryptographically verified. No new enrolments or modifications permitted.
+            </p>
+</div>
+<!-- Archival Statistics -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm text-[#475569]">Candidates Graduated</span>
+<div class="text-display font-display text-[#0F172A] mt-2">40</div>
+<div class="text-[12px] text-[#047857] mt-1 font-medium">100% Full Attendance</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm text-[#475569]">Pass Rate Benchmark</span>
+<div class="text-display font-display text-[#047857] mt-2">92.5%</div>
+<div class="text-[12px] text-[#475569] mt-1">37 of 40 cleared CRISC mock threshold</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm text-[#475569]">Certificates Issued</span>
+<div class="text-display font-display text-[#0F172A] mt-2">40</div>
+<div class="text-[12px] text-[#0F172A] mt-1">Issued with Digital Verification Hash</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm text-[#475569]">Compliance Dossier</span>
+<div class="text-headline-md font-headline-md text-[#1D4ED8] mt-3">Verified</div>
+<div class="mt-1">
+<a class="text-[12px] text-[#1D4ED8] underline font-medium hover:text-[#0B1320]" href="#audit-log">
+                  View audit dossier &amp; logs
+                </a>
+</div>
+</div>
+</div>
+<!-- Archival Audit Summary -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm p-6">
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A] mb-2">Archival Governance Metadata</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-body-sm font-body-sm text-[#475569] border-t border-[#E2E8F0] pt-4">
+<div>
+<p><strong class="text-[#0F172A]">Terminal Session Sign-Off:</strong> Olumide Adeyemi (Operations Manager)</p>
+<p class="mt-1"><strong class="text-[#0F172A]">Archival Timestamp:</strong> 28 Aug 2026 23:59:59 WAT</p>
+<p class="mt-1"><strong class="text-[#0F172A]">Faculty Lead:</strong> Babatunde Lawal (CISM / CRISC Fellow)</p>
+</div>
+<div>
+<p><strong class="text-[#0F172A]">Settlement Ledger Status:</strong> Reconciled (₦12,000,000 via Paystack)</p>
+<p class="mt-1"><strong class="text-[#0F172A]">ISACA Exam Voucher Claim:</strong> 39 of 40 activated</p>
+<p class="mt-1"><strong class="text-[#0F172A]">Storage State:</strong> Immutable Audit State</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- FOOTER (Institutional Dossier Shared Component) -->
+<footer class="w-full px-8 py-6 bg-primary-container text-on-primary-container border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm mt-12">
+<div class="flex flex-col md:flex-row items-center gap-3 text-center md:text-left">
+<span class="text-surface-container-lowest font-bold text-body-md font-body-md">A.J. Silicon</span>
+<span class="hidden md:inline text-outline">|</span>
+<p class="text-[13px] text-on-primary-container">
+            © 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.
+          </p>
+</div>
+<nav class="flex flex-wrap items-center justify-center gap-6 text-[13px]">
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#compliance">DRM Compliance Policy</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#zerotrust">Zero-Trust Verification</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#sessionlog">Candidate Session Hash Log</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#telemetry">Integrity Telemetry Docs</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="#secops">SecOps Oversight</a>
+</nav>
+</footer>
+</main>
+</div>
+<!-- CONFIRMATION MODAL: CLOSE & LOCK COHORT -->
+<div class="fixed inset-0 z-50 bg-[#0B1320]/70 flex items-center justify-center p-4 hidden" id="lock-modal">
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-xl max-w-lg w-full p-6 space-y-4">
+<div class="flex items-center gap-3 text-[#B91C1C]">
+<span class="material-symbols-outlined text-[28px]">warning</span>
+<h3 class="text-headline-md font-headline-md font-bold">Lock Roster &amp; Close Cohort</h3>
+</div>
+<p class="text-body-sm font-body-sm text-[#475569]">
+        This destructive action will terminate registration for <strong class="text-[#0F172A]">CISA Cohort 14</strong>, expire open waitlist payment links, and lock all 45 enrolled candidate records into immutable audit status.
+      </p>
+<div>
+<label class="block text-label-md font-label-md text-[#0F172A] mb-1" for="close-reason">
+          Mandatory Governance Justification <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-3 bg-white border border-[#64748B] rounded-md text-body-sm font-body-sm text-[#0F172A] focus:border-[#2563EB]" id="close-reason" placeholder="Provide operational reason for cohort termination or pre-schedule lock..." rows="3"></textarea>
+</div>
+<div class="flex justify-end gap-3 pt-3 border-t border-[#E2E8F0]">
+<button class="min-h-[44px] px-5 rounded border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] text-label-md font-label-md transition-colors" onclick="closeLockModal()" type="button">
+          Cancel
+        </button>
+<button class="min-h-[44px] px-6 bg-[#B91C1C] text-white hover:bg-[#991B1B] rounded text-label-md font-label-md transition-colors font-medium" onclick="closeLockModal(); switchTab('archived-view');" type="button">
+          Confirm Lock &amp; Archive
+        </button>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE SWITCHER LOGIC -->
+<script>
+    function switchTab(viewId) {
+      // Hide all view sections
+      document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+      
+      // Show selected section
+      const target = document.getElementById(viewId);
+      if (target) {
+        target.classList.remove('hidden');
+      }
+
+      // Reset tabs styling
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-[#0B1320]', 'text-white');
+        btn.classList.add('text-[#475569]');
+      });
+
+      // Highlight active switcher button
+      if (viewId === 'table-view') {
+        const btn = document.getElementById('btn-tab-table');
+        btn.classList.add('bg-[#0B1320]', 'text-white');
+        btn.classList.remove('text-[#475569]');
+      } else if (viewId === 'new-cohort-view') {
+        const btn = document.getElementById('btn-tab-form');
+        btn.classList.add('bg-[#0B1320]', 'text-white');
+        btn.classList.remove('text-[#475569]');
+      } else if (viewId === 'waitlist-view') {
+        const btn = document.getElementById('btn-tab-waitlist');
+        btn.classList.add('bg-[#0B1320]', 'text-white');
+        btn.classList.remove('text-[#475569]');
+      } else if (viewId === 'archived-view') {
+        const btn = document.getElementById('btn-tab-archived');
+        btn.classList.add('bg-[#0B1320]', 'text-white');
+        btn.classList.remove('text-[#475569]');
+      }
+    }
+
+    function openLockModal() {
+      document.getElementById('lock-modal').classList.remove('hidden');
+    }
+
+    function closeLockModal() {
+      document.getElementById('lock-modal').classList.add('hidden');
+    }
+  </script>
+</body></html>

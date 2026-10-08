@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Platform Specification - 25 Payment methods and subscriptions</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-slate-tech": "#1E293B",
+            "surface-container-low": "#eff4ff",
+            "inverse-on-surface": "#ebf1ff",
+            "tertiary-container": "#2f1500",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "primary": "#000000",
+            "surface-bright": "#f8f9ff",
+            "on-primary-fixed-variant": "#39475f",
+            "surface-dim": "#ccdbf4",
+            "surface-container-high": "#dde9ff",
+            "on-primary-fixed": "#0d1c32",
+            "pedigree-amber-light": "#F59E0B",
+            "on-tertiary-fixed": "#2f1500",
+            "secondary": "#006c49",
+            "surface-canvas": "#F8FAFC",
+            "surface-navy-dark": "#0F172A",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#76849f",
+            "surface-container-highest": "#d5e3fd",
+            "outline": "#75777e",
+            "on-tertiary": "#ffffff",
+            "surface-card": "#FFFFFF",
+            "primary-container": "#0d1c32",
+            "on-secondary-fixed-variant": "#005236",
+            "on-surface-variant": "#44474d",
+            "on-secondary-container": "#00714d",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#c76c00",
+            "secondary-container": "#6cf8bb",
+            "border-hairline": "#CBD5E1",
+            "tertiary": "#000000",
+            "secondary-fixed-dim": "#4edea3",
+            "background": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "outline-variant": "#c5c6cd",
+            "surface-tint": "#515f78",
+            "surface-variant": "#d5e3fd",
+            "on-background": "#0d1c2f",
+            "inverse-primary": "#b9c7e4",
+            "border-structural": "#E2E8F0",
+            "primary-fixed-dim": "#b9c7e4",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e6eeff",
+            "secondary-fixed": "#6ffbbe",
+            "primary-fixed": "#d6e3ff",
+            "tertiary-fixed": "#ffdcc3",
+            "on-error": "#ffffff",
+            "audit-pass-mint": "#059669",
+            "surface": "#f8f9ff",
+            "inverse-surface": "#233144",
+            "on-surface": "#0d1c2f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.75rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "space-md": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter", "sans-serif"],
+            "display-hero": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "telemetry-data": ["Inter", "monospace"],
+            "label-md": ["Inter", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "display-hero-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }],
+            "display-hero": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "telemetry-data": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "500" }],
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-hero-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }],
+            "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.625rem", "fontWeight": "600" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Brand custom exact tokens as specified */
+    .bg-brand-navy { background-color: #0B1320; }
+    .text-brand-navy { color: #0B1320; }
+    .border-brand-navy { border-color: #0B1320; }
+    
+    .bg-brand-slate { background-color: #F8FAFC; }
+    .text-brand-slate { color: #0F172A; }
+    .text-brand-muted { color: #475569; }
+    .border-card { border-color: #E2E8F0; }
+    .border-field { border-color: #64748B; }
+
+    /* Success / Danger / Warning / Info tokens */
+    .bg-badge-success { background-color: #ECFDF5; }
+    .text-badge-success { color: #047857; }
+    .border-badge-success { border-color: #A7F3D0; }
+
+    .bg-badge-danger { background-color: #FEF2F2; }
+    .text-badge-danger { color: #B91C1C; }
+    .border-badge-danger { border-color: #FECACA; }
+
+    .bg-badge-warning { background-color: #FFFBEB; }
+    .text-badge-warning { color: #B45309; }
+    .border-badge-warning { border-color: #FDE68A; }
+
+    .bg-badge-info { background-color: #EFF6FF; }
+    .text-badge-info { color: #1D4ED8; }
+    .border-badge-info { border-color: #BFDBFE; }
+
+    /* Links & focus */
+    .link-primary { color: #1D4ED8; }
+    .link-primary:hover { text-decoration: underline; }
+    .link-on-dark { color: #93C5FD; }
+    .focus-ring-primary:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-brand-slate font-body-md antialiased p-6 md:p-12 space-y-16">
+<!-- ========================================== -->
+<!-- PLATFORM SPECIFICATION HEADER              -->
+<!-- ========================================== -->
+<header class="max-w-[1440px] mx-auto bg-white border border-card p-8 rounded-xl shadow-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-card pb-6">
+<div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 text-xs font-semibold rounded bg-badge-info text-badge-info border border-badge-info uppercase tracking-wider font-label-sm">Specification Sheet</span>
+<span class="text-xs text-brand-muted font-telemetry-data">REF: AJ-SPEC-2026-SUB25</span>
+</div>
+<h1 class="text-2xl md:text-3xl font-bold font-headline-lg text-brand-navy mt-2">25 Payment methods and subscriptions</h1>
+<p class="text-sm md:text-base text-brand-muted font-body-sm mt-1">A.J. Silicon Learning Platform • Lagos, Nigeria • Candidate Portal</p>
+</div>
+<div class="bg-slate-50 border border-card rounded-lg p-3 text-xs font-telemetry-data text-brand-muted space-y-1">
+<div><strong>Student:</strong> Chinedu Eze (Cohort 14 Virtual)</div>
+<div><strong>Program:</strong> CISA Exam Prep (12 Oct 2026 – 18 Dec 2026)</div>
+<div><strong>Currency &amp; Time:</strong> NGN (₦) • West Africa Time (WAT)</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-6 pt-2 text-xs font-label-md text-brand-muted">
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>State 1: Active Desktop</div>
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-slate-400"></span>State 2: No Cards Desktop</div>
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span>State 3: Past-Due Desktop</div>
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span>State 4: Cancel Dialog Desktop</div>
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span>State 5: Mobile 390px Viewport</div>
+</div>
+</header>
+<!-- ============================================================== -->
+<!-- STATE 1: ACTIVE SUBSCRIPTION (DESKTOP 1440PX)                  -->
+<!-- ============================================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold font-headline-sm text-brand-navy flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-brand-navy text-white text-xs font-bold">1</span>
+        State 1: Active Subscription (Desktop 1440px)
+      </h2>
+<span class="text-xs font-telemetry-data text-brand-muted">Viewport: 1440px × 880px • Standard Operational View</span>
+</div>
+<!-- 1440px Viewport Container -->
+<div class="w-full bg-white border border-card rounded-xl overflow-hidden shadow-sm flex flex-col min-h-[820px]">
+<!-- Top Bar: Navy (#0B1320) -->
+<nav class="bg-brand-navy h-16 px-6 flex items-center justify-between border-b border-slate-800 text-white select-none">
+<div class="flex items-center gap-6">
+<!-- Logo plate -->
+<div class="bg-white px-3 py-1.5 rounded-lg flex items-center shadow-sm">
+<img alt="A.J. Silicon Academy" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9qP9DKKJfK5vu4t8TRvTrUJUAP65tJO_KyI7NI-b7yoJfSGM3YhCnQc8zTMLIyLH3zR2kSZyJdU9Smc5f4x4l_kJKBnHNX1Am1-PXHP1oIfbbr5UdByRG9wGKXzjKd4uuJSp-_2eBdkkJIub5daUqhMEituxXh7ldWCe6Y3IT_mow7UeVfzCtbS5FpjUovJPiQlT2qvXnLlV1f53W7VUePDxmt6KGI3hOBgZWNnxYdyly5HPLNOvkrlVQnE6Rphyyb1Q"/>
+</div>
+<span class="text-slate-400 text-sm font-label-md hidden md:inline">|</span>
+<span class="text-sm font-semibold text-slate-200 tracking-tight hidden md:inline font-headline-sm">Learning Platform</span>
+</div>
+<!-- User Metadata (Chinedu Eze) -->
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<div class="text-sm font-semibold text-white leading-tight font-title-md">Chinedu Eze</div>
+<div class="text-xs text-slate-400 font-telemetry-data">CISA Cohort 14 • Candidate</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200 font-semibold text-sm">
+            CE
+          </div>
+</div>
+</nav>
+<!-- Shell Body: Left Nav + Content Canvas -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Left Sidebar Navigation -->
+<aside class="w-64 bg-slate-50 border-r border-card flex flex-col justify-between p-4 flex-shrink-0">
+<div class="space-y-1">
+<div class="px-3 py-2 text-xs font-semibold text-brand-muted tracking-wider uppercase font-label-sm">Candidate Hub</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-brand-slate hover:bg-slate-200 transition-colors font-body-sm min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-slate-500 text-xl" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-brand-slate hover:bg-slate-200 transition-colors font-body-sm min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-slate-500 text-xl" data-icon="menu_book">menu_book</span>
+<span>Modules</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-brand-slate hover:bg-slate-200 transition-colors font-body-sm min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-slate-500 text-xl" data-icon="assignment">assignment</span>
+<span>Practice Exams</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-brand-slate hover:bg-slate-200 transition-colors font-body-sm min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-slate-500 text-xl" data-icon="timer">timer</span>
+<span>Extend Access</span>
+</a>
+<!-- Active Settings Branch -->
+<div class="pt-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold bg-white border border-card text-brand-navy shadow-xs font-title-md min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-brand-navy text-xl" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<div class="ml-9 mt-1 space-y-1 border-l-2 border-slate-300 pl-2">
+<a class="block py-2 text-sm text-brand-muted hover:text-brand-navy font-body-sm" href="#">Profile &amp; Credentials</a>
+<a class="block py-2 text-sm font-semibold text-brand-navy font-title-md" href="#">Payment methods</a>
+<a class="block py-2 text-sm text-brand-muted hover:text-brand-navy font-body-sm" href="#">Invoices &amp; Receipts</a>
+</div>
+</div>
+</div>
+<div class="border-t border-card pt-3">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-red-600 hover:bg-red-50 transition-colors font-body-sm min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-red-500 text-xl" data-icon="logout">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 bg-surface-canvas p-8 overflow-y-auto">
+<div class="max-w-4xl mx-auto space-y-8">
+<!-- Breadcrumb & Header -->
+<div>
+<div class="flex items-center gap-2 text-xs font-label-md text-brand-muted mb-2">
+<a class="hover:underline" href="#">Settings</a>
+<span>/</span>
+<span class="text-brand-slate font-semibold">Payment methods &amp; subscriptions</span>
+</div>
+<h2 class="text-2xl font-bold font-headline-md text-brand-navy">Payment methods &amp; subscriptions</h2>
+<p class="text-sm font-body-sm text-brand-muted mt-1">Manage saved recurring billing cards and candidate supplementary review memberships.</p>
+</div>
+<!-- Mandatory Helper Callout: Subscriptions are billed by card only -->
+<div class="bg-badge-info border border-badge-info rounded-xl p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-badge-info text-xl flex-shrink-0 mt-0.5" data-icon="info">info</span>
+<div>
+<p class="text-sm font-semibold text-badge-info font-title-md">Subscriptions are billed by card only.</p>
+<p class="text-xs font-body-sm text-slate-700 mt-0.5">Automated monthly renewals require an authorized tokenized debit or credit card. Bank transfers are accepted for Cohort tuition only.</p>
+</div>
+</div>
+<!-- SECTION 1: Saved Cards -->
+<div class="bg-white border border-card rounded-xl p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-card gap-4">
+<div>
+<h3 class="text-base font-bold font-title-md text-brand-navy">Saved cards</h3>
+<p class="text-xs font-body-sm text-brand-muted">Used for monthly subscription cycles and automated mock-exam extensions.</p>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded text-sm font-semibold bg-brand-navy text-white hover:bg-slate-800 transition-colors min-h-[44px] focus-ring-primary font-label-md shadow-xs">
+<span class="material-symbols-outlined text-base" data-icon="add">add</span>
+<span>Add a card</span>
+</button>
+</div>
+<!-- Card List -->
+<div class="divide-y divide-card">
+<!-- Card 1: Default Mastercard -->
+<div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 rounded border border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold text-slate-700 font-telemetry-data">
+                      MC
+                    </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-brand-slate font-title-md">Mastercard ending in 4242</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-300 font-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+                          Default
+                        </span>
+</div>
+<div class="text-xs text-brand-muted font-body-sm mt-0.5">Expires 08/28 • Added 14 Sep 2026</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center justify-center px-3 py-2 text-xs font-medium text-red-600 hover:bg-red-50 rounded min-h-[44px] transition-colors font-label-md">
+                      Remove
+                    </button>
+</div>
+</div>
+<!-- Card 2: Secondary Visa -->
+<div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 rounded border border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold text-blue-900 font-telemetry-data">
+                      VISA
+                    </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-brand-slate font-title-md">Visa ending in 1099</span>
+</div>
+<div class="text-xs text-brand-muted font-body-sm mt-0.5">Expires 11/27 • Backup card</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-xs font-medium link-primary min-h-[44px] px-2 flex items-center font-label-md">
+                      Set as default
+                    </button>
+<span class="text-slate-300">|</span>
+<button class="inline-flex items-center justify-center px-3 py-2 text-xs font-medium text-red-600 hover:bg-red-50 rounded min-h-[44px] transition-colors font-label-md">
+                      Remove
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Active Subscriptions -->
+<div class="bg-white border border-card rounded-xl p-6 shadow-sm">
+<div class="pb-5 border-b border-card">
+<h3 class="text-base font-bold font-title-md text-brand-navy">Active subscriptions</h3>
+<p class="text-xs font-body-sm text-brand-muted">Supplemental study tools and extended question pools billed on a recurring basis.</p>
+</div>
+<!-- Subscription Item Card -->
+<div class="mt-5 border border-card rounded-xl p-5 bg-slate-50">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<h4 class="text-lg font-bold text-brand-navy font-headline-sm">CISA Practice Plus</h4>
+<!-- Status Badge: Active with check icon -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-semibold bg-badge-success text-badge-success border border-badge-success font-label-sm">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check_circle">check_circle</span>
+                        Active
+                      </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+<div>
+<div class="text-brand-muted font-body-sm">Billing Amount</div>
+<div class="text-sm font-semibold text-brand-slate font-title-md mt-0.5">₦15,000 / month</div>
+</div>
+<div>
+<div class="text-brand-muted font-body-sm">Next Charge Date</div>
+<div class="text-sm font-semibold text-brand-slate font-title-md mt-0.5">05 Nov 2026</div>
+</div>
+<div>
+<div class="text-brand-muted font-body-sm">Payment Method</div>
+<div class="text-sm font-semibold text-brand-slate font-title-md mt-0.5">Mastercard ending in 4242</div>
+</div>
+</div>
+<p class="text-xs text-brand-muted font-body-sm">
+                      Includes 1,200+ ISACA Domain 1–5 adaptive question bank, full timed mock exams, and forensic answer walkthroughs.
+                    </p>
+</div>
+<!-- Actions -->
+<div class="flex md:flex-col items-end justify-between md:justify-start gap-2 pt-2 md:pt-0">
+<button class="inline-flex items-center justify-center px-4 py-2 border border-slate-300 text-slate-700 hover:bg-slate-100 hover:border-slate-400 rounded text-xs font-semibold transition-colors min-h-[44px] font-label-md">
+                      Cancel subscription
+                    </button>
+<span class="text-[11px] text-brand-muted font-telemetry-data">Renews at 00:00 WAT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PAYSTACK INTEGRATION MODAL PREVIEW (Component Spec) -->
+<div class="bg-slate-50 border border-dashed border-slate-300 rounded-xl p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-600 font-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="credit_card">credit_card</span>
+                  Modal Component Specification: Paystack Card Form
+                </span>
+<span class="text-xs font-telemetry-data text-brand-muted">Triggered by "Add a card" CTA</span>
+</div>
+<!-- Paystack Modal Box -->
+<div class="max-w-md mx-auto bg-white border border-card rounded-xl p-6 shadow-md">
+<div class="flex items-center justify-between pb-4 border-b border-card">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="text-sm font-bold text-brand-navy font-title-md">Add Debit or Credit Card</span>
+</div>
+<span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-label-sm">Secured by Paystack</span>
+</div>
+<div class="mt-4 space-y-4">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1 font-label-md">Card number</label>
+<div class="relative">
+<input class="w-full text-xs font-telemetry-data bg-slate-50 border border-field rounded px-3 py-2.5 text-slate-500 min-h-[44px]" readonly="" type="text" value="•••• •••• •••• ••••"/>
+<span class="absolute right-3 top-3 text-xs text-slate-400 font-semibold font-label-sm">CARD</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1 font-label-md">Expiry date</label>
+<input class="w-full text-xs font-telemetry-data bg-slate-50 border border-field rounded px-3 py-2.5 text-slate-500 min-h-[44px]" readonly="" type="text" value="MM / YY"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1 font-label-md">CVV</label>
+<input class="w-full text-xs font-telemetry-data bg-slate-50 border border-field rounded px-3 py-2.5 text-slate-500 min-h-[44px]" readonly="" type="text" value="•••"/>
+</div>
+</div>
+<p class="text-[11px] text-brand-muted leading-relaxed font-body-sm">
+                    A temporary charge of ₦100 may be processed to verify your card details and refunded immediately.
+                  </p>
+<div class="pt-2 flex items-center justify-end gap-3">
+<button class="px-3 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 min-h-[44px] font-label-md">Cancel</button>
+<button class="px-4 py-2.5 bg-brand-navy text-white text-xs font-semibold rounded hover:bg-slate-800 min-h-[44px] font-label-md">Authorize &amp; Save Card</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- STATE 2: NO CARDS SAVED (DESKTOP 1440PX)                       -->
+<!-- ============================================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold font-headline-sm text-brand-navy flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-brand-navy text-white text-xs font-bold">2</span>
+        State 2: No Cards Saved (Desktop 1440px)
+      </h2>
+<span class="text-xs font-telemetry-data text-brand-muted">Empty State Flow</span>
+</div>
+<div class="w-full bg-white border border-card rounded-xl overflow-hidden shadow-sm flex flex-col">
+<!-- Minimalist Header Strip -->
+<div class="bg-brand-navy h-12 px-6 flex items-center justify-between text-white text-xs">
+<div class="flex items-center gap-3">
+<div class="bg-white px-2 py-0.5 rounded">
+<img alt="A.J. Silicon Academy" class="h-4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJLqz1iGPdqxbXksmQK9VYbar87dlGr-xGrxqE_7p3K2IOMLInbGy9C6D_Uc4pmyaHzUA3f6tVEMzvN5wJPuriZ1FkIlSvOZ72S-fE_BCOWeAkvb_UCFc6SA6kv4dcs2XapGL6_IjcqpjQQJ-rE0Z3r8LncXmonFSOF6WqklN3Qdo77jNXDvrTSsF4AbuSj5vZa9w-HlO29CC9O2_UX9KA4i6_D9Cwfj00QfqLB7rxQ1-xIwd6mMNxr_vhiXU9HdJfI_g"/>
+</div>
+<span class="text-slate-300 font-label-md">Settings / Payment methods</span>
+</div>
+<span class="text-slate-400 font-telemetry-data">Candidate: Chinedu Eze</span>
+</div>
+<div class="p-8 bg-surface-canvas space-y-6">
+<!-- Helper Callout -->
+<div class="bg-badge-info border border-badge-info rounded-xl p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-badge-info text-xl flex-shrink-0" data-icon="info">info</span>
+<div>
+<p class="text-sm font-semibold text-badge-info font-title-md">Subscriptions are billed by card only.</p>
+<p class="text-xs font-body-sm text-slate-700 mt-0.5">Add a debit or credit card to automate monthly renewals.</p>
+</div>
+</div>
+<!-- Saved cards: Clean Empty State -->
+<div class="bg-white border border-card rounded-xl p-8 text-center max-w-xl mx-auto space-y-4 my-6">
+<div class="w-14 h-14 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-3xl" data-icon="credit_card_off">credit_card_off</span>
+</div>
+<div>
+<h3 class="text-base font-bold font-title-md text-brand-navy">No payment methods saved yet</h3>
+<p class="text-xs font-body-sm text-brand-muted max-w-md mx-auto mt-1">
+              Add a debit or credit card to automate monthly renewals and subscribe to supplemental mock exams.
+            </p>
+</div>
+<div>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded text-sm font-semibold bg-brand-navy text-white hover:bg-slate-800 transition-colors min-h-[44px] font-label-md shadow-xs">
+<span class="material-symbols-outlined text-base" data-icon="add">add</span>
+<span>Add a card</span>
+</button>
+</div>
+</div>
+<!-- Subscriptions: Inactive Prompt -->
+<div class="bg-white border border-card rounded-xl p-6">
+<h3 class="text-base font-bold font-title-md text-brand-navy pb-3 border-b border-card">Active subscriptions</h3>
+<div class="p-6 text-center text-brand-muted text-xs font-body-sm space-y-2">
+<span class="material-symbols-outlined text-3xl text-slate-300" data-icon="folder_open">folder_open</span>
+<p>You have no active monthly subscriptions.</p>
+<a class="inline-flex items-center gap-1 font-semibold link-primary min-h-[44px] px-2 font-label-md" href="#">
+<span>Explore CISA Practice Plus question vaults</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- STATE 3: PAST-DUE SUBSCRIPTION (DESKTOP 1440PX)                -->
+<!-- ============================================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold font-headline-sm text-brand-navy flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-brand-navy text-white text-xs font-bold">3</span>
+        State 3: Past-Due Subscription (Desktop 1440px)
+      </h2>
+<span class="text-xs font-telemetry-data text-brand-muted">Grace Period &amp; Recovery Workflow</span>
+</div>
+<div class="w-full bg-white border border-card rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="bg-brand-navy h-12 px-6 flex items-center justify-between text-white text-xs">
+<div class="flex items-center gap-3">
+<div class="bg-white px-2 py-0.5 rounded">
+<img alt="A.J. Silicon Academy" class="h-4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfi8qQHFaCLBM_vOPzOM_R48qwO6JH_pHD8b1EE_7eDlbtq6uIuR346Plmx444vCXo0r1hQloddQ98mLmUojj-rWGWvv_OtsXfZEVUcGk-EykoYz4MMUgTn0fvPjwTDSdeLEZKbGcMSo-9Ro_pYU5DOz-xZ71VgrnoTMdejM5iTvCUJciDaXwZ_fk4QbK0n5C_cCc5U2cH31tQqDOq79OW5d1dqQKj9lNCauKExGmV2stOeaBOqZC-UC2MMDtNUZSp_gc"/>
+</div>
+<span class="text-slate-300 font-label-md">Settings / Payment methods</span>
+</div>
+<span class="text-slate-400 font-telemetry-data">Candidate: Chinedu Eze</span>
+</div>
+<div class="p-8 bg-surface-canvas space-y-6">
+<!-- Critical Past Due Banner -->
+<div class="bg-badge-danger border border-badge-danger rounded-xl p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-badge-danger text-2xl flex-shrink-0" data-icon="warning">warning</span>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-badge-danger font-title-md">Payment failed on 05 Oct 2026</h4>
+<p class="text-xs text-slate-800 font-body-sm mt-1">
+              Please update your card to avoid interruption to CISA Practice Plus mock exams and question vaults. Your grace period expires in 48 hours.
+            </p>
+</div>
+</div>
+<!-- Subscription Card with Past-Due Badging & Remediation -->
+<div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-xs">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+<div class="space-y-4 flex-1">
+<div class="flex items-center gap-3">
+<h3 class="text-lg font-bold text-brand-navy font-headline-sm">CISA Practice Plus</h3>
+<!-- Status Badge: Past due with alert icon -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-semibold bg-badge-danger text-badge-danger border border-badge-danger font-label-sm">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="error">error</span>
+                  Past due
+                </span>
+</div>
+<!-- Diagnostic telemetry table -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs bg-red-50/50 p-3 rounded-lg border border-red-100">
+<div>
+<div class="text-brand-muted font-body-sm">Unpaid Invoice</div>
+<div class="text-sm font-bold text-red-700 font-title-md mt-0.5">₦15,000 (Failed)</div>
+</div>
+<div>
+<div class="text-brand-muted font-body-sm">Attempted Date</div>
+<div class="text-sm font-semibold text-brand-slate font-title-md mt-0.5">05 Oct 2026</div>
+</div>
+<div>
+<div class="text-brand-muted font-body-sm">Card Declined</div>
+<div class="text-sm font-semibold text-red-700 font-title-md mt-0.5">Mastercard •••• 4242</div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-xs text-brand-muted font-body-sm">
+<span class="material-symbols-outlined text-base text-red-500" data-icon="credit_card_off">credit_card_off</span>
+<span>Declined reason: Insufficient funds or card restriction reported by issuer.</span>
+</div>
+</div>
+<!-- CTAs with strict min-h-[44px] -->
+<div class="flex flex-col sm:flex-row md:flex-col items-stretch gap-2.5 w-full md:w-48 pt-2 md:pt-0">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-navy text-white rounded font-semibold text-xs hover:bg-slate-800 transition-colors min-h-[44px] font-label-md focus-ring-primary shadow-xs">
+<span class="material-symbols-outlined text-base" data-icon="sync">sync</span>
+<span>Update card</span>
+</button>
+<button class="inline-flex items-center justify-center px-4 py-2 border border-card text-brand-muted hover:text-red-700 hover:bg-red-50 rounded text-xs font-semibold transition-colors min-h-[44px] font-label-md">
+                Cancel subscription
+              </button>
+</div>
+</div>
+</div>
+<!-- Note helper -->
+<div class="bg-badge-info border border-badge-info rounded-xl p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-badge-info text-xl flex-shrink-0" data-icon="info">info</span>
+<p class="text-xs font-body-sm text-slate-700">
+<strong>Subscriptions are billed by card only.</strong> Once a replacement card is authenticated, the system will re-attempt the outstanding ₦15,000 balance automatically.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- STATE 4: CANCEL CONFIRMATION DIALOG (DESKTOP 1440PX)           -->
+<!-- ============================================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold font-headline-sm text-brand-navy flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-brand-navy text-white text-xs font-bold">4</span>
+        State 4: Cancel Confirmation Dialog (Desktop 1440px)
+      </h2>
+<span class="text-xs font-telemetry-data text-brand-muted">Destructive Action Interstitial</span>
+</div>
+<!-- Viewport Container with Dimmed Backdrop Overlay -->
+<div class="relative w-full bg-surface-canvas border border-card rounded-xl overflow-hidden shadow-sm min-h-[620px] flex items-center justify-center p-6">
+<!-- Dimmed Background Content (Simulated Page under modal) -->
+<div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px] z-10 flex items-center justify-center p-4">
+<!-- Confirmation Modal -->
+<div class="bg-white border border-card rounded-xl max-w-lg w-full shadow-2xl p-6 sm:p-8 space-y-6 z-20">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-badge-danger flex items-center justify-center flex-shrink-0 text-badge-danger">
+<span class="material-symbols-outlined text-2xl" data-icon="warning">warning</span>
+</div>
+<div>
+<h3 class="text-lg font-bold font-headline-sm text-brand-navy">Cancel CISA Practice Plus?</h3>
+<p class="text-xs text-brand-muted font-body-sm mt-1">Review the consequences of ending your supplementary candidate tools.</p>
+</div>
+</div>
+<!-- Impact breakdown card -->
+<div class="bg-slate-50 border border-card rounded-lg p-4 space-y-3 text-xs">
+<div class="flex items-center justify-between border-b border-card pb-2">
+<span class="text-brand-muted font-body-sm">Current Plan</span>
+<span class="font-semibold text-brand-slate font-title-md">CISA Practice Plus (₦15,000/month)</span>
+</div>
+<div class="flex items-center justify-between border-b border-card pb-2">
+<span class="text-brand-muted font-body-sm">Access Retained Until</span>
+<span class="font-semibold text-brand-navy font-title-md">05 Nov 2026</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-brand-muted font-body-sm">Subsequent Billing</span>
+<span class="font-semibold text-badge-success font-title-md">Stops immediately</span>
+</div>
+</div>
+<p class="text-xs font-body-sm text-brand-muted leading-relaxed">
+            Your access continues until <strong>05 Nov 2026</strong>. After this date, your subscription will end and you will lose access to extra practice exam question pools and tutor explanations.
+          </p>
+<!-- Action Buttons with 44px min-touch target -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 pt-2">
+<button class="w-full sm:w-auto px-5 py-2.5 rounded border border-card text-brand-slate bg-white hover:bg-slate-100 font-semibold text-xs transition-colors min-h-[44px] font-label-md">
+              Keep subscription
+            </button>
+<button class="w-full sm:w-auto px-5 py-2.5 rounded bg-badge-danger text-badge-danger border border-badge-danger hover:bg-red-100 font-semibold text-xs transition-colors min-h-[44px] font-label-md focus-ring-primary">
+              Cancel subscription
+            </button>
+</div>
+</div>
+</div>
+<!-- Faint underlay elements purely to show background layering -->
+<div class="w-full max-w-3xl opacity-20 pointer-events-none space-y-4">
+<div class="h-8 bg-slate-300 rounded w-1/3"></div>
+<div class="h-32 bg-slate-300 rounded"></div>
+<div class="h-48 bg-slate-300 rounded"></div>
+</div>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- STATE 5: MOBILE VIEWPORT (390PX PLAIN FRAME)                   -->
+<!-- ============================================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold font-headline-sm text-brand-navy flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-brand-navy text-white text-xs font-bold">5</span>
+        State 5: Mobile Viewport (390px Plain Frame)
+      </h2>
+<span class="text-xs font-telemetry-data text-brand-muted">390px Width • No Status Bar • No Chrome</span>
+</div>
+<!-- Canvas Frame Container (Centered) -->
+<div class="flex justify-center p-4 bg-slate-200 rounded-xl">
+<!-- 390px Mobile Frame -->
+<div class="w-[390px] bg-white border border-slate-300 rounded-xl overflow-hidden shadow-lg flex flex-col font-body-sm">
+<!-- Mobile Header: Navy #0B1320 -->
+<header class="bg-brand-navy p-4 flex items-center justify-between border-b border-slate-800">
+<!-- Logo plate -->
+<div class="bg-white px-2.5 py-1 rounded flex items-center shadow-xs">
+<img alt="A.J. Silicon Academy" class="h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL6NRRp2S8J2VoJO-BOxzqNyQSJ1dMbNVABQzroCl1vSXBR4E6433aXgEJr1Un7a1a5fVC5h1YbjarJGczeToI49G-leJL-XbCSu9TCV9MRuJ1OjHLDtTm8ZFxHRCGU81tZD39NkUayAm-jFa7AMkAajI6I-MR42GcnbmWkZylIpGOk8n8YKd8EHpQL46wPD66ESJXfhsj5-YxKvODLTpuqV6EJwvP9KczRQpReQldRTwuJQQujdTG92z_ySAccUcqfPE"/>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-slate-300 font-telemetry-data">Chinedu Eze</span>
+<div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-white text-xs font-bold">
+              CE
+            </div>
+</div>
+</header>
+<!-- Mobile Content Body -->
+<div class="p-4 space-y-5 bg-surface-canvas flex-1 overflow-y-auto">
+<!-- Title & Subtext -->
+<div>
+<div class="text-[11px] text-brand-muted font-label-sm">Settings / Billing</div>
+<h3 class="text-lg font-bold font-headline-sm text-brand-navy">Payment methods &amp; subscriptions</h3>
+</div>
+<!-- Note: Subscriptions are billed by card only -->
+<div class="bg-badge-info border border-badge-info rounded-xl p-3.5 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-badge-info text-lg flex-shrink-0" data-icon="info">info</span>
+<p class="text-xs font-body-sm text-slate-800 leading-tight">
+<strong>Subscriptions are billed by card only.</strong> Automated monthly renewals require an active card.
+            </p>
+</div>
+<!-- Saved Cards Mobile Section -->
+<div class="bg-white border border-card rounded-xl p-4 shadow-xs space-y-4">
+<div class="flex items-center justify-between border-b border-card pb-3">
+<h4 class="text-sm font-bold font-title-md text-brand-navy">Saved cards</h4>
+<span class="text-xs text-brand-muted font-telemetry-data">1 Active</span>
+</div>
+<!-- Card item -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-7 rounded border border-slate-300 bg-slate-50 flex items-center justify-center text-[10px] font-bold text-slate-700 font-telemetry-data">
+                  MC
+                </div>
+<div>
+<div class="text-xs font-semibold text-brand-slate font-title-md flex items-center gap-1.5">
+<span>•••• 4242</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-300">Default</span>
+</div>
+<div class="text-[11px] text-brand-muted font-body-sm">Exp: 08/28</div>
+</div>
+</div>
+<!-- Remove button: 44px min touch target -->
+<button class="inline-flex items-center justify-center px-3 py-2 text-xs font-medium text-red-600 hover:bg-red-50 rounded min-h-[44px] font-label-md">
+                Remove
+              </button>
+</div>
+<!-- Add a card full-width 44px touch target -->
+<button class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded bg-brand-navy text-white text-xs font-semibold hover:bg-slate-800 transition-colors min-h-[44px] font-label-md shadow-xs">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>Add a card</span>
+</button>
+</div>
+<!-- Active Subscriptions Mobile Section -->
+<div class="bg-white border border-card rounded-xl p-4 shadow-xs space-y-4">
+<div class="flex items-center justify-between border-b border-card pb-3">
+<h4 class="text-sm font-bold font-title-md text-brand-navy">Active subscriptions</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-badge-success text-badge-success border border-badge-success">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                Active
+              </span>
+</div>
+<div class="space-y-2">
+<div class="text-base font-bold text-brand-navy font-headline-sm">CISA Practice Plus</div>
+<div class="text-xs text-brand-slate font-title-md font-semibold">₦15,000 <span class="text-brand-muted font-normal">/ month</span></div>
+<div class="pt-2 border-t border-card text-xs space-y-1.5">
+<div class="flex justify-between">
+<span class="text-brand-muted font-body-sm">Next charge</span>
+<span class="font-semibold text-brand-slate font-telemetry-data">05 Nov 2026</span>
+</div>
+<div class="flex justify-between">
+<span class="text-brand-muted font-body-sm">Billed to</span>
+<span class="font-semibold text-brand-slate font-telemetry-data">Mastercard ending in 4242</span>
+</div>
+</div>
+</div>
+<!-- Cancel action: 44px touch target -->
+<button class="w-full inline-flex items-center justify-center px-4 py-2.5 border border-slate-300 text-slate-700 hover:bg-slate-50 rounded text-xs font-semibold transition-colors min-h-[44px] font-label-md">
+              Cancel subscription
+            </button>
+</div>
+<!-- Compliance Footer info inside mobile -->
+<div class="text-center text-[11px] text-brand-muted pt-2 pb-4 font-telemetry-data">
+            A.J. Silicon Academy • Billed in Lagos, Nigeria (WAT)
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- INSTITUTIONAL FOOTER COMPONENT (FROM SHARED REPOSITORY)        -->
+<!-- ============================================================== -->
+<footer class="max-w-[1440px] mx-auto border-t border-card pt-8 pb-12 text-brand-muted text-xs font-body-sm">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<div>
+<div class="font-bold text-brand-navy text-sm font-title-md">A.J. Silicon Academy &amp; Enterprise Audit Platform</div>
+<p class="mt-1 text-slate-500 font-telemetry-data">
+          © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+        </p>
+</div>
+<div class="flex flex-wrap gap-4 text-xs font-label-md">
+<a class="hover:text-brand-navy transition-colors" href="#">Audit Protocol</a>
+<a class="hover:text-brand-navy transition-colors" href="#">Verification Registry</a>
+<a class="hover:text-brand-navy transition-colors" href="#">Public Ledger Key</a>
+<a class="hover:text-brand-navy transition-colors" href="#">Governance Standards</a>
+<a class="hover:text-brand-navy transition-colors" href="#">System Telemetry</a>
+</div>
+</div>
+</footer>
+</body></html>

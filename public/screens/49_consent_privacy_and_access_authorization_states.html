@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Specification Board: 49 Consent, Privacy &amp; Access Authorization States - A.J. Silicon</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#141c29",
+            "on-tertiary-fixed-variant": "#584231",
+            "tertiary": "#000000",
+            "surface-container-low": "#f2f3ff",
+            "on-error": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "primary-fixed-dim": "#bfc6d9",
+            "surface-container": "#eaedff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "error": "#ba1a1a",
+            "on-background": "#131b2e",
+            "on-secondary-fixed": "#001551",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#281809",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#fddcc4",
+            "on-primary-fixed": "#141c29",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-primary-container": "#7c8495",
+            "background": "#faf8ff",
+            "inverse-surface": "#283044",
+            "surface-variant": "#dae2fd",
+            "primary-fixed": "#dbe2f5",
+            "on-surface": "#131b2e",
+            "surface-tint": "#575f6e",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-dim": "#d2d9f4",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "secondary-container": "#4069f2",
+            "on-tertiary-container": "#997f6a",
+            "on-tertiary-fixed": "#281809",
+            "surface": "#faf8ff",
+            "secondary-fixed": "#dce1ff",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "inverse-primary": "#bfc6d9",
+            "inverse-on-surface": "#eef0ff",
+            "on-tertiary": "#ffffff",
+            "secondary": "#1d4ed8",
+            "outline-variant": "#c5c6cc",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-surface-variant": "#45474c",
+            "outline": "#75777c",
+            "surface-container-high": "#e2e7ff",
+            "primary": "#0B1320"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "2rem",
+            "space-xs": "0.5rem",
+            "space-sm": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "display": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #F1F5F9;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .focus-ring {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+<body class="p-6 md:p-10 space-y-16 max-w-[1520px] mx-auto bg-slate-100">
+<!-- ==========================================
+       SPECIFICATION BOARD HEADER
+       ========================================== -->
+<header class="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pb-6 border-b border-[#E2E8F0]">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>NDPA 2023 &amp; SOC 2 TYPE II COMPLIANCE SPECIFICATION</span>
+</div>
+<h1 class="font-display text-display text-[#0B1320] tracking-tight">Specification Board: 49 Consent, Privacy &amp; Access Authorization States</h1>
+<p class="font-body-md text-body-md text-[#475569] mt-2 max-w-4xl">
+          Standardized interaction states for the A.J. Silicon Enterprise Learning Platform (Lagos, Nigeria). Built to satisfy statutory requirements of the Nigeria Data Protection Act (NDPA 2023), NDPC operational guidelines, and ISACA-accredited RBAC protocols.
+        </p>
+</div>
+<!-- Institution Reference Card -->
+<div class="flex items-center gap-4 bg-[#F8FAFC] border border-[#E2E8F0] p-4 rounded-lg shrink-0">
+<div class="bg-white px-3 py-1.5 rounded border border-[#CBD5E1] shadow-xs flex items-center justify-center">
+<img alt="A.J. Silicon Official Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtqJrD-gaivUadXUZGO4lvILSSJBQXxzQC9eVdvz8-y_UfqdeeZXA6xx_O1adcUjS6YGvPVwsKdn3Ao4EahquTgO6DkNWhNEqPMSGWG_Uz_PxT8_ghEIsUkLdn_iU-IqoMJQp6fBGkQsIANXYatkd08P2SHiELxAebs0gjYh-GMR6LbJnbr8GDz96Dfxotrg5SLPubgqE-9LQCOHj0dAUEr7A___iiR54w-TmdQuGd2HXlN3NePXm4fg"/>
+</div>
+<div class="text-left font-body-sm text-body-sm">
+<span class="block font-semibold text-[#0B1320]">A.J. Silicon Tech Ltd</span>
+<span class="text-[#64748B] text-xs">Victoria Island, Lagos · Nigeria</span>
+</div>
+</div>
+</div>
+<!-- Architectural Tokens Ledger -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 pt-6">
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0]">
+<span class="block text-xs uppercase tracking-wider font-semibold text-[#64748B]">Primary Frame</span>
+<span class="font-mono text-sm font-semibold text-[#0B1320]">#0B1320</span>
+</div>
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0]">
+<span class="block text-xs uppercase tracking-wider font-semibold text-[#64748B]">NDPA Notice Link</span>
+<span class="font-mono text-sm font-semibold text-[#1D4ED8]">#1D4ED8</span>
+</div>
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0]">
+<span class="block text-xs uppercase tracking-wider font-semibold text-[#64748B]">Touch Target Min</span>
+<span class="font-mono text-sm font-semibold text-[#0B1320]">44px × 44px</span>
+</div>
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0]">
+<span class="block text-xs uppercase tracking-wider font-semibold text-[#64748B]">Corner Radius</span>
+<span class="font-mono text-sm font-semibold text-[#0B1320]">12px Cards / 6px Btn</span>
+</div>
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0]">
+<span class="block text-xs uppercase tracking-wider font-semibold text-[#64748B]">Focus Ring</span>
+<span class="font-mono text-sm font-semibold text-[#2563EB]">2px / 2px Offset</span>
+</div>
+<div class="bg-[#F8FAFC] p-3 rounded border border-[#E2E8F0]">
+<span class="block text-xs uppercase tracking-wider font-semibold text-[#64748B]">Grid Standard</span>
+<span class="font-mono text-sm font-semibold text-[#0B1320]">8px Unit System</span>
+</div>
+</div>
+</header>
+<!-- =========================================================================
+       FRAME 1: Cookie & Privacy Consent Banner over Public Home Page
+       ========================================================================= -->
+<section class="space-y-4">
+<!-- Frame Header & Spec Legend -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#0B1320] text-white text-xs font-semibold">01</span>
+<h2 class="font-headline-lg text-headline-lg text-[#0B1320]">FRAME 1: Cookie &amp; Privacy Consent Banner over Public Home Page</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white border border-[#E2E8F0] text-xs font-medium text-[#475569]">
+<span class="w-2 h-2 rounded-full bg-[#047857]"></span> Statutory Active State · Desktop 1440px Viewport
+      </span>
+</div>
+<!-- Viewport Container (Simulated Browser Frame) -->
+<div class="relative bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-md max-w-[1440px] mx-auto min-h-[720px] flex flex-col justify-between">
+<!-- Public Header Navigation Bar -->
+<nav class="w-full bg-[#0B1320] px-8 h-16 flex items-center justify-between border-b border-[#1E293B] shrink-0 z-10">
+<div class="flex items-center gap-8">
+<!-- Institutional Logo Plate -->
+<div class="bg-white h-10 px-3 rounded flex items-center justify-center shadow-xs">
+<img alt="A.J. Silicon Official Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvg6JuNu0sXU-8sFWYVAFhG799MErwqc1zZ31TYSj7Jm-XSlc_9vtpCOKTn4DqT-Iz0daOj_Iq7osVLUF-qJNvXJh5T3TDOFWedhY-0ffJnCjR9NlWNUVapQLIQBIe3DMsNdomGXxyGm3oN7W_KzRCdEhpJLP4HjwPHw_ZXowiDIdSl64sJqZn5BA0-47QD-8HdOGs4nAW0gVKKIISdVfqNvbozsz6Nq6_Eka4FOMBxqv7BEvcLV9C0Q"/>
+</div>
+<!-- Navigation Links -->
+<div class="hidden lg:flex items-center gap-6">
+<a class="font-label-md text-label-md text-[#F8FAFC] hover:text-[#93C5FD] transition-colors py-2" href="#">Programmes</a>
+<a class="font-label-md text-label-md text-[#94A3B8] hover:text-[#F8FAFC] transition-colors py-2" href="#">Accreditations</a>
+<a class="font-label-md text-label-md text-[#94A3B8] hover:text-[#F8FAFC] transition-colors py-2" href="#">Corporate Training</a>
+<a class="font-label-md text-label-md text-[#94A3B8] hover:text-[#F8FAFC] transition-colors py-2" href="#">Verification</a>
+<a class="font-label-md text-label-md text-[#94A3B8] hover:text-[#F8FAFC] transition-colors py-2" href="#">Contact</a>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="touch-target px-4 h-11 inline-flex items-center justify-center font-label-md text-label-md text-white hover:text-[#93C5FD] rounded" type="button">
+            Sign In
+          </button>
+<button class="touch-target px-5 h-11 inline-flex items-center justify-center font-label-md text-label-md font-medium bg-[#1D4ED8] hover:bg-[#1E40AF] text-white rounded transition-colors focus-ring" type="button">
+            Register Candidate
+          </button>
+</div>
+</nav>
+<!-- Public Content Canvas (Hero & Program Grid) -->
+<div class="p-8 lg:p-12 space-y-10 bg-[#FAFAFA] flex-1">
+<!-- Hero Section -->
+<div class="max-w-4xl space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">school</span>
+            ISACA ACCREDITED ELITE TRAINING ACADEMY · LAGOS CENTRE
+          </div>
+<h3 class="font-display text-display text-[#0B1320] leading-tight">
+            Institutional IT Audit, Cybersecurity &amp; Governance Certification
+          </h3>
+<p class="font-body-lg text-body-lg text-[#475569]">
+            Equipping enterprise audit leaders, risk executives, and compliance personnel across West Africa with rigorous ISACA aligned credentialing and practical telemetry testing.
+          </p>
+</div>
+<!-- Programmes Showcase Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+<!-- Card 1: CISA -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active Cohort
+                </span>
+<span class="font-mono text-xs text-[#64748B]">ISACA-CISA-04</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#0B1320]">CISA® Exam Preparation</h4>
+<p class="font-body-sm text-body-sm text-[#475569]">
+                Certified Information Systems Auditor. 5 enterprise domains including IT Governance, Asset Protection, and Audit Execution.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-[#0B1320]">12 Weeks Intensive</span>
+<span class="font-label-sm text-label-sm text-[#1D4ED8] font-medium flex items-center gap-1">Syllabus <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+</div>
+<!-- Card 2: CISM -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">info</span> Enrollment Open
+                </span>
+<span class="font-mono text-xs text-[#64748B]">ISACA-CISM-02</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#0B1320]">CISM® Security Leadership</h4>
+<p class="font-body-sm text-body-sm text-[#475569]">
+                Certified Information Security Manager. Strategic enterprise infosec governance, incident orchestration, and operational risk.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-[#0B1320]">10 Weeks Executive</span>
+<span class="font-label-sm text-label-sm text-[#1D4ED8] font-medium flex items-center gap-1">Syllabus <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+</div>
+<!-- Card 3: CRISC -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Starts Oct 2025
+                </span>
+<span class="font-mono text-xs text-[#64748B]">ISACA-CRISC-01</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#0B1320]">CRISC™ Risk &amp; Controls</h4>
+<p class="font-body-sm text-body-sm text-[#475569]">
+                Enterprise IT risk management, control implementation, continuous telemetry monitoring, and SOC compliance assurance.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-[#0B1320]">8 Weeks Weekend</span>
+<span class="font-label-sm text-label-sm text-[#1D4ED8] font-medium flex items-center gap-1">Syllabus <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Docked Cookie and Privacy Consent Banner (Docked Full Width at Bottom) -->
+<aside aria-label="Privacy and Cookie Consent Banner" class="w-full bg-white border-t border-[#E2E8F0] shadow-lg p-6 lg:p-8 z-20">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<!-- Banner Informational Text & NDPA Declaration -->
+<div class="space-y-3 max-w-4xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320]">shield_lock</span>
+<span class="font-headline-sm text-headline-sm text-[#0B1320]">Data Protection &amp; Cookie Compliance</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+                NDPA 2023 Regulated
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-[#0F172A] leading-relaxed">
+              We use essential cookies to operate our learning platform and analytics cookies to measure courseware access quality in compliance with the Nigeria Data Protection Act (NDPA 2023).
+            </p>
+<!-- Categorical Disclosures Directly on Banner -->
+<div class="flex flex-wrap items-center gap-4 pt-1">
+<div class="inline-flex items-center gap-2 text-xs font-medium text-[#475569] bg-[#F8FAFC] border border-[#E2E8F0] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span>
+<span><strong>1. Necessary Cookies:</strong> Always Active (Session authentication, anti-CSRF, portal security)</span>
+</div>
+<div class="inline-flex items-center gap-2 text-xs font-medium text-[#475569] bg-[#F8FAFC] border border-[#E2E8F0] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">query_stats</span>
+<span><strong>2. Analytics Cookies:</strong> Aggregated lecture delivery metrics &amp; latency profiling</span>
+</div>
+</div>
+</div>
+<!-- Banner Action Controls (All &ge; 44px min target) -->
+<div class="flex flex-wrap items-center gap-3 shrink-0 w-full sm:w-auto">
+<!-- Tertiary Link -->
+<a class="touch-target inline-flex items-center justify-center px-4 font-label-md text-label-md font-medium text-[#1D4ED8] hover:underline focus-ring rounded" href="#">
+              Privacy Notice
+            </a>
+<!-- Secondary Manage Button -->
+<button class="touch-target h-11 px-5 inline-flex items-center justify-center font-label-md text-label-md font-medium text-[#0F172A] bg-transparent hover:bg-[#F1F5F9] border border-[#64748B] rounded transition-colors focus-ring" type="button">
+              Manage
+            </button>
+<!-- Primary Accept Button -->
+<button class="touch-target h-11 px-6 inline-flex items-center justify-center font-label-md text-label-md font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded transition-colors focus-ring shadow-xs" type="button">
+              Accept
+            </button>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<!-- =========================================================================
+       FRAME 2: Cookie Preferences Dialog Modal over Public Home Page
+       ========================================================================= -->
+<section class="space-y-4">
+<!-- Frame Header & Spec Legend -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#0B1320] text-white text-xs font-semibold">02</span>
+<h2 class="font-headline-lg text-headline-lg text-[#0B1320]">FRAME 2: Cookie Preferences Dialog Modal over Public Home Page</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white border border-[#E2E8F0] text-xs font-medium text-[#475569]">
+<span class="w-2 h-2 rounded-full bg-[#1D4ED8]"></span> Scrim Modal State · NDPA Granular Consent UI
+      </span>
+</div>
+<!-- Viewport Container with Scrim Overlay -->
+<div class="relative bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-md max-w-[1440px] mx-auto min-h-[780px] flex items-center justify-center">
+<!-- Dimmed Background Backdrop Content (Static underlay) -->
+<div class="absolute inset-0 select-none pointer-events-none p-8 opacity-40 filter blur-[1px]">
+<nav class="w-full bg-[#0B1320] px-8 h-16 flex items-center justify-between rounded mb-8">
+<div class="bg-white h-10 px-3 rounded flex items-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACgOcatBAYu1niq7fs5ptahnL8-D3o2F-x18y_tvdr7UuwdTNZWeYA-L5R0DiBlNP_-tQ6hn6ns_ikgkpgXfdQOApHm6RUnskCDWbA_olzvFeA8qslJM5eqEe1eAObdanzFOuIJXe41pH006c5w1VmDqjyW0p0sCFhLdwLnD15efCb_7pxg-rrLjgb7tH_luIqqPDbRMJsTxEiC7U2TBBwaCU5-R0bKYqVKEUDLqS6nRMsn94Z65FzjQ"/>
+</div>
+<div class="flex gap-4 text-white text-sm">
+<span>Programmes</span>
+<span>Accreditations</span>
+<span>Corporate</span>
+</div>
+</nav>
+<div class="space-y-6">
+<h3 class="font-display text-display text-[#0B1320]">Institutional IT Audit, Cybersecurity &amp; Governance Certification</h3>
+<div class="grid grid-cols-3 gap-6">
+<div class="h-44 bg-slate-200 rounded-xl"></div>
+<div class="h-44 bg-slate-200 rounded-xl"></div>
+<div class="h-44 bg-slate-200 rounded-xl"></div>
+</div>
+</div>
+</div>
+<!-- Scrim Overlay Backdrop (#0F172A with deliberate opacity) -->
+<div class="absolute inset-0 bg-[#0F172A] bg-opacity-70 backdrop-blur-xs transition-opacity"></div>
+<!-- Centered Modal Dialog (Max-Width 640px, 12px Radius, #E2E8F0 Border) -->
+<div aria-labelledby="modal-title" aria-modal="true" class="relative bg-white border border-[#E2E8F0] rounded-xl max-w-[640px] w-full mx-4 shadow-xl z-30 overflow-hidden" role="dialog">
+<!-- Modal Header with Institutional Title & Close Button -->
+<div class="p-6 md:p-8 pb-4 flex items-start justify-between border-b border-[#E2E8F0]">
+<div class="space-y-1 pr-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320]">tune</span>
+<h3 class="font-headline-md text-headline-md text-[#0B1320]" id="modal-title">Cookie &amp; Privacy Preferences</h3>
+</div>
+<p class="font-body-sm text-body-sm text-[#475569] leading-relaxed">
+              Manage how A.J. Silicon handles data on your device in accordance with the Nigeria Data Protection Act (NDPA 2023).
+            </p>
+</div>
+<!-- Close Button (X) (44px min target) -->
+<button aria-label="Close preferences modal" class="touch-target w-11 h-11 inline-flex items-center justify-center rounded-lg text-[#64748B] hover:text-[#0B1320] hover:bg-[#F1F5F9] focus-ring transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body: Granular Category Selectors -->
+<div class="p-6 md:p-8 space-y-6 max-h-[60vh] overflow-y-auto">
+<!-- Category 1: Necessary Cookies (Locked / Disabled) -->
+<div class="border border-[#E2E8F0] bg-[#F8FAFC] rounded-lg p-5 space-y-3">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#047857]">lock</span>
+<span class="font-headline-sm text-headline-sm text-[#0B1320]">Necessary cookies</span>
+</div>
+<!-- Status Badge: Always Active with Lock Icon -->
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold bg-slate-200 text-[#475569] border border-slate-300">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                  Always active
+                </span>
+<!-- Disabled/Locked Toggle Switch -->
+<div class="w-12 h-6 bg-[#CBD5E1] rounded-full relative cursor-not-allowed opacity-80" title="Necessary cookies cannot be deactivated">
+<div class="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 shadow-xs flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-[#64748B]">check</span>
+</div>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-[#475569] leading-relaxed pl-8">
+              Essential for fundamental portal security, session integrity, CSRF protection, and student sign-in authentication. These cannot be disabled.
+            </p>
+</div>
+<!-- Category 2: Analytics Cookies (Interactive Accessible Toggle) -->
+<div class="border border-[#E2E8F0] bg-white rounded-lg p-5 space-y-3 hover:border-[#CBD5E1] transition-colors">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8]">analytics</span>
+<span class="font-headline-sm text-headline-sm text-[#0B1320]">Analytics cookies</span>
+</div>
+<!-- Interactive Accessible Toggle Switch (44px Touch Target Container) -->
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">toggle_on</span>
+                  Active
+                </span>
+<!-- 44x44px Clickable Container -->
+<button aria-checked="true" aria-label="Toggle analytics cookies" class="touch-target flex items-center justify-center p-1 rounded focus-ring" role="switch" type="button">
+<span class="w-12 h-6 bg-[#0B1320] rounded-full relative block transition-colors">
+<span class="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 shadow-sm block transition-transform"></span>
+</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-[#475569] leading-relaxed pl-8">
+              Collects aggregated, pseudonymous telemetry on lecture video buffering and page load times to enhance candidate experience.
+            </p>
+</div>
+<!-- Statutory Notice Callout Box -->
+<div class="p-3 bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[20px] shrink-0 mt-0.5">policy</span>
+<p class="text-xs text-[#1E3A8A] leading-normal">
+<strong>NDPA Statutory Notice:</strong> Consent can be revoked at any time via your candidate profile or the privacy ledger at the footer of this domain.
+            </p>
+</div>
+</div>
+<!-- Modal Action Footer -->
+<div class="p-6 md:p-8 pt-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-3">
+<!-- Secondary: Save Preferences -->
+<button class="touch-target h-11 w-full sm:w-auto px-6 inline-flex items-center justify-center font-label-md text-label-md font-medium text-[#0F172A] bg-white hover:bg-[#F1F5F9] border border-[#64748B] rounded transition-colors focus-ring" type="button">
+            Save preferences
+          </button>
+<!-- Primary: Accept All -->
+<button class="touch-target h-11 w-full sm:w-auto px-7 inline-flex items-center justify-center font-label-md text-label-md font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded transition-colors focus-ring shadow-xs" type="button">
+            Accept all
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       FRAME 3: Not Authorised (403) inside Staff Application Shell
+       Role: Support Agent (Read-only candidate support access)
+       ========================================================================= -->
+<section class="space-y-4">
+<!-- Frame Header & Spec Legend -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#0B1320] text-white text-xs font-semibold">03</span>
+<h2 class="font-headline-lg text-headline-lg text-[#0B1320]">FRAME 3: Not Authorised (403) inside Staff Application Shell</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white border border-[#E2E8F0] text-xs font-medium text-[#475569]">
+<span class="w-2 h-2 rounded-full bg-[#B91C1C]"></span> RBAC Exception State · Role: Support Agent
+      </span>
+</div>
+<!-- Complete Staff Portal Shell (Desktop 1440px Structure) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-md max-w-[1440px] mx-auto min-h-[760px] flex flex-col">
+<!-- Staff Top Shell Bar (#0B1320 with Logo on Clean Light Plate) -->
+<header class="w-full bg-[#0B1320] px-6 h-16 flex items-center justify-between border-b border-[#1E293B] shrink-0">
+<!-- Brand & Environment Identification -->
+<div class="flex items-center gap-6">
+<div class="bg-white h-10 px-3 rounded flex items-center justify-center shadow-xs">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkdW7Wzh2RLkF9--yMmOKRnPeNs8uLRiTuYJL6Hy9tx1rIPxApkudtU5M7Ex93usiSxO_xgphqiQ_Fyyr6a7s4IZD6UbXrIlgd5_x335Lp5NftI91p7t3tvHn5X3itpV81aSeItkgsxFIuCL8QoH-EZvi6YF06z72HeEo5sUSuIl_w3NssgWZnC-7UPomW7IwDa-hDcy2avDd4RioDwq9iMsf441O-CQYm4zXEVMwWh382f7bxgjr-6A"/>
+</div>
+<div class="hidden sm:flex items-center gap-2 pl-4 border-l border-[#334155]">
+<span class="material-symbols-outlined text-[#93C5FD] text-[18px]">terminal</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide text-[#E2E8F0]">Internal Operations Portal</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#1E293B] text-[#94A3B8] border border-[#334155]">PROD-NG-01</span>
+</div>
+</div>
+<!-- Staff Profile & Role Badge -->
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<div class="font-label-md text-label-md font-semibold text-white">Kelechi Nnamdi</div>
+<div class="flex items-center justify-end gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.2 rounded text-[11px] font-medium bg-[#1E293B] text-[#93C5FD] border border-[#334155]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#93C5FD]"></span> Support Agent
+              </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center text-white font-semibold text-sm">
+            KN
+          </div>
+</div>
+</header>
+<!-- Main Shell Body: Sidebar + Main Content Canvas -->
+<div class="flex flex-1">
+<!-- Left Staff Sidebar (Rail / Panel Navigation) -->
+<aside aria-label="Internal operations navigation" class="w-64 bg-[#F8FAFC] border-r border-[#E2E8F0] p-4 flex flex-col justify-between shrink-0 hidden md:flex">
+<div class="space-y-1">
+<span class="px-3 text-[11px] uppercase tracking-wider font-semibold text-[#64748B] block pb-2">Main Navigation</span>
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Candidate Roster</span>
+</a>
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span>Support Tickets</span>
+</a>
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">school</span>
+<span>Enrolments</span>
+</a>
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<span>Courseware Vault</span>
+</a>
+<!-- Prohibited / Active Target Area in Sidebar -->
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#FCA5A5] font-label-md text-label-md font-medium" href="#">
+<span class="material-symbols-outlined text-[#B91C1C]">lock_clock</span>
+<span>Finance &amp; Settlements</span>
+</a>
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">rule</span>
+<span>Audit Logs</span>
+</a>
+</div>
+<!-- Bottom Sidebar Items -->
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="touch-target flex items-center gap-3 px-3 py-2 rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0B1320] font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<div class="px-3 py-2 text-xs text-[#94A3B8]">
+              RBAC v2.4 · Nigeria Hub
+            </div>
+</div>
+</aside>
+<!-- Main Workspace Area -->
+<main class="flex-1 bg-[#FFFFFF] flex flex-col">
+<!-- Breadcrumb Navigation Bar -->
+<div class="px-8 py-3 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center text-xs font-medium text-[#64748B]">
+<span>Internal Operations</span>
+<span class="mx-2 text-[#CBD5E1]">/</span>
+<span class="text-[#0B1320] font-semibold">Finance &amp; Settlements</span>
+<span class="mx-2 text-[#CBD5E1]">/</span>
+<span class="text-[#B91C1C] font-mono">Authorization Exception (403)</span>
+</div>
+<!-- 403 Forbidden Canonical Viewport Container -->
+<div class="flex-1 p-8 lg:p-14 flex items-center justify-center">
+<!-- Standardized 403 Content Card (Max Width 640px, High Precision) -->
+<div class="max-w-xl w-full border border-[#E2E8F0] rounded-xl p-8 bg-white shadow-xs space-y-6 text-center sm:text-left">
+<!-- Warning Icon and Code Header -->
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+<div class="w-14 h-14 rounded-full bg-[#FEF2F2] border border-[#B91C1C] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#B91C1C] text-[30px]">gpp_maybe</span>
+</div>
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">error</span> HTTP 403 FORBIDDEN
+                  </div>
+<h3 class="font-headline-lg text-headline-lg text-[#0B1320]">Access not authorised (403)</h3>
+</div>
+</div>
+<!-- Explanation Sentence -->
+<p class="font-body-md text-body-md text-[#475569] leading-relaxed">
+                Your staff account does not have permission to view or manage payment settlement records.
+              </p>
+<!-- Permission Specification Box -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-5 space-y-3.5 text-left">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#E2E8F0]">
+<span class="text-xs uppercase tracking-wider font-semibold text-[#475569]">Required permission:</span>
+<!-- Monospace Code Token (#EFF6FF, text #1D4ED8, border #BFDBFE) -->
+<span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-[#EFF6FF] text-[#1D4ED8] border border-[#BFDBFE] inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">key</span> view:payments
+                  </span>
+</div>
+<div class="space-y-1">
+<span class="text-xs uppercase tracking-wider font-semibold text-[#475569]">Current role context:</span>
+<p class="font-body-sm text-body-sm text-[#0F172A] font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">badge</span>
+                    Assigned role: Support Agent (Read-only candidate support access)
+                  </p>
+</div>
+</div>
+<!-- Action Controls (44px Minimum Touch Targets) -->
+<div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+<!-- Primary Action: Request Access -->
+<button class="touch-target h-11 w-full sm:w-auto px-6 inline-flex items-center justify-center font-label-md text-label-md font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded transition-colors focus-ring shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px] mr-2">send</span>
+                  Request access
+                </button>
+<!-- Secondary Action: Return to Dashboard -->
+<button class="touch-target h-11 w-full sm:w-auto px-6 inline-flex items-center justify-center font-label-md text-label-md font-medium text-[#0F172A] bg-transparent hover:bg-[#F1F5F9] border border-[#64748B] rounded transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px] mr-2">arrow_back</span>
+                  Return to dashboard
+                </button>
+</div>
+<!-- Support Reference Footer -->
+<div class="pt-4 border-t border-[#E2E8F0] text-xs text-[#64748B] leading-relaxed">
+<span class="font-mono font-medium text-[#475569]">Reference: AJS-AUTH-403-PMT88</span> · For privilege elevation, contact your system administrator at <a class="text-[#1D4ED8] hover:underline font-medium" href="mailto:secops@ajsilicon.com">secops@ajsilicon.com</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       CANONICAL SPECIFICATION LEDGER & AUDIT TRAIL
+       ========================================================================= -->
+<footer class="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm space-y-6">
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-[#0B1320]">Design Compliance &amp; Verification Sign-off</h4>
+<p class="font-body-sm text-body-sm text-[#64748B] mt-1">
+          Cryptographically aligned with ISACA, NDPC Guidelines, and A.J. Silicon Academy Brand Standards (Version 2025.4.9).
+        </p>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[16px]">verified</span> STATUS: APPROVED FOR PRODUCTION
+        </span>
+</div>
+</div>
+<!-- Governance Links Array as Mandated by Canonical Footer Shared Component -->
+<div class="flex flex-wrap items-center justify-between gap-4 text-xs font-body-sm text-[#475569]">
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Audit Protocol</a>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Verification Registry</a>
+<a class="hover:text-[#1D4ED8] transition-colors font-mono" href="#">Public Ledger Key</a>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Governance Standards</a>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Ethics &amp; Compliance</a>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">System Telemetry</a>
+</div>
+<div class="font-mono text-[#64748B]">
+        © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+      </div>
+</div>
+</footer>
+</body></html>

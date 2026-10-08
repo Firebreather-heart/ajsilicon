@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon — 38 Progress &amp; Readiness Analytics Specification Board</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#dae2fd",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-surface": "#283044",
+            "tertiary": "#000000",
+            "surface-container": "#eaedff",
+            "on-tertiary-fixed-variant": "#584231",
+            "inverse-primary": "#bfc6d9",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "secondary": "#1d4ed8",
+            "primary-fixed": "#dbe2f5",
+            "background": "#faf8ff",
+            "primary-container": "#141c29",
+            "on-error-container": "#93000a",
+            "outline": "#75777c",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#001551",
+            "tertiary-container": "#281809",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "inverse-on-surface": "#eef0ff",
+            "primary": "#000000",
+            "surface-tint": "#575f6e",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#45474c",
+            "secondary-container": "#4069f2",
+            "surface-dim": "#d2d9f4",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-fixed": "#141c29",
+            "secondary-fixed": "#dce1ff",
+            "surface-bright": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#997f6a",
+            "surface-container-high": "#e2e7ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-primary-container": "#7c8495",
+            "surface-variant": "#dae2fd",
+            "surface": "#faf8ff",
+            "on-tertiary-fixed": "#281809",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-secondary-container": "#fffbff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.5rem",
+            "margin-mobile": "1rem",
+            "space-sm": "1rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem"
+          },
+          "fontFamily": {
+            "headline-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+    :focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-[#0F172A] bg-[#F8FAFC]">
+<!-- SPECIFICATION BOARD CONTROL HEADER -->
+<header class="w-full bg-[#0B1320] text-white border-b border-[#1E293B] px-6 py-4 sticky top-0 z-50 shadow-md">
+<div class="max-w-[1720px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFt379htfZeASfAnJiBdWe57P7mR6rgPrmATiUSaMI272qQEQhBp4t6zTZ_oO2Rlm7Z1-VROQfNm3iVYX3aNZNyjpLcohlqCwIyktTxc3pBs7qF_cxm7DU4JdD3ZuIBL-6AV6F0VUN0GbVJGw75En1Ln7mvRnV5dO70q6PKtWtdfBNx3xU_G4dAEBlPPr7Q2UZ1dE07Q4Df3KouEI7HieysGzoX-74dRGiUVVGRGi_S0q6GEfWgfc_ig"/>
+</div>
+<div class="border-l border-[#334155] pl-4">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold tracking-wider uppercase text-[#93C5FD] bg-[#1E293B] px-2 py-0.5 rounded">Component Specification</span>
+<span class="text-xs text-slate-400">ID: AJ-LMS-SCR-038</span>
+</div>
+<h1 class="text-lg font-semibold tracking-tight text-white mt-0.5">38 Progress &amp; Readiness Analytics Specification Board</h1>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="inline-flex rounded-lg bg-[#1E293B] p-1 border border-[#334155]" role="tablist">
+<button class="px-3 py-1.5 text-xs font-medium rounded-md text-white bg-[#0B1320] transition-colors min-h-[32px] flex items-center gap-1.5 shadow-sm" id="btn-show-all" onclick="setViewMode('all')">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span>
+            Both Variants Side-by-Side
+          </button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white transition-colors min-h-[32px] flex items-center gap-1.5" id="btn-show-v1" onclick="setViewMode('v1')">
+<span class="material-symbols-outlined text-[16px]">database</span>
+            Variant 1 (With Data)
+          </button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white transition-colors min-h-[32px] flex items-center gap-1.5" id="btn-show-v2" onclick="setViewMode('v2')">
+<span class="material-symbols-outlined text-[16px]">pending</span>
+            Variant 2 (No Data Yet)
+          </button>
+</div>
+<div class="hidden xl:flex items-center gap-2 text-xs text-slate-400 border-l border-[#334155] pl-4">
+<span class="inline-block w-2 h-2 rounded-full bg-[#047857]"></span>
+<span>Timezone: WAT (+234 convention)</span>
+<span class="text-slate-600">|</span>
+<span>Target Viewport: 1440px Desktop</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full px-4 sm:px-6 py-8 max-w-[1760px] mx-auto space-y-12">
+<!-- DESIGN TOKENS ACCORDION / REFERENCE BANNER -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#E2E8F0] pb-4">
+<div>
+<span class="text-xs font-semibold tracking-wide uppercase text-[#1D4ED8] bg-[#EFF6FF] border border-[#1D4ED8]/30 px-2.5 py-0.5 rounded-full inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Institutional Corporate / Precision Modern Design Tokens
+          </span>
+<h2 class="text-base font-semibold text-[#0F172A] mt-1.5">Auditable Enterprise Learning Environment · Compliance Governance Standard</h2>
+</div>
+<div class="flex flex-wrap items-center gap-2 text-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#F8FAFC] border border-[#CBD5E1] text-[#0F172A]">
+<span class="font-medium text-[#475569]">Touch Target:</span> 44px min
+          </div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#F8FAFC] border border-[#CBD5E1] text-[#0F172A]">
+<span class="font-medium text-[#475569]">Grid Step:</span> 8px absolute
+          </div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#F8FAFC] border border-[#CBD5E1] text-[#0F172A]">
+<span class="font-medium text-[#475569]">Status pairing:</span> Explicit icon + text
+          </div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 pt-4 text-xs font-medium">
+<div class="flex items-center gap-2 p-2 rounded border border-[#E2E8F0] bg-[#FAFAFA]">
+<span class="w-5 h-5 rounded bg-[#0B1320] border border-[#0B1320] flex-shrink-0"></span>
+<div>
+<div class="text-[#0F172A] font-semibold">#0B1320</div>
+<div class="text-[#64748B] text-[11px]">Primary Navy</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded border border-[#047857]/30 bg-[#ECFDF5]">
+<span class="w-5 h-5 rounded bg-[#047857] flex-shrink-0"></span>
+<div>
+<div class="text-[#047857] font-semibold">#047857</div>
+<div class="text-[#047857] text-[11px]">Success / Done</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded border border-[#1D4ED8]/30 bg-[#EFF6FF]">
+<span class="w-5 h-5 rounded bg-[#1D4ED8] flex-shrink-0"></span>
+<div>
+<div class="text-[#1D4ED8] font-semibold">#1D4ED8</div>
+<div class="text-[#1D4ED8] text-[11px]">Info / Secondary</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded border border-[#B45309]/30 bg-[#FFFBEB]">
+<span class="w-5 h-5 rounded bg-[#B45309] flex-shrink-0"></span>
+<div>
+<div class="text-[#B45309] font-semibold">#B45309</div>
+<div class="text-[#B45309] text-[11px]">Warning / Due</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded border border-[#B91C1C]/30 bg-[#FEF2F2]">
+<span class="w-5 h-5 rounded bg-[#B91C1C] flex-shrink-0"></span>
+<div>
+<div class="text-[#B91C1C] font-semibold">#B91C1C</div>
+<div class="text-[#B91C1C] text-[11px]">Risk / Missed</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded border border-[#64748B]/30 bg-[#F1F5F9]">
+<span class="w-5 h-5 rounded bg-[#64748B] flex-shrink-0"></span>
+<div>
+<div class="text-[#0F172A] font-semibold">#64748B</div>
+<div class="text-[#64748B] text-[11px]">Control Border</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 1: WITH DATA (CANONICAL 1440px DESKTOP VIEWPORT FRAME) -->
+<!-- ========================================================================= -->
+<div class="space-y-4" id="section-v1">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-[#047857]"></span>
+<h2 class="text-xl font-bold tracking-tight text-[#0F172A]">VARIANT 1: With Data (Active Enrolled Student State)</h2>
+<span class="px-2 py-0.5 text-xs font-semibold rounded bg-[#ECFDF5] text-[#047857] border border-[#047857]">Active Tracking</span>
+</div>
+<div class="text-xs text-[#64748B]">
+          Viewport: 1440px Canonical Desktop • Candidate: Chinedu Eze (CE)
+        </div>
+</div>
+<!-- Canvas Shell Frame Container -->
+<div class="w-full bg-[#0B1320] p-2.5 sm:p-4 rounded-2xl shadow-xl border border-[#334155]/60">
+<!-- Mock Browser Top Indicator -->
+<div class="flex items-center justify-between pb-3 px-2 border-b border-[#1E293B] text-slate-400 text-xs">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#EF4444]"></span>
+<span class="w-3 h-3 rounded-full bg-[#F59E0B]"></span>
+<span class="w-3 h-3 rounded-full bg-[#10B981]"></span>
+</div>
+<span class="text-slate-300 font-mono text-[11px] ml-2">https://portal.ajsilicon.ng/student/cohort14/progress</span>
+</div>
+<div class="text-[11px] text-slate-400 font-medium">Session: Active · Last Synced: 24 Oct 2026, 14:45 WAT</div>
+</div>
+<!-- Embedded Student App Frame -->
+<div class="bg-[#F8FAFC] rounded-xl overflow-hidden mt-3 border border-[#E2E8F0] text-[#0F172A] min-h-[960px] flex flex-col">
+<!-- TOP APP BAR -->
+<header class="bg-[#0B1320] text-white h-16 w-full px-6 flex items-center justify-between border-b border-[#1E293B] flex-shrink-0">
+<!-- Brand Anchor -->
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 shadow-sm" title="A.J. Silicon Learning Platform">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2zJHlR3I0DAaQ1Whn_oIZ7ndzwAypjHjFx7WmWD_qYpxWBlkCK3oVIxafCUHqqLEoyvh2rcxxVq_3tpNtENscN7u4SNqCGJ4xb1_Zd3oWP76PaNgzVvqzLjGs97N7J7u_3c7SJKbaBb1w-lvjOLnaBmauTSxEZVPkGe7S3vp1ynwsB4kEem2tQq-6i9GAL_etU0R4kdvRWm_Dmz8-etn6_S9HpUkkCdkBfR2nEwjBgujLeaM6_smnRA"/>
+</div>
+<div class="hidden md:flex items-center text-xs text-slate-300 gap-2 border-l border-[#1E293B] pl-4">
+<span class="font-medium text-white">IT Audit, Risk &amp; Governance Academy</span>
+<span class="text-slate-500">•</span>
+<span class="text-slate-400">Lagos, Nigeria</span>
+</div>
+</div>
+<!-- Trailing Student Profile Cluster (Role Switcher strictly HIDDEN) -->
+<div class="flex items-center gap-4">
+<!-- Trailing icon actions -->
+<button aria-label="Notifications" class="w-11 h-11 rounded-lg text-slate-300 hover:text-white hover:bg-[#1E293B] flex items-center justify-center transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#2563EB]"></span>
+</button>
+<button aria-label="Help and Support" class="w-11 h-11 rounded-lg text-slate-300 hover:text-white hover:bg-[#1E293B] flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<div class="h-6 w-[1px] bg-[#1E293B] mx-1"></div>
+<!-- Student Profile Avatar & Metadata -->
+<div class="flex items-center gap-3 pl-1">
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center text-white font-semibold text-xs tracking-wider" title="Portrait of Chinedu Eze, CISA Cohort 14 Candidate">
+                  CE
+                </div>
+<div class="hidden lg:block leading-tight text-left">
+<div class="text-sm font-semibold text-white tracking-tight">Chinedu Eze</div>
+<div class="text-[11px] text-slate-400">CISA Candidate • Cohort 14 Virtual</div>
+</div>
+</div>
+</div>
+</header>
+<!-- APP BODY: SIDEBAR + MAIN CONTENT CANVAS -->
+<div class="flex flex-1 overflow-hidden min-h-[900px]">
+<!-- LEFT SIDEBAR NAVIGATION (Width: 260px) -->
+<aside class="w-64 min-w-[16rem] bg-white border-r border-[#E2E8F0] flex flex-col justify-between flex-shrink-0 p-4">
+<div class="space-y-4">
+<!-- Enrolled Programme Badge / Header -->
+<div class="p-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">school</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#1D4ED8]">CISA Exam Prep</span>
+</div>
+<div class="text-xs font-semibold text-[#0F172A] leading-snug">Cohort 14: 12 Oct – 18 Dec 2026</div>
+<div class="text-[11px] text-[#64748B] mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-[#047857]">sensors</span>
+                    Virtual Delivery (WAT +234)
+                  </div>
+</div>
+<!-- Navigation Tabs Cluster -->
+<nav aria-label="Sidebar Primary Navigation" class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#practice">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<!-- ACTIVE TAB: Progress -->
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-[#1D4ED8] bg-[#EFF6FF] border-l-4 border-[#1D4ED8] transition-colors min-h-[44px]" href="#progress">
+<span class="material-symbols-outlined text-[20px] text-[#1D4ED8]">monitoring</span>
+<span>Progress</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer Navigation -->
+<div class="border-t border-[#E2E8F0] pt-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#B91C1C] hover:bg-[#FEF2F2] transition-colors min-h-[44px]" href="#signout">
+<span class="material-symbols-outlined text-[20px] text-[#B91C1C]">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- MAIN WORKSPACE CONTENT CANVAS -->
+<main class="flex-1 overflow-y-auto custom-scrollbar p-6 lg:p-8 bg-[#F8FAFC]">
+<div class="max-w-[1240px] mx-auto space-y-6">
+<!-- Breadcrumbs & Header Row -->
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[#64748B] mb-1.5">
+<span>CISA Cohort 14</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Modules</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span aria-current="page" class="text-[#0F172A] font-semibold">Progress &amp; Readiness Analytics</span>
+</nav>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="text-2xl font-bold tracking-tight text-[#0F172A]">Progress &amp; Readiness Analytics</h2>
+<p class="text-sm text-[#475569] mt-0.5">Authoritative performance evaluation against ISACA CISA certification syllabus benchmark standards.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-semibold rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] transition-colors min-h-[44px]">
+<span class="material-symbols-outlined text-[16px]">print</span>
+                        Print Audit Report
+                      </button>
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-semibold rounded-md bg-[#0B1320] text-white hover:bg-[#1E293B] transition-colors min-h-[44px]">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+                        Export Diagnostic Transcript (.PDF)
+                      </button>
+</div>
+</div>
+</div>
+<!-- KEY SUMMARY METRICS (4 CARDS) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- Metric 1: Overall Completion -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs text-[#64748B] font-medium mb-2">
+<span>Curriculum Completion</span>
+<span class="inline-flex items-center gap-1 text-[#047857] font-semibold">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+                        Verified
+                      </span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold text-[#0F172A]">68%</span>
+<span class="text-xs text-[#475569] font-medium">Complete</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full mt-3 overflow-hidden">
+<div class="bg-[#0B1320] h-full rounded-full transition-all" style="width: 68%;"></div>
+</div>
+<div class="text-xs text-[#64748B] mt-2.5 flex items-center justify-between">
+<span>34 of 50 lessons completed</span>
+<span class="font-medium text-[#0F172A]">16 remaining</span>
+</div>
+</div>
+<!-- Metric 2: Study Streak -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs text-[#64748B] font-medium mb-2">
+<span>Candidate Study Streak</span>
+<span class="material-symbols-outlined text-[18px] text-[#B45309]">local_fire_department</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold text-[#0F172A]">14</span>
+<span class="text-xs font-semibold text-[#B45309]">days active streak</span>
+</div>
+<div class="mt-3 grid grid-cols-2 gap-2 text-xs border-t border-[#F1F5F9] pt-2.5">
+<div>
+<div class="text-[#64748B] text-[11px]">Best Recorded</div>
+<div class="font-semibold text-[#0F172A]">19 days</div>
+</div>
+<div>
+<div class="text-[#64748B] text-[11px]">Active This Month</div>
+<div class="font-semibold text-[#047857]">22 days active</div>
+</div>
+</div>
+</div>
+<!-- Metric 3: Total Study Time -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs text-[#64748B] font-medium mb-2">
+<span>Total Time Logged</span>
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#047857] bg-[#ECFDF5] border border-[#047857] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>
+                        On track
+                      </span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold text-[#0F172A]">48h 30m</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full mt-3 overflow-hidden">
+<div class="bg-[#1D4ED8] h-full rounded-full transition-all" style="width: 80.8%;"></div>
+</div>
+<div class="text-xs text-[#64748B] mt-2.5 flex items-center justify-between">
+<span>Curriculum Target: 60h</span>
+<span class="font-medium text-[#0F172A]">11h 30m to target</span>
+</div>
+</div>
+<!-- Metric 4: Live Class Attendance -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs text-[#64748B] font-medium mb-2">
+<span>Live Session Engagement</span>
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">event_available</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold text-[#0F172A]">85%</span>
+<span class="text-xs text-[#475569] font-medium">attended</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#047857] h-full rounded-full transition-all" style="width: 87.5%;"></div>
+</div>
+</div>
+<div class="text-xs text-[#64748B] mt-2.5 flex items-center justify-between">
+<span>7 of 8 live sessions</span>
+<span class="text-[#1D4ED8] font-medium">1 async recording</span>
+</div>
+</div>
+</div>
+<!-- SECTION 1: COMPLETION BY MODULE (TABLE / DETAILED CARD BREAKDOWN) -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-5 border-b border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white">
+<div>
+<h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-[#0B1320]">library_books</span>
+                        Module Completion &amp; Lesson Progress
+                      </h3>
+<p class="text-xs text-[#64748B] mt-0.5">Formal curriculum status mapped to the official 5 CISA job practice domains.</p>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] font-medium">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> 1 Completed
+                      </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] font-medium">
+<span class="material-symbols-outlined text-[13px]">sync</span> 4 In Progress
+                      </span>
+</div>
+</div>
+<!-- Modules Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] text-[#475569] uppercase tracking-wider font-semibold border-b border-[#E2E8F0]">
+<th class="py-3.5 px-5" scope="col">Module / CISA Syllabus Domain</th>
+<th class="py-3.5 px-4 w-32" scope="col">Lessons Done</th>
+<th class="py-3.5 px-4 w-48" scope="col">Completion Rate</th>
+<th class="py-3.5 px-4 w-36" scope="col">Status</th>
+<th class="py-3.5 px-5 text-right w-44" scope="col">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm font-normal">
+<!-- Module 1 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-5">
+<div class="font-semibold text-[#0F172A]">Module 1: Information System Auditing Process</div>
+<div class="text-xs text-[#64748B] mt-0.5">Audit standards, risk-based methodology, audit evidence gathering &amp; sampling</div>
+</td>
+<td class="py-4 px-4 text-xs font-medium text-[#0F172A]">10 of 10</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#047857] h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="text-xs font-semibold text-[#047857] w-8 text-right">100%</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                              Completed
+                            </span>
+</td>
+<td class="py-4 px-5 text-right">
+<a class="inline-flex items-center justify-end gap-1 text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px]" href="#review-m1">
+                              Review module
+                              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</td>
+</tr>
+<!-- Module 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-5">
+<div class="font-semibold text-[#0F172A]">Module 2: Governance &amp; Management of IT</div>
+<div class="text-xs text-[#64748B] mt-0.5">IT strategy, enterprise risk governance, policies, and steering committees</div>
+</td>
+<td class="py-4 px-4 text-xs font-medium text-[#0F172A]">10 of 12</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full rounded-full" style="width: 83%;"></div>
+</div>
+<span class="text-xs font-semibold text-[#0F172A] w-8 text-right">83%</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">play_circle</span>
+                              In progress
+                            </span>
+</td>
+<td class="py-4 px-5 text-right">
+<a class="inline-flex items-center justify-end gap-1 text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px]" href="#continue-m2">
+                              Continue module
+                              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Module 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-5">
+<div class="font-semibold text-[#0F172A]">Module 3: Information Systems Acquisition, Development &amp; Implementation</div>
+<div class="text-xs text-[#64748B] mt-0.5">SDLC methodologies, procurement controls, system migration and change control</div>
+</td>
+<td class="py-4 px-4 text-xs font-medium text-[#0F172A]">6 of 8</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full rounded-full" style="width: 75%;"></div>
+</div>
+<span class="text-xs font-semibold text-[#0F172A] w-8 text-right">75%</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">play_circle</span>
+                              In progress
+                            </span>
+</td>
+<td class="py-4 px-5 text-right">
+<a class="inline-flex items-center justify-end gap-1 text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px]" href="#continue-m3">
+                              Continue module
+                              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Module 4 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-5">
+<div class="font-semibold text-[#0F172A]">Module 4: Information Systems Operations &amp; Business Resilience</div>
+<div class="text-xs text-[#64748B] mt-0.5">Asset management, data centres, disaster recovery planning (DRP), BIA &amp; BCP</div>
+</td>
+<td class="py-4 px-4 text-xs font-medium text-[#0F172A]">6 of 10</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#1D4ED8] h-full rounded-full" style="width: 60%;"></div>
+</div>
+<span class="text-xs font-semibold text-[#0F172A] w-8 text-right">60%</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">play_circle</span>
+                              In progress
+                            </span>
+</td>
+<td class="py-4 px-5 text-right">
+<a class="inline-flex items-center justify-end gap-1 text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px]" href="#continue-m4">
+                              Continue module
+                              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Module 5 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-5">
+<div class="font-semibold text-[#0F172A]">Module 5: Protection of Information Assets</div>
+<div class="text-xs text-[#64748B] mt-0.5">Cybersecurity architecture, cryptographic controls, IAM, SOC &amp; incident handling</div>
+</td>
+<td class="py-4 px-4 text-xs font-medium text-[#0F172A]">3 of 10</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#B45309] h-full rounded-full" style="width: 30%;"></div>
+</div>
+<span class="text-xs font-semibold text-[#B45309] w-8 text-right">30%</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                              In progress
+                            </span>
+</td>
+<td class="py-4 px-5 text-right">
+<a class="inline-flex items-center justify-end gap-1 text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px]" href="#continue-m5">
+                              Continue module
+                              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- SECTION 2 & SECTION 3: 2-COLUMN GRID (STUDY TIME & SCORE TRENDS) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- SECTION 2: STUDY TIME CHART BY WEEK (7 COLS) -->
+<div class="lg:col-span-7 bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E2E8F0] pb-3">
+<div>
+<h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-[#0B1320]">bar_chart</span>
+                            Study Time Distribution by Week
+                          </h3>
+<p class="text-xs text-[#64748B]">Last 6 weeks tracking (12 Oct – 23 Nov 2026) vs. 7.5h recommended weekly pace</p>
+</div>
+<div class="inline-flex items-center gap-2 text-xs">
+<span class="flex items-center gap-1 text-[#64748B]">
+<span class="w-3 h-0.5 bg-[#B91C1C]"></span> Target: 7.5h/wk
+                          </span>
+</div>
+</div>
+<!-- Visual Bar Chart Representation -->
+<div class="pt-6 pb-2">
+<div class="relative h-44 w-full flex items-end justify-between px-4 pb-6 border-b border-[#CBD5E1]">
+<!-- Benchmark reference dashed line at 7.5h (approx 62.5% of 12h max height) -->
+<div class="absolute left-0 right-0 border-t border-dashed border-[#B91C1C] flex items-center justify-end pr-2 pointer-events-none" style="bottom: calc(62.5% + 24px);">
+<span class="bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] text-[10px] font-semibold px-1 rounded -translate-y-1/2">Benchmark: 7.5h</span>
+</div>
+<!-- Week 1: 6.5h -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<span class="text-xs font-semibold text-[#475569] group-hover:text-[#0B1320]">6.5h</span>
+<div class="w-9 bg-[#CBD5E1] rounded-t hover:bg-[#0B1320] transition-colors" style="height: 78px;" title="Week 1: 6.5 hours"></div>
+<span class="text-xs font-medium text-[#64748B] -mb-6">W1</span>
+</div>
+<!-- Week 2: 8.0h -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<span class="text-xs font-semibold text-[#047857]">8.0h</span>
+<div class="w-9 bg-[#0B1320] rounded-t transition-colors" style="height: 96px;" title="Week 2: 8.0 hours"></div>
+<span class="text-xs font-medium text-[#64748B] -mb-6">W2</span>
+</div>
+<!-- Week 3: 9.5h -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<span class="text-xs font-semibold text-[#047857]">9.5h</span>
+<div class="w-9 bg-[#0B1320] rounded-t transition-colors" style="height: 114px;" title="Week 3: 9.5 hours"></div>
+<span class="text-xs font-medium text-[#64748B] -mb-6">W3</span>
+</div>
+<!-- Week 4: 7.0h -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<span class="text-xs font-semibold text-[#B45309]">7.0h</span>
+<div class="w-9 bg-[#CBD5E1] rounded-t hover:bg-[#0B1320] transition-colors" style="height: 84px;" title="Week 4: 7.0 hours"></div>
+<span class="text-xs font-medium text-[#64748B] -mb-6">W4</span>
+</div>
+<!-- Week 5: 10.0h -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<span class="text-xs font-semibold text-[#047857]">10.0h</span>
+<div class="w-9 bg-[#1D4ED8] rounded-t transition-colors" style="height: 120px;" title="Week 5: 10.0 hours (Peak)"></div>
+<span class="text-xs font-medium text-[#64748B] -mb-6">W5</span>
+</div>
+<!-- Week 6: 7.5h -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<span class="text-xs font-semibold text-[#047857]">7.5h</span>
+<div class="w-9 bg-[#0B1320] rounded-t transition-colors" style="height: 90px;" title="Week 6: 7.5 hours"></div>
+<span class="text-xs font-medium text-[#64748B] -mb-6">W6</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Compact Data Breakdown Table -->
+<div class="mt-8 border-t border-[#E2E8F0] pt-4">
+<div class="text-xs font-semibold text-[#0F172A] mb-2">Weekly Performance Ledger</div>
+<div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center text-xs">
+<div class="p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="text-[#64748B] text-[11px]">W1 (12 Oct)</div>
+<div class="font-bold text-[#0F172A]">6.5 hrs</div>
+<div class="text-[11px] text-[#475569]">4 sessions</div>
+</div>
+<div class="p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="text-[#64748B] text-[11px]">W2 (19 Oct)</div>
+<div class="font-bold text-[#047857]">8.0 hrs</div>
+<div class="text-[11px] text-[#475569]">5 sessions</div>
+</div>
+<div class="p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="text-[#64748B] text-[11px]">W3 (26 Oct)</div>
+<div class="font-bold text-[#047857]">9.5 hrs</div>
+<div class="text-[11px] text-[#475569]">6 sessions</div>
+</div>
+<div class="p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="text-[#64748B] text-[11px]">W4 (02 Nov)</div>
+<div class="font-bold text-[#0F172A]">7.0 hrs</div>
+<div class="text-[11px] text-[#475569]">4 sessions</div>
+</div>
+<div class="p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="text-[#64748B] text-[11px]">W5 (09 Nov)</div>
+<div class="font-bold text-[#1D4ED8]">10.0 hrs</div>
+<div class="text-[11px] text-[#475569]">7 sessions</div>
+</div>
+<div class="p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="text-[#64748B] text-[11px]">W6 (16 Nov)</div>
+<div class="font-bold text-[#047857]">7.5 hrs</div>
+<div class="text-[11px] text-[#475569]">5 sessions</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: SCORE TREND BY DOMAIN (5 COLS) -->
+<div class="lg:col-span-5 bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+<div>
+<h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-[#0B1320]">analytics</span>
+                            Diagnostic Score Trend by Domain
+                          </h3>
+<p class="text-xs text-[#64748B]">Progression across mock attempts vs. 60% pass threshold</p>
+</div>
+</div>
+<!-- Domain diagnostic rows -->
+<div class="mt-4 space-y-3.5">
+<!-- Domain 1 -->
+<div class="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-[#0F172A]">Domain 1: Auditing Process</span>
+<span class="text-xs font-semibold text-[#047857] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +14% improvement
+                            </span>
+</div>
+<div class="flex items-center gap-3 text-xs">
+<span class="text-[#64748B] w-12 font-medium">64%</span>
+<span class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+<span class="text-[#64748B] w-12 font-medium">72%</span>
+<span class="material-symbols-outlined text-[14px] text-[#047857]">arrow_forward</span>
+<span class="font-bold text-[#047857] w-12">78%</span>
+<span class="ml-auto text-[11px] px-1.5 py-0.5 rounded bg-[#ECFDF5] text-[#047857] font-semibold border border-[#047857]">Above Benchmark</span>
+</div>
+</div>
+<!-- Domain 2 -->
+<div class="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-[#0F172A]">Domain 2: IT Governance</span>
+<span class="text-xs font-semibold text-[#047857] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +16% improvement
+                            </span>
+</div>
+<div class="flex items-center gap-3 text-xs">
+<span class="text-[#64748B] w-12 font-medium">52%</span>
+<span class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+<span class="text-[#64748B] w-12 font-medium">60%</span>
+<span class="material-symbols-outlined text-[14px] text-[#047857]">arrow_forward</span>
+<span class="font-bold text-[#047857] w-12">68%</span>
+<span class="ml-auto text-[11px] px-1.5 py-0.5 rounded bg-[#ECFDF5] text-[#047857] font-semibold border border-[#047857]">Above Benchmark</span>
+</div>
+</div>
+<!-- Domain 3 -->
+<div class="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-[#0F172A]">Domain 3: Acquisition &amp; Dev</span>
+<span class="text-xs font-semibold text-[#047857] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +14% improvement
+                            </span>
+</div>
+<div class="flex items-center gap-3 text-xs">
+<span class="text-[#64748B] w-12 font-medium">58%</span>
+<span class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+<span class="text-[#64748B] w-12 font-medium">65%</span>
+<span class="material-symbols-outlined text-[14px] text-[#047857]">arrow_forward</span>
+<span class="font-bold text-[#047857] w-12">72%</span>
+<span class="ml-auto text-[11px] px-1.5 py-0.5 rounded bg-[#ECFDF5] text-[#047857] font-semibold border border-[#047857]">Above Benchmark</span>
+</div>
+</div>
+<!-- Domain 4 -->
+<div class="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:border-[#CBD5E1] transition-all">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-[#0F172A]">Domain 4: Operations &amp; Resilience</span>
+<span class="text-xs font-semibold text-[#047857] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +11% improvement
+                            </span>
+</div>
+<div class="flex items-center gap-3 text-xs">
+<span class="text-[#64748B] w-12 font-medium">70%</span>
+<span class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+<span class="text-[#64748B] w-12 font-medium">75%</span>
+<span class="material-symbols-outlined text-[14px] text-[#047857]">arrow_forward</span>
+<span class="font-bold text-[#047857] w-12">81%</span>
+<span class="ml-auto text-[11px] px-1.5 py-0.5 rounded bg-[#ECFDF5] text-[#047857] font-semibold border border-[#047857]">Strong Pass</span>
+</div>
+</div>
+<!-- Domain 5: Priority Focus -->
+<div class="p-2.5 rounded-lg border border-[#B91C1C]/40 bg-[#FEF2F2]/40 hover:border-[#B91C1C] transition-all">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-[#0F172A]">Domain 5: Asset Protection</span>
+<span class="text-xs font-semibold text-[#B91C1C] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">warning</span> Priority Focus Area
+                            </span>
+</div>
+<div class="flex items-center gap-3 text-xs">
+<span class="text-[#64748B] w-12 font-medium">44%</span>
+<span class="material-symbols-outlined text-[14px] text-[#64748B]">arrow_forward</span>
+<span class="text-[#64748B] w-12 font-medium">48%</span>
+<span class="material-symbols-outlined text-[14px] text-[#B45309]">arrow_forward</span>
+<span class="font-bold text-[#B45309] w-12">58%</span>
+<span class="ml-auto text-[11px] px-1.5 py-0.5 rounded bg-[#FEF2F2] text-[#B91C1C] font-semibold border border-[#B91C1C]">2% Below Benchmark</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Benchmark note -->
+<div class="mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-xs text-[#64748B]">
+<span>ISACA Scaled Pass Benchmark: 60.0%</span>
+<a class="font-semibold text-[#1D4ED8] hover:underline flex items-center gap-1" href="#drill-domain5">
+                        Start Domain 5 Drill
+                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- SECTION 4: ATTENDANCE OF LIVE CLASSES (STRUCTURED LEDGER TABLE) -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-5 border-b border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-[#0B1320]">fact_check</span>
+                        Live Class Attendance &amp; Masterclass Ledger
+                      </h3>
+<p class="text-xs text-[#64748B]">Permanent audit trail of real-time virtual lectures and asynchronous video reviews.</p>
+</div>
+<div class="text-xs text-[#64748B]">
+                      Cohort 14 Virtual Room • Instructors: Lead Audit Faculty
+                    </div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] text-[#475569] uppercase tracking-wider font-semibold border-b border-[#E2E8F0]">
+<th class="py-3 px-5 w-36" scope="col">Date (WAT)</th>
+<th class="py-3 px-5" scope="col">Session Title &amp; Topic</th>
+<th class="py-3 px-4 w-44" scope="col">Faculty Instructor</th>
+<th class="py-3 px-4 w-40" scope="col">Status</th>
+<th class="py-3 px-4 w-28" scope="col">Duration</th>
+<th class="py-3 px-5 text-right w-32" scope="col">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm">
+<!-- Entry 1 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-5 text-xs font-semibold text-[#0F172A]">24 Oct 2026</td>
+<td class="py-3.5 px-5">
+<div class="font-semibold text-[#0F172A]">IT Governance Controls Masterclass</div>
+<div class="text-xs text-[#64748B]">COBIT frameworks, board reporting, IT alignment</div>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">Adaeze Okonkwo</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                              Attended live
+                            </span>
+</td>
+<td class="py-3.5 px-4 text-xs font-medium text-[#0F172A]">2h 15m</td>
+<td class="py-3.5 px-5 text-right">
+<a class="text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px] inline-flex items-center" href="#notes-1">Download notes</a>
+</td>
+</tr>
+<!-- Entry 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-5 text-xs font-semibold text-[#0F172A]">17 Oct 2026</td>
+<td class="py-3.5 px-5">
+<div class="font-semibold text-[#0F172A]">Audit Charter &amp; Fieldwork Clinic</div>
+<div class="text-xs text-[#64748B]">Audit mandate, workpaper discipline, management findings</div>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">Babatunde Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                              Attended live
+                            </span>
+</td>
+<td class="py-3.5 px-4 text-xs font-medium text-[#0F172A]">1h 50m</td>
+<td class="py-3.5 px-5 text-right">
+<a class="text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px] inline-flex items-center" href="#notes-2">Download notes</a>
+</td>
+</tr>
+<!-- Entry 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-5 text-xs font-semibold text-[#0F172A]">10 Oct 2026</td>
+<td class="py-3.5 px-5">
+<div class="font-semibold text-[#0F172A]">COBIT 2019 Applied Workshop</div>
+<div class="text-xs text-[#64748B]">Design factors, governance objectives, capability levels</div>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">Adaeze Okonkwo</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">play_circle</span>
+                              Watched recording
+                            </span>
+</td>
+<td class="py-3.5 px-4 text-xs font-medium text-[#0F172A]">1h 40m</td>
+<td class="py-3.5 px-5 text-right">
+<a class="text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px] inline-flex items-center" href="#replay-3">Rewatch session</a>
+</td>
+</tr>
+<!-- Entry 4 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-5 text-xs font-semibold text-[#0F172A]">03 Oct 2026</td>
+<td class="py-3.5 px-5">
+<div class="font-semibold text-[#0F172A]">SDLC Security Walkthrough</div>
+<div class="text-xs text-[#64748B]">Agile controls, devsecops gates, user acceptance sign-off</div>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#475569]">Oladipo Alabi</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                              Attended live
+                            </span>
+</td>
+<td class="py-3.5 px-4 text-xs font-medium text-[#0F172A]">2h 20m</td>
+<td class="py-3.5 px-5 text-right">
+<a class="text-xs font-semibold text-[#1D4ED8] hover:underline min-h-[44px] inline-flex items-center" href="#notes-4">Download notes</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: NO DATA YET (DESKTOP VIEWPORT FRAME) -->
+<!-- ========================================================================= -->
+<div class="space-y-4 pt-4 border-t border-[#CBD5E1]" id="section-v2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-[#B45309]"></span>
+<h2 class="text-xl font-bold tracking-tight text-[#0F172A]">VARIANT 2: No Data Yet (Newly Enrolled Student Onboarding State)</h2>
+<span class="px-2 py-0.5 text-xs font-semibold rounded bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">Initial Zero-State</span>
+</div>
+<div class="text-xs text-[#64748B]">
+          Candidate: Amina Bello • Cohort 14 Virtual • Clean Zero Metrics
+        </div>
+</div>
+<!-- Canvas Shell Frame Container -->
+<div class="w-full bg-[#0B1320] p-2.5 sm:p-4 rounded-2xl shadow-xl border border-[#334155]/60">
+<!-- Mock Browser Top Indicator -->
+<div class="flex items-center justify-between pb-3 px-2 border-b border-[#1E293B] text-slate-400 text-xs">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#EF4444]"></span>
+<span class="w-3 h-3 rounded-full bg-[#F59E0B]"></span>
+<span class="w-3 h-3 rounded-full bg-[#10B981]"></span>
+</div>
+<span class="text-slate-300 font-mono text-[11px] ml-2">https://portal.ajsilicon.ng/student/cohort14/progress?initial=true</span>
+</div>
+<div class="text-[11px] text-slate-400 font-medium">Session: Newly Enrolled · Onboarding Complete</div>
+</div>
+<!-- Embedded Student App Frame -->
+<div class="bg-[#F8FAFC] rounded-xl overflow-hidden mt-3 border border-[#E2E8F0] text-[#0F172A] min-h-[880px] flex flex-col">
+<!-- TOP APP BAR -->
+<header class="bg-[#0B1320] text-white h-16 w-full px-6 flex items-center justify-between border-b border-[#1E293B] flex-shrink-0">
+<!-- Brand Anchor -->
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 shadow-sm" title="A.J. Silicon Learning Platform">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEHHUJJO3RxItmgERvG0MszM07ONFnGJdE5Uu_Q7n-NpG0DKVeRApIQeXeDlM7WU_qsA7ViVcupycEXHxBa24m_yn6loF9HPeeVSzIf_SJbhLWVmosV_1FypQwEqizScMLgK9jXp3smmtZpeNWiHgNViRIg3STtL2lvmL1N4mdWNSLl6NcY1KKU1nt2IOiozFVdePj6TNJPAg3cs0E8IzByG4-cAHMMGWpQJalYBdhHHKDUeBYCFqPdA"/>
+</div>
+<div class="hidden md:flex items-center text-xs text-slate-300 gap-2 border-l border-[#1E293B] pl-4">
+<span class="font-medium text-white">IT Audit, Risk &amp; Governance Academy</span>
+<span class="text-slate-500">•</span>
+<span class="text-slate-400">Lagos, Nigeria</span>
+</div>
+</div>
+<!-- Student Profile Cluster -->
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="w-11 h-11 rounded-lg text-slate-300 hover:text-white hover:bg-[#1E293B] flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help and Support" class="w-11 h-11 rounded-lg text-slate-300 hover:text-white hover:bg-[#1E293B] flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<div class="h-6 w-[1px] bg-[#1E293B] mx-1"></div>
+<div class="flex items-center gap-3 pl-1">
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center text-white font-semibold text-xs tracking-wider">
+                  AB
+                </div>
+<div class="hidden lg:block leading-tight text-left">
+<div class="text-sm font-semibold text-white tracking-tight">Amina Bello</div>
+<div class="text-[11px] text-slate-400">CISA Candidate • Cohort 14 Virtual</div>
+</div>
+</div>
+</div>
+</header>
+<!-- APP BODY: SIDEBAR + MAIN CONTENT CANVAS -->
+<div class="flex flex-1 overflow-hidden min-h-[820px]">
+<!-- LEFT SIDEBAR NAVIGATION -->
+<aside class="w-64 min-w-[16rem] bg-white border-r border-[#E2E8F0] flex flex-col justify-between flex-shrink-0 p-4">
+<div class="space-y-4">
+<div class="p-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0]">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">school</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#1D4ED8]">CISA Exam Prep</span>
+</div>
+<div class="text-xs font-semibold text-[#0F172A] leading-snug">Cohort 14: 12 Oct – 18 Dec 2026</div>
+<div class="text-[11px] text-[#64748B] mt-0.5">Virtual Delivery (WAT +234)</div>
+</div>
+<nav aria-label="Sidebar Navigation" class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors min-h-[44px]" href="#v2-dash">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors min-h-[44px]" href="#v2-mod">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors min-h-[44px]" href="#v2-quiz">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<!-- ACTIVE: Progress -->
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-[#1D4ED8] bg-[#EFF6FF] border-l-4 border-[#1D4ED8] transition-colors min-h-[44px]" href="#v2-prog">
+<span class="material-symbols-outlined text-[20px] text-[#1D4ED8]">monitoring</span>
+<span>Progress</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors min-h-[44px]" href="#v2-extend">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<div class="border-t border-[#E2E8F0] pt-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors min-h-[44px]" href="#v2-settings">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#B91C1C] hover:bg-[#FEF2F2] transition-colors min-h-[44px]" href="#v2-signout">
+<span class="material-symbols-outlined text-[20px] text-[#B91C1C]">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- MAIN WORKSPACE FOR VARIANT 2 -->
+<main class="flex-1 overflow-y-auto custom-scrollbar p-6 lg:p-8 bg-[#F8FAFC]">
+<div class="max-w-[1240px] mx-auto space-y-6">
+<!-- Header -->
+<div>
+<nav class="flex items-center gap-2 text-xs text-[#64748B] mb-1.5">
+<span>CISA Cohort 14</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Modules</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">Progress &amp; Readiness Analytics</span>
+</nav>
+<h2 class="text-2xl font-bold tracking-tight text-[#0F172A]">Progress &amp; Readiness Analytics</h2>
+<p class="text-sm text-[#475569] mt-0.5">Authoritative performance evaluation against ISACA CISA certification syllabus benchmark standards.</p>
+</div>
+<!-- EXPLANATORY EMPTY STATE CALLOUT CARD -->
+<div class="bg-white rounded-xl border border-[#CBD5E1] p-8 shadow-sm text-center max-w-3xl mx-auto">
+<div class="w-16 h-16 rounded-full bg-[#EFF6FF] border border-[#1D4ED8]/30 flex items-center justify-center mx-auto text-[#1D4ED8] mb-4">
+<span class="material-symbols-outlined text-[32px]">query_stats</span>
+</div>
+<h3 class="text-xl font-bold text-[#0F172A] tracking-tight">No progress data recorded yet</h3>
+<p class="text-sm text-[#475569] max-w-xl mx-auto mt-2 leading-relaxed">
+                    Your completion statistics, study time trends, and diagnostic score trends will populate here once you complete your first lesson or practice exam attempt. Live class attendance logs automatically within 2 hours of session conclusion.
+                  </p>
+<div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-md bg-[#0B1320] text-white hover:bg-[#1E293B] transition-colors min-h-[44px]" href="#start-lesson">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+                      Start First Lesson
+                    </a>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] transition-colors min-h-[44px]" href="#go-programme-home">
+<span class="material-symbols-outlined text-[18px]">home</span>
+                      Go to Programme Home
+                    </a>
+</div>
+<div class="mt-6 pt-5 border-t border-[#E2E8F0] flex flex-wrap items-center justify-center gap-6 text-xs text-[#64748B]">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span>
+                      Enrolled: Cohort 14 Virtual
+                    </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">schedule</span>
+                      Next Live Class: Saturday, 31 Oct 2026, 10:00 WAT
+                    </span>
+</div>
+</div>
+<!-- ZERO-STATE METRIC PLACEHOLDERS (INDICATIVE BASELINE) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 opacity-75">
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5">
+<div class="text-xs text-[#64748B] font-medium mb-1">Curriculum Completion</div>
+<div class="text-3xl font-bold text-[#0F172A]">0%</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full mt-3"></div>
+<div class="text-xs text-[#64748B] mt-2 flex justify-between">
+<span>0 of 50 lessons completed</span>
+<span>50 remaining</span>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5">
+<div class="text-xs text-[#64748B] font-medium mb-1">Candidate Study Streak</div>
+<div class="text-3xl font-bold text-[#0F172A]">0 <span class="text-xs font-medium text-[#64748B]">days</span></div>
+<div class="mt-3 text-xs text-[#64748B] border-t border-[#F1F5F9] pt-2.5">
+                      Complete a daily drill to activate streak
+                    </div>
+</div>
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5">
+<div class="text-xs text-[#64748B] font-medium mb-1">Total Time Logged</div>
+<div class="text-3xl font-bold text-[#0F172A]">0h 00m</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full mt-3"></div>
+<div class="text-xs text-[#64748B] mt-2">Target: 60h total syllabus study</div>
+</div>
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5">
+<div class="text-xs text-[#64748B] font-medium mb-1">Live Session Engagement</div>
+<div class="text-3xl font-bold text-[#0F172A]">0%</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full mt-3"></div>
+<div class="text-xs text-[#64748B] mt-2">0 of 8 live sessions completed</div>
+</div>
+</div>
+<!-- PREVIEW PLACEHOLDER MODULE MATRIX -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3 mb-4">
+<h4 class="text-sm font-bold text-[#0F172A]">CISA 5-Domain Structure (Ready for activation)</h4>
+<span class="text-xs text-[#64748B]">All syllabus materials unlocked</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="font-semibold text-[#0F172A] mb-1">Module 1</div>
+<div class="text-[#64748B] text-[11px] mb-2">Auditing Process (10 lessons)</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-[#475569] bg-white border border-[#CBD5E1] px-2 py-0.5 rounded">Not started</span>
+</div>
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="font-semibold text-[#0F172A] mb-1">Module 2</div>
+<div class="text-[#64748B] text-[11px] mb-2">IT Governance (12 lessons)</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-[#475569] bg-white border border-[#CBD5E1] px-2 py-0.5 rounded">Not started</span>
+</div>
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="font-semibold text-[#0F172A] mb-1">Module 3</div>
+<div class="text-[#64748B] text-[11px] mb-2">Acquisition &amp; Dev (8 lessons)</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-[#475569] bg-white border border-[#CBD5E1] px-2 py-0.5 rounded">Not started</span>
+</div>
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="font-semibold text-[#0F172A] mb-1">Module 4</div>
+<div class="text-[#64748B] text-[11px] mb-2">Operations (10 lessons)</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-[#475569] bg-white border border-[#CBD5E1] px-2 py-0.5 rounded">Not started</span>
+</div>
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="font-semibold text-[#0F172A] mb-1">Module 5</div>
+<div class="text-[#64748B] text-[11px] mb-2">Asset Protection (10 lessons)</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-[#475569] bg-white border border-[#CBD5E1] px-2 py-0.5 rounded">Not started</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+<!-- SPECIFICATION AUDIT CHECKLIST FOOTER -->
+<footer class="bg-white rounded-xl border border-[#E2E8F0] p-6 text-xs text-[#475569] space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E2E8F0] pb-3">
+<span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">A.J. Silicon Design System Compliance Checklist</span>
+<span class="text-[#047857] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+          Institutional Verification: Passed
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+<div>
+<span class="font-semibold text-[#0F172A] block mb-1">1. Non-Reliance on Color Alone:</span>
+          Every metric and status chip couples background/border tokens with explicit text ("Above Benchmark", "Completed", "Priority Focus Area") and Material Symbols Outlined icons.
+        </div>
+<div>
+<span class="font-semibold text-[#0F172A] block mb-1">2. Touch Floor &amp; Spatial Rigor:</span>
+          All action buttons, table rows, and navigation items meet or exceed 44px min touch height. Layout conforms strictly to 8px mathematics.
+        </div>
+<div>
+<span class="font-semibold text-[#0F172A] block mb-1">3. Regulatory Identity &amp; Plain Text:</span>
+          Zero unauthorized trademark logos; pure text references for ISACA benchmark standards. Time stamps formatted strictly in WAT (+234). Role switcher strictly hidden.
+        </div>
+</div>
+</footer>
+</main>
+<!-- INTERACTION SCRIPT FOR SPECIFICATION BOARD VIEW MODES -->
+<script>
+    function setViewMode(mode) {
+      const v1 = document.getElementById('section-v1');
+      const v2 = document.getElementById('section-v2');
+      const btnAll = document.getElementById('btn-show-all');
+      const btnV1 = document.getElementById('btn-show-v1');
+      const btnV2 = document.getElementById('btn-show-v2');
+
+      // Reset button styles
+      [btnAll, btnV1, btnV2].forEach(btn => {
+        btn.classList.remove('bg-[#0B1320]', 'text-white', 'shadow-sm');
+        btn.classList.add('text-slate-300');
+      });
+
+      if (mode === 'v1') {
+        v1.style.display = 'block';
+        v2.style.display = 'none';
+        btnV1.classList.add('bg-[#0B1320]', 'text-white', 'shadow-sm');
+        btnV1.classList.remove('text-slate-300');
+      } else if (mode === 'v2') {
+        v1.style.display = 'none';
+        v2.style.display = 'block';
+        btnV2.classList.add('bg-[#0B1320]', 'text-white', 'shadow-sm');
+        btnV2.classList.remove('text-slate-300');
+      } else {
+        v1.style.display = 'block';
+        v2.style.display = 'block';
+        btnAll.classList.add('bg-[#0B1320]', 'text-white', 'shadow-sm');
+        btnAll.classList.remove('text-slate-300');
+      }
+    }
+  </script>
+</body></html>

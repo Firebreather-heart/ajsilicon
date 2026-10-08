@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cohort Roster — A.J. Silicon Learning Platform</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#141c29",
+            "on-tertiary-fixed": "#281809",
+            "on-secondary-fixed-variant": "#0039b5",
+            "error": "#ba1a1a",
+            "tertiary": "#000000",
+            "outline-variant": "#c5c6cc",
+            "secondary-container": "#4069f2",
+            "surface-container": "#eaedff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface": "#faf8ff",
+            "inverse-primary": "#bfc6d9",
+            "tertiary-container": "#281809",
+            "surface-bright": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary": "#ffffff",
+            "primary": "#000000",
+            "secondary": "#1d4ed8",
+            "primary-fixed": "#dbe2f5",
+            "surface-container-high": "#e2e7ff",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-fixed": "#141c29",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary-container": "#7c8495",
+            "on-secondary-fixed": "#001551",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-error": "#ffffff",
+            "inverse-surface": "#283044",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#45474c",
+            "on-secondary-container": "#fffbff",
+            "on-surface": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface-dim": "#d2d9f4",
+            "outline": "#75777c",
+            "background": "#faf8ff",
+            "on-tertiary-container": "#997f6a",
+            "secondary-fixed": "#dce1ff",
+            "surface-tint": "#575f6e",
+            "on-background": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#dae2fd"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "1.5rem",
+            "space-xs": "0.5rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "2rem"
+          },
+          fontFamily: {
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Absolute adherence to Design Tokens & 8px grid */
+    :root {
+      --primary-navy: #0B1320;
+      --navy-hover: #1E293B;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border-card: #E2E8F0;
+      --border-field: #64748B;
+      --link-white: #1D4ED8;
+      --link-navy: #93C5FD;
+      --focus-ring: #2563EB;
+      --success-text: #047857;
+      --success-bg: #ECFDF5;
+      --danger-text: #B91C1C;
+      --danger-bg: #FEF2F2;
+      --warning-text: #B45309;
+      --warning-bg: #FFFBEB;
+      --info-text: #1D4ED8;
+      --info-bg: #EFF6FF;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+
+    .focus-enterprise:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col overflow-x-hidden antialiased text-[#0F172A] bg-[#F8FAFC]">
+<!-- TOP SHELL NAVIGATION (64px, Deep Navy #0B1320) -->
+<header class="w-full bg-[#0B1320] text-white h-16 shrink-0 flex items-center justify-between px-6 z-30 select-none">
+<div class="flex items-center gap-6">
+<!-- Contrast Logo Plate -->
+<div class="bg-white rounded h-10 px-3 flex items-center justify-center shrink-0 shadow-sm border border-[#E2E8F0]">
+<img alt="A.J. Silicon Academy Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqMDpEyrxrXXurISgPh0wsgOa2s9d8f0APRO68QaQgvmjLjLBvZJYpytO767RxhdsNvOEvZ4QUdG2ZRhcaBWCe_O996kKYx_4A-J60g2RMWSZXN604V_BLvQQ8-jtEdayz-9gFlDIJiWhIT9BC5gIKuSkxcwXmNgy9FFbI86FIFs9plv92Zy4fxzWab__sD9PXLDC7z23MTwUOqrCfcz9tGSIgGlIqktCVYAa1_iv2k39YusqkenKVlA"/>
+</div>
+<!-- Platform Vertical Divider -->
+<div class="h-6 w-px bg-[#334155]"></div>
+<div class="flex flex-col">
+<span class="text-white font-headline-sm text-sm font-semibold tracking-tight leading-tight">Faculty Management Console</span>
+<span class="text-[#94A3B8] text-xs font-mono">Lagos Operational Center · ISACA Accredited</span>
+</div>
+</div>
+<!-- Center Sandbox Variant Switcher (Demonstrating Variants 1, 2, 3) -->
+<div class="flex items-center bg-[#1E293B] p-1 rounded-md border border-[#334155]">
+<span class="text-[#94A3B8] text-xs px-2 font-medium tracking-wide">VIEW STATE:</span>
+<button class="px-3 py-1 text-xs font-medium rounded transition-colors bg-white text-[#0B1320] shadow-sm" id="btn-v1" onclick="switchVariant(1)">
+        1. Default Roster
+      </button>
+<button class="px-3 py-1 text-xs font-medium rounded transition-colors text-[#94A3B8] hover:text-white" id="btn-v2" onclick="switchVariant(2)">
+        2. Empty Search
+      </button>
+<button class="px-3 py-1 text-xs font-medium rounded transition-colors text-[#94A3B8] hover:text-white" id="btn-v3" onclick="switchVariant(3)">
+        3. Permission Gated
+      </button>
+</div>
+<!-- Right User Meta: Signed-in role in plain text -->
+<div class="flex items-center gap-4 text-sm">
+<div class="text-right hidden sm:block">
+<div class="text-white font-medium text-xs">Instructor (Adaeze Okonkwo)</div>
+<div class="text-[#94A3B8] text-[11px] font-mono">10:15 WAT · 05 Oct 2026</div>
+</div>
+<div class="w-9 h-9 rounded bg-[#1E293B] text-[#93C5FD] border border-[#334155] flex items-center justify-center font-bold text-xs tracking-wider">
+        AO
+      </div>
+</div>
+</header>
+<!-- BODY WORKSPACE (Sidebar + Main Content Area) -->
+<div class="flex flex-1 overflow-hidden">
+<!-- SIDEBAR RAIL (256px docked) -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] shrink-0 flex flex-col justify-between overflow-y-auto">
+<div class="p-4 space-y-6">
+<!-- Group: Academics (Highlighted Active Group) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">
+            Academics
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">home_work</span>
+              Faculty Home
+            </a>
+<!-- Active Sub-item: Cohorts -->
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-semibold rounded bg-[#F1F5F9] text-[#0B1320] border-l-4 border-[#0B1320] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#0B1320]">groups</span>
+              Cohorts
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">menu_book</span>
+              Curriculum
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">help_center</span>
+              Question Bank
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">insights</span>
+              Readiness Analytics
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">calendar_today</span>
+              Schedule
+            </a>
+</nav>
+</div>
+<!-- Group: Governance & Evidence -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">
+            Institutional Audit
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">verified</span>
+              ISACA Accreditation
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors focus-enterprise min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">shield</span>
+              Evidence Vault
+            </a>
+</nav>
+</div>
+</div>
+<!-- Sidebar Footprint -->
+<div class="p-4 border-t border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="flex items-center gap-2 text-xs text-[#64748B]">
+<span class="material-symbols-outlined text-sm text-[#047857]">lock</span>
+<span>SOC 2 Type II Audited Host</span>
+</div>
+<div class="text-[11px] text-[#94A3B8] mt-1 font-mono">v4.18.2 · Node LOS-01</div>
+</div>
+</aside>
+<!-- MAIN SCROLLABLE CANVAS -->
+<main class="flex-1 overflow-y-auto bg-[#F8FAFC] flex flex-col">
+<div class="max-w-[1440px] w-full mx-auto p-6 md:p-8 space-y-6 flex-1">
+<!-- BREADCRUMB & TOP HEADER -->
+<div class="space-y-2">
+<nav class="flex items-center gap-2 text-xs text-[#64748B]">
+<span>Staff Portal</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>Academics</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>Cohorts</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-[#0F172A] font-medium">Cohort Roster</span>
+</nav>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-[#0F172A]">Cohort roster</h1>
+<p class="text-sm text-[#475569] mt-0.5">Continuous attendance surveillance, readiness scoring, and regulatory licensing tracking.</p>
+</div>
+<!-- Page Primary Action: Message Selected (44px) -->
+<div class="flex items-center gap-3">
+<button class="h-11 px-6 rounded-md bg-[#0B1320] text-white text-sm font-medium hover:bg-[#1E293B] focus-enterprise transition-all inline-flex items-center gap-2 shrink-0" id="btn-message-selected">
+<span class="material-symbols-outlined text-[18px]">outgoing_mail</span>
+<span>Message selected (<span id="msg-counter">3</span>)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- COHORT SPECIFICATION HEADER CARD (12px radius, #E2E8F0 border) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-xs">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="space-y-1.5">
+<div class="flex items-center gap-3">
+<h2 class="text-lg font-bold text-[#0F172A]">CISA Exam Prep — Cohort 14</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+                  Domain 1–5 Comprehensive
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-2 text-xs text-[#475569]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[15px]">date_range</span>
+                  12 Oct 2026 to 18 Dec 2026
+                </span>
+<span class="text-[#CBD5E1]">·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">videocam</span>
+                  Virtual Live Classroom
+                </span>
+<span class="text-[#CBD5E1]">·</span>
+<span>42 students enrolled</span>
+</div>
+</div>
+<!-- Inline Key Stats Summary -->
+<div class="flex items-center divide-x divide-[#E2E8F0] bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-2.5 text-xs">
+<div class="px-3.5 py-1 text-center">
+<div class="text-[11px] text-[#64748B] font-medium uppercase">Enrolled</div>
+<div class="text-base font-bold text-[#0F172A] mt-0.5">42</div>
+</div>
+<div class="px-3.5 py-1 text-center">
+<div class="text-[11px] text-[#64748B] font-medium uppercase">Avg Progress</div>
+<div class="text-base font-bold text-[#0F172A] mt-0.5">68%</div>
+</div>
+<div class="px-3.5 py-1 text-center">
+<div class="text-[11px] text-[#64748B] font-medium uppercase">Avg Attendance</div>
+<div class="text-base font-bold text-[#0F172A] mt-0.5">88%</div>
+</div>
+<div class="px-3.5 py-1 text-center">
+<div class="text-[11px] text-[#64748B] font-medium uppercase">At-Risk Flagged</div>
+<div class="text-base font-bold text-[#B91C1C] mt-0.5 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                  3
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- CONTROLS & FILTER TOOLBAR (8px spacing grid, 44px targets) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 space-y-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Search Field -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#64748B] text-[18px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] placeholder-[#475569] focus-enterprise focus:border-[#2563EB]" id="search-input" oninput="handleSearchInput(this.value)" placeholder="Search by student name, ID or organization..." type="text" value=""/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B] hover:text-[#0F172A]" id="search-clear-x" onclick="clearSearch()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Status Filter -->
+<div class="flex items-center text-xs">
+<label class="sr-only" for="filter-status">Status Filter</label>
+<select class="h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-[#0F172A] focus-enterprise" id="filter-status">
+<option value="all">Status: All</option>
+<option value="ontrack">Status: On Track</option>
+<option value="needsattention">Status: Needs Attention</option>
+<option value="atrisk">Status: At Risk</option>
+</select>
+</div>
+<!-- Attendance Filter -->
+<div class="flex items-center text-xs">
+<label class="sr-only" for="filter-attendance">Attendance Filter</label>
+<select class="h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-[#0F172A] focus-enterprise" id="filter-attendance">
+<option value="all">Attendance: All</option>
+<option value="gt80">Attendance: &gt;80%</option>
+<option value="lt80">Attendance: &lt;80%</option>
+</select>
+</div>
+<!-- Sort Dropdown -->
+<div class="flex items-center text-xs">
+<label class="sr-only" for="sort-dropdown">Sort by</label>
+<select class="h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-[#0F172A] focus-enterprise" id="sort-dropdown">
+<option value="practice">Sort by: Latest practice score</option>
+<option value="name">Sort by: Student Name</option>
+<option value="progress">Sort by: Course Progress</option>
+<option value="attendance">Sort by: Attendance %</option>
+</select>
+</div>
+<!-- Export Button vs Permission Gated State -->
+<div class="flex items-center" id="export-container">
+<!-- Standard Export (Variant 1 & 2) -->
+<button class="h-11 px-4 border border-[#64748B] rounded-md bg-white hover:bg-[#F1F5F9] text-[#0F172A] text-sm font-medium focus-enterprise inline-flex items-center gap-2" id="btn-export-standard">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">download</span>
+<span>Export CSV</span>
+</button>
+<!-- Locked Indicator (Variant 3) -->
+<div class="hidden h-11 px-3.5 py-1 border border-dashed border-[#CBD5E1] rounded-md bg-[#F1F5F9] text-[#64748B] text-xs flex items-center gap-2" id="export-locked-indicator">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">lock</span>
+<span class="font-mono text-[11px]">export:cohort_roster locked (Lead Faculty only)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Selection Banner -->
+<div class="flex items-center justify-between bg-[#F1F5F9] border border-[#CBD5E1] rounded-lg px-4 py-2.5 text-xs text-[#0F172A]" id="selection-banner">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1D4ED8] text-sm">check_circle</span>
+<span class="font-medium"><span id="selected-badge-count">3</span> students selected</span>
+<span class="text-[#64748B]">across cohort records</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#1D4ED8] hover:underline font-medium" onclick="clearSelection()">Deselect all</button>
+<button class="text-[#1D4ED8] hover:underline font-medium" onclick="selectAllVisible()">Select all 8 visible</button>
+</div>
+</div>
+</div>
+<!-- ROSTER DATA TABLE CONTAINER (Bordered, 12px Radius) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-xs" id="table-card">
+<!-- TABLE VIEW (Variants 1 & 3) -->
+<div class="overflow-x-auto" id="roster-table-view">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[11px] font-semibold text-[#475569] uppercase tracking-wider">
+<th class="w-12 px-4 py-3.5 text-center">
+<input checked="" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" id="select-all-checkbox" onchange="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="px-4 py-3.5">Student Name &amp; Organization</th>
+<th class="px-4 py-3.5 min-w-[140px]">Progress</th>
+<th class="px-4 py-3.5 min-w-[130px]">Last Active (WAT)</th>
+<th class="px-4 py-3.5 text-center">Attendance %</th>
+<th class="px-4 py-3.5">Latest Practice Score</th>
+<th class="px-4 py-3.5">Licence End</th>
+<th class="px-4 py-3.5 min-w-[210px]">Masked Corporate Email</th>
+<th class="px-4 py-3.5 text-right">Row Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm" id="roster-tbody">
+<!-- ROW 1: Chinedu Eze (Selected) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer bg-[#F8FAFC]" onclick="handleRowClick(event, 'Chinedu Eze', 'CE-2026-081', 'First Bank Nigeria', 'c.eze@firstbanknigeria.com', '74%', '11/14 (79%)', '512 / 800', 'Pass', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input checked="" class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Chinedu Eze</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">First Bank Nigeria · <span class="text-[#0B1320] font-semibold">CE-2026-081</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 74%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#0F172A]">74%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">05 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">09:42 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#B45309] bg-[#FFFBEB] border border-[#B45309] px-2 py-0.5 rounded">
+                      79% (At Risk)
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#0F172A]">512/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                        Pass
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 3 Audit Process</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-1">c••••••@firstbanknigeria.com</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-1', 'chinedu.eze@firstbanknigeria.com', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Chinedu Eze', 'CE-2026-081', 'First Bank Nigeria', 'chinedu.eze@firstbanknigeria.com', '74%', '11/14 (79%)', '512 / 800', 'Pass', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 2: Blessing Okon (Selected) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer bg-[#F8FAFC]" onclick="handleRowClick(event, 'Blessing Okon', 'BO-2026-114', 'Access Bank Plc', 'b.okon@accessbankplc.com', '92%', '14/14 (100%)', '680 / 800', 'Pass', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input checked="" class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Blessing Okon</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Access Bank Plc · <span class="text-[#0B1320] font-semibold">BO-2026-114</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 92%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#0F172A]">92%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">05 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">08:15 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#047857] bg-[#ECFDF5] border border-[#047857] px-2 py-0.5 rounded">
+                      100%
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#0F172A]">680/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                        Pass
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 4 Operations</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-2">b••••••@accessbankplc.com</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-2', 'blessing.okon@accessbankplc.com', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Blessing Okon', 'BO-2026-114', 'Access Bank Plc', 'blessing.okon@accessbankplc.com', '92%', '14/14 (100%)', '680 / 800', 'Pass', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 3: Tunde Bakare (Selected) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer bg-[#F8FAFC]" onclick="handleRowClick(event, 'Tunde Bakare', 'TB-2026-092', 'Fidelity Bank', 't.bakare@fidelitybank.ng', '45%', '9/14 (64%)', '390 / 800', 'Fail', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input checked="" class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Tunde Bakare</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Fidelity Bank · <span class="text-[#0B1320] font-semibold">TB-2026-092</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#B91C1C] h-full" style="width: 45%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#B91C1C]">45%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">04 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">17:30 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#B91C1C] bg-[#FEF2F2] border border-[#B91C1C] px-2 py-0.5 rounded">
+                      64% (At Risk)
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#B91C1C]">390/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+                        Fail
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 1 Governance</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-3">t••••••@fidelitybank.ng</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-3', 'tunde.bakare@fidelitybank.ng', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Tunde Bakare', 'TB-2026-092', 'Fidelity Bank', 'tunde.bakare@fidelitybank.ng', '45%', '9/14 (64%)', '390 / 800', 'Fail', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 4: Amina Bello (Unchecked) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer" onclick="handleRowClick(event, 'Amina Bello', 'AB-2026-033', 'Zenith Bank Plc', 'a.bello@zenithbank.com', '81%', '13/14 (93%)', '590 / 800', 'Pass', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Amina Bello</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Zenith Bank Plc · <span class="text-[#0B1320] font-semibold">AB-2026-033</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 81%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#0F172A]">81%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">05 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">06:50 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#047857] bg-[#ECFDF5] border border-[#047857] px-2 py-0.5 rounded">
+                      93%
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#0F172A]">590/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                        Pass
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 5 Protection</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-4">a••••••@zenithbank.com</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-4', 'amina.bello@zenithbank.com', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Amina Bello', 'AB-2026-033', 'Zenith Bank Plc', 'amina.bello@zenithbank.com', '81%', '13/14 (93%)', '590 / 800', 'Pass', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 5: Olumide Adeyemi -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer" onclick="handleRowClick(event, 'Olumide Adeyemi', 'OA-2026-054', 'Stanbic IBTC', 'o.adeyemi@stanbicibtc.com', '70%', '12/14 (86%)', '480 / 800', 'Pass', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Olumide Adeyemi</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Stanbic IBTC · <span class="text-[#0B1320] font-semibold">OA-2026-054</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 70%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#0F172A]">70%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">03 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">21:10 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#047857] bg-[#ECFDF5] border border-[#047857] px-2 py-0.5 rounded">
+                      86%
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#0F172A]">480/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                        Pass
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 2 IT Governance</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-5">o••••••@stanbicibtc.com</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-5', 'olumide.adeyemi@stanbicibtc.com', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Olumide Adeyemi', 'OA-2026-054', 'Stanbic IBTC', 'olumide.adeyemi@stanbicibtc.com', '70%', '12/14 (86%)', '480 / 800', 'Pass', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 6: Ifeanyi Okoye -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer" onclick="handleRowClick(event, 'Ifeanyi Okoye', 'IO-2026-019', 'Guaranty Trust Holding', 'i.okoye@gtcoplc.com', '88%', '14/14 (100%)', '610 / 800', 'Pass', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Ifeanyi Okoye</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Guaranty Trust Holding · <span class="text-[#0B1320] font-semibold">IO-2026-019</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 88%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#0F172A]">88%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">05 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">10:05 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#047857] bg-[#ECFDF5] border border-[#047857] px-2 py-0.5 rounded">
+                      100%
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#0F172A]">610/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                        Pass
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 4 Operations</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-6">i••••••@gtcoplc.com</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-6', 'ifeanyi.okoye@gtcoplc.com', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Ifeanyi Okoye', 'IO-2026-019', 'Guaranty Trust Holding', 'ifeanyi.okoye@gtcoplc.com', '88%', '14/14 (100%)', '610 / 800', 'Pass', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 7: Folashade Adeleke -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer" onclick="handleRowClick(event, 'Folashade Adeleke', 'FA-2026-077', 'United Bank for Africa', 'f.adeleke@ubagroup.com', '62%', '10/14 (71%)', '440 / 800', 'Fail', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Folashade Adeleke</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">United Bank for Africa · <span class="text-[#0B1320] font-semibold">FA-2026-077</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 62%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#0F172A]">62%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">02 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">14:22 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#B91C1C] bg-[#FEF2F2] border border-[#B91C1C] px-2 py-0.5 rounded">
+                      71% (At Risk)
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#B91C1C]">440/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+                        Fail
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 1 Governance</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-7">f••••••@ubagroup.com</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-7', 'folashade.adeleke@ubagroup.com', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Folashade Adeleke', 'FA-2026-077', 'United Bank for Africa', 'folashade.adeleke@ubagroup.com', '62%', '10/14 (71%)', '440 / 800', 'Fail', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 8: Damilola Ojo -->
+<tr class="hover:bg-[#F8FAFC] transition-colors group cursor-pointer" onclick="handleRowClick(event, 'Damilola Ojo', 'DO-2026-062', 'Union Bank of Nigeria', 'd.ojo@unionbankng.com', '78%', '13/14 (93%)', '540 / 800', 'Pass', '18 Dec 2026')">
+<td class="px-4 py-3.5 text-center" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus-enterprise" onchange="updateSelectionCounter()" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-medium text-[#0F172A] leading-tight">Damilola Ojo</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">Union Bank of Nigeria · <span class="text-[#0B1320] font-semibold">DO-2026-062</span></div>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full" style="width: 78%;"></div>
+</div>
+<span class="text-xs font-mono font-medium text-[#0F172A]">78%</span>
+</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-xs font-mono text-[#0F172A]">04 Oct 2026</div>
+<div class="text-[11px] font-mono text-[#64748B]">11:45 WAT</div>
+</td>
+<td class="px-4 py-3.5 text-center">
+<span class="text-xs font-mono font-semibold text-[#047857] bg-[#ECFDF5] border border-[#047857] px-2 py-0.5 rounded">
+                      93%
+                    </span>
+</td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-xs font-bold text-[#0F172A]">540/800</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                        Pass
+                      </span>
+</div>
+<div class="text-[11px] text-[#64748B]">Domain 3 Audit Process</div>
+</td>
+<td class="px-4 py-3.5 font-mono text-xs text-[#475569]">
+                    18 Dec 2026
+                  </td>
+<td class="px-4 py-3.5" onclick="event.stopPropagation()">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-[#0F172A]" id="email-8">d••••••@unionbankng.com</span>
+<button class="text-xs font-medium text-[#1D4ED8] hover:underline px-1 py-0.5 rounded focus-enterprise" onclick="toggleMask('email-8', 'damilola.ojo@unionbankng.com', this)">
+                        [Reveal]
+                      </button>
+</div>
+</td>
+<td class="px-4 py-3.5 text-right" onclick="event.stopPropagation()">
+<button class="h-9 px-3 text-xs font-medium border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded focus-enterprise inline-flex items-center gap-1" onclick="openDrawer('Damilola Ojo', 'DO-2026-062', 'Union Bank of Nigeria', 'damilola.ojo@unionbankng.com', '78%', '13/14 (93%)', '540 / 800', 'Pass', '18 Dec 2026')">
+<span>View detail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- VARIANT 2: EMPTY SEARCH STATE (Controlled via State Switcher) -->
+<div class="hidden py-16 px-6 text-center space-y-4" id="roster-empty-search">
+<div class="w-12 h-12 rounded-full bg-[#F1F5F9] border border-[#CBD5E1] text-[#64748B] flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[24px]">person_search</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-base font-semibold text-[#0F172A]">No students match ‘<span id="empty-query-text">Oluwaseun Alabi</span>’</h3>
+<p class="text-sm text-[#475569] max-w-md mx-auto">
+                No enrolled candidates in CISA Cohort 14 match the specified query. Verify student corporate identification number, spelling, or filter criteria.
+              </p>
+</div>
+<div class="pt-2">
+<button class="h-11 px-5 border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded-md text-sm font-medium focus-enterprise inline-flex items-center gap-2" onclick="clearSearch()">
+<span class="material-symbols-outlined text-[18px]">clear_all</span>
+<span>Reset search query</span>
+</button>
+</div>
+</div>
+<!-- TABLE FOOTER & PAGINATION -->
+<div class="px-6 py-4 border-t border-[#E2E8F0] bg-[#F8FAFC] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[#475569]" id="table-pagination">
+<div class="font-mono">
+              Showing <span class="font-semibold text-[#0F172A]">1–8</span> of <span class="font-semibold text-[#0F172A]">42</span> candidates
+            </div>
+<!-- Page Buttons (44px target) -->
+<div class="flex items-center gap-1">
+<button class="h-10 px-3 rounded border border-[#CBD5E1] bg-white text-[#94A3B8] cursor-not-allowed flex items-center gap-1 font-medium" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+                Previous
+              </button>
+<button class="h-10 w-10 rounded border border-[#0B1320] bg-[#0B1320] text-white font-medium flex items-center justify-center">
+                1
+              </button>
+<button class="h-10 w-10 rounded border border-[#CBD5E1] bg-white hover:bg-[#F1F5F9] text-[#0F172A] font-medium flex items-center justify-center">
+                2
+              </button>
+<button class="h-10 w-10 rounded border border-[#CBD5E1] bg-white hover:bg-[#F1F5F9] text-[#0F172A] font-medium flex items-center justify-center">
+                3
+              </button>
+<button class="h-10 w-10 rounded border border-[#CBD5E1] bg-white hover:bg-[#F1F5F9] text-[#0F172A] font-medium flex items-center justify-center">
+                4
+              </button>
+<button class="h-10 w-10 rounded border border-[#CBD5E1] bg-white hover:bg-[#F1F5F9] text-[#0F172A] font-medium flex items-center justify-center">
+                5
+              </button>
+<button class="h-10 px-3 rounded border border-[#64748B] bg-white hover:bg-[#F1F5F9] text-[#0F172A] flex items-center gap-1 font-medium focus-enterprise">
+                Next
+                <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- INSTITUTIONAL FOOTER -->
+<footer class="w-full bg-white border-t border-[#E2E8F0] px-6 py-4 mt-auto">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#64748B]">
+<div class="text-center md:text-left">
+            © 2026 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+          </div>
+<div class="flex items-center gap-4 text-xs">
+<a class="text-[#1D4ED8] hover:underline focus-enterprise" href="#">Audit Protocol</a>
+<span class="text-[#CBD5E1]">·</span>
+<a class="text-[#1D4ED8] hover:underline focus-enterprise" href="#">Verification Registry</a>
+<span class="text-[#CBD5E1]">·</span>
+<a class="text-[#1D4ED8] hover:underline focus-enterprise" href="#">System Telemetry</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- SLIDE-OVER STUDENT DETAIL DRAWER (Anchored Right) -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="student-drawer" role="dialog">
+<!-- Backdrop with subtle ambient lift -->
+<div class="fixed inset-0 bg-[#0B1320]/40 transition-opacity" id="drawer-backdrop" onclick="closeDrawer()"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+<div class="w-screen max-w-md bg-white border-l border-[#E2E8F0] flex flex-col shadow-2xl">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-[#E2E8F0] bg-[#F8FAFC] flex items-start justify-between">
+<div class="space-y-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+              CISA Candidate Profile
+            </span>
+<h3 class="text-xl font-bold text-[#0F172A]" id="drawer-name">Chinedu Eze</h3>
+<p class="text-xs text-[#475569] font-mono" id="drawer-org">First Bank Nigeria · CE-2026-081</p>
+</div>
+<button class="h-10 w-10 rounded border border-[#64748B] flex items-center justify-center text-[#475569] hover:bg-[#F1F5F9] focus-enterprise" onclick="closeDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Body (8px grid spacing) -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 text-sm">
+<!-- Quick Status Snapshot -->
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<span class="text-[11px] text-[#64748B] font-medium uppercase block">Curriculum Status</span>
+<span class="text-base font-bold text-[#0F172A] mt-1 block" id="drawer-progress">74% Complete</span>
+</div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<span class="text-[11px] text-[#64748B] font-medium uppercase block">Attendance Ratio</span>
+<span class="text-base font-bold text-[#B45309] mt-1 block" id="drawer-attendance">11/14 (79%)</span>
+</div>
+</div>
+<!-- Contact & Credentials -->
+<div class="space-y-3">
+<h4 class="text-xs font-semibold text-[#0F172A] uppercase tracking-wider border-b border-[#E2E8F0] pb-1">
+              Identity &amp; Licensing
+            </h4>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Corporate Email:</span>
+<span class="font-mono text-[#0F172A] font-medium" id="drawer-email">chinedu.eze@firstbanknigeria.com</span>
+</div>
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Candidate ID:</span>
+<span class="font-mono text-[#0F172A]" id="drawer-id">CE-2026-081</span>
+</div>
+<div class="flex justify-between py-1 border-b border-[#F1F5F9]">
+<span class="text-[#64748B]">Licence Expiration:</span>
+<span class="font-mono text-[#0F172A] font-semibold">18 Dec 2026</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-[#64748B]">Sponsoring Org:</span>
+<span class="text-[#0F172A]" id="drawer-sponsor">First Bank Nigeria Plc (GRC Unit)</span>
+</div>
+</div>
+</div>
+<!-- Enrolled Domain Modules -->
+<div class="space-y-3">
+<h4 class="text-xs font-semibold text-[#0F172A] uppercase tracking-wider border-b border-[#E2E8F0] pb-1">
+              Enrolled Modules
+            </h4>
+<ul class="space-y-2 text-xs">
+<li class="flex items-center justify-between p-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded">
+<span>Domain 1: Information System Auditing Process</span>
+<span class="font-mono text-[#047857] font-medium">Completed</span>
+</li>
+<li class="flex items-center justify-between p-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded">
+<span>Domain 2: Governance &amp; Management of IT</span>
+<span class="font-mono text-[#047857] font-medium">Completed</span>
+</li>
+<li class="flex items-center justify-between p-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded">
+<span>Domain 3: Systems Acquisition &amp; Development</span>
+<span class="font-mono text-[#1D4ED8] font-medium">In Progress (82%)</span>
+</li>
+<li class="flex items-center justify-between p-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded">
+<span>Domain 4: Operations &amp; Business Resilience</span>
+<span class="font-mono text-[#64748B]">Scheduled</span>
+</li>
+<li class="flex items-center justify-between p-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded">
+<span>Domain 5: Protection of Information Assets</span>
+<span class="font-mono text-[#64748B]">Scheduled</span>
+</li>
+</ul>
+</div>
+<!-- Practice Exam History Benchmark -->
+<div class="space-y-3">
+<h4 class="text-xs font-semibold text-[#0F172A] uppercase tracking-wider border-b border-[#E2E8F0] pb-1">
+              Practice Exam History (ISACA Scaled 200–800)
+            </h4>
+<div class="space-y-2">
+<div class="p-3 bg-white border border-[#E2E8F0] rounded-lg flex items-center justify-between">
+<div>
+<div class="font-medium text-xs text-[#0F172A]">Mock Exam 1 — Baseline Diagnostics</div>
+<div class="text-[11px] text-[#64748B]">Conducted 16 Oct 2026</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-xs font-bold text-[#B91C1C]">420 / 800</div>
+<span class="inline-flex px-1.5 py-0.2 rounded text-[10px] font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+                    Fail (&lt;450)
+                  </span>
+</div>
+</div>
+<div class="p-3 bg-white border border-[#E2E8F0] rounded-lg flex items-center justify-between">
+<div>
+<div class="font-medium text-xs text-[#0F172A]">Mock Exam 2 — Mid-Term Diagnostic</div>
+<div class="text-[11px] text-[#64748B]">Conducted 01 Nov 2026</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-xs font-bold text-[#047857]">512 / 800</div>
+<span class="inline-flex px-1.5 py-0.2 rounded text-[10px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                    Pass (≥450)
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Attendance Log Summary -->
+<div class="space-y-2">
+<h4 class="text-xs font-semibold text-[#0F172A] uppercase tracking-wider border-b border-[#E2E8F0] pb-1">
+              Attendance Verification
+            </h4>
+<p class="text-xs text-[#475569]">
+              11 of 14 mandatory live audit practicum sessions attended. 3 sessions missed under non-excused policy. Candidate flagged for required remediation before exam voucher release.
+            </p>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-6 border-t border-[#E2E8F0] bg-[#F8FAFC] flex items-center gap-3">
+<button class="flex-1 h-11 rounded-md bg-[#0B1320] text-white text-sm font-medium hover:bg-[#1E293B] focus-enterprise transition-all inline-flex items-center justify-center gap-2" onclick="triggerDirectMessage()">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>Direct Message</span>
+</button>
+<button class="h-11 px-4 border border-[#64748B] rounded-md bg-white hover:bg-[#F1F5F9] text-[#0F172A] text-sm font-medium focus-enterprise" onclick="closeDrawer()">
+            Close
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE CLIENT-SIDE JAVASCRIPT LOGIC -->
+<script>
+    // State Tracker
+    let currentVariant = 1;
+
+    // Variant Switcher Function
+    function switchVariant(variantNum) {
+      currentVariant = variantNum;
+
+      // Update switcher button styles
+      ['btn-v1', 'btn-v2', 'btn-v3'].forEach((id, idx) => {
+        const btn = document.getElementById(id);
+        if (idx + 1 === variantNum) {
+          btn.className = "px-3 py-1 text-xs font-medium rounded transition-colors bg-white text-[#0B1320] shadow-sm";
+        } else {
+          btn.className = "px-3 py-1 text-xs font-medium rounded transition-colors text-[#94A3B8] hover:text-white";
+        }
+      });
+
+      const tableView = document.getElementById('roster-table-view');
+      const emptyView = document.getElementById('roster-empty-search');
+      const pagination = document.getElementById('table-pagination');
+      const searchInput = document.getElementById('search-input');
+      const clearX = document.getElementById('search-clear-x');
+      const exportStd = document.getElementById('btn-export-standard');
+      const exportLocked = document.getElementById('export-locked-indicator');
+      const selectionBanner = document.getElementById('selection-banner');
+
+      if (variantNum === 1) {
+        // Variant 1: Default
+        tableView.classList.remove('hidden');
+        emptyView.classList.add('hidden');
+        pagination.classList.remove('hidden');
+        selectionBanner.classList.remove('hidden');
+        searchInput.value = "";
+        clearX.classList.add('hidden');
+        exportStd.classList.remove('hidden');
+        exportLocked.classList.add('hidden');
+      } else if (variantNum === 2) {
+        // Variant 2: Search with no results
+        tableView.classList.add('hidden');
+        emptyView.classList.remove('hidden');
+        pagination.classList.add('hidden');
+        selectionBanner.classList.add('hidden');
+        searchInput.value = "Oluwaseun Alabi";
+        document.getElementById('empty-query-text').innerText = "Oluwaseun Alabi";
+        clearX.classList.remove('hidden');
+        exportStd.classList.remove('hidden');
+        exportLocked.classList.add('hidden');
+      } else if (variantNum === 3) {
+        // Variant 3: Export hidden / permission gated
+        tableView.classList.remove('hidden');
+        emptyView.classList.add('hidden');
+        pagination.classList.remove('hidden');
+        selectionBanner.classList.remove('hidden');
+        searchInput.value = "";
+        clearX.classList.add('hidden');
+        exportStd.classList.add('hidden');
+        exportLocked.classList.remove('hidden');
+      }
+    }
+
+    // Mask / Reveal toggle logic
+    function toggleMask(elementId, fullEmail, btn) {
+      const emailSpan = document.getElementById(elementId);
+      if (emailSpan.dataset.revealed === "true") {
+        // re-mask
+        const parts = fullEmail.split('@');
+        emailSpan.innerText = parts[0].charAt(0) + '••••••@' + parts[1];
+        emailSpan.dataset.revealed = "false";
+        btn.innerText = "[Reveal]";
+      } else {
+        // reveal
+        emailSpan.innerText = fullEmail;
+        emailSpan.dataset.revealed = "true";
+        btn.innerText = "[Mask]";
+      }
+    }
+
+    // Checkbox selection counter
+    function updateSelectionCounter() {
+      const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+      const count = checkedBoxes.length;
+      document.getElementById('selected-badge-count').innerText = count;
+      document.getElementById('msg-counter').innerText = count;
+      
+      const banner = document.getElementById('selection-banner');
+      const selectAll = document.getElementById('select-all-checkbox');
+      
+      const allBoxes = document.querySelectorAll('.row-checkbox');
+      selectAll.checked = count === allBoxes.length;
+
+      // Update parent row background to indicate selection state
+      allBoxes.forEach(box => {
+        const tr = box.closest('tr');
+        if (box.checked) {
+          tr.classList.add('bg-[#F8FAFC]');
+        } else {
+          tr.classList.remove('bg-[#F8FAFC]');
+        }
+      });
+    }
+
+    function toggleSelectAll(masterBox) {
+      const allBoxes = document.querySelectorAll('.row-checkbox');
+      allBoxes.forEach(cb => cb.checked = masterBox.checked);
+      updateSelectionCounter();
+    }
+
+    function clearSelection() {
+      const allBoxes = document.querySelectorAll('.row-checkbox');
+      allBoxes.forEach(cb => cb.checked = false);
+      document.getElementById('select-all-checkbox').checked = false;
+      updateSelectionCounter();
+    }
+
+    function selectAllVisible() {
+      const allBoxes = document.querySelectorAll('.row-checkbox');
+      allBoxes.forEach(cb => cb.checked = true);
+      document.getElementById('select-all-checkbox').checked = true;
+      updateSelectionCounter();
+    }
+
+    // Drawer management
+    function openDrawer(name, id, org, email, progress, attendance, score, result, licence) {
+      document.getElementById('drawer-name').innerText = name;
+      document.getElementById('drawer-org').innerText = org + ' · ' + id;
+      document.getElementById('drawer-email').innerText = email;
+      document.getElementById('drawer-id').innerText = id;
+      document.getElementById('drawer-sponsor').innerText = org;
+      document.getElementById('drawer-progress').innerText = progress + ' Complete';
+      document.getElementById('drawer-attendance').innerText = attendance;
+      
+      document.getElementById('student-drawer').classList.remove('hidden');
+    }
+
+    function closeDrawer() {
+      document.getElementById('student-drawer').classList.add('hidden');
+    }
+
+    function handleRowClick(event, name, id, org, email, progress, attendance, score, result, licence) {
+      // Do not open if user clicked input or button
+      if (['INPUT', 'BUTTON', 'A'].includes(event.target.tagName)) return;
+      openDrawer(name, id, org, email, progress, attendance, score, result, licence);
+    }
+
+    function triggerDirectMessage() {
+      alert("Opening secure audit dispatch channel for " + document.getElementById('drawer-name').innerText);
+    }
+
+    // Live search handling
+    function handleSearchInput(query) {
+      const clearX = document.getElementById('search-clear-x');
+      if (query.trim().length > 0) {
+        clearX.classList.remove('hidden');
+      } else {
+        clearX.classList.add('hidden');
+      }
+
+      if (query.toLowerCase().includes('oluwaseun') || query.toLowerCase().includes('alabi')) {
+        document.getElementById('empty-query-text').innerText = query;
+        document.getElementById('roster-table-view').classList.add('hidden');
+        document.getElementById('roster-empty-search').classList.remove('hidden');
+        document.getElementById('table-pagination').classList.add('hidden');
+        document.getElementById('selection-banner').classList.add('hidden');
+      } else if (currentVariant !== 2) {
+        document.getElementById('roster-table-view').classList.remove('hidden');
+        document.getElementById('roster-empty-search').classList.add('hidden');
+        document.getElementById('table-pagination').classList.remove('hidden');
+        document.getElementById('selection-banner').classList.remove('hidden');
+      }
+    }
+
+    function clearSearch() {
+      const searchInput = document.getElementById('search-input');
+      searchInput.value = '';
+      document.getElementById('search-clear-x').classList.add('hidden');
+      switchVariant(1);
+    }
+
+    // Escape key closes drawer
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeDrawer();
+      }
+    });
+  </script>
+</body></html>

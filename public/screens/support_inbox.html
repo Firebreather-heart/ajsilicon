@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy - Support Operations Inbox</title>
+<!-- Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#001551",
+            "error": "#ba1a1a",
+            "secondary-container": "#4069f2",
+            "surface-variant": "#dae2fd",
+            "on-surface-variant": "#45474c",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface": "#faf8ff",
+            "on-background": "#131b2e",
+            "on-surface": "#131b2e",
+            "on-secondary-fixed-variant": "#0039b5",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "secondary": "#1d4ed8",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#283044",
+            "background": "#faf8ff",
+            "outline": "#75777c",
+            "on-tertiary-container": "#997f6a",
+            "secondary-fixed": "#dce1ff",
+            "inverse-primary": "#bfc6d9",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#eaedff",
+            "on-tertiary-fixed": "#281809",
+            "tertiary": "#000000",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed": "#fddcc4",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary-container": "#7c8495",
+            "primary-container": "#141c29",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-container-highest": "#dae2fd",
+            "on-error": "#ffffff",
+            "outline-variant": "#c5c6cc",
+            "surface-bright": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#000000",
+            "on-primary-fixed": "#141c29",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-tint": "#575f6e",
+            "primary-fixed": "#dbe2f5",
+            "surface-container-low": "#f2f3ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary-container": "#fffbff",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#281809",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "margin": "2rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem",
+            "space-xs": "0.5rem",
+            "space-xl": "3rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Institutional focus states */
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+    /* Custom clean scrollbars for audit panels */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="min-w-[1440px] text-body-md font-body-md text-[#0F172A] bg-[#F8FAFC] antialiased">
+<!-- ================= TOP APP BAR (SHELL) ================= -->
+<header class="w-full h-16 bg-[#0B1320] text-white flex items-center justify-between px-space-md sticky top-0 z-50 shadow-sm border-b border-[#1E293B]">
+<!-- Left Section: Logo encapsulated on high-contrast white plate -->
+<div class="flex items-center gap-6">
+<div class="h-10 px-3 bg-white rounded flex items-center justify-center">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTiHCYZ4cO4yURkO7YdQYuyBvA9Tyox8Th1Wm9KlWk1IGJlAv3wGsPeLIr28W9nJWea_w8X0E-ilcerEpcMSPscQgVKpu3Gk9GIePVzpTR2_vDJl4dcDQvyqpuaJC-IF1jxnh9KbXyMV29ADfhv-YrHKcCl-R2yxybQsTBYt6gSQ_16n1b-th3eB_58MYchFp5fRBgZZzgVCCJQFJi3OStQklRd-e79OnV66KpOoJEdR8VQVzlImdAxQ"/>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<span class="text-white text-label-md font-label-md font-medium tracking-wide">
+        Enterprise Audit Hub · Staff Support Operations
+      </span>
+</div>
+<!-- Right Section: Plain-text role and name, WAT timestamp, notification icon, avatar badge -->
+<div class="flex items-center gap-6">
+<div class="text-right">
+<div class="text-label-md font-label-md text-white font-medium">Role: Support Agent | Tunde Bakare</div>
+<div class="text-label-sm font-label-sm text-[#94A3B8] flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+          14:40 WAT · 05 Oct 2026
+        </div>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#B91C1C]"></span>
+</button>
+<div class="min-w-[44px] min-h-[44px] w-11 h-11 bg-[#1E293B] border border-[#334155] rounded flex items-center justify-center font-bold text-label-md font-label-md text-white select-none">
+          TB
+        </div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN APP CONTAINER ================= -->
+<div class="flex min-h-[calc(100vh-64px)] w-full">
+<!-- ================= SIDEBAR (RAIL) ================= -->
+<aside class="w-64 bg-[#0B1320] text-white flex flex-col justify-between p-space-md border-r border-[#1E293B] shrink-0">
+<div class="flex flex-col gap-6">
+<div>
+<div class="text-label-sm font-label-sm uppercase tracking-wider text-[#94A3B8] px-3 mb-2 font-semibold">Support Operations</div>
+<nav class="flex flex-col gap-1">
+<a class="min-h-[44px] flex items-center gap-3 px-3 rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors text-label-md font-label-md" href="#dashboard">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="min-h-[44px] flex items-center gap-3 px-3 rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors text-label-md font-label-md" href="#students">
+<span class="material-symbols-outlined">school</span>
+<span>Students</span>
+</a>
+<a class="min-h-[44px] flex items-center gap-3 px-3 rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors text-label-md font-label-md" href="#cohorts">
+<span class="material-symbols-outlined">groups</span>
+<span>Cohorts</span>
+</a>
+<!-- ACTIVE TAB -->
+<a class="min-h-[44px] flex items-center justify-between px-3 rounded bg-[#1E293B] text-white font-medium border-l-2 border-[#2563EB] text-label-md font-label-md shadow-sm" href="#tickets">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#93C5FD]">support_agent</span>
+<span>Tickets &amp; Inquiries</span>
+</div>
+<span class="inline-flex items-center justify-center bg-[#B91C1C] text-white text-[11px] font-bold px-1.5 py-0.5 rounded-full">48</span>
+</a>
+<a class="min-h-[44px] flex items-center gap-3 px-3 rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors text-label-md font-label-md" href="#audit">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Audit Trail</span>
+</a>
+</nav>
+</div>
+<div>
+<div class="text-label-sm font-label-sm uppercase tracking-wider text-[#94A3B8] px-3 mb-2 font-semibold">Repository &amp; Registry</div>
+<nav class="flex flex-col gap-1">
+<a class="min-h-[44px] flex items-center gap-3 px-3 rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors text-label-md font-label-md" href="#docs">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Documentation</span>
+</a>
+<a class="min-h-[44px] flex items-center gap-3 px-3 rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors text-label-md font-label-md" href="#vault">
+<span class="material-symbols-outlined">lock</span>
+<span>Compliance Vault</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Locked Terminal Action -->
+<div class="pt-4 border-t border-[#1E293B]">
+<button class="w-full min-h-[44px] px-3 bg-[#141C29] border border-[#334155] rounded text-left text-label-sm font-label-sm text-[#CBD5E1] hover:bg-[#1E293B] transition-colors flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#94A3B8]">terminal</span>
+<span>Agent Terminal Session</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-[#94A3B8]">lock</span>
+</button>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="flex-1 flex flex-col bg-[#F8FAFC] overflow-y-auto min-w-0">
+<!-- Breadcrumb Bar -->
+<div class="bg-white border-b border-[#E2E8F0] px-space-lg py-3 flex items-center gap-2 text-label-sm font-label-sm text-[#475569]">
+<span>Staff &amp; Support</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Support Operations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">Support Inbox</span>
+</div>
+<!-- Page Header with Exactly One Primary Action -->
+<div class="px-space-lg py-6 bg-white border-b border-[#E2E8F0] flex items-center justify-between">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A]">Support Inbox</h1>
+<p class="text-body-sm font-body-sm text-[#475569] mt-1">Manage candidate queries, access issues, and payment inquiries.</p>
+</div>
+<div>
+<button class="min-h-[44px] px-6 bg-[#0B1320] text-white rounded text-label-md font-label-md font-medium hover:bg-[#1E293B] transition-colors flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New ticket
+          </button>
+</div>
+</div>
+<!-- Interactive State Switcher for Assessment Verification -->
+<div class="bg-[#EFF6FF] border-b border-[#BFDBFE] px-space-lg py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[18px]">tune</span>
+<span class="text-label-sm font-label-sm font-semibold text-[#1D4ED8]">Interactive State Inspector:</span>
+<div class="inline-flex rounded border border-[#BFDBFE] bg-white p-0.5" role="tablist">
+<button class="min-h-[36px] px-3 rounded text-label-sm font-label-sm font-semibold bg-[#0B1320] text-white transition-all" id="btn-state-open" onclick="switchState('open')">State 1: Open (#TKT-8492)</button>
+<button class="min-h-[36px] px-3 rounded text-label-sm font-label-sm text-[#475569] hover:text-[#0F172A] transition-all" id="btn-state-waiting" onclick="switchState('waiting')">State 2: Waiting on Student (#TKT-8488)</button>
+<button class="min-h-[36px] px-3 rounded text-label-sm font-label-sm text-[#475569] hover:text-[#0F172A] transition-all" id="btn-state-resolved" onclick="switchState('resolved')">State 3: Resolved (#TKT-8470)</button>
+<button class="min-h-[36px] px-3 rounded text-label-sm font-label-sm text-[#475569] hover:text-[#0F172A] transition-all" id="btn-state-breached" onclick="switchState('breached')">State 4: SLA Breached (#TKT-8462)</button>
+<button class="min-h-[36px] px-3 rounded text-label-sm font-label-sm text-[#475569] hover:text-[#0F172A] transition-all" id="btn-state-empty" onclick="switchState('empty')">Empty State</button>
+<button class="min-h-[36px] px-3 rounded text-label-sm font-label-sm text-[#475569] hover:text-[#0F172A] transition-all" id="btn-state-loading" onclick="switchState('loading')">Loading Skeleton</button>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-[#475569]">All 4 states &amp; variants explicitly modeled</span>
+</div>
+<!-- ================= MASTER-DETAIL VIEWPORT ================= -->
+<div class="p-space-lg flex gap-6 items-start">
+<!-- LEFT PANE: Filters & Ticket List (7-col) -->
+<div class="w-[58%] flex flex-col gap-4">
+<!-- Filters Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm">
+<!-- Search bar -->
+<div class="relative mb-3">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[#64748B] text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-white border border-[#64748B] rounded text-body-sm font-body-sm text-[#0F172A] placeholder-[#475569]" placeholder="Search tickets by ID, subject, student name..." type="text"/>
+</div>
+<!-- Filter Controls Grid -->
+<div class="grid grid-cols-4 gap-3">
+<div>
+<label class="block text-label-sm font-label-sm font-medium text-[#475569] mb-1">Status</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm text-[#0F172A]">
+<option>All Statuses</option>
+<option selected="">Open</option>
+<option>Waiting on student</option>
+<option>Resolved</option>
+<option>SLA Breached</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm font-medium text-[#475569] mb-1">Category</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm text-[#0F172A]">
+<option>All Categories</option>
+<option>Portal Access</option>
+<option>Course Content</option>
+<option>Billing &amp; Invoices</option>
+<option>Exam Engine</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm font-medium text-[#475569] mb-1">Priority</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm text-[#0F172A]">
+<option>All Priorities</option>
+<option>Urgent</option>
+<option>High</option>
+<option>Medium</option>
+<option>Low</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm font-medium text-[#475569] mb-1">Assignee</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm text-[#0F172A]">
+<option>All Assignees</option>
+<option selected="">Me (Tunde B.)</option>
+<option>Unassigned</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Batch Action Bar -->
+<div class="bg-white border border-[#E2E8F0] rounded-lg px-4 py-2 flex items-center justify-between text-label-sm font-label-sm text-[#475569]">
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" type="checkbox"/>
+<span>Select all 48 tickets</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="min-h-[36px] px-3 bg-[#F1F5F9] border border-[#CBD5E1] rounded text-[#0F172A] hover:bg-[#E2E8F0] font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">assignment_ind</span>
+                Assign
+              </button>
+<button class="min-h-[36px] px-3 bg-[#F1F5F9] border border-[#CBD5E1] rounded text-[#0F172A] hover:bg-[#E2E8F0] font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">published_with_changes</span>
+                Mark status
+              </button>
+</div>
+</div>
+<!-- Normal Ticket Table (Visible in States 1-4) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden" id="table-container-normal">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-label-sm font-label-sm text-[#475569]">
+<th class="py-3 px-3 w-10"></th>
+<th class="py-3 px-3 font-semibold">ID</th>
+<th class="py-3 px-3 font-semibold">Subject &amp; Student</th>
+<th class="py-3 px-3 font-semibold">Category</th>
+<th class="py-3 px-3 font-semibold">Priority</th>
+<th class="py-3 px-3 font-semibold">Status</th>
+<th class="py-3 px-3 font-semibold text-right">Updated</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm">
+<!-- ROW 1: TKT-8492 (Active in State 1) -->
+<tr class="cursor-pointer bg-[#EFF6FF] border-l-4 border-l-[#2563EB] hover:bg-[#DBEAFE] transition-colors" id="row-tkt-8492" onclick="switchState('open')">
+<td class="py-3 px-3">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono font-semibold text-[#0F172A]">#TKT-8492</td>
+<td class="py-3 px-3">
+<div class="font-medium text-[#0F172A] line-clamp-1">Unable to access live lecture room 14B</div>
+<div class="text-label-sm font-label-sm text-[#475569] flex items-center gap-1 mt-0.5">
+<span>Chinedu Eze</span>
+<span>·</span>
+<span class="font-mono text-[12px]">ch•••••••@example.com</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium ml-1" onclick="event.stopPropagation(); toggleMask(this, 'chinedu.eze@zenithbank.ng')">Reveal</button>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#334155] border border-[#CBD5E1]">Portal Access</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">flag</span> Medium
+                    </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">adjust</span> Open
+                    </span>
+</td>
+<td class="py-3 px-3 text-right text-label-sm font-label-sm text-[#475569] whitespace-nowrap">
+                    12 min ago
+                  </td>
+</tr>
+<!-- ROW 2: TKT-8488 (Active in State 2) -->
+<tr class="cursor-pointer hover:bg-[#F8FAFC] transition-colors" id="row-tkt-8488" onclick="switchState('waiting')">
+<td class="py-3 px-3">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono font-semibold text-[#0F172A]">#TKT-8488</td>
+<td class="py-3 px-3">
+<div class="font-medium text-[#0F172A] line-clamp-1">Invoice receipt request for Cohort 14 corporate payment</div>
+<div class="text-label-sm font-label-sm text-[#475569] flex items-center gap-1 mt-0.5">
+<span>Amina Mohammed</span>
+<span>·</span>
+<span class="font-mono text-[12px]">am•••••••@accesscorp.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium ml-1" onclick="event.stopPropagation(); toggleMask(this, 'amina.m@accesscorp.ng')">Reveal</button>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#334155] border border-[#CBD5E1]">Billing &amp; Invoices</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#475569] border border-[#94A3B8]">
+<span class="material-symbols-outlined text-[13px]">flag</span> Low
+                    </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span> Waiting on student
+                    </span>
+</td>
+<td class="py-3 px-3 text-right text-label-sm font-label-sm text-[#475569] whitespace-nowrap">
+                    1h 24m ago
+                  </td>
+</tr>
+<!-- ROW 3: TKT-8470 (Active in State 3) -->
+<tr class="cursor-pointer hover:bg-[#F8FAFC] transition-colors" id="row-tkt-8470" onclick="switchState('resolved')">
+<td class="py-3 px-3">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono font-semibold text-[#0F172A]">#TKT-8470</td>
+<td class="py-3 px-3">
+<div class="font-medium text-[#0F172A] line-clamp-1">Module 4 ISACA Domain Review quiz timer stopped</div>
+<div class="text-label-sm font-label-sm text-[#475569] flex items-center gap-1 mt-0.5">
+<span>Femi Adebayo</span>
+<span>·</span>
+<span class="font-mono text-[12px]">fe•••••••@pwc.com</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium ml-1" onclick="event.stopPropagation(); toggleMask(this, 'femi.adebayo@pwc.com')">Reveal</button>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#334155] border border-[#CBD5E1]">Exam Engine</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[13px]">flag</span> High
+                    </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Resolved
+                    </span>
+</td>
+<td class="py-3 px-3 text-right text-label-sm font-label-sm text-[#475569] whitespace-nowrap">
+                    04 Oct 2026
+                  </td>
+</tr>
+<!-- ROW 4: TKT-8462 (Active in State 4: SLA Breached) -->
+<tr class="cursor-pointer bg-[#FEF2F2] hover:bg-[#FEE2E2] transition-colors border-l-4 border-l-[#B91C1C]" id="row-tkt-8462" onclick="switchState('breached')">
+<td class="py-3 px-3">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono font-bold text-[#B91C1C]">#TKT-8462</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-[#B91C1C] line-clamp-1">Paystack Webhook failure: Tuition debited but access locked</div>
+<div class="text-label-sm font-label-sm text-[#475569] flex items-center gap-1 mt-0.5">
+<span>Ngozi Okafor</span>
+<span>·</span>
+<span class="font-mono text-[12px]">ng•••••••@gtbank.com</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium ml-1" onclick="event.stopPropagation(); toggleMask(this, 'ngozi.okafor@gtbank.com')">Reveal</button>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-white text-[#B91C1C] border border-[#B91C1C]">Billing &amp; Invoices</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[12px] font-bold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[13px]">priority_high</span> Urgent
+                    </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-bold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">warning</span> SLA Breached
+                    </span>
+</td>
+<td class="py-3 px-3 text-right text-label-sm font-label-sm text-[#B91C1C] font-semibold whitespace-nowrap">
+                    +4h 15m overdue
+                  </td>
+</tr>
+<!-- ROW 5: Additional contextual queue row -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-3">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono font-semibold text-[#0F172A]">#TKT-8458</td>
+<td class="py-3 px-3">
+<div class="font-medium text-[#0F172A] line-clamp-1">CRISC Risk Assessment Toolkit spreadsheet download corrupted</div>
+<div class="text-label-sm font-label-sm text-[#475569] flex items-center gap-1 mt-0.5">
+<span>Babatunde Olatunji</span>
+<span>·</span>
+<span class="font-mono text-[12px]">ba•••••••@firs.gov.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-[11px] font-medium ml-1" onclick="event.stopPropagation(); toggleMask(this, 'babatunde.o@firs.gov.ng')">Reveal</button>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-[#F1F5F9] text-[#334155] border border-[#CBD5E1]">Course Content</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">flag</span> Medium
+                    </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">adjust</span> Open
+                    </span>
+</td>
+<td class="py-3 px-3 text-right text-label-sm font-label-sm text-[#475569] whitespace-nowrap">
+                    2h 05m ago
+                  </td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Bar -->
+<div class="px-4 py-3 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-between text-label-sm font-label-sm text-[#475569]">
+<div>Showing 1–5 of 48 tickets</div>
+<div class="flex items-center gap-2">
+<button class="min-h-[44px] min-w-[44px] px-3 bg-white border border-[#64748B] rounded text-[#0F172A] hover:bg-[#F1F5F9] disabled:opacity-50 flex items-center justify-center font-medium" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                  Prev
+                </button>
+<button class="min-h-[44px] min-w-[44px] px-3 bg-white border border-[#64748B] rounded text-[#0F172A] hover:bg-[#F1F5F9] flex items-center justify-center font-medium">
+                  Next
+                  <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- EMPTY STATE CONTAINER (Hidden by default) -->
+<div class="hidden bg-white border border-[#E2E8F0] rounded-xl p-12 text-center shadow-sm" id="table-container-empty">
+<div class="w-16 h-16 bg-[#F1F5F9] border border-[#E2E8F0] rounded-full flex items-center justify-center mx-auto mb-4 text-[#64748B]">
+<span class="material-symbols-outlined text-[32px]">inbox</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]">No tickets match your filter criteria</h3>
+<p class="text-body-sm font-body-sm text-[#475569] max-w-md mx-auto mt-2">
+              All active candidate inquiries for this queue have been resolved or reassigned. Adjust your filters or reset search parameters.
+            </p>
+<div class="mt-6 flex justify-center gap-3">
+<button class="min-h-[44px] px-4 bg-[#0B1320] text-white rounded text-label-md font-label-md font-medium hover:bg-[#1E293B]" onclick="switchState('open')">
+                Reset filter view
+              </button>
+</div>
+</div>
+<!-- LOADING SKELETON CONTAINER (Hidden by default) -->
+<div class="hidden bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm animate-pulse" id="table-container-loading">
+<div class="h-6 bg-[#E2E8F0] rounded w-1/3 mb-6"></div>
+<div class="space-y-4">
+<div class="h-12 bg-[#F1F5F9] rounded w-full"></div>
+<div class="h-12 bg-[#F1F5F9] rounded w-full"></div>
+<div class="h-12 bg-[#F1F5F9] rounded w-full"></div>
+<div class="h-12 bg-[#F1F5F9] rounded w-full"></div>
+<div class="h-12 bg-[#F1F5F9] rounded w-full"></div>
+</div>
+<div class="h-8 bg-[#E2E8F0] rounded w-1/4 mt-6 ml-auto"></div>
+</div>
+</div>
+<!-- RIGHT PANE: Master Detail (Ticket Detail View + Student Summary) (5-col) -->
+<div class="w-[42%] flex flex-col gap-6">
+<!-- ================= TICKET DETAIL VIEW PANE ================= -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Ticket Header -->
+<div class="p-4 border-b border-[#E2E8F0] bg-white">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-mono text-headline-sm font-headline-sm font-bold text-[#0F172A]" id="detail-ticket-id">#TKT-8492</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]" id="detail-priority-badge">
+<span class="material-symbols-outlined text-[13px]">flag</span> Medium
+                  </span>
+</div>
+<!-- Status Badge -->
+<div id="detail-status-container">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">adjust</span> Open
+                  </span>
+</div>
+</div>
+<!-- Subject -->
+<h2 class="text-body-lg font-body-lg font-semibold text-[#0F172A]" id="detail-ticket-subject">
+                Unable to access live lecture room 14B
+              </h2>
+<!-- Status & Assignee Controls -->
+<div class="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-[#F1F5F9]">
+<div>
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1">Change status</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm text-[#0F172A]" id="detail-status-select">
+<option selected="" value="open">Open</option>
+<option value="waiting">Waiting on student</option>
+<option value="resolved">Resolved</option>
+<option value="closed">Closed</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1">Assign</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm text-[#0F172A]">
+<option selected="">Tunde Bakare (You)</option>
+<option>Chioma Nwosu</option>
+<option>Ibrahim Bello</option>
+<option>Unassigned</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Dynamic Urgent Banner for State 4 (SLA Breached) -->
+<div class="hidden bg-[#FEF2F2] border-b border-[#B91C1C] p-3 text-[#B91C1C] text-body-sm font-body-sm flex items-start gap-2" id="sla-breach-callout">
+<span class="material-symbols-outlined text-[#B91C1C] shrink-0 mt-0.5">error</span>
+<div>
+<span class="font-bold">CRITICAL SLA BREACH:</span> First-touch guarantee of 2 hours exceeded by 4h 15m. Escalate to Lead IT Administrator immediately if payment verification fails.
+              </div>
+</div>
+<!-- Thread Tabs -->
+<div class="flex border-b border-[#E2E8F0] bg-[#F8FAFC] px-4 pt-2">
+<button class="px-4 py-2 border-b-2 border-[#0B1320] text-label-md font-label-md font-semibold text-[#0B1320] flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+                Inquiry Thread (2)
+              </button>
+<button class="px-4 py-2 border-b-2 border-transparent text-label-md font-label-md text-[#475569] hover:text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                Internal Notes (1)
+              </button>
+</div>
+<!-- Message Thread Body -->
+<div class="p-4 space-y-4 max-h-[380px] overflow-y-auto bg-white" id="thread-messages-list">
+<!-- Message 1: Student Inquiry -->
+<div class="border border-[#E2E8F0] rounded-lg p-3 bg-[#F8FAFC]">
+<div class="flex items-center justify-between mb-2 pb-2 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-[#0B1320] text-white flex items-center justify-center font-bold text-label-sm font-label-sm">CE</div>
+<div>
+<div class="text-label-md font-label-md font-medium text-[#0F172A]">Chinedu Eze <span class="text-label-sm font-label-sm text-[#475569] font-normal">(Candidate)</span></div>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-[#475569]">14:28 WAT · 05 Oct 2026</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#0F172A] leading-relaxed" id="msg-student-body">
+                  Good afternoon support team. I am enrolled in CISA Exam Prep Cohort 14. The timetable indicates our domain lecture on Information System Operations commenced at 14:00 WAT today, but my portal link directs me to an expired Zoom session code (Meeting ID: 894 1120 4491). Please assist promptly as the session is currently ongoing.
+                </p>
+</div>
+<!-- Message 2: Internal Note (Restricted Staff Box) -->
+<div class="border border-[#FDE68A] bg-[#FFFBEB] rounded-lg p-3">
+<div class="flex items-center justify-between mb-1 pb-1 border-b border-[#FEF3C7]">
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm font-semibold text-[#B45309]">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                    Internal Note · Only visible to A.J. Silicon staff
+                  </div>
+<span class="text-label-sm font-label-sm text-[#B45309]">14:32 WAT</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#78350F]">
+                  Checked instructor feed: Room 14B Zoom bridge was rotated this morning due to encryption credential refresh. The updated meeting ID is 902 4431 8812.
+                </p>
+</div>
+<!-- Message 3: Agent Response (State dependent) -->
+<div class="border border-[#BFDBFE] rounded-lg p-3 bg-[#EFF6FF]" id="agent-response-box">
+<div class="flex items-center justify-between mb-2 pb-2 border-b border-[#DBEAFE]">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-[#1D4ED8] text-white flex items-center justify-center font-bold text-label-sm font-label-sm">TB</div>
+<div>
+<div class="text-label-md font-label-md font-medium text-[#0F172A]">Tunde Bakare <span class="text-label-sm font-label-sm text-[#1D4ED8] font-medium">(Support Agent)</span></div>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-[#475569]">14:38 WAT · 05 Oct 2026</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#0F172A] leading-relaxed" id="msg-agent-body">
+                  Hello Chinedu, thank you for contacting A.J. Silicon support. The access bridge credentials were regenerated during the morning security rotation. I have synchronized your portal session and verified that the active lecture link for Room 14B is now updated. Please refresh your browser or use the verified credential token sent to your email.
+                </p>
+</div>
+<!-- Resolution Container for State 3 (Resolved) -->
+<div class="hidden border border-[#A7F3D0] bg-[#ECFDF5] rounded-lg p-3" id="resolved-summary-card">
+<div class="flex items-center justify-between mb-1 pb-1 border-b border-[#D1FAE5]">
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm font-semibold text-[#047857]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                    Resolution Summary Note
+                  </div>
+<span class="text-label-sm font-label-sm text-[#047857]">Resolved by Tunde Bakare</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#065F46]">
+                  Candidate verified audio/video handshake in lecture hall 14B at 14:41 WAT. Incident logged under operational schedule change. SLA met.
+                </p>
+<div class="mt-2 pt-2 border-t border-[#D1FAE5] flex justify-end">
+<button class="min-h-[44px] px-3 bg-white border border-[#047857] text-[#047857] rounded text-label-sm font-label-sm font-semibold hover:bg-[#ECFDF5] flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+                    Reopen ticket
+                  </button>
+</div>
+</div>
+</div>
+<!-- Reply Composer -->
+<div class="p-4 border-t border-[#E2E8F0] bg-[#F8FAFC] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-semibold text-[#475569] uppercase tracking-wide">Reply to Student</span>
+<!-- Canned Replies Dropdown -->
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-[#475569]">Canned replies:</span>
+<select class="h-9 px-2.5 bg-white border border-[#64748B] rounded text-label-sm font-label-sm text-[#0F172A]" onchange="insertCanned(this.value)">
+<option value="">Select pre-approved response...</option>
+<option value="Browser Cache &amp; Cookie Clearing">Browser Cache &amp; Cookie Clearing</option>
+<option value="Live Class Zoom Link Verification">Live Class Zoom Link Verification</option>
+<option value="Paystack Webhook Settlement Delay">Paystack Webhook Settlement Delay</option>
+</select>
+</div>
+</div>
+<!-- Textarea Composer -->
+<div class="bg-white border border-[#64748B] rounded-lg overflow-hidden">
+<div class="bg-[#F1F5F9] px-3 py-1.5 border-b border-[#CBD5E1] flex items-center gap-2 text-[#475569]">
+<button class="p-1 hover:text-[#0F172A] rounded" type="button"><span class="material-symbols-outlined text-[16px]">format_bold</span></button>
+<button class="p-1 hover:text-[#0F172A] rounded" type="button"><span class="material-symbols-outlined text-[16px]">format_italic</span></button>
+<button class="p-1 hover:text-[#0F172A] rounded" type="button"><span class="material-symbols-outlined text-[16px]">format_list_bulleted</span></button>
+<div class="h-4 w-px bg-[#CBD5E1]"></div>
+<button class="p-1 hover:text-[#0F172A] rounded" type="button"><span class="material-symbols-outlined text-[16px]">code</span></button>
+</div>
+<textarea class="w-full p-3 border-none focus:ring-0 text-body-sm font-body-sm text-[#0F172A] placeholder-[#475569] resize-none" id="reply-textarea" placeholder="Type response to candidate..." rows="3"></textarea>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="min-h-[44px] min-w-[44px] px-3 bg-white border border-[#64748B] text-[#0F172A] rounded hover:bg-[#F1F5F9] flex items-center gap-1.5 text-label-sm font-label-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">attach_file</span>
+                    Attach evidence
+                  </button>
+<button class="min-h-[44px] px-3 bg-white border border-[#64748B] text-[#0F172A] rounded hover:bg-[#F1F5F9] flex items-center gap-1.5 text-label-sm font-label-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                    Post as note
+                  </button>
+</div>
+<button class="min-h-[44px] px-6 bg-[#0B1320] text-white rounded text-label-md font-label-md font-medium hover:bg-[#1E293B] flex items-center gap-2 shadow-sm" type="button">
+<span>Send reply</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= RIGHT PANEL / STUDENT SUMMARY ================= -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl shadow-sm p-5">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0] mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320]">badge</span>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]">Candidate Profile Summary</h3>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                Verified Enrollee
+              </span>
+</div>
+<!-- Candidate Details -->
+<div class="space-y-3.5">
+<div>
+<div class="text-label-sm font-label-sm text-[#475569]">Candidate Full Name</div>
+<div class="text-body-md font-body-md font-bold text-[#0F172A]" id="student-name-val">Chinedu Eze</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-[#475569]">Student ID Registry</div>
+<div class="font-mono text-body-sm font-body-sm text-[#0F172A] font-semibold" id="student-id-val">STU-LOS-2026-0842</div>
+</div>
+<!-- Masked Email -->
+<div class="flex items-center justify-between">
+<div>
+<div class="text-label-sm font-label-sm text-[#475569]">Institutional Email</div>
+<div class="font-mono text-body-sm font-body-sm text-[#0F172A]" id="student-email-val">ch•••••••@example.com</div>
+</div>
+<button class="min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-label-sm font-label-sm text-[#1D4ED8] font-medium hover:bg-[#EFF6FF] flex items-center gap-1" onclick="toggleMaskText('student-email-val', 'chinedu.eze@zenithbank.ng', this)">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+<!-- Masked Phone -->
+<div class="flex items-center justify-between">
+<div>
+<div class="text-label-sm font-label-sm text-[#475569]">Primary Telephone</div>
+<div class="font-mono text-body-sm font-body-sm text-[#0F172A]" id="student-phone-val">+234 803 ••• ••89</div>
+</div>
+<button class="min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-label-sm font-label-sm text-[#1D4ED8] font-medium hover:bg-[#EFF6FF] flex items-center gap-1" onclick="toggleMaskText('student-phone-val', '+234 803 449 1289', this)">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+<div class="pt-3 border-t border-[#F1F5F9]">
+<div class="text-label-sm font-label-sm text-[#475569]">Enrolled Cohort</div>
+<div class="text-body-sm font-body-sm font-semibold text-[#0F172A] mt-0.5">
+                  CISA Exam Prep Cohort 14 (Lagos Center)
+                </div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-[#475569]">Licence Status</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[#047857] text-[18px]">check_circle</span>
+<span class="text-body-sm font-body-sm font-medium text-[#047857]">Active (24 days remaining)</span>
+</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-[#475569]">Recent Verified Payment</div>
+<div class="text-body-sm font-body-sm font-mono font-medium text-[#0F172A] mt-0.5 bg-[#F8FAFC] border border-[#E2E8F0] p-2 rounded">
+                  ₦300,000 · 02 Oct 2026 · Paystack Settled
+                </div>
+</div>
+</div>
+<!-- View As Student (Impersonation Flow) -->
+<div class="mt-6 pt-4 border-t border-[#E2E8F0]">
+<button class="w-full min-h-[44px] px-4 bg-[#F1F5F9] border border-[#64748B] text-[#0F172A] rounded hover:bg-[#E2E8F0] transition-colors flex items-center justify-center gap-2 font-medium text-label-md font-label-md" onclick="triggerImpersonation()">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+                View as student
+              </button>
+<p class="text-[11px] text-[#64748B] text-center mt-1.5">
+                Staff impersonation action creates an immutable log in compliance audit trail.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ================= INSTITUTIONAL FOOTER ================= -->
+<footer class="w-full bg-[#0B1320] border-t border-[#1E293B] text-[#94A3B8] py-6 px-space-lg">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<div class="text-left text-label-sm font-label-sm">
+        © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+      </div>
+<div class="flex items-center gap-6 text-label-sm font-label-sm">
+<a class="hover:text-white transition-colors" href="#protocol">Audit Protocol</a>
+<a class="hover:text-white transition-colors" href="#registry">Verification Registry</a>
+<a class="hover:text-white transition-colors" href="#ledger">Public Ledger Key</a>
+<a class="hover:text-white transition-colors" href="#telemetry">System Telemetry</a>
+</div>
+</div>
+</footer>
+<!-- ================= CLIENT JAVASCRIPT FOR STATE INSPECTION & CONTROLS ================= -->
+<script>
+    // State variant data definitions matching specification rules
+    const STATE_CONFIG = {
+      open: {
+        ticketId: '#TKT-8492',
+        subject: 'Unable to access live lecture room 14B',
+        priorityText: 'Medium',
+        priorityColor: 'bg-[#FFFBEB] text-[#B45309] border-[#B45309]',
+        priorityIcon: 'flag',
+        statusText: 'Open',
+        statusColor: 'bg-[#EFF6FF] text-[#1D4ED8] border-[#1D4ED8]',
+        statusIcon: 'adjust',
+        statusSelectVal: 'open',
+        slaCallout: false,
+        studentMsg: 'Good afternoon support team. I am enrolled in CISA Exam Prep Cohort 14. The timetable indicates our domain lecture on Information System Operations commenced at 14:00 WAT today, but my portal link directs me to an expired Zoom session code (Meeting ID: 894 1120 4491). Please assist promptly as the session is currently ongoing.',
+        agentMsg: 'Hello Chinedu, thank you for contacting A.J. Silicon support. The access bridge credentials were regenerated during the morning security rotation. I have synchronized your portal session and verified that the active lecture link for Room 14B is now updated. Please refresh your browser or use the verified credential token sent to your email.',
+        showAgent: true,
+        showResolved: false,
+        studentName: 'Chinedu Eze',
+        studentId: 'STU-LOS-2026-0842',
+        studentEmail: 'ch•••••••@example.com',
+        studentPhone: '+234 803 ••• ••89',
+        activeRowId: 'row-tkt-8492'
+      },
+      waiting: {
+        ticketId: '#TKT-8488',
+        subject: 'Invoice receipt request for Cohort 14 corporate payment',
+        priorityText: 'Low',
+        priorityColor: 'bg-[#F1F5F9] text-[#475569] border-[#94A3B8]',
+        priorityIcon: 'flag',
+        statusText: 'Waiting on student',
+        statusColor: 'bg-[#FFFBEB] text-[#B45309] border-[#B45309]',
+        statusIcon: 'hourglass_empty',
+        statusSelectVal: 'waiting',
+        slaCallout: false,
+        studentMsg: 'Our finance department at Access Corporation requires an updated stamped tax invoice containing our corporate TIN for the ₦300,000 tuition disbursement.',
+        agentMsg: 'Good day Amina, we generated the revised electronic withholding tax receipt #INV-LOS-8821. Could you confirm if your enterprise billing portal requires our FIRS VAT registration certificate appended as well?',
+        showAgent: true,
+        showResolved: false,
+        studentName: 'Amina Mohammed',
+        studentId: 'STU-LOS-2026-0619',
+        studentEmail: 'am•••••••@accesscorp.ng',
+        studentPhone: '+234 802 ••• ••31',
+        activeRowId: 'row-tkt-8488'
+      },
+      resolved: {
+        ticketId: '#TKT-8470',
+        subject: 'Module 4 ISACA Domain Review quiz timer stopped',
+        priorityText: 'High',
+        priorityColor: 'bg-[#EFF6FF] text-[#1D4ED8] border-[#1D4ED8]',
+        priorityIcon: 'flag',
+        statusText: 'Resolved',
+        statusColor: 'bg-[#ECFDF5] text-[#047857] border-[#047857]',
+        statusIcon: 'check_circle',
+        statusSelectVal: 'resolved',
+        slaCallout: false,
+        studentMsg: 'While attempting the mock audit assessment for Domain 4 at 11:30 WAT, the exam submission timer froze with 14 minutes remaining. Please verify if my attempt was saved.',
+        agentMsg: 'Hello Femi, our database engine preserved all 45 answered questions prior to the network timeout. Your attempt has been validated and recorded with a score of 82%.',
+        showAgent: true,
+        showResolved: true,
+        studentName: 'Femi Adebayo',
+        studentId: 'STU-LOS-2026-0411',
+        studentEmail: 'fe•••••••@pwc.com',
+        studentPhone: '+234 818 ••• ••12',
+        activeRowId: 'row-tkt-8470'
+      },
+      breached: {
+        ticketId: '#TKT-8462',
+        subject: 'Paystack Webhook failure: Tuition debited but access locked',
+        priorityText: 'Urgent',
+        priorityColor: 'bg-[#FEF2F2] text-[#B91C1C] border-[#B91C1C]',
+        priorityIcon: 'priority_high',
+        statusText: 'SLA Breached (+4h 15m overdue)',
+        statusColor: 'bg-[#FEF2F2] text-[#B91C1C] border-[#B91C1C]',
+        statusIcon: 'warning',
+        statusSelectVal: 'open',
+        slaCallout: true,
+        studentMsg: 'URGENT: I completed the ₦300,000 payment via Paystack debit card 6 hours ago. My account debited immediately with reference PSTK-9920141, but my portal still displays "Tuition Unpaid" and blocks access to classroom materials.',
+        agentMsg: 'Investigating payment hook delay with Paystack settlement gateway. Reconciling transaction ID PSTK-9920141 with our financial ledger.',
+        showAgent: true,
+        showResolved: false,
+        studentName: 'Ngozi Okafor',
+        studentId: 'STU-LOS-2026-0904',
+        studentEmail: 'ng•••••••@gtbank.com',
+        studentPhone: '+234 703 ••• ••45',
+        activeRowId: 'row-tkt-8462'
+      }
+    };
+
+    function switchState(stateKey) {
+      // Toggle button states in the state inspector bar
+      const buttons = ['open', 'waiting', 'resolved', 'breached', 'empty', 'loading'];
+      buttons.forEach(k => {
+        const btn = document.getElementById('btn-state-' + k);
+        if (btn) {
+          if (k === stateKey) {
+            btn.className = 'min-h-[36px] px-3 rounded text-label-sm font-label-sm font-semibold bg-[#0B1320] text-white transition-all';
+          } else {
+            btn.className = 'min-h-[36px] px-3 rounded text-label-sm font-label-sm text-[#475569] hover:text-[#0F172A] transition-all';
+          }
+        }
+      });
+
+      const normalTable = document.getElementById('table-container-normal');
+      const emptyTable = document.getElementById('table-container-empty');
+      const loadingTable = document.getElementById('table-container-loading');
+
+      if (stateKey === 'empty') {
+        normalTable.classList.add('hidden');
+        emptyTable.classList.remove('hidden');
+        loadingTable.classList.add('hidden');
+        return;
+      }
+
+      if (stateKey === 'loading') {
+        normalTable.classList.add('hidden');
+        emptyTable.classList.add('hidden');
+        loadingTable.classList.remove('hidden');
+        return;
+      }
+
+      // Restore normal table
+      normalTable.classList.remove('hidden');
+      emptyTable.classList.add('hidden');
+      loadingTable.classList.add('hidden');
+
+      const data = STATE_CONFIG[stateKey];
+      if (!data) return;
+
+      // Update Detail Header
+      document.getElementById('detail-ticket-id').innerText = data.ticketId;
+      document.getElementById('detail-ticket-subject').innerText = data.subject;
+      
+      // Update Priority Badge
+      const prioBadge = document.getElementById('detail-priority-badge');
+      prioBadge.className = `inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium border ${data.priorityColor}`;
+      prioBadge.innerHTML = `<span class="material-symbols-outlined text-[13px]">${data.priorityIcon}</span> ${data.priorityText}`;
+
+      // Update Status Badge
+      const statusCont = document.getElementById('detail-status-container');
+      statusCont.innerHTML = `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-medium border ${data.statusColor}">
+        <span class="material-symbols-outlined text-[14px]">${data.statusIcon}</span> ${data.statusText}
+      </span>`;
+
+      // Status selector
+      document.getElementById('detail-status-select').value = data.statusSelectVal;
+
+      // SLA Callout Banner
+      const slaBanner = document.getElementById('sla-breach-callout');
+      if (data.slaCallout) {
+        slaBanner.classList.remove('hidden');
+      } else {
+        slaBanner.classList.add('hidden');
+      }
+
+      // Messages
+      document.getElementById('msg-student-body').innerText = data.studentMsg;
+      document.getElementById('msg-agent-body').innerText = data.agentMsg;
+
+      // Resolved summary note
+      const resolvedCard = document.getElementById('resolved-summary-card');
+      if (data.showResolved) {
+        resolvedCard.classList.remove('hidden');
+      } else {
+        resolvedCard.classList.add('hidden');
+      }
+
+      // Student Profile
+      document.getElementById('student-name-val').innerText = data.studentName;
+      document.getElementById('student-id-val').innerText = data.studentId;
+      document.getElementById('student-email-val').innerText = data.studentEmail;
+      document.getElementById('student-phone-val').innerText = data.studentPhone;
+
+      // Highlight corresponding row
+      ['row-tkt-8492', 'row-tkt-8488', 'row-tkt-8470', 'row-tkt-8462'].forEach(rowId => {
+        const row = document.getElementById(rowId);
+        if (row) {
+          if (rowId === data.activeRowId) {
+            row.classList.add('bg-[#EFF6FF]', 'border-l-4', 'border-l-[#2563EB]');
+          } else {
+            row.classList.remove('bg-[#EFF6FF]', 'border-l-4', 'border-l-[#2563EB]');
+          }
+        }
+      });
+    }
+
+    // Mask / Reveal Sensitive fields logic
+    function toggleMask(btnElem, revealedText) {
+      const prevSpan = btnElem.previousElementSibling;
+      if (btnElem.innerText === 'Reveal') {
+        btnElem.dataset.masked = prevSpan.innerText;
+        prevSpan.innerText = revealedText;
+        btnElem.innerText = 'Hide';
+      } else {
+        prevSpan.innerText = btnElem.dataset.masked;
+        btnElem.innerText = 'Reveal';
+      }
+    }
+
+    function toggleMaskText(elementId, clearValue, btnElem) {
+      const el = document.getElementById(elementId);
+      if (!el.dataset.masked) {
+        el.dataset.masked = el.innerText;
+        el.innerText = clearValue;
+        btnElem.innerHTML = `<span class="material-symbols-outlined text-[16px]">visibility_off</span><span>Hide</span>`;
+      } else {
+        el.innerText = el.dataset.masked;
+        delete el.dataset.masked;
+        btnElem.innerHTML = `<span class="material-symbols-outlined text-[16px]">visibility</span><span>Reveal</span>`;
+      }
+    }
+
+    // Canned Replies Injector
+    function insertCanned(val) {
+      const area = document.getElementById('reply-textarea');
+      if (val === 'Browser Cache & Cookie Clearing') {
+        area.value = "Please clear your local browser application cache and storage cookies (specifically for the *.ajsilicon.ng subdomain) and restart your active web browser session.";
+      } else if (val === 'Live Class Zoom Link Verification') {
+        area.value = "We have cross-referenced the active Zoom lecture credentials for your registered cohort. The verified direct link and passcode have been synchronized to your course navigation dashboard.";
+      } else if (val === 'Paystack Webhook Settlement Delay') {
+        area.value = "We are reviewing your automated Paystack payment callback. If your Nigerian debit card was charged, our financial ledger will reconcile the reference and grant automatic cohort unlock within 30 minutes.";
+      }
+    }
+
+    // Impersonation Action Handler
+    function triggerImpersonation() {
+      const confirmed = confirm("STAFF AUDIT WARNING:\nYou are initiating an impersonation session for candidate Chinedu Eze (STU-LOS-2026-0842).\n\nThis security event requires an active Support Ticket reference (#TKT-8492) and will be permanently recorded in the immutable compliance vault.\n\nProceed to candidate view?");
+      if (confirmed) {
+        alert("Session initialized: Audit trail receipt recorded for Agent Tunde Bakare.");
+      }
+    }
+  </script>
+</body></html>

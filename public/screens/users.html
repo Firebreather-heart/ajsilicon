@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform | Users Directory</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#dce1ff",
+            "on-background": "#131b2e",
+            "on-primary-fixed": "#141c29",
+            "secondary-container": "#4069f2",
+            "background": "#faf8ff",
+            "on-surface": "#131b2e",
+            "tertiary-container": "#281809",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-surface-variant": "#45474c",
+            "surface-tint": "#575f6e",
+            "on-error-container": "#93000a",
+            "outline-variant": "#c5c6cc",
+            "on-tertiary-fixed": "#281809",
+            "on-tertiary-fixed-variant": "#584231",
+            "secondary-fixed-dim": "#b7c4ff",
+            "primary-fixed": "#dbe2f5",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-container": "#fffbff",
+            "primary-container": "#141c29",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#fddcc4",
+            "surface-container": "#eaedff",
+            "on-primary-fixed-variant": "#3f4756",
+            "primary-fixed-dim": "#bfc6d9",
+            "inverse-on-surface": "#eef0ff",
+            "surface": "#faf8ff",
+            "on-primary-container": "#7c8495",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-secondary": "#ffffff",
+            "outline": "#75777c",
+            "surface-bright": "#faf8ff",
+            "on-tertiary-container": "#997f6a",
+            "surface-dim": "#d2d9f4",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#001551",
+            "inverse-surface": "#283044",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-high": "#e2e7ff",
+            "error": "#ba1a1a",
+            "surface-variant": "#dae2fd",
+            "inverse-primary": "#bfc6d9",
+            "tertiary": "#000000",
+            "primary": "#000000",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "2rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-md": "1.5rem",
+            "space-xl": "3rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Absolute compliance with custom properties & focus styling */
+    :focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .institutional-shadow {
+      box-shadow: 0 4px 6px -1px rgba(11, 19, 32, 0.08), 0 2px 4px -2px rgba(11, 19, 32, 0.04);
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-body-md text-on-surface bg-[#F8FAFC]">
+<!-- TOP APP BAR / BRAND HEADER SHELL -->
+<header class="w-full bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between z-50 shrink-0">
+<!-- Left: Logo Mounted on Isolated Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzmAFX35wHVE7alsEa4gNXQD_v8i24FN-y8x0wifu-ArMTllOHGaRkZ_e3JCGd-A_DTc5j9bUQMceCFEFK8jlnrteUnY7lNcjJ8Y-kd0w2o5UOA5-e1gr1pNiCUpcDjr5IxvIEm6zV03YXA4mfmJjwPeyVRf-pJoTx-CqRLOYTAdvU2yx5X24u0qFnZ16fUDg9W00N9D0otHq8dVK7BWiv5yyUrOwrQ7f7iKDqdMMYaCTGGO2rzSpZHw"/>
+</div>
+<div class="h-6 w-px bg-slate-700 hidden sm:block"></div>
+<span class="text-white font-headline-sm text-headline-sm tracking-tight hidden sm:block">Learning Platform</span>
+</div>
+<!-- Center/Right: Session Telemetry & Signed-In Staff Identity -->
+<div class="flex items-center gap-6 text-body-sm font-body-sm">
+<div class="text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">schedule</span>
+<span>12:10 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-4 w-px bg-slate-700"></div>
+<!-- Signed-in role display (Strictly plain text, no role switcher) -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400">badge</span>
+<span class="text-white font-label-md">Role: Support Agent | Zainab Abubakar</span>
+</div>
+<div class="h-4 w-px bg-slate-700"></div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded bg-slate-800 text-slate-200 border border-slate-700 font-label-md">
+          ZA
+        </span>
+</div>
+</div>
+</header>
+<!-- MULTI-STATE SPECIFICATION VIEWER BANNER -->
+<section class="bg-surface-container-lowest border-b border-[#E2E8F0] px-8 py-3 shrink-0">
+<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Specification View State:</span>
+</div>
+<div aria-label="UI Specification States" class="flex items-center gap-2" role="tablist">
+<button class="min-h-[44px] px-4 py-2 text-label-md font-label-md rounded border border-slate-300 bg-[#0B1320] text-white flex items-center gap-2 transition-colors" id="btn-state-default" onclick="setViewState('default')">
+<span class="material-symbols-outlined text-sm">view_list</span>
+<span>State 1: Default (Full Masked Table)</span>
+</button>
+<button class="min-h-[44px] px-4 py-2 text-label-md font-label-md rounded border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 flex items-center gap-2 transition-colors" id="btn-state-filtered" onclick="setViewState('filtered')">
+<span class="material-symbols-outlined text-sm">filter_alt</span>
+<span>State 2: Filtered (Active Criteria)</span>
+</button>
+<button class="min-h-[44px] px-4 py-2 text-label-md font-label-md rounded border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 flex items-center gap-2 transition-colors" id="btn-state-restricted" onclick="setViewState('restricted')">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>State 3: Export Gated / Permission Callout</span>
+</button>
+</div>
+</div>
+</section>
+<!-- MAIN APP WORKSPACE (Persistent Sidebar + Content Area) -->
+<div class="flex flex-1 overflow-hidden">
+<!-- PERSISTENT SIDEBAR NAVIGATION (Width: 260px) -->
+<aside class="w-64 bg-surface-container-lowest border-r border-[#E2E8F0] flex flex-col justify-between shrink-0 overflow-y-auto">
+<div class="p-4 space-y-6">
+<!-- Navigation Group: Academics -->
+<div>
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3">Academics</span>
+<div class="mt-2 space-y-1">
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">menu_book</span>
+<span>Programmes &amp; Tracks</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">groups</span>
+<span>Cohorts</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">workspace_premium</span>
+<span>Certifications</span>
+</a>
+</div>
+</div>
+<!-- Navigation Group: Students (ACTIVE GROUP) -->
+<div>
+<span class="text-xs font-semibold text-[#0B1320] uppercase tracking-wider px-3 flex items-center justify-between">
+<span>Students</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+</span>
+<div class="mt-2 space-y-1 border-l-2 border-[#1D4ED8] ml-2 pl-2">
+<!-- Active Sub-item: Users -->
+<a aria-current="page" class="flex items-center gap-3 px-3 min-h-[44px] rounded bg-[#0B1320] text-white font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-white">person</span>
+<span>Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">how_to_reg</span>
+<span>Enrolments</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">event_available</span>
+<span>Attendance</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">history</span>
+<span>Activity Logs</span>
+</a>
+</div>
+</div>
+<!-- Navigation Group: Governance & Ops -->
+<div>
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3">Governance &amp; Ops</span>
+<div class="mt-2 space-y-1">
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">fact_check</span>
+<span>Compliance Audits</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">receipt_long</span>
+<span>Settlement Ledger</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">security</span>
+<span>Access Control</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Sidebar Footer Institution Badge -->
+<div class="p-4 border-t border-[#E2E8F0] bg-slate-50 text-slate-500 text-xs">
+<div class="font-medium text-slate-700">Lagos Training Operations</div>
+<div class="text-[11px] mt-0.5 text-slate-500">Staff Portal · Build v4.9.1</div>
+</div>
+</aside>
+<!-- WORKSPACE CANVAS (Responsive 1440px Layout Engine) -->
+<main class="flex-1 overflow-y-auto bg-[#F8FAFC]">
+<div class="max-w-[1280px] mx-auto px-8 py-8 space-y-6">
+<!-- BREADCRUMBS & TOP HEADER -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-[#E2E8F0]">
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-body-sm text-slate-500">
+<a class="hover:text-slate-800 transition-colors" href="#">Students</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span aria-current="page" class="font-label-md text-slate-900">Users</span>
+</nav>
+<h1 class="text-headline-lg font-headline-lg text-[#0B1320] mt-1 tracking-tight">Users Directory</h1>
+<p class="text-body-sm text-slate-500 mt-0.5">Manage learner identities, role assignments, cohort enrolments, and credential state.</p>
+</div>
+<!-- PRIMARY ACTION & PERMISSION-GATED EXPORT CONTAINER -->
+<div class="flex items-center gap-4">
+<!-- EXPORT GATED LOCK NOTE: Support Agent does NOT have export permission -->
+<div class="flex items-center gap-2 bg-[#FFFBEB] text-[#B45309] border border-[#B45309] px-3 min-h-[44px] rounded text-body-sm" id="export-gated-container">
+<span class="material-symbols-outlined text-base">lock</span>
+<span class="font-label-md text-xs">Export requires Super Admin or Operations Manager permission</span>
+</div>
+<!-- PRIMARY BUTTON: 44px height, #0B1320 -->
+<button class="min-h-[44px] px-6 bg-[#0B1320] hover:bg-slate-800 text-white font-label-md text-label-md rounded inline-flex items-center gap-2 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">person_add</span>
+<span>+ Invite user</span>
+</button>
+</div>
+</div>
+<!-- STATE 3 CALLOUT (Hidden by default, shown when State 3 is active) -->
+<div class="hidden bg-[#EFF6FF] border border-[#1D4ED8] rounded-xl p-4 transition-all" id="state-3-callout">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] mt-0.5">verified_user</span>
+<div>
+<div class="font-headline-sm text-sm text-[#1D4ED8]">Institutional Role Restriction Notice</div>
+<p class="text-body-sm text-slate-700 mt-1">
+                You are authenticated as <strong>Support Agent (Zainab Abubakar)</strong>. In compliance with data privacy mandates, staff in the Support tier cannot perform bulk user data exfiltration (CSV/JSON Export). Destructive account purging is also restricted to Governance Officers.
+              </p>
+</div>
+</div>
+</div>
+<!-- SEARCH & MULTI-FILTER CONTROL CARD -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 shadow-sm space-y-4">
+<!-- Top Row: Search Input -->
+<div class="flex flex-col md:flex-row gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full min-h-[44px] pl-11 pr-4 bg-white border border-[#64748B] rounded text-slate-900 placeholder:text-slate-500 font-body-sm focus:border-[#2563EB]" id="search-input" placeholder="Search by name, email, phone or user ID..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-4 border border-[#64748B] text-slate-700 bg-white hover:bg-slate-50 rounded font-label-md text-label-md flex items-center gap-2" onclick="resetFilters()">
+<span class="material-symbols-outlined text-base">restart_alt</span>
+<span>Reset</span>
+</button>
+<div class="relative">
+<select class="min-h-[44px] pl-3 pr-8 bg-white border border-[#64748B] rounded text-slate-900 font-label-md text-label-md focus:border-[#2563EB]" id="sort-select">
+<option value="recent">Sort: Most Recently Active</option>
+<option value="name_asc">Sort: Name (A-Z)</option>
+<option value="date_registered">Sort: Date Registered</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Bottom Row: 5 Structured Dropdown Filters -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 pt-2">
+<!-- Filter 1: Role -->
+<div>
+<label class="block text-xs font-medium text-slate-600 mb-1">User Role</label>
+<select class="w-full min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-slate-800 font-body-sm focus:border-[#2563EB]" id="filter-role" onchange="applyFilters()">
+<option value="">All Roles</option>
+<option value="Student">Student</option>
+<option value="Faculty">Faculty</option>
+<option value="Support Agent">Support Agent</option>
+<option value="Operations Manager">Operations Manager</option>
+<option value="Super Admin">Super Admin</option>
+</select>
+</div>
+<!-- Filter 2: Status -->
+<div>
+<label class="block text-xs font-medium text-slate-600 mb-1">Status</label>
+<select class="w-full min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-slate-800 font-body-sm focus:border-[#2563EB]" id="filter-status" onchange="applyFilters()">
+<option value="">All Statuses</option>
+<option value="Active">Active</option>
+<option value="Suspended">Suspended</option>
+<option value="Pending verification">Pending verification</option>
+<option value="Inactive">Inactive</option>
+</select>
+</div>
+<!-- Filter 3: Programme -->
+<div>
+<label class="block text-xs font-medium text-slate-600 mb-1">Programme</label>
+<select class="w-full min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-slate-800 font-body-sm focus:border-[#2563EB]" id="filter-programme" onchange="applyFilters()">
+<option value="">All Programmes</option>
+<option value="CISA">CISA Exam Prep</option>
+<option value="CISM">CISM Management</option>
+<option value="CRISC">CRISC Risk Matrix</option>
+<option value="AAIA">AAIA Audit Analytics</option>
+</select>
+</div>
+<!-- Filter 4: Cohort -->
+<div>
+<label class="block text-xs font-medium text-slate-600 mb-1">Cohort</label>
+<select class="w-full min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-slate-800 font-body-sm focus:border-[#2563EB]" id="filter-cohort" onchange="applyFilters()">
+<option value="">All Cohorts</option>
+<option value="Cohort 14">Cohort 14</option>
+<option value="Cohort 15">Cohort 15</option>
+<option value="Cohort 09">Cohort 09</option>
+</select>
+</div>
+<!-- Filter 5: Licence Status -->
+<div>
+<label class="block text-xs font-medium text-slate-600 mb-1">Licence State</label>
+<select class="w-full min-h-[44px] px-3 bg-white border border-[#64748B] rounded text-slate-800 font-body-sm focus:border-[#2563EB]" id="filter-licence" onchange="applyFilters()">
+<option value="">All Licence States</option>
+<option value="Valid">Valid</option>
+<option value="Expiring soon">Expiring soon</option>
+<option value="Expired">Expired</option>
+<option value="Paused">Paused</option>
+</select>
+</div>
+</div>
+<!-- Active Filter Pill Badges (Shown conditionally) -->
+<div class="hidden flex-wrap items-center gap-2 pt-2 border-t border-slate-100" id="active-filter-tags">
+<span class="text-xs text-slate-500 font-medium">Applied Filters:</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-xs font-medium">
+              Role: Student
+              <button class="hover:text-blue-900" onclick="clearSingleFilter('role')"><span class="material-symbols-outlined text-xs">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-xs font-medium">
+              Programme: CISA Exam Prep
+              <button class="hover:text-blue-900" onclick="clearSingleFilter('programme')"><span class="material-symbols-outlined text-xs">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-xs font-medium">
+              Cohort: Cohort 14
+              <button class="hover:text-blue-900" onclick="clearSingleFilter('cohort')"><span class="material-symbols-outlined text-xs">close</span></button>
+</span>
+<span class="text-xs text-slate-500 ml-2 font-medium">(Showing 4 filtered users)</span>
+</div>
+</div>
+<!-- BULK ACTIONS FLOATING/INLINE BAR -->
+<div class="hidden bg-[#0B1320] text-white rounded-lg p-3 px-6 flex items-center justify-between shadow-md transition-all" id="bulk-actions-bar">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+<span class="font-label-md text-sm" id="bulk-selected-count">2 users selected</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-4 rounded bg-slate-800 hover:bg-slate-700 text-white font-label-md text-sm flex items-center gap-2" onclick="alert('Action queued: Send direct portal message to selected cohorts.')">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>Send message</span>
+</button>
+<button class="min-h-[44px] px-4 rounded bg-slate-800 hover:bg-slate-700 text-white font-label-md text-sm flex items-center gap-2" onclick="alert('Invitation link re-dispatched to selected users.')">
+<span class="material-symbols-outlined text-sm">forward_to_inbox</span>
+<span>Resend invitation</span>
+</button>
+<button class="min-h-[44px] px-4 rounded bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] font-label-md text-sm flex items-center gap-2" onclick="openSuspendModal()">
+<span class="material-symbols-outlined text-sm">block</span>
+<span>Suspend access</span>
+</button>
+<button class="text-xs text-slate-400 hover:text-white underline ml-2" onclick="clearAllSelections()">Deselect all</button>
+</div>
+</div>
+<!-- USERS DATA TABLE CONTAINER -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="users-table">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-xs font-semibold text-slate-600 uppercase tracking-wider">
+<th class="py-3 px-4 w-12 text-center" scope="col">
+<input aria-label="Select all users" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" id="select-all-checkbox" onchange="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="py-3 px-4" scope="col">Name &amp; ID</th>
+<th class="py-3 px-4" scope="col">Email Address</th>
+<th class="py-3 px-4" scope="col">Phone Number</th>
+<th class="py-3 px-4" scope="col">Role &amp; Cohort</th>
+<th class="py-3 px-4" scope="col">Account Status</th>
+<th class="py-3 px-4" scope="col">Last Active</th>
+<th class="py-3 px-4 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm text-slate-800" id="table-body">
+<!-- USER ROW 1: Chinedu Eze -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 14" data-prog="CISA" data-role="Student" data-status="Active">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Chinedu Eze</div>
+<div class="text-xs text-slate-500 font-mono">AJ-LOS-2026-081</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="c•••••••••@gmail.com" data-unmasked="chinedu.eze.audit@gmail.com">c•••••••••@gmail.com</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 803 ••• ••89" data-unmasked="+234 803 491 8289">+234 803 ••• ••89</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Student</div>
+<div class="text-xs text-slate-500">CISA Prep · Cohort 14</div>
+</td>
+<td class="py-3 px-4">
+<!-- Status Chip: ACTIVE (Pair icon + text, never colour alone) -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>10 mins ago</div>
+<div class="text-slate-400">05 Oct 2026 12:00 WAT</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- USER ROW 2: Babatunde Lawal -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 15" data-prog="CRISC" data-role="Faculty" data-status="Active">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Babatunde Lawal</div>
+<div class="text-xs text-slate-500 font-mono">AJ-FAC-2024-012</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="b••••••••@ajsilicon.ng" data-unmasked="b.lawal@ajsilicon.ng">b••••••••@ajsilicon.ng</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 802 ••• ••14" data-unmasked="+234 802 773 9914">+234 802 ••• ••14</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Faculty Lead</div>
+<div class="text-xs text-slate-500">CRISC Matrix · Cohort 15</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>1 hour ago</div>
+<div class="text-slate-400">05 Oct 2026 11:14 WAT</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- USER ROW 3: Adaeze Okonkwo -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 14" data-prog="CISA" data-role="Student" data-status="Pending verification">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Adaeze Okonkwo</div>
+<div class="text-xs text-slate-500 font-mono">AJ-LOS-2026-094</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="a•••••••••@yahoo.com" data-unmasked="adaeze.okonkwo@yahoo.com">a•••••••••@yahoo.com</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 814 ••• ••31" data-unmasked="+234 814 620 1831">+234 814 ••• ••31</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Student</div>
+<div class="text-xs text-slate-500">CISA Prep · Cohort 14</div>
+</td>
+<td class="py-3 px-4">
+<!-- Status Chip: PENDING VERIFICATION -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-xs">pending</span>
+<span>Pending verification</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>04 Oct 2026 18:22 WAT</div>
+<div class="text-slate-400">Awaiting KYC Approval</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- USER ROW 4: Olumide Adeyemi -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 14" data-prog="CISA" data-role="Student" data-status="Suspended">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Olumide Adeyemi</div>
+<div class="text-xs text-slate-500 font-mono">AJ-LOS-2026-042</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="o••••••••@firstbank.ng" data-unmasked="o.adeyemi@firstbank.ng">o••••••••@firstbank.ng</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 705 ••• ••90" data-unmasked="+234 705 918 4290">+234 705 ••• ••90</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Student</div>
+<div class="text-xs text-slate-500">CISA Prep · Cohort 14</div>
+</td>
+<td class="py-3 px-4">
+<!-- Status Chip: SUSPENDED -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-xs">block</span>
+<span>Suspended</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>2 days ago</div>
+<div class="text-slate-400">Suspended by SecOps</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- USER ROW 5: Fatima Bello -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 09" data-prog="AAIA" data-role="Student" data-status="Active">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Fatima Bello</div>
+<div class="text-xs text-slate-500 font-mono">AJ-LOS-2026-119</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="f••••••@cbn.gov.ng" data-unmasked="fbello@cbn.gov.ng">f••••••@cbn.gov.ng</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 809 ••• ••72" data-unmasked="+234 809 334 0172">+234 809 ••• ••72</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Student</div>
+<div class="text-xs text-slate-500">AAIA Lab · Cohort 09</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>3 hours ago</div>
+<div class="text-slate-400">05 Oct 2026 09:12 WAT</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- USER ROW 6: Dr. Emeka Nwosu -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 15" data-prog="CISM" data-role="Faculty" data-status="Active">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Dr. Emeka Nwosu</div>
+<div class="text-xs text-slate-500 font-mono">AJ-FAC-2023-005</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="e•••••••••@ajsilicon.ng" data-unmasked="e.nwosu@ajsilicon.ng">e•••••••••@ajsilicon.ng</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 803 ••• ••50" data-unmasked="+234 803 218 9950">+234 803 ••• ••50</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Faculty Lead</div>
+<div class="text-xs text-slate-500">CISM Ops · Cohort 15</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>Yesterday</div>
+<div class="text-slate-400">04 Oct 2026 16:45 WAT</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- USER ROW 7: Folake Balogun -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 14" data-prog="CISA" data-role="Student" data-status="Active">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Folake Balogun</div>
+<div class="text-xs text-slate-500 font-mono">AJ-LOS-2026-178</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="f••••••••@pwc.com" data-unmasked="folake.balogun@pwc.com">f••••••••@pwc.com</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 818 ••• ••21" data-unmasked="+234 818 554 9021">+234 818 ••• ••21</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Student</div>
+<div class="text-xs text-slate-500">CISA Prep · Cohort 14</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>5 hours ago</div>
+<div class="text-slate-400">05 Oct 2026 07:15 WAT</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- USER ROW 8: Aminu Sanusi -->
+<tr class="user-row hover:bg-slate-50 transition-colors" data-cohort="Cohort 09" data-prog="AAIA" data-role="Student" data-status="Inactive">
+<td class="py-3 px-4 text-center">
+<input class="row-checkbox w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" onchange="updateRowSelection()" type="checkbox"/>
+</td>
+<td class="py-3 px-4">
+<div class="font-label-md text-slate-900 font-semibold">Aminu Sanusi</div>
+<div class="text-xs text-slate-500 font-mono">AJ-LOS-2025-202</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="a••••••@stanbicibtc.com" data-unmasked="asanusi@stanbicibtc.com">a••••••@stanbicibtc.com</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs masked-target" data-masked="+234 805 ••• ••63" data-unmasked="+234 805 119 7863">+234 805 ••• ••63</span>
+<button class="min-h-[36px] px-2 text-xs font-medium text-[#1D4ED8] hover:underline flex items-center gap-1" onclick="toggleMask(this)">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span class="toggle-text">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-slate-900">Student</div>
+<div class="text-xs text-slate-500">AAIA Lab · Cohort 09</div>
+</td>
+<td class="py-3 px-4">
+<!-- Status Chip: INACTIVE -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-400">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Never</span>
+</span>
+</td>
+<td class="py-3 px-4 text-xs text-slate-600">
+<div>Never</div>
+<div class="text-slate-400">Invited 18 Sept 2026</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded hover:bg-slate-200 text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- AUDIT TABLE PAGINATION (44px target standards) -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-body-sm text-slate-600" id="pagination-text">
+              Showing <span class="font-semibold text-slate-900">1–8</span> of <span class="font-semibold text-slate-900">342</span> users
+            </div>
+<div class="flex items-center gap-1">
+<button class="min-h-[44px] px-3 py-2 rounded border border-[#64748B] text-slate-600 hover:bg-slate-100 disabled:opacity-50 flex items-center gap-1 text-label-md" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+<span>Previous</span>
+</button>
+<button class="min-h-[44px] w-11 rounded bg-[#0B1320] text-white font-label-md">1</button>
+<button class="min-h-[44px] w-11 rounded border border-[#64748B] text-slate-700 hover:bg-slate-100 font-label-md">2</button>
+<button class="min-h-[44px] w-11 rounded border border-[#64748B] text-slate-700 hover:bg-slate-100 font-label-md">3</button>
+<span class="px-2 text-slate-400 font-medium">…</span>
+<button class="min-h-[44px] w-11 rounded border border-[#64748B] text-slate-700 hover:bg-slate-100 font-label-md">43</button>
+<button class="min-h-[44px] px-3 py-2 rounded border border-[#64748B] text-slate-700 hover:bg-slate-100 flex items-center gap-1 text-label-md">
+<span>Next</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SKELETON LOADING & EMPTY STATE DEMONSTRATION CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<!-- Skeleton Inspection Block -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Engine Simulation: Skeleton Data Placeholder</div>
+<span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono">Telemetry Buffering</span>
+</div>
+<div class="space-y-3 animate-pulse">
+<div class="h-4 bg-slate-200 rounded w-3/4"></div>
+<div class="h-3 bg-slate-100 rounded w-full"></div>
+<div class="h-3 bg-slate-100 rounded w-5/6"></div>
+<div class="h-8 bg-slate-100 rounded mt-2"></div>
+</div>
+</div>
+<!-- Empty State Specification Block -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 shadow-sm flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-3xl text-slate-300 mb-1">person_search</span>
+<div class="font-headline-sm text-sm text-slate-800">No Matched Identity Cohort</div>
+<p class="text-xs text-slate-500 mt-1 max-w-xs">No active directory entry satisfies this specific query filter parameters.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- INSTITUTIONAL DOSSIER FOOTER -->
+<footer class="w-full bg-[#141c29] text-[#7c8495] px-8 py-4 border-t border-[#75777c] flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-body-sm z-30 shrink-0">
+<div>
+      © 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.
+    </div>
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-white transition-colors" href="#">DRM Compliance Policy</a>
+<a class="hover:text-white transition-colors" href="#">Zero-Trust Verification</a>
+<a class="hover:text-white transition-colors" href="#">Candidate Session Hash Log</a>
+<a class="hover:text-white transition-colors" href="#">Integrity Telemetry Docs</a>
+<a class="hover:text-white transition-colors" href="#">SecOps Oversight</a>
+</div>
+</footer>
+<!-- SUSPENSION CONFIRMATION MODAL (Strict Enterprise Tone) -->
+<div class="fixed inset-0 bg-[#0B1320]/60 backdrop-blur-[2px] hidden z-50 flex items-center justify-center p-4" id="suspend-modal">
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] institutional-shadow max-w-md w-full p-6 space-y-4">
+<div class="flex items-center gap-3 text-[#B91C1C]">
+<span class="material-symbols-outlined text-2xl">warning</span>
+<h3 class="font-headline-sm text-headline-sm text-[#0B1320]">Confirm Suspension of Access</h3>
+</div>
+<p class="text-body-sm text-slate-600">
+        You are about to suspend access for the selected user identities. They will immediately lose access to proctored test simulations, LMS material, and portal login.
+      </p>
+<div class="bg-slate-50 border border-slate-200 p-3 rounded text-xs text-slate-500 font-mono">
+        Audit Incident Token: SEC-SUSP-2026-9901<br/>
+        Executor: Support Agent (Zainab Abubakar)
+      </div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="min-h-[44px] px-4 border border-[#64748B] rounded text-slate-700 hover:bg-slate-50 font-label-md text-sm" onclick="closeSuspendModal()">
+          Cancel
+        </button>
+<button class="min-h-[44px] px-4 bg-[#B91C1C] hover:bg-red-800 text-white rounded font-label-md text-sm" onclick="confirmSuspendAction()">
+          Confirm Suspension
+        </button>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE SPECIFICATION JAVASCRIPT LOGIC -->
+<script>
+    // 1. Reveal/Mask Sensitivity Controls
+    function toggleMask(btn) {
+      const parent = btn.parentElement;
+      const target = parent.querySelector('.masked-target');
+      const toggleText = btn.querySelector('.toggle-text');
+      const icon = btn.querySelector('.material-symbols-outlined');
+
+      if (target.textContent === target.getAttribute('data-masked')) {
+        target.textContent = target.getAttribute('data-unmasked');
+        toggleText.textContent = 'Hide';
+        icon.textContent = 'visibility_off';
+      } else {
+        target.textContent = target.getAttribute('data-masked');
+        toggleText.textContent = 'Reveal';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    // 2. Row Selection & Bulk Actions Logic
+    function updateRowSelection() {
+      const selected = document.querySelectorAll('.row-checkbox:checked');
+      const count = selected.length;
+      const bar = document.getElementById('bulk-actions-bar');
+      const countLabel = document.getElementById('bulk-selected-count');
+
+      if (count > 0) {
+        bar.classList.remove('hidden');
+        countLabel.textContent = `${count} user${count > 1 ? 's' : ''} selected`;
+      } else {
+        bar.classList.add('hidden');
+      }
+
+      const allBoxes = document.querySelectorAll('.row-checkbox');
+      const selectAll = document.getElementById('select-all-checkbox');
+      selectAll.checked = (selected.length === allBoxes.length && allBoxes.length > 0);
+    }
+
+    function toggleSelectAll(master) {
+      const checkboxes = document.querySelectorAll('.row-checkbox');
+      checkboxes.forEach(cb => {
+        // Only select visible rows
+        if (!cb.closest('tr').classList.contains('hidden')) {
+          cb.checked = master.checked;
+        }
+      });
+      updateRowSelection();
+    }
+
+    function clearAllSelections() {
+      document.querySelectorAll('.row-checkbox').forEach(cb => cb.checked = false);
+      document.getElementById('select-all-checkbox').checked = false;
+      updateRowSelection();
+    }
+
+    // 3. Modal Actions
+    function openSuspendModal() {
+      document.getElementById('suspend-modal').classList.remove('hidden');
+    }
+
+    function closeSuspendModal() {
+      document.getElementById('suspend-modal').classList.add('hidden');
+    }
+
+    function confirmSuspendAction() {
+      alert('Audit log updated: Selected user identities marked as Suspended.');
+      closeSuspendModal();
+      clearAllSelections();
+    }
+
+    // 4. Multi-state specification viewer switcher
+    function setViewState(state) {
+      const btnDefault = document.getElementById('btn-state-default');
+      const btnFiltered = document.getElementById('btn-state-filtered');
+      const btnRestricted = document.getElementById('btn-state-restricted');
+
+      const filterRole = document.getElementById('filter-role');
+      const filterProg = document.getElementById('filter-programme');
+      const filterCohort = document.getElementById('filter-cohort');
+      const filterTags = document.getElementById('active-filter-tags');
+      const state3Callout = document.getElementById('state-3-callout');
+      const paginationText = document.getElementById('pagination-text');
+
+      // Reset base buttons
+      [btnDefault, btnFiltered, btnRestricted].forEach(btn => {
+        btn.classList.remove('bg-[#0B1320]', 'text-white');
+        btn.classList.add('bg-white', 'text-slate-700');
+      });
+
+      if (state === 'default') {
+        btnDefault.classList.add('bg-[#0B1320]', 'text-white');
+        btnDefault.classList.remove('bg-white', 'text-slate-700');
+        
+        resetFilters();
+        state3Callout.classList.add('hidden');
+        paginationText.innerHTML = 'Showing <span class="font-semibold text-slate-900">1–8</span> of <span class="font-semibold text-slate-900">342</span> users';
+      } 
+      else if (state === 'filtered') {
+        btnFiltered.classList.add('bg-[#0B1320]', 'text-white');
+        btnFiltered.classList.remove('bg-white', 'text-slate-700');
+
+        filterRole.value = 'Student';
+        filterProg.value = 'CISA';
+        filterCohort.value = 'Cohort 14';
+        filterTags.classList.remove('hidden');
+        state3Callout.classList.add('hidden');
+        
+        applyFilters();
+        paginationText.innerHTML = 'Showing <span class="font-semibold text-slate-900">1–4</span> of <span class="font-semibold text-slate-900">4</span> filtered users';
+      } 
+      else if (state === 'restricted') {
+        btnRestricted.classList.add('bg-[#0B1320]', 'text-white');
+        btnRestricted.classList.remove('bg-white', 'text-slate-700');
+
+        resetFilters();
+        state3Callout.classList.remove('hidden');
+        paginationText.innerHTML = 'Showing <span class="font-semibold text-slate-900">1–8</span> of <span class="font-semibold text-slate-900">342</span> users';
+        
+        // Flash the gated notice for audit clarity
+        const gatedNote = document.getElementById('export-gated-container');
+        gatedNote.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // 5. Dynamic Filtering Logic
+    function applyFilters() {
+      const role = document.getElementById('filter-role').value;
+      const prog = document.getElementById('filter-programme').value;
+      const cohort = document.getElementById('filter-cohort').value;
+      const status = document.getElementById('filter-status').value;
+      const rows = document.querySelectorAll('.user-row');
+
+      let visibleCount = 0;
+      rows.forEach(row => {
+        const rowRole = row.getAttribute('data-role');
+        const rowProg = row.getAttribute('data-prog');
+        const rowCohort = row.getAttribute('data-cohort');
+        const rowStatus = row.getAttribute('data-status');
+
+        let match = true;
+        if (role && rowRole !== role) match = false;
+        if (prog && rowProg !== prog) match = false;
+        if (cohort && rowCohort !== cohort) match = false;
+        if (status && rowStatus !== status) match = false;
+
+        if (match) {
+          row.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+    }
+
+    function resetFilters() {
+      document.getElementById('filter-role').value = '';
+      document.getElementById('filter-status').value = '';
+      document.getElementById('filter-programme').value = '';
+      document.getElementById('filter-cohort').value = '';
+      document.getElementById('filter-licence').value = '';
+      document.getElementById('search-input').value = '';
+      document.getElementById('active-filter-tags').classList.add('hidden');
+
+      document.querySelectorAll('.user-row').forEach(row => row.classList.remove('hidden'));
+      clearAllSelections();
+    }
+
+    function clearSingleFilter(type) {
+      if (type === 'role') document.getElementById('filter-role').value = '';
+      if (type === 'programme') document.getElementById('filter-programme').value = '';
+      if (type === 'cohort') document.getElementById('filter-cohort').value = '';
+      applyFilters();
+    }
+  </script>
+</body></html>

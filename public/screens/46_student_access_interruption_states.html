@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>46 Student Access Interruption &amp; Account State Barriers - A.J. Silicon</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#141c29",
+            "on-primary-container": "#7c8495",
+            "on-secondary-container": "#fffbff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "outline": "#75777c",
+            "outline-variant": "#c5c6cc",
+            "secondary-container": "#4069f2",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-tertiary-container": "#997f6a",
+            "on-surface-variant": "#45474c",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#3f4756",
+            "primary-fixed-dim": "#bfc6d9",
+            "inverse-primary": "#bfc6d9",
+            "on-primary": "#ffffff",
+            "tertiary": "#000000",
+            "secondary-fixed": "#dce1ff",
+            "primary-container": "#141c29",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface": "#faf8ff",
+            "on-tertiary-fixed": "#281809",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "background": "#faf8ff",
+            "surface-variant": "#dae2fd",
+            "surface-tint": "#575f6e",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-secondary-fixed": "#001551",
+            "tertiary-container": "#281809",
+            "surface-container-highest": "#dae2fd",
+            "surface-container": "#eaedff",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#dbe2f5",
+            "inverse-on-surface": "#eef0ff",
+            "secondary": "#1d4ed8",
+            "inverse-surface": "#283044",
+            "on-background": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "tertiary-fixed": "#fddcc4",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#000000",
+            "surface-bright": "#faf8ff",
+            "surface-container-high": "#e2e7ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-xl": "3rem",
+            "margin": "2rem",
+            "space-xs": "0.5rem",
+            "gutter": "1.5rem",
+            "space-lg": "2rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "code-snippet": ["13px", {"lineHeight": "18px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-[#0B1320] text-[#0F172A] font-body-md antialiased min-h-screen">
+<!-- Top Executive Specification Header Bar -->
+<header class="w-full bg-[#070D17] border-b border-[#1E293B] px-8 py-4">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-[#1D4ED8] text-white tracking-wide">
+            DESIGN SPECIFICATION 46
+          </span>
+<span class="text-[#94A3B8] text-xs font-label-sm">
+            CISA Cohort 14 · Candidate Access Integrity &amp; Compliance States
+          </span>
+</div>
+<h1 class="text-white text-xl md:text-2xl font-headline-md mt-1 tracking-tight">
+          Student Access Interruption &amp; Account State Barriers
+        </h1>
+</div>
+<div class="flex items-center gap-6 text-xs text-[#94A3B8]">
+<div class="border-l border-[#334155] pl-4">
+<span class="block text-[#64748B] uppercase tracking-wider text-[10px]">Viewport Target</span>
+<span class="text-slate-200 font-medium">Desktop (1440px Presentation Canvas)</span>
+</div>
+<div class="border-l border-[#334155] pl-4">
+<span class="block text-[#64748B] uppercase tracking-wider text-[10px]">Candidate Context</span>
+<span class="text-slate-200 font-medium">Chinedu Eze · 14:30 WAT · 05 Oct 2026</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Navigation Switcher for State Canvas Presentation -->
+<div class="sticky top-0 z-50 bg-[#0B1320] border-b border-[#1E293B] shadow-md px-8 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-x-auto py-1">
+<a class="px-3.5 py-2 rounded text-xs font-medium bg-[#1E293B] text-white hover:bg-[#334155] transition flex items-center gap-2" href="#frame-1">
+<span class="w-2 h-2 rounded-full bg-[#B45309]"></span>
+          Frame 1: Licence Expired
+        </a>
+<a class="px-3.5 py-2 rounded text-xs font-medium bg-[#1E293B] text-white hover:bg-[#334155] transition flex items-center gap-2" href="#frame-2">
+<span class="w-2 h-2 rounded-full bg-[#1D4ED8]"></span>
+          Frame 2: Licence Not Started
+        </a>
+<a class="px-3.5 py-2 rounded text-xs font-medium bg-[#1E293B] text-white hover:bg-[#334155] transition flex items-center gap-2" href="#frame-3">
+<span class="w-2 h-2 rounded-full bg-[#B91C1C]"></span>
+          Frame 3: Device Limit Reached
+        </a>
+<a class="px-3.5 py-2 rounded text-xs font-medium bg-[#1E293B] text-white hover:bg-[#334155] transition flex items-center gap-2" href="#frame-4">
+<span class="w-2 h-2 rounded-full bg-[#B45309]"></span>
+          Frame 4: Session Active Elsewhere
+        </a>
+</div>
+<div class="text-xs text-[#93C5FD] hidden lg:flex items-center gap-1.5 font-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+        Strict Compliance Mode · Simultaneous Session Policy Active
+      </div>
+</div>
+</div>
+<!-- Main Presentation Container (1440px Canvas) -->
+<main class="max-w-[1440px] mx-auto px-4 md:px-8 py-10 space-y-16">
+<!-- ========================================== -->
+<!-- FRAME 1: LICENCE EXPIRED                   -->
+<!-- ========================================== -->
+<section class="scroll-mt-20" id="frame-1">
+<div class="mb-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] text-xs font-semibold">
+            STATE 01
+          </span>
+<h2 class="text-white text-lg font-headline-sm tracking-tight">Licence Expired Barrier</h2>
+</div>
+<span class="text-slate-400 text-xs font-code-snippet">AJS-ERR-LIC-EXP77</span>
+</div>
+<!-- Application Frame Shell (1440px desktop simulation) -->
+<div class="w-full bg-[#F8FAFC] rounded-xl overflow-hidden border border-[#334155] shadow-2xl flex flex-col">
+<!-- TOP APP BAR -->
+<header class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B] select-none">
+<div class="flex items-center gap-6">
+<!-- Logo inside light contrast plate -->
+<div class="bg-white px-3 py-1.5 rounded flex items-center h-10 shadow-sm">
+<img alt="A.J. Silicon" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKxgFjquqn2pLo2rvVnoMd-38OpGKb-IcLf0GIZvFPp8x-17CzbT92trsXKQm36uE4aWheyo2stP0nF5Rrq6gAiKSw8tkyEQ9TiMb2Gt32jnh5HiO6HpgIvNaNsuohRMKgNuP5cFYtYfnsczPnZIbZW-sIjNG01g2UnW8-Uc5jXI-WWj_oSGF29tU8eD5VUJCevTf4ES8HhUxa-Zukz--ogtCcr5uHyltXfMyPxdvdAMX6OALCx4AZfw"/>
+</div>
+<div class="h-6 w-[1px] bg-[#1E293B]"></div>
+<div class="text-xs">
+<div class="text-white font-medium tracking-tight">CISA Exam Prep</div>
+<div class="text-[#94A3B8] text-[11px]">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#94A3B8] text-xs hidden sm:inline">14:30 WAT · 05 Oct 2026</span>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help Centre" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<div class="flex items-center gap-2.5 pl-2 border-l border-[#1E293B]">
+<div class="w-8 h-8 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center text-xs font-bold ring-1 ring-white/20">
+                CE
+              </div>
+<div class="text-left hidden md:block">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[10px] text-[#94A3B8] leading-tight">Student</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY (SIDEBAR + MAIN CANVAS) -->
+<div class="flex min-h-[640px]">
+<!-- SIDEBAR -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] p-4 flex flex-col justify-between shrink-0">
+<nav class="space-y-1">
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Modules / Programme Home
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+                Live classes
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                Practice Exams
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+                Recordings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+                Progress
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                Certificates and credits
+              </a>
+<!-- ACTIVE TAB: EXTEND ACCESS -->
+<a class="bg-[#EAEDFF] text-[#1D4ED8] font-medium border-l-4 border-[#1D4ED8] px-4 py-3 flex items-center gap-3 text-sm rounded-r" href="#">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                Extend Access
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                Help centre
+              </a>
+</nav>
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- CONTENT CANVAS -->
+<main class="flex-1 p-8 md:p-12 flex items-center justify-center">
+<div class="max-w-[680px] w-full bg-white rounded-xl border border-[#E2E8F0] p-8 shadow-sm space-y-6">
+<!-- State Icon and Badge -->
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#FFFBEB] border border-[#B45309] flex items-center justify-center text-[#B45309]">
+<span class="material-symbols-outlined text-[32px]">lock_clock</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">event_busy</span>
+                  Access ended: 30 Sep 2026
+                </span>
+</div>
+<!-- Authoritative Heading & Explanation -->
+<div>
+<h3 class="text-2xl font-headline-lg text-[#0F172A] tracking-tight">Your courseware licence has expired</h3>
+<p class="text-[#475569] font-body-md mt-2">
+                  Your 90-day access licence for CISA Exam Prep concluded on 30 Sep 2026 and requires renewal to unlock course modules, live classes, and mock exams.
+                </p>
+</div>
+<!-- Retained Rights / Available Assets Structured Box -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-5">
+<h4 class="text-xs font-semibold uppercase tracking-wider text-[#475569] mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span>
+                  What remains available under expired status
+                </h4>
+<ul class="space-y-2.5 text-sm text-[#0F172A]">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#047857] mt-0.5 shrink-0">receipt_long</span>
+<span>Payment receipts and tax invoices remain available in Billing &amp; licences</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#047857] mt-0.5 shrink-0">verified</span>
+<span>Earned certificates of completion and CPE credits remain available for download and public verification</span>
+</li>
+</ul>
+</div>
+<!-- Actions Area (44px min height) -->
+<div class="pt-2 flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-6 rounded-md bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium text-sm flex items-center justify-center gap-2 transition focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  Extend access
+                </button>
+<a class="w-full sm:w-auto min-h-[44px] px-6 rounded-md border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] font-medium text-sm flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" href="#">
+                  View billing and receipts
+                </a>
+</div>
+<!-- Support Reference Footer -->
+<div class="pt-4 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#64748B] gap-2">
+<span class="font-code-snippet">Reference: AJS-ERR-LIC-EXP77</span>
+<a class="text-[#1D4ED8] hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">contact_support</span>
+                  Need assistance? Contact support
+                </a>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 2: LICENCE NOT STARTED               -->
+<!-- ========================================== -->
+<section class="scroll-mt-20" id="frame-2">
+<div class="mb-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-xs font-semibold">
+            STATE 02
+          </span>
+<h2 class="text-white text-lg font-headline-sm tracking-tight">Programme Not Started Barrier</h2>
+</div>
+<span class="text-slate-400 text-xs font-code-snippet">AJS-NOT-COHORT14</span>
+</div>
+<!-- Application Frame Shell -->
+<div class="w-full bg-[#F8FAFC] rounded-xl overflow-hidden border border-[#334155] shadow-2xl flex flex-col">
+<!-- TOP APP BAR -->
+<header class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B] select-none">
+<div class="flex items-center gap-6">
+<div class="bg-white px-3 py-1.5 rounded flex items-center h-10 shadow-sm">
+<img alt="A.J. Silicon" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuButAkMSfzW5eCiN2BWR3FLf_xFKGN0GEJobfkuSD3BmuNBANVVbu4c6ZchflSZiO2sMAWpybkXGd3_Q_F-mlVko7xRmtVFGbNKMpIRYyf8Z1qhjlk7Uuct6Z51HDNbNIjPqcECD5PcGEkOt4-YqzpQA55bnbtN-YIYTmfzj0Z5Gj8XNFiDyYDXNkb9K3CSEVv_N_p4unAtE7bSYdqvnwXs1P02yKUgP-HjVWrndWcIJnGpOwX_pXUTRw"/>
+</div>
+<div class="h-6 w-[1px] bg-[#1E293B]"></div>
+<div class="text-xs">
+<div class="text-white font-medium tracking-tight">CISA Exam Prep</div>
+<div class="text-[#94A3B8] text-[11px]">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#94A3B8] text-xs hidden sm:inline">14:30 WAT · 05 Oct 2026</span>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help Centre" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<div class="flex items-center gap-2.5 pl-2 border-l border-[#1E293B]">
+<div class="w-8 h-8 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center text-xs font-bold ring-1 ring-white/20">
+                CE
+              </div>
+<div class="text-left hidden md:block">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[10px] text-[#94A3B8] leading-tight">Student</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY -->
+<div class="flex min-h-[640px]">
+<!-- SIDEBAR -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] p-4 flex flex-col justify-between shrink-0">
+<nav class="space-y-1">
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+              </a>
+<!-- ACTIVE TAB: MODULES / PROGRAMME HOME -->
+<a class="bg-[#EAEDFF] text-[#1D4ED8] font-medium border-l-4 border-[#1D4ED8] px-4 py-3 flex items-center gap-3 text-sm rounded-r" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Modules / Programme Home
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+                Live classes
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                Practice Exams
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+                Recordings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+                Progress
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                Certificates and credits
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                Extend Access
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                Help centre
+              </a>
+</nav>
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- CONTENT CANVAS -->
+<main class="flex-1 p-8 md:p-12 flex items-center justify-center">
+<div class="max-w-[700px] w-full bg-white rounded-xl border border-[#E2E8F0] p-8 shadow-sm space-y-6">
+<!-- State Icon and Badge -->
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[32px]">schedule</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+                  Programme start: 12 Oct 2026, 08:00 WAT
+                </span>
+</div>
+<!-- Authoritative Heading & Explanation -->
+<div>
+<h3 class="text-2xl font-headline-lg text-[#0F172A] tracking-tight">Your cohort programme has not started yet</h3>
+<p class="text-[#475569] font-body-md mt-2">
+                  CISA Cohort 14 opens officially on 12 Oct 2026, and all curriculum materials will unlock at 08:00 WAT on start day.
+                </p>
+</div>
+<!-- Live Countdown Banner -->
+<div class="bg-[#0B1320] text-white rounded-lg p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#93C5FD] text-[28px]">timer</span>
+<div>
+<div class="text-xs uppercase tracking-wider text-[#94A3B8] font-medium">Curriculum Unlock Countdown</div>
+<div class="text-lg font-semibold text-white tracking-tight">Starts in 6 days, 17 hours, 30 minutes</div>
+</div>
+</div>
+<div class="text-xs text-[#93C5FD] bg-[#1E293B] px-3 py-1.5 rounded border border-[#334155] font-label-sm">
+                  Candidate Status: Fully Confirmed
+                </div>
+</div>
+<!-- Pre-launch Checklist Structured Box -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-5 space-y-3">
+<h4 class="text-xs font-semibold uppercase tracking-wider text-[#475569]">
+                  What to do before the start
+                </h4>
+<div class="space-y-3 text-sm text-[#0F172A]">
+<div class="flex items-start gap-3 p-3 bg-white rounded border border-[#E2E8F0]">
+<span class="w-6 h-6 rounded-full bg-[#EFF6FF] text-[#1D4ED8] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+<div class="flex-1">
+<span class="font-medium text-[#0F172A]">Confirm your registered browser in Devices and sessions</span>
+<p class="text-xs text-[#64748B] mt-0.5">Verify your primary study computer is enrolled to prevent lecture day delays.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 bg-white rounded border border-[#E2E8F0]">
+<span class="w-6 h-6 rounded-full bg-[#EFF6FF] text-[#1D4ED8] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+<div class="flex-1">
+<span class="font-medium text-[#0F172A]">Verify your contact phone number (+234 803 ••• 1940) for SMS lecture notices</span>
+<p class="text-xs text-[#64748B] mt-0.5">Direct SMS dispatches deliver urgent instructor alerts and live room changes.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 bg-white rounded border border-[#E2E8F0]">
+<span class="w-6 h-6 rounded-full bg-[#EFF6FF] text-[#1D4ED8] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+<div class="flex-1">
+<span class="font-medium text-[#0F172A]">Review the public ISACA CISA syllabus outline and recommended prep schedule</span>
+<p class="text-xs text-[#64748B] mt-0.5">Familiarise yourself with Domain 1 to 5 task statements before opening session.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Action Area (44px min target) -->
+<div class="pt-2 flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-6 rounded-md bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium text-sm flex items-center justify-center gap-2 transition focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+                  View programme syllabus
+                </button>
+<a class="w-full sm:w-auto min-h-[44px] px-6 rounded-md border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] font-medium text-sm flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" href="#">
+                  Review onboarding guide
+                </a>
+</div>
+<!-- Support Line -->
+<div class="pt-4 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#64748B] gap-2">
+<span class="font-code-snippet">Reference: AJS-NOT-COHORT14</span>
+<a class="text-[#1D4ED8] hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">contact_support</span>
+                  Questions on cohort orientation? Contact support
+                </a>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 3: DEVICE LIMIT REACHED              -->
+<!-- ========================================== -->
+<section class="scroll-mt-20" id="frame-3">
+<div class="mb-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] text-xs font-semibold">
+            STATE 03
+          </span>
+<h2 class="text-white text-lg font-headline-sm tracking-tight">Browser Registration Limit Barrier</h2>
+</div>
+<span class="text-slate-400 text-xs font-code-snippet">AJS-ERR-DEV-MAX02</span>
+</div>
+<!-- Application Frame Shell -->
+<div class="w-full bg-[#F8FAFC] rounded-xl overflow-hidden border border-[#334155] shadow-2xl flex flex-col">
+<!-- TOP APP BAR -->
+<header class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B] select-none">
+<div class="flex items-center gap-6">
+<div class="bg-white px-3 py-1.5 rounded flex items-center h-10 shadow-sm">
+<img alt="A.J. Silicon" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLesLbTRlUFcFZqiLrcOh7rJbYdgSGu10s8M6EpUJjspimu8VX8GCeEG6Jv7h0H3uxtCuDhJ99aOT4Qag0MTcFc_tmpeIjbFj4SrKvMI6FCvSj_RSsAwHad06q__EQFgwTZFeOKPV2BIaINGVw0zvCBQPXlehqF4oA1KUPG-co1vVwPgWYrZV4c4fWXqSDb409-B4_LngEjwx7Sh3qrDDlD7RiFSArMR0t6EGWOQivJ1FVF41auenuNQ"/>
+</div>
+<div class="h-6 w-[1px] bg-[#1E293B]"></div>
+<div class="text-xs">
+<div class="text-white font-medium tracking-tight">CISA Exam Prep</div>
+<div class="text-[#94A3B8] text-[11px]">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#94A3B8] text-xs hidden sm:inline">14:30 WAT · 05 Oct 2026</span>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help Centre" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<div class="flex items-center gap-2.5 pl-2 border-l border-[#1E293B]">
+<div class="w-8 h-8 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center text-xs font-bold ring-1 ring-white/20">
+                CE
+              </div>
+<div class="text-left hidden md:block">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[10px] text-[#94A3B8] leading-tight">Student</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY -->
+<div class="flex min-h-[640px]">
+<!-- SIDEBAR -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] p-4 flex flex-col justify-between shrink-0">
+<nav class="space-y-1">
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Modules / Programme Home
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+                Live classes
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                Practice Exams
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+                Recordings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+                Progress
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                Certificates and credits
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                Extend Access
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                Help centre
+              </a>
+</nav>
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<!-- SETTINGS TAB HIGHLIGHTED AS CONTEXTUAL -->
+<a class="bg-[#EAEDFF] text-[#1D4ED8] font-medium border-l-4 border-[#1D4ED8] px-4 py-3 flex items-center gap-3 text-sm rounded-r" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- CONTENT CANVAS -->
+<main class="flex-1 p-8 md:p-12 flex items-center justify-center">
+<div class="max-w-[760px] w-full bg-white rounded-xl border border-[#E2E8F0] p-8 shadow-sm space-y-6">
+<!-- State Icon and Badge -->
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#FEF2F2] border border-[#B91C1C] flex items-center justify-center text-[#B91C1C]">
+<span class="material-symbols-outlined text-[32px]">phonelink_lock</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                  Limit: 2 of 2 Browsers Registered
+                </span>
+</div>
+<!-- Authoritative Heading & Explanation -->
+<div>
+<h3 class="text-2xl font-headline-lg text-[#0F172A] tracking-tight">Browser registration limit reached</h3>
+<p class="text-[#475569] font-body-md mt-2">
+                  Your account is currently linked to the maximum of 2 registered browsers, and one must be removed before you can access courseware on this browser.
+                </p>
+</div>
+<!-- Instructional Alert -->
+<div class="bg-[#FFFBEB] border border-[#B45309] rounded-lg p-4 flex items-center gap-3 text-sm text-[#B45309]">
+<span class="material-symbols-outlined text-[20px] shrink-0">info</span>
+<span class="font-medium">Remove one browser above to register this browser.</span>
+</div>
+<!-- 2 Device Inspection Cards -->
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="border border-[#E2E8F0] rounded-xl p-5 hover:border-[#64748B] transition bg-white flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#0F172A] shrink-0">
+<span class="material-symbols-outlined text-[24px]">laptop_mac</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-[#0F172A]">Work MacBook</span>
+<span class="text-xs px-2 py-0.5 rounded bg-[#F1F5F9] text-[#475569] border border-[#E2E8F0]">Chrome 128 on macOS</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs text-[#64748B]">
+<div>Registered: <span class="text-[#0F172A] font-medium">28 Sep 2026</span></div>
+<div>Last active: <span class="text-[#0F172A] font-medium">05 Oct 2026, 14:30 WAT</span></div>
+<div class="sm:col-span-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-[#64748B]">location_on</span>
+<span>City: Lagos (Victoria Island)</span>
+</div>
+</div>
+</div>
+</div>
+<button class="min-h-[44px] px-5 rounded-md bg-[#FEF2F2] border border-[#B91C1C] hover:bg-[#FEE2E2] text-[#B91C1C] font-medium text-sm flex items-center justify-center gap-1.5 transition shrink-0 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                    Remove
+                  </button>
+</div>
+<!-- Card 2 -->
+<div class="border border-[#E2E8F0] rounded-xl p-5 hover:border-[#64748B] transition bg-white flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#0F172A] shrink-0">
+<span class="material-symbols-outlined text-[24px]">desktop_windows</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-[#0F172A]">Home Desktop</span>
+<span class="text-xs px-2 py-0.5 rounded bg-[#F1F5F9] text-[#475569] border border-[#E2E8F0]">Edge 126 on Windows 11</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs text-[#64748B]">
+<div>Registered: <span class="text-[#0F172A] font-medium">01 Oct 2026</span></div>
+<div>Last active: <span class="text-[#0F172A] font-medium">04 Oct 2026, 21:15 WAT</span></div>
+<div class="sm:col-span-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-[#64748B]">location_on</span>
+<span>City: Ikeja, Lagos</span>
+</div>
+</div>
+</div>
+</div>
+<button class="min-h-[44px] px-5 rounded-md bg-[#FEF2F2] border border-[#B91C1C] hover:bg-[#FEE2E2] text-[#B91C1C] font-medium text-sm flex items-center justify-center gap-1.5 transition shrink-0 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                    Remove
+                  </button>
+</div>
+</div>
+<!-- Primary Action Area -->
+<div class="pt-2 flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-8 rounded-md bg-[#94A3B8] text-white font-medium text-sm flex items-center justify-center gap-2 cursor-not-allowed opacity-80" disabled="" title="A slot must be released before continuing">
+<span>Continue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<span class="text-xs text-[#64748B]">Button unlocks automatically after slot de-registration</span>
+</div>
+<!-- Support Line & Policy Note -->
+<div class="pt-4 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#64748B] gap-2">
+<span class="font-code-snippet">Reference: AJS-ERR-DEV-MAX02</span>
+<span class="text-[#475569] font-medium">
+                  Policy note: Candidates may register up to 2 desktop browsers simultaneously.
+                </span>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FRAME 4: SESSION ACTIVE ELSEWHERE          -->
+<!-- ========================================== -->
+<section class="scroll-mt-20" id="frame-4">
+<div class="mb-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-[#FFFBEB] border border-[#B45309] text-[#B45309] text-xs font-semibold">
+            STATE 04
+          </span>
+<h2 class="text-white text-lg font-headline-sm tracking-tight">Concurrent Active Session Barrier</h2>
+</div>
+<span class="text-slate-400 text-xs font-code-snippet">AJS-SEC-CONCURR8</span>
+</div>
+<!-- Application Frame Shell -->
+<div class="w-full bg-[#F8FAFC] rounded-xl overflow-hidden border border-[#334155] shadow-2xl flex flex-col">
+<!-- TOP APP BAR -->
+<header class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B] select-none">
+<div class="flex items-center gap-6">
+<div class="bg-white px-3 py-1.5 rounded flex items-center h-10 shadow-sm">
+<img alt="A.J. Silicon" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYUYac2Ze0_ddl-JSKLWq_pNayz7UgVStJoDmTYmnd1mfLSR8qSdgtHyoHKxLAFHToL5dl3JNjz3KiLTNVWC7F6IpQWdzdFWQAj7Etga0IANk5Eniq8G0_zRKCjAf0sLOA4LzySkf5OEkazHYHoCOeMFWLCyVDu_XlLGgnF3hkzqceePDhVyLUlX_GJnwlTbL5c4wyxn1sfiJQFCs5OJ0ts0e9lNUI34KUPlHXIY2tT3IzU_swpeSCcw"/>
+</div>
+<div class="h-6 w-[1px] bg-[#1E293B]"></div>
+<div class="text-xs">
+<div class="text-white font-medium tracking-tight">CISA Exam Prep</div>
+<div class="text-[#94A3B8] text-[11px]">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#94A3B8] text-xs hidden sm:inline">14:30 WAT · 05 Oct 2026</span>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help Centre" class="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white transition">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<div class="flex items-center gap-2.5 pl-2 border-l border-[#1E293B]">
+<div class="w-8 h-8 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center text-xs font-bold ring-1 ring-white/20">
+                CE
+              </div>
+<div class="text-left hidden md:block">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[10px] text-[#94A3B8] leading-tight">Student</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY -->
+<div class="flex min-h-[640px]">
+<!-- SIDEBAR -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] p-4 flex flex-col justify-between shrink-0">
+<nav class="space-y-1">
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Modules / Programme Home
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+                Live classes
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                Practice Exams
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+                Recordings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+                Progress
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                Certificates and credits
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                Extend Access
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                Help centre
+              </a>
+</nav>
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+              </a>
+<a class="px-4 py-3 flex items-center gap-3 text-sm text-[#475569] hover:bg-[#F8FAFC] rounded transition" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- CONTENT CANVAS -->
+<main class="flex-1 p-8 md:p-12 flex items-center justify-center">
+<div class="max-w-[680px] w-full bg-white rounded-xl border border-[#E2E8F0] p-8 shadow-sm space-y-6">
+<!-- State Icon and Badge -->
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#FFFBEB] border border-[#B45309] flex items-center justify-center text-[#B45309]">
+<span class="material-symbols-outlined text-[32px]">security</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">sensors</span>
+                  Active Session Detected
+                </span>
+</div>
+<!-- Authoritative Heading & Explanation -->
+<div>
+<h3 class="text-2xl font-headline-lg text-[#0F172A] tracking-tight">Account currently signed in on another browser</h3>
+<p class="text-[#475569] font-body-md mt-2">
+                  Your account is active on another browser, and simultaneous sessions are prohibited under candidate audit security policy.
+                </p>
+</div>
+<!-- Details of the other active session -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-5 space-y-4">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#475569]">
+                    Conflicting Active Session Details
+                  </span>
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#B45309] bg-[#FFFBEB] px-2 py-0.5 rounded border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">radio_button_checked</span>
+                    Active session
+                  </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+<div>
+<span class="block text-xs text-[#64748B]">Device name</span>
+<span class="font-medium text-[#0F172A] flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[18px] text-[#475569]">desktop_windows</span>
+                      Home Desktop
+                    </span>
+</div>
+<div>
+<span class="block text-xs text-[#64748B]">Browser application</span>
+<span class="font-medium text-[#0F172A] mt-0.5 block">
+                      Edge 126 on Windows 11 Enterprise
+                    </span>
+</div>
+<div>
+<span class="block text-xs text-[#64748B]">Session started</span>
+<span class="font-medium text-[#0F172A] mt-0.5 block">
+                      05 Oct 2026, 14:15 WAT <span class="text-[#64748B] font-normal">(15 minutes ago)</span>
+</span>
+</div>
+<div>
+<span class="block text-xs text-[#64748B]">City / Location</span>
+<span class="font-medium text-[#0F172A] flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">location_on</span>
+                      Ikeja, Lagos, Nigeria <span class="text-[11px] text-[#64748B] font-code-snippet">(IP: 105.112.98.44)</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Action Area (44px min height) -->
+<div class="pt-2 flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-6 rounded-md bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium text-sm flex items-center justify-center gap-2 transition focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">no_encryption</span>
+                  Sign out other session
+                </button>
+<button class="w-full sm:w-auto min-h-[44px] px-6 rounded-md border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] font-medium text-sm flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+                  Cancel
+                </button>
+</div>
+<!-- Support Reference and Security Footnote -->
+<div class="pt-4 border-t border-[#E2E8F0] space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#64748B] gap-2">
+<span class="font-code-snippet">Reference: AJS-SEC-CONCURR8</span>
+<a class="text-[#1D4ED8] hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+                    Account security centre
+                  </a>
+</div>
+<p class="text-[11px] text-[#64748B] leading-relaxed">
+                  Notice: Signing out the remote session terminates its live streaming and active mock exam states immediately. If you did not initiate that session, change your account password promptly.
+                </p>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- Technical Implementation & Design System Specs Footer -->
+<footer class="border-t border-[#1E293B] pt-8 pb-16 text-slate-400 text-xs">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+<div>
+<h5 class="text-white font-semibold mb-2 uppercase tracking-wider text-[11px]">Audit Discipline</h5>
+<p class="text-slate-400 leading-relaxed">
+            Built for enterprise compliance, zero translucent blurs, flat 1px boundaries (#E2E8F0), 8px coordinate grid math.
+          </p>
+</div>
+<div>
+<h5 class="text-white font-semibold mb-2 uppercase tracking-wider text-[11px]">Color Token Adherence</h5>
+<p class="text-slate-400 leading-relaxed">
+            Primary #0B1320 · Danger #B91C1C/#FEF2F2 · Warning #B45309/#FFFBEB · Info #1D4ED8/#EFF6FF · Focus #2563EB.
+          </p>
+</div>
+<div>
+<h5 class="text-white font-semibold mb-2 uppercase tracking-wider text-[11px]">Negative Constraints</h5>
+<p class="text-slate-400 leading-relaxed">
+            Role switcher excluded. Named browsers only (no DRM/fingerprint jargon). Pure typographic credentialing without third-party marks.
+          </p>
+</div>
+<div>
+<h5 class="text-white font-semibold mb-2 uppercase tracking-wider text-[11px]">Touch &amp; Ergonomics</h5>
+<p class="text-slate-400 leading-relaxed">
+            All interactive targets strictly conform to 44px minimum touch boundary across all 4 responsive state containers.
+          </p>
+</div>
+</div>
+<div class="text-center text-slate-400 text-[11px] border-t border-[#1E293B] pt-4">
+        © 2026 A.J. Silicon Training &amp; Assessment Platform · Enterprise IT Audit and Governance Programme
+      </div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy - 22 Payment Success Specification Board</title>
+<!-- Inter & Plus Jakarta Sans via Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed-dim": "#b9c7e4",
+            "primary-container": "#0d1c32",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "border-hairline": "#CBD5E1",
+            "surface-navy-dark": "#0F172A",
+            "on-secondary-container": "#00714d",
+            "error": "#ba1a1a",
+            "surface-tint": "#515f78",
+            "tertiary": "#000000",
+            "primary-fixed": "#d6e3ff",
+            "inverse-primary": "#b9c7e4",
+            "tertiary-fixed": "#ffdcc3",
+            "background": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "surface-canvas": "#F8FAFC",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#2f1500",
+            "surface-container-high": "#dde9ff",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#75777e",
+            "on-secondary-fixed": "#002113",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-container-low": "#eff4ff",
+            "secondary-container": "#6cf8bb",
+            "on-tertiary-fixed": "#2f1500",
+            "surface": "#f8f9ff",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#ebf1ff",
+            "audit-pass-mint": "#059669",
+            "surface-variant": "#d5e3fd",
+            "surface-slate-tech": "#1E293B",
+            "pedigree-amber-light": "#F59E0B",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#c76c00",
+            "on-primary-container": "#76849f",
+            "on-surface-variant": "#44474d",
+            "on-primary-fixed-variant": "#39475f",
+            "surface-card": "#FFFFFF",
+            "on-surface": "#0d1c2f",
+            "surface-container-highest": "#d5e3fd",
+            "surface-dim": "#ccdbf4",
+            "on-background": "#0d1c2f",
+            "outline-variant": "#c5c6cd",
+            "on-primary-fixed": "#0d1c32",
+            "primary": "#000000",
+            "inverse-surface": "#233144",
+            "secondary-fixed-dim": "#4edea3",
+            "secondary": "#006c49",
+            "border-structural": "#E2E8F0",
+            "surface-container": "#e6eeff",
+            "secondary-fixed": "#6ffbbe"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem"
+          },
+          fontFamily: {
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "telemetry-data": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "title-md": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"]
+          },
+          fontSize: {
+            "headline-lg-mobile": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "label-sm": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.04em", fontWeight: "600" }],
+            "telemetry-data": ["0.875rem", { lineHeight: "1.25rem", fontWeight: "500" }],
+            "body-sm": ["0.875rem", { lineHeight: "1.25rem", fontWeight: "400" }],
+            "body-md": ["1rem", { lineHeight: "1.5rem", fontWeight: "400" }],
+            "headline-lg": ["2rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-sm": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "label-md": ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.01em", fontWeight: "500" }],
+            "headline-md": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display-hero-mobile": ["2rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "title-md": ["1.125rem", { lineHeight: "1.625rem", fontWeight: "600" }],
+            "display-hero": ["3rem", { lineHeight: "3.5rem", letterSpacing: "-0.03em", fontWeight: "800" }],
+            "body-lg": ["1.125rem", { lineHeight: "1.75rem", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-[#F1F5F9] text-[#0F172A] font-body-md text-body-md antialiased min-h-screen">
+<!-- TOP-LEVEL BOARD METADATA HEADER -->
+<header class="w-full bg-[#0B1320] border-b border-[#1E293B] text-white py-4 px-6 md:px-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div>
+<p class="font-label-sm text-label-sm tracking-wider text-[#93C5FD] uppercase">Design Specification · Screen 22 Institutional Checkout Flow</p>
+<h1 class="font-headline-sm text-headline-sm text-white mt-1">22 Payment success — Complete Specification Board</h1>
+</div>
+<div class="flex items-center gap-3 text-xs font-mono text-[#94A3B8]">
+<span class="inline-flex items-center px-2 py-1 rounded bg-[#1E293B] border border-[#334155] text-slate-200">Viewport 1: 1440px Desktop</span>
+<span class="inline-flex items-center px-2 py-1 rounded bg-[#1E293B] border border-[#334155] text-slate-200">Viewport 2: 390px Mobile</span>
+<span class="inline-flex items-center px-2 py-1 rounded bg-[#047857]/20 border border-[#047857] text-[#ECFDF5]">WAT / NGN Spec</span>
+</div>
+</div>
+</header>
+<!-- CANVAS WRAPPER -->
+<main class="w-full max-w-7xl mx-auto py-10 px-4 md:px-8 space-y-16">
+<!-- ========================================== -->
+<!-- STATE 1: DESKTOP 1440px VIEWPORT RENDER    -->
+<!-- ========================================== -->
+<section class="space-y-4">
+<div class="flex items-center justify-between border-b border-[#CBD5E1] pb-3">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]"></span>
+<h2 class="font-title-md text-title-md font-semibold text-[#0F172A]">State 1: Desktop Implementation (1440px)</h2>
+</div>
+<span class="text-xs font-mono text-[#475569]">Widescreen Grid · Centered Receipt Box · 44px Min Hit Targets</span>
+</div>
+<!-- DESKTOP CANVAS CONTAINER (Simulating 1440 layout) -->
+<div class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<!-- Public Top Bar (Desktop) -->
+<header class="w-full bg-[#0B1320] border-b border-[#1E293B] h-16 px-8 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<!-- White rounded plate for logo -->
+<a aria-label="A.J. Silicon Academy Home" class="inline-flex items-center justify-center bg-white px-3 py-1 rounded-md shadow-sm h-10 transition-opacity hover:opacity-95" href="#">
+<img alt="A.J. Silicon Academy Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQlPAbehCfyxEi7aluwTuqBPAKqxGMkVHwrCSn0TpbzFlN3m8warSdk9qKYnRcRI_bGc1i1Ky25Ami41XoOReRrlYTxVIgcPSpl4sESN_jaO-gGM6IOS454XsQIL06lvBIjHespgqBkOSeToX7PgEC0hDN9Qdlgbt1FH326-5uaQpM24vaLg6VevtiBJpEoncS-L6-QAPV9GKnQlbd85DJdlu8VhCUBCy1UBoSkDL72ZI6PSVJTvI23kJSWiTq0qLRppk"/>
+</a>
+<nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-150 py-2" href="#">Programmes</a>
+<a class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-150 py-2" href="#">Workshops</a>
+</nav>
+</div>
+<!-- Student Name Badge Chip -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-[#1E293B] border border-[#334155] rounded-full px-3 py-1.5 text-xs text-white">
+<span class="material-symbols-outlined text-base text-[#93C5FD]">account_circle</span>
+<span class="font-medium">Chinedu Eze</span>
+</div>
+</div>
+</header>
+<!-- Page Sub-Header & Breadcrumb Bar -->
+<div class="bg-white border-b border-[#E2E8F0] px-8 py-3.5">
+<nav aria-label="Breadcrumb" class="text-xs font-medium text-[#475569] flex items-center gap-2 flex-wrap">
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Programmes</a>
+<span class="material-symbols-outlined text-xs text-[#94A3B8]">chevron_right</span>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">CISA Exam Prep</a>
+<span class="material-symbols-outlined text-xs text-[#94A3B8]">chevron_right</span>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Select cohort</a>
+<span class="material-symbols-outlined text-xs text-[#94A3B8]">chevron_right</span>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Checkout</a>
+<span class="material-symbols-outlined text-xs text-[#94A3B8]">chevron_right</span>
+<span aria-current="page" class="text-[#0F172A] font-semibold">Payment confirmed</span>
+</nav>
+</div>
+<!-- Desktop Content Canvas -->
+<div class="py-12 px-6">
+<div class="max-w-2xl mx-auto bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<!-- Success Status Header -->
+<div class="text-center flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[#047857]" style="font-size: 32px;" style_active="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-[#0F172A] tracking-tight">Payment received</h2>
+<p class="font-body-md text-body-md text-[#475569] mt-2 max-w-lg leading-relaxed">
+                Your enrolment in <span class="font-semibold text-[#0F172A]">CISA Exam Prep (Virtual, Cohort 14)</span> has been confirmed. A receipt and onboarding instructions have been sent to <span class="font-medium text-[#0F172A]">c.eze@example.com</span>.
+              </p>
+</div>
+<!-- Receipt Summary Box -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-6 my-6">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0] mb-4">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#475569]">Transaction Receipt</span>
+<span class="text-xs font-mono text-[#047857] bg-[#ECFDF5] px-2 py-0.5 rounded border border-[#A7F3D0]">Status: Settled</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 text-sm">
+<div>
+<dt class="text-xs font-medium text-[#475569]">Reference</dt>
+<dd class="mt-1 font-mono font-medium text-[#0F172A] flex items-center gap-1.5">
+<span>AJS-PAY-20261005-0042</span>
+<button aria-label="Copy reference number" class="text-[#64748B] hover:text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded p-0.5" title="Copy reference to clipboard" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</dd>
+</div>
+<div>
+<dt class="text-xs font-medium text-[#475569]">Date</dt>
+<dd class="mt-1 font-medium text-[#0F172A]">05 Oct 2026 at 14:40 WAT</dd>
+</div>
+<div class="md:col-span-2">
+<dt class="text-xs font-medium text-[#475569]">Programme</dt>
+<dd class="mt-1 font-medium text-[#0F172A]">Certified Information Systems Auditor (CISA) Prep</dd>
+</div>
+<div class="md:col-span-2">
+<dt class="text-xs font-medium text-[#475569]">Mode</dt>
+<dd class="mt-1 font-medium text-[#0F172A]">Virtual (Weekday evenings 6:00 PM – 8:00 PM WAT)</dd>
+</div>
+<div class="md:col-span-2">
+<dt class="text-xs font-medium text-[#475569]">Payment channel</dt>
+<dd class="mt-1 font-medium text-[#0F172A] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-[#475569]">credit_card</span>
+                    Card (Mastercard ending in 4242)
+                  </dd>
+</div>
+<div class="border-t border-[#E2E8F0] pt-3 md:col-span-2 space-y-2">
+<div class="flex justify-between items-center text-xs text-[#475569]">
+<span>Subtotal</span>
+<span class="font-mono text-sm text-[#0F172A]">₦279,069.77</span>
+</div>
+<div class="flex justify-between items-center text-xs text-[#475569]">
+<span>VAT (7.5% standard rate)</span>
+<span class="font-mono text-sm text-[#0F172A]">₦20,930.23</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-[#CBD5E1]">
+<span class="text-sm font-semibold text-[#0F172A]">Amount paid</span>
+<span class="font-mono font-bold text-lg text-[#0F172A]">₦300,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Access & Licence Window Box -->
+<div class="border border-[#E2E8F0] rounded-lg p-5 mb-6 flex items-start gap-4 bg-white">
+<div class="w-10 h-10 rounded-md bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#1D4ED8]">event_available</span>
+</div>
+<div class="space-y-1.5 text-sm">
+<h3 class="font-semibold text-[#0F172A]">Enrolment &amp; Licence Schedule</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-xs text-[#475569]">
+<p><span class="font-medium text-[#0F172A]">Access start date:</span> 12 Oct 2026</p>
+<p><span class="font-medium text-[#0F172A]">Cohort schedule:</span> 12 Oct 2026 – 18 Dec 2026 (10 weeks)</p>
+<p class="sm:col-span-2"><span class="font-medium text-[#0F172A]">Licence end date:</span> 17 Apr 2027 <span class="text-[#475569]">(90-day post-cohort access + 30-day exam buffer)</span></p>
+</div>
+</div>
+</div>
+<!-- Action Block -->
+<div class="flex flex-col items-center">
+<a class="inline-flex items-center justify-center gap-2 w-full md:w-auto h-12 px-8 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] font-semibold text-base focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-colors" href="#">
+<span>Go to my programme</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<div class="flex items-center justify-center gap-6 mt-5 flex-wrap">
+<a class="inline-flex items-center gap-1.5 text-[#1D4ED8] hover:underline font-medium text-sm min-h-[44px] px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-[#2563EB]" href="#">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Download receipt</span>
+</a>
+<span aria-hidden="true" class="text-[#CBD5E1] hidden sm:inline">•</span>
+<a class="inline-flex items-center gap-1.5 text-[#1D4ED8] hover:underline font-medium text-sm min-h-[44px] px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-[#2563EB]" href="#">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<span>Add first class to calendar</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Institutional Sub-Footer -->
+<footer class="bg-white border-t border-[#E2E8F0] py-4 px-8 text-center text-xs text-[#475569]">
+<p>© 2026 A.J. Silicon Academy. Accredited Institutional Learning. Lagos, Nigeria.</p>
+</footer>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 2: MOBILE VIEWPORT (390px FRAME)     -->
+<!-- ========================================== -->
+<section class="space-y-4">
+<div class="flex items-center justify-between border-b border-[#CBD5E1] pb-3">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-[#047857]"></span>
+<h2 class="font-title-md text-title-md font-semibold text-[#0F172A]">State 2: Mobile Viewport (390px Plain Frame)</h2>
+</div>
+<span class="text-xs font-mono text-[#475569]">390px Fixed Frame · Zero Phone Chrome · Compact Density</span>
+</div>
+<div class="flex justify-center py-4">
+<!-- 390px Plain Mobile Frame -->
+<div class="w-[390px] bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg shadow-md overflow-hidden shrink-0">
+<!-- Public Top Bar (Mobile) -->
+<header class="w-full bg-[#0B1320] border-b border-[#1E293B] h-14 px-4 flex items-center justify-between">
+<a aria-label="A.J. Silicon Academy Home" class="inline-flex items-center justify-center bg-white px-2 py-1 rounded shadow-sm h-8" href="#">
+<img alt="A.J. Silicon Academy Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf18q-WddB35zWS5Ep_dTIIbjT9Cran59ugtK1PFd446oqANnwmpYpJM7Hd5z_6W5g61Q5bQAdx8KBRkF8MsTlD4m0_H4pG7zzDZFq_2qA6dVr9OtnbtcKGQQt7Og3BvbwSBO_rNjkZa7ARt2syfyBnhJx0hYDLtHsOvLjbQ4nENNvf5SjoMyllZBta31swfe3bmp_Ke3PIJHqg_NgMy9kQbgVPerbrF1nb-m0iYATNZx5w4SZUxePu_TDOb1bATJqHDI"/>
+</a>
+<!-- Compact student chip -->
+<div class="flex items-center gap-1.5 bg-[#1E293B] border border-[#334155] rounded-full px-2.5 py-1 text-xs text-white">
+<span class="material-symbols-outlined text-sm text-[#93C5FD]">account_circle</span>
+<span class="font-medium text-[11px] truncate max-w-[90px]">Chinedu Eze</span>
+</div>
+</header>
+<!-- Breadcrumb (Mobile) -->
+<div class="bg-white border-b border-[#E2E8F0] px-4 py-2 text-[11px] text-[#475569] flex items-center gap-1 overflow-x-auto whitespace-nowrap">
+<span>Checkout</span>
+<span class="material-symbols-outlined text-[10px] text-[#94A3B8]">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">Payment confirmed</span>
+</div>
+<!-- Mobile Content Area -->
+<div class="p-4 space-y-4">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm space-y-4">
+<!-- Mobile Status Icon & Header -->
+<div class="text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center mb-2.5">
+<span class="material-symbols-outlined text-[#047857]" style="font-size: 26px;">check_circle</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-[#0F172A]">Payment received</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mt-1 text-center leading-snug">
+                  Enrolment confirmed for <span class="font-semibold text-[#0F172A]">CISA Exam Prep</span> (Cohort 14). Receipt sent to <span class="font-medium text-[#0F172A]">c.eze@example.com</span>.
+                </p>
+</div>
+<!-- Mobile Receipt Summary Table -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-3.5 space-y-2.5 text-xs">
+<div class="flex items-center justify-between pb-2 border-b border-[#E2E8F0]">
+<span class="font-semibold uppercase tracking-wider text-[#475569] text-[10px]">Reference</span>
+<span class="font-mono font-medium text-[#0F172A] text-[11px]">AJS-PAY-20261005-0042</span>
+</div>
+<div class="space-y-1 pt-1">
+<div class="flex justify-between">
+<span class="text-[#475569]">Programme</span>
+<span class="font-medium text-[#0F172A] text-right ml-2">CISA Prep</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#475569]">Mode</span>
+<span class="font-medium text-[#0F172A] text-right ml-2">Virtual (Evenings)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#475569]">Date</span>
+<span class="font-medium text-[#0F172A]">05 Oct 2026</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#475569]">Channel</span>
+<span class="font-medium text-[#0F172A]">Card (Mastercard ••4242)</span>
+</div>
+</div>
+<div class="border-t border-[#E2E8F0] pt-2 space-y-1">
+<div class="flex justify-between text-[11px] text-[#475569]">
+<span>Subtotal</span>
+<span class="font-mono text-[#0F172A]">₦279,069.77</span>
+</div>
+<div class="flex justify-between text-[11px] text-[#475569]">
+<span>VAT (7.5%)</span>
+<span class="font-mono text-[#0F172A]">₦20,930.23</span>
+</div>
+<div class="flex justify-between items-center pt-1.5 border-t border-[#CBD5E1]">
+<span class="font-semibold text-[#0F172A]">Amount paid</span>
+<span class="font-mono font-bold text-base text-[#0F172A]">₦300,000</span>
+</div>
+</div>
+</div>
+<!-- Mobile Access Window -->
+<div class="border border-[#E2E8F0] rounded-lg p-3 bg-white flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#1D4ED8] text-lg shrink-0 mt-0.5">event_available</span>
+<div class="text-xs space-y-0.5">
+<p class="font-semibold text-[#0F172A]">Licence &amp; Access Schedule</p>
+<p class="text-[#475569]"><span class="font-medium text-[#0F172A]">Start:</span> 12 Oct 2026</p>
+<p class="text-[#475569]"><span class="font-medium text-[#0F172A]">Licence ends:</span> 17 Apr 2027</p>
+</div>
+</div>
+<!-- Mobile Actions (Min 44px target) -->
+<div class="pt-2 space-y-2">
+<a class="w-full min-h-[44px] flex items-center justify-center gap-1.5 bg-[#0B1320] text-white hover:bg-[#1E293B] rounded-lg font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB]" href="#">
+<span>Go to my programme</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<div class="flex flex-col gap-1 pt-1">
+<a class="min-h-[44px] flex items-center justify-center gap-1.5 text-[#1D4ED8] text-xs font-medium hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#2563EB]" href="#">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Download receipt</span>
+</a>
+<a class="min-h-[44px] flex items-center justify-center gap-1.5 text-[#1D4ED8] text-xs font-medium hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#2563EB]" href="#">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Add first class to calendar</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Institutional Footer -->
+<footer class="bg-white border-t border-[#E2E8F0] py-3 px-4 text-center text-[10px] text-[#475569]">
+<p>© 2026 A.J. Silicon Academy. Lagos, Nigeria.</p>
+</footer>
+</div>
+</div>
+</section>
+<!-- SPECIFICATION AUDIT CHECKLIST PANEL -->
+<section class="bg-white border border-[#CBD5E1] rounded-xl p-6">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-[#0F172A] border-b border-[#E2E8F0] pb-2 mb-4">
+        Specification Verification Audit
+      </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-[#475569]">
+<div>
+<h4 class="font-semibold text-[#0F172A] mb-1">Currency &amp; Locality Validation</h4>
+<ul class="list-disc pl-4 space-y-1">
+<li>Currency symbol: ₦300,000 (Standard comma separation)</li>
+<li>Subtotal: ₦279,069.77 · VAT: ₦20,930.23</li>
+<li>Date format: 05 Oct 2026 (West Africa Time, WAT)</li>
+<li>Reference code: AJS-PAY-20261005-0042</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-[#0F172A] mb-1">Accessibility &amp; Touch Geometry</h4>
+<ul class="list-disc pl-4 space-y-1">
+<li>Primary touch targets: 48px desktop / 44px min mobile</li>
+<li>Action links: Guaranteed min-h-[44px] interaction area</li>
+<li>Focus ring: 2px solid #2563EB with 2px offset</li>
+<li>Status verified with icon + badge (never colour alone)</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-[#0F172A] mb-1">Institutional Brand Enclosure</h4>
+<ul class="list-disc pl-4 space-y-1">
+<li>Logo plate: Isolated white rounded badge on #0B1320 top bar</li>
+<li>Zero sidebar constraint honoured for post-transaction state</li>
+<li>Strict institutional sobriety: no neon, no gradients, no lorem</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Global Footer -->
+<footer class="w-full border-t border-[#E2E8F0] bg-white py-6 mt-12 text-center text-xs text-[#475569]">
+<div class="max-w-7xl mx-auto px-4">
+<p>© 2026 A.J. Silicon Academy. All Rights Reserved. Accredited Institutional Learning. Lagos, Nigeria.</p>
+</div>
+</footer>
+</body></html>

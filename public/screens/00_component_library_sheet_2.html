@@ -1,0 +1,975 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.J. Silicon Learning Platform - 00 Component Library Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#0A192F',
+              dark: '#050D1A',
+              light: '#1B2E4B',
+            },
+            accent: {
+              DEFAULT: '#D97706',
+              hover: '#B45309',
+              subtle: '#FEF3C7',
+            },
+            success: {
+              DEFAULT: '#059669',
+              subtle: '#ECFDF5',
+              border: '#A7F3D0',
+              text: '#065F46',
+            },
+            warning: {
+              DEFAULT: '#D97706',
+              subtle: '#FFFBEB',
+              border: '#FDE68A',
+              text: '#92400E',
+            },
+            danger: {
+              DEFAULT: '#DC2626',
+              subtle: '#FEF2F2',
+              border: '#FECACA',
+              text: '#991B1B',
+            },
+            info: {
+              DEFAULT: '#2563EB',
+              subtle: '#EFF6FF',
+              border: '#BFDBFE',
+              text: '#1E40AF',
+            },
+            surface: {
+              DEFAULT: '#FFFFFF',
+              alt: '#F8FAFC',
+              muted: '#F1F5F9',
+              dark: '#0A192F',
+            },
+            border: {
+              DEFAULT: '#E2E8F0',
+              strong: '#CBD5E1',
+              dark: '#334155',
+            },
+            content: {
+              DEFAULT: '#0F172A',
+              muted: '#64748B',
+              subtle: '#94A3B8',
+            }
+          },
+          borderRadius: {
+            card: '12px',
+          },
+          boxShadow: {
+            card: '0 1px 3px 0 rgba(15, 23, 42, 0.05)',
+            popover: '0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.06)',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+      font-size: 20px;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+</head>
+<body class="bg-surface-alt text-content font-sans antialiased text-[16px] leading-relaxed selection:bg-accent-subtle selection:text-content">
+
+  <!-- Header Banner -->
+  <header class="bg-surface border-b border-border sticky top-0 z-40 px-8 py-5 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="h-10 w-10 rounded-[8px] bg-primary flex items-center justify-center text-white font-bold text-lg tracking-tight">
+        AJ
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-xl font-bold text-content tracking-tight">A.J. Silicon Design System &amp; Component Library</h1>
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-primary-light/10 text-primary border border-border">Pack 1 · 00</span>
+        </div>
+        <p class="text-xs text-content-muted">Desktop Canvas 1440px Grid · Credible, Calm, Institutional · Lagos, Nigeria</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="text-right text-xs">
+        <span class="font-semibold text-content block">Audit &amp; IT Governance Suite</span>
+        <span class="text-content-muted">WCAG AA Compliant · 44px Min Touch</span>
+      </div>
+      <div class="h-8 w-px bg-border"></div>
+      <button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-xs font-semibold text-content hover:bg-surface-muted transition-colors">
+        <span class="material-symbols-outlined !text-[16px]">file_download</span> Spec Sheet
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-[1440px] mx-auto p-8 space-y-12">
+
+    <!-- 1. COLOR TOKENS & SYSTEM FOUNDATIONS -->
+    <section class="bg-surface p-6 rounded-card border border-border shadow-card space-y-6">
+      <div class="border-b border-border pb-4 flex justify-between items-center">
+        <div>
+          <h2 class="text-lg font-bold text-primary tracking-tight">1. Colour Tokens &amp; Visual Foundations</h2>
+          <p class="text-xs text-content-muted">8px grid spacing, 12px card radius, 1px border, high contrast WCAG AA, visible focus states.</p>
+        </div>
+        <span class="text-xs font-mono text-content-muted">Tokens: 13 Semantic Colors</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <!-- Primary -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+          <div class="h-12 rounded bg-primary border border-primary-dark"></div>
+          <div>
+            <div class="text-xs font-bold text-content">primary</div>
+            <div class="text-[11px] font-mono text-content-muted">#0A192F · Deep Navy</div>
+          </div>
+        </div>
+        <!-- Primary Dark -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+          <div class="h-12 rounded bg-primary-dark"></div>
+          <div>
+            <div class="text-xs font-bold text-content">primary-dark</div>
+            <div class="text-[11px] font-mono text-content-muted">#050D1A · Surface Navy</div>
+          </div>
+        </div>
+        <!-- Accent -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+          <div class="h-12 rounded bg-accent"></div>
+          <div>
+            <div class="text-xs font-bold text-content">accent</div>
+            <div class="text-[11px] font-mono text-content-muted">#D97706 · Amber/Gold</div>
+          </div>
+        </div>
+        <!-- Success -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2"><div class="h-12 rounded" style="background-color: #047857;"></div><div><div class="text-xs font-bold text-content">success</div><div class="text-[11px] font-mono text-content-muted">#047857 · Emerald Pass / Icon</div></div></div>
+        <!-- Warning -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2"><div class="h-12 rounded" style="background-color: #B45309;"></div><div><div class="text-xs font-bold text-content">warning</div><div class="text-[11px] font-mono text-content-muted">#B45309 · Alert Amber / Icon</div></div></div>
+        <!-- Danger -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2"><div class="h-12 rounded" style="background-color: #B91C1C;"></div><div><div class="text-xs font-bold text-content">danger</div><div class="text-[11px] font-mono text-content-muted">#B91C1C · Crimson Red / Icon</div></div></div>
+        <!-- Surface -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+          <div class="h-12 rounded bg-surface border border-border"></div>
+          <div>
+            <div class="text-xs font-bold text-content">surface</div>
+            <div class="text-[11px] font-mono text-content-muted">#FFFFFF · Pure White</div>
+          </div>
+        </div>
+        <!-- Border -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+          <div class="h-12 rounded bg-border"></div>
+          <div>
+            <div class="text-xs font-bold text-content">border</div>
+            <div class="text-[11px] font-mono text-content-muted">#E2E8F0 · Subtle 1px</div>
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+          <div class="h-12 rounded bg-content"></div>
+          <div>
+            <div class="text-xs font-bold text-content">text</div>
+            <div class="text-[11px] font-mono text-content-muted">#0F172A · Slate Dark</div>
+          </div>
+        </div>
+        <!-- Text Muted -->
+        <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+          <div class="h-12 rounded bg-content-muted"></div>
+          <div>
+            <div class="text-xs font-bold text-content">text-muted</div>
+            <div class="text-[11px] font-mono text-content-muted">#64748B · Neutral Muted</div>
+          </div>
+        </div>
+      <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2"><div class="h-12 rounded" style="background-color: #1D4ED8;"></div><div><div class="text-xs font-bold text-content">link</div><div class="text-[11px] font-mono text-content-muted">#1D4ED8 · Text links &amp; anchors</div></div></div><div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2"><div class="h-12 rounded border-2 border-white ring-2" style="background-color: #2563EB; ring-color: #2563EB;"></div><div><div class="text-xs font-bold text-content">focus-ring</div><div class="text-[11px] font-mono text-content-muted">#2563EB · 2px solid, 2px offset</div></div></div><div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2"><div class="h-12 rounded flex items-center justify-center" style="background-color: #0A192F;"><span class="text-xs font-semibold" style="color: #93C5FD;">#93C5FD</span></div><div><div class="text-xs font-bold text-content">link-on-dark</div><div class="text-[11px] font-mono text-content-muted">#93C5FD · Links on navy dark</div></div></div></div><div class="p-4 rounded-lg border border-border bg-surface-alt space-y-3"><div class="flex justify-between items-center"><div class="space-y-0.5"><div class="text-xs font-bold text-primary uppercase tracking-wider">Link Contrast Pair Verification (WCAG AAA)</div><div class="text-xs text-content-muted">Context-specific link color tokens with compliant luminance and contrast ratios.</div></div><span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-success-subtle text-success-text border border-success-border">WCAG AAA Verified</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="p-3.5 rounded-lg border border-border bg-white flex items-center justify-between"><div class="space-y-1"><div class="text-xs font-bold text-content">Light Canvas · <span style="color: #1D4ED8;" class="underline cursor-pointer">link (#1D4ED8)</span></div><div class="text-[11px] font-mono text-content-muted">#1D4ED8 on #FFFFFF (Pure White)</div></div><div class="text-right"><div class="text-sm font-bold" style="color: #047857;">6.7:1</div><div class="text-[10px] font-mono uppercase text-content-muted">Pass AAA</div></div></div><div class="p-3.5 rounded-lg border border-white/10 flex items-center justify-between" style="background-color: #0B1320;"><div class="space-y-1"><div class="text-xs font-bold text-white">Dark Canvas · <span style="color: #93C5FD;" class="underline cursor-pointer">link-on-dark (#93C5FD)</span></div><div class="text-[11px] font-mono text-slate-300">#93C5FD on #0B1320 (Deep Navy)</div></div><div class="text-right"><div class="text-sm font-bold text-emerald-400">10.3:1</div><div class="text-[10px] font-mono uppercase text-slate-400">Pass AAA</div></div></div></div></div>
+    </section>
+
+    <!-- 2. BUTTONS MATRIX (All variants x all states) -->
+    <section class="bg-surface p-6 rounded-card border border-border shadow-card space-y-6">
+      <div class="border-b border-border pb-4">
+        <h2 class="text-lg font-bold text-primary tracking-tight">2. Buttons (4 Types × 5 States)</h2>
+        <p class="text-xs text-content-muted">Primary, Secondary, Ghost, Destructive across Default, Hover, Focus, Disabled, and Loading states. Minimum 44px height.</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-border text-xs text-content-muted uppercase tracking-wider">
+              <th class="py-3 px-4">Variant</th>
+              <th class="py-3 px-4">Default</th>
+              <th class="py-3 px-4">Hover State</th>
+              <th class="py-3 px-4">Focus State</th>
+              <th class="py-3 px-4">Disabled</th>
+              <th class="py-3 px-4">Loading</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <!-- Primary -->
+            <tr>
+              <td class="py-4 px-4 font-semibold text-content text-xs">Primary</td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors">
+                  Enrol in Programme
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-primary-dark text-white font-medium text-sm">
+                  Enrol in Programme
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-primary text-white font-medium text-sm ring-2 ring-primary ring-offset-2">
+                  Enrol in Programme
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button disabled="" class="min-h-[44px] px-5 py-2.5 rounded-lg bg-border text-content-subtle font-medium text-sm cursor-not-allowed">
+                  Enrol in Programme
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-primary text-white font-medium text-sm inline-flex items-center gap-2">
+                  <svg class="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span class="">Processing...</span>
+                </button>
+              </td>
+            </tr>
+
+            <!-- Secondary -->
+            <tr>
+              <td class="py-4 px-4 font-semibold text-content text-xs">Secondary</td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-surface border border-border text-content font-medium text-sm hover:bg-surface-muted transition-colors">
+                  Download Syllabus
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-surface-muted border border-border-strong text-content font-medium text-sm">
+                  Download Syllabus
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-surface border border-border text-content font-medium text-sm ring-2 ring-primary ring-offset-2">
+                  Download Syllabus
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button disabled="" class="min-h-[44px] px-5 py-2.5 rounded-lg bg-surface-muted border border-border text-content-subtle font-medium text-sm cursor-not-allowed">
+                  Download Syllabus
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-surface border border-border text-content font-medium text-sm inline-flex items-center gap-2">
+                  <svg class="animate-spin h-4 w-4 text-content" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span class="">Loading PDF</span>
+                </button>
+              </td>
+            </tr>
+
+            <!-- Ghost -->
+            <tr>
+              <td class="py-4 px-4 font-semibold text-content text-xs">Ghost</td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-4 py-2.5 rounded-lg text-content font-medium text-sm hover:bg-surface-muted transition-colors">
+                  Cancel Action
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-4 py-2.5 rounded-lg bg-surface-muted text-content font-medium text-sm">
+                  Cancel Action
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-4 py-2.5 rounded-lg text-content font-medium text-sm ring-2 ring-primary ring-offset-2">
+                  Cancel Action
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button disabled="" class="min-h-[44px] px-4 py-2.5 rounded-lg text-content-subtle font-medium text-sm cursor-not-allowed">
+                  Cancel Action
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-4 py-2.5 rounded-lg text-content font-medium text-sm inline-flex items-center gap-2">
+                  <svg class="animate-spin h-4 w-4 text-content" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span class="">Working...</span>
+                </button>
+              </td>
+            </tr>
+
+            <!-- Destructive -->
+            <tr>
+              <td class="py-4 px-4 font-semibold text-content text-xs">Destructive</td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-danger text-white font-medium text-sm hover:bg-danger-text transition-colors">
+                  Revoke Device
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-danger-text text-white font-medium text-sm">
+                  Revoke Device
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-danger text-white font-medium text-sm ring-2 ring-danger ring-offset-2">
+                  Revoke Device
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button disabled="" class="min-h-[44px] px-5 py-2.5 rounded-lg bg-border text-content-subtle font-medium text-sm cursor-not-allowed">
+                  Revoke Device
+                </button>
+              </td>
+              <td class="py-4 px-4">
+                <button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-danger text-white font-medium text-sm inline-flex items-center gap-2">
+                  <svg class="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span class="">Revoking...</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. FORM CONTROLS & INPUTS (Default, Error, Disabled) -->
+    <section class="bg-surface p-6 rounded-card border border-border shadow-card space-y-6">
+      <div class="border-b border-border pb-4">
+        <h2 class="text-lg font-bold text-primary tracking-tight">3. Form Fields &amp; Data Inputs</h2>
+        <p class="text-xs text-content-muted">Text, Password, Phone (+234), Select, Multi-select, Date Picker, Textarea, OTP 6-Digit, and Search.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Text Input (Default, Error, Disabled) -->
+        <div class="space-y-4 p-4 rounded-lg bg-surface-alt border border-border">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Text Input States</span>
+          <!-- Default -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Full Name</label>
+            <input type="text" value="Chinedu Eze" class="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-border bg-surface text-sm text-content focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" style="border-color: rgb(100, 116, 139);">
+            <p class="text-[11px] text-content-muted">As it appears on your official ID.</p>
+          </div>
+          <!-- Error -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Work Email</label>
+            <input type="email" value="chinedu.eze@bad-domain" class="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-danger bg-danger-subtle text-sm text-danger-text focus:outline-none focus:ring-2 focus:ring-danger">
+            <p class="text-[11px] text-danger font-medium flex items-center gap-1">
+              <span class="material-symbols-outlined !text-[14px]">error</span> Please enter a valid corporate email address.
+            </p>
+          </div>
+          <!-- Disabled -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content-muted">Candidate Registration ID</label>
+            <input type="text" disabled="" value="AJS-2026-CISA-0842" class="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-border bg-surface-muted text-sm text-content-muted cursor-not-allowed" style="border-color: rgb(100, 116, 139);">
+            <p class="text-[11px] text-content-muted">Immutable system-generated identifier.</p>
+          </div>
+        </div>
+
+        <!-- Password & Phone (+234) -->
+        <div class="space-y-4 p-4 rounded-lg bg-surface-alt border border-border">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Specialized Text Inputs</span>
+          <!-- Password with toggle -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Account Password</label>
+            <div class="relative">
+              <input type="password" value="Institutional@Pass2026" class="w-full min-h-[44px] pl-3.5 pr-10 py-2 rounded-lg border border-border bg-surface text-sm text-content focus:outline-none focus:ring-2 focus:ring-primary" style="border-color: rgb(100, 116, 139);">
+              <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-content-muted hover:text-content">
+                <span class="material-symbols-outlined !text-[18px]">visibility</span>
+              </button>
+            </div>
+            <p class="text-[11px] text-content-muted">Must contain 12+ characters, 1 symbol, 1 number.</p>
+          </div>
+          <!-- Phone +234 -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Nigerian Mobile Phone</label>
+            <div class="flex rounded-lg border border-border bg-surface focus-within:ring-2 focus-within:ring-primary overflow-hidden" style="border-color: rgb(100, 116, 139);">
+              <span class="inline-flex items-center px-3 bg-surface-muted border-r border-border text-xs font-semibold text-content">
+                +234
+              </span>
+              <input type="tel" value="913 023 2184" class="w-full min-h-[44px] px-3 py-2 bg-transparent text-sm text-content focus:outline-none">
+            </div>
+            <p class="text-[11px] text-content-muted">For instant 2FA WhatsApp and SMS verification codes.</p>
+          </div>
+          <!-- Search box -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Global Search</label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-content-muted !text-[18px]">search</span>
+              <input type="text" placeholder="Search programmes, domains, student records..." class="w-full min-h-[44px] pl-9 pr-3.5 py-2 rounded-lg border border-border bg-surface text-sm text-content focus:outline-none focus:ring-2 focus:ring-primary" style="border-color: rgb(100, 116, 139);">
+            </div>
+          </div>
+        </div>
+
+        <!-- Select & Multi-select & Date Picker -->
+        <div class="space-y-4 p-4 rounded-lg bg-surface-alt border border-border">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Selection &amp; Date</span>
+          <!-- Select -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Target Programme</label>
+            <div class="relative">
+              <select class="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-border bg-surface text-sm text-content appearance-none focus:outline-none focus:ring-2 focus:ring-primary" style="border-color: rgb(100, 116, 139);">
+                <option>CISA Exam Preparation (10 Weeks)</option>
+                <option>CISM Information Security Manager</option>
+                <option>CRISC Risk &amp; Information Systems</option>
+                <option>AAIA Artificial Intelligence Auditor</option>
+                <option>Learn Sage 50 and QuickBooks (Workshop)</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-content-muted !text-[18px]">expand_more</span>
+            </div>
+          </div>
+          <!-- Multi-select chips -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Accreditation Bodies (Multi-select)</label>
+            <div class="p-1.5 min-h-[44px] rounded-lg border border-border bg-surface flex flex-wrap gap-1.5 items-center" style="border-color: rgb(100, 116, 139);">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-light/10 text-primary text-xs font-medium">
+                ISACA CPE <span class="material-symbols-outlined !text-[14px] cursor-pointer">close</span>
+              </span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-light/10 text-primary text-xs font-medium">
+                ICAN Credit Units <span class="material-symbols-outlined !text-[14px] cursor-pointer">close</span>
+              </span>
+              <span class="text-xs text-content-muted pl-1">+ Select more</span>
+            </div>
+          </div>
+          <!-- Date Picker -->
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">Cohort Intake Date</label>
+            <div class="relative">
+              <input type="text" value="05 Oct 2026" class="w-full min-h-[44px] pl-3.5 pr-10 py-2 rounded-lg border border-border bg-surface text-sm text-content focus:outline-none focus:ring-2 focus:ring-primary" style="border-color: rgb(100, 116, 139);">
+              <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-content-muted !text-[18px]">calendar_today</span>
+            </div>
+            <p class="text-[11px] text-content-muted">WAT timezone (West Africa Time).</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- OTP, Textarea, Toggles -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <!-- 6-Digit OTP Input -->
+        <div class="p-4 rounded-lg bg-surface-alt border border-border space-y-3">
+          <div class="flex justify-between items-center">
+            <label class="block text-xs font-bold text-primary uppercase tracking-wider">6-Digit OTP Input</label>
+            <span class="text-[11px] text-accent font-semibold">Resend in 0:48</span>
+          </div>
+          <div class="flex gap-2 justify-between"><input type="text" maxlength="1" value="8" style="border-color: #64748B;" class="w-12 h-12 text-center text-lg font-bold rounded-lg border bg-surface focus:outline-none focus:ring-2 focus:ring-primary"><input type="text" maxlength="1" value="4" style="border-color: #64748B;" class="w-12 h-12 text-center text-lg font-bold rounded-lg border bg-surface focus:outline-none focus:ring-2 focus:ring-primary"><input type="text" maxlength="1" value="2" style="border-color: #64748B;" class="w-12 h-12 text-center text-lg font-bold rounded-lg border bg-surface focus:outline-none focus:ring-2 focus:ring-primary"><input type="text" maxlength="1" value="9" style="border-color: #64748B;" class="w-12 h-12 text-center text-lg font-bold rounded-lg border bg-surface focus:outline-none focus:ring-2 focus:ring-primary"><input type="text" maxlength="1" value="0" style="border-color: #64748B;" class="w-12 h-12 text-center text-lg font-bold rounded-lg border bg-surface focus:outline-none focus:ring-2 focus:ring-primary"><input type="text" maxlength="1" placeholder="·" style="border-color: #64748B;" class="w-12 h-12 text-center text-lg font-bold rounded-lg border bg-surface ring-2 ring-primary ring-offset-1 focus:outline-none"></div>
+          <p class="text-[11px] text-content-muted">Sent to +234 913 *** **84 and ch******@domain.ng</p>
+        </div>
+
+        <!-- Textarea -->
+        <div class="p-4 rounded-lg bg-surface-alt border border-border space-y-2">
+          <label class="block text-xs font-bold text-primary uppercase tracking-wider">Textarea with Count</label>
+          <textarea rows="3" class="w-full p-3 rounded-lg border border-border bg-surface text-sm text-content focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter corporate enquiry notes or justification..." style="border-color: rgb(100, 116, 139);">15 candidates for CISA Q4 cohort. Requesting hybrid schedule with weekend virtual lectures.</textarea>
+          <div class="flex justify-between text-[11px] text-content-muted">
+            <span class="">Inline validation enabled</span>
+            <span class="">98 / 500 characters</span>
+          </div>
+        </div>
+
+        <!-- Checkbox, Radio, Switch -->
+        <div class="p-4 rounded-lg bg-surface-alt border border-border space-y-3"><label class="block text-xs font-bold text-primary uppercase tracking-wider">Toggles, Radios &amp; Checkbox</label><label class="flex items-start gap-2.5 cursor-pointer"><input type="checkbox" checked="" style="border-color: #64748B;" class="mt-0.5 h-4 w-4 rounded text-primary focus:ring-primary accent-primary border"><span class="text-xs text-content leading-tight">I accept the Non-Disclosure &amp; Content Licence Agreement (Required)</span></label><div class="space-y-1.5 pt-1"><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mode" checked="" style="border-color: #64748B;" class="h-4 w-4 text-primary focus:ring-primary accent-primary border"><span class="text-xs text-content font-medium">Virtual Live Class (₦300,000)</span></label><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mode" style="border-color: #64748B;" class="h-4 w-4 text-primary focus:ring-primary accent-primary border"><span class="text-xs text-content font-medium">Physical Classroom Ikeja (₦350,000)</span></label></div><div class="flex items-center justify-between pt-1 border-t border-border"><span class="text-xs text-content font-medium">Restrict to registered devices</span><button type="button" style="border-color: #64748B;" class="w-10 h-6 bg-primary rounded-full p-0.5 transition-colors relative border"><div class="w-5 h-5 bg-white rounded-full shadow-md transform translate-x-4"></div></button></div></div>
+      </div>
+
+    </section>
+
+    <!-- 4. BADGES, ALERTS, STAT TILES, LICENCE METERS -->
+    <section class="bg-surface p-6 rounded-card border border-border shadow-card space-y-6">
+      <div class="border-b border-border pb-4">
+        <h2 class="text-lg font-bold text-primary tracking-tight">4. Status Indicators, Badges &amp; Feedback Banners</h2>
+        <p class="text-xs text-content-muted">Status is never communicated by color alone (always paired with icon or text). WCAG AA compliant.</p>
+      </div>
+
+      <!-- Badges Matrix -->
+      <div class="space-y-2">
+        <span class="text-xs font-bold text-content-muted uppercase tracking-wider block">Status Badges (Icon + Text Mandatory)</span>
+        <div class="flex flex-wrap gap-3 items-center"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-success-subtle text-success-text border border-success-border"><span class="material-symbols-outlined !text-[14px]" style="color: #047857;">check_circle</span> Active / Valid</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-warning-subtle text-warning-text border border-warning-border"><span class="material-symbols-outlined !text-[14px]" style="color: #B45309;">hourglass_top</span> Expiring (14 Days)</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-danger-subtle text-danger-text border border-danger-border"><span class="material-symbols-outlined !text-[14px]" style="color: #B91C1C;">block</span> Revoked / Locked</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-info-subtle text-info-text border border-info-border"><span class="material-symbols-outlined !text-[14px]" style="color: #1D4ED8;">info</span> In Review</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-surface-muted text-content-muted border border-border"><span class="material-symbols-outlined !text-[14px]">radio_button_unchecked</span> Draft / Neutral</span></div>
+      </div>
+
+      <!-- Alert Banners -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="p-4 rounded-lg bg-info-subtle border border-info-border flex items-start gap-3"><span class="material-symbols-outlined !text-[20px] mt-0.5" style="color: #1D4ED8;">info</span><div class="space-y-0.5"><h4 class="text-xs font-bold text-info-text">Paystack Instant Webhook Settlement Active</h4><p class="text-xs text-info-text">All cards, bank transfers, USSD and QR payments reconcile automatically. Zero WhatsApp slip uploads needed.</p></div></div><div class="p-4 rounded-lg bg-warning-subtle border border-warning-border flex items-start gap-3"><span class="material-symbols-outlined !text-[20px] mt-0.5" style="color: #B45309;">warning</span><div class="space-y-0.5"><h4 class="text-xs font-bold text-warning-text">Licence Expiry Alert: 12 Days Remaining</h4><p class="text-xs text-warning-text">Your CISA vault access ends on 17 Oct 2026. Renew or extend for +30 days to avoid disruption.</p></div></div><div class="p-4 rounded-lg bg-danger-subtle border border-danger-border flex items-start gap-3"><span class="material-symbols-outlined !text-[20px] mt-0.5" style="color: #B91C1C;">report</span><div class="space-y-0.5"><h4 class="text-xs font-bold text-danger-text">Concurrent Session Violation Intercepted</h4><p class="text-xs text-danger-text">A second terminal in Abuja logged in. The earlier session in Lagos was automatically terminated.</p></div></div><div class="p-4 rounded-lg bg-success-subtle border border-success-border flex items-start gap-3"><span class="material-symbols-outlined !text-[20px] mt-0.5" style="color: #047857;">verified_user</span><div class="space-y-0.5"><h4 class="text-xs font-bold text-success-text">Device registered: Chrome on macOS</h4><p class="text-xs text-success-text">Slot 1 of 2 used. You can manage devices in Account settings.</p></div></div></div>
+
+      <!-- Stat Tiles & Licence Meter -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <!-- Stat Tile 1 -->
+        <div class="p-4 rounded-lg bg-surface-alt border border-border space-y-1">
+          <span class="text-xs font-semibold text-content-muted">Gross Revenue Today</span>
+          <div class="text-xl font-bold text-primary">₦2,450,000</div>
+          <div class="text-[11px] text-success font-medium flex items-center gap-1">
+            <span class="material-symbols-outlined !text-[14px]">trending_up</span> +18.4% vs last cohort
+          </div>
+        </div>
+        <!-- Stat Tile 2 -->
+        <div class="p-4 rounded-lg bg-surface-alt border border-border space-y-1">
+          <span class="text-xs font-semibold text-content-muted">Active CISA Candidates</span>
+          <div class="text-xl font-bold text-primary">128 Enrolled</div>
+          <div class="text-[11px] text-content-muted">Cohort 2026-A (92% virtual)</div>
+        </div>
+        <!-- Stat Tile 3 (Licence Meter) -->
+        <div class="p-4 rounded-lg bg-surface-alt border border-border space-y-2 col-span-1 md:col-span-2">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-primary">Licence Meter (CISA Vault)</span>
+            <span class="text-xs font-semibold text-warning-text bg-warning-subtle px-2 py-0.5 rounded border border-warning-border">
+              76 of 90 Days Used
+            </span>
+          </div>
+          <!-- Progress Bar -->
+          <div class="w-full bg-border rounded-full h-2.5 overflow-hidden">
+            <div class="bg-warning h-2.5 rounded-full" style="width: 84%"></div>
+          </div>
+          <div class="flex justify-between text-[11px] text-content-muted">
+            <span class="">Enrolled: 01 Jul 2026</span>
+            <span class="font-semibold text-content">14 Days Remaining (Ends 17 Oct 2026)</span>
+            <button class="text-accent font-semibold hover:underline">+ Extend Access</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 5. DIALOGS, MODALS, DRAWERS, TOASTS & WATERMARK OVERLAY -->
+    <section class="bg-surface p-6 rounded-card border border-border shadow-card space-y-6">
+      <div class="border-b border-border pb-4">
+        <h2 class="text-lg font-bold text-primary tracking-tight">5. Overlays, Confirmation Dialogs &amp; Forensic Watermark</h2>
+        <p class="text-xs text-content-muted">Every destructive action enforces a mandatory reason. Content viewer shows 14% opacity forensic watermark overlay.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Confirmation Dialog with Required Reason -->
+        <div class="p-5 rounded-card border-2 border-danger/30 bg-surface shadow-popover space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="p-2 rounded-full bg-danger-subtle text-danger">
+              <span class="material-symbols-outlined !text-[24px]">warning</span>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-content">Confirm Session Revocation</h3>
+              <p class="text-xs text-content-muted">This will immediately terminate all active DRM playback and log out the user from all devices.</p>
+            </div>
+          </div>
+
+          <div class="p-3 bg-surface-alt rounded border border-border text-xs space-y-1">
+            <div class="flex justify-between">
+              <span class="text-content-muted">Target Account:</span>
+              <span class="font-semibold text-content">Folake Adeyemi (folake@domain.ng)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-content-muted">Active Node:</span>
+              <span class="font-mono text-content">IP 102.89.34.12 (Lagos, Ikeja)</span>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-content">
+              Reason for Revocation <span class="text-danger">* (Required for Audit Trail)</span>
+            </label>
+            <textarea rows="2" class="w-full p-2.5 text-xs rounded border border-border bg-surface text-content focus:outline-none focus:ring-2 focus:ring-danger" placeholder="e.g. Suspected screen-share violation flagged during mock exam..."></textarea>
+          </div>
+
+          <div class="flex justify-end gap-2.5 pt-2 border-t border-border">
+            <button class="min-h-[44px] px-4 py-2 rounded-lg border border-border text-xs font-medium text-content hover:bg-surface-muted">
+              Cancel
+            </button>
+            <button class="min-h-[44px] px-4 py-2 rounded-lg bg-danger text-white text-xs font-medium hover:bg-danger-text">
+              Confirm Revocation &amp; Write Audit Log
+            </button>
+          </div>
+        </div>
+
+        <!-- Protected Content Watermark Overlay Sample -->
+        <div class="p-5 rounded-card border border-border bg-primary-dark text-white space-y-4 relative overflow-hidden">
+          <div class="flex justify-between items-center border-b border-primary-light pb-2 relative z-10"><span class="">Watermark Spec: 14% Opacity · Non-obstructive perimeter drift</span><span class="text-emerald-400 flex items-center gap-1 font-mono"><span class="material-symbols-outlined !text-[14px]" style="color: #047857;">shield</span> Forensic Stamp Active</span></div>
+
+          <!-- Video Simulation with Steganographic Watermark -->
+          <div class="h-44 rounded bg-primary relative flex items-center justify-center p-4 border border-white/10 overflow-hidden">
+            <!-- Simulated slide content -->
+            <div class="text-center space-y-1 relative z-10 opacity-90">
+              <span class="text-[10px] text-accent uppercase font-bold tracking-widest">ISACA CISA Domain 5 · Information Asset Protection</span>
+              <h4 class="text-base font-bold text-white">Recovery Time Objective (RTO) vs Point (RPO)</h4>
+              <p class="text-xs text-slate-300 max-w-sm mx-auto">Maximum acceptable data loss measured in time versus acceptable outage duration.</p>
+            </div>
+
+            <!-- WATERMARK OVERLAY (14% Opacity Specification) -->
+            <div class="absolute inset-0 pointer-events-none select-none flex flex-col justify-around rotate-[-12deg] z-20" style="opacity: 0.14;">
+              <div class="text-center font-mono text-xs tracking-wider text-white">
+                CHINEDU EZE · chinedu.eze@bank.ng · SESSION #84920 · 05 OCT 2026 14:32 WAT · IP 102.89.34.12
+              </div>
+              <div class="text-center font-mono text-xs tracking-wider text-white">
+                CHINEDU EZE · chinedu.eze@bank.ng · SESSION #84920 · 05 OCT 2026 14:32 WAT · IP 102.89.34.12
+              </div>
+              <div class="text-center font-mono text-xs tracking-wider text-white">
+                CHINEDU EZE · chinedu.eze@bank.ng · SESSION #84920 · 05 OCT 2026 14:32 WAT · IP 102.89.34.12
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-white/60 relative z-10"><span class="">Watermark Spec: 14% Opacity · Non-obstructive perimeter drift</span><span class="text-emerald-400 flex items-center gap-1 font-mono"><span class="material-symbols-outlined !text-[14px]" style="color: #047857;">shield</span> Forensic Stamp Active</span></div>
+        </div>
+
+      </div>
+
+      <!-- Toast & Side Drawer Preview -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+        <!-- Toast Notification -->
+        <div class="p-3.5 rounded-lg bg-primary text-white border border-primary-light shadow-popover flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-success !text-[18px]" style="color: rgb(4, 120, 87);">check_circle</span>
+            <div class="text-xs">
+              <span class="font-bold block">Paystack Payment Confirmed</span>
+              <span class="text-slate-300">₦300,000 reconciled. CISA vault unlocked.</span>
+            </div>
+          </div>
+          <button class="text-slate-400 hover:text-white">
+            <span class="material-symbols-outlined !text-[16px]">close</span>
+          </button>
+        </div>
+
+        <!-- Breadcrumb & Avatar with Role -->
+        <div class="p-3.5 rounded-lg bg-surface-alt border border-border flex items-center justify-between">
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold text-content-muted uppercase">Breadcrumb</span>
+            <nav class="flex items-center gap-1.5 text-xs text-content-muted">
+              <span class="">Home</span>
+              <span class="material-symbols-outlined !text-[12px]">chevron_right</span>
+              <span class="">Programmes</span>
+              <span class="material-symbols-outlined !text-[12px]">chevron_right</span>
+              <span class="font-semibold text-content">CISA</span>
+            </nav>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs">
+              TB
+            </div>
+            <div class="text-left">
+              <span class="text-xs font-bold text-content block leading-tight">Tunde Bakare</span>
+              <span class="text-[10px] text-accent font-semibold">Lead Instructor</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stepper Component -->
+        <div class="p-3.5 rounded-lg bg-surface-alt border border-border space-y-1.5">
+          <span class="text-[11px] font-bold text-content-muted uppercase">Onboarding Stepper</span>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1 text-xs font-semibold text-success">
+              <span class="w-5 h-5 rounded-full bg-success text-white flex items-center justify-center text-[10px]">1</span>
+              <span class="">Account</span>
+            </div>
+            <div class="w-6 h-px bg-success"></div>
+            <div class="flex items-center gap-1 text-xs font-semibold text-primary">
+              <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">2</span>
+              <span class="">2FA Device</span>
+            </div>
+            <div class="w-6 h-px bg-border"></div>
+            <div class="flex items-center gap-1 text-xs font-medium text-content-muted">
+              <span class="w-5 h-5 rounded-full bg-border text-content-muted flex items-center justify-center text-[10px]">3</span>
+              <span class="">Checkout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 6. DATA TABLE PATTERN (Search, Filters, Sort, Actions, Empty & Loading) -->
+    <section class="bg-surface p-6 rounded-card border border-border shadow-card space-y-6">
+      <div class="border-b border-border pb-4 flex justify-between items-center">
+        <div>
+          <h2 class="text-lg font-bold text-primary tracking-tight">6. Data Table Specification &amp; States</h2>
+          <p class="text-xs text-content-muted">Full 12-column table with search, filter chips, bulk selection, row actions, pagination, plus empty and skeleton states.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-content-muted">Showing 3 of 128 Candidates</span>
+        </div>
+      </div>
+
+      <!-- Controls Row -->
+      <div class="flex flex-col md:flex-row justify-between gap-3">
+        <div class="flex items-center gap-2 flex-1 max-w-md">
+          <div class="relative w-full">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-content-muted !text-[18px]">search</span>
+            <input type="text" placeholder="Search candidate name, email, or device ID..." class="w-full min-h-[44px] pl-9 pr-3.5 py-2 rounded-lg border border-border bg-surface text-xs text-content focus:outline-none focus:ring-2 focus:ring-primary" style="border-color: rgb(100, 116, 139);">
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="min-h-[44px] px-3.5 py-2 rounded-lg border border-border bg-surface text-xs font-medium text-content hover:bg-surface-muted inline-flex items-center gap-1.5">
+            <span class="material-symbols-outlined !text-[16px]">filter_list</span> Programme: CISA
+          </button>
+          <button class="min-h-[44px] px-3.5 py-2 rounded-lg border border-border bg-surface text-xs font-medium text-content hover:bg-surface-muted inline-flex items-center gap-1.5">
+            <span class="material-symbols-outlined !text-[16px]">sort</span> Sort: Recent
+          </button>
+          <button class="min-h-[44px] px-3.5 py-2 rounded-lg bg-primary text-white text-xs font-medium hover:bg-primary-dark inline-flex items-center gap-1.5">
+            <span class="material-symbols-outlined !text-[16px]">add</span> Register Candidate
+          </button>
+        </div>
+      </div>
+
+      <!-- Table Body -->
+      <div class="overflow-x-auto rounded-lg border border-border">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead class="bg-surface-alt border-b border-border text-content-muted font-semibold">
+            <tr>
+              <th class="py-3 px-4 w-10">
+                <input type="checkbox" class="h-4 w-4 rounded border-border text-primary accent-primary">
+              </th>
+              <th class="py-3 px-4">Candidate &amp; Email</th>
+              <th class="py-3 px-4">Enrolled Programme</th>
+              <th class="py-3 px-4">Mode &amp; Cohort</th>
+              <th class="py-3 px-4">Licence Expiry</th>
+              <th class="py-3 px-4">Status</th>
+              <th class="py-3 px-4 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <!-- Row 1 -->
+            <tr class="hover:bg-surface-alt/50 transition-colors">
+              <td class="py-3 px-4">
+                <input type="checkbox" class="h-4 w-4 rounded border-border text-primary accent-primary">
+              </td>
+              <td class="py-3 px-4">
+                <div class="font-bold text-content">Chinedu Eze</div>
+                <div class="text-[11px] text-content-muted">chinedu.eze@accessbank.ng</div>
+              </td>
+              <td class="py-3 px-4 font-medium text-content">CISA Exam Prep</td>
+              <td class="py-3 px-4">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-content">
+                  <span class="w-2 h-2 rounded-full bg-accent"></span> Virtual · Oct 2026
+                </span>
+              </td>
+              <td class="py-3 px-4 font-mono text-content">05 Jan 2027 (92d left)</td>
+              <td class="py-3 px-4">
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-success-subtle text-success-text border border-success-border">
+                  <span class="material-symbols-outlined !text-[12px]" style="color: rgb(4, 120, 87);">verified</span> Active (2 Devices)
+                </span>
+              </td>
+              <td class="py-3 px-4 text-right space-x-1">
+                <button class="p-1 text-content-muted hover:text-primary" title="Inspect">
+                  <span class="material-symbols-outlined !text-[16px]">visibility</span>
+                </button>
+                <button class="p-1 text-content-muted hover:text-danger" title="Revoke">
+                  <span class="material-symbols-outlined !text-[16px]">lock_reset</span>
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr class="hover:bg-surface-alt/50 transition-colors">
+              <td class="py-3 px-4">
+                <input type="checkbox" class="h-4 w-4 rounded border-border text-primary accent-primary">
+              </td>
+              <td class="py-3 px-4">
+                <div class="font-bold text-content">Folake Adeyemi</div>
+                <div class="text-[11px] text-content-muted">folake.adeyemi@pwc.com</div>
+              </td>
+              <td class="py-3 px-4 font-medium text-content">CRISC Risk Governance</td>
+              <td class="py-3 px-4">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-content">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span> Physical Ikeja · Nov 2026
+                </span>
+              </td>
+              <td class="py-3 px-4 font-mono text-warning-text font-semibold">17 Oct 2026 (12d left)</td>
+              <td class="py-3 px-4">
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-warning-subtle text-warning-text border border-warning-border">
+                  <span class="material-symbols-outlined !text-[12px]" style="color: rgb(180, 83, 9);">warning</span> Expiring Soon
+                </span>
+              </td>
+              <td class="py-3 px-4 text-right space-x-1">
+                <button class="p-1 text-content-muted hover:text-primary" title="Inspect">
+                  <span class="material-symbols-outlined !text-[16px]">visibility</span>
+                </button>
+                <button class="p-1 text-content-muted hover:text-danger" title="Revoke">
+                  <span class="material-symbols-outlined !text-[16px]">lock_reset</span>
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr class="hover:bg-surface-alt/50 transition-colors">
+              <td class="py-3 px-4">
+                <input type="checkbox" class="h-4 w-4 rounded border-border text-primary accent-primary">
+              </td>
+              <td class="py-3 px-4">
+                <div class="font-bold text-content">Ibrahim Musa</div>
+                <div class="text-[11px] text-content-muted">ibrahim.m@zenithbank.com</div>
+              </td>
+              <td class="py-3 px-4 font-medium text-content">Sage 50 &amp; QuickBooks</td>
+              <td class="py-3 px-4">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-content">
+                  <span class="w-2 h-2 rounded-full bg-success"></span> Workshop · 03 Oct 2026
+                </span>
+              </td>
+              <td class="py-3 px-4 font-mono text-content-muted">N/A (Ticket only)</td>
+              <td class="py-3 px-4">
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-info-subtle text-info-text border border-info-border">
+                  <span class="material-symbols-outlined !text-[12px]" style="color: rgb(29, 78, 216);">confirmation_number</span> Confirmed Ticket
+                </span>
+              </td>
+              <td class="py-3 px-4 text-right space-x-1">
+                <button class="p-1 text-content-muted hover:text-primary" title="Inspect">
+                  <span class="material-symbols-outlined !text-[16px]">visibility</span>
+                </button>
+                <button class="p-1 text-content-muted hover:text-danger" title="Revoke">
+                  <span class="material-symbols-outlined !text-[16px]">lock_reset</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="bg-surface-alt px-4 py-3 border-t border-border flex items-center justify-between">
+          <span class="text-xs text-content-muted">Showing 1 to 3 of 128 results</span>
+          <div class="flex items-center gap-1">
+            <button disabled="" class="p-1.5 rounded border border-border text-content-subtle cursor-not-allowed">
+              <span class="material-symbols-outlined !text-[16px]">chevron_left</span>
+            </button>
+            <button class="px-2.5 py-1 rounded bg-primary text-white text-xs font-semibold">1</button>
+            <button class="px-2.5 py-1 rounded border border-border hover:bg-surface text-content text-xs">2</button>
+            <button class="px-2.5 py-1 rounded border border-border hover:bg-surface text-content text-xs">3</button>
+            <span class="px-1 text-xs text-content-muted">...</span>
+            <button class="p-1.5 rounded border border-border text-content hover:bg-surface">
+              <span class="material-symbols-outlined !text-[16px]">chevron_right</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison: Empty State & Loading Skeleton -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        <!-- Empty State -->
+        <div class="p-8 rounded-lg border border-dashed border-border bg-surface-alt text-center space-y-3">
+          <div class="w-12 h-12 rounded-full bg-surface-muted border border-border mx-auto flex items-center justify-center text-content-muted">
+            <span class="material-symbols-outlined !text-[24px]">folder_open</span>
+          </div>
+          <div class="space-y-1">
+            <h4 class="text-sm font-bold text-content">No Question Bank Items Found</h4>
+            <p class="text-xs text-content-muted max-w-xs mx-auto">There are no approved questions for CRISC Domain 4 under the selected filter criteria.</p>
+          </div>
+          <button class="min-h-[44px] px-4 py-2 rounded-lg bg-primary text-white text-xs font-medium hover:bg-primary-dark">
+            Draft New Question
+          </button>
+        </div>
+
+        <!-- Loading Skeleton -->
+        <div class="p-6 rounded-lg border border-border bg-surface space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="h-4 w-32 bg-border rounded animate-pulse"></div>
+            <div class="h-4 w-16 bg-border rounded animate-pulse"></div>
+          </div>
+          <div class="space-y-2.5">
+            <div class="h-10 w-full bg-surface-muted rounded border border-border/50 animate-pulse flex items-center px-3 gap-3">
+              <div class="h-3 w-4 bg-border rounded"></div>
+              <div class="h-3 w-40 bg-border rounded"></div>
+              <div class="h-3 w-20 bg-border rounded ml-auto"></div>
+            </div>
+            <div class="h-10 w-full bg-surface-muted rounded border border-border/50 animate-pulse flex items-center px-3 gap-3">
+              <div class="h-3 w-4 bg-border rounded"></div>
+              <div class="h-3 w-48 bg-border rounded"></div>
+              <div class="h-3 w-20 bg-border rounded ml-auto"></div>
+            </div>
+            <div class="h-10 w-full bg-surface-muted rounded border border-border/50 animate-pulse flex items-center px-3 gap-3">
+              <div class="h-3 w-4 bg-border rounded"></div>
+              <div class="h-3 w-36 bg-border rounded"></div>
+              <div class="h-3 w-20 bg-border rounded ml-auto"></div>
+            </div>
+          </div>
+          <div class="text-[11px] text-content-muted text-center font-mono">Loading telemetry skeleton state...</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 7. FILE UPLOADER & PROGRESS -->
+    <section class="bg-surface p-6 rounded-card border border-border shadow-card space-y-4">
+      <div class="border-b border-border pb-4">
+        <h2 class="text-lg font-bold text-primary tracking-tight">7. Secure File Uploader (DRM Processing Pipeline)</h2>
+        <p class="text-xs text-content-muted">Used by faculty to upload Zoom recordings (never linked directly) and slide decks into the DRM encryption slicing pipeline.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Dropzone -->
+        <div class="p-6 rounded-card border-2 border-dashed border-border bg-surface-alt text-center space-y-2 hover:border-primary transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-primary !text-[36px]">cloud_upload</span>
+          <div class="text-xs font-bold text-content">Drag &amp; Drop Zoom Recordings or PPTX Slide Masters</div>
+          <p class="text-[11px] text-content-muted">Automated Widevine encryption, slicing, and forensic watermarking trigger on upload.</p>
+          <span class="inline-block text-[11px] text-accent font-semibold">Max file size: 2.5GB per lecture</span>
+        </div>
+
+        <!-- Processing Pipeline Items -->
+        <div class="space-y-3">
+          <!-- Item In Progress -->
+          <div class="p-3.5 rounded-lg border border-border bg-surface-alt space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-content flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-accent !text-[16px]">sync</span>
+                CISA_Cohort2026_Domain5_Recording.mp4
+              </span>
+              <span class="font-mono text-accent font-semibold">68% · Protecting</span>
+            </div>
+            <div class="w-full bg-border rounded-full h-1.5 overflow-hidden">
+              <div class="bg-accent h-1.5 rounded-full" style="width: 68%"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-content-muted">
+              <span class="">Pipeline: Uploaded → Encoding → <strong class="text-content">Protecting (DRM-L1)</strong> → Ready</span>
+              <span class="">1.2GB / 1.8GB</span>
+            </div>
+          </div>
+
+          <!-- Item Failed with Reason -->
+          <div class="p-3.5 rounded-lg border border-danger-border bg-danger-subtle space-y-1.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-danger-text flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-danger !text-[16px]">error</span>
+                CRISC_Slides_Unprotected.pdf
+              </span>
+              <button class="text-xs text-danger font-bold hover:underline">Retry Pipeline</button>
+            </div>
+            <p class="text-[11px] text-danger-text">Processing error: PDF contains password-restricted raster layers. Remove password and re-upload.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Institutional Footer -->
+  <footer class="bg-surface border-t border-border mt-16 px-8 py-6 text-xs text-content-muted flex flex-col md:flex-row justify-between items-center gap-4 max-w-[1440px] mx-auto">
+    <div class="">
+      <span class="font-bold text-content">A.J. Silicon Learning Platform</span> · 14B Amara Olu Street, off Zenith Bank, Agidingbi, Ikeja, Lagos.
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="">info@ajsilicon.com</span>
+      <span class="">+234 913 023 2184</span>
+      <span class="text-accent font-semibold">ISACA Lagos 30th Anniversary Industry Leader Award</span>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+</body></html>

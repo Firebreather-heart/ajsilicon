@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform - Recordings Library</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-container": "#281809",
+            "secondary-fixed": "#dce1ff",
+            "outline": "#75777c",
+            "on-secondary-fixed": "#001551",
+            "on-error": "#ffffff",
+            "inverse-primary": "#bfc6d9",
+            "surface-container-high": "#e2e7ff",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#bfc6d9",
+            "outline-variant": "#c5c6cc",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#3f4756",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary": "#000000",
+            "primary": "#000000",
+            "on-secondary-container": "#fffbff",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-container": "#7c8495",
+            "background": "#faf8ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface-container-highest": "#dae2fd",
+            "on-primary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-fixed": "#281809",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#575f6e",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#141c29",
+            "surface-container": "#eaedff",
+            "on-surface": "#131b2e",
+            "surface": "#faf8ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "error": "#ba1a1a",
+            "secondary-container": "#4069f2",
+            "tertiary-fixed": "#fddcc4",
+            "on-tertiary-container": "#997f6a",
+            "primary-fixed": "#dbe2f5",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary-container": "#141c29",
+            "on-error-container": "#93000a",
+            "secondary": "#1d4ed8",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-background": "#131b2e",
+            "inverse-surface": "#283044",
+            "on-surface-variant": "#45474c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "margin": "2rem",
+            "space-xs": "0.5rem",
+            "gutter": "1.5rem",
+            "space-md": "1.5rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "display": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 font-body-md text-slate-900 min-h-screen antialiased">
+<!-- Top Multi-State Specification Bar -->
+<header class="bg-white border-b border-slate-300 px-8 py-4 sticky top-0 z-50 shadow-sm flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded bg-[#0B1320] text-white font-label-md font-semibold text-xs">AJ</span>
+<h1 class="font-headline-sm text-headline-sm text-slate-900 tracking-tight">Design Specification: CISA Recordings Library</h1>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded border border-blue-700 bg-blue-50 text-blue-700 text-xs font-label-sm">Desktop 1440px Focus</span>
+</div>
+<!-- Quick Nav State Switchers -->
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 font-label-sm mr-1">Jump to View:</span>
+<a class="px-3 py-1.5 rounded text-xs font-label-md text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors" href="#state-canonical">1. Canonical Results (8 Cards)</a>
+<a class="px-3 py-1.5 rounded text-xs font-label-md text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors" href="#state-empty">2. Empty Query State</a>
+<a class="px-3 py-1.5 rounded text-xs font-label-md text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors" href="#state-skeleton">3. Skeleton Loading State</a>
+</div>
+</header>
+<div class="max-w-[1560px] mx-auto p-6 space-y-16">
+<!-- ========================================== -->
+<!-- VARIANT 1: CANONICAL RESULTS STATE (1440px) -->
+<!-- ========================================== -->
+<section class="space-y-4" id="state-canonical">
+<div class="flex items-center justify-between border-b border-slate-300 pb-3">
+<div>
+<span class="text-xs font-semibold text-blue-700 uppercase tracking-wider">Specification Frame 01</span>
+<h2 class="text-headline-md font-headline-md text-slate-900">1. Results State (Canonical 1440px Desktop Viewport)</h2>
+<p class="text-body-sm text-slate-600">Full shell integration with recordings catalog, active courseware filters, progress indicators, and standard pagination.</p>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-600">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Production Verified
+          </span>
+</div>
+</div>
+<!-- Framed Application Viewport Container -->
+<div class="w-full bg-[#F8FAFC] border border-slate-300 rounded-xl shadow-md overflow-hidden min-h-[960px] flex flex-col">
+<!-- Top Navigation Bar (Shared Component Anchor) -->
+<nav aria-label="Global Application Bar" class="bg-[#0B1320] text-white h-16 w-full px-6 flex justify-between items-center select-none shrink-0">
+<div class="flex items-center gap-4">
+<!-- Logo in White Contrast Plate (Shared Token Mandatory: height 40px, rounded 4px) -->
+<div class="bg-white text-[#0B1320] px-3 py-1 rounded h-10 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJVqINxm1ADtNfNTXrlQ6rbB30vHntEm_dWcgIlpicTMCxyK87NUukLrOU3wwAAxx7I8DdgmqA6-uGDrGOBRQeXxrM1UcUOL8RwbBsgLp67XBhkUP03kvefWFTz0vzGtfMI5JpEhU4uCnHtpSxm5PLyUpdiHWqEbMFWMTgQESwrFCeMmtt8q5gFIKoAU_0GGXDSztZ8r25N7ttF632XYwpwN5sVJ_G_cLqJ0h6EOB_r3XGPzb_OB6LgA"/>
+</div>
+<div class="h-5 w-px bg-slate-700"></div>
+<span class="font-headline-sm text-headline-sm text-white tracking-tight">A.J. Silicon</span>
+</div>
+<!-- Trailing Student Identity & Utility Actions -->
+<div class="flex items-center gap-4">
+<!-- Trailing Icons -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 rounded transition-colors" title="Notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Help" class="w-11 h-11 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 rounded transition-colors" title="Help">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-6 w-px bg-slate-700"></div>
+<!-- Signed-in student indicator -->
+<div class="flex items-center gap-3 pl-2">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center text-white font-label-md font-semibold text-sm">
+                CE
+              </div>
+<div class="flex flex-col text-left">
+<span class="text-body-sm font-label-md text-white font-medium leading-tight">Chinedu Eze</span>
+<span class="text-xs text-slate-400 leading-tight">CISA Cohort 14 Candidate</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Body Layout: Left SideNav + Workspace Content -->
+<div class="flex flex-1 min-h-[820px]">
+<!-- SideNavBar (Shared Component Anchor) -->
+<aside aria-label="Sidebar Navigation" class="w-64 min-w-[16rem] bg-white border-r border-slate-200 flex flex-col justify-between p-4 shrink-0">
+<div class="space-y-6">
+<!-- Cohort Header Badge -->
+<div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-blue-700 text-lg" data-icon="verified_user">verified_user</span>
+<span class="font-headline-sm text-xs font-semibold text-slate-900">CISA Exam Prep</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed font-body-sm">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</p>
+</div>
+<!-- Main Navigation Items -->
+<nav class="space-y-1">
+<!-- Dashboard -->
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-colors min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-slate-500" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Modules / Programme Home (ACTIVE) -->
+<div>
+<a class="bg-blue-50 text-blue-700 font-label-md text-sm border-l-4 border-blue-700 px-4 py-3 flex items-center justify-between gap-3 rounded-r transition-colors min-h-[44px]" href="#modules">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-700" data-icon="menu_book">menu_book</span>
+<span class="font-semibold">Modules / Programme Home</span>
+</div>
+<span class="material-symbols-outlined text-blue-700 text-base" data-icon="expand_more">expand_more</span>
+</a>
+<!-- Sub-items tree -->
+<div class="mt-1 ml-6 pl-4 border-l-2 border-slate-200 space-y-1">
+<a class="px-3 py-2 flex items-center text-xs font-medium text-slate-600 hover:text-slate-900 rounded min-h-[44px]" href="#syllabus">
+                      Syllabus Overview
+                    </a>
+<!-- Active Sub-item: Recordings library -->
+<a aria-current="page" class="px-3 py-2 flex items-center justify-between text-xs font-semibold text-blue-700 bg-blue-100/60 rounded min-h-[44px]" href="#recordings-active">
+<span>Recordings library</span>
+<span class="w-1.5 h-1.5 rounded-full bg-blue-700"></span>
+</a>
+<a class="px-3 py-2 flex items-center text-xs font-medium text-slate-600 hover:text-slate-900 rounded min-h-[44px]" href="#materials">
+                      Slide Decks &amp; Handouts
+                    </a>
+</div>
+</div>
+<!-- Practice Exams -->
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-colors min-h-[44px]" href="#practice">
+<span class="material-symbols-outlined text-slate-500" data-icon="quiz">quiz</span>
+<span>Practice Exams</span>
+</a>
+<!-- Extend Access -->
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-colors min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-slate-500" data-icon="hourglass_top">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer Tabs -->
+<div class="pt-4 border-t border-slate-200 space-y-1">
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-colors min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined text-slate-500" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<button class="w-full text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-colors min-h-[44px] text-left">
+<span class="material-symbols-outlined text-slate-500" data-icon="logout">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas: Recordings Library -->
+<main class="flex-1 p-8 space-y-6 overflow-y-auto">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center text-xs font-medium text-slate-500 gap-2 select-none">
+<span class="hover:text-slate-900 cursor-pointer">CISA Cohort 14</span>
+<span class="text-slate-400">/</span>
+<span class="hover:text-slate-900 cursor-pointer">Modules / Programme Home</span>
+<span class="text-slate-400">/</span>
+<span aria-current="page" class="text-slate-900 font-semibold">Recordings library</span>
+</nav>
+<!-- Page Title & Operational Summary -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-200 pb-5">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-slate-900 tracking-tight">Recordings Library</h2>
+<p class="text-body-sm text-slate-600 mt-1">Official lecture recordings, domain workshops, and exam question walkthroughs for Virtual Cohort 14.</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 font-label-md">
+<span class="text-slate-500">Live Session Zone:</span> West Africa Time (WAT)
+                </div>
+</div>
+</div>
+<!-- Search, Filters, and Query Tooling Bar -->
+<div class="bg-white p-4 border border-slate-200 rounded-xl space-y-4 shadow-sm">
+<div class="flex flex-col lg:flex-row gap-4 items-center">
+<!-- Search Input with loupe and clear action -->
+<div class="relative flex-1 w-full">
+<label class="sr-only" for="search-input-1">Search recordings by topic, domain, or instructor</label>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full h-11 pl-11 pr-11 bg-white border border-[#64748B] rounded-md text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-all" id="search-input-1" placeholder="Search recordings by topic, domain, or instructor..." type="text"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-700" title="Clear search input" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+</button>
+</div>
+<!-- Filters Cluster -->
+<div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+<!-- Filter 1: Programme -->
+<div class="flex items-center min-w-[170px]">
+<label class="sr-only" for="filter-prog">Programme</label>
+<div class="relative w-full">
+<select class="w-full h-11 pl-3 pr-8 bg-white border border-[#64748B] rounded-md text-xs font-label-md text-slate-900 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="filter-prog">
+<option selected="">Programme: CISA Exam Prep</option>
+<option disabled="">CRISC Risk Review</option>
+<option disabled="">CISM Security Manager</option>
+</select>
+</div>
+</div>
+<!-- Filter 2: Domain -->
+<div class="flex items-center min-w-[160px]">
+<label class="sr-only" for="filter-dom">Domain</label>
+<div class="relative w-full">
+<select class="w-full h-11 pl-3 pr-8 bg-white border border-[#64748B] rounded-md text-xs font-label-md text-slate-900 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="filter-dom">
+<option selected="">All Domains 1-5</option>
+<option>Domain 1: IS Audit Process</option>
+<option>Domain 2: Governance &amp; Management</option>
+<option>Domain 3: IS Acquisition &amp; Dev</option>
+<option>Domain 4: IS Operations &amp; Resilience</option>
+<option>Domain 5: Asset Protection</option>
+</select>
+</div>
+</div>
+<!-- Filter 3: Instructor -->
+<div class="flex items-center min-w-[160px]">
+<label class="sr-only" for="filter-inst">Instructor</label>
+<div class="relative w-full">
+<select class="w-full h-11 pl-3 pr-8 bg-white border border-[#64748B] rounded-md text-xs font-label-md text-slate-900 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="filter-inst">
+<option selected="">All Instructors</option>
+<option>Adaeze Okonkwo, CISA, CRISC</option>
+<option>Babatunde Adeleke, CISA</option>
+<option>Oladipo Alabi, CISA, CGEIT</option>
+<option>Chidinma Nwosu, CISM</option>
+</select>
+</div>
+</div>
+<!-- Sort By -->
+<div class="flex items-center min-w-[150px]">
+<label class="sr-only" for="filter-sort">Sort by</label>
+<div class="relative w-full">
+<select class="w-full h-11 pl-3 pr-8 bg-white border border-[#64748B] rounded-md text-xs font-label-md text-slate-900 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="filter-sort">
+<option selected="">Sort: Newest first</option>
+<option>Sort: Oldest first</option>
+<option>Sort: Domain sequence</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter Applied Bar & Results Count -->
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+<span class="font-semibold text-slate-900">Showing 8 recordings</span>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">Active criteria:</span>
+<span class="inline-flex items-center gap-1 bg-slate-100 px-2 py-0.5 rounded text-slate-700">Cohort 14 Virtual</span>
+<span class="inline-flex items-center gap-1 bg-slate-100 px-2 py-0.5 rounded text-slate-700">All Modules</span>
+<button class="text-blue-700 hover:underline font-medium ml-2">Reset filters</button>
+</div>
+</div>
+</div>
+<!-- Grid of 8 Recording Cards (Strictly Structured 4-column layout on Desktop) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- CARD 1 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<!-- Header Meta: Domain & Date -->
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 2
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">24 Oct 2026</span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 2: IT Governance Controls &amp; Risk Appetite Case Study
+                  </h3>
+<!-- Metadata Attributes: Duration & Instructor -->
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>2h 15m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Adaeze Okonkwo, CISA, CRISC</span>
+</div>
+</div>
+<!-- Progress Bar Unit -->
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="font-semibold text-slate-900">65% completed</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-blue-700 h-1.5 rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+<!-- Footer Actions (Strict 44px min button height) -->
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-1">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-slate-800 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+<span>Resume (1h 28m)</span>
+</button>
+</div>
+</article>
+<!-- CARD 2 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 1
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">17 Oct 2026</span>
+</div>
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 1: Information System Audit Charter &amp; Engagement Planning
+                  </h3>
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>1h 50m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Babatunde Adeleke, CISA</span>
+</div>
+</div>
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="font-semibold text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> 100% completed
+                      </span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-emerald-700 h-1.5 rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-2">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded border border-[#64748B] text-slate-900 hover:bg-slate-200 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="replay">replay</span>
+<span>Watch again</span>
+</button>
+</div>
+</article>
+<!-- CARD 3 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 1
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">14 Oct 2026</span>
+</div>
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 1: Audit Standards, Evidence Collection &amp; Fieldwork
+                  </h3>
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>2h 05m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Babatunde Adeleke, CISA</span>
+</div>
+</div>
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="font-semibold text-slate-900">40% watched</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-blue-700 h-1.5 rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-3">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-slate-800 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+<span>Resume</span>
+</button>
+</div>
+</article>
+<!-- CARD 4 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 2
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">10 Oct 2026</span>
+</div>
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 2: COBIT 2019 Framework Alignment &amp; IT Steering Committees
+                  </h3>
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>1h 40m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Adaeze Okonkwo, CISA</span>
+</div>
+</div>
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="font-semibold text-slate-900">10% watched</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-blue-700 h-1.5 rounded-full" style="width: 10%;"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-4">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-slate-800 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+<span>Resume</span>
+</button>
+</div>
+</article>
+<!-- CARD 5 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 3
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">03 Oct 2026</span>
+</div>
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 3: SDLC Security &amp; Project Governance Review
+                  </h3>
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>2h 20m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Oladipo Alabi, CISA, CGEIT</span>
+</div>
+</div>
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="text-slate-500 font-medium">0% not started</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-slate-300 h-1.5 rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-5">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-slate-800 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+<span>Start watching</span>
+</button>
+</div>
+</article>
+<!-- CARD 6 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 3
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">26 Sep 2026</span>
+</div>
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 3: Post-Implementation Audits &amp; Vendor Escrow Evaluation
+                  </h3>
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>1h 35m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Oladipo Alabi, CISA</span>
+</div>
+</div>
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="font-semibold text-slate-900">85% watched</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-blue-700 h-1.5 rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-6">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-slate-800 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+<span>Resume</span>
+</button>
+</div>
+</article>
+<!-- CARD 7 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 4
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">19 Sep 2026</span>
+</div>
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 4: Business Continuity &amp; Disaster Recovery Testing
+                  </h3>
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>2h 10m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Chidinma Nwosu, CISM</span>
+</div>
+</div>
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="text-slate-500 font-medium">0% not started</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-slate-300 h-1.5 rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-7">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded bg-[#0B1320] text-white hover:bg-slate-800 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+<span>Start watching</span>
+</button>
+</div>
+</article>
+<!-- CARD 8 -->
+<article class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden shadow-none hover:border-slate-400 transition-colors">
+<div class="p-5 space-y-4">
+<div class="flex items-start justify-between gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-blue-700 bg-blue-50 text-blue-700">
+                      Domain 5
+                    </span>
+<span class="text-xs text-slate-500 font-label-md">12 Sep 2026</span>
+</div>
+<h3 class="font-headline-sm text-base text-slate-900 leading-snug line-clamp-2">
+                    Domain 5: Cryptographic Controls, Key Management &amp; PKI Architecture
+                  </h3>
+<div class="space-y-1.5 text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="schedule">schedule</span>
+<span>1h 55m (WAT Session)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-400 text-base" data-icon="person">person</span>
+<span class="truncate">Adaeze Okonkwo, CISA</span>
+</div>
+</div>
+<div class="space-y-1 pt-2 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 font-medium">Watched progress</span>
+<span class="font-semibold text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> 100% completed
+                      </span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-emerald-700 h-1.5 rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+<a class="text-xs text-blue-700 hover:underline font-medium inline-flex items-center gap-1 h-11 px-2" href="#slides-8">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span>Class slides</span>
+</a>
+<button class="h-11 px-4 rounded border border-[#64748B] text-slate-900 hover:bg-slate-200 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="replay">replay</span>
+<span>Watch again</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Standard Structured Pagination Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-200 text-xs text-slate-600">
+<span class="font-label-md">Showing 1-8 of 8 recordings</span>
+<nav aria-label="Pagination" class="flex items-center gap-1">
+<button aria-label="Previous page" class="h-11 px-3 border border-slate-200 rounded text-slate-300 bg-slate-50 cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-base" data-icon="chevron_left">chevron_left</span>
+<span>Previous</span>
+</button>
+<button aria-current="page" class="h-11 w-11 rounded border border-[#0B1320] bg-[#0B1320] text-white font-medium flex items-center justify-center" type="button">
+                  1
+                </button>
+<button aria-label="Next page" class="h-11 px-3 border border-slate-200 rounded text-slate-300 bg-slate-50 cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-base" data-icon="chevron_right">chevron_right</span>
+</button>
+</nav>
+<span class="text-slate-500 font-label-md">Page 1 of 1</span>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- VARIANT 2: EMPTY SEARCH STATE (1440px Frame) -->
+<!-- ========================================== -->
+<section class="space-y-4" id="state-empty">
+<div class="flex items-center justify-between border-b border-slate-300 pb-3">
+<div>
+<span class="text-xs font-semibold text-blue-700 uppercase tracking-wider">Specification Frame 02</span>
+<h2 class="text-headline-md font-headline-md text-slate-900">2. Empty Query State (Desktop Viewport Frame)</h2>
+<p class="text-body-sm text-slate-600">Active non-matching query with 0 results returned, clear instructions, and reset triggers.</p>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-600">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> Zero State Case
+          </span>
+</div>
+</div>
+<div class="w-full bg-[#F8FAFC] border border-slate-300 rounded-xl shadow-md overflow-hidden min-h-[640px] flex flex-col">
+<!-- Compact Header Presentation for Mock Frame -->
+<div class="bg-[#0B1320] text-white h-14 px-6 flex justify-between items-center shrink-0">
+<div class="flex items-center gap-3">
+<div class="bg-white text-[#0B1320] px-2.5 py-0.5 rounded h-8 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV3VfNzcJAGR0C32mvMmT_fIF4ZqP5AZ6nHrENav8QrlheINmGmCGqhLYRCkRQjyuaHq3-c-4qoKx68ZILmotgGlbm7Gxz6X7BrqXXlFAvW_Br8ngAm39V8W9jDQG7541psPsTKNVcl-7bX2rR1qCVZlovWLIBXDQltQRygeYyzuuPCxzynggxPArgz9ONbcVVy_eckRIB9JlTQjtSRd7fLM-ojEZiLVW9Vltlq12e66xKSTzKVUuQgQ"/>
+</div>
+<span class="font-headline-sm text-sm text-white font-semibold">A.J. Silicon — Recordings Library</span>
+</div>
+<div class="text-xs text-slate-400">Chinedu Eze (CE)</div>
+</div>
+<div class="p-8 space-y-6">
+<!-- Active Search Input with non-matching term -->
+<div class="bg-white p-4 border border-slate-200 rounded-xl space-y-3">
+<div class="flex flex-col lg:flex-row gap-4 items-center">
+<div class="relative flex-1 w-full">
+<label class="sr-only" for="search-input-empty">Search input</label>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full h-11 pl-11 pr-11 bg-white border border-[#2563EB] ring-1 ring-[#2563EB] rounded-md text-sm text-slate-900 font-medium focus:outline-none" id="search-input-empty" type="text" value="Blockchain zero-knowledge audit"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-700 hover:text-slate-900" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="cancel">cancel</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-xs font-label-md text-slate-600 bg-slate-100 px-3 py-2 rounded border border-slate-200">
+                  Domain: All Domains 1-5
+                </div>
+<div class="text-xs font-label-md text-slate-600 bg-slate-100 px-3 py-2 rounded border border-slate-200">
+                  Instructor: All Instructors
+                </div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+<span class="font-semibold text-slate-900">Showing 0 recordings</span>
+<span class="text-slate-500">Search matches: 0 items</span>
+</div>
+</div>
+<!-- Empty State Dedicated Board Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-12 text-center max-w-2xl mx-auto my-8 space-y-4">
+<div class="w-16 h-16 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto text-slate-500">
+<span class="material-symbols-outlined text-3xl" data-icon="search_off">search_off</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-slate-900">No recordings match your criteria</h3>
+<p class="text-body-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                We couldn't find any recordings matching your search or active filters. Try clearing filters or searching with different CISA syllabus terms.
+              </p>
+</div>
+<div class="pt-2">
+<button class="min-h-[44px] px-6 rounded-md bg-[#0B1320] text-white hover:bg-slate-800 text-xs font-medium focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" data-icon="filter_alt_off">filter_alt_off</span>
+<span>Clear all filters</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- VARIANT 3: SKELETON LOADING STATE (1440px Frame) -->
+<!-- ========================================== -->
+<section class="space-y-4 pb-12" id="state-skeleton">
+<div class="flex items-center justify-between border-b border-slate-300 pb-3">
+<div>
+<span class="text-xs font-semibold text-blue-700 uppercase tracking-wider">Specification Frame 03</span>
+<h2 class="text-headline-md font-headline-md text-slate-900">3. Loading Skeleton (Desktop Viewport Frame)</h2>
+<p class="text-body-sm text-slate-600">Subtle pulsing grey skeleton blocks preventing layout shift while fetching synchronous session data.</p>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-700 border border-slate-300">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse"></span> Network Transfer State
+          </span>
+</div>
+</div>
+<div class="w-full bg-[#F8FAFC] border border-slate-300 rounded-xl shadow-md overflow-hidden min-h-[720px] flex flex-col">
+<!-- Compact Header Presentation for Skeleton Frame -->
+<div class="bg-[#0B1320] text-white h-14 px-6 flex justify-between items-center shrink-0">
+<div class="flex items-center gap-3">
+<div class="bg-white text-[#0B1320] px-2.5 py-0.5 rounded h-8 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWPbQh5-bg7JSjxAnrXz7dlycUqD4TSbMEL63Xt3N9MepuyUqewR4duWImi1O_9sw3HBAZq3TxYMiPXe_5kUeZh688iROegWSNybIztEoiOxQuTFwt_C_3TrdQDEQX78riSD1lpJuAGHGgpQwJkRg-sdv_84p2nVgPNnUSfyHpvXbm3LePSRs3fAnLr7HRhQtrnhKG_gKk-joXtSDQG3qZTqXZDyjGbuCXA1J1pQ4pK-mHB3Z7F-RKxg"/>
+</div>
+<span class="font-headline-sm text-sm text-white font-semibold">A.J. Silicon — Recordings Library</span>
+</div>
+<div class="text-xs text-slate-400">Loading Cohort 14 Catalog...</div>
+</div>
+<div class="p-8 space-y-6">
+<!-- Top Search & Filter Bar Skeletons -->
+<div class="bg-white p-4 border border-slate-200 rounded-xl space-y-4 animate-pulse">
+<div class="flex flex-col lg:flex-row gap-4 items-center">
+<!-- Search Input Skeleton -->
+<div class="h-11 bg-slate-200 rounded-md flex-1 w-full"></div>
+<!-- 4 Filter Dropdown Skeletons -->
+<div class="flex gap-3 w-full lg:w-auto">
+<div class="h-11 w-40 bg-slate-200 rounded-md"></div>
+<div class="h-11 w-36 bg-slate-200 rounded-md"></div>
+<div class="h-11 w-36 bg-slate-200 rounded-md"></div>
+<div class="h-11 w-32 bg-slate-200 rounded-md"></div>
+</div>
+</div>
+<!-- Bottom Count Skeleton -->
+<div class="flex justify-between pt-2 border-t border-slate-100">
+<div class="h-4 w-36 bg-slate-200 rounded"></div>
+<div class="h-4 w-28 bg-slate-200 rounded"></div>
+</div>
+</div>
+<!-- 6-Card Placeholder Skeleton Grid -->
+<div aria-hidden="true" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-pulse">
+<!-- Skeleton Card 1 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden p-5 space-y-4">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="h-5 w-16 bg-slate-200 rounded"></div>
+<div class="h-4 w-20 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-5 w-full bg-slate-200 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2 pt-2">
+<div class="h-4 w-28 bg-slate-200 rounded"></div>
+<div class="h-4 w-44 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-1.5 pt-2">
+<div class="flex justify-between">
+<div class="h-3 w-24 bg-slate-200 rounded"></div>
+<div class="h-3 w-12 bg-slate-200 rounded"></div>
+</div>
+<div class="h-2 w-full bg-slate-200 rounded-full"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<div class="h-6 w-20 bg-slate-200 rounded"></div>
+<div class="h-11 w-28 bg-slate-300 rounded"></div>
+</div>
+</div>
+<!-- Skeleton Card 2 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden p-5 space-y-4">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="h-5 w-16 bg-slate-200 rounded"></div>
+<div class="h-4 w-20 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-5 w-full bg-slate-200 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2 pt-2">
+<div class="h-4 w-28 bg-slate-200 rounded"></div>
+<div class="h-4 w-44 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-1.5 pt-2">
+<div class="flex justify-between">
+<div class="h-3 w-24 bg-slate-200 rounded"></div>
+<div class="h-3 w-12 bg-slate-200 rounded"></div>
+</div>
+<div class="h-2 w-full bg-slate-200 rounded-full"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<div class="h-6 w-20 bg-slate-200 rounded"></div>
+<div class="h-11 w-28 bg-slate-300 rounded"></div>
+</div>
+</div>
+<!-- Skeleton Card 3 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden p-5 space-y-4">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="h-5 w-16 bg-slate-200 rounded"></div>
+<div class="h-4 w-20 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-5 w-full bg-slate-200 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2 pt-2">
+<div class="h-4 w-28 bg-slate-200 rounded"></div>
+<div class="h-4 w-44 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-1.5 pt-2">
+<div class="flex justify-between">
+<div class="h-3 w-24 bg-slate-200 rounded"></div>
+<div class="h-3 w-12 bg-slate-200 rounded"></div>
+</div>
+<div class="h-2 w-full bg-slate-200 rounded-full"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<div class="h-6 w-20 bg-slate-200 rounded"></div>
+<div class="h-11 w-28 bg-slate-300 rounded"></div>
+</div>
+</div>
+<!-- Skeleton Card 4 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden p-5 space-y-4">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="h-5 w-16 bg-slate-200 rounded"></div>
+<div class="h-4 w-20 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-5 w-full bg-slate-200 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2 pt-2">
+<div class="h-4 w-28 bg-slate-200 rounded"></div>
+<div class="h-4 w-44 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-1.5 pt-2">
+<div class="flex justify-between">
+<div class="h-3 w-24 bg-slate-200 rounded"></div>
+<div class="h-3 w-12 bg-slate-200 rounded"></div>
+</div>
+<div class="h-2 w-full bg-slate-200 rounded-full"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<div class="h-6 w-20 bg-slate-200 rounded"></div>
+<div class="h-11 w-28 bg-slate-300 rounded"></div>
+</div>
+</div>
+<!-- Skeleton Card 5 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden p-5 space-y-4">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="h-5 w-16 bg-slate-200 rounded"></div>
+<div class="h-4 w-20 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-5 w-full bg-slate-200 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2 pt-2">
+<div class="h-4 w-28 bg-slate-200 rounded"></div>
+<div class="h-4 w-44 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-1.5 pt-2">
+<div class="flex justify-between">
+<div class="h-3 w-24 bg-slate-200 rounded"></div>
+<div class="h-3 w-12 bg-slate-200 rounded"></div>
+</div>
+<div class="h-2 w-full bg-slate-200 rounded-full"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<div class="h-6 w-20 bg-slate-200 rounded"></div>
+<div class="h-11 w-28 bg-slate-300 rounded"></div>
+</div>
+</div>
+<!-- Skeleton Card 6 -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl flex flex-col justify-between overflow-hidden p-5 space-y-4">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="h-5 w-16 bg-slate-200 rounded"></div>
+<div class="h-4 w-20 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-5 w-full bg-slate-200 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-2 pt-2">
+<div class="h-4 w-28 bg-slate-200 rounded"></div>
+<div class="h-4 w-44 bg-slate-200 rounded"></div>
+</div>
+<div class="space-y-1.5 pt-2">
+<div class="flex justify-between">
+<div class="h-3 w-24 bg-slate-200 rounded"></div>
+<div class="h-3 w-12 bg-slate-200 rounded"></div>
+</div>
+<div class="h-2 w-full bg-slate-200 rounded-full"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<div class="h-6 w-20 bg-slate-200 rounded"></div>
+<div class="h-11 w-28 bg-slate-300 rounded"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Pagination Skeleton -->
+<div class="flex justify-between items-center pt-4 border-t border-slate-200 animate-pulse">
+<div class="h-4 w-32 bg-slate-200 rounded"></div>
+<div class="h-11 w-48 bg-slate-200 rounded"></div>
+<div class="h-4 w-24 bg-slate-200 rounded"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</body></html>

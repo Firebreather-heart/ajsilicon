@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Secure Portal - Announcement Composer</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#eaedff",
+            "primary": "#000000",
+            "on-secondary-container": "#fffbff",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-fixed": "#fddcc4",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-tint": "#575f6e",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#c5c6cc",
+            "surface": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-fixed": "#281809",
+            "tertiary-container": "#281809",
+            "inverse-on-surface": "#eef0ff",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-error": "#ffffff",
+            "secondary": "#1d4ed8",
+            "inverse-primary": "#bfc6d9",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#45474c",
+            "on-primary-container": "#7c8495",
+            "on-tertiary-container": "#997f6a",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-fixed": "#001551",
+            "outline": "#75777c",
+            "surface-container-high": "#e2e7ff",
+            "error-container": "#ffdad6",
+            "primary-container": "#141c29",
+            "on-primary-fixed-variant": "#3f4756",
+            "tertiary": "#000000",
+            "secondary-container": "#4069f2",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#dce1ff",
+            "primary-fixed": "#dbe2f5",
+            "on-background": "#131b2e",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-variant": "#dae2fd",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-primary": "#ffffff",
+            "background": "#faf8ff",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-primary-fixed": "#141c29",
+            "on-surface": "#131b2e",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-bright": "#faf8ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-md": "1.5rem",
+            "space-sm": "1rem",
+            "space-xs": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .focus-ring:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="h-full bg-surface text-on-surface font-body-md text-body-md antialiased flex flex-col">
+<!-- TOP SHELL / TOP NAV BAR (Shared Component JSON: TopNavBar) -->
+<header class="bg-primary-container text-on-primary-container h-16 w-full fixed top-0 left-0 z-50 flex items-center justify-between px-6 border-b border-outline shadow-sm">
+<div class="flex items-center gap-6">
+<!-- High contrast light logo plate as specified -->
+<div class="h-10 px-3 bg-surface-container-lowest rounded flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ7HtsUwF6eb7YtEg5hxTybqa0gk3ZPJD627ZzN1-UeO-fPXkdy7HLMESTclU30E9YSJKPBpXFtDvFh7ILC7-6xsjuQzmf2PbC0fTO1gxwyD3iOqUoXyXps9ctoVeTQlhEA3rWvDg7y_fYfdrScj0X1hRai4ef0Yx6_sHr7S-jm4kjdqIchx0OE4FuE-ukPiCHtpFw7G4Jtoai7j6NwWkzfxzF-CmJl-PWiFbWBNXSs3Q7VgrwNsMjbw"/>
+</div>
+<div class="h-6 w-px bg-outline opacity-40"></div>
+<div class="flex items-center gap-2">
+<span class="text-surface-container-lowest font-headline-sm text-headline-sm tracking-tight">A.J. Silicon Secure Portal</span>
+<span class="text-on-primary-container text-label-sm font-label-sm border border-outline px-2 py-0.5 rounded ml-2">Lagos Campus Engine</span>
+</div>
+</div>
+<!-- Right Utility Cluster: Role as plain text, Telemetry, Verified Status, Session Timer -->
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 text-on-primary-container text-body-sm font-body-sm">
+<span class="text-surface-container-lowest font-medium">Role:</span>
+<span class="text-secondary-fixed">Instructor</span>
+<span class="text-outline">|</span>
+<span class="text-surface-container-lowest font-medium">Adaeze Okonkwo</span>
+</div>
+<div class="flex items-center gap-2 px-2.5 py-1 bg-inverse-surface rounded text-surface-container-lowest text-label-sm font-label-sm border border-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">timer</span>
+<span>Session: 14:59</span>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="h-11 w-11 flex items-center justify-center text-on-primary-container hover:text-surface-container-lowest rounded transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="flex items-center gap-2 pl-2 border-l border-outline">
+<div class="w-8 h-8 rounded bg-inverse-surface border border-outline flex items-center justify-center text-surface-container-lowest text-label-sm font-label-sm font-medium">
+            AO
+          </div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16 min-h-screen">
+<!-- SIDE NAV BAR (Shared Component JSON: SideNavBar) -->
+<aside class="fixed top-16 left-0 bottom-0 w-64 bg-primary-container text-surface-container-lowest border-r border-outline flex flex-col justify-between p-4 z-40 overflow-y-auto">
+<div class="space-y-6">
+<div class="px-2 py-1">
+<h2 class="text-label-sm font-label-sm text-on-primary-container tracking-wider">STAFF CONTROL CONSOLE</h2>
+<p class="text-body-sm font-body-sm text-surface-container-lowest font-semibold">Audit &amp; Security Operations</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span class="text-body-sm font-body-sm">Executive Telemetry</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-body-sm font-body-sm">Candidate Cohorts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span class="text-body-sm font-body-sm">Exam Simulation Engine</span>
+</a>
+<!-- Active Messaging Section specified in prompt -->
+<div class="pt-2 pb-1">
+<div class="px-3 py-1 text-label-sm font-label-sm text-on-primary-container tracking-wider">MESSAGING &amp; OUTREACH</div>
+<a class="flex items-center gap-3 px-4 py-3 bg-inverse-surface text-secondary-fixed font-semibold rounded-lg mt-1 border-l-4 border-secondary" href="#">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">campaign</span>
+<span class="text-body-sm font-body-sm">Announcements</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors ml-2" href="#">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="text-body-sm font-body-sm">Cohort Discussions</span>
+</a>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="text-body-sm font-body-sm">DRM &amp; Watermark Decoder</span>
+</a>
+<!-- Action disabled for Instructor role with lock icon -->
+<div class="flex items-center justify-between px-4 py-3 text-on-primary-container opacity-50 cursor-not-allowed rounded-lg" title="Action restricted to SecOps Governance role">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="text-body-sm font-body-sm">Paystack Settlement</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-primary-container">lock</span>
+</div>
+<div class="flex items-center justify-between px-4 py-3 text-on-primary-container opacity-50 cursor-not-allowed rounded-lg" title="Action restricted to Chief Governance Officer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span class="text-body-sm font-body-sm">Compliance Audit Trail</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-primary-container">lock</span>
+</div>
+</nav>
+</div>
+<!-- Rail Footer -->
+<div class="pt-4 border-t border-outline/50 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span class="text-body-sm font-body-sm">Security Telemetry</span>
+</a>
+<button class="w-full flex items-center justify-between px-4 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors" type="button">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-body-sm font-body-sm">Sign Out</span>
+</span>
+<span class="text-label-sm font-label-sm text-on-primary-container">Lock</span>
+</button>
+</div>
+</aside>
+<!-- MAIN CONTENT CANVAS -->
+<main class="ml-64 flex-1 p-8 max-w-[1280px] bg-background">
+<!-- Breadcrumb and Page Header Pattern -->
+<div class="mb-6">
+<nav class="flex items-center gap-2 text-body-sm font-body-sm text-muted mb-2 text-[#475569]">
+<a class="hover:text-secondary text-[#1D4ED8]" href="#">Staff Portal</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Messaging</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#0F172A] font-medium">Announcement Composer</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">Announcement Composer</h1>
+<p class="text-body-sm font-body-sm text-[#475569] mt-0.5">Authoritative multi-channel candidate dispatch for CISA, CRISC, and CISM training cohorts.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-11 px-4 bg-transparent border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] font-medium rounded-[6px] text-body-sm font-body-sm flex items-center gap-2 transition-colors focus-ring" id="toggle-preview-btn" onclick="togglePreviewDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+              Preview Announcement
+            </button>
+<button class="h-11 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium rounded-[6px] text-body-sm font-body-sm flex items-center gap-2 transition-colors focus-ring shadow-sm" id="header-primary-btn" onclick="openConfirmationModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send Announcement</span>
+</button>
+</div>
+</div>
+</div>
+<!-- STATE SWITCHER BANNER (Draft / Scheduled / Sent) -->
+<div class="mb-8 p-3 bg-surface-container-lowest border border-[#E2E8F0] rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] border border-[#1D4ED8] rounded text-[#1D4ED8] text-label-sm font-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>View State Mockup:</span>
+</div>
+<span class="text-body-sm font-body-sm text-[#475569]">Select state to preview system behavior:</span>
+</div>
+<div class="inline-flex rounded-lg border border-[#E2E8F0] p-1 bg-[#F8FAFC]">
+<button class="px-4 py-1.5 rounded-md text-label-md font-label-md transition-colors bg-[#0B1320] text-white font-medium shadow-sm flex items-center gap-2" id="tab-draft" onclick="switchState('draft')" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_document</span>
+            1. Draft Composer
+          </button>
+<button class="px-4 py-1.5 rounded-md text-label-md font-label-md transition-colors text-[#475569] hover:text-[#0F172A] flex items-center gap-2" id="tab-scheduled" onclick="switchState('scheduled')" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+            2. Scheduled Dispatch
+          </button>
+<button class="px-4 py-1.5 rounded-md text-label-md font-label-md transition-colors text-[#475569] hover:text-[#0F172A] flex items-center gap-2" id="tab-sent" onclick="switchState('sent')" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+            3. Sent (Delivery Ledger)
+          </button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- STATE 1: DRAFT COMPOSER                    -->
+<!-- ========================================== -->
+<div class="grid grid-cols-12 gap-6" id="state-draft">
+<!-- Left: Composer Form (8 cols) -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6">
+<!-- Recipient / Audience Selector -->
+<div class="mb-6">
+<label class="block text-body-sm font-body-sm font-medium text-[#0F172A] mb-1.5" for="audience-select">
+                Target Audience <span class="text-[#B91C1C]">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 bg-white border border-[#64748B] rounded-[6px] px-3 text-[#0F172A] focus-ring text-body-md font-body-md pr-10" id="audience-select" onchange="updateRecipientCount()">
+<option selected="" value="cohort-14">Cohort: CISA Saturday Executive Track (Cohort 14)</option>
+<option value="cohort-13">Cohort: CRISC Risk Governance Intensive (Cohort 13)</option>
+<option value="programme-cism">Programme: All Active CISM Candidates (Lagos &amp; Abuja)</option>
+<option value="all-students">Institution-wide: All Enrolled A.J. Silicon Students (184 Candidates)</option>
+</select>
+</div>
+<div class="mt-2 flex items-center gap-2 text-body-sm font-body-sm text-[#475569]">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">groups</span>
+<span>Audience scope:</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]" id="recipient-badge">
+                  CISA Cohort 14 — 42 active candidates
+                </span>
+</div>
+</div>
+<!-- Title Input with inline validation error demo -->
+<div class="mb-6">
+<div class="flex items-center justify-between mb-1.5">
+<label class="block text-body-sm font-body-sm font-medium text-[#0F172A]" for="announcement-title">
+                  Announcement Subject / Title <span class="text-[#B91C1C]">*</span>
+</label>
+<span class="text-label-sm font-label-sm text-[#475569]" id="title-char-counter">54 / 120 chars</span>
+</div>
+<input class="w-full h-11 bg-white border border-[#64748B] rounded-[6px] px-3.5 text-[#0F172A] focus-ring text-body-md font-body-md" id="announcement-title" oninput="validateForm()" type="text" value="CISA Domain 3 Mandatory Mock Examination &amp; Q&amp;A Session"/>
+<p class="hidden mt-1.5 text-label-sm font-label-sm text-[#B91C1C] flex items-center gap-1" id="title-error">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                Title must be at least 10 characters and clearly specify session context.
+              </p>
+</div>
+<!-- Rich Text Body Editor -->
+<div class="mb-6">
+<div class="flex items-center justify-between mb-1.5">
+<label class="block text-body-sm font-body-sm font-medium text-[#0F172A]">
+                  Message Body <span class="text-[#B91C1C]">*</span>
+</label>
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm text-[#475569]">Insert variable:</span>
+<button class="px-2 py-0.5 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0F172A] rounded border border-[#CBD5E1] text-label-sm font-label-sm transition-colors" onclick="insertVariable('{{CandidateName}}')" type="button">
+                    + CandidateName
+                  </button>
+<button class="px-2 py-0.5 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0F172A] rounded border border-[#CBD5E1] text-label-sm font-label-sm transition-colors" onclick="insertVariable('{{CohortCode}}')" type="button">
+                    + CohortCode
+                  </button>
+</div>
+</div>
+<!-- Editor Container -->
+<div class="border border-[#64748B] rounded-[6px] overflow-hidden focus-within:ring-2 focus-within:ring-[#2563EB] focus-within:ring-offset-2">
+<!-- Formatting Toolbar -->
+<div class="bg-[#F8FAFC] border-b border-[#E2E8F0] p-2 flex items-center flex-wrap gap-1">
+<button aria-label="Bold" class="h-8 w-8 flex items-center justify-center rounded hover:bg-[#E2E8F0] text-[#0F172A]" type="button">
+<span class="material-symbols-outlined text-[18px]">format_bold</span>
+</button>
+<button aria-label="Italic" class="h-8 w-8 flex items-center justify-center rounded hover:bg-[#E2E8F0] text-[#0F172A]" type="button">
+<span class="material-symbols-outlined text-[18px]">format_italic</span>
+</button>
+<div class="h-4 w-px bg-[#CBD5E1] mx-1"></div>
+<button aria-label="Bullet list" class="h-8 w-8 flex items-center justify-center rounded hover:bg-[#E2E8F0] text-[#0F172A]" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+<button aria-label="Numbered list" class="h-8 w-8 flex items-center justify-center rounded hover:bg-[#E2E8F0] text-[#0F172A]" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_numbered</span>
+</button>
+<div class="h-4 w-px bg-[#CBD5E1] mx-1"></div>
+<button aria-label="Insert Link" class="h-8 w-8 flex items-center justify-center rounded hover:bg-[#E2E8F0] text-[#0F172A]" type="button">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</button>
+<div class="ml-auto text-label-sm font-label-sm text-[#475569] pr-1">
+                    Plain Markdown &amp; HTML format supported
+                  </div>
+</div>
+<!-- Textarea Area -->
+<textarea class="w-full p-4 border-none text-[#0F172A] font-body-md text-body-md focus:ring-0 resize-y outline-none leading-relaxed" id="composer-body" oninput="updateBodyCounters()" rows="7">Good day {{CandidateName}},
+
+Please be informed that the proctored simulation engine for Domain 3 (Information Systems Acquisition, Development &amp; Implementation) will go live this Saturday. 
+
+All candidates registered under {{CohortCode}} are strictly required to log in via the Secure Portal terminal by 09:00 WAT. Ensure your biometric identification credentials and dual-factor authentication tokens are active prior to commencement.
+
+Regards,
+Adaeze Okonkwo
+Lead CISA Faculty &amp; Lead IS Auditor
+A.J. Silicon Lagos Training Facility</textarea>
+<div class="bg-[#F8FAFC] border-t border-[#E2E8F0] px-3 py-1.5 flex justify-between items-center text-label-sm font-label-sm text-[#475569]">
+<span id="body-char-count">568 characters (approx. 78 words)</span>
+<span class="text-[#047857] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Auto-saved locally
+                  </span>
+</div>
+</div>
+</div>
+<!-- Multi-Channel Delivery Checkboxes -->
+<div class="pt-4 border-t border-[#E2E8F0]">
+<h3 class="text-body-sm font-body-sm font-medium text-[#0F172A] mb-3">Multi-Channel Delivery Protocols</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<label class="flex items-start gap-3 p-3 border border-[#E2E8F0] rounded-lg cursor-pointer hover:bg-[#F8FAFC] transition-colors">
+<input checked="" class="mt-0.5 w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus-ring" id="channel-inapp" type="checkbox"/>
+<div>
+<div class="font-medium text-body-sm font-body-sm text-[#0F172A] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">notifications</span> In-App Alert
+                    </div>
+<div class="text-label-sm font-label-sm text-[#475569]">Delivered directly to student workspace banner.</div>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 border border-[#E2E8F0] rounded-lg cursor-pointer hover:bg-[#F8FAFC] transition-colors">
+<input checked="" class="mt-0.5 w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus-ring" id="channel-email" type="checkbox"/>
+<div>
+<div class="font-medium text-body-sm font-body-sm text-[#0F172A] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">mail</span> Email Dispatch
+                    </div>
+<div class="text-label-sm font-label-sm text-[#475569]">Full HTML transcript with verified cryptographic signature.</div>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 border border-[#E2E8F0] rounded-lg cursor-pointer hover:bg-[#F8FAFC] transition-colors">
+<input checked="" class="mt-0.5 w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus-ring" id="channel-sms" onchange="toggleSmsPanel()" type="checkbox"/>
+<div>
+<div class="font-medium text-body-sm font-body-sm text-[#0F172A] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">sms</span> SMS Broadcast
+                    </div>
+<div class="text-label-sm font-label-sm text-[#475569]">Sent via Nigerian telecom gateway (+234 routing).</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Dedicated SMS Preview Box (Conditional to SMS channel) -->
+<div class="mt-6 p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg" id="sms-broadcast-box">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#0F172A]">cell_tower</span>
+<span class="font-medium text-body-sm font-body-sm text-[#0F172A]">SMS Broadcast Template (+234 routing)</span>
+</div>
+<span class="text-label-sm font-label-sm font-medium px-2 py-0.5 rounded bg-white border border-[#CBD5E1] text-[#0F172A]" id="sms-segment-counter">
+                  128 / 160 characters (1 SMS segment)
+                </span>
+</div>
+<textarea class="w-full bg-white border border-[#64748B] rounded-[6px] p-2.5 text-body-sm font-body-sm text-[#0F172A] focus-ring" id="sms-preview-text" oninput="updateSmsCounter()" rows="3">A.J. SILICON: CISA Cohort 14 Domain 3 mock examination goes live this Saturday at 09:00 WAT. Log in to your portal terminal.</textarea>
+<p class="mt-1 text-label-sm font-label-sm text-[#475569]">Sender ID registered as 'AJSILICON' with NCC compliance protocols. Plain text only.</p>
+</div>
+<!-- Delivery Timing Selector -->
+<div class="mt-6 pt-4 border-t border-[#E2E8F0]">
+<h3 class="text-body-sm font-body-sm font-medium text-[#0F172A] mb-3">Delivery Timing Schedule</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-5 h-5 text-[#0B1320] border-[#64748B] focus-ring" name="timing-option" onchange="toggleScheduleFields()" type="radio" value="now"/>
+<span class="text-body-sm font-body-sm text-[#0F172A] font-medium">Send immediately upon authorization</span>
+</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-5 h-5 text-[#0B1320] border-[#64748B] focus-ring" name="timing-option" onchange="toggleScheduleFields()" type="radio" value="later"/>
+<span class="text-body-sm font-body-sm text-[#0F172A] font-medium">Schedule for later dispatch</span>
+</label>
+<div class="ml-8 grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1" id="schedule-inputs">
+<div>
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1" for="sched-date">Execution Date</label>
+<div class="relative">
+<input class="w-full h-11 bg-white border border-[#64748B] rounded-[6px] px-3 text-[#0F172A] focus-ring text-body-sm font-body-sm" id="sched-date" type="text" value="12 Oct 2026"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-[#475569] pointer-events-none">calendar_today</span>
+</div>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1" for="sched-time">Execution Time (West Africa Time)</label>
+<div class="relative">
+<input class="w-full h-11 bg-white border border-[#64748B] rounded-[6px] px-3 text-[#0F172A] focus-ring text-body-sm font-body-sm" id="sched-time" type="text" value="09:00 WAT"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-[#475569] pointer-events-none">schedule</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Real-time Inspection & Student Preview Drawer (4 cols) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 sticky top-20 shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0] mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">preview</span>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A]">Candidate Viewport</h3>
+</div>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">Simulated UI</span>
+</div>
+<!-- In-App Preview Card -->
+<div class="border border-[#E2E8F0] rounded-lg p-3.5 bg-[#FAF8FF] mb-4">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#475569] mb-2">
+<span class="flex items-center gap-1 font-medium text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">notifications_active</span> IN-APP BANNER PREVIEW
+                </span>
+<span>Just now</span>
+</div>
+<h4 class="text-body-sm font-body-sm font-semibold text-[#0F172A] mb-1" id="preview-card-title">
+                CISA Domain 3 Mandatory Mock Examination &amp; Q&amp;A Session
+              </h4>
+<p class="text-body-sm font-body-sm text-[#475569] line-clamp-3" id="preview-card-body">
+                Good day Babatunde Adeyemi, please be informed that the proctored simulation engine for Domain 3 will go live this Saturday. Log in via your terminal by 09:00 WAT.
+              </p>
+<div class="mt-3 pt-2 border-t border-[#E2E8F0] flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-[#0B1320] font-medium">Instructor: Adaeze Okonkwo</span>
+<span class="text-[#1D4ED8] font-medium">Open Terminal →</span>
+</div>
+</div>
+<!-- Dispatch Summary Checklist -->
+<div class="space-y-3 pt-2">
+<h4 class="text-label-sm font-label-sm font-semibold text-[#475569] tracking-wider uppercase">Audit Pre-flight Check</h4>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-[#0F172A] py-1 border-b border-[#F1F5F9]">
+<span class="flex items-center gap-2 text-[#475569]">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span> Recipient Cohort
+                </span>
+<span class="font-medium">42 Candidates</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-[#0F172A] py-1 border-b border-[#F1F5F9]">
+<span class="flex items-center gap-2 text-[#475569]">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span> In-App &amp; Email
+                </span>
+<span class="font-medium text-[#047857]">Active</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-[#0F172A] py-1 border-b border-[#F1F5F9]">
+<span class="flex items-center gap-2 text-[#475569]">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span> SMS Broadcast
+                </span>
+<span class="font-medium text-[#0F172A]">1 Segment (₦168.00)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-[#0F172A] py-1">
+<span class="flex items-center gap-2 text-[#475569]">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">schedule</span> Dispatch Mode
+                </span>
+<span class="font-medium text-[#1D4ED8]">12 Oct 2026, 09:00</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-[#E2E8F0]">
+<button class="w-full h-11 bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium rounded-[6px] text-body-sm font-body-sm flex items-center justify-center gap-2 transition-colors focus-ring" id="composer-submit-btn" onclick="openConfirmationModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                Confirm &amp; Stage Announcement
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- STATE 2: SCHEDULED DISPATCH                -->
+<!-- ========================================== -->
+<div class="hidden space-y-6" id="state-scheduled">
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#E2E8F0] gap-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8] flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">schedule</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">timelapse</span> Scheduled for Dispatch
+                  </span>
+<span class="text-label-sm font-label-sm text-[#475569]">ID: ANC-2026-1012-CISA</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-[#0F172A]">CISA Domain 3 Mandatory Mock Examination &amp; Q&amp;A Session</h2>
+<p class="text-body-sm font-body-sm text-[#475569] mt-0.5">Author: Adaeze Okonkwo • Target: CISA Saturday Executive Track (Cohort 14)</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-11 px-4 bg-transparent border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] font-medium rounded-[6px] text-body-sm font-body-sm flex items-center gap-2 transition-colors focus-ring" onclick="switchState('draft')" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+                Edit Schedule
+              </button>
+<button class="h-11 px-4 bg-[#FEF2F2] border border-[#B91C1C] hover:bg-[#FEE2E2] text-[#B91C1C] font-medium rounded-[6px] text-body-sm font-body-sm flex items-center gap-2 transition-colors focus-ring" onclick="openCancelModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                Cancel Dispatch
+              </button>
+</div>
+</div>
+<!-- Scheduled Telemetry Card -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 py-6 border-b border-[#E2E8F0]">
+<div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<div class="text-label-sm font-label-sm text-[#475569] mb-1">Scheduled Release</div>
+<div class="text-body-lg font-body-lg font-semibold text-[#0F172A]">12 Oct 2026, 09:00 WAT</div>
+<div class="text-label-sm font-label-sm text-[#1D4ED8] mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span> Automated queue locked
+              </div>
+</div>
+<div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<div class="text-label-sm font-label-sm text-[#475569] mb-1">Audience Payload</div>
+<div class="text-body-lg font-body-lg font-semibold text-[#0F172A]">42 Verified Candidates</div>
+<div class="text-label-sm font-label-sm text-[#047857] mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> All active in roster
+              </div>
+</div>
+<div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<div class="text-label-sm font-label-sm text-[#475569] mb-1">Delivery Pipes</div>
+<div class="text-body-lg font-body-lg font-semibold text-[#0F172A]">In-app • Email • SMS</div>
+<div class="text-label-sm font-label-sm text-[#475569] mt-1">Multi-channel routing</div>
+</div>
+<div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<div class="text-label-sm font-label-sm text-[#475569] mb-1">Estimated SMS Charge</div>
+<div class="text-body-lg font-body-lg font-semibold text-[#0F172A]">₦168.00</div>
+<div class="text-label-sm font-label-sm text-[#475569] mt-1">42 units @ ₦4.00 per segment</div>
+</div>
+</div>
+<!-- Staged Content Snapshot -->
+<div class="mt-6 space-y-4">
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]">Staged Content Review</h3>
+<div class="p-5 bg-[#FAF8FF] border border-[#E2E8F0] rounded-lg">
+<h4 class="font-semibold text-body-md font-body-md text-[#0F172A] mb-2">Notice: CISA Domain 3 Mandatory Mock Examination &amp; Q&amp;A Session</h4>
+<p class="text-body-sm font-body-sm text-[#475569] whitespace-pre-line leading-relaxed">Good day [Candidate Name],
+
+Please be informed that the proctored simulation engine for Domain 3 (Information Systems Acquisition, Development &amp; Implementation) will go live this Saturday. 
+
+All candidates registered under [Cohort Code] are strictly required to log in via the Secure Portal terminal by 09:00 WAT. Ensure your biometric identification credentials and dual-factor authentication tokens are active prior to commencement.
+
+Regards,
+Adaeze Okonkwo
+Lead CISA Faculty &amp; Lead IS Auditor
+A.J. Silicon Lagos Training Facility</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- STATE 3: SENT (DELIVERY LEDGER)            -->
+<!-- ========================================== -->
+<div class="hidden space-y-6" id="state-sent">
+<!-- Telemetry Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#475569] mb-1">
+<span>Total Targeted</span>
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">groups</span>
+</div>
+<div class="text-display font-display text-[#0F172A]">42</div>
+<div class="text-label-sm font-label-sm text-[#475569] mt-1">Cohort 14 roster baseline</div>
+</div>
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#047857] mb-1">
+<span>Delivered</span>
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+<div class="text-display font-display text-[#047857]">41</div>
+<div class="text-label-sm font-label-sm text-[#047857] mt-1 font-medium">97.6% success rate</div>
+</div>
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#1D4ED8] mb-1">
+<span>Opened / Viewed</span>
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</div>
+<div class="text-display font-display text-[#1D4ED8]">38</div>
+<div class="text-label-sm font-label-sm text-[#1D4ED8] mt-1 font-medium">90.5% read engagement</div>
+</div>
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#B91C1C] mb-1">
+<span>Failed Transmissions</span>
+<span class="material-symbols-outlined text-[18px]">error</span>
+</div>
+<div class="text-display font-display text-[#B91C1C]">1</div>
+<div class="text-label-sm font-label-sm text-[#B91C1C] mt-1 font-medium">Reason: Invalid carrier route</div>
+</div>
+</div>
+<!-- Comprehensive Candidate Roster Table -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden">
+<div class="p-5 border-b border-[#E2E8F0] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A]">Candidate Delivery Ledger</h2>
+<p class="text-body-sm font-body-sm text-[#475569]">Audited real-time multi-channel receipt verification records.</p>
+</div>
+<!-- Table Search & Filter Bar -->
+<div class="flex items-center gap-3">
+<div class="relative">
+<input class="h-11 bg-white border border-[#64748B] rounded-[6px] pl-9 pr-3 text-body-sm font-body-sm text-[#0F172A] focus-ring w-64" placeholder="Search candidate or phone..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-3 text-[18px] text-[#475569]">search</span>
+</div>
+<select class="h-11 bg-white border border-[#64748B] rounded-[6px] px-3 text-body-sm font-body-sm text-[#0F172A] focus-ring">
+<option>All Statuses</option>
+<option>Delivered (41)</option>
+<option>Failed (1)</option>
+</select>
+</div>
+</div>
+<!-- Tabular List -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3.5 px-4 font-semibold">Candidate Name</th>
+<th class="py-3.5 px-4 font-semibold">Contact Mask</th>
+<th class="py-3.5 px-4 font-semibold">In-App</th>
+<th class="py-3.5 px-4 font-semibold">Email</th>
+<th class="py-3.5 px-4 font-semibold">SMS (+234)</th>
+<th class="py-3.5 px-4 font-semibold">Timestamp (WAT)</th>
+<th class="py-3.5 px-4 font-semibold text-right">Audit Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm">
+<!-- Row 1: Delivered & Opened -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">
+                    Babatunde Adeyemi
+                    <div class="text-label-sm font-label-sm text-[#475569]">Apex Bank Nig. Ltd.</div>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">
+<span id="mask-babatunde">+234 803 ••• 4491</span>
+<button class="ml-1 text-[#1D4ED8] hover:underline text-label-sm font-label-sm font-medium" onclick="toggleReveal('mask-babatunde', '+234 803 555 4491')" type="button">Reveal</button>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Read
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">done_all</span> Opened
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">check</span> Delivered
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">12 Oct 2026, 09:01:14</td>
+<td class="py-3.5 px-4 text-right">
+<button class="text-[#1D4ED8] hover:underline font-medium text-label-sm font-label-sm" type="button">Inspect Log</button>
+</td>
+</tr>
+<!-- Row 2: Delivered & Read -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">
+                    Chidinma Ezekwesili
+                    <div class="text-label-sm font-label-sm text-[#475569]">Zenith Trust Assurance</div>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">
+<span id="mask-chidinma">+234 812 ••• 8820</span>
+<button class="ml-1 text-[#1D4ED8] hover:underline text-label-sm font-label-sm font-medium" onclick="toggleReveal('mask-chidinma', '+234 812 771 8820')" type="button">Reveal</button>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Read
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">done_all</span> Opened
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">check</span> Delivered
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">12 Oct 2026, 09:01:22</td>
+<td class="py-3.5 px-4 text-right">
+<button class="text-[#1D4ED8] hover:underline font-medium text-label-sm font-label-sm" type="button">Inspect Log</button>
+</td>
+</tr>
+<!-- Row 3: Delivered (Unread in app) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">
+                    Oluwaseun Balogun
+                    <div class="text-label-sm font-label-sm text-[#475569]">Interswitch Energy Solutions</div>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">
+<span id="mask-oluwaseun">+234 701 ••• 3319</span>
+<button class="ml-1 text-[#1D4ED8] hover:underline text-label-sm font-label-sm font-medium" onclick="toggleReveal('mask-oluwaseun', '+234 701 992 3319')" type="button">Reveal</button>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#B45309] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Delivered
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">done_all</span> Opened
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">check</span> Delivered
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">12 Oct 2026, 09:01:30</td>
+<td class="py-3.5 px-4 text-right">
+<button class="text-[#1D4ED8] hover:underline font-medium text-label-sm font-label-sm" type="button">Inspect Log</button>
+</td>
+</tr>
+<!-- Row 4: FAILED Transmission with exact failure reason -->
+<tr class="bg-[#FEF2F2]/30 hover:bg-[#FEF2F2]/50 transition-colors">
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">
+                    Ibrahim Danladi
+                    <div class="text-label-sm font-label-sm text-[#475569]">Kano Grid Power Corp</div>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">
+<span id="mask-ibrahim">+234 809 ••• 1104</span>
+<button class="ml-1 text-[#1D4ED8] hover:underline text-label-sm font-label-sm font-medium" onclick="toggleReveal('mask-ibrahim', '+234 809 301 1104')" type="button">Reveal</button>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">done</span> Delivered
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#047857] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">done</span> Delivered
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-[#B91C1C] text-label-sm font-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">cancel</span> Failed: Invalid carrier route
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-[#475569]">12 Oct 2026, 09:02:40</td>
+<td class="py-3.5 px-4 text-right">
+<button class="text-[#B91C1C] hover:underline font-medium text-label-sm font-label-sm" type="button">Retry SMS</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Component -->
+<div class="p-4 border-t border-[#E2E8F0] flex items-center justify-between text-body-sm font-body-sm text-[#475569]">
+<div>Showing 1 to 4 of 42 candidates</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 rounded border border-[#E2E8F0] bg-[#F8FAFC] text-[#CBD5E1] cursor-not-allowed" disabled="" type="button">Previous</button>
+<button class="h-9 w-9 rounded border border-[#0B1320] bg-[#0B1320] text-white font-medium" type="button">1</button>
+<button class="h-9 w-9 rounded border border-[#E2E8F0] hover:bg-[#F1F5F9] text-[#0F172A]" type="button">2</button>
+<button class="h-9 w-9 rounded border border-[#E2E8F0] hover:bg-[#F1F5F9] text-[#0F172A]" type="button">3</button>
+<button class="h-9 px-3 rounded border border-[#E2E8F0] hover:bg-[#F1F5F9] text-[#0F172A]" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- CONFIRMATION MODAL (Send Announcement) -->
+<div class="hidden fixed inset-0 z-50 bg-[#0B1320]/60 backdrop-blur-[1px] flex items-center justify-center p-4" id="confirmation-modal">
+<div class="bg-white rounded-xl border border-[#E2E8F0] max-w-lg w-full p-6 shadow-xl space-y-5">
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8] flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]">Confirm Multi-Channel Dispatch</h3>
+<p class="text-body-sm font-body-sm text-[#475569] mt-1">
+            Confirm dispatch to 42 candidates across In-app, Email &amp; SMS. This action will initiate external carrier networks in Nigeria.
+          </p>
+</div>
+</div>
+<div class="p-3.5 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0] text-body-sm font-body-sm space-y-2">
+<div class="flex justify-between">
+<span class="text-[#475569]">Target:</span>
+<span class="font-medium text-[#0F172A]">CISA Cohort 14 (42 Candidates)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#475569]">Delivery Timing:</span>
+<span class="font-medium text-[#0F172A]">12 Oct 2026, 09:00 WAT</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#475569]">SMS Tariff Debit:</span>
+<span class="font-medium text-[#0F172A]">₦168.00 (from departmental balance)</span>
+</div>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm font-medium text-[#0F172A] mb-1" for="dispatch-reason">
+          Audit Dispatch Authorization Note <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 bg-white border border-[#64748B] rounded-[6px] px-3 text-body-sm font-body-sm text-[#0F172A] focus-ring" id="dispatch-reason" placeholder="e.g. Approved curriculum milestone revision by Lead Faculty" type="text"/>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2 border-t border-[#E2E8F0]">
+<button class="h-11 px-4 bg-transparent border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] font-medium rounded-[6px] text-body-sm font-body-sm transition-colors focus-ring" onclick="closeConfirmationModal()" type="button">
+          Cancel
+        </button>
+<button class="h-11 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium rounded-[6px] text-body-sm font-body-sm flex items-center gap-2 transition-colors focus-ring" onclick="executeDispatch()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+          Authorize &amp; Dispatch
+        </button>
+</div>
+</div>
+</div>
+<!-- DESTRUCTIVE CONFIRMATION MODAL (Cancel Dispatch with REQUIRED Reason) -->
+<div class="hidden fixed inset-0 z-50 bg-[#0B1320]/60 backdrop-blur-[1px] flex items-center justify-center p-4" id="cancel-modal">
+<div class="bg-white rounded-xl border border-[#B91C1C] max-w-lg w-full p-6 shadow-xl space-y-5">
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 rounded-lg bg-[#FEF2F2] border border-[#B91C1C] flex items-center justify-center text-[#B91C1C] flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-[#B91C1C]">Revoke Scheduled Dispatch</h3>
+<p class="text-body-sm font-body-sm text-[#475569] mt-1">
+            Are you sure you want to pull ANC-2026-1012-CISA from the active dispatch engine? Queued SMS gateway reservations will be released.
+          </p>
+</div>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm font-medium text-[#0F172A] mb-1" for="cancel-reason-input">
+          Required Reason for Cancellation <span class="text-[#B91C1C]">*</span>
+</label>
+<textarea class="w-full bg-white border border-[#64748B] rounded-[6px] p-3 text-body-sm font-body-sm text-[#0F172A] focus-ring" id="cancel-reason-input" placeholder="Provide mandatory compliance reason for revoking staged candidate alert..." rows="3"></textarea>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2 border-t border-[#E2E8F0]">
+<button class="h-11 px-4 bg-transparent border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] font-medium rounded-[6px] text-body-sm font-body-sm transition-colors focus-ring" onclick="closeCancelModal()" type="button">
+          Dismiss
+        </button>
+<button class="h-11 px-6 bg-[#FEF2F2] border border-[#B91C1C] hover:bg-[#FEE2E2] text-[#B91C1C] font-medium rounded-[6px] text-body-sm font-body-sm flex items-center gap-2 transition-colors focus-ring" onclick="confirmCancelDispatch()" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+          Confirm Revocation
+        </button>
+</div>
+</div>
+</div>
+<!-- INSTITUTIONAL FOOTER (Shared Component JSON: Footer) -->
+<footer class="bg-primary-container text-on-primary-container w-full border-t border-outline px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<div class="flex items-center gap-3">
+<span class="text-surface-container-lowest font-bold text-body-md font-body-md">A.J. Silicon</span>
+<span class="text-outline">|</span>
+<span>© 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.</span>
+</div>
+<div class="flex items-center gap-6 text-label-sm font-label-sm">
+<a class="hover:text-surface-container-lowest transition-colors" href="#">DRM Compliance Policy</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#">Zero-Trust Verification</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#">Candidate Session Hash Log</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#">Integrity Telemetry Docs</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#">SecOps Oversight</a>
+</div>
+</footer>
+<!-- SCRIPT FOR STATE SWITCHING AND INTERACTIONS -->
+<script>
+    function switchState(stateName) {
+      document.getElementById('state-draft').classList.add('hidden');
+      document.getElementById('state-scheduled').classList.add('hidden');
+      document.getElementById('state-sent').classList.add('hidden');
+
+      const tabs = ['draft', 'scheduled', 'sent'];
+      tabs.forEach(t => {
+        const tabEl = document.getElementById('tab-' + t);
+        if (t === stateName) {
+          tabEl.className = 'px-4 py-1.5 rounded-md text-label-md font-label-md transition-colors bg-[#0B1320] text-white font-medium shadow-sm flex items-center gap-2';
+        } else {
+          tabEl.className = 'px-4 py-1.5 rounded-md text-label-md font-label-md transition-colors text-[#475569] hover:text-[#0F172A] flex items-center gap-2';
+        }
+      });
+
+      document.getElementById('state-' + stateName).classList.remove('hidden');
+    }
+
+    function updateRecipientCount() {
+      const select = document.getElementById('audience-select');
+      const badge = document.getElementById('recipient-badge');
+      if (select.value === 'cohort-14') {
+        badge.innerText = 'CISA Cohort 14 — 42 active candidates';
+      } else if (select.value === 'cohort-13') {
+        badge.innerText = 'CRISC Cohort 13 — 29 active candidates';
+      } else if (select.value === 'programme-cism') {
+        badge.innerText = 'CISM Programme — 64 active candidates';
+      } else {
+        badge.innerText = 'All Students — 184 active candidates';
+      }
+    }
+
+    function validateForm() {
+      const titleInput = document.getElementById('announcement-title');
+      const titleVal = titleInput.value.trim();
+      const charCounter = document.getElementById('title-char-counter');
+      const errorMsg = document.getElementById('title-error');
+      const previewTitle = document.getElementById('preview-card-title');
+
+      charCounter.innerText = titleVal.length + ' / 120 chars';
+      previewTitle.innerText = titleVal.length > 0 ? titleVal : 'Announcement Title';
+
+      if (titleVal.length < 10) {
+        errorMsg.classList.remove('hidden');
+        titleInput.classList.add('border-[#B91C1C]');
+      } else {
+        errorMsg.classList.add('hidden');
+        titleInput.classList.remove('border-[#B91C1C]');
+      }
+    }
+
+    function updateBodyCounters() {
+      const bodyInput = document.getElementById('composer-body');
+      const countEl = document.getElementById('body-char-count');
+      const previewBody = document.getElementById('preview-card-body');
+      const len = bodyInput.value.length;
+      const words = bodyInput.value.trim().split(/\s+/).filter(Boolean).length;
+      countEl.innerText = `${len} characters (approx. ${words} words)`;
+      previewBody.innerText = bodyInput.value.replace(/\{\{CandidateName\}\}/g, 'Babatunde Adeyemi').replace(/\{\{CohortCode\}\}/g, 'Cohort 14');
+    }
+
+    function insertVariable(varText) {
+      const textarea = document.getElementById('composer-body');
+      textarea.value += ' ' + varText + ' ';
+      updateBodyCounters();
+      textarea.focus();
+    }
+
+    function toggleSmsPanel() {
+      const checkbox = document.getElementById('channel-sms');
+      const smsBox = document.getElementById('sms-broadcast-box');
+      if (checkbox.checked) {
+        smsBox.classList.remove('hidden');
+      } else {
+        smsBox.classList.add('hidden');
+      }
+    }
+
+    function updateSmsCounter() {
+      const smsText = document.getElementById('sms-preview-text').value;
+      const counterEl = document.getElementById('sms-segment-counter');
+      const len = smsText.length;
+      const segments = Math.ceil(len / 160) || 1;
+      counterEl.innerText = `${len} / ${segments * 160} characters (${segments} SMS segment${segments > 1 ? 's' : ''})`;
+    }
+
+    function toggleScheduleFields() {
+      const scheduleInputs = document.getElementById('schedule-inputs');
+      const timingLater = document.querySelector('input[name="timing-option"][value="later"]').checked;
+      if (timingLater) {
+        scheduleInputs.classList.remove('opacity-40', 'pointer-events-none');
+      } else {
+        scheduleInputs.classList.add('opacity-40', 'pointer-events-none');
+      }
+    }
+
+    function openConfirmationModal() {
+      document.getElementById('confirmation-modal').classList.remove('hidden');
+    }
+
+    function closeConfirmationModal() {
+      document.getElementById('confirmation-modal').classList.add('hidden');
+    }
+
+    function executeDispatch() {
+      const reason = document.getElementById('dispatch-reason').value.trim();
+      if (!reason) {
+        alert('Please provide an authorization note before dispatch.');
+        return;
+      }
+      closeConfirmationModal();
+      switchState('sent');
+    }
+
+    function openCancelModal() {
+      document.getElementById('cancel-modal').classList.remove('hidden');
+    }
+
+    function closeCancelModal() {
+      document.getElementById('cancel-modal').classList.add('hidden');
+    }
+
+    function confirmCancelDispatch() {
+      const reason = document.getElementById('cancel-reason-input').value.trim();
+      if (!reason) {
+        alert('A required reason for cancellation must be documented for compliance auditing.');
+        return;
+      }
+      closeCancelModal();
+      switchState('draft');
+    }
+
+    function toggleReveal(id, fullValue) {
+      const el = document.getElementById(id);
+      if (el.innerText.includes('•••')) {
+        el.innerText = fullValue;
+      } else {
+        const parts = fullValue.split(' ');
+        el.innerText = parts[0] + ' ' + parts[1] + ' ••• ' + parts[3];
+      }
+    }
+
+    function togglePreviewDrawer() {
+      const stateDraft = document.getElementById('state-draft');
+      if (stateDraft.classList.contains('hidden')) {
+        switchState('draft');
+      }
+      const previewCard = document.getElementById('preview-card-title');
+      previewCard.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body></html>

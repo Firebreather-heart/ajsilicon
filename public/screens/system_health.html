@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy - System Health Dashboard</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#fffbff",
+            "surface": "#faf8ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "secondary": "#1d4ed8",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#bfc6d9",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-primary-container": "#7c8495",
+            "surface-dim": "#d2d9f4",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "outline": "#75777c",
+            "secondary-fixed": "#dce1ff",
+            "primary": "#0B1320",
+            "surface-container-low": "#f2f3ff",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#fddcc4",
+            "on-error-container": "#93000a",
+            "primary-container": "#141c29",
+            "surface-tint": "#575f6e",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-primary-fixed": "#141c29",
+            "on-background": "#131b2e",
+            "error-container": "#ffdad6",
+            "tertiary": "#000000",
+            "surface-bright": "#faf8ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "secondary-container": "#4069f2",
+            "inverse-primary": "#bfc6d9",
+            "primary-fixed": "#dbe2f5",
+            "on-surface-variant": "#45474c",
+            "on-surface": "#0F172A",
+            "tertiary-container": "#281809",
+            "outline-variant": "#c5c6cc",
+            "on-tertiary-container": "#997f6a",
+            "on-tertiary-fixed": "#281809",
+            "inverse-surface": "#283044",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "background": "#F8FAFC",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "on-secondary-fixed": "#001551",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-md": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .btn-focus:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A]">
+<!-- TOP APP BAR (Shared Shell Anchor) -->
+<header class="w-full bg-[#0B1320] text-white h-16 px-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-[#1E293B]">
+<div class="flex items-center gap-6">
+<!-- Logo Mounted on White Plate -->
+<div class="bg-white h-10 px-3 py-1 rounded-[4px] flex items-center justify-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA46p38eUJFnTI_XkxpywTQCSNFi06KuFfU4yjxc_TtkymC45m4e5CbbylXucrSWQA_7_PUhruzg8ONDuBLXRL5hhNg3qkwSkqmKZ1nStKh1jMuyiLAVd6s6XidnNBdgFidkSVes55-rjd3WR3JVBJUHgE1T3EuDCZ9AVTZ38VbrQZPbCvPTDM3KoWbAPmvv1pR5qrYl8AchNWy7BwWSvmhHRzLynoVUomtD9SZBl06oBGSpiFHAKyizg"/>
+</div>
+<!-- Static Vertical Divider -->
+<div class="h-6 w-[1px] bg-[#334155]"></div>
+<!-- Academic & Institutional Indicator -->
+<div class="flex flex-col">
+<span class="text-white text-sm font-semibold tracking-tight">A.J. Silicon Academy</span>
+<span class="text-[#94A3B8] text-[11px] font-mono leading-tight">Enterprise Infrastructure &amp; Audit Telemetry</span>
+</div>
+</div>
+<!-- Right Header Elements -->
+<div class="flex items-center gap-5">
+<!-- Staff Role Plain Text Label (Strictly no dropdown) -->
+<div class="hidden md:flex items-center px-3 py-1.5 bg-[#141C29] border border-[#334155] rounded text-xs text-[#E2E8F0]">
+<span class="text-[#94A3B8] mr-1.5 font-normal">Role:</span>
+<span class="font-medium text-white">Super Admin | Babatunde Lawal</span>
+</div>
+<!-- Time in WAT -->
+<div class="flex items-center gap-1.5 text-xs text-[#94A3B8] font-mono bg-[#141C29] px-3 py-1.5 rounded border border-[#334155]">
+<span class="material-symbols-outlined text-[16px] text-[#93C5FD]">schedule</span>
+<span class="text-[#E2E8F0] font-medium">14:35 WAT · 05 Oct 2026</span>
+</div>
+<!-- Trailing Action Icons -->
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] transition-colors btn-focus relative" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-[#1D4ED8] rounded-full"></span>
+</button>
+<button aria-label="Security Status" class="w-11 h-11 flex items-center justify-center rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] transition-colors btn-focus" type="button">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</button>
+</div>
+<!-- Initials Avatar Badge -->
+<div class="flex items-center pl-2 border-l border-[#334155]">
+<div class="w-9 h-9 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center font-semibold text-xs border border-[#3B82F6]" title="Babatunde Lawal">
+          BL
+        </div>
+</div>
+</div>
+</header>
+<!-- WORKSPACE CONTAINER WITH SIDEBAR -->
+<div class="flex min-h-screen pt-16">
+<!-- LEFT SIDEBAR (Rail Navigation) -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] flex flex-col justify-between fixed top-16 bottom-0 left-0 z-40">
+<div class="p-4 space-y-6 overflow-y-auto">
+<!-- Institution Branch Info -->
+<div class="px-3 py-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded">
+<div class="text-[11px] font-medium uppercase tracking-wider text-[#64748B]">Node Location</div>
+<div class="text-sm font-semibold text-[#0B1320] flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-[#047857]"></span>
+            Lagos DC 1 (Victoria Island)
+          </div>
+</div>
+<!-- Navigation Group: Operations & Audits -->
+<div class="space-y-1">
+<div class="text-[11px] font-semibold uppercase tracking-wider text-[#94A3B8] px-3 pb-1">Core Modules</div>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-sm text-[#475569] hover:text-[#0B1320] hover:bg-[#F1F5F9] transition-colors btn-focus" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-sm text-[#475569] hover:text-[#0B1320] hover:bg-[#F1F5F9] transition-colors btn-focus" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+<span>Accreditation</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-sm text-[#475569] hover:text-[#0B1320] hover:bg-[#F1F5F9] transition-colors btn-focus" href="#">
+<span class="material-symbols-outlined text-[20px]">security</span>
+<span>Risk Assessments</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-sm text-[#475569] hover:text-[#0B1320] hover:bg-[#F1F5F9] transition-colors btn-focus" href="#">
+<span class="material-symbols-outlined text-[20px]">rule</span>
+<span>Evidence Logs</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-sm text-[#475569] hover:text-[#0B1320] hover:bg-[#F1F5F9] transition-colors btn-focus" href="#">
+<span class="material-symbols-outlined text-[20px]">query_stats</span>
+<span>Telemetry</span>
+</a>
+</div>
+<!-- Navigation Group: System Administration (Active) -->
+<div class="space-y-1">
+<div class="text-[11px] font-semibold uppercase tracking-wider text-[#94A3B8] px-3 pb-1">Governance &amp; Admin</div>
+<!-- Settings / System Health highlighted as active per specification -->
+<a class="h-11 px-3 rounded flex items-center gap-3 text-sm font-medium bg-[#F1F5F9] text-[#0B1320] border-l-4 border-[#0B1320] btn-focus shadow-xs" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#0B1320]">settings</span>
+<span class="flex-1">Settings</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+</a>
+<div class="pl-9 pr-3 py-1 space-y-1">
+<a class="h-9 px-3 rounded flex items-center text-xs font-semibold text-[#1D4ED8] bg-[#EFF6FF] border border-[#BFDBFE]" href="#">
+              System Health (Active)
+            </a>
+<a class="h-9 px-3 rounded flex items-center text-xs text-[#64748B] hover:text-[#0F172A] hover:bg-[#F8FAFC]" href="#">
+              Cluster Security
+            </a>
+<a class="h-9 px-3 rounded flex items-center text-xs text-[#64748B] hover:text-[#0F172A] hover:bg-[#F8FAFC]" href="#">
+              Audit Log Policies
+            </a>
+</div>
+</div>
+</div>
+<!-- Sidebar Footer -->
+<div class="p-4 border-t border-[#E2E8F0] bg-[#FAFAFA] space-y-2">
+<a class="h-9 px-3 rounded flex items-center gap-2 text-xs text-[#64748B] hover:text-[#0B1320] transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Documentation</span>
+</a>
+<a class="h-9 px-3 rounded flex items-center gap-2 text-xs text-[#64748B] hover:text-[#0B1320] transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Compliance Vault</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT CANVAS -->
+<main class="ml-64 flex-1 p-8 max-w-[1440px] pb-24">
+<!-- BREADCRUMB + PAGE HEADER -->
+<div class="mb-8">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[#64748B] mb-2 font-mono">
+<span>Staff &amp; Governance</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>System Administration</span>
+<span class="text-[#CBD5E1]">/</span>
+<span aria-current="page" class="text-[#0F172A] font-semibold">System Health</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E2E8F0] pb-6">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-[#0B1320] flex items-center gap-3">
+              System Health &amp; Service Telemetry
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                All Systems Monitored
+              </span>
+</h1>
+<p class="text-sm text-[#475569] mt-1">Real-time status metrics, processing queue queues, and incident telemetry for A.J. Silicon enterprise nodes.</p>
+</div>
+<!-- Page Action: 44px Button -->
+<div class="flex items-center gap-3">
+<button class="h-11 px-5 rounded-[6px] bg-white border border-[#64748B] text-[#0F172A] text-sm font-medium hover:bg-[#F1F5F9] transition-colors flex items-center gap-2 btn-focus" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+              Auto-refresh: 30s
+            </button>
+<button class="h-11 px-6 rounded-[6px] bg-[#0B1320] text-white text-sm font-medium hover:bg-[#1E293B] transition-colors flex items-center gap-2 btn-focus shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+              Run diagnostics
+            </button>
+</div>
+</div>
+</div>
+<!-- SWITCHER DEMO BANNER FOR SPECIFICATION PURPOSES -->
+<div class="mb-8 bg-[#EFF6FF] border border-[#93C5FD] rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="font-medium">Design System Specification Board:</span>
+<span>View the dashboard in its two official specification states required below.</span>
+</div>
+<div class="flex gap-2">
+<a class="px-3 py-1 bg-white text-[#1D4ED8] text-xs font-semibold rounded border border-[#93C5FD] hover:bg-[#DBEAFE]" href="#variant-1">Jump to Variant 1: All Healthy</a>
+<a class="px-3 py-1 bg-[#1D4ED8] text-white text-xs font-semibold rounded hover:bg-[#1E40AF]" href="#variant-2">Jump to Variant 2: Degraded State</a>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- VARIANT 1: ALL HEALTHY STATE (SPECIFICATION BASELINE)                    -->
+<!-- ========================================================================= -->
+<section class="space-y-8 mb-16" id="variant-1">
+<div class="flex items-center justify-between border-l-4 border-[#047857] pl-3 py-1">
+<div>
+<h2 class="text-lg font-bold text-[#0B1320]">Specification Variant 1: All Systems Healthy</h2>
+<p class="text-xs text-[#64748B]">All 6 core service tiles nominal, 0 backlog queue, 99.94% 30-day uptime, nominal telemetry.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            System Status: 100% Operational
+          </span>
+</div>
+<!-- 1. STATUS TILES (6 Core Tiles with Icon + Text) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Tile 1: Web App -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Front-end Cluster</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Web App Service</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Operational
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Availability</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">99.98%</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Response Latency</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">42ms avg</span>
+</div>
+</div>
+</div>
+<!-- Tile 2: Database -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Core Relational Store</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Database (PostgreSQL)</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Operational
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Cluster Connections</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">28 / 200 pool</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Query p95 Latency</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">18ms</span>
+</div>
+</div>
+</div>
+<!-- Tile 3: Video Processing Queue (Healthy) -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Media Pipeline</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Video processing queue</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Idle / Processing normally
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">H.264 / Watermarking</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">Jobs running: 2</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Queue Backlog</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">0 pending</span>
+</div>
+</div>
+</div>
+<!-- Tile 4: Webhook Latency -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Payment Ingestion</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Webhook latency</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Optimal
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Paystack Endpoint</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">185ms avg</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Success Ratio</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">99.99%</span>
+</div>
+</div>
+</div>
+<!-- Tile 5: Email Delivery -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Notifications</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Email delivery</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Operational
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Transactional SMTP</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">99.7% delivery</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Outbox Queue</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">0 queued</span>
+</div>
+</div>
+</div>
+<!-- Tile 6: Storage Used -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Object Storage</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Storage used</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Healthy
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] text-xs">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[#64748B]">S3 Lagos Cold Storage</span>
+<span class="font-mono font-medium text-[#0B1320]">1.42 TB / 5.0 TB (28.4%)</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full rounded-full" style="width: 28.4%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. UPTIME FOR 30 DAYS PANEL -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 shadow-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-[#E2E8F0] gap-4">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-base font-bold text-[#0B1320]">Historical Availability (Last 30 Days)</h3>
+<span class="text-xs text-[#64748B] font-mono">06 Sep 2026 – 05 Oct 2026</span>
+</div>
+<p class="text-xs text-[#64748B] mt-0.5">Automated heartbeat pings from independent monitoring stations in Lagos, London, and Johannesburg.</p>
+</div>
+<div class="flex items-center gap-6">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-[#64748B] block">30-Day Uptime</span>
+<span class="text-lg font-bold text-[#047857] font-mono">99.94%</span>
+</div>
+<div class="h-8 w-[1px] bg-[#E2E8F0]"></div>
+<div>
+<span class="text-[11px] uppercase tracking-wider text-[#64748B] block">Mean Recovery (MTTR)</span>
+<span class="text-lg font-bold text-[#0B1320] font-mono">4 mins</span>
+</div>
+<div class="h-8 w-[1px] bg-[#E2E8F0]"></div>
+<div>
+<span class="text-[11px] uppercase tracking-wider text-[#64748B] block">Logged Incidents</span>
+<span class="text-lg font-bold text-[#B45309] font-mono">1 minor</span>
+</div>
+</div>
+</div>
+<!-- 30 Daily Discrete Segment Blocks -->
+<div class="mt-6">
+<div class="grid grid-cols-15 sm:grid-cols-30 gap-1.5 py-2">
+<!-- Days 1 to 14 (100% Green) -->
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity">
+<div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">
+                  06 Sep: 100.0% Uptime · 0 Incidents
+                </div>
+</div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity">
+<div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">
+                  07 Sep: 100.0% Uptime · 0 Incidents
+                </div>
+</div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">08 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">09 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">10 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">11 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">12 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">13 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">14 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">15 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">16 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">17 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">18 Sep: 100.0% Uptime</div></div>
+<!-- Day 14: Minor Incident (Amber) -->
+<div class="group relative h-9 bg-[#B45309] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity">
+<div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono border border-[#B45309]">
+                  19 Sep: 98.4% Uptime · 1 Incident (4 min Paystack IP-switch timeout)
+                </div>
+</div>
+<!-- Days 15 to 30 (100% Green) -->
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">20 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">21 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">22 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">23 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">24 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">25 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">26 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">27 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">28 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">29 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">30 Sep: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">01 Oct: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">02 Oct: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">03 Oct: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">04 Oct: 100.0% Uptime</div></div>
+<div class="group relative h-9 bg-[#047857] rounded-[2px] cursor-pointer hover:opacity-80 transition-opacity"><div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-[#0B1320] text-white text-[11px] rounded shadow-lg whitespace-nowrap z-20 font-mono">05 Oct (Today): 100.0% Uptime</div></div>
+</div>
+<!-- Graph Legend -->
+<div class="flex items-center justify-between text-xs text-[#64748B] pt-2 border-t border-[#F1F5F9]">
+<span class="font-mono">30 days ago</span>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-[#047857] rounded-xs"></span> Operational (100%)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-[#B45309] rounded-xs"></span> Degraded (≥98%)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-[#B91C1C] rounded-xs"></span> Outage (&lt;98%)</span>
+</div>
+<span class="font-mono">Today (WAT)</span>
+</div>
+</div>
+</div>
+<!-- 3. QUEUE BACKLOG CHART (24-Hour Visual Chart) -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 shadow-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-[#E2E8F0] gap-3">
+<div>
+<h3 class="text-base font-bold text-[#0B1320]">24-Hour Processing Pipeline Backlog</h3>
+<p class="text-xs text-[#64748B]">Concurrent queue length for Video Watermarking and Webhook ingest jobs (00:00 to 24:00 WAT).</p>
+</div>
+<div class="flex items-center gap-4 text-xs font-medium">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-[#1D4ED8] rounded-xs"></span> Video Ingestion Queue</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-[#64748B] rounded-xs"></span> Paystack Webhook Worker</span>
+<span class="flex items-center gap-1.5 text-[#B91C1C]"><span class="w-3 h-0.5 bg-[#B91C1C] border-t border-dashed"></span> Benchmark Threshold (25 jobs)</span>
+</div>
+</div>
+<!-- Discrete Time Intervals Bar Chart -->
+<div class="mt-6 relative">
+<!-- Benchmark line at height 60% (~25 jobs) -->
+<div class="absolute w-full top-[35%] border-b border-dashed border-[#B91C1C] z-10 flex justify-end">
+<span class="text-[10px] font-mono text-[#B91C1C] bg-white px-1 -mt-2.5">Max Threshold: 25 Jobs</span>
+</div>
+<!-- Nominal Chart Bars Grid -->
+<div class="h-44 flex items-end justify-between gap-2 pt-6 pb-2 border-b border-[#CBD5E1]">
+<!-- 00:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 12px;" title="Video: 1"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 6px;" title="Webhook: 0"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">00:00</span>
+</div>
+<!-- 03:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 8px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">03:00</span>
+</div>
+<!-- 06:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 14px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 10px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">06:00</span>
+</div>
+<!-- 09:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 28px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 18px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">09:00</span>
+</div>
+<!-- 12:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 36px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 24px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">12:00</span>
+</div>
+<!-- 14:00 (Current WAT) -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end bg-[#F8FAFC] rounded">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 18px;" title="Current: 2 jobs"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 8px;" title="Current: 0 backlog"></div>
+</div>
+<span class="text-[10px] font-bold text-[#1D4ED8] font-mono">14:00*</span>
+</div>
+<!-- 16:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">16:00</span>
+</div>
+<!-- 18:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">18:00</span>
+</div>
+<!-- 21:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">21:00</span>
+</div>
+<!-- 24:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">24:00</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-xs text-[#64748B] mt-2">
+<span>Nominal backlog ceiling: &lt; 5 queued jobs</span>
+<span class="font-mono text-[#047857] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> All pipelines drained and responsive
+              </span>
+</div>
+</div>
+</div>
+<!-- 4. RECENT ERRORS TABLE (Search, Filters, Sort, Realistic Audit Errors) -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] shadow-xs overflow-hidden">
+<!-- Table Controls Toolbar -->
+<div class="p-5 border-b border-[#E2E8F0] flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Search Field (44px target) -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B] text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 text-sm bg-white border border-[#64748B] rounded-[6px] text-[#0F172A] placeholder-[#475569] btn-focus" placeholder="Search error logs by code, endpoint, or trace..." type="text" value=""/>
+</div>
+<!-- Filters & Actions -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Level Filter -->
+<div class="flex items-center text-xs">
+<span class="text-[#64748B] mr-2 font-medium">Level:</span>
+<select class="h-11 px-3 text-xs bg-white border border-[#64748B] rounded-[6px] text-[#0F172A] btn-focus">
+<option selected="">All Levels (Warning, Error, Critical)</option>
+<option>Critical</option>
+<option>Error</option>
+<option>Warning</option>
+</select>
+</div>
+<!-- Service Filter -->
+<div class="flex items-center text-xs">
+<span class="text-[#64748B] mr-2 font-medium">Service:</span>
+<select class="h-11 px-3 text-xs bg-white border border-[#64748B] rounded-[6px] text-[#0F172A] btn-focus">
+<option selected="">All Services</option>
+<option>Payment Webhook (Paystack)</option>
+<option>Video Watermark Transcoder</option>
+<option>PostgreSQL DB Pool</option>
+<option>Cold Storage S3</option>
+</select>
+</div>
+<!-- Sort Order -->
+<button class="h-11 px-3 text-xs font-medium text-[#0F172A] border border-[#64748B] rounded-[6px] bg-white hover:bg-[#F1F5F9] flex items-center gap-1.5 btn-focus" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+<span>Timestamp (Desc)</span>
+</button>
+</div>
+</div>
+<!-- Structured Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[12px] font-semibold text-[#475569] uppercase tracking-wider">
+<th class="py-3.5 px-5">Timestamp (WAT)</th>
+<th class="py-3.5 px-5">Error Code / Category</th>
+<th class="py-3.5 px-5">Service</th>
+<th class="py-3.5 px-5">Message / Stack Summary</th>
+<th class="py-3.5 px-5">Affected User / Endpoint</th>
+<th class="py-3.5 px-5 text-right">Status &amp; Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm text-[#0F172A]">
+<!-- Row 1 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-5 font-mono text-xs text-[#64748B] whitespace-nowrap">14:18:22 · Today</td>
+<td class="py-3.5 px-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                      ERR-WH-TIMEOUT
+                    </span>
+</td>
+<td class="py-3.5 px-5 font-medium text-xs">Payment Gateway</td>
+<td class="py-3.5 px-5 text-xs text-[#334155] max-w-xs truncate">
+                    Paystack webhook ack retry: read timeout after 2500ms on event charge.success
+                  </td>
+<td class="py-3.5 px-5 font-mono text-xs text-[#64748B]">/api/v1/billing/paystack/callback</td>
+<td class="py-3.5 px-5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">done</span> Auto-resolved (attempt 2)
+                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-5 font-mono text-xs text-[#64748B] whitespace-nowrap">13:42:09 · Today</td>
+<td class="py-3.5 px-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                      VID-ENC-IO
+                    </span>
+</td>
+<td class="py-3.5 px-5 font-medium text-xs">Video Pipeline</td>
+<td class="py-3.5 px-5 text-xs text-[#334155] max-w-xs truncate">
+                    S3 chunk read retry during H.264 stream segmentation. Segment #14 recovered.
+                  </td>
+<td class="py-3.5 px-5 font-mono text-xs text-[#64748B]">cohort-4-module-audit-02.mp4</td>
+<td class="py-3.5 px-5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">done</span> Transcoded
+                    </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-5 font-mono text-xs text-[#64748B] whitespace-nowrap">11:05:44 · Today</td>
+<td class="py-3.5 px-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[13px]">info</span>
+                      DB-POOL-WAIT
+                    </span>
+</td>
+<td class="py-3.5 px-5 font-medium text-xs">PostgreSQL Cluster</td>
+<td class="py-3.5 px-5 text-xs text-[#334155] max-w-xs truncate">
+                    HikariCP connection pool latency spiked to 62ms during bulk cohort sync.
+                  </td>
+<td class="py-3.5 px-5 font-mono text-xs text-[#64748B]">pg-cluster-lagos-primary</td>
+<td class="py-3.5 px-5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#64748B]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Normalized
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Bar -->
+<div class="p-4 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748B] gap-3">
+<div>
+              Showing <span class="font-semibold text-[#0F172A]">1–3</span> of <span class="font-semibold text-[#0F172A]">3</span> telemetry log items
+            </div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 rounded border border-[#E2E8F0] bg-[#F8FAFC] text-[#94A3B8] cursor-not-allowed" disabled="" type="button">Previous</button>
+<button class="h-9 w-9 rounded bg-[#0B1320] text-white font-semibold" type="button">1</button>
+<button class="h-9 px-3 rounded border border-[#E2E8F0] bg-[#F8FAFC] text-[#94A3B8] cursor-not-allowed" disabled="" type="button">Next</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: DEGRADED STATE (SPECIFICATION SCENARIO)                        -->
+<!-- ========================================================================= -->
+<section class="space-y-8 pt-8 border-t-2 border-[#CBD5E1]" id="variant-2">
+<div class="flex items-center justify-between border-l-4 border-[#B45309] pl-3 py-1">
+<div>
+<h2 class="text-lg font-bold text-[#0B1320]">Specification Variant 2: Degraded Performance State</h2>
+<p class="text-xs text-[#64748B]">Demonstration of elevated video transcoding backlog, operational warning banner, and error spike tables.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+            System Status: Degraded (Action in Progress)
+          </span>
+</div>
+<!-- WARNING BANNER REQUIRED IN SPECIFICATION -->
+<div class="bg-[#FFFBEB] border-l-4 border-[#B45309] border-t border-r border-b border-[#FDE68A] p-4 rounded-r-[8px] flex items-start justify-between shadow-xs">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[24px] mt-0.5">report_problem</span>
+<div>
+<h4 class="text-sm font-bold text-[#B45309]">
+                Degraded Performance: Video Transcoding Pipeline latency elevated — Auto-scaling additional compute worker node in Lagos DC
+              </h4>
+<p class="text-xs text-[#78350F] mt-1">
+                Video watermarking queue length exceeds SLA baseline (47 jobs queued). Provisioning worker container <span class="font-mono font-semibold">aj-worker-ffmpeg-04</span>. Transcoding throughput degraded by approx 8.5 minutes.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 bg-[#B45309] text-white rounded text-xs font-medium hover:bg-[#92400E] transition-colors btn-focus whitespace-nowrap" type="button">
+              Inspect Scaling Pod
+            </button>
+</div>
+</div>
+<!-- 1. STATUS TILES (Degraded Variant Showing Warning for Video Processing Queue) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Tile 1: Web App (Still Operational) -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Front-end Cluster</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Web App Service</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Operational
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Availability</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">99.98%</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Response Latency</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">48ms</span>
+</div>
+</div>
+</div>
+<!-- Tile 2: Database (Still Operational) -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Core Relational Store</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Database (PostgreSQL)</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Operational
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Cluster Connections</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">42 / 200 pool</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Query p95 Latency</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">22ms</span>
+</div>
+</div>
+</div>
+<!-- Tile 3: Video Processing Queue (WARNING / DEGRADED STATE) -->
+<div class="bg-[#FFFDF7] border-2 border-[#B45309] rounded-[12px] p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#B45309]">Media Pipeline (Degraded)</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Video processing queue</h3>
+</div>
+<!-- Status is paired with icon + text -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                Degraded Performance
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#FDE68A] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">H.264 / Watermarking</span>
+<span class="text-sm font-bold text-[#0B1320] font-mono">Active jobs: 4</span>
+</div>
+<div>
+<span class="text-[#B45309] font-medium block">Queue Backlog</span>
+<span class="text-sm font-bold text-[#B45309] font-mono">47 queued (High)</span>
+</div>
+</div>
+</div>
+<!-- Tile 4: Webhook Latency -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Payment Ingestion</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Webhook latency</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Optimal
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Paystack Endpoint</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">198ms</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Success Ratio</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">99.8%</span>
+</div>
+</div>
+</div>
+<!-- Tile 5: Email Delivery -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Notifications</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Email delivery</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Operational
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] grid grid-cols-2 gap-3 text-xs">
+<div>
+<span class="text-[#64748B] block">Transactional SMTP</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">99.7% delivery</span>
+</div>
+<div>
+<span class="text-[#64748B] block">Outbox Queue</span>
+<span class="text-sm font-semibold text-[#0B1320] font-mono">0 queued</span>
+</div>
+</div>
+</div>
+<!-- Tile 6: Storage Used -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Object Storage</span>
+<h3 class="text-base font-bold text-[#0B1320] mt-0.5">Storage used</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Healthy
+              </span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#F1F5F9] text-xs">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[#64748B]">S3 Lagos Cold Storage</span>
+<span class="font-mono font-medium text-[#0B1320]">1.42 TB / 5.0 TB (28.4%)</span>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-full rounded-full" style="width: 28.4%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. QUEUE BACKLOG CHART (Showing Spike to 47 jobs) -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 shadow-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-[#E2E8F0] gap-3">
+<div>
+<h3 class="text-base font-bold text-[#0B1320]">24-Hour Processing Pipeline Backlog (Spike Observed)</h3>
+<p class="text-xs text-[#64748B]">Elevated concurrent queue length breaching the 25-job threshold at 14:00 WAT.</p>
+</div>
+<div class="flex items-center gap-4 text-xs font-medium">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-[#B45309] rounded-xs"></span> Video Queue (Elevated)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-[#64748B] rounded-xs"></span> Paystack Webhook Worker</span>
+<span class="flex items-center gap-1.5 text-[#B91C1C]"><span class="w-3 h-0.5 bg-[#B91C1C] border-t border-dashed"></span> Benchmark Threshold (25 jobs)</span>
+</div>
+</div>
+<div class="mt-6 relative">
+<!-- Benchmark line at height 50% (~25 jobs) -->
+<div class="absolute w-full top-[50%] border-b border-dashed border-[#B91C1C] z-10 flex justify-end">
+<span class="text-[10px] font-mono text-[#B91C1C] bg-white px-1 -mt-2.5">Max Threshold: 25 Jobs</span>
+</div>
+<!-- Backlog Chart with 47 jobs spike -->
+<div class="h-44 flex items-end justify-between gap-2 pt-6 pb-2 border-b border-[#CBD5E1]">
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 12px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 6px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">00:00</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 8px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">03:00</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 14px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 10px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">06:00</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 28px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 18px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">09:00</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#1D4ED8] rounded-t-xs" style="height: 38px;"></div>
+<div class="w-2.5 bg-[#64748B] rounded-t-xs" style="height: 20px;"></div>
+</div>
+<span class="text-[10px] text-[#64748B] font-mono">12:00</span>
+</div>
+<!-- 14:00 SPIKE COLUMN (Height 90% representing 47 queued jobs) -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end bg-[#FFFBEB] border-x border-[#FDE68A] rounded">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-3.5 bg-[#B45309] rounded-t-xs" style="height: 124px;" title="47 Queued Jobs Spike"></div>
+<div class="w-2 bg-[#64748B] rounded-t-xs" style="height: 12px;"></div>
+</div>
+<span class="text-[10px] font-bold text-[#B45309] font-mono">14:00 (47)</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">16:00</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">18:00</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">21:00</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex items-end justify-center gap-1">
+<div class="w-2.5 bg-[#E2E8F0] rounded-t-xs" style="height: 4px;"></div>
+</div>
+<span class="text-[10px] text-[#94A3B8] font-mono">24:00</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-xs text-[#B45309] font-medium mt-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">trending_up</span> Spike threshold triggered auto-scaler pod provision.
+              </span>
+<span class="font-mono text-xs">Estimated drain completion: 14:48 WAT</span>
+</div>
+</div>
+</div>
+<!-- 4. RECENT ERROR SPIKE TABLE (Showing Degraded Incident Log Rows) -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] shadow-xs overflow-hidden">
+<div class="p-4 bg-[#FEF2F2] border-b border-[#FEE2E2] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#B91C1C] text-[20px]">crisis_alert</span>
+<span class="text-xs font-bold text-[#B91C1C]">Telemetry Spike Stream (Filtered by: Last 15 minutes)</span>
+</div>
+<span class="text-xs font-mono text-[#B91C1C]">4 incidents logged in current window</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[12px] font-semibold text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-5">Timestamp (WAT)</th>
+<th class="py-3 px-5">Error Code / Category</th>
+<th class="py-3 px-5">Service</th>
+<th class="py-3 px-5">Message / Stack Summary</th>
+<th class="py-3 px-5">Affected User / Endpoint</th>
+<th class="py-3 px-5 text-right">Status &amp; Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm text-[#0F172A]">
+<!-- Spike Row 1: High Risk / Transcode Queue Error -->
+<tr class="bg-[#FFFDF7] hover:bg-[#FEF9C3] transition-colors">
+<td class="py-3 px-5 font-mono text-xs text-[#B45309] font-semibold whitespace-nowrap">14:32:05 · Just now</td>
+<td class="py-3 px-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[13px]">error</span>
+                      VID-QUEUE-CAP
+                    </span>
+</td>
+<td class="py-3 px-5 font-bold text-xs text-[#0B1320]">Video Transcoder</td>
+<td class="py-3 px-5 text-xs text-[#B45309] font-medium max-w-sm truncate">
+                    Worker thread exhausted: WorkerPool[ffmpeg-default] saturated (100% CPU on Node VI-02).
+                  </td>
+<td class="py-3 px-5 font-mono text-xs text-[#64748B]">/pipeline/transcode/watermark</td>
+<td class="py-3 px-5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs font-bold text-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">autorenew</span> Auto-rerouting
+                    </span>
+</td>
+</tr>
+<!-- Spike Row 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-5 font-mono text-xs text-[#64748B] whitespace-nowrap">14:28:41 · 6m ago</td>
+<td class="py-3 px-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                      VID-ENC-IO
+                    </span>
+</td>
+<td class="py-3 px-5 font-medium text-xs">Video Pipeline</td>
+<td class="py-3 px-5 text-xs text-[#334155] max-w-sm truncate">
+                    Chunk timeout on S3 cold storage read: cohort-auditing-deepdive-09.mp4. Retry scheduled.
+                  </td>
+<td class="py-3 px-5 font-mono text-xs text-[#64748B]">s3://aj-archive-lagos/media</td>
+<td class="py-3 px-5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> In Retry Backoff
+                    </span>
+</td>
+</tr>
+<!-- Spike Row 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3 px-5 font-mono text-xs text-[#64748B] whitespace-nowrap">14:22:15 · 12m ago</td>
+<td class="py-3 px-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                      ERR-WH-TIMEOUT
+                    </span>
+</td>
+<td class="py-3 px-5 font-medium text-xs">Payment Gateway</td>
+<td class="py-3 px-5 text-xs text-[#334155] max-w-sm truncate">
+                    Paystack webhook response delayed: latency 1,420ms exceeding warning ceiling.
+                  </td>
+<td class="py-3 px-5 font-mono text-xs text-[#64748B]">/api/v1/billing/paystack/callback</td>
+<td class="py-3 px-5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs font-medium text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">done</span> Acked
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 5. TABLE SKELETON / LOADING & EMPTY STATE DEMONSTRATIONS -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<!-- Loading Skeleton State Container -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0] mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-[#64748B]">Specification State: Data Stream Loading</span>
+<span class="text-xs font-mono text-[#1D4ED8] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] animate-spin">sync</span> Polling
+              </span>
+</div>
+<div class="space-y-3">
+<div class="h-4 bg-[#E2E8F0] rounded animate-pulse w-3/4"></div>
+<div class="h-8 bg-[#F1F5F9] rounded animate-pulse w-full"></div>
+<div class="h-8 bg-[#F1F5F9] rounded animate-pulse w-full"></div>
+<div class="h-8 bg-[#F1F5F9] rounded animate-pulse w-5/6"></div>
+</div>
+<div class="text-[11px] text-[#94A3B8] font-mono mt-4">Simulated telemetry fetch interval (30s)</div>
+</div>
+<!-- Empty State Container -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<span class="text-xs font-bold uppercase tracking-wider text-[#64748B]">Specification State: Filter Result Empty</span>
+<span class="text-xs font-mono text-[#047857]">Level: Critical</span>
+</div>
+<div class="py-6 text-center">
+<span class="material-symbols-outlined text-[#047857] text-[36px] mb-2">task_alt</span>
+<h5 class="text-sm font-semibold text-[#0B1320]">No Critical Exceptions Logged</h5>
+<p class="text-xs text-[#64748B] max-w-xs mx-auto mt-1">There are no Level 1 / Critical fault occurrences in the current 24-hour audit retention log.</p>
+</div>
+<div class="text-[11px] text-[#94A3B8] font-mono">Filter reset available</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- INSTITUTIONAL FOOTER (Shared Anchor) -->
+<footer class="w-full bg-white border-t border-[#E2E8F0] py-6 z-30 relative ml-0">
+<div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#64748B]">
+<div>
+<p class="font-normal">
+          © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+        </p>
+<p class="text-[11px] text-[#94A3B8] mt-0.5">Lagos Operations Center · Primary Gateway WAT</p>
+</div>
+<nav aria-label="Audit Legal Links" class="flex flex-wrap items-center gap-6 text-xs font-medium">
+<a class="text-[#475569] hover:text-[#0B1320] transition-colors" href="#">Audit Protocol</a>
+<a class="text-[#475569] hover:text-[#0B1320] transition-colors" href="#">Verification Registry</a>
+<a class="text-[#475569] hover:text-[#0B1320] transition-colors" href="#">Public Ledger Key</a>
+<a class="text-[#475569] hover:text-[#0B1320] transition-colors" href="#">Governance Standards</a>
+<a class="text-[#475569] hover:text-[#0B1320] transition-colors" href="#">Ethics &amp; Compliance</a>
+<a class="text-[#1D4ED8] underline font-semibold" href="#">System Telemetry</a>
+</nav>
+</div>
+</footer>
+</body></html>

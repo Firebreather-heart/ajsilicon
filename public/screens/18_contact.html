@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform - Contact Specification Board</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "pedigree-amber-light": "#F59E0B",
+            "tertiary-container": "#2f1500",
+            "inverse-surface": "#233144",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-slate-tech": "#1E293B",
+            "surface-dim": "#ccdbf4",
+            "on-tertiary": "#ffffff",
+            "border-structural": "#E2E8F0",
+            "tertiary-fixed-dim": "#ffb77d",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#76849f",
+            "on-surface-variant": "#44474d",
+            "surface-container-high": "#dde9ff",
+            "tertiary": "#000000",
+            "surface-card": "#FFFFFF",
+            "on-tertiary-fixed": "#2f1500",
+            "outline-variant": "#c5c6cd",
+            "secondary-container": "#6cf8bb",
+            "background": "#f8f9ff",
+            "surface-navy-dark": "#0B1320",
+            "primary-container": "#0d1c32",
+            "on-primary-fixed-variant": "#39475f",
+            "on-secondary-fixed": "#002113",
+            "on-tertiary-container": "#c76c00",
+            "border-hairline": "#CBD5E1",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-variant": "#d5e3fd",
+            "surface-bright": "#f8f9ff",
+            "error": "#B91C1C",
+            "surface-container-highest": "#d5e3fd",
+            "on-primary": "#ffffff",
+            "outline": "#64748B",
+            "primary-fixed": "#d6e3ff",
+            "on-primary-fixed": "#0d1c32",
+            "on-background": "#0d1c2f",
+            "secondary": "#006c49",
+            "inverse-primary": "#b9c7e4",
+            "surface-container-low": "#eff4ff",
+            "secondary-fixed": "#6ffbbe",
+            "primary": "#0B1320",
+            "error-container": "#FEF2F2",
+            "on-error-container": "#B91C1C",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "inverse-on-surface": "#ebf1ff",
+            "surface-tint": "#515f78",
+            "surface": "#f8f9ff",
+            "on-surface": "#0F172A",
+            "surface-canvas": "#F8FAFC",
+            "surface-container": "#e6eeff",
+            "primary-fixed-dim": "#b9c7e4",
+            "on-secondary-container": "#00714d",
+            "tertiary-fixed": "#ffdcc3",
+            "on-secondary": "#ffffff",
+            "audit-pass-mint": "#047857"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.75rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "title-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "telemetry-data": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "title-md": ["1.125rem", { "lineHeight": "1.625rem", "fontWeight": "600" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-hero-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }],
+            "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "telemetry-data": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "500" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }],
+            "display-hero": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-canvas text-on-surface antialiased p-6 lg:p-12 font-body-md text-body-md min-h-screen">
+<!-- Specification Meta Header -->
+<header class="max-w-[1440px] mx-auto mb-10 pb-6 border-b border-border-structural">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<span class="inline-block px-2.5 py-1 bg-surface-slate-tech text-white text-label-sm font-label-sm rounded mb-2 uppercase tracking-wider">Design Specification Sheet</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Screen Specification: Contact</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">A.J. Silicon Learning Platform • Audit, Risk and IT Governance Training • Lagos, Nigeria</p>
+</div>
+<div class="text-left md:text-right font-body-sm text-body-sm text-on-surface-variant">
+<p><span class="font-semibold text-on-surface">Verification Date:</span> 05 Oct 2026</p>
+<p><span class="font-semibold text-on-surface">Operating Time:</span> West Africa Time (WAT)</p>
+<p><span class="font-semibold text-on-surface">Specification Status:</span> Production Ready</p>
+</div>
+</div>
+</header>
+<div class="max-w-[1440px] mx-auto space-y-16">
+<!-- ========================================== -->
+<!-- VARIANT 1: STATE 1 - EMPTY (DESKTOP)       -->
+<!-- ========================================== -->
+<section class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded bg-primary text-white font-title-md text-sm">1</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">State 1: Empty Form (Desktop Viewport - 1440px Canvas)</h2>
+</div>
+<!-- Desktop Frame Container -->
+<div class="w-full bg-white rounded-xl border border-border-structural overflow-hidden shadow-sm">
+<!-- Public Top Bar (Strictly no sidebar) -->
+<header class="w-full bg-surface-navy-dark border-b border-surface-slate-tech px-8 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<!-- Official Logo Mounted on clean white rounded plate -->
+<div class="bg-white rounded-md px-3 py-1.5 flex items-center justify-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvuU3HeMpNaq-hxgiPt_6hd6Vysdtfs7eTRp11rShlXYJOZyGJ8e9DTpQivbfZTW_yMFppg2Bv2GfJyS7bhXOEsiR3FyHvZ1F7lsdglA2emaboic_vK3vv8cqFzrdOmebnLgM5wIoh5cd8hRmXDZ1xWswGAKDbBv-KTM-MtFuK6oiySBWumVGTwvB9kURibVfYVU8Em1s5s914kp4dwfnNqQL7HzT6Ttlb1Vlji9_zVo301fHns6o9W6vOFPuvfaBGSlM"/>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline" href="#">Programmes</a>
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline" href="#">Workshops</a>
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline font-semibold" href="#">Log in</a>
+</nav>
+</header>
+<!-- Main Canvas Content -->
+<main class="p-8 lg:p-12 max-w-[1280px] mx-auto">
+<!-- Screen Header -->
+<div class="mb-10 max-w-2xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Contact us</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Get in touch with our institutional training team regarding CISA, CRISC, CISM cohorts, enterprise training schedules, or exam preparation services in Lagos.
+            </p>
+</div>
+<!-- Two-column Grid (Form + Details Card & Map) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Contact Form Column (7 Cols) -->
+<div class="lg:col-span-7 bg-white p-8 rounded-xl border border-border-structural">
+<form class="space-y-6" onsubmit="event.preventDefault()">
+<!-- Full name input -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="name-v1">Full name</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="name-v1" placeholder="e.g. Babatunde Lawal" type="text"/>
+</div>
+<!-- Email address input -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="email-v1">Email address</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="email-v1" placeholder="e.g. b.lawal@example.com" type="email"/>
+</div>
+<!-- Phone number input with +234 prepend box -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="phone-v1">Phone number</label>
+<div class="flex">
+<span class="inline-flex items-center min-h-[44px] px-3.5 bg-slate-100 border border-r-0 border-[#64748B] rounded-l-lg font-telemetry-data text-body-md text-on-surface font-medium select-none">
+                      +234
+                    </span>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-r-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="phone-v1" placeholder="803 000 0000" type="tel"/>
+</div>
+</div>
+<!-- Subject input -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="subject-v1">Subject</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="subject-v1" placeholder="e.g. CISA Exam Prep Cohort Enquiry" type="text"/>
+</div>
+<!-- Message textarea -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="message-v1">Message</label>
+<textarea class="w-full px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none resize-y" id="message-v1" placeholder="Enter your message here..." rows="5"></textarea>
+</div>
+<!-- Submit button (Disabled until valid) -->
+<div>
+<button class="min-h-[44px] w-full md:w-auto px-8 py-2.5 bg-[#E2E8F0] text-[#94A3B8] font-body-md font-semibold rounded cursor-not-allowed" disabled="" type="button">
+                    Send message
+                  </button>
+</div>
+</form>
+</div>
+<!-- Right: Details Card & Map Placeholder (5 Cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Contact Details Card -->
+<div class="bg-white p-6 rounded-xl border border-border-structural space-y-5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface border-b border-border-structural pb-3">Contact details</h4>
+<div class="space-y-4">
+<!-- Address -->
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Physical Address</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                        14B Amara Olu Street, off Zenith Bank, Lafeef Jakande Road, Agidingbi, Ikeja, Lagos
+                      </p>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="mail">mail</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Email</p>
+<a class="font-body-sm text-body-sm text-[#1D4ED8] hover:underline font-medium min-h-[44px] inline-flex items-center" href="mailto:info@ajsilicon.com">
+                        info@ajsilicon.com
+                      </a>
+</div>
+</div>
+<!-- Phone -->
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="phone">phone</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Phone</p>
+<a class="font-body-sm text-body-sm text-on-surface font-medium min-h-[44px] inline-flex items-center" href="tel:+2349130232184">
+                        +234 913 023 2184
+                      </a>
+</div>
+</div>
+<!-- Office hours -->
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Office hours</p>
+<p class="font-body-sm text-body-sm text-on-surface">
+                        Monday to Friday, 9:00 AM to 5:00 PM WAT
+                      </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Placeholder Block -->
+<div class="bg-slate-50 border border-border-structural rounded-xl p-6 flex flex-col items-center justify-center min-h-[200px] text-center" data-location="Ikeja, Lagos, Nigeria" style="">
+<div class="w-12 h-12 rounded-full bg-white border border-border-structural flex items-center justify-center text-[#0B1320] mb-3 shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="location_on">location_on</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Map</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Agidingbi, Ikeja, Lagos</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- VARIANT 2: STATE 2 - VALIDATION ERRORS     -->
+<!-- ========================================== -->
+<section class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded bg-error text-white font-title-md text-sm">2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">State 2: Validation Errors (Desktop Viewport - 1440px Canvas)</h2>
+</div>
+<div class="w-full bg-white rounded-xl border border-border-structural overflow-hidden shadow-sm">
+<!-- Public Top Bar -->
+<header class="w-full bg-surface-navy-dark border-b border-surface-slate-tech px-8 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded-md px-3 py-1.5 flex items-center justify-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaewjj-fdEUAcIhmp8uPy1oEea9lg6WOqDh95mjVApK3w4vK7NpoIDUyOHqMFxE2nghZeacIMCVj9jNpnflEvZvgP3653Ockenn3e_koHSjWvXpQ0yXude5QQcQZIUeyTQzG9glfuLeLnlZ6h-Uh0UpkHjujjEbvqcn1SAbHYCbpwTaswOOQOp9JAnI0NFxoaO8dLpZalMEVMWXlfro3swbsc0B-bL4S04sPPY5grfk-vD9EHlPtoIbSP5mYRlXtMgLkU"/>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline" href="#">Programmes</a>
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline" href="#">Workshops</a>
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline font-semibold" href="#">Log in</a>
+</nav>
+</header>
+<!-- Main Canvas Content -->
+<main class="p-8 lg:p-12 max-w-[1280px] mx-auto">
+<!-- Screen Header -->
+<div class="mb-6 max-w-2xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Contact us</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Get in touch with our institutional training team regarding CISA, CRISC, CISM cohorts, enterprise training schedules, or exam preparation services in Lagos.
+            </p>
+</div>
+<!-- Summary Error Banner -->
+<div class="mb-8 p-4 bg-[#FEF2F2] border border-[#B91C1C] rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B91C1C] text-xl flex-shrink-0 mt-0.5" data-icon="error">error</span>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-[#B91C1C]">Please correct the following errors before submitting:</h4>
+<ul class="list-disc list-inside mt-1.5 text-body-sm font-body-sm text-[#B91C1C] space-y-0.5">
+<li>Full name is required.</li>
+<li>Enter a valid email address (e.g. b.lawal@example.com).</li>
+<li>Phone number is required.</li>
+<li>Message cannot be blank.</li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Form Column with Validation Errors -->
+<div class="lg:col-span-7 bg-white p-8 rounded-xl border border-border-structural">
+<form class="space-y-6" onsubmit="event.preventDefault()">
+<!-- Full name error -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="name-v2">Full name</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#B91C1C] rounded-lg text-body-md text-on-surface focus:ring-2 focus:ring-[#B91C1C] focus:ring-offset-2 outline-none" id="name-v2" type="text" value=""/>
+<p class="mt-1.5 font-body-sm text-body-sm text-[#B91C1C] flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="error">error</span>
+                    Full name is required.
+                  </p>
+</div>
+<!-- Email error (invalid format) -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="email-v2">Email address</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#B91C1C] rounded-lg text-body-md text-on-surface focus:ring-2 focus:ring-[#B91C1C] focus:ring-offset-2 outline-none" id="email-v2" type="email" value="b.lawal-invalid-address"/>
+<p class="mt-1.5 font-body-sm text-body-sm text-[#B91C1C] flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="error">error</span>
+                    Enter a valid email address format (e.g. b.lawal@example.com).
+                  </p>
+</div>
+<!-- Phone number missing error -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="phone-v2">Phone number</label>
+<div class="flex">
+<span class="inline-flex items-center min-h-[44px] px-3.5 bg-slate-100 border border-r-0 border-[#B91C1C] rounded-l-lg font-telemetry-data text-body-md text-on-surface font-medium select-none">
+                      +234
+                    </span>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#B91C1C] rounded-r-lg text-body-md text-on-surface focus:ring-2 focus:ring-[#B91C1C] focus:ring-offset-2 outline-none" id="phone-v2" placeholder="803 000 0000" type="tel" value=""/>
+</div>
+<p class="mt-1.5 font-body-sm text-body-sm text-[#B91C1C] flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="error">error</span>
+                    Phone number is required.
+                  </p>
+</div>
+<!-- Subject (Valid field) -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="subject-v2">Subject</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="subject-v2" type="text" value="CISA Exam Prep Cohort Enquiry"/>
+</div>
+<!-- Message error -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="message-v2">Message</label>
+<textarea class="w-full px-3.5 py-2.5 bg-white border border-[#B91C1C] rounded-lg text-body-md text-on-surface focus:ring-2 focus:ring-[#B91C1C] focus:ring-offset-2 outline-none resize-y" id="message-v2" rows="5"></textarea>
+<p class="mt-1.5 font-body-sm text-body-sm text-[#B91C1C] flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="error">error</span>
+                    Message cannot be blank.
+                  </p>
+</div>
+<!-- Button (Remains Disabled) -->
+<div>
+<button class="min-h-[44px] w-full md:w-auto px-8 py-2.5 bg-[#E2E8F0] text-[#94A3B8] font-body-md font-semibold rounded cursor-not-allowed" disabled="" type="button">
+                    Send message
+                  </button>
+</div>
+</form>
+</div>
+<!-- Details & Map (Right Column) -->
+<div class="lg:col-span-5 space-y-6">
+<div class="bg-white p-6 rounded-xl border border-border-structural space-y-5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface border-b border-border-structural pb-3">Contact details</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Physical Address</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                        14B Amara Olu Street, off Zenith Bank, Lafeef Jakande Road, Agidingbi, Ikeja, Lagos
+                      </p>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="mail">mail</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Email</p>
+<a class="font-body-sm text-body-sm text-[#1D4ED8] hover:underline font-medium min-h-[44px] inline-flex items-center" href="mailto:info@ajsilicon.com">
+                        info@ajsilicon.com
+                      </a>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="phone">phone</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Phone</p>
+<a class="font-body-sm text-body-sm text-on-surface font-medium min-h-[44px] inline-flex items-center" href="tel:+2349130232184">
+                        +234 913 023 2184
+                      </a>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Office hours</p>
+<p class="font-body-sm text-body-sm text-on-surface">
+                        Monday to Friday, 9:00 AM to 5:00 PM WAT
+                      </p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 border border-border-structural rounded-xl p-6 flex flex-col items-center justify-center min-h-[200px] text-center" data-location="Ikeja, Lagos, Nigeria" style="">
+<div class="w-12 h-12 rounded-full bg-white border border-border-structural flex items-center justify-center text-[#0B1320] mb-3 shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="location_on">location_on</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Map</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Agidingbi, Ikeja, Lagos</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- VARIANT 3: STATE 3 - SUCCESS (DESKTOP)     -->
+<!-- ========================================== -->
+<section class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded bg-[#047857] text-white font-title-md text-sm">3</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">State 3: Success Confirmation (Desktop Viewport - 1440px Canvas)</h2>
+</div>
+<div class="w-full bg-white rounded-xl border border-border-structural overflow-hidden shadow-sm">
+<!-- Public Top Bar -->
+<header class="w-full bg-surface-navy-dark border-b border-surface-slate-tech px-8 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded-md px-3 py-1.5 flex items-center justify-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC59BoLZCkTeNzhMFcldVzFjTHLknl8pex-BldNf7n0x7qGxA5xa8fGjHcrjSAqc-D1QL3-pLjlYlu4WKL-aEL1EFDxR2snU8X1whixRROFmmioFXtFF-82oowAsUEr2UtXKbuIL-iTbBLsm-V2vF4QxetaCraNYSSlgJomPLZbACF9YBPOTtir-tMjm9oB_FVM7zTSh61Gz2Kqkd9Fi3kwLztEsLWs8HlfZPHSrgveMPA9wt8K5vNkCv_t8PQz5jy_keI"/>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline" href="#">Programmes</a>
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline" href="#">Workshops</a>
+<a class="text-[#93C5FD] font-body-md text-body-md hover:underline font-semibold" href="#">Log in</a>
+</nav>
+</header>
+<!-- Main Canvas Content -->
+<main class="p-8 lg:p-12 max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Success Message State (7 Cols) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Success Confirmation Card -->
+<div class="bg-[#ECFDF5] border border-[#047857] p-8 rounded-xl space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#047857] text-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Message sent. We reply within 2 working days.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Your enquiry reference has been logged on 05 Oct 2026 at 14:22 WAT.</p>
+</div>
+</div>
+<!-- Enquiry Summary Panel -->
+<div class="bg-white border border-[#A7F3D0] rounded-lg p-5 mt-4 space-y-3">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Submitted Enquiry Summary</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-body-sm font-body-sm">
+<div>
+<span class="text-on-surface-variant block font-medium">Full Name:</span>
+<span class="text-on-surface font-semibold">Babatunde Lawal</span>
+</div>
+<div>
+<span class="text-on-surface-variant block font-medium">Email Address:</span>
+<span class="text-on-surface font-semibold">b.lawal@example.com</span>
+</div>
+<div>
+<span class="text-on-surface-variant block font-medium">Phone Number:</span>
+<span class="text-on-surface font-semibold">+234 803 123 4567</span>
+</div>
+<div>
+<span class="text-on-surface-variant block font-medium">Subject:</span>
+<span class="text-on-surface font-semibold">CISA Exam Prep Cohort Enquiry</span>
+</div>
+</div>
+</div>
+<!-- Action Links -->
+<div class="pt-4 flex flex-wrap items-center gap-6">
+<button class="min-h-[44px] px-6 py-2.5 bg-[#0B1320] text-white font-body-md font-semibold rounded hover:bg-[#1E293B] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 transition-colors" type="button">
+                    Return to Programmes
+                  </button>
+<a class="font-body-md text-body-md text-[#1D4ED8] hover:underline font-medium min-h-[44px] inline-flex items-center" href="#">
+                    Send another message
+                  </a>
+</div>
+</div>
+</div>
+<!-- Right: Details Card & Map -->
+<div class="lg:col-span-5 space-y-6">
+<div class="bg-white p-6 rounded-xl border border-border-structural space-y-5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface border-b border-border-structural pb-3">Contact details</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Physical Address</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                        14B Amara Olu Street, off Zenith Bank, Lafeef Jakande Road, Agidingbi, Ikeja, Lagos
+                      </p>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="mail">mail</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Email</p>
+<a class="font-body-sm text-body-sm text-[#1D4ED8] hover:underline font-medium min-h-[44px] inline-flex items-center" href="mailto:info@ajsilicon.com">
+                        info@ajsilicon.com
+                      </a>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="phone">phone</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Phone</p>
+<a class="font-body-sm text-body-sm text-on-surface font-medium min-h-[44px] inline-flex items-center" href="tel:+2349130232184">
+                        +234 913 023 2184
+                      </a>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-xl flex-shrink-0" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Office hours</p>
+<p class="font-body-sm text-body-sm text-on-surface">
+                        Monday to Friday, 9:00 AM to 5:00 PM WAT
+                      </p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 border border-border-structural rounded-xl p-6 flex flex-col items-center justify-center min-h-[200px] text-center" data-location="Ikeja, Lagos, Nigeria" style="">
+<div class="w-12 h-12 rounded-full bg-white border border-border-structural flex items-center justify-center text-[#0B1320] mb-3 shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="location_on">location_on</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Map</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Agidingbi, Ikeja, Lagos</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- VARIANT 4: STATE 4 - MOBILE 390PX (EMPTY)  -->
+<!-- ========================================== -->
+<section class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-7 h-7 rounded bg-surface-slate-tech text-white font-title-md text-sm">4</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">State 4: Mobile Viewport (390px Plain Frame - No Chrome / No Status Bar)</h2>
+</div>
+<!-- Plain 390px Mobile Frame -->
+<div class="w-[390px] mx-auto bg-white rounded-xl border border-border-structural overflow-hidden shadow-sm">
+<!-- Mobile Top Bar with official logo on white plate -->
+<header class="w-full bg-surface-navy-dark border-b border-surface-slate-tech px-4 py-3 flex items-center justify-between">
+<div class="bg-white rounded-md px-2.5 py-1 flex items-center justify-center shadow-sm">
+<img alt="A.J. SILICON" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvlWziEkV47nVlsQGUFK55gdpfrBWQAlWhyI4bcomwPSVWiQDOzT0sdn_LnRgSwYoMkBo3PNUzKfQtSn_ovcYbyA98CVTTt7j__FyOXFUrLu2dp5gablNbbgC4wC3WdMdOrUZokHeY9zVdDjqIKDOPmiomOdPNrrbLuvhK-e1tonDZCiMMWDjNOTzZ_CMUxJII22RaUVyyXy7h9Nf2iaCkm618Mlwo0wa5V_yXKXLDBMOLiHpCwyQnLbjGM8BqMngkqaI"/>
+</div>
+<div class="flex items-center gap-3">
+<a class="text-[#93C5FD] font-body-sm text-body-sm hover:underline" href="#">Programmes</a>
+<a class="text-[#93C5FD] font-body-sm text-body-sm hover:underline font-semibold" href="#">Log in</a>
+</div>
+</header>
+<!-- Mobile Scroll Content -->
+<main class="p-4 space-y-6">
+<!-- Heading -->
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Contact us</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Get in touch with our institutional training team regarding CISA, CRISC, CISM cohorts or corporate sessions in Lagos.
+            </p>
+</div>
+<!-- Form (Stacked) -->
+<div class="bg-white p-4 rounded-xl border border-border-structural">
+<form class="space-y-4" onsubmit="event.preventDefault()">
+<!-- Full name -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1.5 font-medium" for="name-v4">Full name</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="name-v4" placeholder="e.g. Babatunde Lawal" type="text"/>
+</div>
+<!-- Email address -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1.5 font-medium" for="email-v4">Email address</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="email-v4" placeholder="e.g. b.lawal@example.com" type="email"/>
+</div>
+<!-- Phone number with +234 prepend box -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1.5 font-medium" for="phone-v4">Phone number</label>
+<div class="flex">
+<span class="inline-flex items-center min-h-[44px] px-3 bg-slate-100 border border-r-0 border-[#64748B] rounded-l-lg font-telemetry-data text-body-md text-on-surface font-medium select-none">
+                    +234
+                  </span>
+<input class="w-full min-h-[44px] px-3 py-2.5 bg-white border border-[#64748B] rounded-r-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="phone-v4" placeholder="803 000 0000" type="tel"/>
+</div>
+</div>
+<!-- Subject -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1.5 font-medium" for="subject-v4">Subject</label>
+<input class="w-full min-h-[44px] px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none" id="subject-v4" placeholder="e.g. CISA Exam Prep Cohort Enquiry" type="text"/>
+</div>
+<!-- Message -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1.5 font-medium" for="message-v4">Message</label>
+<textarea class="w-full px-3.5 py-2.5 bg-white border border-[#64748B] rounded-lg text-body-md text-on-surface placeholder-[#94A3B8] focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 outline-none resize-y" id="message-v4" placeholder="Enter your message here..." rows="5"></textarea>
+</div>
+<!-- Button disabled -->
+<div>
+<button class="min-h-[44px] w-full px-6 py-2.5 bg-[#E2E8F0] text-[#94A3B8] font-body-md font-semibold rounded cursor-not-allowed" disabled="" type="button">
+                  Send message
+                </button>
+</div>
+</form>
+</div>
+<!-- Contact Details Card (Mobile) -->
+<div class="bg-white p-4 rounded-xl border border-border-structural space-y-4">
+<h4 class="font-headline-sm text-headline-sm text-on-surface border-b border-border-structural pb-2">Contact details</h4>
+<div class="space-y-3.5">
+<!-- Address -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-lg flex-shrink-0" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Physical Address</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-normal">
+                    14B Amara Olu Street, off Zenith Bank, Lafeef Jakande Road, Agidingbi, Ikeja, Lagos
+                  </p>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-lg flex-shrink-0" data-icon="mail">mail</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Email</p>
+<a class="font-body-sm text-body-sm text-[#1D4ED8] hover:underline font-medium min-h-[44px] inline-flex items-center" href="mailto:info@ajsilicon.com">
+                    info@ajsilicon.com
+                  </a>
+</div>
+</div>
+<!-- Phone -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-lg flex-shrink-0" data-icon="phone">phone</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Phone</p>
+<a class="font-body-sm text-body-sm text-on-surface font-medium min-h-[44px] inline-flex items-center" href="tel:+2349130232184">
+                    +234 913 023 2184
+                  </a>
+</div>
+</div>
+<!-- Office hours -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-0.5 text-lg flex-shrink-0" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">Office hours</p>
+<p class="font-body-sm text-body-sm text-on-surface">
+                    Monday to Friday, 9:00 AM to 5:00 PM WAT
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Placeholder Block (Mobile) -->
+<div class="bg-slate-50 border border-border-structural rounded-xl p-5 flex flex-col items-center justify-center min-h-[160px] text-center" data-location="Ikeja, Lagos, Nigeria" style="">
+<div class="w-10 h-10 rounded-full bg-white border border-border-structural flex items-center justify-center text-[#0B1320] mb-2 shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="location_on">location_on</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Map</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Agidingbi, Ikeja, Lagos</p>
+</div>
+</main>
+</div>
+</section>
+</div>
+</body></html>

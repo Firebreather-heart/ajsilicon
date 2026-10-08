@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 Checkout — Specification Board</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    background-color: #F8FAFC;
+    -webkit-font-smoothing: antialiased;
+  }
+  .focus-ring:focus-within, .focus-ring:focus {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  .material-symbols-outlined.fill-1 {
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+</head>
+<body class="p-6 md:p-10 space-y-16">
+
+  <!-- SPECIFICATION SHEET HEADER -->
+  <header class="max-w-[1440px] mx-auto border-b border-[#E2E8F0] pb-6">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0B1320] text-white">Design Specification · Screen 20</span>
+          <span class="text-xs font-medium text-[#475569]">Institutional Checkout Flow</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-bold text-[#0F172A]">20 Checkout — Complete Specification Board</h1>
+        <p class="text-sm text-[#475569] mt-1">A.J. Silicon Learning Platform · Lagos, Nigeria · Paystack Channel Integration Matrix</p>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-[#E2E8F0] text-xs space-y-1 text-[#475569]">
+        <div><strong class="text-[#0F172A]">Tokens:</strong> Primary #0B1320, Link #1D4ED8, Focus #2563EB, Card #E2E8F0 (12px rad)</div>
+        <div><strong class="text-[#0F172A]">Currency:</strong> NGN (₦) with standard VAT calculation (7.5%)</div>
+        <div><strong class="text-[#0F172A]">Gateway:</strong> Paystack API Channels (Card, Bank transfer, USSD, Bank, QR)</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- STATE 1: DEFAULT (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-4">
+    <div class="flex items-center justify-between bg-white px-4 py-2.5 rounded-lg border border-[#E2E8F0]">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-[#0B1320] text-white text-xs font-bold flex items-center justify-center">1</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 1: Default State (Desktop 1440px)</span>
+      </div>
+      <span class="text-xs text-[#475569]">Standard cohort checkout · Card selected · Payer prefilled · Licenced period included</span>
+    </div>
+
+    <div class="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+      <!-- Public Top Bar with Student Name -->
+      <nav class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B]">
+        <div class="flex items-center gap-8">
+          <a href="#" class="bg-white px-3 py-1.5 rounded-md flex items-center shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgFKqyw37skaHAF-UGNBuPgz16p-lmyY6EogcamOdn-HCEqgIVyvFJIsXUd2eTRR6rVoXTfzdYLk_IAPfTR-3DvHQ64Y0rhTBq07GaWrRTHWzikyKhO3Aie_lTQMj9O2mETf3eP_YdkLNoTRSmp1dP0CdU-H_z8UFsH0UK7QimIh-J32HXg_OtWuKdEavN6dxy540EVbI3YvUpnBMoa65VLTzXwON_8Xro6Y-YbRwICoi1MLxcaF4nyHXkh3BY_KBfpOA" alt="A.J. Silicon" class="h-6 object-contain" />
+          </a>
+          <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#" class="text-[#93C5FD] hover:text-white transition-colors min-h-[44px] flex items-center">Programmes</a>
+            <a href="#" class="text-[#93C5FD] hover:text-white transition-colors min-h-[44px] flex items-center">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 bg-[#1E293B] px-3 py-1.5 rounded-lg border border-[#334155]">
+            <span class="material-symbols-outlined text-[#93C5FD] text-lg">account_circle</span>
+            <span class="text-sm font-medium text-white">Chinedu Eze</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Breadcrumbs & Step Indicator -->
+      <div class="px-8 pt-6 pb-2 border-b border-[#E2E8F0] bg-[#F8FAFC]">
+        <div class="text-xs text-[#475569] flex items-center gap-1.5">
+          <a href="#" class="hover:text-[#1D4ED8] hover:underline">Programmes</a>
+          <span>/</span>
+          <a href="#" class="hover:text-[#1D4ED8] hover:underline">CISA Exam Prep</a>
+          <span>/</span>
+          <a href="#" class="hover:text-[#1D4ED8] hover:underline">Select cohort</a>
+          <span>/</span>
+          <span class="text-[#0F172A] font-semibold">Checkout</span>
+        </div>
+        <h2 class="text-2xl font-bold text-[#0F172A] mt-2 mb-4">Checkout</h2>
+      </div>
+
+      <!-- Main Two-Column Layout -->
+      <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: Payer & Payment Methods (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Payer Details Card -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0B1320] text-xl">person</span>
+                Payer details
+              </h3>
+              <span class="text-xs text-[#475569]">Prefilled from account</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="s1-name">Full name</label>
+                <input type="text" id="s1-name" value="Chinedu Eze" 
+                  class="w-full h-11 px-3.5 rounded-lg border border-[#64748B] text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus-ring" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="s1-email">Email address</label>
+                <input type="email" id="s1-email" value="c.eze@example.com" 
+                  class="w-full h-11 px-3.5 rounded-lg border border-[#64748B] text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus-ring" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Methods Card (Paystack Channels) -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0B1320] text-xl">account_balance_wallet</span>
+                Payment method
+              </h3>
+              <span class="text-xs font-medium text-[#475569]">Select payment channel</span>
+            </div>
+
+            <fieldset class="space-y-2.5">
+              <legend class="sr-only">Paystack Payment Channels</legend>
+
+              <!-- Option 1: Card (Selected) -->
+              <label class="flex items-center justify-between p-3.5 rounded-xl border-2 border-[#0B1320] bg-[#F8FAFC] cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s1" value="card" checked class="w-4 h-4 text-[#0B1320] focus:ring-[#2563EB]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#0B1320] text-xl">credit_card</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Debit / Credit Card</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Mastercard, Visa, Verve</span>
+              </label>
+
+              <!-- Option 2: Bank transfer -->
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px] transition-colors">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s1" value="transfer" class="w-4 h-4 text-[#0B1320] focus:ring-[#2563EB]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">sync_alt</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Bank transfer</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Instant Paystack dynamic account</span>
+              </label>
+
+              <!-- Option 3: USSD -->
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px] transition-colors">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s1" value="ussd" class="w-4 h-4 text-[#0B1320] focus:ring-[#2563EB]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">pin</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">USSD</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">*737#, *919#, *894#, *966#</span>
+              </label>
+
+              <!-- Option 4: Bank -->
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px] transition-colors">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s1" value="bank" class="w-4 h-4 text-[#0B1320] focus:ring-[#2563EB]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">account_balance</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Bank</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Direct debit via internet banking</span>
+              </label>
+
+              <!-- Option 5: QR -->
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px] transition-colors">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s1" value="qr" class="w-4 h-4 text-[#0B1320] focus:ring-[#2563EB]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">qr_code_2</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">QR Code</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Scan to pay with mobile banking app</span>
+              </label>
+            </fieldset>
+
+            <!-- Secure Payment Note -->
+            <div class="pt-3 border-t border-[#E2E8F0] flex items-center gap-2 text-xs text-[#475569]">
+              <span class="material-symbols-outlined text-[#047857] text-base">lock</span>
+              <span>Payments are processed by <strong>Paystack</strong>. Your transaction is encrypted and secure.</span>
+            </div>
+          </div>
+
+          <!-- Licence Consent & CTA -->
+          <div class="space-y-4">
+            <label class="flex items-start gap-3 cursor-pointer select-none">
+              <input type="checkbox" checked class="mt-1 w-4 h-4 text-[#0B1320] rounded border-[#64748B] focus:ring-[#2563EB]" />
+              <span class="text-xs text-[#0F172A] leading-relaxed">
+                I accept the <a href="#" class="text-[#1D4ED8] underline hover:text-[#0B1320]">content licence</a> and acknowledge that preparatory materials and assessment access are licensed exclusively to my registered profile.
+              </span>
+            </label>
+
+            <button type="button" 
+              class="w-full h-12 bg-[#0B1320] hover:bg-[#1E293B] text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors min-h-[44px] focus-ring shadow-sm">
+              <span class="material-symbols-outlined text-base">lock</span>
+              <span>Pay ₦300,000</span>
+            </button>
+            <p class="text-[11px] text-center text-[#475569]">By clicking Pay, you will be redirected to complete payment via Paystack.</p>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary (5 cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-5 sticky top-6 shadow-sm">
+            <h3 class="text-base font-bold text-[#0F172A] border-b border-[#E2E8F0] pb-3 flex items-center justify-between">
+              <span>Order summary</span>
+              <span class="text-xs font-normal text-[#475569]">1 item</span>
+            </h3>
+
+            <!-- Item Details -->
+            <div class="space-y-2">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-bold text-[#0F172A]">CISA Exam Prep</h4>
+                  <p class="text-xs text-[#475569]">Mode: Virtual · 10 weeks</p>
+                  <p class="text-xs text-[#475569]">Cohort: <strong class="text-[#0F172A]">CISA Cohort 14</strong></p>
+                </div>
+                <span class="text-sm font-bold text-[#0F172A]">₦300,000</span>
+              </div>
+              
+              <!-- Licence Length & End Date -->
+              <div class="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-3 text-xs text-[#1E3A8A] space-y-1">
+                <div class="flex items-center gap-1.5 font-semibold">
+                  <span class="material-symbols-outlined text-[#1D4ED8] text-base">verified_user</span>
+                  <span>Institutional Licence Duration</span>
+                </div>
+                <p class="text-[11px] text-[#1E3A8A] leading-relaxed">
+                  90-day access following cohort completion + 30-day exam buffer.<br>
+                  Licence valid until: <strong class="text-[#0F172A]">17 Apr 2027</strong>
+                </p>
+              </div>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="border-t border-[#E2E8F0] pt-4 space-y-2 text-xs">
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>Tuition subtotal</span>
+                <span class="font-medium text-[#0F172A]">₦279,069.77</span>
+              </div>
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>Discount</span>
+                <span class="text-[#475569]">₦0</span>
+              </div>
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>VAT (7.5% standard rate)</span>
+                <span class="font-medium text-[#0F172A]">₦20,930.23</span>
+              </div>
+              <div class="border-t border-[#E2E8F0] pt-3 flex items-center justify-between text-base font-bold text-[#0F172A]">
+                <span>Total due</span>
+                <span class="text-lg">₦300,000</span>
+              </div>
+            </div>
+
+            <!-- Security Badge -->
+            <div class="border-t border-[#E2E8F0] pt-4 flex items-center justify-center gap-2 text-xs text-[#475569]">
+              <span class="material-symbols-outlined text-[#047857] text-sm">verified</span>
+              <span>ISACA Lagos Accredited Partner Registry</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- STATE 2: COUPON APPLIED (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-4">
+    <div class="flex items-center justify-between bg-white px-4 py-2.5 rounded-lg border border-[#E2E8F0]">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-[#047857] text-white text-xs font-bold flex items-center justify-center">2</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 2: Coupon Applied (Desktop 1440px)</span>
+      </div>
+      <span class="text-xs text-[#475569]">Discount line shows -₦30,000 · Total recalculates to ₦270,000 · Button updates to "Pay ₦270,000"</span>
+    </div>
+
+    <div class="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+      <!-- Public Top Bar -->
+      <nav class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B]">
+        <div class="flex items-center gap-8">
+          <a href="#" class="bg-white px-3 py-1.5 rounded-md flex items-center shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjR1uydgfZvwkwCQGW130sIO1bKcsAm76akwLhPLteNEfG6kXYIp1ilHdggLMfsilgIxrjqleqVzggcV8i72GFSUEQMArMwF0bYYgj76FBKy4VWuLUqd0NtNtvj-DprWz1vlXUxgO0AnTBuTWN0fByjlmv5T6tW7gAumky1F6M9ZMHjXBy07Z7fWVnnSRAUvlz8p8oDeEz49kio2M9LOlPhm9kQmr0vQofNmnYUu2X8tspm3feDekahHXhpiZoYgMZF6Y" alt="A.J. Silicon" class="h-6 object-contain" />
+          </a>
+          <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#" class="text-[#93C5FD] hover:text-white transition-colors min-h-[44px] flex items-center">Programmes</a>
+            <a href="#" class="text-[#93C5FD] hover:text-white transition-colors min-h-[44px] flex items-center">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 bg-[#1E293B] px-3 py-1.5 rounded-lg border border-[#334155]">
+            <span class="material-symbols-outlined text-[#93C5FD] text-lg">account_circle</span>
+            <span class="text-sm font-medium text-white">Chinedu Eze</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Layout -->
+      <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Form -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Coupon Notification Banner -->
+          <div class="bg-[#ECFDF5] border border-[#A7F3D0] rounded-xl p-4 flex items-center justify-between text-xs text-[#065F46]">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#047857] text-lg">check_circle</span>
+              <span>Coupon code <strong>EARLYCISA</strong> applied successfully (10% early registration concession).</span>
+            </div>
+            <button type="button" class="text-xs font-semibold text-[#047857] underline hover:text-[#065F46]">Remove</button>
+          </div>
+
+          <!-- Payer Details Card -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0B1320] text-xl">person</span>
+                Payer details
+              </h3>
+              <span class="text-xs text-[#475569]">Prefilled from account</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="s2-name">Full name</label>
+                <input type="text" id="s2-name" value="Chinedu Eze" 
+                  class="w-full h-11 px-3.5 rounded-lg border border-[#64748B] text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus-ring" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="s2-email">Email address</label>
+                <input type="email" id="s2-email" value="c.eze@example.com" 
+                  class="w-full h-11 px-3.5 rounded-lg border border-[#64748B] text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus-ring" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Methods Card -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0B1320] text-xl">account_balance_wallet</span>
+                Payment method
+              </h3>
+              <span class="text-xs font-medium text-[#475569]">Select payment channel</span>
+            </div>
+
+            <fieldset class="space-y-2.5">
+              <legend class="sr-only">Paystack Channels</legend>
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s2" value="card" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">credit_card</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Debit / Credit Card</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Mastercard, Visa, Verve</span>
+              </label>
+
+              <!-- Transfer selected this state -->
+              <label class="flex items-center justify-between p-3.5 rounded-xl border-2 border-[#0B1320] bg-[#F8FAFC] cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s2" value="transfer" checked class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#0B1320] text-xl">sync_alt</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Bank transfer</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Instant Paystack dynamic account</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s2" value="ussd" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">pin</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">USSD</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">*737#, *919#, *894#, *966#</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s2" value="bank" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">account_balance</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Bank</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Direct debit via internet banking</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s2" value="qr" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">qr_code_2</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">QR Code</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Scan to pay with mobile banking app</span>
+              </label>
+            </fieldset>
+
+            <div class="pt-3 border-t border-[#E2E8F0] flex items-center gap-2 text-xs text-[#475569]">
+              <span class="material-symbols-outlined text-[#047857] text-base">lock</span>
+              <span>Payments are processed by <strong>Paystack</strong>. Your transaction is encrypted and secure.</span>
+            </div>
+          </div>
+
+          <!-- Licence Consent & CTA -->
+          <div class="space-y-4">
+            <label class="flex items-start gap-3 cursor-pointer select-none">
+              <input type="checkbox" checked class="mt-1 w-4 h-4 text-[#0B1320] rounded border-[#64748B] focus:ring-[#2563EB]" />
+              <span class="text-xs text-[#0F172A] leading-relaxed">
+                I accept the <a href="#" class="text-[#1D4ED8] underline hover:text-[#0B1320]">content licence</a> and acknowledge that preparatory materials and assessment access are licensed exclusively to my registered profile.
+              </span>
+            </label>
+
+            <!-- Primary button reflecting discounted price -->
+            <button type="button" 
+              class="w-full h-12 bg-[#0B1320] hover:bg-[#1E293B] text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors min-h-[44px] focus-ring shadow-sm">
+              <span class="material-symbols-outlined text-base">lock</span>
+              <span>Pay ₦270,000</span>
+            </button>
+            <p class="text-[11px] text-center text-[#475569]">By clicking Pay, you will generate a Paystack virtual account transfer reference.</p>
+          </div>
+        </div>
+
+        <!-- Right: Order Summary with Discounted Pricing -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-5 sticky top-6 shadow-sm">
+            <h3 class="text-base font-bold text-[#0F172A] border-b border-[#E2E8F0] pb-3 flex items-center justify-between">
+              <span>Order summary</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#A7F3D0]">EARLYCISA applied</span>
+            </h3>
+
+            <!-- Item Details -->
+            <div class="space-y-2">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-bold text-[#0F172A]">CISA Exam Prep</h4>
+                  <p class="text-xs text-[#475569]">Mode: Virtual · 10 weeks</p>
+                  <p class="text-xs text-[#475569]">Cohort: <strong class="text-[#0F172A]">CISA Cohort 14</strong></p>
+                </div>
+                <span class="text-sm font-bold text-[#0F172A]">₦300,000</span>
+              </div>
+              
+              <div class="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-3 text-xs text-[#1E3A8A] space-y-1">
+                <div class="flex items-center gap-1.5 font-semibold">
+                  <span class="material-symbols-outlined text-[#1D4ED8] text-base">verified_user</span>
+                  <span>Institutional Licence Duration</span>
+                </div>
+                <p class="text-[11px] text-[#1E3A8A] leading-relaxed">
+                  90-day access following cohort completion + 30-day exam buffer.<br>
+                  Licence valid until: <strong class="text-[#0F172A]">17 Apr 2027</strong>
+                </p>
+              </div>
+            </div>
+
+            <!-- Price Breakdown with discount -->
+            <div class="border-t border-[#E2E8F0] pt-4 space-y-2 text-xs">
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>Tuition subtotal</span>
+                <span class="font-medium text-[#0F172A]">₦300,000</span>
+              </div>
+              <div class="flex items-center justify-between text-[#047857] font-semibold">
+                <span class="flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">local_offer</span>
+                  Discount (EARLYCISA)
+                </span>
+                <span>-₦30,000</span>
+              </div>
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>Adjusted base</span>
+                <span class="font-medium text-[#0F172A]">₦251,162.79</span>
+              </div>
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>VAT (7.5% sample rate)</span>
+                <span class="font-medium text-[#0F172A]">₦18,837.21</span>
+              </div>
+              <div class="border-t border-[#E2E8F0] pt-3 flex items-center justify-between text-base font-bold text-[#0F172A]">
+                <span>Total due</span>
+                <span class="text-lg text-[#0B1320]">₦270,000</span>
+              </div>
+            </div>
+
+            <div class="border-t border-[#E2E8F0] pt-4 flex items-center justify-center gap-2 text-xs text-[#475569]">
+              <span class="material-symbols-outlined text-[#047857] text-sm">verified</span>
+              <span>ISACA Lagos Accredited Partner Registry</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- STATE 3: PROCESSING (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-4">
+    <div class="flex items-center justify-between bg-white px-4 py-2.5 rounded-lg border border-[#E2E8F0]">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-[#B45309] text-white text-xs font-bold flex items-center justify-center">3</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 3: Processing (Desktop 1440px)</span>
+      </div>
+      <span class="text-xs text-[#475569]">Button spinner · Text "Processing payment..." · All fields and radios disabled</span>
+    </div>
+
+    <div class="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm opacity-95">
+      <!-- Top bar -->
+      <nav class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B]">
+        <div class="flex items-center gap-8">
+          <div class="bg-white px-3 py-1.5 rounded-md flex items-center shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt2Z3Mb2WhZCKSkksgenldqirtpuQ5ujj3djE98vt1SkPCInVNjEOT0t2skq8UKxRGTy6Cr0Fkz1FowbEsgFgX1YvgfSEVFZOhkTGLaP3DLSF0ZAvrYc2rloYXDuidtrd4rSKI0g7_be6Ar6n1iCyJ8ukDLhcv8B8CxtfuweQAMgRdeWoNBNMM77Zgh442084rq4RO2iAhVL1Pr0d4ShH9vi0GfFSYjpWMjvtB_5ToDQMFuHTf3_FfjQ6yg3e-5VpNeGs" alt="A.J. Silicon" class="h-6 object-contain" />
+          </div>
+          <div class="hidden md:flex items-center gap-6 text-sm font-medium opacity-60 pointer-events-none">
+            <span class="text-[#93C5FD]">Programmes</span>
+            <span class="text-[#93C5FD]">Workshops</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 bg-[#1E293B] px-3 py-1.5 rounded-lg border border-[#334155]">
+          <span class="material-symbols-outlined text-[#93C5FD] text-lg">account_circle</span>
+          <span class="text-sm font-medium text-white">Chinedu Eze</span>
+        </div>
+      </nav>
+
+      <!-- Layout -->
+      <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Processing Notice -->
+          <div class="bg-[#FFFBEB] border border-[#FDE68A] rounded-xl p-4 flex items-center gap-3 text-xs text-[#92400E]">
+            <div class="w-4 h-4 border-2 border-[#B45309] border-t-transparent rounded-full animate-spin shrink-0"></div>
+            <span>Connecting to Paystack secure gateway. Please do not refresh this window or navigate back.</span>
+          </div>
+
+          <!-- Disabled Payer Card -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-[#F8FAFC] space-y-4 pointer-events-none opacity-75">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#475569] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#475569] text-xl">person</span>
+                Payer details
+              </h3>
+              <span class="text-xs text-[#94A3B8]">Locked during checkout</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-[#475569] mb-1.5">Full name</label>
+                <input type="text" disabled value="Chinedu Eze" class="w-full h-11 px-3.5 rounded-lg border border-[#CBD5E1] bg-white text-sm text-[#64748B]" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[#475569] mb-1.5">Email address</label>
+                <input type="email" disabled value="c.eze@example.com" class="w-full h-11 px-3.5 rounded-lg border border-[#CBD5E1] bg-white text-sm text-[#64748B]" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled Channels -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-[#F8FAFC] space-y-4 pointer-events-none opacity-75">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#475569] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#475569] text-xl">account_balance_wallet</span>
+                Payment method
+              </h3>
+              <span class="text-xs text-[#94A3B8]">Locked</span>
+            </div>
+
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between p-3.5 rounded-xl border-2 border-[#64748B] bg-white">
+                <div class="flex items-center gap-3">
+                  <input type="radio" checked disabled class="w-4 h-4 text-[#64748B]" />
+                  <span class="text-sm font-semibold text-[#0F172A]">Debit / Credit Card</span>
+                </div>
+                <span class="text-xs text-[#64748B]">Mastercard, Visa, Verve</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-[#E2E8F0] flex items-center gap-2 text-xs text-[#475569]">
+              <span class="material-symbols-outlined text-[#047857] text-base">lock</span>
+              <span>Payments are processed by <strong>Paystack</strong></span>
+            </div>
+          </div>
+
+          <!-- Disabled Button with Spinner -->
+          <div class="space-y-4">
+            <button type="button" disabled
+              class="w-full h-12 bg-[#0B1320] text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-3 cursor-not-allowed opacity-90 shadow-sm min-h-[44px]">
+              <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              <span>Processing payment...</span>
+            </button>
+            <p class="text-[11px] text-center text-[#475569]">A secure Paystack dialog is opening.</p>
+          </div>
+        </div>
+
+        <!-- Right: Summary Locked -->
+        <div class="lg:col-span-5 space-y-4 opacity-75">
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-5 shadow-sm">
+            <h3 class="text-base font-bold text-[#0F172A] border-b border-[#E2E8F0] pb-3">Order summary</h3>
+            <div class="space-y-2">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-bold text-[#0F172A]">CISA Exam Prep</h4>
+                  <p class="text-xs text-[#475569]">Cohort: CISA Cohort 14</p>
+                </div>
+                <span class="text-sm font-bold text-[#0F172A]">₦300,000</span>
+              </div>
+            </div>
+            <div class="border-t border-[#E2E8F0] pt-4 space-y-2 text-xs">
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>Tuition subtotal</span>
+                <span>₦279,069.77</span>
+              </div>
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>VAT (7.5%)</span>
+                <span>₦20,930.23</span>
+              </div>
+              <div class="border-t border-[#E2E8F0] pt-3 flex items-center justify-between text-base font-bold text-[#0F172A]">
+                <span>Total due</span>
+                <span>₦300,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- STATE 4: WORKSHOP VARIANT (Desktop 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-4">
+    <div class="flex items-center justify-between bg-white px-4 py-2.5 rounded-lg border border-[#E2E8F0]">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-[#1D4ED8] text-white text-xs font-bold flex items-center justify-center">4</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 4: Workshop Variant · Sage 50 and QuickBooks (Desktop 1440px)</span>
+      </div>
+      <span class="text-xs text-[#475569]">Single-day workshop ticket · Quantity fixed at 1 · <strong>No licence line</strong> in summary · ₦60,000</span>
+    </div>
+
+    <div class="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+      <!-- Public Top Bar with Workshops Active -->
+      <nav class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-[#1E293B]">
+        <div class="flex items-center gap-8">
+          <a href="#" class="bg-white px-3 py-1.5 rounded-md flex items-center shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaCqexfcmTN1ClON-FxABkzcJp0Rq6Ea_1o4fspge6f4RFwm51bT_5wpRtHr4vUrv8bQvWvH33QABoJLdgiLFZ8d28HtC8Tnl7fTvHx-G_xeLeYrtq0dBwM-gWc2zLRRj2DhdsAM6z1QNYJajHCpdXOP_XxfbQYkU2u3-xZXV7Ir_FWZBra5HpZCnzQMPzhORtwzSU6KzU_eFA0f6FCPFo5XRA7vSwvn1RrEkRUAzOnV4SQYr0Ji81KkDxfbNWFDLZyoA" alt="A.J. Silicon" class="h-6 object-contain" />
+          </a>
+          <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#" class="text-[#93C5FD] hover:text-white transition-colors min-h-[44px] flex items-center">Programmes</a>
+            <a href="#" class="text-white font-semibold border-b-2 border-white min-h-[44px] flex items-center">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 bg-[#1E293B] px-3 py-1.5 rounded-lg border border-[#334155]">
+            <span class="material-symbols-outlined text-[#93C5FD] text-lg">account_circle</span>
+            <span class="text-sm font-medium text-white">Chinedu Eze</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Breadcrumbs -->
+      <div class="px-8 pt-6 pb-2 border-b border-[#E2E8F0] bg-[#F8FAFC]">
+        <div class="text-xs text-[#475569] flex items-center gap-1.5">
+          <a href="#" class="hover:text-[#1D4ED8] hover:underline">Workshops</a>
+          <span>/</span>
+          <a href="#" class="hover:text-[#1D4ED8] hover:underline">Learn Sage 50 and QuickBooks</a>
+          <span>/</span>
+          <span class="text-[#0F172A] font-semibold">Checkout</span>
+        </div>
+        <h2 class="text-2xl font-bold text-[#0F172A] mt-2 mb-4">Workshop checkout</h2>
+      </div>
+
+      <!-- Layout -->
+      <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Form -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Payer Card -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0B1320] text-xl">person</span>
+                Participant & billing details
+              </h3>
+              <span class="text-xs text-[#475569]">Non-transferable ticket</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="s4-name">Participant name</label>
+                <input type="text" id="s4-name" value="Chinedu Eze" 
+                  class="w-full h-11 px-3.5 rounded-lg border border-[#64748B] text-sm text-[#0F172A] focus-ring" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="s4-email">Billing email address</label>
+                <input type="email" id="s4-email" value="c.eze@example.com" 
+                  class="w-full h-11 px-3.5 rounded-lg border border-[#64748B] text-sm text-[#0F172A] focus-ring" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Channels -->
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+            <div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+              <h3 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0B1320] text-xl">account_balance_wallet</span>
+                Payment method
+              </h3>
+              <span class="text-xs font-medium text-[#475569]">Select channel</span>
+            </div>
+
+            <fieldset class="space-y-2.5">
+              <legend class="sr-only">Payment channel</legend>
+              <label class="flex items-center justify-between p-3.5 rounded-xl border-2 border-[#0B1320] bg-[#F8FAFC] cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s4" value="card" checked class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#0B1320] text-xl">credit_card</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Debit / Credit Card</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Mastercard, Visa, Verve</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s4" value="transfer" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">sync_alt</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Bank transfer</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Instant dynamic account</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s4" value="ussd" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">pin</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">USSD</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">*737#, *919#, *894#</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s4" value="bank" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">account_balance</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">Bank</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Direct internet banking</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-[#E2E8F0] hover:border-[#64748B] bg-white cursor-pointer min-h-[52px]">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="paymethod_s4" value="qr" class="w-4 h-4 text-[#0B1320]" />
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[#475569] text-xl">qr_code_2</span>
+                    <span class="text-sm font-semibold text-[#0F172A]">QR Code</span>
+                  </div>
+                </div>
+                <span class="text-xs text-[#475569]">Scan with mobile app</span>
+              </label>
+            </fieldset>
+
+            <div class="pt-3 border-t border-[#E2E8F0] flex items-center gap-2 text-xs text-[#475569]">
+              <span class="material-symbols-outlined text-[#047857] text-base">lock</span>
+              <span>Payments are processed by <strong>Paystack</strong></span>
+            </div>
+          </div>
+
+          <!-- Terms & Pay button -->
+          <div class="space-y-4">
+            <label class="flex items-start gap-3 cursor-pointer select-none">
+              <input type="checkbox" checked class="mt-1 w-4 h-4 text-[#0B1320] rounded border-[#64748B] focus:ring-[#2563EB]" />
+              <span class="text-xs text-[#0F172A] leading-relaxed">
+                I accept the workshop terms of admission and understand this pass is valid for the selected date only.
+              </span>
+            </label>
+
+            <button type="button" 
+              class="w-full h-12 bg-[#0B1320] hover:bg-[#1E293B] text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors min-h-[44px] focus-ring shadow-sm">
+              <span class="material-symbols-outlined text-base">lock</span>
+              <span>Pay ₦60,000</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Workshop Order Summary (NO LICENCE LINE) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-5 sticky top-6 shadow-sm">
+            <h3 class="text-base font-bold text-[#0F172A] border-b border-[#E2E8F0] pb-3 flex items-center justify-between">
+              <span>Order summary</span>
+              <span class="text-xs text-[#475569]">Workshop pass</span>
+            </h3>
+
+            <!-- Workshop Item -->
+            <div class="space-y-2">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-bold text-[#0F172A]">Learn Sage 50 and QuickBooks</h4>
+                  <p class="text-xs text-[#475569]">Date: Saturday 07 Nov 2026</p>
+                  <p class="text-xs text-[#475569]">Mode: Physical · Ikeja Training Centre</p>
+                  <p class="text-xs text-[#475569]">Ticket quantity: <strong>1 participant (Fixed)</strong></p>
+                  <p class="text-xs text-[#047857] font-medium mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">workspace_premium</span>
+                    Includes 7.5 ICAN Credit Units
+                  </p>
+                </div>
+                <span class="text-sm font-bold text-[#0F172A]">₦60,000</span>
+              </div>
+              
+              <!-- NOTICE: NO LICENCE LINE IN WORKSHOP VARIANT AS SPECIFIED -->
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="border-t border-[#E2E8F0] pt-4 space-y-2 text-xs">
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>Workshop ticket (1 participant)</span>
+                <span class="font-medium text-[#0F172A]">₦55,813.95</span>
+              </div>
+              <div class="flex items-center justify-between text-[#475569]">
+                <span>VAT (7.5% sample rate)</span>
+                <span class="font-medium text-[#0F172A]">₦4,186.05</span>
+              </div>
+              <div class="border-t border-[#E2E8F0] pt-3 flex items-center justify-between text-base font-bold text-[#0F172A]">
+                <span>Total due</span>
+                <span class="text-lg">₦60,000</span>
+              </div>
+            </div>
+
+            <div class="border-t border-[#E2E8F0] pt-4 text-center">
+              <span class="text-xs text-[#475569]">Catered lunch & printed ICAN workbook included</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- STATE 5: MOBILE 390px (Default) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-4">
+    <div class="flex items-center justify-between bg-white px-4 py-2.5 rounded-lg border border-[#E2E8F0]">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-[#0B1320] text-white text-xs font-bold flex items-center justify-center">5</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 5: Mobile Viewport (390px Plain Frame)</span>
+      </div>
+      <span class="text-xs text-[#475569]">390px plain container · No phone status bar · No home indicator · No device chrome</span>
+    </div>
+
+    <div class="flex justify-center bg-[#EAEEF4] p-6 rounded-xl border border-[#CBD5E1]">
+      
+      <!-- 390px Plain Mobile Frame -->
+      <div class="w-[390px] bg-white border border-[#CBD5E1] rounded-lg shadow-md overflow-hidden text-[#0F172A]">
+        
+        <!-- Mobile Public Top Bar with Student Name -->
+        <nav class="bg-[#0B1320] text-white h-14 px-4 flex items-center justify-between border-b border-[#1E293B]">
+          <div class="bg-white px-2 py-1 rounded flex items-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKXUcfgbcvZ1lJRj8Kc-Rlt5gw3hvsm4pRS-WZ8O-9t1Ht9mVMJiCaElM1DWceegTxoMeesvf6qIJUI9Uhu2iU10mNlXtkDI21FgI16V_Lh2J1MUJR0S2Np-KXzchohqXShjilj2-8ZHoKDYS7vavd39vfvImgmlcCn7028Ms0qzv8FzZBaAv1yPZvPQnW7rJmfPhSO1fCRNfnlVHf5-33OXZzBD6-z88zgKG6UDm_M26GvHoVnln-R2lfVShwYLZ1xBM" alt="A.J. Silicon" class="h-5 object-contain" />
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold text-white bg-[#1E293B] px-2.5 py-1 rounded border border-[#334155]">Chinedu Eze</span>
+          </div>
+        </nav>
+
+        <!-- Mobile Content Stack -->
+        <div class="p-4 space-y-4">
+          
+          <!-- Breadcrumb & Title -->
+          <div>
+            <div class="text-[11px] text-[#475569] flex items-center gap-1">
+              <span>CISA Prep</span>
+              <span>/</span>
+              <span>Cohort 14</span>
+              <span>/</span>
+              <span class="text-[#0F172A] font-semibold">Checkout</span>
+            </div>
+            <h2 class="text-xl font-bold text-[#0F172A] mt-1">Checkout</h2>
+          </div>
+
+          <!-- Order Summary Card (Mobile) -->
+          <div class="border border-[#E2E8F0] rounded-xl p-4 bg-[#F8FAFC] space-y-3">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="text-sm font-bold text-[#0F172A]">CISA Exam Prep</h3>
+                <p class="text-xs text-[#475569]">Virtual · CISA Cohort 14</p>
+              </div>
+              <span class="text-sm font-bold text-[#0F172A]">₦300,000</span>
+            </div>
+
+            <!-- Licence Note Mobile -->
+            <div class="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-2.5 text-xs text-[#1E3A8A]">
+              <span class="font-semibold block">Licence valid until: 17 Apr 2027</span>
+              <span class="text-[10px] text-[#475569]">90-day post-cohort access + 30-day exam buffer</span>
+            </div>
+
+            <!-- Total breakdown -->
+            <div class="border-t border-[#E2E8F0] pt-2 space-y-1 text-xs">
+              <div class="flex justify-between text-[#475569]">
+                <span>Tuition subtotal</span>
+                <span>₦279,069.77</span>
+              </div>
+              <div class="flex justify-between text-[#475569]">
+                <span>VAT (7.5%)</span>
+                <span>₦20,930.23</span>
+              </div>
+              <div class="border-t border-[#E2E8F0] pt-2 flex justify-between font-bold text-sm text-[#0F172A]">
+                <span>Total due</span>
+                <span>₦300,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payer Details (Mobile) -->
+          <div class="border border-[#E2E8F0] rounded-xl p-4 bg-white space-y-3">
+            <h3 class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">Payer details</h3>
+            <div class="space-y-2">
+              <div>
+                <label class="block text-xs font-medium text-[#475569] mb-1">Full name</label>
+                <input type="text" value="Chinedu Eze" class="w-full h-11 px-3 rounded-lg border border-[#64748B] text-xs text-[#0F172A] focus-ring" />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-[#475569] mb-1">Email address</label>
+                <input type="email" value="c.eze@example.com" class="w-full h-11 px-3 rounded-lg border border-[#64748B] text-xs text-[#0F172A] focus-ring" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Channels (Mobile) -->
+          <div class="border border-[#E2E8F0] rounded-xl p-4 bg-white space-y-3">
+            <h3 class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">Select Paystack channel</h3>
+            
+            <div class="space-y-2">
+              <label class="flex items-center justify-between p-3 rounded-lg border-2 border-[#0B1320] bg-[#F8FAFC] min-h-[44px]">
+                <div class="flex items-center gap-2.5">
+                  <input type="radio" name="m_pay" checked class="w-4 h-4 text-[#0B1320]" />
+                  <span class="text-xs font-bold text-[#0F172A]">Card</span>
+                </div>
+                <span class="text-[10px] text-[#475569]">Mastercard, Visa, Verve</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-lg border border-[#E2E8F0] min-h-[44px]">
+                <div class="flex items-center gap-2.5">
+                  <input type="radio" name="m_pay" class="w-4 h-4 text-[#0B1320]" />
+                  <span class="text-xs font-medium text-[#0F172A]">Bank transfer</span>
+                </div>
+                <span class="text-[10px] text-[#475569]">Dynamic account</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-lg border border-[#E2E8F0] min-h-[44px]">
+                <div class="flex items-center gap-2.5">
+                  <input type="radio" name="m_pay" class="w-4 h-4 text-[#0B1320]" />
+                  <span class="text-xs font-medium text-[#0F172A]">USSD</span>
+                </div>
+                <span class="text-[10px] text-[#475569]">Any Nigerian bank code</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-lg border border-[#E2E8F0] min-h-[44px]">
+                <div class="flex items-center gap-2.5">
+                  <input type="radio" name="m_pay" class="w-4 h-4 text-[#0B1320]" />
+                  <span class="text-xs font-medium text-[#0F172A]">Bank</span>
+                </div>
+                <span class="text-[10px] text-[#475569]">Direct debit</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-lg border border-[#E2E8F0] min-h-[44px]">
+                <div class="flex items-center gap-2.5">
+                  <input type="radio" name="m_pay" class="w-4 h-4 text-[#0B1320]" />
+                  <span class="text-xs font-medium text-[#0F172A]">QR Code</span>
+                </div>
+                <span class="text-[10px] text-[#475569]">Scan to pay</span>
+              </label>
+            </div>
+
+            <div class="pt-2 border-t border-[#E2E8F0] flex items-center gap-1.5 text-[11px] text-[#475569]">
+              <span class="material-symbols-outlined text-[#047857] text-sm">lock</span>
+              <span>Payments are processed by <strong>Paystack</strong></span>
+            </div>
+          </div>
+
+          <!-- Consent & Pay CTA -->
+          <div class="space-y-3 pt-1">
+            <label class="flex items-start gap-2.5 text-xs text-[#0F172A]">
+              <input type="checkbox" checked class="mt-0.5 w-4 h-4 text-[#0B1320] rounded" />
+              <span>I accept the <a href="#" class="text-[#1D4ED8] underline">content licence</a>.</span>
+            </label>
+
+            <button type="button" 
+              class="w-full h-12 bg-[#0B1320] text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-2 shadow-sm min-h-[44px]">
+              <span class="material-symbols-outlined text-base">lock</span>
+              <span>Pay ₦300,000</span>
+            </button>
+          </div>
+
+          <div class="text-[11px] text-center text-[#475569] pt-2 pb-1">
+            © 2026 A.J. Silicon. Accredited Institutional Learning.
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATION FOOTER DOSSIER -->
+  <footer class="max-w-[1440px] mx-auto border-t border-[#E2E8F0] pt-6 pb-12 flex flex-col md:flex-row justify-between items-center text-xs text-[#475569] gap-4">
+    <div>
+      <strong>A.J. SILICON ACADEMY</strong> · Executive IT Audit, Risk Management & Cybersecurity Training
+    </div>
+    <div class="flex items-center gap-4">
+      <span>Paystack Channel Compliance Verified</span>
+      <span>•</span>
+      <span>7.5% Nigerian VAT Rate Applied</span>
+      <span>•</span>
+      <span>Touch Target >= 44px</span>
+    </div>
+  </footer>
+
+</body>
+</html>

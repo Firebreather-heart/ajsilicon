@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon - Screen 33: Recordings Library Specification Board</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#fffbff",
+            "background": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-primary": "#bfc6d9",
+            "surface-container": "#eaedff",
+            "secondary-container": "#4069f2",
+            "secondary": "#1d4ed8",
+            "primary": "#000000",
+            "on-primary-fixed-variant": "#3f4756",
+            "inverse-surface": "#283044",
+            "surface-variant": "#dae2fd",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#7c8495",
+            "tertiary-container": "#281809",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "tertiary": "#000000",
+            "surface": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-container": "#997f6a",
+            "on-tertiary-fixed-variant": "#584231",
+            "primary-container": "#141c29",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "on-background": "#131b2e",
+            "primary-fixed": "#dbe2f5",
+            "on-primary-fixed": "#141c29",
+            "surface-container-highest": "#dae2fd",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#001551",
+            "on-secondary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "surface-tint": "#575f6e",
+            "on-surface-variant": "#45474c",
+            "on-surface": "#131b2e",
+            "on-tertiary-fixed": "#281809",
+            "outline": "#75777c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Institutional custom focus rings adhering to specification */
+    .focus-ring:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-low text-on-surface font-body-md antialiased min-h-screen">
+<!-- TOP LEVEL SPECIFICATION BOARD HEADER -->
+<aside aria-label="Specification Document Context" class="bg-primary-container text-on-primary border-b border-outline-variant/30 px-6 py-4">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-lowest text-primary text-label-sm font-label-md px-2 py-0.5 rounded">DOCUMENT SPEC 33</span>
+<span class="text-on-primary-container text-label-sm font-label-md">CISA Cohort 14 Curriculum Suite</span>
+</div>
+<h1 class="text-headline-md font-headline-md mt-1 tracking-tight text-on-primary">Screen 33: Recordings Library (Desktop 1440px Specification Board)</h1>
+<p class="text-body-sm font-body-sm text-on-primary-container">Institutional IT Audit Governance Portal · Canonical Results, Empty, &amp; Loading States</p>
+</div>
+<div class="flex items-center gap-3">
+<a class="text-label-sm font-label-md bg-surface-container/20 text-on-primary border border-outline-variant/30 px-3 py-1.5 rounded hover:bg-surface-container/30 transition-colors" href="#variant-canonical">1. Canonical View</a>
+<a class="text-label-sm font-label-md bg-surface-container/20 text-on-primary border border-outline-variant/30 px-3 py-1.5 rounded hover:bg-surface-container/30 transition-colors" href="#variant-empty">2. Empty Filter State</a>
+<a class="text-label-sm font-label-md bg-surface-container/20 text-on-primary border border-outline-variant/30 px-3 py-1.5 rounded hover:bg-surface-container/30 transition-colors" href="#variant-skeleton">3. Skeleton Pulse State</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- VARIANT 1: CANONICAL RESULTS STATE (1440px VIEWPORT EMBED) -->
+<!-- ========================================================================= -->
+<section class="max-w-[1440px] mx-auto my-12 bg-surface-container-lowest border border-outline-variant shadow-sm rounded-xl overflow-hidden" id="variant-canonical">
+<!-- State Identifier Header -->
+<div class="bg-surface-container px-6 py-3 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="text-label-md font-label-md text-on-surface">VARIANT 1: CANONICAL 1440px DESKTOP RESULTS STATE (8 RECORDING CARDS)</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-code-snippet">Viewport: 1440px · State: Populated Filtered Grid · ISACA / CISA Curriculum</span>
+</div>
+<!-- MAIN STUDENT APPLICATION SHELL -->
+<div class="flex flex-col min-h-[980px]">
+<!-- TopNavBar Component (Shared Components JSON execution) -->
+<header class="bg-primary-container text-on-primary flex justify-between items-center w-full px-6 h-16 border-b border-outline-variant dark:border-outline-variant z-20 sticky top-0">
+<!-- Brand Logo Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest px-3 py-1 rounded flex items-center justify-center h-10 shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMJ7AeHqwvZg1xt91aKgqE-qpuvfOrjhC5UwpqYb-9SS0UfJV0TV36qvVJ6vA8ANIPDZctZIfw3H547Gc3ph3iIhqVYRdrh96WswZfLeh08MbDuwkSZvTf5U9hiKL30XPhwKg3yzlSMO7GBt7-gXMMxCRuCXSasFE-meXuea-CkEqx_oM5txzvtxiW9MN5sO98MOQB0CnxRghP5sQ0h_1n98mHDat3OMQA2P2QKXgirwxSVBcT8sG-OFhYqveODyAdzJo"/>
+</div>
+<div class="h-6 w-px bg-outline-variant/40"></div>
+<div class="text-label-md font-label-md text-on-primary tracking-wide">
+            Professional IT Audit &amp; Governance Academy
+          </div>
+</div>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center gap-4">
+<!-- Notification Icon Button (44px target) -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150 focus-ring" title="Notifications">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+<!-- Help Icon Button (44px target) -->
+<button aria-label="Help" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150 focus-ring" title="Help Desk &amp; Documentation">
+<span class="material-symbols-outlined text-[22px]">help</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/40 mx-1"></div>
+<!-- Signed-in student badge -->
+<div class="flex items-center gap-3 pl-2">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md font-semibold tracking-wider border border-on-secondary/20">
+              CE
+            </div>
+<div class="flex flex-col text-left">
+<span class="text-label-md font-label-md text-on-primary leading-tight">Chinedu Eze</span>
+<span class="text-label-sm font-label-sm text-on-primary-container">CISA Cohort 14 · Candidate</span>
+</div>
+</div>
+</div>
+</header>
+<!-- App Workspace: Sidebar + Canvas -->
+<div class="flex flex-1">
+<!-- SideNavBar Component (Shared Components JSON execution) -->
+<nav aria-label="Course Navigation" class="w-64 min-w-[16rem] p-4 flex flex-col justify-between bg-surface-container-lowest border-r border-outline-variant shrink-0">
+<!-- Top Cohort Profile & Main Tabs -->
+<div class="flex flex-col gap-6">
+<!-- Cohort Header Badge Block -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/50">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">school</span>
+<span class="text-label-md font-headline-sm text-on-surface">CISA Exam Prep</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</p>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-1">
+<!-- Dashboard -->
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded transition-all duration-150 min-h-[44px] focus-ring" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Modules / Programme Home (Active Cluster) -->
+<div>
+<a class="bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3 rounded-r transition-all duration-150 min-h-[44px] focus-ring" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<!-- Submenu: Active on Recordings Library -->
+<div class="ml-9 mt-1 pl-3 border-l border-outline-variant/60 flex flex-col gap-1 py-1">
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-on-surface py-1.5 flex items-center justify-between" href="#">
+<span>Curriculum Syllabus</span>
+</a>
+<a class="text-body-sm font-label-md text-secondary py-1.5 flex items-center justify-between" href="#">
+<span class="font-medium">Recordings library</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-on-surface py-1.5 flex items-center justify-between" href="#">
+<span>Case Studies &amp; Packs</span>
+</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-on-surface py-1.5 flex items-center justify-between" href="#">
+<span>Live Class Links</span>
+</a>
+</div>
+</div>
+<!-- Practice Exams -->
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded transition-all duration-150 min-h-[44px] focus-ring" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<!-- Extend Access -->
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded transition-all duration-150 min-h-[44px] focus-ring" href="#">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</div>
+</div>
+<!-- Footer Tabs (Settings & Sign Out) -->
+<div class="pt-4 border-t border-outline-variant/50 flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded transition-all duration-150 min-h-[44px] focus-ring" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-error hover:bg-error-container/30 px-4 py-3 flex items-center gap-3 font-label-md rounded transition-all duration-150 min-h-[44px] focus-ring" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</nav>
+<!-- Main Screen Canvas -->
+<main class="flex-1 bg-surface-bright p-8">
+<div class="max-w-[1152px] mx-auto flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<a class="hover:text-secondary focus-ring rounded" href="#">Programme Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-secondary focus-ring rounded" href="#">Recordings</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Recordings library</span>
+</nav>
+<!-- Screen Header Block -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-outline-variant">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Recordings library</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 max-w-3xl">
+                  Archive of recorded live masterclasses, revision workshops, and case study walkthroughs for CISA Exam Prep (Cohort 14).
+                </p>
+</div>
+<!-- Quick Info / Status Pill -->
+<div class="flex items-center gap-2 self-start md:self-auto">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container text-secondary border border-secondary">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+                  Cohort 14 Replay Access Active
+                </span>
+</div>
+</div>
+<!-- Filter Controls Bar (Strict 44px min heights, #64748B borders) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm flex flex-col gap-4">
+<!-- Top Row: Search Input -->
+<div class="relative w-full">
+<label class="sr-only" for="recording-search-input">Search recordings by topic, domain, or instructor</label>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-11 pl-11 pr-11 bg-surface-container-lowest border border-outline text-on-surface text-body-md rounded-lg placeholder:text-on-surface-variant focus-ring focus:border-secondary transition-colors" id="recording-search-input" placeholder="Search recordings by topic, domain, or instructor..." type="text" value=""/>
+<button aria-label="Clear search" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-on-surface-variant hover:text-on-surface focus-ring rounded" title="Clear search query" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Bottom Row: Dropdown Filters & Sort -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+<!-- Programme Filter -->
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-sm text-on-surface-variant" for="filter-programme">Programme</label>
+<div class="relative">
+<select class="w-full h-11 pl-3 pr-9 bg-surface-container-lowest border border-outline text-on-surface text-body-sm rounded-lg focus-ring focus:border-secondary appearance-none cursor-pointer" id="filter-programme">
+<option selected="">CISA Exam Prep (Active)</option>
+<option>All Programmes</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Domain Filter -->
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-sm text-on-surface-variant" for="filter-domain">CISA Domain</label>
+<div class="relative">
+<select class="w-full h-11 pl-3 pr-9 bg-surface-container-lowest border border-outline text-on-surface text-body-sm rounded-lg focus-ring focus:border-secondary appearance-none cursor-pointer" id="filter-domain">
+<option selected="">All Domains (1 - 5)</option>
+<option>Domain 1: Auditing Process</option>
+<option>Domain 2: Governance &amp; Management</option>
+<option>Domain 3: Acquisition &amp; Dev</option>
+<option>Domain 4: Operations &amp; Resilience</option>
+<option>Domain 5: Asset Protection</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Instructor Filter -->
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-sm text-on-surface-variant" for="filter-instructor">Faculty Lead</label>
+<div class="relative">
+<select class="w-full h-11 pl-3 pr-9 bg-surface-container-lowest border border-outline text-on-surface text-body-sm rounded-lg focus-ring focus:border-secondary appearance-none cursor-pointer" id="filter-instructor">
+<option selected="">All Instructors</option>
+<option>Adaeze Okonkwo, CISA, CRISC</option>
+<option>Babatunde Adeleke, CISA</option>
+<option>Oladipo Alabi, CISA, CGEIT</option>
+<option>Chidinma Nwosu, CISM</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Sort Order -->
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-sm text-on-surface-variant" for="filter-sort">Sort By</label>
+<div class="relative">
+<select class="w-full h-11 pl-3 pr-9 bg-surface-container-lowest border border-outline text-on-surface text-body-sm rounded-lg focus-ring focus:border-secondary appearance-none cursor-pointer" id="filter-sort">
+<option selected="">Newest first</option>
+<option>Duration: Longest</option>
+<option>Duration: Shortest</option>
+<option>Completion Progress</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Status Summary and Active Badges Bar -->
+<div class="flex flex-wrap items-center justify-between pt-2 border-t border-outline-variant/40 text-body-sm">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-on-surface">Showing 8 recordings</span>
+<span class="text-outline-variant">•</span>
+<span class="text-body-sm text-on-surface-variant">Total runtime: 15h 39m</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm text-on-surface-variant">Filter tags:</span>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm bg-surface-container px-2 py-0.5 rounded text-secondary border border-secondary/40">
+                    Cohort 14 (Active)
+                  </span>
+<button class="text-label-sm font-label-sm text-secondary hover:underline ml-1 focus-ring rounded" type="button">Reset</button>
+</div>
+</div>
+</div>
+<!-- Canonical 8-Card Grid Layout (3 Columns on Large Screens) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- CARD 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<!-- Video Thumbnail Plate -->
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 2: IT Governance
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2h 15m
+                      </span>
+</div>
+<!-- Play icon circle (44px accessible footprint) -->
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>Live Stream Session</span>
+<span class="bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary px-1.5 py-0.5 rounded text-[11px]">1080p HD</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 24 Oct 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 02.4
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 2: IT Governance Controls &amp; Risk Appetite Case Study
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Adaeze Okonkwo, CISA, CRISC</span>
+</p>
+<!-- Watched Progress Section -->
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">65% completed</span>
+<span class="text-on-surface-variant">47m remaining</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action Buttons -->
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-primary text-on-primary rounded-md font-label-md text-label-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+                    Resume (1h 28m)
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+<!-- CARD 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 1: Audit Process
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1h 50m
+                      </span>
+</div>
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">replay</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>Full Masterclass</span>
+<span class="inline-flex items-center h-5 px-1.5 rounded text-[11px] bg-emerald-950 text-emerald-200 border border-emerald-700">Completed</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 17 Oct 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 01.1
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 1: Information System Audit Charter &amp; Engagement Planning
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Babatunde Adeleke, CISA</span>
+</p>
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-emerald-700 font-medium">100% completed</span>
+<span class="text-on-surface-variant">Finished</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-surface-container-lowest border border-outline text-on-surface rounded-md font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+                    Watch again
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+<!-- CARD 3 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 1: Audit Process
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2h 05m
+                      </span>
+</div>
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>Audit Fieldwork Pack</span>
+<span class="bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary px-1.5 py-0.5 rounded text-[11px]">1080p HD</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 14 Oct 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 01.3
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 1: Audit Standards, Evidence Collection &amp; Workpapers
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Babatunde Adeleke, CISA</span>
+</p>
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">40% watched</span>
+<span class="text-on-surface-variant">1h 15m remaining</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-primary text-on-primary rounded-md font-label-md text-label-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+                    Resume (50m)
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+<!-- CARD 4 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 2: IT Governance
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1h 40m
+                      </span>
+</div>
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>Governance Session</span>
+<span class="bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary px-1.5 py-0.5 rounded text-[11px]">1080p HD</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 10 Oct 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 02.1
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 2: COBIT 2019 Framework Alignment &amp; IT Steering Committees
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Adaeze Okonkwo, CISA</span>
+</p>
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">10% watched</span>
+<span class="text-on-surface-variant">1h 30m remaining</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 10%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-primary text-on-primary rounded-md font-label-md text-label-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+                    Resume (10m)
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+<!-- CARD 5 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 3: Dev &amp; Acquisition
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2h 20m
+                      </span>
+</div>
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>SDLC Security Focus</span>
+<span class="bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary px-1.5 py-0.5 rounded text-[11px]">1080p HD</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 03 Oct 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 03.1
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 3: SDLC Security &amp; Project Governance Review
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Oladipo Alabi, CISA, CGEIT</span>
+</p>
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">0% not started</span>
+<span class="text-on-surface-variant">2h 20m total</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-primary text-on-primary rounded-md font-label-md text-label-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                    Start watching
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+<!-- CARD 6 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 3: Dev &amp; Acquisition
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1h 35m
+                      </span>
+</div>
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>Procurement &amp; Escrow</span>
+<span class="bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary px-1.5 py-0.5 rounded text-[11px]">1080p HD</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 26 Sep 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 03.4
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 3: Post-Implementation Audits &amp; Vendor Escrow Evaluation
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Oladipo Alabi, CISA</span>
+</p>
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">85% watched</span>
+<span class="text-on-surface-variant">15m remaining</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-primary text-on-primary rounded-md font-label-md text-label-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+                    Resume (1h 20m)
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+<!-- CARD 7 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 4: Resilience
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2h 10m
+                      </span>
+</div>
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>DRP &amp; BCP Scenario</span>
+<span class="bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary px-1.5 py-0.5 rounded text-[11px]">1080p HD</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 19 Sep 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 04.2
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 4: Business Continuity &amp; Disaster Recovery Testing
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Chidinma Nwosu, CISM</span>
+</p>
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">0% not started</span>
+<span class="text-on-surface-variant">2h 10m total</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-primary text-on-primary rounded-md font-label-md text-label-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                    Start watching
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+<!-- CARD 8 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col justify-between hover:border-outline transition-colors">
+<div>
+<div class="relative aspect-video bg-primary-container p-4 flex flex-col justify-between border-b border-outline-variant group">
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-surface-container-lowest text-secondary border border-secondary font-medium">
+                        Domain 5: Asset Protection
+                      </span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-primary/80 text-on-primary font-mono">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1h 55m
+                      </span>
+</div>
+<div class="self-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[26px] ml-0.5">replay</span>
+</div>
+</div>
+<div class="flex justify-between items-end text-label-sm text-on-primary-container">
+<span>Cryptographic Architectures</span>
+<span class="inline-flex items-center h-5 px-1.5 rounded text-[11px] bg-emerald-950 text-emerald-200 border border-emerald-700">Completed</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 12 Sep 2026
+                      </span>
+<span class="inline-flex items-center h-5 px-2 rounded text-[11px] font-medium bg-surface-container-high text-on-surface">
+                        Module 05.2
+                      </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 line-clamp-2">
+                      Domain 5: Cryptographic Controls, Key Management &amp; PKI Architecture
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                      Instructor: <span class="text-on-surface font-medium">Adaeze Okonkwo, CISA</span>
+</p>
+<div class="space-y-1.5 pt-2 border-t border-outline-variant/60">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-emerald-700 font-medium">100% completed</span>
+<span class="text-on-surface-variant">Finished</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0 flex flex-col gap-2">
+<button class="w-full h-11 bg-surface-container-lowest border border-outline text-on-surface rounded-md font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+                    Watch again
+                  </button>
+<a class="h-9 flex items-center justify-center gap-1.5 text-secondary hover:underline text-body-sm font-body-sm focus-ring rounded" href="#">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                    Class slides (PDF)
+                  </a>
+</div>
+</article>
+</div>
+<!-- Standard Pagination & Showing Controls Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
+<span class="text-body-sm font-body-sm text-on-surface-variant">
+                Showing <strong class="text-on-surface font-medium">1–8</strong> of <strong class="text-on-surface font-medium">8</strong> recordings
+              </span>
+<div class="flex items-center gap-2">
+<button class="h-11 px-4 border border-outline-variant rounded text-on-surface-variant/50 text-label-md font-label-md bg-surface-container-low cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span> Previous
+                </button>
+<div class="px-3 py-2 text-label-md font-label-md bg-secondary text-on-secondary rounded min-w-[40px] text-center">
+                  1
+                </div>
+<button class="h-11 px-4 border border-outline-variant rounded text-on-surface-variant/50 text-label-md font-label-md bg-surface-container-low cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+                  Next <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">
+                Page 1 of 1
+              </span>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: EMPTY STATE SPECIFICATION VIEW -->
+<!-- ========================================================================= -->
+<section class="max-w-[1440px] mx-auto my-12 bg-surface-container-lowest border border-outline-variant shadow-sm rounded-xl overflow-hidden" id="variant-empty">
+<!-- State Identifier Header -->
+<div class="bg-surface-container px-6 py-3 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-amber-600"></span>
+<span class="text-label-md font-label-md text-on-surface">VARIANT 2: ZERO-RESULTS EMPTY STATE SPECIFICATION</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-code-snippet">Query: "Blockchain zero-knowledge audit" · Trigger: Zero matches returned</span>
+</div>
+<div class="p-8 bg-surface-bright">
+<div class="max-w-[1152px] mx-auto space-y-6">
+<!-- Context Description Header -->
+<div class="border-b border-outline-variant pb-4">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span>Programme Home</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Recordings library</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Search results</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">Recordings library</h3>
+</div>
+<!-- Filter Bar with active zero-hit query -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm space-y-4">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-11 pl-11 pr-11 bg-surface-container-lowest border border-secondary text-on-surface text-body-md rounded-lg focus-ring font-medium" readonly="" type="text" value="Blockchain zero-knowledge audit"/>
+<button class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-on-surface hover:text-error focus-ring rounded" title="Clear search" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/40 text-body-sm">
+<span class="text-label-md font-label-md text-on-surface">Showing 0 recordings</span>
+<div class="flex items-center gap-2">
+<span class="text-label-sm text-on-surface-variant">Active filter:</span>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm bg-surface-container px-2 py-0.5 rounded text-secondary border border-secondary">
+                "Blockchain zero-knowledge audit"
+              </span>
+</div>
+</div>
+</div>
+<!-- Clean Institutional Empty State Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-12 text-center max-w-2xl mx-auto shadow-sm my-8">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center mx-auto text-on-surface-variant mb-4">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-surface mb-2">
+            No recordings match your criteria
+          </h4>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md mx-auto mb-6">
+            We couldn't find any recordings matching your search or active filters. Try clearing filters or searching with different CISA syllabus terms.
+          </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+<button class="h-11 px-6 bg-primary text-on-primary text-label-md font-label-md rounded hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_alt_off</span>
+              Clear all filters
+            </button>
+<button class="h-11 px-6 bg-surface-container-lowest border border-outline text-on-surface text-label-md font-label-md rounded hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]">contact_support</span>
+              Request Session from Instructor
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 3: LOADING SKELETON VIEW SPECIFICATION -->
+<!-- ========================================================================= -->
+<section class="max-w-[1440px] mx-auto my-12 bg-surface-container-lowest border border-outline-variant shadow-sm rounded-xl overflow-hidden mb-24" id="variant-skeleton">
+<!-- State Identifier Header -->
+<div class="bg-surface-container px-6 py-3 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-tint"></span>
+<span class="text-label-md font-label-md text-on-surface">VARIANT 3: ASYNCHRONOUS LOADING SKELETON SPECIFICATION</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-code-snippet">State: Network Latency / Pending API Resolution · 6-Card Pulse Placeholder</span>
+</div>
+<div class="p-8 bg-surface-bright">
+<div class="max-w-[1152px] mx-auto space-y-6 animate-pulse">
+<!-- Skeleton Header -->
+<div class="border-b border-outline-variant pb-6 space-y-3">
+<div class="h-4 w-48 bg-slate-200 rounded"></div>
+<div class="h-8 w-64 bg-slate-300 rounded"></div>
+<div class="h-4 w-96 bg-slate-200 rounded"></div>
+</div>
+<!-- Skeleton Filter Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm space-y-4">
+<div class="h-11 bg-slate-200 rounded-lg w-full"></div>
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+<div class="h-11 bg-slate-200 rounded-lg"></div>
+<div class="h-11 bg-slate-200 rounded-lg"></div>
+<div class="h-11 bg-slate-200 rounded-lg"></div>
+<div class="h-11 bg-slate-200 rounded-lg"></div>
+</div>
+</div>
+<!-- Skeleton 6-Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+<!-- Skeleton Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden p-0 flex flex-col justify-between">
+<div>
+<div class="aspect-video bg-slate-200 border-b border-outline-variant"></div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between">
+<div class="h-4 w-24 bg-slate-200 rounded"></div>
+<div class="h-4 w-16 bg-slate-200 rounded"></div>
+</div>
+<div class="h-5 w-full bg-slate-300 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-300 rounded"></div>
+<div class="h-4 w-40 bg-slate-200 rounded pt-2"></div>
+<div class="h-2 w-full bg-slate-200 rounded-full mt-4"></div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<div class="h-11 bg-slate-300 rounded-md w-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden p-0 flex flex-col justify-between">
+<div>
+<div class="aspect-video bg-slate-200 border-b border-outline-variant"></div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between">
+<div class="h-4 w-24 bg-slate-200 rounded"></div>
+<div class="h-4 w-16 bg-slate-200 rounded"></div>
+</div>
+<div class="h-5 w-full bg-slate-300 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-300 rounded"></div>
+<div class="h-4 w-40 bg-slate-200 rounded pt-2"></div>
+<div class="h-2 w-full bg-slate-200 rounded-full mt-4"></div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<div class="h-11 bg-slate-300 rounded-md w-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden p-0 flex flex-col justify-between">
+<div>
+<div class="aspect-video bg-slate-200 border-b border-outline-variant"></div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between">
+<div class="h-4 w-24 bg-slate-200 rounded"></div>
+<div class="h-4 w-16 bg-slate-200 rounded"></div>
+</div>
+<div class="h-5 w-full bg-slate-300 rounded"></div>
+<div class="h-5 w-2/3 bg-slate-300 rounded"></div>
+<div class="h-4 w-40 bg-slate-200 rounded pt-2"></div>
+<div class="h-2 w-full bg-slate-200 rounded-full mt-4"></div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<div class="h-11 bg-slate-300 rounded-md w-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden p-0 flex flex-col justify-between">
+<div>
+<div class="aspect-video bg-slate-200 border-b border-outline-variant"></div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between">
+<div class="h-4 w-24 bg-slate-200 rounded"></div>
+<div class="h-4 w-16 bg-slate-200 rounded"></div>
+</div>
+<div class="h-5 w-full bg-slate-300 rounded"></div>
+<div class="h-5 w-4/5 bg-slate-300 rounded"></div>
+<div class="h-4 w-40 bg-slate-200 rounded pt-2"></div>
+<div class="h-2 w-full bg-slate-200 rounded-full mt-4"></div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<div class="h-11 bg-slate-300 rounded-md w-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 5 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden p-0 flex flex-col justify-between">
+<div>
+<div class="aspect-video bg-slate-200 border-b border-outline-variant"></div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between">
+<div class="h-4 w-24 bg-slate-200 rounded"></div>
+<div class="h-4 w-16 bg-slate-200 rounded"></div>
+</div>
+<div class="h-5 w-full bg-slate-300 rounded"></div>
+<div class="h-5 w-1/2 bg-slate-300 rounded"></div>
+<div class="h-4 w-40 bg-slate-200 rounded pt-2"></div>
+<div class="h-2 w-full bg-slate-200 rounded-full mt-4"></div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<div class="h-11 bg-slate-300 rounded-md w-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 6 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden p-0 flex flex-col justify-between">
+<div>
+<div class="aspect-video bg-slate-200 border-b border-outline-variant"></div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between">
+<div class="h-4 w-24 bg-slate-200 rounded"></div>
+<div class="h-4 w-16 bg-slate-200 rounded"></div>
+</div>
+<div class="h-5 w-full bg-slate-300 rounded"></div>
+<div class="h-5 w-3/4 bg-slate-300 rounded"></div>
+<div class="h-4 w-40 bg-slate-200 rounded pt-2"></div>
+<div class="h-2 w-full bg-slate-200 rounded-full mt-4"></div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<div class="h-11 bg-slate-300 rounded-md w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Spec Footer Note -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant py-6 px-8 text-center text-label-sm font-label-sm text-on-surface-variant">
+<div class="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<span>A.J. SILICON AUDIT &amp; REGULATORY RISK COMPLIANCE ACADEMY · LAGOS, NIGERIA</span>
+<span class="font-code-snippet">Component Spec 33 (1440px Canvas) · 8px Grid Conformance Passed · Target 44px Met</span>
+</div>
+</footer>
+</body></html>

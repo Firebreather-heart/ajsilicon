@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>36 Exam results - A.J. Silicon Learning Platform</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#e2e7ff",
+            "on-surface-variant": "#45474c",
+            "surface-variant": "#dae2fd",
+            "tertiary-container": "#281809",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "secondary": "#1d4ed8",
+            "surface": "#faf8ff",
+            "on-primary-container": "#7c8495",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#283044",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-primary-fixed": "#141c29",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-tint": "#575f6e",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "surface-container": "#eaedff",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#997f6a",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-secondary-container": "#fffbff",
+            "primary": "#000000",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-fixed": "#dce1ff",
+            "inverse-primary": "#bfc6d9",
+            "surface-bright": "#faf8ff",
+            "tertiary-fixed": "#fddcc4",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-background": "#131b2e",
+            "secondary-container": "#4069f2",
+            "primary-fixed": "#dbe2f5",
+            "outline-variant": "#c5c6cc",
+            "background": "#faf8ff",
+            "outline": "#75777c",
+            "primary-container": "#141c29",
+            "tertiary": "#000000",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-secondary-fixed": "#001551",
+            "on-tertiary-fixed": "#281809",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-fixed-variant": "#584231",
+            "tertiary-fixed-dim": "#e0c1a9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "space-sm": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Specification board styling */
+    .board-canvas {
+      min-width: 1560px;
+      padding: 40px;
+    }
+    .spec-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Sans', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: #0B1320;
+      color: #93C5FD;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-[#0F172A] antialiased">
+<!-- SPECIFICATION BOARD HEADER -->
+<header class="bg-[#0B1320] text-white px-8 py-6 border-b border-slate-800">
+<div class="max-w-[1720px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<span class="spec-badge">Design Specification Board</span>
+<span class="text-xs font-mono text-slate-400">DS-REV-2026.10 • ISACA CISA CURRICULUM</span>
+</div>
+<h1 class="text-2xl font-semibold tracking-tight text-white flex items-center gap-3">
+          36 Exam results
+          <span class="text-xs font-normal px-2.5 py-0.5 rounded border border-slate-700 bg-slate-800 text-slate-300">A.J. Silicon Learning Platform</span>
+</h1>
+</div>
+<div class="flex items-center gap-6 text-xs text-slate-300 font-mono">
+<div><strong class="text-white">Cohort:</strong> 14 (12 Oct - 18 Dec 2026)</div>
+<div><strong class="text-white">Time Zone:</strong> WAT (UTC+1)</div>
+<div><strong class="text-white">Scale:</strong> 200–800 (Pass: 450)</div>
+</div>
+</div>
+</header>
+<!-- SPECIFICATION BOARD CONTENT AREA -->
+<main class="max-w-[1720px] mx-auto p-8 space-y-16">
+<!-- ========================================================================= -->
+<!-- VARIANT 1: DESKTOP CANONICAL VIEWPORT (1440px) - PASS STATE (512 / 800) -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<div class="flex items-center justify-between border-b border-slate-300 pb-3">
+<div class="flex items-baseline gap-3">
+<span class="text-xs font-mono font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded">VARIANT 1</span>
+<h2 class="text-lg font-semibold text-slate-900">Desktop Canonical Viewport (1440px) — Pass State (512 / 800)</h2>
+<span class="text-xs text-slate-500 font-mono">Status: Pass • Scale: 200–800 • Benchmark Line: 450 • Full Audit Shell</span>
+</div>
+<span class="text-xs font-mono text-slate-500">W: 1440px Canvas</span>
+</div>
+<!-- DESKTOP CONTAINER (1440px simulation) -->
+<div class="w-full max-w-[1440px] bg-[#FAF8FF] border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- TOP APP BAR (Shared Component JSON) -->
+<header class="bg-primary-container text-on-primary w-full h-16 px-6 flex justify-between items-center border-b border-outline-variant">
+<!-- Left: Brand Logo & Product -->
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest text-primary font-headline-sm px-3 py-1 rounded flex items-center h-10 shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuUQzhHoSDADDNzpiUALGXZIVnhsOlWddBqVzadoktiIYJWZLFhAaftEcIvyTgGLco9-5fa4guf5FYYcqQ15gJEnBaOaIA5XW_vFbXGf8IZhPnpox3ZR3TV2r1l2hNSZIZGZRfD4XDvmUrcJf6ONUs-TkV-TaDLSPbawN_JNZyYYzCbJo-MqP9QZdXzOh6vV8m1nUpJzeatODl1Kf-Y_ecbLNWo14o5v90HluXqXPTNHoQBqJb_SJMqw"/>
+</div>
+<span class="text-on-primary font-headline-sm tracking-tight hidden sm:inline">A.J. Silicon</span>
+</div>
+<!-- Right: Secondary & Icon Actions & Candidate Profile -->
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help" class="w-10 h-10 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-slate-700"></div>
+<!-- Student Profile Indicator (No role switcher) -->
+<div class="flex items-center gap-3 pl-1">
+<div class="text-right hidden sm:block">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[11px] text-slate-400 font-mono">CISA Cohort 14 Candidate</div>
+</div>
+<div class="w-9 h-9 rounded bg-slate-700 text-white flex items-center justify-center font-medium text-xs border border-slate-600" title="Portrait of Chinedu Eze, CISA Cohort 14 Candidate">
+                CE
+              </div>
+</div>
+</div>
+</header>
+<!-- APP SHELL: SIDEBAR + CONTENT AREA -->
+<div class="flex flex-1 min-h-[760px]">
+<!-- SIDEBAR (Shared Component JSON) -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant p-4 flex flex-col justify-between">
+<!-- Program Header + Main Tabs -->
+<div class="space-y-6">
+<!-- Header info card -->
+<div class="pb-4 border-b border-slate-200">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<div class="text-sm font-semibold text-slate-900 leading-tight">CISA Exam Prep</div>
+</div>
+<div class="text-xs text-slate-500 font-normal leading-relaxed">
+                  Cohort 14: 12 Oct - 18 Dec 2026, Virtual
+                </div>
+</div>
+<!-- Nav items -->
+<nav class="space-y-1">
+<!-- Dashboard -->
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-slate-500">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Modules / Programme Home -->
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-slate-500">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<!-- Practice Exams (ACTIVE) -->
+<a class="bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3 text-sm transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-secondary">quiz</span>
+<span class="font-semibold">Practice Exams</span>
+</a>
+<!-- Extend Access -->
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-slate-500">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- Footer items -->
+<div class="pt-4 border-t border-slate-200 space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-slate-500">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150 ease-in-out text-rose-700 hover:text-rose-800" href="#">
+<span class="material-symbols-outlined text-rose-600">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CANVAS: EXAM RESULTS (Pass State) -->
+<main class="flex-1 bg-slate-50 p-8 overflow-y-auto">
+<div class="max-w-[1080px] mx-auto space-y-6">
+<!-- Breadcrumb & Exam Title -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 text-xs text-slate-500 mb-1 font-mono">
+<a class="hover:text-blue-700" href="#">Practice Exams</a>
+<span>/</span>
+<span>Full Diagnostic Mock #03</span>
+<span>/</span>
+<span class="text-slate-900 font-medium">Attempt Summary</span>
+</div>
+<h2 class="text-xl font-semibold text-slate-900">Practice Exam #3 Diagnostic — Results Report</h2>
+<p class="text-xs text-slate-500 mt-0.5">Completed on 24 Oct 2026 • 14:28 WAT • Candidate: Chinedu Eze (ID: AJ-CISA-8841)</p>
+</div>
+<!-- Action Controls (Top right quick-actions) -->
+<div class="flex items-center gap-3">
+<button class="h-11 px-6 border border-[#64748B] text-[#0F172A] font-medium text-sm rounded-md bg-white hover:bg-slate-100 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-2 min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-sm">refresh</span>
+<span>Retake</span>
+</button>
+<button class="h-11 px-6 bg-[#0B1320] text-white font-medium text-sm rounded-md hover:bg-slate-800 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-2 min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-sm">fact_check</span>
+<span>Review answers</span>
+</button>
+</div>
+</div>
+<!-- TOP KPI BENTO CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- CARD 1: OVERALL SCALED SCORE & BADGE -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Overall Scaled Score</span>
+<div class="text-3xl font-bold text-slate-950 mt-1 flex items-baseline gap-2">
+                        512
+                        <span class="text-sm font-normal text-slate-500">/ 800</span>
+</div>
+</div>
+<!-- Result Badge: PASS (paired with checkmark icon) -->
+<span class="inline-flex items-center gap-1.5 h-7 px-3 text-xs font-semibold rounded bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-sm leading-none">check_circle</span>
+<span>Pass</span>
+</span>
+</div>
+<!-- 200 - 800 SCALED BAR WITH 450 MARK -->
+<div class="mt-6 pt-4 border-t border-slate-100">
+<div class="flex justify-between text-[11px] font-mono text-slate-500 mb-1.5">
+<span>200 Min</span>
+<span class="font-semibold text-slate-700">450 Pass Threshold</span>
+<span>800 Max</span>
+</div>
+<!-- Track bar -->
+<div class="relative w-full h-3 bg-slate-200 rounded-full overflow-visible">
+<!-- Pass Benchmark Tick -->
+<div class="absolute left-[41.66%] top-[-4px] bottom-[-4px] w-0.5 bg-slate-700 z-10" title="450 Pass Threshold">
+<div class="absolute -top-4 -left-3 text-[9px] font-mono text-slate-700 font-bold bg-white px-1 border border-slate-300 rounded">450</div>
+</div>
+<!-- Filled candidate score (512 - 200 = 312 out of 600 = 52%) -->
+<div class="h-full bg-emerald-600 rounded-full" style="width: 52%;"></div>
+</div>
+<p class="text-[11px] text-slate-500 mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-emerald-700">task_alt</span>
+<span>Exceeds minimum passing score of 450 by +62 scaled points.</span>
+</p>
+</div>
+</div>
+<!-- CARD 2: TIME TAKEN -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Time Taken</span>
+<div class="text-3xl font-bold text-slate-950 mt-1 flex items-baseline gap-2">
+                        3h 28m
+                        <span class="text-sm font-normal text-slate-500">/ 4h 00m</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 h-7 px-3 text-xs font-semibold rounded bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Pacing OK</span>
+</span>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<div class="flex justify-between text-[11px] font-mono text-slate-500 mb-1.5">
+<span>0h 00m</span>
+<span>32m remaining</span>
+<span>4h 00m</span>
+</div>
+<div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-blue-600 rounded-full" style="width: 86.6%;"></div>
+</div>
+<p class="text-[11px] text-slate-500 mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-blue-700">speed</span>
+<span>Average 1.38 minutes per question across 150 items.</span>
+</p>
+</div>
+</div>
+<!-- CARD 3: AUDIT DOMAIN READINESS -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div>
+<span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Curriculum Coverage</span>
+<div class="text-3xl font-bold text-slate-950 mt-1">4 of 5</div>
+<div class="text-xs text-slate-600 font-medium mt-0.5">Domains at or above 60% passing benchmark</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-medium text-amber-700 bg-amber-50 border border-amber-300 px-2.5 py-1 rounded">
+<span class="material-symbols-outlined text-xs">warning</span>
+                        Domain 5 requires targeted remediation
+                      </span>
+</div>
+<p class="text-[11px] text-slate-500 mt-2">
+                      Formal exam scheduled in 32 days. Review recommended video segments below.
+                    </p>
+</div>
+</div>
+</div>
+<!-- DOMAIN BREAKDOWN BAR CHART -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-slate-900">Domain Performance Breakdown</h3>
+<p class="text-xs text-slate-500">Candidate accuracy vs 60% standard proficiency benchmark across all 5 CISA domains</p>
+</div>
+<div class="flex items-center gap-4 text-xs font-mono text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 bg-slate-900 rounded-sm"></span>
+<span>Candidate Accuracy</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-0.5 bg-red-600"></span>
+<span>60% Benchmark</span>
+</div>
+</div>
+</div>
+<!-- Chart Rows -->
+<div class="space-y-4 pt-5">
+<!-- Domain 1 -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-slate-900">Domain 1: Information System Auditing Process</span>
+<span class="text-[11px] text-slate-500 font-mono">(21% exam weight)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono font-semibold text-slate-900">74%</span>
+<span class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded font-mono">Proficient</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10" title="60% Benchmark"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 74%;"></div>
+</div>
+</div>
+<!-- Domain 2 -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-slate-900">Domain 2: Governance and Management of IT</span>
+<span class="text-[11px] text-slate-500 font-mono">(17% exam weight)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono font-semibold text-slate-900">68%</span>
+<span class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded font-mono">Proficient</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Domain 3 -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-slate-900">Domain 3: Information Systems Acquisition, Development &amp; Implementation</span>
+<span class="text-[11px] text-slate-500 font-mono">(12% exam weight)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono font-semibold text-slate-900">62%</span>
+<span class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded font-mono">Borderline</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 62%;"></div>
+</div>
+</div>
+<!-- Domain 4 -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-slate-900">Domain 4: Information Systems Operations and Business Resilience</span>
+<span class="text-[11px] text-slate-500 font-mono">(23% exam weight)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono font-semibold text-slate-900">78%</span>
+<span class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded font-mono">Proficient</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Domain 5 (Weak Domain) -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-red-900 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-red-700">error</span>
+                          Domain 5: Protection of Information Assets
+                        </span>
+<span class="text-[11px] text-slate-500 font-mono">(27% exam weight — critical)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono font-bold text-red-700">52%</span>
+<span class="text-[11px] text-red-700 bg-red-50 border border-red-300 px-1.5 py-0.5 rounded font-mono">Needs Attention</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-red-700 rounded" style="width: 52%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- WEAK DOMAINS REMEDIAL ACTION PLAN -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-600">lightbulb</span>
+<h3 class="text-base font-semibold text-slate-900">Recommended Remedial Study Prescription</h3>
+</div>
+<span class="text-xs font-mono text-slate-500">Prioritized by domain deficit</span>
+</div>
+<p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                  Based on your performance in Domain 5 (52%), complete the following targeted lesson modules and lecture recordings before re-attempting Practice Exam #4.
+                </p>
+<!-- Remedial Link Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+<!-- Remedial Link 1 -->
+<div class="border border-slate-200 rounded-lg p-4 bg-slate-50/50 hover:bg-slate-50 transition">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="text-xs font-mono font-semibold px-2 py-0.5 bg-red-100 text-red-800 rounded">Domain 5.2</span>
+<span class="text-xs text-slate-500 font-mono">14 questions missed</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">open_in_new</span>
+</div>
+<h4 class="text-sm font-semibold text-slate-900 mt-2">Lesson 5.2: Cryptographic Controls &amp; Key Management</h4>
+<p class="text-xs text-slate-600 mt-1">Review asymmetric key infrastructure, digital signatures, and HSM vault operations.</p>
+<div class="mt-3 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+<a class="text-[#1D4ED8] hover:underline font-medium flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+                        Timestamp 42:15 in 12 Sep 2026 Recording
+                      </a>
+<span class="text-slate-400 font-mono text-[11px]">34 min review</span>
+</div>
+</div>
+<!-- Remedial Link 2 -->
+<div class="border border-slate-200 rounded-lg p-4 bg-slate-50/50 hover:bg-slate-50 transition">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="text-xs font-mono font-semibold px-2 py-0.5 bg-amber-100 text-amber-800 rounded">Domain 3.4</span>
+<span class="text-xs text-slate-500 font-mono">6 questions missed</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">open_in_new</span>
+</div>
+<h4 class="text-sm font-semibold text-slate-900 mt-2">Lesson 3.4: Post-Implementation Audits</h4>
+<p class="text-xs text-slate-600 mt-1">Focus on benefit realization matrices, SLA validation, and system sign-off procedures.</p>
+<div class="mt-3 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+<a class="text-[#1D4ED8] hover:underline font-medium flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+                        Timestamp 18:30 in 26 Sep 2026 Recording
+                      </a>
+<span class="text-slate-400 font-mono text-[11px]">22 min review</span>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM DUAL ACTION BAR (44px min height compliance) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-xs text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm">lock</span>
+<span>Results stored in your candidate profile under cohort records. Next exam unlocked.</span>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="h-11 px-6 border border-[#64748B] text-[#0F172A] font-medium text-sm rounded-md bg-white hover:bg-slate-100 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex-1 sm:flex-initial min-h-[44px]" type="button">
+                    Retake
+                  </button>
+<button class="h-11 px-6 bg-[#0B1320] text-white font-medium text-sm rounded-md hover:bg-slate-800 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex-1 sm:flex-initial min-h-[44px]" type="button">
+                    Review answers
+                  </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: DESKTOP VIEWPORT FRAME - NOT YET STATE (418 / 800) -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<div class="flex items-center justify-between border-b border-slate-300 pb-3">
+<div class="flex items-baseline gap-3">
+<span class="text-xs font-mono font-semibold bg-red-100 text-red-800 border border-red-300 px-2 py-0.5 rounded">VARIANT 2</span>
+<h2 class="text-lg font-semibold text-slate-900">Desktop Canonical Viewport (1440px) — Not Yet State (418 / 800)</h2>
+<span class="text-xs text-slate-500 font-mono">Status: Not yet • Below 450 Threshold • Multiple Weak Domains • Remedial Prescription</span>
+</div>
+<span class="text-xs font-mono text-slate-500">W: 1440px Canvas</span>
+</div>
+<!-- DESKTOP CONTAINER -->
+<div class="w-full max-w-[1440px] bg-[#FAF8FF] border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- TOP APP BAR -->
+<header class="bg-primary-container text-on-primary w-full h-16 px-6 flex justify-between items-center border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest text-primary font-headline-sm px-3 py-1 rounded flex items-center h-10 shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeRnP0kpqzFYzBgdaTiyP4skyd_nz3BgoPFX5RMBwSLXR_0hy8sQz5LMRe7NMbUsHxAqomEe5ZctV4nhL0Ml6whYEdKx3R598M__VT0Z99bFHt0CuacRLIbaCDEEZgxD-t2YaRyDrRmyPcUipdPWR0XMv4pf1uMWapVd5TZ6tlvVwRgSrirgh5bLrHdN8j0xrmH3QjZPVr1YOPoL66Y-n4cLuoxesNnojjpJe5jgqlXjEHw2s_CQqBGA"/>
+</div>
+<span class="text-on-primary font-headline-sm tracking-tight hidden sm:inline">A.J. Silicon</span>
+</div>
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help" class="w-10 h-10 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-slate-700"></div>
+<!-- Profile -->
+<div class="flex items-center gap-3 pl-1">
+<div class="text-right hidden sm:block">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[11px] text-slate-400 font-mono">CISA Cohort 14 Candidate</div>
+</div>
+<div class="w-9 h-9 rounded bg-slate-700 text-white flex items-center justify-center font-medium text-xs border border-slate-600">
+                CE
+              </div>
+</div>
+</div>
+</header>
+<!-- APP SHELL: SIDEBAR + CONTENT -->
+<div class="flex flex-1 min-h-[760px]">
+<!-- SIDEBAR -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant p-4 flex flex-col justify-between">
+<div class="space-y-6">
+<div class="pb-4 border-b border-slate-200">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<div class="text-sm font-semibold text-slate-900 leading-tight">CISA Exam Prep</div>
+</div>
+<div class="text-xs text-slate-500 font-normal leading-relaxed">
+                  Cohort 14: 12 Oct - 18 Dec 2026, Virtual
+                </div>
+</div>
+<nav class="space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-slate-500">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-slate-500">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3 text-sm transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-secondary">quiz</span>
+<span class="font-semibold">Practice Exams</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-slate-500">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<div class="pt-4 border-t border-slate-200 space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-slate-500">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-sm rounded transition-all duration-150 text-rose-700" href="#">
+<span class="material-symbols-outlined text-rose-600">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CANVAS: EXAM RESULTS (NOT YET STATE) -->
+<main class="flex-1 bg-slate-50 p-8 overflow-y-auto">
+<div class="max-w-[1080px] mx-auto space-y-6">
+<!-- Header & Action Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 text-xs text-slate-500 mb-1 font-mono">
+<a class="hover:text-blue-700" href="#">Practice Exams</a>
+<span>/</span>
+<span>Full Diagnostic Mock #02</span>
+<span>/</span>
+<span class="text-slate-900 font-medium">Attempt Summary</span>
+</div>
+<h2 class="text-xl font-semibold text-slate-900">Practice Exam #2 Comprehensive — Results Report</h2>
+<p class="text-xs text-slate-500 mt-0.5">Completed on 18 Oct 2026 • 16:50 WAT • Candidate: Chinedu Eze (ID: AJ-CISA-8841)</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-11 px-6 border border-[#64748B] text-[#0F172A] font-medium text-sm rounded-md bg-white hover:bg-slate-100 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-2 min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-sm">refresh</span>
+<span>Retake</span>
+</button>
+<button class="h-11 px-6 bg-[#0B1320] text-white font-medium text-sm rounded-md hover:bg-slate-800 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center gap-2 min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-sm">fact_check</span>
+<span>Review answers</span>
+</button>
+</div>
+</div>
+<!-- NOT YET WARNING BANNER -->
+<div class="bg-[#FFFBEB] border border-[#B45309] rounded-xl p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] mt-0.5">report_problem</span>
+<div>
+<h3 class="text-sm font-semibold text-[#B45309]">Scaled Score Below ISACA Passing Mark (450)</h3>
+<p class="text-xs text-amber-900 mt-0.5 leading-relaxed">
+                    This attempt achieved a scaled score of 418. A minimum of 450 is required on the ISACA scale to clear certification mock threshold. Detailed prescription below highlights specific syllabus modules requiring review.
+                  </p>
+</div>
+</div>
+<!-- TOP KPI BENTO CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- CARD 1: OVERALL SCALED SCORE (418 / 800) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Overall Scaled Score</span>
+<div class="text-3xl font-bold text-red-700 mt-1 flex items-baseline gap-2">
+                        418
+                        <span class="text-sm font-normal text-slate-500">/ 800</span>
+</div>
+</div>
+<!-- Result Badge: NOT YET (paired with alert icon) -->
+<span class="inline-flex items-center gap-1.5 h-7 px-3 text-xs font-semibold rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-sm leading-none">cancel</span>
+<span>Not yet</span>
+</span>
+</div>
+<!-- 200 - 800 SCALED BAR WITH 450 MARK -->
+<div class="mt-6 pt-4 border-t border-slate-100">
+<div class="flex justify-between text-[11px] font-mono text-slate-500 mb-1.5">
+<span>200 Min</span>
+<span class="font-semibold text-slate-700">450 Threshold</span>
+<span>800 Max</span>
+</div>
+<div class="relative w-full h-3 bg-slate-200 rounded-full overflow-visible">
+<!-- 450 Threshold vertical mark -->
+<div class="absolute left-[41.66%] top-[-4px] bottom-[-4px] w-0.5 bg-slate-900 z-10" title="450 Pass Threshold">
+<div class="absolute -top-4 -left-3 text-[9px] font-mono text-slate-800 font-bold bg-white px-1 border border-slate-300 rounded">450</div>
+</div>
+<!-- Filled candidate score (418 - 200 = 218 / 600 = 36.3%) -->
+<div class="h-full bg-red-600 rounded-full" style="width: 36.3%;"></div>
+</div>
+<p class="text-[11px] text-red-700 mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">arrow_downward</span>
+<span>Deficit of -32 points to achieve minimum pass grade.</span>
+</p>
+</div>
+</div>
+<!-- CARD 2: TIME TAKEN -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Time Taken</span>
+<div class="text-3xl font-bold text-slate-950 mt-1 flex items-baseline gap-2">
+                        3h 45m
+                        <span class="text-sm font-normal text-slate-500">/ 4h 00m</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 h-7 px-3 text-xs font-semibold rounded bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-sm">timelapse</span>
+<span>Slow Pacing</span>
+</span>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<div class="flex justify-between text-[11px] font-mono text-slate-500 mb-1.5">
+<span>0h 00m</span>
+<span>15m remaining</span>
+<span>4h 00m</span>
+</div>
+<div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-amber-600 rounded-full" style="width: 93.75%;"></div>
+</div>
+<p class="text-[11px] text-slate-500 mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-amber-700">hourglass_bottom</span>
+<span>Average 1.50 minutes per item (close to examination limit).</span>
+</p>
+</div>
+</div>
+<!-- CARD 3: AUDIT DOMAIN READINESS -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div>
+<span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Domain Clearance</span>
+<div class="text-3xl font-bold text-red-700 mt-1">2 of 5</div>
+<div class="text-xs text-slate-600 font-medium mt-0.5">Domains below passing benchmark (Domain 2 &amp; Domain 5)</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-medium text-red-700 bg-red-50 border border-red-300 px-2.5 py-1 rounded">
+<span class="material-symbols-outlined text-xs">assignment_late</span>
+                        Remedial prescription required
+                      </span>
+</div>
+<p class="text-[11px] text-slate-500 mt-2">
+                      Complete recommended syllabus modules before booking re-attempt.
+                    </p>
+</div>
+</div>
+</div>
+<!-- DOMAIN BREAKDOWN BAR CHART (MULTIPLE WEAK DOMAINS) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-slate-900">Domain Performance Breakdown</h3>
+<p class="text-xs text-slate-500">Benchmark: 60% accuracy required per domain. 2 domains fail proficiency threshold.</p>
+</div>
+<div class="flex items-center gap-4 text-xs font-mono text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 bg-slate-900 rounded-sm"></span>
+<span>Passed Domain</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 bg-red-700 rounded-sm"></span>
+<span>Deficit Domain</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-0.5 bg-red-600"></span>
+<span>60% Benchmark</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 pt-5">
+<!-- Domain 1 -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-slate-900">Domain 1: Information System Auditing Process (21%)</span>
+<div class="flex items-center gap-3">
+<span class="font-mono font-semibold text-slate-900">64%</span>
+<span class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded font-mono">Proficient</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 64%;"></div>
+</div>
+</div>
+<!-- Domain 2 (DEFICIT) -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-red-900 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-red-700">error</span>
+                        Domain 2: Governance and Management of IT (17%)
+                      </span>
+<div class="flex items-center gap-3">
+<span class="font-mono font-bold text-red-700">54%</span>
+<span class="text-[11px] text-red-700 bg-red-50 border border-red-300 px-1.5 py-0.5 rounded font-mono">Deficit (-6%)</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-red-700 rounded" style="width: 54%;"></div>
+</div>
+</div>
+<!-- Domain 3 -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-slate-900">Domain 3: Information Systems Acquisition, Development &amp; Implementation (12%)</span>
+<div class="flex items-center gap-3">
+<span class="font-mono font-semibold text-slate-900">60%</span>
+<span class="text-[11px] text-slate-700 bg-slate-100 border border-slate-300 px-1.5 py-0.5 rounded font-mono">Benchmark</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 60%;"></div>
+</div>
+</div>
+<!-- Domain 4 -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-slate-900">Domain 4: Information Systems Operations and Business Resilience (23%)</span>
+<div class="flex items-center gap-3">
+<span class="font-mono font-semibold text-slate-900">66%</span>
+<span class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded font-mono">Proficient</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 66%;"></div>
+</div>
+</div>
+<!-- Domain 5 (CRITICAL DEFICIT) -->
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-red-900 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-red-700">error</span>
+                        Domain 5: Protection of Information Assets (27%)
+                      </span>
+<div class="flex items-center gap-3">
+<span class="font-mono font-bold text-red-700">46%</span>
+<span class="text-[11px] text-red-700 bg-red-50 border border-red-300 px-1.5 py-0.5 rounded font-mono">Critical Deficit (-14%)</span>
+</div>
+</div>
+<div class="relative w-full h-4 bg-slate-100 rounded border border-slate-200">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-600 z-10"></div>
+<div class="h-full bg-red-700 rounded" style="width: 46%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- EXTENDED REMEDIAL STUDY PRESCRIPTION SECTION -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-700">menu_book</span>
+<h3 class="text-base font-semibold text-slate-900">Prescribed Remedial Action Modules</h3>
+</div>
+<span class="text-xs font-mono text-red-700 font-semibold bg-red-50 border border-red-200 px-2 py-0.5 rounded">Action Required Prior to Retake</span>
+</div>
+<p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                  Candidate missed key foundational principles in IT Governance structure and Security Architecture. Click directly into the lecture timestamps and slide deck sections below:
+                </p>
+<!-- Remedial Link Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+<!-- Link 1: Domain 5.2 -->
+<div class="border border-slate-200 rounded-lg p-4 bg-slate-50/60">
+<div class="flex items-center justify-between">
+<span class="text-xs font-mono font-semibold px-2 py-0.5 bg-red-100 text-red-800 rounded">Domain 5.2</span>
+<span class="text-[11px] text-slate-500 font-mono">Priority 1</span>
+</div>
+<h4 class="text-sm font-semibold text-slate-900 mt-2">Cryptographic Controls &amp; PKI</h4>
+<p class="text-xs text-slate-600 mt-1">Symmetric vs asymmetric keys, digital signatures, and certificate revocation.</p>
+<div class="mt-3 pt-3 border-t border-slate-200 space-y-1.5 text-xs">
+<a class="text-[#1D4ED8] hover:underline font-medium flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+                        Timestamp 42:15 • 12 Sep Recording
+                      </a>
+<a class="text-slate-600 hover:text-slate-900 flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm text-slate-400">description</span>
+                        Slides: Module 05, Deck B (pp. 34-48)
+                      </a>
+</div>
+</div>
+<!-- Link 2: Domain 2.3 -->
+<div class="border border-slate-200 rounded-lg p-4 bg-slate-50/60">
+<div class="flex items-center justify-between">
+<span class="text-xs font-mono font-semibold px-2 py-0.5 bg-amber-100 text-amber-800 rounded">Domain 2.3</span>
+<span class="text-[11px] text-slate-500 font-mono">Priority 2</span>
+</div>
+<h4 class="text-sm font-semibold text-slate-900 mt-2">IT Steering Committee &amp; Roles</h4>
+<p class="text-xs text-slate-600 mt-1">Segregation of duties, board oversight, risk appetite alignment matrix.</p>
+<div class="mt-3 pt-3 border-t border-slate-200 space-y-1.5 text-xs">
+<a class="text-[#1D4ED8] hover:underline font-medium flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+                        Timestamp 1:04:10 • 19 Sep Recording
+                      </a>
+<a class="text-slate-600 hover:text-slate-900 flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm text-slate-400">description</span>
+                        COBIT 2019 Core Focus Notes (PDF)
+                      </a>
+</div>
+</div>
+<!-- Link 3: Domain 5.5 -->
+<div class="border border-slate-200 rounded-lg p-4 bg-slate-50/60">
+<div class="flex items-center justify-between">
+<span class="text-xs font-mono font-semibold px-2 py-0.5 bg-red-100 text-red-800 rounded">Domain 5.5</span>
+<span class="text-[11px] text-slate-500 font-mono">Priority 3</span>
+</div>
+<h4 class="text-sm font-semibold text-slate-900 mt-2">Network Security &amp; Firewalls</h4>
+<p class="text-xs text-slate-600 mt-1">DMZ architecture, stateful inspection, and intrusion prevention rules.</p>
+<div class="mt-3 pt-3 border-t border-slate-200 space-y-1.5 text-xs">
+<a class="text-[#1D4ED8] hover:underline font-medium flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+                        Timestamp 55:40 • 03 Oct Recording
+                      </a>
+<a class="text-slate-600 hover:text-slate-900 flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm text-slate-400">description</span>
+                        Lab Walkthrough: Perimeter Auditing
+                      </a>
+</div>
+</div>
+</div>
+</div>
+<!-- ACTION FOOTER -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-xs text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-600 text-sm">info</span>
+<span>Recommendation: Complete at least 2 remedial items before booking Exam #3 retake.</span>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="h-11 px-6 border border-[#64748B] text-[#0F172A] font-medium text-sm rounded-md bg-white hover:bg-slate-100 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex-1 sm:flex-initial min-h-[44px]" type="button">
+                    Retake
+                  </button>
+<button class="h-11 px-6 bg-[#0B1320] text-white font-medium text-sm rounded-md hover:bg-slate-800 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex-1 sm:flex-initial min-h-[44px]" type="button">
+                    Review answers
+                  </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 3: MOBILE VIEWPORT (390px PLAIN FRAME) - NO DEVICE CHROME -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<div class="flex items-center justify-between border-b border-slate-300 pb-3">
+<div class="flex items-baseline gap-3">
+<span class="text-xs font-mono font-semibold bg-blue-100 text-blue-800 border border-blue-300 px-2 py-0.5 rounded">VARIANT 3</span>
+<h2 class="text-lg font-semibold text-slate-900">Mobile Viewport (390px Plain Frame)</h2>
+<span class="text-xs text-slate-500 font-mono">No device chrome • No phone status bar • 512 Pass State • Stacked 44px Controls</span>
+</div>
+<span class="text-xs font-mono text-slate-500">W: 390px Canonical</span>
+</div>
+<!-- MOBILE 390px FRAME CONTAINER -->
+<div class="w-[390px] mx-auto bg-slate-50 border-2 border-slate-300 rounded-xl shadow-md overflow-hidden">
+<!-- MOBILE TOP BAR (Navy, 64px, Logo plate, candidate avatar) -->
+<header class="bg-[#0B1320] text-white h-16 px-4 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="bg-white px-2 py-1 rounded flex items-center h-8">
+<img alt="A.J. Silicon Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRwt_ZNrDVGGm6gQ4J1V7ewq6VgzlekBjPMv5UeF7n6HypbFkRpxoS58GZOkY2l7Ql5b8LdKnlpYp1w0hj5Hr9kuMJ6mnevj8OcwZ4wwZWmmvyUZMhGlgNCfhKA4PqNnWyTqyurvI6rY9rVJVIqzldHkHrguFx0sJRWC41lgw9UWJRSK7czuQazNrKc1AxpO-nO5XJDQfg58lpHT5s_yFv09BnpwMcO23j8fQQCyY2nLz2yPoChPl3cg"/>
+</div>
+<span class="text-sm font-semibold tracking-tight">A.J. Silicon</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-white" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="w-8 h-8 rounded bg-slate-700 text-white flex items-center justify-center text-xs font-medium border border-slate-600">
+              CE
+            </div>
+</div>
+</header>
+<!-- SUBHEADER / PROGRAM STRIP -->
+<div class="bg-slate-100 border-b border-slate-200 px-4 py-2 flex items-center justify-between text-xs">
+<div class="font-medium text-slate-800">CISA Prep • Cohort 14</div>
+<span class="text-slate-500 font-mono text-[11px]">24 Oct 2026</span>
+</div>
+<!-- MOBILE CONTENT SCROLL CANVAS -->
+<div class="p-4 space-y-4">
+<!-- Exam Title -->
+<div>
+<div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Practice Exam #3 Diagnostic</div>
+<h3 class="text-base font-semibold text-slate-900 mt-0.5">Attempt Summary</h3>
+</div>
+<!-- PRIMARY RESULT CARD (SCORE + PASS BADGE + SCALE) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] uppercase tracking-wider font-semibold text-slate-500">Scaled Score</span>
+<div class="text-2xl font-bold text-slate-950 mt-0.5 flex items-baseline gap-1.5">
+                  512
+                  <span class="text-xs font-normal text-slate-500">/ 800</span>
+</div>
+</div>
+<!-- Result badge: Pass -->
+<span class="inline-flex items-center gap-1 h-6 px-2.5 text-xs font-semibold rounded bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs leading-none">check_circle</span>
+<span>Pass</span>
+</span>
+</div>
+<!-- 200 - 800 Scale Gauge -->
+<div class="mt-4 pt-3 border-t border-slate-100">
+<div class="flex justify-between text-[10px] font-mono text-slate-500 mb-1">
+<span>200</span>
+<span class="font-semibold text-slate-800">Pass: 450</span>
+<span>800</span>
+</div>
+<div class="relative w-full h-2.5 bg-slate-200 rounded-full">
+<!-- 450 Marker line -->
+<div class="absolute left-[41.66%] top-[-2px] bottom-[-2px] w-0.5 bg-slate-800 z-10"></div>
+<!-- Filled -->
+<div class="h-full bg-emerald-600 rounded-full" style="width: 52%;"></div>
+</div>
+<p class="text-[11px] text-slate-600 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-emerald-700">task_alt</span>
+<span>+62 points above passing score.</span>
+</p>
+</div>
+</div>
+<!-- TIME TAKEN CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] uppercase tracking-wider font-semibold text-slate-500">Time Taken</span>
+<div class="text-xl font-bold text-slate-950 mt-0.5">3h 28m</div>
+</div>
+<span class="text-xs text-slate-500 font-mono">Limit: 4h 00m</span>
+</div>
+<div class="w-full h-2 bg-slate-200 rounded-full mt-3 overflow-hidden">
+<div class="h-full bg-blue-600 rounded-full" style="width: 86.6%;"></div>
+</div>
+<div class="text-[11px] text-slate-500 mt-1.5 flex justify-between font-mono">
+<span>Pacing: 1.38m / q</span>
+<span>32m remaining</span>
+</div>
+</div>
+<!-- STACKED DOMAIN BARS -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-slate-100">
+<span class="text-xs font-semibold text-slate-900">Domain Performance</span>
+<span class="text-[10px] font-mono text-slate-500">Benchmark: 60%</span>
+</div>
+<!-- D1 -->
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-800 text-[11px] font-medium truncate pr-2">D1: IS Auditing Process</span>
+<span class="font-mono text-slate-900 font-semibold text-xs">74%</span>
+</div>
+<div class="relative w-full h-2 bg-slate-100 rounded">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-500 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 74%;"></div>
+</div>
+</div>
+<!-- D2 -->
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-800 text-[11px] font-medium truncate pr-2">D2: Governance &amp; IT Mgt</span>
+<span class="font-mono text-slate-900 font-semibold text-xs">68%</span>
+</div>
+<div class="relative w-full h-2 bg-slate-100 rounded">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-500 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 68%;"></div>
+</div>
+</div>
+<!-- D3 -->
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-800 text-[11px] font-medium truncate pr-2">D3: Acquisition &amp; Impl</span>
+<span class="font-mono text-slate-900 font-semibold text-xs">62%</span>
+</div>
+<div class="relative w-full h-2 bg-slate-100 rounded">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-500 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 62%;"></div>
+</div>
+</div>
+<!-- D4 -->
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-800 text-[11px] font-medium truncate pr-2">D4: Operations &amp; Resilience</span>
+<span class="font-mono text-slate-900 font-semibold text-xs">78%</span>
+</div>
+<div class="relative w-full h-2 bg-slate-100 rounded">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-500 z-10"></div>
+<div class="h-full bg-slate-900 rounded" style="width: 78%;"></div>
+</div>
+</div>
+<!-- D5 (Deficit) -->
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-red-900 text-[11px] font-semibold truncate pr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-red-600">error</span>
+                  D5: Protection of Assets
+                </span>
+<span class="font-mono text-red-700 font-bold text-xs">52%</span>
+</div>
+<div class="relative w-full h-2 bg-slate-100 rounded">
+<div class="absolute left-[60%] top-0 bottom-0 w-0.5 bg-red-500 z-10"></div>
+<div class="h-full bg-red-700 rounded" style="width: 52%;"></div>
+</div>
+</div>
+</div>
+<!-- WEAK DOMAIN REMEDIAL CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-900 mb-2">
+<span class="material-symbols-outlined text-sm text-amber-600">lightbulb</span>
+<span>Remedial Study Links</span>
+</div>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+<div class="text-[11px] font-mono text-red-700 font-semibold">Lesson 5.2 • Cryptographic Controls</div>
+<p class="text-xs text-slate-700 mt-0.5">Asymmetric keys &amp; HSM vault sign-off.</p>
+<a class="mt-2 text-xs text-[#1D4ED8] font-medium flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-xs">play_circle</span>
+                  Timestamp 42:15 in 12 Sep Recording
+                </a>
+</div>
+<!-- Item 2 -->
+<div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+<div class="text-[11px] font-mono text-amber-800 font-semibold">Lesson 3.4 • Post-Implementation Audits</div>
+<p class="text-xs text-slate-700 mt-0.5">Benefit realization &amp; SLA sign-off.</p>
+<a class="mt-2 text-xs text-[#1D4ED8] font-medium flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-xs">play_circle</span>
+                  Timestamp 18:30 in 26 Sep Recording
+                </a>
+</div>
+</div>
+</div>
+<!-- STACKED 44PX ACTION BUTTONS -->
+<div class="space-y-2 pt-2 pb-4">
+<button class="w-full h-11 bg-[#0B1320] text-white font-medium text-sm rounded-md hover:bg-slate-800 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center justify-center gap-2 min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-sm">fact_check</span>
+<span>Review answers</span>
+</button>
+<button class="w-full h-11 border border-[#64748B] text-[#0F172A] font-medium text-sm rounded-md bg-white hover:bg-slate-100 transition focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center justify-center gap-2 min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-sm">refresh</span>
+<span>Retake</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SPECIFICATION NOTES FOOTER -->
+<footer class="pt-8 border-t border-slate-300 text-xs text-slate-500 font-mono flex flex-col md:flex-row justify-between gap-4">
+<div>
+        A.J. Silicon Learning Platform • Component 36: Exam Results • Institutional IT Audit Spec
+      </div>
+<div>
+        Conformance: 44px Touch Floor • 8px Grid • Contrast AAA • Strictly No Role Switcher Shown
+      </div>
+</footer>
+</main>
+</body></html>

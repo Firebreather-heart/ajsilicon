@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17 Legal page template — Complete Specification Board</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#0B1320',
+              link: '#1D4ED8',
+              'link-on-dark': '#93C5FD',
+              focus: '#2563EB',
+              danger: '#B91C1C',
+              'danger-bg': '#FEF2F2',
+              success: '#047857',
+              'success-bg': '#ECFDF5',
+              warning: '#B45309',
+              'warning-bg': '#FFFBEB',
+              info: '#1D4ED8',
+              'info-bg': '#EFF6FF',
+              text: '#0F172A',
+              muted: '#475569',
+              'field-border': '#64748B',
+              'card-border': '#E2E8F0',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans text-brand-text antialiased p-8 space-y-16">
+
+  <!-- SPECIFICATION HEADER -->
+  <header class="max-w-[1440px] mx-auto bg-white p-6 rounded-xl border border-brand-card-border shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="text-xs font-semibold uppercase tracking-wider text-brand-muted">Design Specification · Screen 17</span>
+        <span class="text-xs bg-blue-100 text-brand-link px-2 py-0.5 rounded font-medium">Institutional Legal</span>
+      </div>
+      <h1 class="text-2xl font-bold text-brand-text">Legal Page Template — Four Policy Variants</h1>
+      <p class="text-sm text-brand-muted mt-1">Tokens: Primary #0B1320, Link #1D4ED8, Link-on-dark #93C5FD, Focus #2563EB, Card border #E2E8F0, Radius 12px, Min 44px touch targets.</p>
+    </div>
+    <div class="text-xs bg-slate-50 border border-brand-card-border p-3 rounded-lg text-brand-muted">
+      <div><strong>Viewport:</strong> Desktop 1440px</div>
+      <div><strong>Top Bar:</strong> Public Simple Top Bar (No Sidebar)</div>
+      <div><strong>Actions:</strong> Print (44px target)</div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- VARIANT 1: TERMS OF SERVICE (1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-3">
+    <div class="flex items-center justify-between text-xs text-brand-muted px-2">
+      <span class="font-semibold text-brand-text flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-brand-primary text-white flex items-center justify-center text-[10px]">1</span>
+        Variant 1: Terms of Service
+      </span>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <div class="w-full bg-[#F8FAFC] border border-brand-card-border rounded-xl overflow-hidden shadow-sm">
+      <!-- Public Simple Top Bar -->
+      <nav class="h-16 bg-brand-primary border-b border-[#1E293B] px-8 flex items-center justify-between">
+        <div class="flex items-center gap-8">
+          <div class="bg-white px-2 py-1 rounded inline-flex items-center justify-center shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkpw44H_Y1ApV9cs8QPWdcepy6H4kG0lVL6F7jtr346axvbH16rdkbAalHXoDPLEa3J6XVceXTJqsVWJ9FUTp8JqGIQ0orrzkMKP6MGrasVznt76Mn6sSND73qUcDkBVxYlxsI8aiW0R4_kAoTDz5in-7-cUk1Pj4cJo_ZzxbIFd8dbMpxR3rTNHEnAKI-ul1g14r-4AwEQc8ay4-QGsS2bFrrndoFYJasAyfWOeObGQkBthDXCVB71UyYT_r8KtoF_xs" alt="A.J. Silicon" class="h-6 w-auto object-contain" />
+          </div>
+          <div class="hidden md:flex items-center gap-6">
+            <a href="#" class="text-sm font-medium text-white hover:text-brand-link-on-dark transition-colors h-11 inline-flex items-center">Programmes</a>
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 inline-flex items-center">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <a href="#" class="text-sm font-medium text-brand-link-on-dark hover:underline h-11 inline-flex items-center px-2">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Legal Layout -->
+      <div class="max-w-6xl mx-auto px-8 py-12">
+        <!-- Breadcrumb / Header Area -->
+        <div class="border-b border-brand-card-border pb-6 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <nav class="text-xs text-brand-muted mb-3 flex items-center gap-2">
+              <a href="#" class="text-brand-link hover:underline">Home</a>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span class="text-brand-text font-medium">Terms of Service</span>
+            </nav>
+            <h2 class="text-3xl font-bold text-brand-text tracking-tight">Terms of Service</h2>
+            <div class="flex items-center gap-4 text-xs text-brand-muted mt-2">
+              <span><strong>Version:</strong> 2.4</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span><strong>Last updated:</strong> 05 Oct 2026</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span>Jurisdiction: Federal Republic of Nigeria</span>
+            </div>
+          </div>
+          <button onclick="window.print()" class="h-11 px-5 border border-brand-field-border bg-white text-brand-text hover:bg-slate-50 font-medium rounded-lg inline-flex items-center justify-center gap-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-focus focus:ring-offset-2 transition-colors shrink-0">
+            <span class="material-symbols-outlined text-lg">print</span>
+            <span>Print</span>
+          </button>
+        </div>
+
+        <!-- 2-Column Grid: Sticky In-Page TOC + Long Form Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left in-page contents list -->
+          <aside class="lg:col-span-4 bg-white p-6 rounded-xl border border-brand-card-border sticky top-8">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-brand-muted mb-4">Contents</h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="#tos-1" class="block py-2 px-3 rounded-lg font-medium text-brand-link bg-blue-50 border-l-2 border-brand-link">1. Institutional Scope & Acceptance</a>
+              </li>
+              <li>
+                <a href="#tos-2" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">2. User Registration & Eligibility</a>
+              </li>
+              <li>
+                <a href="#tos-3" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">3. Tuition Fees & Settlement</a>
+              </li>
+              <li>
+                <a href="#tos-4" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">4. Learning Material Intellectual Property</a>
+              </li>
+              <li>
+                <a href="#tos-5" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">5. Academic Integrity & Ethics</a>
+              </li>
+              <li>
+                <a href="#tos-6" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">6. Governing Law & Dispute Resolution</a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Right long-form text area with numbered headings -->
+          <main class="lg:col-span-8 bg-white p-8 md:p-10 rounded-xl border border-brand-card-border space-y-8 leading-relaxed">
+            <section id="tos-1" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">1. Institutional Scope & Acceptance</h3>
+              <p class="text-base text-brand-text">These Terms of Service govern your access to the A.J. Silicon Learning Platform, training programmes, and associated professional assessment resources. By creating an account or registering for any certification syllabus, you agree to comply with and be bound by these institutional terms.</p>
+            </section>
+
+            <section id="tos-2" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">2. User Registration & Eligibility</h3>
+              <p class="text-base text-brand-text">Enrolment in professional certification preparatory programmes requires candidates to provide accurate corporate or professional credentials during account creation. Each participant is strictly responsible for safeguarding their login credentials and maintaining sole access to their designated learning profile.</p>
+            </section>
+
+            <section id="tos-3" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">3. Tuition Fees & Settlement</h3>
+              <p class="text-base text-brand-text">All programme fees are quoted in Nigerian Naira (₦) and must be paid in full prior to cohort onboarding or syllabus unlock. Confirmed electronic transactions processed through approved payment gateways constitute legally binding financial commitments for the selected training window.</p>
+            </section>
+
+            <section id="tos-4" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">4. Learning Material Intellectual Property</h3>
+              <p class="text-base text-brand-text">All training slide decks, recorded lectures, diagnostic exam mock banks, and instructional case studies remain the exclusive intellectual property of A.J. Silicon. Unauthorised reproduction, public dissemination, recording, or redistribution of proprietary syllabus content is strictly prohibited and subject to legal recourse.</p>
+            </section>
+
+            <section id="tos-5" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">5. Academic Integrity & Ethics</h3>
+              <p class="text-base text-brand-text">Candidates participating in diagnostic mock examinations must maintain strict compliance with international IT audit codes of professional ethics. Any attempt to scrape question pools, circumvent timed assessment parameters, or share question answer keys will result in immediate disqualification without refund.</p>
+            </section>
+
+            <section id="tos-6" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">6. Governing Law & Dispute Resolution</h3>
+              <p class="text-base text-brand-text">These Terms shall be interpreted and governed in accordance with the laws of the Federal Republic of Nigeria. Any dispute arising out of or in connection with platform usage that cannot be settled amicably shall be submitted to arbitration in Lagos State, Nigeria.</p>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- VARIANT 2: PRIVACY POLICY (NDPA) (1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-3">
+    <div class="flex items-center justify-between text-xs text-brand-muted px-2">
+      <span class="font-semibold text-brand-text flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-brand-primary text-white flex items-center justify-center text-[10px]">2</span>
+        Variant 2: Privacy Policy (Nigeria Data Protection Act - NDPA)
+      </span>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <div class="w-full bg-[#F8FAFC] border border-brand-card-border rounded-xl overflow-hidden shadow-sm">
+      <!-- Public Simple Top Bar -->
+      <nav class="h-16 bg-brand-primary border-b border-[#1E293B] px-8 flex items-center justify-between">
+        <div class="flex items-center gap-8">
+          <div class="bg-white px-2 py-1 rounded inline-flex items-center justify-center shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw3MgICAR0bNZr2saRGFsFW-BMGvHzO4WFtDPZ2Xofc5eqRmDUS88LePe947EYQs45KxPQ2ulgmPYutV2klJrTp4k4XXzlPrudnZXC52hCrQt2JWn4zONY8tluF_DKh1qoR8w8PKnRpyF39Irnk9dbjZvfBj87sQRtIsF_VkTtnNPmv6r9OIDf1Xoytci_cAhczj5kZHWjC9GiRlok66F1LpOgVQoM3QlLCvMK-v0Xh2dt6cuXYMxcMIVeFVgORbU86ro" alt="A.J. Silicon" class="h-6 w-auto object-contain" />
+          </div>
+          <div class="hidden md:flex items-center gap-6">
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 inline-flex items-center">Programmes</a>
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 inline-flex items-center">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <a href="#" class="text-sm font-medium text-brand-link-on-dark hover:underline h-11 inline-flex items-center px-2">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Legal Layout -->
+      <div class="max-w-6xl mx-auto px-8 py-12">
+        <!-- Breadcrumb / Header Area -->
+        <div class="border-b border-brand-card-border pb-6 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <nav class="text-xs text-brand-muted mb-3 flex items-center gap-2">
+              <a href="#" class="text-brand-link hover:underline">Home</a>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span class="text-brand-text font-medium">Privacy Policy</span>
+            </nav>
+            <h2 class="text-3xl font-bold text-brand-text tracking-tight">Privacy Policy</h2>
+            <div class="flex items-center gap-4 text-xs text-brand-muted mt-2">
+              <span><strong>Version:</strong> 3.1</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span><strong>Last updated:</strong> 05 Oct 2026</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span>Compliance: Nigeria Data Protection Act 2023 (NDPA)</span>
+            </div>
+          </div>
+          <button onclick="window.print()" class="h-11 px-5 border border-brand-field-border bg-white text-brand-text hover:bg-slate-50 font-medium rounded-lg inline-flex items-center justify-center gap-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-focus focus:ring-offset-2 transition-colors shrink-0">
+            <span class="material-symbols-outlined text-lg">print</span>
+            <span>Print</span>
+          </button>
+        </div>
+
+        <!-- 2-Column Grid: Sticky In-Page TOC + Long Form Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left in-page contents list -->
+          <aside class="lg:col-span-4 bg-white p-6 rounded-xl border border-brand-card-border sticky top-8">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-brand-muted mb-4">Contents</h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="#priv-1" class="block py-2 px-3 rounded-lg font-medium text-brand-link bg-blue-50 border-l-2 border-brand-link">1. Regulatory Framework & Data Controller</a>
+              </li>
+              <li>
+                <a href="#priv-2" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">2. Personal Information Collected</a>
+              </li>
+              <li>
+                <a href="#priv-3" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">3. Purpose and Legal Basis for Processing</a>
+              </li>
+              <li>
+                <a href="#priv-4" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">4. Data Subject Rights Under the NDPA</a>
+              </li>
+              <li>
+                <a href="#priv-5" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">5. Security Safeguards & Retention Schedules</a>
+              </li>
+              <li>
+                <a href="#priv-6" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">6. Data Protection Officer (DPO) Contact</a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Right long-form text area with numbered headings -->
+          <main class="lg:col-span-8 bg-white p-8 md:p-10 rounded-xl border border-brand-card-border space-y-8 leading-relaxed">
+            <section id="priv-1" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">1. Regulatory Framework & Data Controller</h3>
+              <p class="text-base text-brand-text">A.J. Silicon operates as a registered data controller adhering rigorously to the principles set out in the Nigeria Data Protection Act 2023 (NDPA). We process all personal information lawfully, transparently, and with strict respect for the fundamental rights of all registered learners and institutional clients.</p>
+            </section>
+
+            <section id="priv-2" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">2. Personal Information Collected</h3>
+              <p class="text-base text-brand-text">We collect professional identification data including your full legal name, work email address, telephone number (+234), employer details, and certified exam attempt histories. Payment transactions are handled directly through licensed Nigerian settlement gateways and payment card details are never stored on our operational servers.</p>
+            </section>
+
+            <section id="priv-3" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">3. Purpose and Legal Basis for Processing</h3>
+              <p class="text-base text-brand-text">Your personal data is processed to administer cohort participation, issue verifiable professional certificates, and provide accredited CPE and ICAN credit records. In accordance with the NDPA, processing is grounded either in contractual necessity for training delivery or compliance with statutory reporting duties.</p>
+            </section>
+
+            <section id="priv-4" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">4. Data Subject Rights Under the NDPA</h3>
+              <p class="text-base text-brand-text">Under the NDPA, candidates possess statutory rights to request access, rectification, portability, or erasure of their personal information stored on our platforms. Requests to exercise data subject rights are acknowledged within forty-eight hours and fulfilled without undue delay through our governance office.</p>
+            </section>
+
+            <section id="priv-5" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">5. Security Safeguards & Retention Schedules</h3>
+              <p class="text-base text-brand-text">We employ enterprise encryption standards, role-based access controls, and multi-factor verification mechanisms to safeguard stored student records against unauthorised disclosure. Academic records and certificate verification datasets are retained in accordance with Nigerian educational record standards for seven years.</p>
+            </section>
+
+            <section id="priv-6" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">6. Data Protection Officer (DPO) Contact</h3>
+              <p class="text-base text-brand-text">For inquiries regarding personal data processing or to lodge a formal compliance inquiry under the NDPA, contact our designated Data Protection Officer at dpo@ajsilicon.com. Our regulatory team reviews all notices in coordination with the Nigeria Data Protection Commission (NDPC) guidelines.</p>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- VARIANT 3: CONTENT LICENCE (1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-3">
+    <div class="flex items-center justify-between text-xs text-brand-muted px-2">
+      <span class="font-semibold text-brand-text flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-brand-primary text-white flex items-center justify-center text-[10px]">3</span>
+        Variant 3: Content Licence
+      </span>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <div class="w-full bg-[#F8FAFC] border border-brand-card-border rounded-xl overflow-hidden shadow-sm">
+      <!-- Public Simple Top Bar -->
+      <nav class="h-16 bg-brand-primary border-b border-[#1E293B] px-8 flex items-center justify-between">
+        <div class="flex items-center gap-8">
+          <div class="bg-white px-2 py-1 rounded inline-flex items-center justify-center shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGBSRW441uC_zCsjiHagm5czdIcPUqNtPY8jYW-GaYDWay_yCA8L7ssTl7vxlk6k5Mz0zV0Ic90wqVh25yVAWUgkPV0kBfbegP1RpUZ3oVkg3GTZgP575r4Sf2wh1jrOwK4c2x6UUi2rn5G9v2c0SccHL1BONDYJEsMGhU4xSTLioOcHmh5vj1Nrq0RHxiFArunEM32mIbFLlVtETdb6Ek7qZtdBMhrK7bdbCPOwl20HDcHAuvuRr4GtH5-6UCrKbfdJc" alt="A.J. Silicon" class="h-6 w-auto object-contain" />
+          </div>
+          <div class="hidden md:flex items-center gap-6">
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 inline-flex items-center">Programmes</a>
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 inline-flex items-center">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <a href="#" class="text-sm font-medium text-brand-link-on-dark hover:underline h-11 inline-flex items-center px-2">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Legal Layout -->
+      <div class="max-w-6xl mx-auto px-8 py-12">
+        <!-- Breadcrumb / Header Area -->
+        <div class="border-b border-brand-card-border pb-6 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <nav class="text-xs text-brand-muted mb-3 flex items-center gap-2">
+              <a href="#" class="text-brand-link hover:underline">Home</a>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span class="text-brand-text font-medium">Content Licence</span>
+            </nav>
+            <h2 class="text-3xl font-bold text-brand-text tracking-tight">Content Licence</h2>
+            <div class="flex items-center gap-4 text-xs text-brand-muted mt-2">
+              <span><strong>Version:</strong> 1.8</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span><strong>Last updated:</strong> 05 Oct 2026</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span>Scope: Educational & Instructional Assets</span>
+            </div>
+          </div>
+          <button onclick="window.print()" class="h-11 px-5 border border-brand-field-border bg-white text-brand-text hover:bg-slate-50 font-medium rounded-lg inline-flex items-center justify-center gap-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-focus focus:ring-offset-2 transition-colors shrink-0">
+            <span class="material-symbols-outlined text-lg">print</span>
+            <span>Print</span>
+          </button>
+        </div>
+
+        <!-- 2-Column Grid: Sticky In-Page TOC + Long Form Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left in-page contents list -->
+          <aside class="lg:col-span-4 bg-white p-6 rounded-xl border border-brand-card-border sticky top-8">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-brand-muted mb-4">Contents</h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="#lic-1" class="block py-2 px-3 rounded-lg font-medium text-brand-link bg-blue-50 border-l-2 border-brand-link">1. Grant of Individual User Licence</a>
+              </li>
+              <li>
+                <a href="#lic-2" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">2. Term of Access & Expiry Conditions</a>
+              </li>
+              <li>
+                <a href="#lic-3" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">3. Prohibited Exploitation & Sharing</a>
+              </li>
+              <li>
+                <a href="#lic-4" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">4. Diagnostic Practice Banks & Syllabi</a>
+              </li>
+              <li>
+                <a href="#lic-5" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">5. Licence Revocation & Infringement Remedies</a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Right long-form text area with numbered headings -->
+          <main class="lg:col-span-8 bg-white p-8 md:p-10 rounded-xl border border-brand-card-border space-y-8 leading-relaxed">
+            <section id="lic-1" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">1. Grant of Individual User Licence</h3>
+              <p class="text-base text-brand-text">Subject to confirmed tuition payment, A.J. Silicon grants the enrolled candidate a revocable, non-exclusive, non-transferable personal licence to view designated instructional syllabus modules. This licence is strictly limited to the individual candidate and cannot be assigned, sublicensed, or shared across multiple corporate employees.</p>
+            </section>
+
+            <section id="lic-2" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">2. Term of Access & Expiry Conditions</h3>
+              <p class="text-base text-brand-text">Active licence duration extends for the exact duration of the enrolled cohort plus a ninety-day post-cohort study window with an additional thirty-day exam buffer. Upon conclusion of the designated access period, access to protected lectures and slides ceases automatically unless an extension licence is acquired.</p>
+            </section>
+
+            <section id="lic-3" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">3. Prohibited Exploitation & Sharing</h3>
+              <p class="text-base text-brand-text">The licensee shall not record, broadcast, duplicate, or capture platform instructional materials through screen-capture utilities or third-party devices. Facilitating group screenings or commercial resale of proprietary course notes constitutes a severe contractual violation resulting in immediate licence forfeiture.</p>
+            </section>
+
+            <section id="lic-4" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">4. Diagnostic Practice Banks & Syllabi</h3>
+              <p class="text-base text-brand-text">Diagnostic questions, distractor explanations, and simulated domain mock exams are licensed solely for individual certification readiness assessment. Systematic harvesting, indexing, or redistributing question items undermines educational evaluation integrity and constitutes a breach of copyright.</p>
+            </section>
+
+            <section id="lic-5" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">5. Licence Revocation & Infringement Remedies</h3>
+              <p class="text-base text-brand-text">A.J. Silicon reserves the right to terminate this licence immediately upon discovering evidence of unauthorised dissemination or account credential compromise. Upon termination, all privileges to access online instructional content terminate without entitlement to partial fee refund.</p>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- VARIANT 4: REFUND POLICY (1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto space-y-3">
+    <div class="flex items-center justify-between text-xs text-brand-muted px-2">
+      <span class="font-semibold text-brand-text flex items-center gap-2">
+        <span class="w-5 h-5 rounded-full bg-brand-primary text-white flex items-center justify-center text-[10px]">4</span>
+        Variant 4: Refund Policy
+      </span>
+      <span>Desktop 1440px</span>
+    </div>
+
+    <div class="w-full bg-[#F8FAFC] border border-brand-card-border rounded-xl overflow-hidden shadow-sm">
+      <!-- Public Simple Top Bar -->
+      <nav class="h-16 bg-brand-primary border-b border-[#1E293B] px-8 flex items-center justify-between">
+        <div class="flex items-center gap-8">
+          <div class="bg-white px-2 py-1 rounded inline-flex items-center justify-center shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEJE3sMRHiB_Xle9RIIWvhL1NEkNQy3rrY27SLapweA2nM789WpqJ6q4SkHqTgnJV9D28gvvdJ0qx97TomTeuclDk1qcWtDfwxxWe_M_qDaQNK8kucY6rXY-dfcQI_nd1QRqF8kp6vRdA1DDqwpYvpMFnSYKnBKZT9TgEJX1IZh0wLnuNOuuM6IvW-TE4izVn18IC4EYkipkBMlZVIBVcGeVAqmu5J8Y048cMDlpnAmxzbIsgCGzKEGWVaUkdId1Lq-Ew" alt="A.J. Silicon" class="h-6 w-auto object-contain" />
+          </div>
+          <div class="hidden md:flex items-center gap-6">
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 inline-flex items-center">Programmes</a>
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors h-11 inline-flex items-center">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <a href="#" class="text-sm font-medium text-brand-link-on-dark hover:underline h-11 inline-flex items-center px-2">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Legal Layout -->
+      <div class="max-w-6xl mx-auto px-8 py-12">
+        <!-- Breadcrumb / Header Area -->
+        <div class="border-b border-brand-card-border pb-6 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <nav class="text-xs text-brand-muted mb-3 flex items-center gap-2">
+              <a href="#" class="text-brand-link hover:underline">Home</a>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span class="text-brand-text font-medium">Refund Policy</span>
+            </nav>
+            <h2 class="text-3xl font-bold text-brand-text tracking-tight">Refund Policy</h2>
+            <div class="flex items-center gap-4 text-xs text-brand-muted mt-2">
+              <span><strong>Version:</strong> 2.0</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span><strong>Last updated:</strong> 05 Oct 2026</span>
+              <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+              <span>Terms: Commercial Tuition & Cohort Fees</span>
+            </div>
+          </div>
+          <button onclick="window.print()" class="h-11 px-5 border border-brand-field-border bg-white text-brand-text hover:bg-slate-50 font-medium rounded-lg inline-flex items-center justify-center gap-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-focus focus:ring-offset-2 transition-colors shrink-0">
+            <span class="material-symbols-outlined text-lg">print</span>
+            <span>Print</span>
+          </button>
+        </div>
+
+        <!-- 2-Column Grid: Sticky In-Page TOC + Long Form Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left in-page contents list -->
+          <aside class="lg:col-span-4 bg-white p-6 rounded-xl border border-brand-card-border sticky top-8">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-brand-muted mb-4">Contents</h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="#ref-1" class="block py-2 px-3 rounded-lg font-medium text-brand-link bg-blue-50 border-l-2 border-brand-link">1. General Refund Principles</a>
+              </li>
+              <li>
+                <a href="#ref-2" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">2. Withdrawal Prior to Cohort Commencement</a>
+              </li>
+              <li>
+                <a href="#ref-3" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">3. Post-Commencement & Non-Refundable Items</a>
+              </li>
+              <li>
+                <a href="#ref-4" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">4. Cohort Transfer & Deferral Provisions</a>
+              </li>
+              <li>
+                <a href="#ref-5" class="block py-2 px-3 rounded-lg text-brand-muted hover:text-brand-text hover:bg-slate-50 transition-colors">5. Refund Processing Timeline & Method</a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Right long-form text area with numbered headings -->
+          <main class="lg:col-span-8 bg-white p-8 md:p-10 rounded-xl border border-brand-card-border space-y-8 leading-relaxed">
+            <section id="ref-1" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">1. General Refund Principles</h3>
+              <p class="text-base text-brand-text">A.J. Silicon maintains fair, transparent financial policies balancing institutional seat allocation commitments with professional learner circumstances. Because physical and virtual cohort capacities are strictly limited to ensure instructor-led quality, cancellations impact class operational viability.</p>
+            </section>
+
+            <section id="ref-2" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">2. Withdrawal Prior to Cohort Commencement</h3>
+              <p class="text-base text-brand-text">Written cancellation notices submitted at least fourteen calendar days prior to scheduled cohort start qualify for an eighty-five percent refund of tuition fees paid. Cancellation requests submitted between thirteen and seven calendar days before cohort inception qualify for a fifty percent refund subject to an administrative processing charge.</p>
+            </section>
+
+            <section id="ref-3" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">3. Post-Commencement & Non-Refundable Items</h3>
+              <p class="text-base text-brand-text">No refunds shall be issued once cohort orientation has commenced or once digital learning materials and slide modules have been accessed. Dedicated 1-day workshops, examination voucher payments, and corporate custom training engagements are strictly non-refundable once booked.</p>
+            </section>
+
+            <section id="ref-4" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">4. Cohort Transfer & Deferral Provisions</h3>
+              <p class="text-base text-brand-text">Enrolled candidates experiencing corporate scheduling conflicts may request a single cohort deferral to the next subsequent intake without tuition penalty. Deferral applications must be lodged in writing at least five business days before cohort commencement and remain valid for six months.</p>
+            </section>
+
+            <section id="ref-5" class="space-y-2">
+              <h3 class="text-lg font-bold text-brand-text">5. Refund Processing Timeline & Method</h3>
+              <p class="text-base text-brand-text">Approved refunds are processed via the originating Nigerian bank account or electronic card channel within ten business days of formal administrative confirmation. International payment transfer surcharges and bank reconciliation deductions remain the responsibility of the applicant.</p>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

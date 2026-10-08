@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-100" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon — Specification Board: 35 Exam Runner</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#1d4ed8",
+            "primary": "#000000",
+            "outline-variant": "#c5c6cc",
+            "inverse-surface": "#283044",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#45474c",
+            "primary-container": "#141c29",
+            "inverse-primary": "#bfc6d9",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#bfc6d9",
+            "surface-variant": "#dae2fd",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#281809",
+            "on-error-container": "#93000a",
+            "surface-tint": "#575f6e",
+            "on-primary-fixed": "#141c29",
+            "on-tertiary-fixed": "#281809",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-fixed-variant": "#0039b5",
+            "secondary-fixed-dim": "#b7c4ff",
+            "tertiary-fixed": "#fddcc4",
+            "on-primary-container": "#7c8495",
+            "surface-container": "#eaedff",
+            "on-background": "#131b2e",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#001551",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "tertiary": "#000000",
+            "surface-bright": "#faf8ff",
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "background": "#faf8ff",
+            "primary-fixed": "#dbe2f5",
+            "on-tertiary-container": "#997f6a",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-container": "#4069f2",
+            "on-primary-fixed-variant": "#3f4756",
+            "outline": "#75777c",
+            "on-secondary-container": "#fffbff",
+            "secondary-fixed": "#dce1ff",
+            "surface-dim": "#d2d9f4",
+            "on-secondary": "#ffffff",
+            /* Institutional Exam System Specific Design Tokens */
+            "navy-shell": "#0B1320",
+            "navy-hover": "#1E293B",
+            "app-text": "#0F172A",
+            "app-muted": "#475569",
+            "app-border": "#E2E8F0",
+            "app-control-border": "#64748B",
+            "app-danger": "#B91C1C",
+            "app-danger-bg": "#FEF2F2",
+            "app-success": "#047857",
+            "app-success-bg": "#ECFDF5",
+            "app-warning": "#B45309",
+            "app-warning-bg": "#FFFBEB",
+            "app-info": "#1D4ED8",
+            "app-info-bg": "#EFF6FF",
+            "app-link-dark": "#93C5FD"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "space-md": "1.5rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "space-xl": "3rem"
+          },
+          "fontFamily": {
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "mono": ["IBM Plex Mono", "monospace"]
+          },
+          "fontSize": {
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Repeating Security Watermark Pattern */
+    .exam-watermark-bg {
+      background-image: repeating-linear-gradient(
+        -30deg,
+        rgba(15, 23, 42, 0.05) 0px,
+        rgba(15, 23, 42, 0.05) 1px,
+        transparent 1px,
+        transparent 90px
+      );
+    }
+    .watermark-text-grid {
+      background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 0);
+      background-size: 32px 32px;
+    }
+    /* Specific Focus Rings */
+    .exam-focus:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-[#F1F5F9] text-on-surface font-body-md antialiased selection:bg-secondary selection:text-on-primary">
+<!-- ========================================================================= -->
+<!-- SPECIFICATION BOARD CONTROL HEADER                                        -->
+<!-- ========================================================================= -->
+<header class="bg-primary-container border-b border-outline-variant px-6 py-4 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest px-3 py-1.5 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Official Brandmark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq7zqWzdJ0LTscX4XGSdC6OBEfPaIb4C8KP8Z8ghQb8PAUE2BoPgUEHM2gT8z_QSAwexiJdRfzaf_sLn1z5LQo76XIVfyFeZxWDm970KZdioKiT_cmPNDnRIIHpdUco2l-wuatE5JicOmWpwynhwhSbLfBQH93G-aeGz2Vu58N9mXxUppOb3zf7LWxUxsECI4OukuJ37siZYdDWym8fWIs2tY1aPSqaGZrofFV8FGERREh49K-plB11w"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-white font-headline-sm tracking-tight">Specification Board: 35 Exam Runner</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm bg-app-info-bg text-secondary border border-app-info font-medium">Lagos Testing Center · WAT</span>
+</div>
+<p class="text-on-primary-container text-body-sm">CISA Examination Engine · Security Hardened Viewport Architecture (Zero Sidebar Strict Policy)</p>
+</div>
+</div>
+<!-- Tab Navigation to Jump between Variants -->
+<nav aria-label="Variant Navigation" class="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none">
+<a class="px-3 py-2 rounded text-label-md bg-secondary text-white font-medium hover:bg-blue-700 transition" href="#variant-1">V1: In Progress</a>
+<a class="px-3 py-2 rounded text-label-md text-on-primary-container hover:text-white hover:bg-slate-800 transition" href="#variant-2">V2: 10 Min Left</a>
+<a class="px-3 py-2 rounded text-label-md text-on-primary-container hover:text-white hover:bg-slate-800 transition" href="#variant-3">V3: Submit Modal</a>
+<a class="px-3 py-2 rounded text-label-md text-on-primary-container hover:text-white hover:bg-slate-800 transition" href="#variant-4">V4: Expired</a>
+<a class="px-3 py-2 rounded text-label-md text-on-primary-container hover:text-white hover:bg-slate-800 transition" href="#variant-5">V5: Mobile (390px)</a>
+</nav>
+</div>
+</header>
+<!-- Specification Intro Bar -->
+<section class="max-w-7xl mx-auto px-6 py-6">
+<div class="bg-surface-container-lowest border border-app-border rounded-xl p-5 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="space-y-1">
+<h1 class="text-headline-md font-semibold text-app-text">Certified Information Systems Auditor (CISA) Mock Runner Engine</h1>
+<p class="text-body-sm text-app-muted">Formal testing specification compliant with ISACA IT Governance Institute testing guidelines. Standard 4-hour cognitive evaluation harness for Cohort 14.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 bg-slate-50 border border-app-border px-3 py-1.5 rounded-lg">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<span class="text-label-sm text-app-text font-medium">Session: Encrypted TLS 1.3</span>
+</div>
+<div class="flex items-center gap-2 bg-slate-50 border border-app-border px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-app-muted" data-icon="lock">lock</span>
+<span class="text-label-sm text-app-muted font-mono">ID: NG-LOS-2026-CISA-0428</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN CANVAS CONTAINER -->
+<main class="max-w-7xl mx-auto px-6 pb-24 space-y-16">
+<!-- ========================================================================= -->
+<!-- VARIANT 1: IN PROGRESS (1440px Canonical Exam Runner)                      -->
+<!-- ========================================================================= -->
+<section class="scroll-mt-24 space-y-3" id="variant-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-white font-mono text-label-sm">VARIANT 01</span>
+<h2 class="text-headline-md font-semibold text-app-text">Canonical Exam Runner — In Progress (Normal State)</h2>
+</div>
+<div class="text-label-sm text-app-muted">Desktop 1440px Canvas · Question 42/150 · Watermark Active</div>
+</div>
+<!-- Live Mock Frame -->
+<div class="relative bg-white border border-app-border rounded-xl shadow-md overflow-hidden min-h-[780px] flex flex-col">
+<!-- Watermark Layer (Semi-diagonal security stamp 14% opacity) -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none z-20 overflow-hidden select-none">
+<div class="w-full h-full flex flex-wrap content-between justify-between p-8 rotate-[-12deg] scale-125 opacity-[0.14] text-slate-900 font-mono text-[13px] tracking-wider font-semibold leading-loose">
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+</div>
+</div>
+<!-- 1. SLIM NAVY TOP BAR (STRICT NEGATIVE CONSTRAINT: NO SIDEBAR) -->
+<header class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-slate-800 z-30 shrink-0">
+<!-- Left: Brand + Exam + Candidate -->
+<div class="flex items-center gap-4">
+<div class="bg-white px-2.5 py-1 rounded flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnfWGGNELiDsPPKSfKhm-YrbHiW2CaFtdglQ7XY2dJbArjAeM9t9cRKCQ_ehPe1yP6q4k8gJY2svmec_FFCVBowqU8VRlUxriD-hB4BAMQCDj0n64lGZIv7JiWMvxRKhZKG6khvvYC3AYOj2y_XmgpQqpY65zX6votWIHEH5N5xYEaRL9nBVat6OjFUiDiK6xsrUH6K3EYV219O64F0Nro28rzR5LLZs5v4-DYQhOrFxVGx-57ImHJVw"/>
+</div>
+<div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+<div>
+<div class="text-label-md font-semibold text-white tracking-tight flex items-center gap-2">
+<span>CISA Full Mock Examination (Cohort 14)</span>
+<span class="text-slate-400 font-normal hidden lg:inline">|</span>
+<span class="text-slate-300 text-label-sm font-normal hidden lg:inline">Candidate: Chinedu Eze</span>
+</div>
+<div class="text-[12px] text-slate-400 font-mono">Exam Code: CISA-V14-MOCK-2026 · Lagos Proctored Session</div>
+</div>
+</div>
+<!-- Center: Timer & Pace Indicator -->
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2 bg-[#141C29] border border-slate-700 px-3.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-app-link-dark" data-icon="timer">timer</span>
+<div class="flex flex-col">
+<span class="font-mono text-sm font-semibold tracking-wider text-white">02:48:15</span>
+<span class="text-[10px] text-slate-400 uppercase tracking-wider">Remaining</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-2">
+<div class="text-right">
+<div class="text-label-sm font-medium text-white">Question 42 of 150</div>
+<div class="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>On pace (+4m)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Flag & End Exam Actions (min 44px touch targets) -->
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-3.5 inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-[#141C29] text-slate-200 hover:text-white hover:bg-slate-800 transition exam-focus text-label-md font-medium" type="button">
+<span class="material-symbols-outlined text-[20px] text-amber-400" data-icon="flag">flag</span>
+<span class="hidden sm:inline">Flag question</span>
+</button>
+<button class="min-h-[44px] px-4 inline-flex items-center gap-1.5 rounded-lg border border-red-500/40 bg-red-950/30 text-red-200 hover:bg-red-900/50 hover:text-white transition exam-focus text-label-md font-medium" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="exit_to_app">exit_to_app</span>
+<span>End exam</span>
+</button>
+</div>
+</header>
+<!-- Main Body: Two-column layout (Question Area + Question Navigator Panel) -->
+<div class="flex-1 flex flex-col lg:flex-row relative z-10 overflow-hidden bg-white">
+<!-- LEFT / CENTER: Question Area -->
+<section class="flex-1 p-6 md:p-8 overflow-y-auto flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-app-border">
+<div class="max-w-3xl space-y-6">
+<!-- Question Metadata Header -->
+<div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-app-border">
+<div class="flex items-center gap-2.5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-blue-50 text-secondary border border-blue-200 text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]" data-icon="policy">policy</span>
+<span>Domain 2: Governance &amp; Management of IT</span>
+</span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-300 text-label-sm font-medium">
+                    Analysis Level
+                  </span>
+</div>
+<div class="text-app-muted text-label-sm font-mono">Weight: 1.0 Point</div>
+</div>
+<!-- Question Stem -->
+<div class="space-y-3">
+<span class="text-label-sm font-bold tracking-wide uppercase text-slate-500">Question Item 42</span>
+<p class="text-headline-sm md:text-[20px] md:leading-[30px] font-medium text-app-text text-balance">
+                  An IS auditor is reviewing an enterprise’s IT steering committee charter and notices that the Chief Information Officer (CIO) alone approves all significant IT capital investments exceeding ₦50,000,000 without Board Risk Committee concurrence. What is the auditor’s PRIMARY concern?
+                </p>
+</div>
+<!-- Radio Options (A, B, C, D) 44px Min Touch Target -->
+<div aria-label="Question 42 Options" class="space-y-3.5 pt-2" role="radiogroup">
+<!-- Option A (SELECTED STATE) -->
+<label class="group relative flex items-start p-4 rounded-xl border-2 border-secondary bg-blue-50/40 cursor-pointer transition min-h-[56px] exam-focus">
+<div class="flex items-center h-6 mr-3.5">
+<input checked="" class="w-5 h-5 text-secondary border-app-control-border focus:ring-secondary focus:ring-offset-2" name="q42" type="radio" value="A"/>
+</div>
+<div class="flex-1 flex items-start gap-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-secondary text-white font-mono text-label-sm font-bold shrink-0">A</span>
+<span class="text-body-md text-app-text font-medium leading-relaxed">
+                      Segregation of duties is compromised between IT operational execution and strategic governance oversight.
+                    </span>
+</div>
+<span class="ml-2 inline-flex items-center text-secondary" title="Currently Selected">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+</span>
+</label>
+<!-- Option B -->
+<label class="group relative flex items-start p-4 rounded-xl border border-app-border hover:border-slate-400 bg-white cursor-pointer transition min-h-[56px] exam-focus">
+<div class="flex items-center h-6 mr-3.5">
+<input class="w-5 h-5 text-secondary border-app-control-border focus:ring-secondary focus:ring-offset-2" name="q42" type="radio" value="B"/>
+</div>
+<div class="flex-1 flex items-start gap-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-100 text-slate-700 font-mono text-label-sm font-semibold shrink-0 group-hover:bg-slate-200">B</span>
+<span class="text-body-md text-app-text leading-relaxed">
+                      The capital expenditure threshold exceeds statutory Nigerian corporate governance limits.
+                    </span>
+</div>
+</label>
+<!-- Option C -->
+<label class="group relative flex items-start p-4 rounded-xl border border-app-border hover:border-slate-400 bg-white cursor-pointer transition min-h-[56px] exam-focus">
+<div class="flex items-center h-6 mr-3.5">
+<input class="w-5 h-5 text-secondary border-app-control-border focus:ring-secondary focus:ring-offset-2" name="q42" type="radio" value="C"/>
+</div>
+<div class="flex-1 flex items-start gap-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-100 text-slate-700 font-mono text-label-sm font-semibold shrink-0 group-hover:bg-slate-200">C</span>
+<span class="text-body-md text-app-text leading-relaxed">
+                      Return on investment (ROI) calculations cannot be benchmarked against external industry indices.
+                    </span>
+</div>
+</label>
+<!-- Option D -->
+<label class="group relative flex items-start p-4 rounded-xl border border-app-border hover:border-slate-400 bg-white cursor-pointer transition min-h-[56px] exam-focus">
+<div class="flex items-center h-6 mr-3.5">
+<input class="w-5 h-5 text-secondary border-app-control-border focus:ring-secondary focus:ring-offset-2" name="q42" type="radio" value="D"/>
+</div>
+<div class="flex-1 flex items-start gap-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-100 text-slate-700 font-mono text-label-sm font-semibold shrink-0 group-hover:bg-slate-200">D</span>
+<span class="text-body-md text-app-text leading-relaxed">
+                      Sourcing contracts will experience procurement delays during annual budgeting cycles.
+                    </span>
+</div>
+</label>
+</div>
+</div>
+<!-- Question Bottom Actions Footer -->
+<div class="pt-8 mt-6 border-t border-app-border flex items-center justify-between">
+<button class="min-h-[44px] px-5 py-2.5 rounded-lg border border-app-control-border text-app-text hover:bg-slate-100 font-medium text-label-md inline-flex items-center gap-2 exam-focus transition" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+<span>Previous Question</span>
+</button>
+<div class="flex items-center gap-4">
+<button class="text-label-md text-app-muted hover:text-app-text hover:underline min-h-[44px] px-3 inline-flex items-center" type="button">
+                  Clear selection
+                </button>
+<button class="min-h-[44px] px-6 py-2.5 rounded-lg bg-[#0B1320] text-white hover:bg-slate-800 font-medium text-label-md inline-flex items-center gap-2 shadow-sm exam-focus transition" type="button">
+<span>Save &amp; Next</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- RIGHT: Question Navigator Panel (150 Questions Grid, Representative 60 view) -->
+<aside class="w-full lg:w-96 bg-slate-50 p-6 flex flex-col justify-between shrink-0">
+<div class="space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-app-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="grid_view">grid_view</span>
+<h3 class="text-label-md font-semibold text-app-text">Question Navigator</h3>
+</div>
+<span class="text-label-sm font-mono text-app-muted">150 Questions</span>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center gap-1.5 p-1 bg-white border border-app-border rounded-lg text-label-sm">
+<button class="flex-1 py-1 px-2 rounded font-medium bg-[#0B1320] text-white text-center" type="button">All (150)</button>
+<button class="flex-1 py-1 px-2 rounded font-medium text-app-muted hover:text-app-text text-center" type="button">Answered (41)</button>
+<button class="flex-1 py-1 px-2 rounded font-medium text-app-muted hover:text-app-text text-center" type="button">Flagged (6)</button>
+</div>
+<!-- Status Never Shown By Color Alone: Explicit Legend with Pattern/Icons -->
+<div class="grid grid-cols-2 gap-2 text-[12px] bg-white p-3 rounded-lg border border-app-border">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-secondary text-white inline-flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px]" data-icon="check">check</span>
+</span>
+<span class="text-app-text">Answered</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded bg-app-warning-bg border border-app-warning text-app-warning inline-flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px]" data-icon="flag">flag</span>
+</span>
+<span class="text-app-text">Flagged</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded border border-slate-300 bg-slate-100 text-slate-500 inline-flex items-center justify-center text-[10px] font-mono">
+                    —
+                  </span>
+<span class="text-app-muted">Unanswered</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded ring-2 ring-secondary ring-offset-1 bg-white text-secondary font-bold text-[10px] inline-flex items-center justify-center">
+                    ●
+                  </span>
+<span class="text-app-text font-semibold">Current (42)</span>
+</div>
+</div>
+<!-- Compact Question Grid (1 to 60 representative view) -->
+<div class="space-y-1">
+<div class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Section 1: Questions 1 – 60</div>
+<div class="grid grid-cols-6 sm:grid-cols-10 lg:grid-cols-6 gap-2 max-h-72 overflow-y-auto p-1 border border-dashed border-slate-300 rounded-lg bg-white/70">
+<!-- Q1-Q10: Answered -->
+<!-- Loop demonstration with authentic patterns -->
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5" title="Q1: Answered">1<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5" title="Q2: Answered">2<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5" title="Q3: Answered">3<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<!-- Q4: Flagged -->
+<button class="h-9 w-full rounded bg-app-warning-bg border border-app-warning text-app-warning font-mono text-[12px] font-semibold flex items-center justify-center gap-0.5" title="Q4: Flagged">4<span class="material-symbols-outlined text-[11px]" data-icon="flag">flag</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5" title="Q5: Answered">5<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5" title="Q6: Answered">6<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5">7<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5">8<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5">9<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5">10<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center gap-0.5">11<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span></button>
+<button class="h-9 w-full rounded bg-app-warning-bg border border-app-warning text-app-warning font-mono text-[12px] font-semibold flex items-center justify-center gap-0.5">12<span class="material-symbols-outlined text-[11px]" data-icon="flag">flag</span></button>
+<!-- Range 13 to 40 answered/flagged mixed -->
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">13</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">14</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">15</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">16</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">17</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">18</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">19</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">20</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">21</button>
+<button class="h-9 w-full rounded bg-app-warning-bg border border-app-warning text-app-warning font-mono text-[12px] font-semibold flex items-center justify-center gap-0.5">22<span class="material-symbols-outlined text-[11px]" data-icon="flag">flag</span></button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">23</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">24</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">25</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">26</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">27</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">28</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">29</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">30</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">31</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">32</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">33</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">34</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">35</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">36</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">37</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">38</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">39</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">40</button>
+<button class="h-9 w-full rounded bg-secondary text-white font-mono text-[12px] font-medium flex items-center justify-center">41</button>
+<!-- QUESTION 42: CURRENT FOCUS (BOLD DOUBLE RING) -->
+<button aria-current="true" class="h-9 w-full rounded bg-white text-secondary font-mono text-[12px] font-bold ring-2 ring-secondary ring-offset-2 border border-secondary shadow-sm flex items-center justify-center" title="Q42: Current active question">
+                    42
+                  </button>
+<!-- Range 43 to 60 Unanswered -->
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">43</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">44</button>
+<button class="h-9 w-full rounded bg-app-warning-bg border border-app-warning text-app-warning font-mono text-[12px] font-semibold flex items-center justify-center gap-0.5">45<span class="material-symbols-outlined text-[11px]" data-icon="flag">flag</span></button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">46</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">47</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">48</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">49</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">50</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">51</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">52</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">53</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">54</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">55</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">56</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">57</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">58</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">59</button>
+<button class="h-9 w-full rounded bg-white border border-slate-300 text-slate-700 font-mono text-[12px] flex items-center justify-center hover:bg-slate-100">60</button>
+</div>
+</div>
+</div>
+<!-- Navigator Bottom Stats -->
+<div class="pt-4 border-t border-app-border space-y-2">
+<div class="flex items-center justify-between text-label-sm text-app-muted">
+<span>Completion</span>
+<span class="font-mono font-medium text-app-text">27.3% (41/150)</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-2 rounded-full" style="width: 27.3%;"></div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: 10 MINUTES LEFT WARNING STATE                                  -->
+<!-- ========================================================================= -->
+<section class="scroll-mt-24 space-y-3" id="variant-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-amber-600 text-white font-mono text-label-sm">VARIANT 02</span>
+<h2 class="text-headline-md font-semibold text-app-text">10 Minutes Remaining Warning State</h2>
+</div>
+<div class="text-label-sm text-app-warning font-medium">Warning Threshold Active · Timer Pulsing · Action Prompt</div>
+</div>
+<div class="relative bg-white border border-amber-300 rounded-xl shadow-md overflow-hidden flex flex-col">
+<!-- Watermark layer -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none z-20 overflow-hidden select-none">
+<div class="w-full h-full flex flex-wrap content-between justify-between p-8 rotate-[-12deg] scale-125 opacity-[0.14] text-slate-900 font-mono text-[13px] tracking-wider font-semibold leading-loose">
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+<div>Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed AJ Silicon Testing Engine</div>
+</div>
+</div>
+<!-- Top Bar with Warning Highlighted Timer -->
+<header class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-slate-800 z-30 shrink-0">
+<div class="flex items-center gap-4">
+<div class="bg-white px-2.5 py-1 rounded flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATMei08VrNihi6KLnn7DwksNJNIwaiZmvuW0AHS_PD7mK6Hr6OcTtxEpnEQuNNi-ZjjcQvwQRM0n6KIBu294q3TOXmz8JDd-B5uBj07w7kXyP5UDwdhMIy9E4vinXbM4qWkc7PBi5C4HJ_Mi-e1v71tbcQJRfBdKwIIFYyGXKdVhGwogc0fAmyaG6-zMkmoL1SIgeVyB04UJNW54REWP8So-qvnTN4HQQgt8b-zkawLwiM-w3yhUzTUA"/>
+</div>
+<div>
+<div class="text-label-md font-semibold text-white tracking-tight">CISA Full Mock Examination (Cohort 14)</div>
+<div class="text-[12px] text-slate-400 font-mono">Candidate: Chinedu Eze · Terminal #09</div>
+</div>
+</div>
+<!-- Highlighted Warning Timer (00:09:42) -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2.5 bg-amber-950/70 border-2 border-amber-500 px-4 py-1.5 rounded-lg animate-pulse">
+<span class="material-symbols-outlined text-[20px] text-amber-400" data-icon="alarm">alarm</span>
+<div class="flex flex-col">
+<span class="font-mono text-base font-bold tracking-wider text-amber-300">00:09:42</span>
+<span class="text-[10px] text-amber-400 uppercase font-semibold tracking-wider">Warning: Time Critical</span>
+</div>
+</div>
+<div class="hidden sm:block text-right">
+<div class="text-label-sm font-medium text-white">Q142 of 150</div>
+<div class="text-[11px] text-amber-400 font-mono">8 Unanswered</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2">
+<button class="min-h-[44px] px-4 rounded-lg bg-red-600 hover:bg-red-700 text-white font-medium text-label-md inline-flex items-center gap-1.5 shadow-sm transition" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+<span>Submit Now</span>
+</button>
+</div>
+</header>
+<!-- STICKY PROMINENT WARNING BANNER -->
+<div class="bg-app-warning-bg border-b-2 border-app-warning px-6 py-3.5 flex items-center justify-between z-30 shrink-0">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-amber-100 border border-app-warning text-app-warning inline-flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="warning">warning</span>
+</span>
+<div class="text-body-sm text-app-text">
+<strong class="font-semibold text-app-warning">10 minutes remaining.</strong> You have <span class="font-semibold underline">8 unanswered questions</span> and <span class="font-semibold underline">4 flagged questions</span>. Review your responses before the test automatically submits at 00:00:00.
+            </div>
+</div>
+<button class="shrink-0 ml-4 px-3 py-1.5 rounded bg-white border border-app-warning text-app-warning hover:bg-amber-100 text-label-sm font-semibold inline-flex items-center gap-1.5 transition" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="filter_list">filter_list</span>
+<span>Jump to Unanswered</span>
+</button>
+</div>
+<!-- Question View Body -->
+<div class="p-6 md:p-8 space-y-6 max-w-4xl">
+<div class="flex items-center justify-between pb-3 border-b border-app-border">
+<span class="text-label-sm font-semibold px-2.5 py-0.5 rounded bg-blue-50 text-secondary border border-blue-200">Domain 5: Protection of Information Assets</span>
+<span class="text-app-muted text-label-sm font-mono">Item 142 of 150</span>
+</div>
+<p class="text-headline-sm font-medium text-app-text">
+            When performing an audit of cloud identity federation using SAML 2.0 assertions, an IS auditor identifies that token signature validation does not verify the certificate revocation list (CRL). What represents the MOST immediate business impact?
+          </p>
+<div class="space-y-3">
+<label class="flex items-center p-4 rounded-xl border border-app-border bg-white cursor-pointer hover:border-slate-400 min-h-[50px]">
+<input class="w-5 h-5 text-secondary mr-3" name="q142" type="radio"/>
+<span class="text-body-md text-app-text">Revoked identity provider signing keys remain trusted, allowing forged assertions to gain unauthorized access.</span>
+</label>
+<label class="flex items-center p-4 rounded-xl border border-app-border bg-white cursor-pointer hover:border-slate-400 min-h-[50px]">
+<input class="w-5 h-5 text-secondary mr-3" name="q142" type="radio"/>
+<span class="text-body-md text-app-text">Identity provider response latency increases during federated authentication requests.</span>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 3: SUBMIT CONFIRMATION DIALOG MODAL                                -->
+<!-- ========================================================================= -->
+<section class="scroll-mt-24 space-y-3" id="variant-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-blue-600 text-white font-mono text-label-sm">VARIANT 03</span>
+<h2 class="text-headline-md font-semibold text-app-text">Submit Confirmation Dialog (Modal Overlay)</h2>
+</div>
+<div class="text-label-sm text-app-muted">Triggered on "End exam" click · High Contrast Focus Lock</div>
+</div>
+<!-- Backdrop Representation (Darkened rgba(11, 19, 32, 0.7)) -->
+<div class="relative bg-[#0B1320]/75 border border-slate-700 rounded-xl shadow-2xl p-6 md:p-12 min-h-[580px] flex items-center justify-center">
+<!-- Background Faint Outline representing exam runner behind modal -->
+<div class="absolute inset-0 opacity-10 pointer-events-none p-6 space-y-6">
+<div class="h-12 bg-white rounded"></div>
+<div class="h-32 bg-white rounded"></div>
+<div class="h-48 bg-white rounded"></div>
+</div>
+<!-- MODAL CARD (12px Radius, Pure White, Flat Structured Elevation) -->
+<div class="relative bg-white rounded-xl border border-app-border max-w-xl w-full p-6 md:p-8 shadow-2xl space-y-6 z-20">
+<!-- Modal Header -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-app-danger-bg border border-app-danger text-app-danger flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]" data-icon="help">help</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-headline-md font-bold text-app-text">Submit examination?</h3>
+<p class="text-body-sm text-app-muted leading-relaxed">
+                Are you sure you want to end your examination session? Once submitted, your answers are final, timestamped, and cannot be modified under ISACA testing protocols.
+              </p>
+</div>
+</div>
+<!-- Summary Statistics Grid -->
+<div class="bg-slate-50 border border-app-border rounded-xl p-4 space-y-3">
+<div class="text-label-sm font-semibold uppercase tracking-wider text-slate-500">Session Submission Summary</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<!-- Total Questions -->
+<div class="bg-white p-3 rounded-lg border border-app-border">
+<div class="text-[12px] text-app-muted">Total Questions</div>
+<div class="text-headline-sm font-mono font-bold text-app-text mt-0.5">150</div>
+</div>
+<!-- Answered -->
+<div class="bg-white p-3 rounded-lg border border-app-border">
+<div class="text-[12px] text-app-success font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Answered</span>
+</div>
+<div class="text-headline-sm font-mono font-bold text-app-text mt-0.5">138</div>
+</div>
+<!-- Unanswered (Alert) -->
+<div class="bg-white p-3 rounded-lg border border-amber-300 bg-amber-50/50">
+<div class="text-[12px] text-app-warning font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span>
+<span>Unanswered</span>
+</div>
+<div class="text-headline-sm font-mono font-bold text-app-warning mt-0.5">12</div>
+</div>
+<!-- Flagged for Review -->
+<div class="bg-white p-3 rounded-lg border border-app-border">
+<div class="text-[12px] text-amber-700 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="flag">flag</span>
+<span>Flagged Items</span>
+</div>
+<div class="text-headline-sm font-mono font-bold text-app-text mt-0.5">5</div>
+</div>
+<!-- Time Remaining -->
+<div class="bg-white p-3 rounded-lg border border-app-border sm:col-span-2">
+<div class="text-[12px] text-app-muted">Time Remaining in Session</div>
+<div class="text-headline-sm font-mono font-bold text-secondary mt-0.5">00:14:20</div>
+</div>
+</div>
+</div>
+<!-- Caution Notice Banner -->
+<div class="bg-app-danger-bg border border-app-danger rounded-lg p-3.5 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-app-danger shrink-0 mt-0.5" data-icon="error">error</span>
+<p class="text-label-sm text-app-danger leading-relaxed">
+<strong>Caution:</strong> You have 12 questions marked unanswered. Unanswered items are scored as incorrect. You still have 14 minutes and 20 seconds available to complete them.
+            </p>
+</div>
+<!-- Action Buttons (min 44px) -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 pt-2">
+<button class="w-full sm:w-auto min-h-[44px] px-6 py-2.5 rounded-lg border border-app-control-border text-app-text hover:bg-slate-100 font-medium text-label-md transition exam-focus" type="button">
+              Return to exam
+            </button>
+<button class="w-full sm:w-auto min-h-[44px] px-6 py-2.5 rounded-lg bg-[#0B1320] hover:bg-slate-800 text-white font-medium text-label-md transition shadow exam-focus inline-flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+<span>Submit exam</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 4: TIME EXPIRED & LOCKOUT STATE                                   -->
+<!-- ========================================================================= -->
+<section class="scroll-mt-24 space-y-3" id="variant-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-slate-900 text-white font-mono text-label-sm">VARIANT 04</span>
+<h2 class="text-headline-md font-semibold text-app-text">Time Expired — Lockout &amp; Evaluation View</h2>
+</div>
+<div class="text-label-sm text-slate-500 font-mono">Status: Form Sealed · Inputs Disabled</div>
+</div>
+<div class="relative bg-white border border-app-border rounded-xl shadow-md overflow-hidden flex flex-col min-h-[640px]">
+<!-- Disabled Top Bar -->
+<header class="bg-[#0B1320] text-white h-16 px-6 flex items-center justify-between border-b border-slate-800 z-30 shrink-0">
+<div class="flex items-center gap-4">
+<div class="bg-white px-2.5 py-1 rounded flex items-center justify-center opacity-80">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2wSCPnXadDLTAcXcFDiYaVLEpCNWt3G6dR9ix-R9TkZNbPbBXMx-NdPtt0GRzVG1-iez55ZSIlbCejiYQr-XOWiaq3GEI1xkLlF78h8wRJk5LHBUAhhTwhlW50M9AGxnkt5pXOCSHDiuCPijPI5o3FmXA2Fe12n3w70PMb9VrFy0V0TFw6_hJXF-s3vRrEDlkkouqPjUz6bH6z_6FovcHVe8IxyjBiUftwFvkxmTREVDybCnPVmumoQ"/>
+</div>
+<div>
+<div class="text-label-md font-semibold text-white tracking-tight">CISA Full Mock Examination (Cohort 14)</div>
+<div class="text-[12px] text-slate-400 font-mono">Candidate: Chinedu Eze · Session Closed</div>
+</div>
+</div>
+<!-- Time Expired Indicator -->
+<div class="flex items-center gap-2 bg-red-950/80 border border-red-500 px-3.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-red-400" data-icon="timer_off">timer_off</span>
+<div class="flex flex-col">
+<span class="font-mono text-sm font-bold text-red-300">00:00:00</span>
+<span class="text-[10px] text-red-400 uppercase font-semibold">Time Expired</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-label-sm font-mono">Test Closed</span>
+</div>
+</header>
+<!-- Informational Lockout Banner -->
+<div class="bg-app-info-bg border-b border-app-info px-6 py-3.5 flex items-center gap-3">
+<span class="material-symbols-outlined text-[22px] text-secondary shrink-0" data-icon="lock">lock</span>
+<p class="text-body-sm text-app-text">
+<strong>Examination time has concluded.</strong> Your 142 submitted answers have been locked and sent for cryptographic evaluation against ISACA Domain weights.
+          </p>
+</div>
+<!-- Central Scorecard Transition Card -->
+<div class="flex-1 p-8 flex items-center justify-center bg-slate-50/70">
+<div class="max-w-md w-full bg-white rounded-xl border border-app-border p-8 shadow-sm text-center space-y-6">
+<div class="w-16 h-16 rounded-full bg-blue-50 border-2 border-secondary text-secondary mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px] animate-spin" data-icon="sync">sync</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-headline-md font-bold text-app-text">Exam Complete</h3>
+<p class="text-body-sm text-app-muted">
+                Calculating Diagnostic Scorecard &amp; Domain Performance Metrics for CISA Cohort 14 candidate...
+              </p>
+</div>
+<div class="bg-slate-50 p-4 rounded-lg border border-app-border text-left space-y-2">
+<div class="flex justify-between text-label-sm">
+<span class="text-app-muted">Questions Answered:</span>
+<span class="font-mono font-semibold text-app-text">142 / 150 (94.6%)</span>
+</div>
+<div class="flex justify-between text-label-sm">
+<span class="text-app-muted">Unanswered Penalty:</span>
+<span class="font-mono font-semibold text-app-danger">8 Questions (0 pts)</span>
+</div>
+<div class="flex justify-between text-label-sm">
+<span class="text-app-muted">Submission Hash:</span>
+<span class="font-mono text-[11px] text-slate-500 truncate">sha256:7f83b165...e289</span>
+</div>
+</div>
+<button class="w-full min-h-[44px] px-6 py-2.5 rounded-lg bg-[#0B1320] hover:bg-slate-800 text-white font-medium text-label-md transition shadow flex items-center justify-center gap-2 exam-focus" type="button">
+<span>View Scorecard &amp; Gap Analysis</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="analytics">analytics</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 5: MOBILE 390px VIEWPORT (IN PROGRESS STATE)                      -->
+<!-- ========================================================================= -->
+<section class="scroll-mt-24 space-y-4" id="variant-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-indigo-600 text-white font-mono text-label-sm">VARIANT 05</span>
+<h2 class="text-headline-md font-semibold text-app-text">Mobile Viewport — 390px Frame (In Progress)</h2>
+</div>
+<div class="text-label-sm text-app-muted">Clean 390px Canvas · NO Status Bar · NO Device Chrome</div>
+</div>
+<div class="flex justify-center p-4 bg-slate-200/70 rounded-2xl border border-slate-300">
+<!-- PLAIN 390px FRAME (STRICT RULE: NO PHONE STATUS BAR, NO NOTCH, NO HOME INDICATOR) -->
+<div class="w-[390px] bg-white rounded-xl border-2 border-slate-400 shadow-xl overflow-hidden flex flex-col relative min-h-[760px]">
+<!-- Watermark Layer for Mobile (14% Opacity) -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none z-20 overflow-hidden select-none">
+<div class="w-full h-full flex flex-col justify-around rotate-[-25deg] scale-125 opacity-[0.14] text-slate-900 font-mono text-[11px] font-bold">
+<div>Chinedu Eze · CISA Cohort 14</div>
+<div>chinedu.eze@example.com</div>
+<div>Licensed AJ Silicon Exam Engine</div>
+<div>Chinedu Eze · CISA Cohort 14</div>
+<div>chinedu.eze@example.com</div>
+</div>
+</div>
+<!-- 1. Slim Navy Top Bar (Mobile Optimized, h-14) -->
+<header class="bg-[#0B1320] text-white h-14 px-3 flex items-center justify-between border-b border-slate-800 z-30 shrink-0">
+<!-- Left: Brand Logo on white plate -->
+<div class="flex items-center gap-2">
+<div class="bg-white px-2 py-0.5 rounded flex items-center justify-center">
+<img alt="A.J. Silicon" class="h-4 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADyfk4bs0nuGcRuRcshtTrg8nauSmJNbqk8QtoMeaHAnhz7u7POsH_siC-6ZCs9R7CDsONEcEiD8eVzm3Ym842Wp7EcnecP0N94zb2eEhMwG80InUF1qpRpqpAPXqxQ1eMRV959hbodBSuhQOyL9VxfMIl4RbWd2bZq74ZaXjQwKMdtzUz3WsMFJIWh05EtKF87Z_O3sXBGVX2clDcc7eT2i9ivIbRrMUYclV3sxErpIyHnbYXu1f1wA"/>
+</div>
+<div class="text-[12px] font-semibold tracking-tight text-white font-mono">Q42/150</div>
+</div>
+<!-- Center: Compact Timer -->
+<div class="bg-[#141C29] border border-slate-700 px-2 py-1 rounded flex items-center gap-1 font-mono text-[12px] font-bold text-white">
+<span class="material-symbols-outlined text-[14px] text-app-link-dark" data-icon="timer">timer</span>
+<span>02:48:15</span>
+</div>
+<!-- Right: Compact Flag & End -->
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded bg-[#141C29] border border-slate-700 text-amber-400 flex items-center justify-center" title="Flag Question" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="flag">flag</span>
+</button>
+<button class="px-2 h-9 rounded bg-red-950/50 border border-red-500/40 text-red-200 text-[11px] font-semibold flex items-center justify-center" type="button">
+                End
+              </button>
+</div>
+</header>
+<!-- Mobile Sub-Header: Pace indicator & Domain -->
+<div class="bg-slate-50 border-b border-app-border px-3.5 py-2 flex items-center justify-between text-[11px] z-10 shrink-0">
+<span class="font-semibold text-secondary truncate max-w-[210px]">Domain 2: Governance &amp; IT Mgmt</span>
+<span class="inline-flex items-center gap-0.5 text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+<span>On pace</span>
+</span>
+</div>
+<!-- Mobile Question Area (Scrollable) -->
+<div class="flex-1 p-4 space-y-4 overflow-y-auto z-10 pb-20">
+<div class="space-y-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Question Item 42 (Analysis)</span>
+<p class="text-[15px] font-semibold text-app-text leading-snug">
+                An IS auditor is reviewing an enterprise’s IT steering committee charter and notices that the Chief Information Officer (CIO) alone approves all significant IT capital investments exceeding ₦50,000,000 without Board Risk Committee concurrence. What is the auditor’s PRIMARY concern?
+              </p>
+</div>
+<!-- Mobile Stacked Radio Options (44px min touch target) -->
+<div class="space-y-2.5">
+<!-- Option A (Selected) -->
+<label class="flex items-start p-3 rounded-lg border-2 border-secondary bg-blue-50/50 cursor-pointer min-h-[48px]">
+<input checked="" class="w-4 h-4 text-secondary mt-0.5 mr-2.5" name="mob_q42" type="radio" value="A"/>
+<div class="flex-1 text-[13px] leading-snug text-app-text">
+<strong class="font-mono text-secondary mr-1">A.</strong> Segregation of duties is compromised between IT operational execution and strategic governance oversight.
+                </div>
+</label>
+<!-- Option B -->
+<label class="flex items-start p-3 rounded-lg border border-app-border bg-white cursor-pointer min-h-[48px]">
+<input class="w-4 h-4 text-secondary mt-0.5 mr-2.5" name="mob_q42" type="radio" value="B"/>
+<div class="flex-1 text-[13px] leading-snug text-app-text">
+<strong class="font-mono text-slate-600 mr-1">B.</strong> The capital expenditure threshold exceeds statutory Nigerian corporate governance limits.
+                </div>
+</label>
+<!-- Option C -->
+<label class="flex items-start p-3 rounded-lg border border-app-border bg-white cursor-pointer min-h-[48px]">
+<input class="w-4 h-4 text-secondary mt-0.5 mr-2.5" name="mob_q42" type="radio" value="C"/>
+<div class="flex-1 text-[13px] leading-snug text-app-text">
+<strong class="font-mono text-slate-600 mr-1">C.</strong> Return on investment (ROI) calculations cannot be benchmarked against external industry indices.
+                </div>
+</label>
+<!-- Option D -->
+<label class="flex items-start p-3 rounded-lg border border-app-border bg-white cursor-pointer min-h-[48px]">
+<input class="w-4 h-4 text-secondary mt-0.5 mr-2.5" name="mob_q42" type="radio" value="D"/>
+<div class="flex-1 text-[13px] leading-snug text-app-text">
+<strong class="font-mono text-slate-600 mr-1">D.</strong> Sourcing contracts will experience procurement delays during annual budgeting cycles.
+                </div>
+</label>
+</div>
+<div class="pt-2 text-center">
+<button class="text-[12px] text-app-muted hover:text-app-text underline" type="button">
+                Clear selection
+              </button>
+</div>
+</div>
+<!-- Bottom Floating/Docked Navigation Bar for Mobile -->
+<footer class="absolute bottom-0 inset-x-0 bg-white border-t border-app-border p-2.5 flex items-center justify-between gap-2 z-30 shadow-lg">
+<button class="min-h-[44px] px-3 rounded-lg border border-app-control-border text-app-text text-[13px] font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_left">chevron_left</span>
+<span>Prev</span>
+</button>
+<!-- Sheet Trigger for Navigator -->
+<button class="min-h-[44px] flex-1 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-app-text text-[12px] font-medium flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="grid_view">grid_view</span>
+<span>Grid (42/150)</span>
+</button>
+<button class="min-h-[44px] px-4 rounded-lg bg-[#0B1320] text-white text-[13px] font-medium flex items-center gap-1" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</footer>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- AUDIT CRITERIA & ISACA ALIGNMENT TABLE                                     -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]" data-icon="fact_check">fact_check</span>
+<h3 class="text-headline-md font-semibold text-app-text">Specification Governance &amp; Security Parameters</h3>
+</div>
+<div class="bg-white border border-app-border rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-body-sm">
+<thead class="bg-slate-50 text-[12px] uppercase font-semibold text-app-muted border-b border-app-border tracking-wider">
+<tr>
+<th class="py-3 px-4">Parameter</th>
+<th class="py-3 px-4">Enforced Rule</th>
+<th class="py-3 px-4">Status Never by Color Alone Rule</th>
+<th class="py-3 px-4">Standard Alignment</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-app-border">
+<tr class="hover:bg-slate-50/50">
+<td class="py-3 px-4 font-mono font-medium text-app-text">Layout Navigation</td>
+<td class="py-3 px-4 text-app-text font-medium text-red-700">Strict Negative Constraint: Zero Sidebar</td>
+<td class="py-3 px-4 text-app-muted">Slim 64px proctored top bar replaces portal nav</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-blue-50 text-secondary border border-blue-200 text-label-sm font-medium">ISACA CBT Core</span></td>
+</tr>
+<tr class="hover:bg-slate-50/50">
+<td class="py-3 px-4 font-mono font-medium text-app-text">Anti-Cheating Stamp</td>
+<td class="py-3 px-4 text-app-text font-medium">Continuous 14% Opacity Watermark</td>
+<td class="py-3 px-4 text-app-muted">Candidate name, email, licensed cohort watermark repeated</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-blue-50 text-secondary border border-blue-200 text-label-sm font-medium">Forensic Tracing</span></td>
+</tr>
+<tr class="hover:bg-slate-50/50">
+<td class="py-3 px-4 font-mono font-medium text-app-text">Question Grid State</td>
+<td class="py-3 px-4 text-app-text font-medium">Icons &amp; Shapes Paired with Tones</td>
+<td class="py-3 px-4 text-app-muted">Answered (Circle+Check), Flagged (Box+Flag), Active (Double Ring)</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-300 text-label-sm font-medium">WCAG 2.1 AA Compliant</span></td>
+</tr>
+<tr class="hover:bg-slate-50/50">
+<td class="py-3 px-4 font-mono font-medium text-app-text">Touch Target Floor</td>
+<td class="py-3 px-4 text-app-text font-medium">44px x 44px Minimum Bound</td>
+<td class="py-3 px-4 text-app-muted">All radios, action buttons, prev/next, and grid triggers</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-300 text-label-sm font-medium">Enterprise Tablet &amp; Web</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- Institutional Specification Footer -->
+<footer class="bg-primary-container text-on-primary-container border-t border-slate-800 py-8 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-body-sm">
+<div class="flex items-center gap-3">
+<div class="bg-white px-2 py-1 rounded">
+<img alt="A.J. Silicon Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ6yiCmmMJftuXg_Nu7ZaY-IUkg05pKEMN-7aZ_iiKKnhte77zHNUGmBXjNB5jdJdUUPFwTzUMy8ENXY2AvhMdy9962KjtxY4b6xMt1BlXd1ZjqGTzn9DykwpN8OTY54zlB4ZmE_j_C00vE9rBczTp5MDU8mICA4cIsnr__E7qYR1tHMT9feaL4z8B60Nud7WEiUML-0L1lBQ9ZTIu_4OxWqHAQUr6K9RjmLfE6ckQkfbwPmnZbbC1yA"/>
+</div>
+<span>A.J. Silicon Learning Systems · Lagos, Nigeria (WAT Zone)</span>
+</div>
+<div class="text-label-sm font-mono text-slate-400">
+        Board Specification 35: Exam Runner Architecture · Version 4.8.2
+      </div>
+</div>
+</footer>
+</body></html>

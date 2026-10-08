@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon | Professional Certification &amp; IT Governance Training</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim from Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#dce1ff",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "primary-fixed": "#dbe2f5",
+            "tertiary": "#000000",
+            "primary": "#000000",
+            "surface-container": "#eaedff",
+            "outline": "#75777c",
+            "on-secondary-container": "#fffbff",
+            "on-primary-container": "#7c8495",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed": "#281809",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-bright": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#575f6e",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-container": "#997f6a",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#141c29",
+            "surface": "#faf8ff",
+            "primary-container": "#141c29",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-surface": "#131b2e",
+            "inverse-surface": "#283044",
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed-variant": "#3f4756",
+            "secondary": "#1d4ed8",
+            "tertiary-fixed": "#fddcc4",
+            "secondary-container": "#4069f2",
+            "on-surface-variant": "#45474c",
+            "tertiary-container": "#281809",
+            "on-secondary-fixed": "#001551",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "background": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-primary": "#bfc6d9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #FAFAFB;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .focus-ring-strict:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+    .card-border-strict {
+      border: 1px solid #E2E8F0;
+    }
+    .badge-certified {
+      background-color: #ECFDF5;
+      color: #047857;
+      border: 1px solid #047857;
+    }
+    .badge-info {
+      background-color: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #1D4ED8;
+    }
+    .badge-pending {
+      background-color: #FFFBEB;
+      color: #B45309;
+      border: 1px solid #B45309;
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAFB] text-[#0F172A] antialiased min-h-screen flex flex-col selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TOP SHELL NAVIGATION (Global Web Header) -->
+<header class="bg-primary-container text-on-primary w-full h-16 sticky top-0 z-50 border-b border-outline-variant">
+<div class="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
+<!-- Logo Unit with isolated white background plate -->
+<div class="flex items-center gap-8">
+<a aria-label="A.J. Silicon Homepage" class="h-10 bg-surface-container-lowest px-3 py-1 rounded flex items-center shadow-sm focus-ring-strict" href="#">
+<img alt="A.J. Silicon Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAihZG9WvWhKaSVwUlEiS0OG8N0FZDFUm9Pr5rLPyYAiXoqwq_KcPxgVDvdxgEdT2jrOCYv6WMCnMSdNEsYSwXK7ckcAQPlGoDxeKKn7VDpvu6RiZlsZlhEKHpfR7HsRSNwfG7jQ-cWq2hYj3eHbKYduqPEyCRv50mIGknvhvUyvdP-HDPdK3Ji0i3vOzAWVdrJdrUfke7xNdnMWiMwWfMmOAYuRyOxukFkYIIxdXm0ue-WLrMAwzpUmA"/>
+</a>
+<!-- Desktop Navigation Links -->
+<nav aria-label="Main Navigation" class="hidden lg:flex items-center space-x-1">
+<a class="px-3 py-2 text-on-primary font-label-md text-label-md hover:bg-surface-tint/20 rounded transition-colors duration-150 focus-ring-strict" href="#programmes">Programmes</a>
+<a class="px-3 py-2 text-on-primary-container font-label-md text-label-md hover:text-on-primary hover:bg-surface-tint/20 rounded transition-colors duration-150 focus-ring-strict" href="#enterprise">Enterprise Training</a>
+<a class="px-3 py-2 text-on-primary-container font-label-md text-label-md hover:text-on-primary hover:bg-surface-tint/20 rounded transition-colors duration-150 focus-ring-strict" href="#verification">Certificate Verification</a>
+<a class="px-3 py-2 text-on-primary-container font-label-md text-label-md hover:text-on-primary hover:bg-surface-tint/20 rounded transition-colors duration-150 focus-ring-strict" href="#methodology">About</a>
+<a class="px-3 py-2 text-on-primary-container font-label-md text-label-md hover:text-on-primary hover:bg-surface-tint/20 rounded transition-colors duration-150 focus-ring-strict" href="#campus">Contact</a>
+</nav>
+</div>
+<!-- Trailing Action Controls -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-label-md font-label-md text-[#93C5FD] hover:text-on-primary transition-colors focus-ring-strict" href="#verification">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Verify Certificate</span>
+</a>
+<a class="inline-flex items-center justify-center min-h-[44px] px-4 text-label-md font-label-md text-on-primary hover:bg-surface-tint/20 rounded transition-colors focus-ring-strict" href="#">
+          Log in
+        </a>
+<a class="inline-flex items-center justify-center min-h-[44px] px-5 bg-surface-container-lowest text-primary font-label-md text-label-md rounded hover:bg-surface-container-high transition-colors focus-ring-strict font-semibold shadow-sm" href="#programmes">
+          Explore Programmes
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow">
+<!-- SUB-BAR / INSTITUTIONAL ACCREDITATION STRIP -->
+<section class="bg-surface-container-low border-b border-outline-variant py-2.5 px-6">
+<div class="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-3 text-label-sm font-label-sm text-[#475569]">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-on-primary">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+</span>
+<span class="font-medium text-on-surface">Registered Training Provider: ISACA Accredited Curriculum Scope &amp; Corporate Risk Advisory</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span> 15+ Years Track Record</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-secondary">workspace_premium</span> Industry Leader Award Winner</span>
+</div>
+</div>
+</section>
+<!-- HERO SECTION -->
+<section class="py-16 md:py-20 px-6 bg-surface-container-lowest border-b border-outline-variant">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Content Column -->
+<div class="lg:col-span-7 flex flex-col items-start">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] font-label-sm text-label-sm mb-6">
+<span class="material-symbols-outlined text-[16px]">school</span>
+            Cohort 14 Enrolment Open • 2026 Academic Calendar
+          </div>
+<h1 class="font-display text-display text-[#0F172A] mb-6 tracking-tight">
+            Premier Professional Certification &amp; IT Governance Training in Lagos
+          </h1>
+<p class="font-body-lg text-body-lg text-[#475569] mb-8 leading-relaxed max-w-2xl">
+            Empowering IT auditors, cybersecurity professionals, and enterprise compliance leaders across West Africa. Rigorous, exam-focused preparation for ISACA certifications, AI audit governance, and regulatory data analytics.
+          </p>
+<!-- Action Cluster -->
+<div class="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-10">
+<a class="inline-flex items-center justify-center min-h-[44px] px-6 bg-[#0B1320] text-on-primary rounded font-label-md text-label-md hover:bg-[#1E293B] transition-colors focus-ring-strict" href="#programmes">
+              View 2026 Cohorts
+              <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center min-h-[44px] px-6 border border-[#64748B] text-[#0F172A] bg-transparent rounded font-label-md text-label-md hover:bg-[#F1F5F9] transition-colors focus-ring-strict" href="#enterprise">
+              Corporate Enquiries
+            </a>
+</div>
+<!-- Institutional Metadata Badges -->
+<div class="w-full pt-6 border-t border-[#E2E8F0] grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] mt-0.5">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-[#475569]">Campus Location</p>
+<p class="font-label-md text-label-md font-medium text-[#0F172A]">Agidingbi, Ikeja, Lagos</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#047857] mt-0.5">verified_user</span>
+<div>
+<p class="font-label-sm text-label-sm text-[#475569]">Success Rate</p>
+<p class="font-label-md text-label-md font-medium text-[#0F172A]">94.2% First-Time Pass</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#0B1320] mt-0.5">groups</span>
+<div>
+<p class="font-label-sm text-label-sm text-[#475569]">Alumni Network</p>
+<p class="font-label-md text-label-md font-medium text-[#0F172A]">4,800+ Certified Fellows</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Diagnostic Panel (Preview Container) -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-lowest border card-border-strict rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0] mb-5">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px]">fact_check</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A]">Cohort Registry Notice</h2>
+<p class="font-label-sm text-label-sm text-[#475569]">ISACA Syllabus Realignment</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium badge-certified">
+                Active Enrolment
+              </span>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md font-semibold text-[#0F172A]">CISA • Cohort 14</span>
+<span class="text-label-sm font-label-sm text-[#1D4ED8] font-medium">₦300,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#475569] mb-3">12 Oct – 18 Dec 2026 • Hybrid Weekend Live &amp; Lagos Centre</p>
+<div class="w-full bg-[#E2E8F0] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#1D4ED8] h-1.5 rounded-full" style="width: 78%"></div>
+</div>
+<div class="flex justify-between items-center mt-2 font-label-sm text-label-sm text-[#475569]">
+<span>Seat Allocation: 24/30</span>
+<span class="text-[#B45309] font-medium">6 Remaining</span>
+</div>
+</div>
+<div class="p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md font-semibold text-[#0F172A]">AAIA • AI Systems Auditor</span>
+<span class="text-label-sm font-label-sm text-[#1D4ED8] font-medium">₦350,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#475569] mb-3">02 Nov – 14 Dec 2026 • Virtual Intensive Faculty</p>
+<div class="w-full bg-[#E2E8F0] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#047857] h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+<div class="flex justify-between items-center mt-2 font-label-sm text-label-sm text-[#475569]">
+<span>Seat Allocation: 14/30</span>
+<span class="text-[#047857] font-medium">Enrolling</span>
+</div>
+</div>
+<div class="pt-2">
+<a class="w-full flex items-center justify-center min-h-[44px] bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0F172A] font-label-md text-label-md rounded border border-[#64748B]/30 transition-colors" href="#programmes">
+                  Inspect All 2026 Course Schedules
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED PROGRAMMES SECTION -->
+<section class="py-16 px-6 max-w-[1280px] mx-auto" id="programmes">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#E2E8F0] gap-4">
+<div>
+<span class="text-label-sm font-label-sm text-[#1D4ED8] font-semibold tracking-wider">CERTIFICATION PATHWAYS</span>
+<h2 class="font-headline-lg text-headline-lg text-[#0F172A] mt-1">Accredited Professional Programmes</h2>
+<p class="font-body-md text-body-md text-[#475569] mt-2">Formal syllabus alignment strictly compliant with updated international examination domains.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-3 py-1 rounded bg-[#F8FAFC] border border-[#E2E8F0] text-label-sm font-label-sm text-[#475569]">
+<span class="material-symbols-outlined text-[16px] mr-1.5 text-[#047857]">calendar_today</span> Term IV Schedule
+          </span>
+</div>
+</div>
+<!-- Bento-Structured Programmes Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: CISA -->
+<article class="bg-surface-container-lowest border card-border-strict rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm badge-info">
+                ISACA Scope
+              </span>
+<span class="font-headline-sm text-headline-sm text-[#0F172A]">₦300,000</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">CISA</h3>
+<p class="font-label-sm text-label-sm text-[#475569] mb-4">Certified Information Systems Auditor</p>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">
+              The gold standard in information systems audit, control, and assurance. Covers Domains 1 through 5 with extensive mock exams.
+            </p>
+<ul class="space-y-2.5 font-label-sm text-label-sm text-[#0F172A] border-t border-[#E2E8F0] pt-4 mb-6">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">event</span>
+                Cohort 14: 12 Oct – 18 Dec 2026
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">cast_for_education</span>
+                Live Virtual &amp; Weekend in Ikeja
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">timer</span>
+                10 Weeks Intensive Curriculum
+              </li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full min-h-[44px] px-4 rounded bg-[#F8FAFC] border border-[#64748B] text-[#0F172A] hover:bg-[#0B1320] hover:text-white transition-all font-label-md text-label-md focus-ring-strict" href="#">
+<span>View programme</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</article>
+<!-- Card 2: CISM -->
+<article class="bg-surface-container-lowest border card-border-strict rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm badge-info">
+                ISACA Scope
+              </span>
+<span class="font-headline-sm text-headline-sm text-[#0F172A]">₦350,000</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">CISM</h3>
+<p class="font-label-sm text-label-sm text-[#475569] mb-4">Certified Information Security Manager</p>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">
+              Tailored for governance executives, enterprise incident response planners, and high-level risk infrastructure heads.
+            </p>
+<ul class="space-y-2.5 font-label-sm text-label-sm text-[#0F172A] border-t border-[#E2E8F0] pt-4 mb-6">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">event</span>
+                Cohort 11: 19 Oct – 21 Dec 2026
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">cast_for_education</span>
+                Hybrid: Virtual &amp; Ikeja Executive Room
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">timer</span>
+                8 Weeks Executive Delivery
+              </li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full min-h-[44px] px-4 rounded bg-[#F8FAFC] border border-[#64748B] text-[#0F172A] hover:bg-[#0B1320] hover:text-white transition-all font-label-md text-label-md focus-ring-strict" href="#">
+<span>View programme</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</article>
+<!-- Card 3: CRISC -->
+<article class="bg-surface-container-lowest border card-border-strict rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm badge-info">
+                ISACA Scope
+              </span>
+<span class="font-headline-sm text-headline-sm text-[#0F172A]">₦320,000</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">CRISC</h3>
+<p class="font-label-sm text-label-sm text-[#475569] mb-4">Risk &amp; Information Systems Control</p>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">
+              Comprehensive operational IT risk assessment, control mitigation frameworks, and business continuity architecture.
+            </p>
+<ul class="space-y-2.5 font-label-sm text-label-sm text-[#0F172A] border-t border-[#E2E8F0] pt-4 mb-6">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">event</span>
+                Cohort 09: 26 Oct – 14 Dec 2026
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">cast_for_education</span>
+                Live Virtual Classroom
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">timer</span>
+                8 Weeks Direct Faculty
+              </li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full min-h-[44px] px-4 rounded bg-[#F8FAFC] border border-[#64748B] text-[#0F172A] hover:bg-[#0B1320] hover:text-white transition-all font-label-md text-label-md focus-ring-strict" href="#">
+<span>View programme</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</article>
+<!-- Card 4: AAIA (Specialist) -->
+<article class="bg-surface-container-lowest border card-border-strict rounded-xl p-6 flex flex-col justify-between hover:border-[#64748B] transition-colors relative">
+<div class="absolute -top-3 right-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#0B1320] text-white">
+              NEW REGULATORY
+            </span>
+</div>
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm badge-certified">
+                Governance AI
+              </span>
+<span class="font-headline-sm text-headline-sm text-[#0F172A]">₦350,000</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">AAIA</h3>
+<p class="font-label-sm text-label-sm text-[#475569] mb-4">Artificial Intelligence Auditor</p>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">
+              Auditing algorithmic models, LLM deployment risk, EU AI Act compliance, and automated operational verification protocols.
+            </p>
+<ul class="space-y-2.5 font-label-sm text-label-sm text-[#0F172A] border-t border-[#E2E8F0] pt-4 mb-6">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">event</span>
+                Cohort 03: 02 Nov – 18 Dec 2026
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">cast_for_education</span>
+                Virtual Intensive &amp; Lab Simulation
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">timer</span>
+                6 Weeks Advanced Track
+              </li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full min-h-[44px] px-4 rounded bg-[#F8FAFC] border border-[#64748B] text-[#0F172A] hover:bg-[#0B1320] hover:text-white transition-all font-label-md text-label-md focus-ring-strict" href="#">
+<span>View programme</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</article>
+</div>
+</section>
+<!-- LEARNING MODEL & METHODOLOGY -->
+<section class="py-16 px-6 bg-surface-container-low border-y border-[#E2E8F0]" id="methodology">
+<div class="max-w-[1280px] mx-auto">
+<div class="max-w-2xl mb-12">
+<span class="text-label-sm font-label-sm text-[#1D4ED8] font-semibold tracking-wider">THE ACADEMIC STANDARD</span>
+<h2 class="font-headline-lg text-headline-lg text-[#0F172A] mt-1">Structured Delivery Framework</h2>
+<p class="font-body-md text-body-md text-[#475569] mt-2">
+            Engineered exclusively for enterprise auditors and risk executives requiring verifiable knowledge retention and zero exam ambiguity.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest border card-border-strict rounded-xl p-6">
+<div class="w-12 h-12 rounded bg-[#0B1320] text-white flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] mb-3">Structured Faculty Masterclasses</h3>
+<p class="font-body-sm text-body-sm text-[#475569] leading-relaxed mb-4">
+              Led directly by seasoned IT governance directors with more than 20 years of real-world banking, regulatory, and oil-and-gas audit experience. No outsourced generic instructors.
+            </p>
+<div class="pt-4 border-t border-[#E2E8F0] font-label-sm text-label-sm text-[#0F172A] flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-[18px] text-[#047857]">check_circle</span>
+              Case-based scenario deconstructions
+            </div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest border card-border-strict rounded-xl p-6">
+<div class="w-12 h-12 rounded bg-[#0B1320] text-white flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] mb-3">Paginated Content &amp; DRM Player</h3>
+<p class="font-body-sm text-body-sm text-[#475569] leading-relaxed mb-4">
+              Protected web portal with zero messy PDF downloads. Stream watermarked high-definition masterclasses and read synchronized courseware cleanly structured by chapter syllabus.
+            </p>
+<div class="pt-4 border-t border-[#E2E8F0] font-label-sm text-label-sm text-[#0F172A] flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-[18px] text-[#047857]">check_circle</span>
+              Auditable individual progress tracking
+            </div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest border card-border-strict rounded-xl p-6">
+<div class="w-12 h-12 rounded bg-[#0B1320] text-white flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">quiz</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] mb-3">Domain-Level Diagnostic Engine</h3>
+<p class="font-body-sm text-body-sm text-[#475569] leading-relaxed mb-4">
+              High-fidelity exam simulator mirroring actual ISACA computer-based formats. Automatically identifies knowledge gaps per domain, generating remediation reading plans.
+            </p>
+<div class="pt-4 border-t border-[#E2E8F0] font-label-sm text-label-sm text-[#0F172A] flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-[18px] text-[#047857]">check_circle</span>
+              1,200+ curated exam question bank
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ENTERPRISE TRAINING CALLOUT -->
+<section class="py-16 px-6 bg-surface-container-lowest border-b border-[#E2E8F0]" id="enterprise">
+<div class="max-w-[1280px] mx-auto bg-[#0B1320] text-on-primary rounded-xl p-8 md:p-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#1E293B] text-[#93C5FD] font-label-sm text-label-sm mb-4">
+              Enterprise Corporate Enrolment
+            </span>
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">
+              Customised In-House IT Audit &amp; Cybersecurity Masterclasses
+            </h2>
+<p class="font-body-md text-body-md text-[#93C5FD] max-w-2xl mb-6">
+              Empower your internal audit, compliance, and SOC teams with cohort-based private training aligned to specific corporate frameworks (CBN guidelines, NDPR, ISO 27001, and COBIT).
+            </p>
+<div class="flex flex-wrap gap-4 text-label-sm font-label-sm text-white">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#047857]">check</span> Dedicated Cohort Tracking</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#047857]">check</span> Flexible Weekend Scheduling</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#047857]">check</span> Formal Corporate Reporting</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-3">
+<a class="inline-flex items-center justify-center min-h-[44px] px-6 bg-white text-[#0B1320] font-label-md text-label-md rounded font-semibold hover:bg-slate-100 transition-colors focus-ring-strict text-center" href="mailto:corporate@ajsilicon.com">
+              Request Enterprise Syllabus
+            </a>
+<a class="inline-flex items-center justify-center min-h-[44px] px-6 border border-[#64748B] text-white font-label-md text-label-md rounded hover:bg-white/10 transition-colors focus-ring-strict text-center" href="tel:+2348033000000">
+              Call Advisory Desk
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- CERTIFICATE VERIFICATION REGISTRY CALLOUT -->
+<section class="py-14 px-6 bg-[#F8FAFC] border-b border-[#E2E8F0]" id="verification">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-7">
+<div class="inline-flex items-center gap-2 text-secondary font-label-sm text-label-sm font-semibold mb-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+            INSTITUTIONAL INTEGRITY
+          </div>
+<h2 class="font-headline-md text-headline-md text-[#0F172A] mb-3">Official Certificate Verification Registry</h2>
+<p class="font-body-md text-body-md text-[#475569]">
+            Employers, regulatory authorities, and verification agents can instantly check candidate authenticity via our cryptographic credential ledger.
+          </p>
+</div>
+<div class="md:col-span-5">
+<form class="flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault();">
+<div class="flex-grow">
+<label class="sr-only" for="cert-id">Certificate Identification Number</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm focus-ring-strict" id="cert-id" placeholder="e.g. AJS-CISA-2025-0841" required="" type="text"/>
+</div>
+<button class="min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white font-label-md text-label-md rounded transition-colors focus-ring-strict shrink-0" type="submit">
+              Verify Record
+            </button>
+</form>
+<p class="font-label-sm text-label-sm text-[#475569] mt-2">Instant verification against A.J. Silicon central graduate register.</p>
+</div>
+</div>
+</section>
+<!-- PHYSICAL CAMPUS & CONTACT -->
+<section class="py-16 px-6 max-w-[1280px] mx-auto" id="campus">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Campus Info -->
+<div class="lg:col-span-6 bg-surface-container-lowest border card-border-strict rounded-xl p-8">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[28px] text-secondary">corporate_fare</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A]">Lagos Training Centre</h2>
+<p class="font-label-sm text-label-sm text-[#475569]">Administrative Headquarters &amp; Classrooms</p>
+</div>
+</div>
+<span class="badge-certified px-2.5 py-1 rounded text-label-sm font-label-sm font-medium">
+              Open for Visits
+            </span>
+</div>
+<div class="space-y-4 text-body-md text-body-md text-[#0F172A] mb-8">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-1 text-[20px]">pin_drop</span>
+<div>
+<p class="font-semibold">14B Amara Olu Street</p>
+<p class="text-[#475569]">Agidingbi, Ikeja, Lagos State, Nigeria</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-1 text-[20px]">schedule</span>
+<div>
+<p class="font-semibold">Office Hours (WAT)</p>
+<p class="text-[#475569]">Monday – Friday: 08:30 – 17:30</p>
+<p class="text-[#475569]">Saturday: 09:00 – 16:30 (Cohort Sessions)</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-1 text-[20px]">call</span>
+<div>
+<p class="font-semibold">Telephone Enquiries</p>
+<p class="text-[#475569]">+234 803 300 0000 • +234 1 234 5678</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#64748B] mt-1 text-[20px]">mail</span>
+<div>
+<p class="font-semibold">Registrar Email</p>
+<p class="text-[#475569]">enquiries@ajsilicon.com</p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-[#E2E8F0]">
+<a class="inline-flex items-center text-label-md font-label-md text-secondary hover:underline" href="https://maps.google.com" rel="noopener" target="_blank">
+<span>View Centre Directions in Google Maps</span>
+<span class="material-symbols-outlined text-[16px] ml-1">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Consultation Form Card -->
+<div class="lg:col-span-6 bg-surface-container-lowest border card-border-strict rounded-xl p-8">
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A] mb-1">Enquire Regarding 2026 Cohorts</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mb-6">Receive detailed domain breakdowns, fee payment instalments, and class timetables.</p>
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-sm text-label-sm text-[#0F172A] mb-1" for="fullName">Full Name</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm focus-ring-strict" id="fullName" placeholder="e.g. Babatunde Lawal" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-[#0F172A] mb-1" for="workEmail">Work / Professional Email</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm focus-ring-strict" id="workEmail" placeholder="e.g. b.lawal@bank.ng" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-sm text-label-sm text-[#0F172A] mb-1" for="progSelect">Target Certification</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm focus-ring-strict" id="progSelect">
+<option>CISA (Information Systems Auditor)</option>
+<option>CISM (Information Security Manager)</option>
+<option>CRISC (Risk &amp; Systems Control)</option>
+<option>AAIA (Artificial Intelligence Auditor)</option>
+<option>Data Analytics for Internal Audit</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-[#0F172A] mb-1" for="phone">Phone Number</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-body-sm font-body-sm focus-ring-strict" id="phone" placeholder="+234 800 000 0000" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-[#0F172A] mb-1" for="mode">Preferred Mode</label>
+<div class="flex gap-4 pt-1">
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-sm text-label-sm">
+<input checked="" class="w-4 h-4 text-[#0B1320] focus-ring-strict" name="mode" type="radio" value="virtual"/>
+<span>Virtual Interactive Live</span>
+</label>
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-sm text-label-sm">
+<input class="w-4 h-4 text-[#0B1320] focus-ring-strict" name="mode" type="radio" value="ikeja"/>
+<span>Ikeja Physical Weekend</span>
+</label>
+</div>
+</div>
+<button class="w-full min-h-[44px] bg-[#0B1320] hover:bg-[#1E293B] text-white font-label-md text-label-md rounded font-medium transition-colors focus-ring-strict" type="submit">
+              Submit Programme Enrolment Enquiry
+            </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- INSTITUTIONAL NAVY FOOTER -->
+<footer class="bg-primary-container text-on-primary-container border-t border-outline-variant py-14 px-6">
+<div class="max-w-[1280px] mx-auto">
+<!-- Upper Footer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#283044]">
+<!-- Brand identity -->
+<div class="lg:col-span-2">
+<div class="h-10 bg-surface-container-lowest px-3 py-1 rounded inline-flex items-center mb-5">
+<img alt="A.J. Silicon Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAESJEQV8Ya2KxSzwN_ppl_qMjLWm0OAT2S4EA8Ef6VKIxoKLlpVVvgtmFjWa5QJjgYmNal6glDlyICdu5zZM0vP_O-AscTMv2u30mnjjYTF7kd7cqlW7WDJ6GYHLsHx6ftYI6_auyq3zNyYQFpqgxe2cIq04NjPN55HlrcbObtc1qKcsWb3DKmBZwduvFnM-WC8j0pepfoYlHi62UB577Auy_ov6J0k1lQKRY1BegQzzJr7Lza3DTh9w"/>
+</div>
+<p class="font-body-sm text-body-sm text-[#7c8495] max-w-sm mb-6 leading-relaxed">
+            West Africa’s authoritative training institution for information systems auditing, cybersecurity management, and technical compliance certification.
+          </p>
+<div class="text-label-sm font-label-sm text-on-primary">
+            Outstanding Industry Leader Award Winner • Lagos, Nigeria
+          </div>
+</div>
+<!-- Col 1: Certifications -->
+<div>
+<h4 class="font-label-md text-label-md text-on-primary font-semibold mb-4">Programmes</h4>
+<ul class="space-y-2.5 font-label-sm text-label-sm">
+<li><a class="hover:text-on-primary transition-colors" href="#">CISA Masterclass</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#">CISM Executive Track</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#">CRISC Risk Curriculum</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#">AAIA AI Systems Auditor</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#">Data Analytics in Audit</a></li>
+</ul>
+</div>
+<!-- Col 2: Institutional -->
+<div>
+<h4 class="font-label-md text-label-md text-on-primary font-semibold mb-4">Governance</h4>
+<ul class="space-y-2.5 font-label-sm text-label-sm">
+<li><a class="hover:text-on-primary transition-colors" href="#enterprise">Enterprise In-House Training</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#verification">Certificate Registry</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#campus">Faculty Profiles</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#campus">Ikeja Campus Facilities</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#">ISACA Exam Registration Guide</a></li>
+</ul>
+</div>
+<!-- Col 3: Contact & Registry -->
+<div>
+<h4 class="font-label-md text-label-md text-on-primary font-semibold mb-4">Liaison Office</h4>
+<address class="not-italic font-label-sm text-label-sm space-y-2 text-[#7c8495]">
+<p>14B Amara Olu Street, Agidingbi</p>
+<p>Ikeja, Lagos, Nigeria</p>
+<p class="text-on-primary pt-1">+234 803 300 0000</p>
+<p><a class="text-[#93C5FD] hover:underline" href="mailto:enquiries@ajsilicon.com">enquiries@ajsilicon.com</a></p>
+</address>
+</div>
+</div>
+<!-- Legal and Disclaimers Strip -->
+<div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-label-sm text-label-sm text-[#7c8495]">
+<div>
+          © 2026 A.J. Silicon. All rights reserved. Registered under Nigerian Corporate Law.
+        </div>
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-on-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-primary transition-colors" href="#">Content Licence</a>
+<a class="hover:text-on-primary transition-colors" href="#">Refund Policy</a>
+<a class="text-[#93C5FD] hover:text-white transition-colors" href="#verification">Verification Registry</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

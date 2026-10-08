@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Subscriptions &amp; Billing Management - A.J. SILICON AUDIT PORTAL</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#dbe2f5",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#283044",
+            "primary": "#0B1320",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-low": "#f2f3ff",
+            "primary-fixed-dim": "#bfc6d9",
+            "error": "#B91C1C",
+            "tertiary": "#000000",
+            "secondary-container": "#4069f2",
+            "inverse-on-surface": "#eef0ff",
+            "outline": "#64748B",
+            "on-secondary-container": "#fffbff",
+            "outline-variant": "#E2E8F0",
+            "surface-tint": "#575f6e",
+            "on-tertiary-container": "#997f6a",
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed": "#141c29",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-bright": "#faf8ff",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#dce1ff",
+            "primary-container": "#141c29",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#001551",
+            "on-background": "#0F172A",
+            "on-surface-variant": "#475569",
+            "surface-container-high": "#e2e7ff",
+            "background": "#FAF8FF",
+            "on-surface": "#0F172A",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "tertiary-container": "#281809",
+            "on-tertiary-fixed": "#281809",
+            "on-primary-container": "#7c8495",
+            "secondary": "#1D4ED8",
+            "inverse-primary": "#bfc6d9",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#eaedff",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#b7c4ff",
+            "error-container": "#FEF2F2",
+            "surface": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "tertiary-fixed": "#fddcc4"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1.5rem",
+            "space-sm": "1rem",
+            "space-xs": "0.5rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem"
+          },
+          fontFamily: {
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    input:focus, select:focus, textarea:focus, button:focus {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-on-surface bg-[#FAF8FF] antialiased flex flex-col">
+<!-- TOP SHELL: Fixed 64px Height in Dark Navy #0B1320 -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-gutter bg-[#0B1320] border-b border-[#1E293B] select-none text-on-primary">
+<!-- Left Plate: Brand Identity -->
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center h-10 shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto max-w-[140px] object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwp0Q49vcPDC-Enxriij0sg12j27sGTNQQgXTeDN-MABTatv4N7_dUyjWgV97DYejELLWJtWupLs14fGV47FTMKOrQEtaRSqECEXTAQ7EhYdRc-tl7eq3K38sl2-F1WJk2L8LLyJsXgjGTmU6gO9rHTUkwo-0ahdG-zJVezZKFQG8TaBdOfqfWwqdPJe7rA5sJjD_eP1f9a1b5fTLkDgPrg3ZQLRro-EYyxY1cskLjJkEoV-ZjRpqgXw"/>
+</div>
+<div class="h-6 w-[1px] bg-[#334155]"></div>
+<span class="text-body-sm font-label-md text-slate-300 tracking-wide hidden md:inline">
+        Staff Enterprise Billing &amp; Terminal Engine
+      </span>
+</div>
+<!-- Right Controls: Staff plain text badge & Telemetry -->
+<div class="flex items-center gap-5">
+<!-- Plain text label requirement: NO dropdown -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded bg-[#141C29] border border-[#334155] text-body-sm font-label-md text-slate-200">
+<span class="material-symbols-outlined text-slate-400">badge</span>
+<span>Role: Finance Manager | Femi Adebayo</span>
+</div>
+<!-- Live Timestamp in WAT -->
+<div class="hidden lg:flex items-center gap-2 text-body-sm font-body-sm text-slate-300">
+<span class="material-symbols-outlined text-slate-400">schedule</span>
+<span>12:40 WAT · 05 Oct 2026</span>
+</div>
+<!-- Notification Action (44px min touch target) -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-slate-300 hover:text-white hover:bg-[#1E293B] transition-colors relative" type="button">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#1D4ED8] ring-2 ring-[#0B1320]"></span>
+</button>
+<!-- User Avatar initials plate -->
+<div class="w-11 h-11 rounded bg-[#1D4ED8] text-white flex items-center justify-center font-label-md text-body-sm font-bold border border-blue-400">
+        FA
+      </div>
+</div>
+</header>
+<!-- BODY SHELL WRAPPER -->
+<div class="flex flex-1 min-h-[calc(100vh-4rem)]">
+<!-- LEFT SIDEBAR: Persistent Vertical Navigation -->
+<aside class="w-72 bg-[#0B1320] border-r border-[#1E293B] flex flex-col justify-between p-4 shrink-0 text-slate-300">
+<div class="space-y-6">
+<!-- Section: Finance (Active Group) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+            Finance &amp; Operations
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Active Subscriptions item -->
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md bg-[#141C29] text-white border-l-4 border-[#1D4ED8] shadow-inner font-semibold" href="#">
+<span class="material-symbols-outlined text-[#93C5FD]">credit_card</span>
+<span>Subscriptions</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">confirmation_number</span>
+<span>Coupons</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">receipt_long</span>
+<span>Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">request_quote</span>
+<span>Invoicing &amp; Receipts</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">sync_alt</span>
+<span>Webhooks &amp; Reconciliation</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">account_balance</span>
+<span>Settlements</span>
+</a>
+</nav>
+</div>
+<!-- Section: Academics -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+            Academics
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">school</span>
+<span>Curriculum &amp; Tracks</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">groups</span>
+<span>Candidate Cohorts</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">terminal</span>
+<span>AAIA Lab Environment</span>
+</a>
+</nav>
+</div>
+<!-- Section: Students -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+            Candidates &amp; Trainees
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">person_search</span>
+<span>Profiles Directory</span>
+</a>
+<a class="flex items-center gap-3 px-3 min-h-[44px] rounded text-body-sm font-label-md hover:bg-[#141C29] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">fact_check</span>
+<span>Attendance &amp; Proctoring</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Rail Footer -->
+<div class="pt-4 border-t border-[#1E293B] space-y-2">
+<div class="px-3 py-2 bg-[#141C29] rounded text-[12px] font-label-sm text-slate-400 flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#047857]"></span> Paystack Webhook Live</span>
+<span class="font-mono text-slate-500">v4.9.2</span>
+</div>
+</div>
+</aside>
+<!-- MAIN AUDIT CANVAS -->
+<main class="flex-1 p-8 overflow-y-auto max-w-[1280px]">
+<!-- BREADCRUMB -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant mb-3">
+<a class="hover:text-primary transition-colors" href="#">Finance &amp; Operations</a>
+<span class="text-slate-400">/</span>
+<a class="hover:text-primary transition-colors" href="#">Subscriptions &amp; Billing</a>
+<span class="text-slate-400">/</span>
+<span class="font-label-md text-on-surface font-semibold">Subscriptions</span>
+</nav>
+<!-- PAGE TITLE & SINGLE PRIMARY ACTION -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-4 border-b border-outline-variant">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">Recurring Subscriptions</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+            Manage auto-renewing executive certification access, retry rules, and enterprise candidate billings.
+          </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<!-- Required Single Primary Action: 44px height in #0B1320 -->
+<button class="min-h-[44px] px-6 py-2.5 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] transition-colors font-label-md text-body-sm flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined">download</span>
+<span>Export subscriptions ledger</span>
+</button>
+</div>
+</div>
+<!-- 1. METRIC TILES AT TOP -->
+<section aria-label="Subscription Metrics" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- Active -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Active Subscriptions</span>
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#ECFDF5] text-[#047857]">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</span>
+</div>
+<div class="text-display font-display text-[#0F172A]">184</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="inline-flex items-center text-[#047857] font-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span> 94.8%
+            </span>
+<span>healthy auto-renewal rate</span>
+</div>
+</div>
+<!-- Past Due -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Past Due Subscriptions</span>
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FFFBEB] text-[#B45309]">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</span>
+</div>
+<div class="text-display font-display text-[#B45309]">12</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+<span>In automated retry grace period</span>
+</div>
+</div>
+<!-- Cancelled -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Cancelled This Month</span>
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FEF2F2] text-[#B91C1C]">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</span>
+</div>
+<div class="text-display font-display text-[#0F172A]">4</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+<span class="font-label-md font-semibold text-on-surface">Churn rate: 2.1%</span>
+<span>(below target 3.5%)</span>
+</div>
+</div>
+<!-- MRR in Naira -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Monthly Recurring Revenue</span>
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#EFF6FF] text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">₦8,280,000</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+<span>MRR settled to GTBank Enterprise</span>
+</div>
+</div>
+</section>
+<!-- VIEW SELECTOR TABS (Simulating State Variants 1, 2, 3) -->
+<div class="bg-white rounded-xl border border-outline-variant p-2 mb-6 flex flex-wrap gap-2 items-center">
+<span class="text-body-sm font-label-md text-on-surface-variant px-3">State View Modes:</span>
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-[#0B1320] text-white flex items-center gap-2" id="btn-var1" onclick="switchTab('variant1')">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+<span>Variant 1: Default (All Active &amp; Past-Due)</span>
+</button>
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-transparent hover:bg-slate-100 text-[#0F172A] border border-outline-variant flex items-center gap-2" id="btn-var2" onclick="switchTab('variant2')">
+<span class="material-symbols-outlined text-[18px] text-[#B45309]">warning</span>
+<span>Variant 2: Past Due Filter Applied (12 Accounts)</span>
+</button>
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-transparent hover:bg-slate-100 text-[#0F172A] border border-outline-variant flex items-center gap-2" id="btn-var3" onclick="switchTab('variant3')">
+<span class="material-symbols-outlined text-[18px]">hourglass_empty</span>
+<span>Variant 3: Empty &amp; Skeleton Simulation</span>
+</button>
+</div>
+<!-- 2. SUBSCRIPTIONS TABLE SECTION (VARIANT 1: DEFAULT) -->
+<div class="space-y-6" id="tab-variant1">
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden">
+<!-- Filters & Search Toolbar -->
+<div class="p-4 border-b border-outline-variant bg-[#F8FAFC] flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
+<!-- Search bar -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full min-h-[44px] pl-10 pr-4 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] placeholder-slate-500" placeholder="Search candidate name, email, subscription ID..." type="text"/>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Status filter -->
+<div class="flex items-center gap-2">
+<label class="text-body-sm font-label-md text-on-surface-variant" for="status-filter">Status:</label>
+<select class="min-h-[44px] px-3 py-2 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A]" id="status-filter">
+<option selected="">All Statuses</option>
+<option>Active</option>
+<option>Past Due</option>
+<option>Paused</option>
+<option>Cancelled</option>
+</select>
+</div>
+<!-- Plan filter -->
+<div class="flex items-center gap-2">
+<label class="text-body-sm font-label-md text-on-surface-variant" for="plan-filter">Plan:</label>
+<select class="min-h-[44px] px-3 py-2 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A]" id="plan-filter">
+<option selected="">All Plans</option>
+<option>CISA Extension</option>
+<option>CRISC Monthly</option>
+<option>AAIA Lab Pass</option>
+</select>
+</div>
+<!-- Cohort filter -->
+<div class="flex items-center gap-2">
+<label class="text-body-sm font-label-md text-on-surface-variant" for="cohort-filter">Cohort:</label>
+<select class="min-h-[44px] px-3 py-2 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A]" id="cohort-filter">
+<option selected="">All Cohorts</option>
+<option>Lagos Cohort Q4 2026</option>
+<option>Abuja Executive Q3 2026</option>
+<option>Port Harcourt SecOps</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table aria-label="Subscriptions Table" class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-outline-variant text-[12px] font-label-md uppercase tracking-wider text-on-surface-variant">
+<th class="py-3 px-4" scope="col">Candidate &amp; Identity</th>
+<th class="py-3 px-4" scope="col">Plan &amp; Amount</th>
+<th class="py-3 px-4" scope="col">Card Details</th>
+<th class="py-3 px-4" scope="col">Next Charge</th>
+<th class="py-3 px-4" scope="col">Status</th>
+<th class="py-3 px-4" scope="col">Failed Retries</th>
+<th class="py-3 px-4 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm font-body-sm">
+<!-- Row 1: Active Candidate -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Babatunde Adeleke</div>
+<div class="text-[13px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span id="email-mask-1">b.ade****@firstbankgroup.ng</span>
+<button class="text-[12px] font-label-sm text-[#1D4ED8] hover:underline flex items-center gap-0.5" onclick="revealField('email-mask-1', 'b.adeleke@firstbankgroup.ng', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Reveal
+                      </button>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5">SUB-9024-LAG</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">CISA Extension</div>
+<div class="text-[13px] text-slate-600 font-mono">₦45,000 / month</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500">credit_card</span>
+<span class="font-mono text-[13px]">Mastercard •••• 4120</span>
+</div>
+<span class="text-[11px] text-slate-500">Exp: 08/28</span>
+</td>
+<td class="py-4 px-4">
+<div class="text-[#0F172A]">05 Nov 2026</div>
+<div class="text-[12px] text-slate-500">Auto-recurring</div>
+</td>
+<td class="py-4 px-4">
+<!-- Status Chip: Pass/Certified Style -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="font-mono text-slate-700">0/3</span>
+<div class="text-[11px] text-slate-500">Healthy ledger</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-on-surface hover:bg-slate-100 transition-colors" type="button">
+                        Pause
+                      </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-[#B91C1C] hover:bg-[#FEF2F2] transition-colors" onclick="openCancelModal('Babatunde Adeleke', 'SUB-9024-LAG', 'CISA Extension', '₦45,000')" type="button">
+                        Cancel
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Past Due with Retries Pending -->
+<tr class="hover:bg-[#F8FAFC] transition-colors bg-amber-50/20">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Chinedu Eze</div>
+<div class="text-[13px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span id="email-mask-2">c.eze****@zenithholdings.com</span>
+<button class="text-[12px] font-label-sm text-[#1D4ED8] hover:underline flex items-center gap-0.5" onclick="revealField('email-mask-2', 'c.eze@zenithholdings.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Reveal
+                      </button>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5">SUB-8812-ABJ</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">CRISC Monthly</div>
+<div class="text-[13px] text-slate-600 font-mono">₦65,000 / month</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500">credit_card</span>
+<span class="font-mono text-[13px]">Visa •••• 9012</span>
+</div>
+<span class="text-[11px] text-red-600">Card limit reached</span>
+</td>
+<td class="py-4 px-4">
+<div class="text-[#B45309] font-medium">Overdue (03 Oct)</div>
+<div class="text-[12px] text-slate-500">Grace period: 5d left</div>
+</td>
+<td class="py-4 px-4">
+<!-- Status Chip: Warning Style -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">warning</span> Past Due
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="font-mono text-[#B45309] font-bold">2/3</span>
+<div class="text-[11px] text-[#B45309]">Final retry: 07 Oct, 09:00</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md bg-[#0B1320] text-white hover:bg-[#1E293B] transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span> Retry charge
+                      </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-[#B91C1C] hover:bg-[#FEF2F2] transition-colors" onclick="openCancelModal('Chinedu Eze', 'SUB-8812-ABJ', 'CRISC Monthly', '₦65,000')" type="button">
+                        Cancel
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Active Lab Pass -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Amina Mohammed</div>
+<div class="text-[13px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span id="email-mask-3">a.moham****@firs.gov.ng</span>
+<button class="text-[12px] font-label-sm text-[#1D4ED8] hover:underline flex items-center gap-0.5" onclick="revealField('email-mask-3', 'a.mohammed@firs.gov.ng', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Reveal
+                      </button>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5">SUB-7643-KAD</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">AAIA Lab Pass</div>
+<div class="text-[13px] text-slate-600 font-mono">₦55,000 / month</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500">credit_card</span>
+<span class="font-mono text-[13px]">Mastercard •••• 1184</span>
+</div>
+<span class="text-[11px] text-slate-500">Exp: 11/27</span>
+</td>
+<td class="py-4 px-4">
+<div class="text-[#0F172A]">18 Oct 2026</div>
+<div class="text-[12px] text-slate-500">Auto-recurring</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="font-mono text-slate-700">0/3</span>
+<div class="text-[11px] text-slate-500">Healthy ledger</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-on-surface hover:bg-slate-100 transition-colors" type="button">
+                        Pause
+                      </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-[#B91C1C] hover:bg-[#FEF2F2] transition-colors" onclick="openCancelModal('Amina Mohammed', 'SUB-7643-KAD', 'AAIA Lab Pass', '₦55,000')" type="button">
+                        Cancel
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Paused Subscription -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Oluwaseun Bakare</div>
+<div class="text-[13px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span id="email-mask-4">o.bak****@accessbankplc.com</span>
+<button class="text-[12px] font-label-sm text-[#1D4ED8] hover:underline flex items-center gap-0.5" onclick="revealField('email-mask-4', 'o.bakare@accessbankplc.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Reveal
+                      </button>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5">SUB-5201-VI</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">CISA Extension</div>
+<div class="text-[13px] text-slate-600 font-mono">₦45,000 / month</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500">credit_card</span>
+<span class="font-mono text-[13px]">Visa •••• 7741</span>
+</div>
+<span class="text-[11px] text-slate-500">Exp: 04/29</span>
+</td>
+<td class="py-4 px-4">
+<div class="text-slate-500">Suspended by User</div>
+<div class="text-[12px] text-slate-500">Resumes: 01 Dec 2026</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#F1F5F9] text-[#475569] border border-[#94A3B8]">
+<span class="material-symbols-outlined text-[14px]">pause_circle</span> Paused
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="font-mono text-slate-500">—</span>
+<div class="text-[11px] text-slate-500">Billing halted</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-[#1D4ED8] hover:bg-blue-50 transition-colors" type="button">
+                        Resume
+                      </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-[#B91C1C] hover:bg-[#FEF2F2] transition-colors" onclick="openCancelModal('Oluwaseun Bakare', 'SUB-5201-VI', 'CISA Extension', '₦45,000')" type="button">
+                        Cancel
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Cancelled Subscription -->
+<tr class="hover:bg-[#F8FAFC] transition-colors opacity-80">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Emeka Okonkwo</div>
+<div class="text-[13px] text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span id="email-mask-5">e.okon****@stanbicibtc.com</span>
+<button class="text-[12px] font-label-sm text-[#1D4ED8] hover:underline flex items-center gap-0.5" onclick="revealField('email-mask-5', 'e.okonkwo@stanbicibtc.com', this)" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Reveal
+                      </button>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5">SUB-4109-IKJ</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">AAIA Lab Pass</div>
+<div class="text-[13px] text-slate-600 font-mono">₦55,000 / month</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500">credit_card</span>
+<span class="font-mono text-[13px]">Mastercard •••• 3302</span>
+</div>
+<span class="text-[11px] text-slate-500">Exp: 01/27</span>
+</td>
+<td class="py-4 px-4">
+<div class="text-slate-400">Terminated</div>
+<div class="text-[12px] text-slate-500">Revoked: 01 Oct 2026</div>
+</td>
+<td class="py-4 px-4">
+<!-- Fail/High Risk Style -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">cancel</span> Cancelled
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="font-mono text-slate-500">3/3</span>
+<div class="text-[11px] text-red-600">Cut-off executed</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end">
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-label-md text-on-surface-variant hover:bg-slate-100 transition-colors" type="button">
+                        View Audit Log
+                      </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="p-4 border-t border-outline-variant bg-[#F8FAFC] flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="text-body-sm font-body-sm text-on-surface-variant">
+              Showing <strong class="font-semibold text-[#0F172A]">1 - 5</strong> of <strong class="font-semibold text-[#0F172A]">196</strong> total candidate subscription ledgers
+            </span>
+<div class="flex items-center gap-2">
+<button class="min-h-[44px] px-4 py-2 rounded text-body-sm font-label-md border border-outline-variant bg-white text-slate-400 cursor-not-allowed" disabled="" type="button">
+                Previous
+              </button>
+<button class="min-h-[44px] px-4 py-2 rounded text-body-sm font-label-md border border-outline-variant bg-[#0B1320] text-white" type="button">
+                1
+              </button>
+<button class="min-h-[44px] px-4 py-2 rounded text-body-sm font-label-md border border-outline-variant bg-white text-on-surface hover:bg-slate-100" type="button">
+                2
+              </button>
+<button class="min-h-[44px] px-4 py-2 rounded text-body-sm font-label-md border border-outline-variant bg-white text-on-surface hover:bg-slate-100" type="button">
+                3
+              </button>
+<button class="min-h-[44px] px-4 py-2 rounded text-body-sm font-label-md border border-outline-variant bg-white text-on-surface hover:bg-slate-100" type="button">
+                Next
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- VARIANT 2: PAST DUE FILTER APPLIED (12 Past Due Accounts) -->
+<div class="space-y-6 hidden" id="tab-variant2">
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-4 bg-[#FFFBEB] border-b border-[#FDE68A] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#B45309]">filter_list</span>
+<div>
+<strong class="font-label-md text-[#92400E]">Filtered View: Past Due &amp; Grace Period Retries (12 accounts active)</strong>
+<p class="text-body-sm font-body-sm text-[#B45309]">Candidates in dunning schedule. Automated emails sent. Courseware access will be locked upon 7th day.</p>
+</div>
+</div>
+<button class="min-h-[44px] px-4 py-2 rounded bg-white text-[#92400E] border border-[#FDE68A] font-label-md text-body-sm hover:bg-[#FEF3C7]" onclick="switchTab('variant1')" type="button">
+              Clear Filter
+            </button>
+</div>
+<div class="overflow-x-auto">
+<table aria-label="Past Due Table" class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-outline-variant text-[12px] font-label-md uppercase tracking-wider text-on-surface-variant">
+<th class="py-3 px-4" scope="col">Candidate &amp; Identity</th>
+<th class="py-3 px-4" scope="col">Plan &amp; Amount</th>
+<th class="py-3 px-4" scope="col">Payment Method</th>
+<th class="py-3 px-4" scope="col">Dunning Status</th>
+<th class="py-3 px-4" scope="col">Retry Schedule Note</th>
+<th class="py-3 px-4 text-right" scope="col">Quick Retry Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm font-body-sm">
+<!-- Past Due Item 1 -->
+<tr class="hover:bg-amber-50/30 transition-colors">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Chinedu Eze</div>
+<div class="text-[13px] text-on-surface-variant">c.eze****@zenithholdings.com</div>
+<span class="text-[11px] font-mono text-slate-500">SUB-8812-ABJ</span>
+</td>
+<td class="py-4 px-4 font-mono font-medium text-[#0F172A]">
+                    CRISC Monthly · ₦65,000
+                  </td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-1.5 font-mono text-[13px]">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">credit_card</span> Visa •••• 9012
+                    </div>
+<span class="text-[11px] text-[#B91C1C]">Bank Insufficient Funds</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">warning</span> Attempt 2/3 Failed
+                    </span>
+<div class="text-[11px] text-red-600 mt-1 font-semibold">3 days until license lock</div>
+</td>
+<td class="py-4 px-4">
+<div class="text-[13px] text-[#0F172A] font-medium">Attempt 3 queued</div>
+<div class="text-[12px] text-slate-500">Scheduled: 07 Oct 2026, 09:00 WAT</div>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="min-h-[44px] px-4 py-2 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] font-label-md text-body-sm inline-flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span> Retry Charge Now
+                    </button>
+</td>
+</tr>
+<!-- Past Due Item 2 -->
+<tr class="hover:bg-amber-50/30 transition-colors">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Fatima Garba</div>
+<div class="text-[13px] text-on-surface-variant">f.garba****@fidelityng.com</div>
+<span class="text-[11px] font-mono text-slate-500">SUB-7933-KAN</span>
+</td>
+<td class="py-4 px-4 font-mono font-medium text-[#0F172A]">
+                    CISA Extension · ₦45,000
+                  </td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-1.5 font-mono text-[13px]">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">credit_card</span> Mastercard •••• 5567
+                    </div>
+<span class="text-[11px] text-[#B91C1C]">Expired Card Profile</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">warning</span> Attempt 1/3 Failed
+                    </span>
+<div class="text-[11px] text-[#B45309] mt-1">6 days until license lock</div>
+</td>
+<td class="py-4 px-4">
+<div class="text-[13px] text-[#0F172A] font-medium">Attempt 2 queued</div>
+<div class="text-[12px] text-slate-500">Scheduled: 06 Oct 2026, 14:30 WAT</div>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="min-h-[44px] px-4 py-2 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] font-label-md text-body-sm inline-flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span> Retry Charge Now
+                    </button>
+</td>
+</tr>
+<!-- Past Due Item 3 -->
+<tr class="hover:bg-amber-50/30 transition-colors">
+<td class="py-4 px-4">
+<div class="font-label-md font-semibold text-[#0F172A]">Tunde Alabi</div>
+<div class="text-[13px] text-on-surface-variant">t.alabi****@stanbic.com</div>
+<span class="text-[11px] font-mono text-slate-500">SUB-6340-IBD</span>
+</td>
+<td class="py-4 px-4 font-mono font-medium text-[#0F172A]">
+                    AAIA Lab Pass · ₦55,000
+                  </td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-1.5 font-mono text-[13px]">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">credit_card</span> Visa •••• 1004
+                    </div>
+<span class="text-[11px] text-[#B91C1C]">Processor Timeout (Paystack)</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-[12px] font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">warning</span> Attempt 1/3 Failed
+                    </span>
+<div class="text-[11px] text-[#B45309] mt-1">7 days until license lock</div>
+</td>
+<td class="py-4 px-4">
+<div class="text-[13px] text-[#0F172A] font-medium">Attempt 2 queued</div>
+<div class="text-[12px] text-slate-500">Scheduled: 06 Oct 2026, 18:00 WAT</div>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="min-h-[44px] px-4 py-2 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] font-label-md text-body-sm inline-flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span> Retry Charge Now
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant bg-[#F8FAFC] text-right">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Viewing 3 of 12 past due subscription records</span>
+</div>
+</div>
+</div>
+<!-- VARIANT 3: EMPTY STATE / SKELETON REPRESENTATION -->
+<div class="space-y-6 hidden" id="tab-variant3">
+<div class="bg-white rounded-xl border border-outline-variant p-12 text-center">
+<div class="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A] mb-2">No Matching Subscription Ledgers Found</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md mx-auto mb-6">
+            There are no subscriptions matching the selected criteria in the Lagos database. Clear filters or verify candidate identity.
+          </p>
+<div class="flex items-center justify-center gap-3">
+<button class="min-h-[44px] px-6 py-2.5 rounded-lg bg-[#0B1320] text-white font-label-md text-body-sm hover:bg-[#1E293B]" onclick="switchTab('variant1')" type="button">
+              Reset all active filters
+            </button>
+</div>
+</div>
+<!-- Skeleton Loading Representation -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+<div class="h-4 w-48 bg-slate-200 rounded animate-pulse"></div>
+<div class="h-4 w-24 bg-slate-200 rounded animate-pulse"></div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between gap-4 py-3">
+<div class="h-10 w-44 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-32 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-28 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-24 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-36 bg-slate-100 rounded animate-pulse"></div>
+</div>
+<div class="flex items-center justify-between gap-4 py-3">
+<div class="h-10 w-44 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-32 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-28 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-24 bg-slate-100 rounded animate-pulse"></div>
+<div class="h-10 w-36 bg-slate-100 rounded animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. DUNNING SCHEDULE CONFIGURATION PANEL -->
+<section aria-label="Dunning Schedule Settings" class="mt-10 bg-white rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-6 border-b border-outline-variant bg-[#F8FAFC] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320]">published_with_changes</span>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A]">Dunning Schedule &amp; Automated Retry Protocol</h2>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Configuration rules defining failed card retry frequency, automated escalation channels, and access revocation timers.
+            </p>
+</div>
+<button class="min-h-[44px] px-4 py-2 border border-[#64748B] rounded-lg bg-white text-[#0F172A] font-label-md text-body-sm hover:bg-slate-50 transition-colors" type="button">
+            Update Retry Rules
+          </button>
+</div>
+<div class="p-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Attempt 1 -->
+<div class="border border-outline-variant rounded-lg p-5 bg-white relative">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-sm font-label-md uppercase tracking-wider text-slate-500">First Failure</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-blue-50 text-[#1D4ED8] border border-blue-200">Webhook Trigger</span>
+</div>
+<h3 class="text-body-md font-label-md font-semibold text-[#0F172A] mb-1">Attempt 1</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Immediate upon failed webhook payload from payment gateway processor (Paystack/Interswitch).
+            </p>
+<div class="pt-3 border-t border-outline-variant text-[12px] text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">timer</span>
+<span>Delay interval: <strong>0 minutes</strong></span>
+</div>
+</div>
+<!-- Attempt 2 -->
+<div class="border border-outline-variant rounded-lg p-5 bg-white relative">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-sm font-label-md uppercase tracking-wider text-slate-500">Second Failure</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-amber-50 text-[#B45309] border border-amber-200">Multi-Channel</span>
+</div>
+<h3 class="text-body-md font-label-md font-semibold text-[#0F172A] mb-1">Attempt 2</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              +48 hours retry. Automated email dispatch and WhatsApp reminder notification sent to candidate phone.
+            </p>
+<div class="pt-3 border-t border-outline-variant text-[12px] text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">notifications_active</span>
+<span>Email &amp; WhatsApp dispatched</span>
+</div>
+</div>
+<!-- Attempt 3 -->
+<div class="border border-outline-variant rounded-lg p-5 bg-white relative">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-sm font-label-md uppercase tracking-wider text-slate-500">Final Attempt</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-orange-50 text-orange-700 border border-orange-200">Final Alert</span>
+</div>
+<h3 class="text-body-md font-label-md font-semibold text-[#0F172A] mb-1">Attempt 3</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              +96 hours retry. Final notice before grace period lock. SMS gateway notification with payment link.
+            </p>
+<div class="pt-3 border-t border-outline-variant text-[12px] text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">lock_clock</span>
+<span>Final notice trigger</span>
+</div>
+</div>
+<!-- Grace Period Cut-off -->
+<div class="border border-[#FCA5A5] rounded-lg p-5 bg-[#FEF2F2] relative">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-sm font-label-md uppercase tracking-wider text-[#B91C1C]">Hard Cut-off</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-red-100 text-[#B91C1C] border border-red-300">Revocation</span>
+</div>
+<h3 class="text-body-md font-label-md font-semibold text-[#B91C1C] mb-1">Grace Period Lock</h3>
+<p class="text-body-sm font-body-sm text-slate-800 mb-4">
+              7 calendar days before courseware license access is suspended. Active terminal session terminates.
+            </p>
+<div class="pt-3 border-t border-red-200 text-[12px] text-[#B91C1C] flex items-center gap-2 font-medium">
+<span class="material-symbols-outlined text-[16px]">no_accounts</span>
+<span>Automated seat lockout executed</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- 3. DESTRUCTIVE CONFIRMATION DIALOG MODAL (PREVIEW) -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 bg-[#0B1320]/70 flex items-center justify-center p-4 hidden" id="cancelModal" role="dialog">
+<div class="bg-white rounded-xl border border-outline-variant max-w-lg w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-150">
+<!-- Modal Header -->
+<div class="p-6 border-b border-outline-variant flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-[#FEF2F2] text-[#B91C1C] flex items-center justify-center shrink-0 border border-[#FCA5A5]">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]" id="modal-title">
+            Cancel subscription for <span id="modal-candidate-name">Chinedu Eze</span>
+</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+            Subscription: <strong class="text-[#0F172A] font-mono" id="modal-sub-id">SUB-8812-ABJ</strong> (<span id="modal-plan">CRISC Monthly</span> · <span id="modal-amount">₦65,000</span>)
+          </p>
+</div>
+</div>
+<!-- Modal Body -->
+<form onsubmit="event.preventDefault(); closeCancelModal();">
+<div class="p-6 space-y-4">
+<!-- Warning Note -->
+<div class="p-4 bg-[#FEF2F2] border border-[#FCA5A5] rounded-lg text-body-sm font-body-sm text-[#B91C1C] flex gap-3">
+<span class="material-symbols-outlined text-[20px] shrink-0 mt-0.5">report_problem</span>
+<div>
+<strong>Action is irreversible:</strong> Cancelling this subscription terminates scheduled renewal webhooks and immediately dispatches revocation notifications to the candidate.
+            </div>
+</div>
+<!-- Cancellation Reason Textarea -->
+<div>
+<label class="block text-body-sm font-label-md text-[#0F172A] mb-1" for="cancel-reason">
+              Reason for cancellation is required for audit trail <span class="text-[#B91C1C]">*</span>
+</label>
+<textarea class="w-full text-body-sm font-body-sm p-3 bg-white border border-[#64748B] rounded-md text-[#0F172A] placeholder-slate-400 focus:border-[#2563EB]" id="cancel-reason" placeholder="Specify institutional rationale (e.g. Non-payment, employer sponsorship withdrawn, duplicate ledger)..." required="" rows="3"></textarea>
+<p class="text-[12px] text-slate-500 mt-1">
+              This log entry will be signed with staff credential <strong>Femi Adebayo (Finance Manager)</strong>.
+            </p>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="p-4 bg-[#F8FAFC] border-t border-outline-variant flex items-center justify-end gap-3">
+<!-- Cancel Button (Min 44px height) -->
+<button class="min-h-[44px] px-5 py-2.5 rounded-lg border border-[#64748B] text-[#0F172A] bg-white hover:bg-slate-100 font-label-md text-body-sm transition-colors" onclick="closeCancelModal()" type="button">
+            Discard &amp; Go Back
+          </button>
+<!-- Confirm Danger Button (Min 44px height: #B91C1C with fill #FEF2F2, text #B91C1C) -->
+<button class="min-h-[44px] px-5 py-2.5 rounded-lg bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] font-label-md text-body-sm flex items-center gap-2 transition-colors" type="submit">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>Confirm cancellation</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- INSTITUTIONAL FOOTER -->
+<footer class="w-full py-space-lg px-gutter border-t border-[#1E293B] bg-[#0B1320] text-slate-400 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-body-sm font-body-sm">
+<div>
+<p class="text-slate-300 font-medium">© 2026 A.J. Silicon Learning Platform Ltd. All Sessions Digitally Watermarked.</p>
+<p class="text-[12px] text-slate-500 mt-0.5">Automated Payment Gateway: Paystack Nigeria Ltd · Settlements to GTBank Plc (NGN Tier-1)</p>
+</div>
+<div class="flex flex-wrap gap-5 text-body-sm font-label-md">
+<a class="hover:text-white transition-colors" href="#">Zero-Trust Protocol</a>
+<a class="hover:text-white transition-colors" href="#">Forensic Audit Policy</a>
+<a class="hover:text-white transition-colors" href="#">Reconciliation Terms</a>
+<a class="hover:text-white transition-colors" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- INTERACTIVITY SCRIPT -->
+<script>
+    // Tab Switching for State Variants
+    function switchTab(variantId) {
+      document.getElementById('tab-variant1').classList.add('hidden');
+      document.getElementById('tab-variant2').classList.add('hidden');
+      document.getElementById('tab-variant3').classList.add('hidden');
+
+      document.getElementById('btn-var1').className = "min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-transparent hover:bg-slate-100 text-[#0F172A] border border-outline-variant flex items-center gap-2";
+      document.getElementById('btn-var2').className = "min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-transparent hover:bg-slate-100 text-[#0F172A] border border-outline-variant flex items-center gap-2";
+      document.getElementById('btn-var3').className = "min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-transparent hover:bg-slate-100 text-[#0F172A] border border-outline-variant flex items-center gap-2";
+
+      if (variantId === 'variant1') {
+        document.getElementById('tab-variant1').classList.remove('hidden');
+        document.getElementById('btn-var1').className = "min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-[#0B1320] text-white flex items-center gap-2 shadow-sm";
+      } else if (variantId === 'variant2') {
+        document.getElementById('tab-variant2').classList.remove('hidden');
+        document.getElementById('btn-var2').className = "min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-[#B45309] text-white flex items-center gap-2 shadow-sm";
+      } else if (variantId === 'variant3') {
+        document.getElementById('tab-variant3').classList.remove('hidden');
+        document.getElementById('btn-var3').className = "min-h-[44px] px-4 py-2 rounded-lg font-label-md text-body-sm bg-[#0B1320] text-white flex items-center gap-2 shadow-sm";
+      }
+    }
+
+    // Mask / Reveal Sensitive Candidate Field
+    function revealField(elementId, realValue, btn) {
+      const el = document.getElementById(elementId);
+      if (el.innerText.includes('****')) {
+        el.innerText = realValue;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">visibility_off</span> Mask';
+      } else {
+        const parts = realValue.split('@');
+        const masked = parts[0].slice(0, 5) + '****@' + parts[1];
+        el.innerText = masked;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">visibility</span> Reveal';
+      }
+    }
+
+    // Modal Control Logic
+    function openCancelModal(name, subId, plan, amount) {
+      document.getElementById('modal-candidate-name').innerText = name;
+      document.getElementById('modal-sub-id').innerText = subId;
+      document.getElementById('modal-plan').innerText = plan;
+      document.getElementById('modal-amount').innerText = amount;
+      document.getElementById('cancelModal').classList.remove('hidden');
+    }
+
+    function closeCancelModal() {
+      document.getElementById('cancelModal').classList.add('hidden');
+      document.getElementById('cancel-reason').value = '';
+    }
+  </script>
+</body></html>

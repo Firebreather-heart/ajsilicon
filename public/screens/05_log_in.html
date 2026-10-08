@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform — Log in Specification</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter & JetBrains Mono Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#005137",
+            "on-primary-container": "#77849c",
+            "on-primary-fixed": "#0e1c2f",
+            "primary-container": "#0e1c2f",
+            "secondary-container": "#82f5c1",
+            "surface-container-high": "#dce9ff",
+            "secondary": "#006c4a",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed-variant": "#3a475c",
+            "inverse-on-surface": "#eaf1ff",
+            "on-surface": "#0d1c2e",
+            "secondary-fixed": "#85f8c4",
+            "primary-fixed": "#d6e3fe",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-tertiary-fixed": "#2f1500",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#002114",
+            "on-secondary-container": "#00714e",
+            "tertiary": "#000000",
+            "surface-tint": "#525f75",
+            "surface-dim": "#ccdbf3",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#2f1500",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "outline": "#75777d",
+            "on-tertiary-container": "#c76c00",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "primary": "#000000",
+            "background": "#f8f9ff",
+            "inverse-primary": "#bac7e1",
+            "primary-fixed-dim": "#bac7e1",
+            "on-surface-variant": "#44474c",
+            "surface-container-highest": "#d5e3fc",
+            "surface-container": "#e6eeff",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#68dba9",
+            "inverse-surface": "#233144",
+            "surface-bright": "#f8f9ff",
+            "surface": "#f8f9ff",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed": "#ffdcc3",
+            "outline-variant": "#c5c6cd",
+            "error": "#ba1a1a",
+            "on-background": "#0d1c2e",
+            "surface-variant": "#d5e3fc"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem",
+            "card": "12px"
+          },
+          "spacing": {
+            "space-xs": "0.375rem",
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "gutter": "2rem",
+            "gutter-mobile": "1rem",
+            "margin": "3rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "telemetry-code": ["JetBrains Mono", "monospace"],
+            "display-hero": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "sans-serif"],
+            "display-hero-mobile": ["Inter", "sans-serif"],
+            "label-badge": ["Inter", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "telemetry-code": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-badge": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-input {
+      border: 1px solid #64748B;
+      min-height: 44px;
+      border-radius: 4px;
+      background-color: #FFFFFF;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .custom-input:focus {
+      outline: none;
+      border-color: #2563EB;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    .custom-input:disabled {
+      background-color: #F8FAFC;
+      border-color: #CBD5E1;
+      color: #94A3B8;
+      cursor: not-allowed;
+    }
+    .btn-primary-dark {
+      background-color: #0B192C;
+      color: #FFFFFF;
+      min-height: 44px;
+      border-radius: 4px;
+      transition: background-color 0.15s ease;
+    }
+    .btn-primary-dark:hover:not(:disabled) {
+      background-color: #0F172A;
+    }
+    .btn-primary-dark:disabled {
+      background-color: #E2E8F0;
+      color: #94A3B8;
+      cursor: not-allowed;
+    }
+    .link-dark-nav {
+      color: #93C5FD;
+    }
+    .link-dark-nav:hover {
+      text-decoration: underline;
+    }
+    .link-content {
+      color: #0B192C;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .link-content:hover {
+      color: #2563EB;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .animate-spinner {
+      animation: spin 0.8s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#F1F5F9] text-[#0F172A] font-body-md antialiased p-8 space-y-16">
+<!-- Document Header / Specification Title -->
+<header class="max-w-[1440px] mx-auto border-b border-[#CBD5E1] pb-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="font-telemetry-code text-telemetry-code text-[#475569] uppercase mb-1">
+          A.J. Silicon Information Security Training &amp; Governance Ltd • Lagos, Nigeria
+        </div>
+<h1 class="font-headline-lg text-headline-lg text-[#0B192C]">
+          Unified Log in Specification (All Roles)
+        </h1>
+<p class="font-body-md text-body-md text-[#475569] mt-1 max-w-3xl">
+          Single access portal for students, corporate delegates, and institution staff. WCAG AA compliant, 44px minimum touch targets, 12px card radii, strict institutional tone.
+        </p>
+</div>
+<div class="font-telemetry-code text-telemetry-code bg-[#FFFFFF] border border-[#CBD5E1] rounded px-3 py-2 text-[#334155] shrink-0">
+        System Protocol: ZERO-TRUST AUTH • Spec Ver 4.9.2
+      </div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- STATE 1: EMPTY (DEFAULT, DESKTOP 1440px) -->
+<!-- ========================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code px-2 py-0.5 bg-[#0B192C] text-[#FFFFFF] rounded">STATE 1</span>
+<h2 class="font-title-md text-title-md text-[#0B192C]">Default / Pristine (Desktop 1440px)</h2>
+<span class="font-body-sm text-body-sm text-[#64748B]">— Inputs empty, primary Log in action strictly disabled.</span>
+</div>
+<!-- Desktop 1440 Frame Mockup -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg shadow-sm overflow-hidden flex flex-col min-h-[640px]">
+<!-- Public Top Bar -->
+<nav class="w-full h-16 bg-[#050A10] border-b border-[#0B1320] px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnCaKRmiOPyct74g6wCH8xz76eb5RLUIYmUQqZ_71QATB3HJOFUYqTZSHpMDDLtJwUNbUQe7Im2qIC-OeOxN7FBjl320a27xpoqA9-MjOXYRyzxp8qBSjmx-WJwWTtepb-FAzwV0RDAnFKTu0E-7kBAaOFMWFxExGWayKp8neCpy8y5NfgE8DHV-2Q7Vf0TLAqtldq5xbOI2SdQbs-kK3wq-BoPS6VU-Hy69QG74aAgNo53M7uO23sNzVXguqW3TgZH4c"/>
+</div>
+</div>
+<div class="flex items-center gap-8 font-body-md text-body-md">
+<a class="link-dark-nav" href="#">Programmes</a>
+<a class="link-dark-nav" href="#">Workshops</a>
+<a class="text-white font-medium" href="#">Log in</a>
+</div>
+</nav>
+<!-- Center Content Canvas -->
+<div class="flex-1 flex items-center justify-center p-8 py-16">
+<!-- 12px Radius Card -->
+<main class="w-full max-w-[460px] bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-[#0B192C] mb-6">Log in</h2>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div>
+<label class="block font-title-md text-title-md text-[#0F172A] mb-1.5" for="s1-identifier">
+                Email or phone number
+              </label>
+<input class="w-full custom-input px-3.5 py-2.5 font-body-md text-body-md text-[#0F172A] placeholder:text-[#94A3B8]" id="s1-identifier" placeholder="b.lawal@lagoscommercial.ng or +234 803 123 4567" type="text"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-title-md text-title-md text-[#0F172A]" for="s1-password">
+                  Password
+                </label>
+<a class="font-body-sm text-body-sm link-content" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<input class="w-full custom-input px-3.5 py-2.5 pr-11 font-body-md text-body-md text-[#0F172A]" id="s1-password" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-0 top-0 bottom-0 px-3 flex items-center justify-center text-[#64748B] hover:text-[#0F172A]" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<button class="w-full btn-primary-dark font-title-md text-title-md flex items-center justify-center" disabled="" type="submit">
+              Log in
+            </button>
+<div class="text-center pt-2 space-y-1">
+<p class="font-body-md text-body-md text-[#475569]">
+                New here? <a class="link-content font-medium" href="#">Create an account</a>
+</p>
+<p class="font-body-sm text-body-sm text-[#64748B]">
+                Staff members use this same page.
+              </p>
+</div>
+</form>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 2: WRONG CREDENTIALS (DESKTOP 1440px) -->
+<!-- ========================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code px-2 py-0.5 bg-[#B91C1C] text-[#FFFFFF] rounded">STATE 2</span>
+<h2 class="font-title-md text-title-md text-[#0B192C]">Wrong credentials (Desktop 1440px)</h2>
+<span class="font-body-sm text-body-sm text-[#64748B]">— Specific danger alert banner, does not disclose which field is incorrect. Button active.</span>
+</div>
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg shadow-sm overflow-hidden flex flex-col min-h-[640px]">
+<nav class="w-full h-16 bg-[#050A10] border-b border-[#0B1320] px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU33s-fRmx70lUp4C_sWWceHuQHGAbRoYqkYUovPN-E7JLNIS2JLH8S82SEErpjb4rJi3YMUZ_WplpWkqCgxr9Sw9XFWDEOtogB0SSlv8gTTCVO4bRijpwL1dFelAynjKe4j7TpbZwyDUmJ-zde4XhLvOuZYrKsQDeHj4zR8zOXrpTcQ4qtgySya_WqKvG1Zyx2w2dumpSLmp28UXjjia6IF1Va9rOv1AijoNQKyOCBY5T9sT9t1RsKGt37MZ3xsaMfCc"/>
+</div>
+</div>
+<div class="flex items-center gap-8 font-body-md text-body-md">
+<a class="link-dark-nav" href="#">Programmes</a>
+<a class="link-dark-nav" href="#">Workshops</a>
+<a class="text-white font-medium" href="#">Log in</a>
+</div>
+</nav>
+<div class="flex-1 flex items-center justify-center p-8 py-16">
+<main class="w-full max-w-[460px] bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-[#0B192C] mb-6">Log in</h2>
+<!-- Danger Banner -->
+<div class="mb-5 p-3.5 bg-[#FEF2F2] border border-[#B91C1C] rounded-[4px] flex items-start gap-2.5" role="alert">
+<span class="material-symbols-outlined text-[#B91C1C] text-[20px] shrink-0" data-icon="error">error</span>
+<p class="font-body-md text-body-md text-[#B91C1C]">
+              Email or password is incorrect.
+            </p>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div>
+<label class="block font-title-md text-title-md text-[#0F172A] mb-1.5" for="s2-identifier">
+                Email or phone number
+              </label>
+<input class="w-full custom-input px-3.5 py-2.5 font-body-md text-body-md text-[#0F172A]" id="s2-identifier" type="text" value="b.lawal@lagoscommercial.ng"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-title-md text-title-md text-[#0F172A]" for="s2-password">
+                  Password
+                </label>
+<a class="font-body-sm text-body-sm link-content" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<input class="w-full custom-input px-3.5 py-2.5 pr-11 font-body-md text-body-md text-[#0F172A]" id="s2-password" type="password" value="UnverifiedSecret123"/>
+<button aria-label="Toggle password visibility" class="absolute right-0 top-0 bottom-0 px-3 flex items-center justify-center text-[#64748B] hover:text-[#0F172A]" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<button class="w-full btn-primary-dark font-title-md text-title-md flex items-center justify-center" type="submit">
+              Log in
+            </button>
+<div class="text-center pt-2 space-y-1">
+<p class="font-body-md text-body-md text-[#475569]">
+                New here? <a class="link-content font-medium" href="#">Create an account</a>
+</p>
+<p class="font-body-sm text-body-sm text-[#64748B]">
+                Staff members use this same page.
+              </p>
+</div>
+</form>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 3: ACCOUNT LOCKED (DESKTOP 1440px) -->
+<!-- ========================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code px-2 py-0.5 bg-[#D97706] text-[#FFFFFF] rounded">STATE 3</span>
+<h2 class="font-title-md text-title-md text-[#0B192C]">Account locked after repeated attempts (Desktop 1440px)</h2>
+<span class="font-body-sm text-body-sm text-[#64748B]">— 15-minute timeout alert with inline reset action. Form disabled.</span>
+</div>
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg shadow-sm overflow-hidden flex flex-col min-h-[640px]">
+<nav class="w-full h-16 bg-[#050A10] border-b border-[#0B1320] px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC90KYzZRWnOlK636VJT2Uv0Zt4Aybbj3PBH5gUuk5EmbAI68rd_B92XA7bK2y6ImsMoSgZN0jNE74hlRjHTKweFpVq6kW24zQtvV2PaNa32S0VRSI69jzIld2iSrGspdtQfzyaF3X_9HoS0mVPopDwIt3C-xneUiB-_C-nhrhh1uUXMsv93QWjN_V73YJ_VB0n1kMIVRoEOuHabL1IP79ku1XPE3iiDpZzBERRZQneUcrIRYJRbnx1boc7hOJ2Se2Svno"/>
+</div>
+</div>
+<div class="flex items-center gap-8 font-body-md text-body-md">
+<a class="link-dark-nav" href="#">Programmes</a>
+<a class="link-dark-nav" href="#">Workshops</a>
+<a class="text-white font-medium" href="#">Log in</a>
+</div>
+</nav>
+<div class="flex-1 flex items-center justify-center p-8 py-16">
+<main class="w-full max-w-[460px] bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-[#0B192C] mb-6">Log in</h2>
+<!-- Lockout Alert Banner -->
+<div class="mb-5 p-3.5 bg-[#FFFBEB] border border-[#D97706] rounded-[4px] flex items-start gap-2.5" role="alert">
+<span class="material-symbols-outlined text-[#D97706] text-[20px] shrink-0" data-icon="lock">lock</span>
+<p class="font-body-md text-body-md text-[#92400E]">
+              Too many failed attempts. Try again in 15 minutes or <a class="font-medium underline text-[#92400E] hover:text-[#78350F]" href="#">Reset password</a>.
+            </p>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div>
+<label class="block font-title-md text-title-md text-[#64748B] mb-1.5" for="s3-identifier">
+                Email or phone number
+              </label>
+<input class="w-full custom-input px-3.5 py-2.5 font-body-md text-body-md" disabled="" id="s3-identifier" type="text" value="b.lawal@lagoscommercial.ng"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-title-md text-title-md text-[#64748B]" for="s3-password">
+                  Password
+                </label>
+<span class="font-body-sm text-body-sm text-[#94A3B8]">Forgot password?</span>
+</div>
+<div class="relative">
+<input class="w-full custom-input px-3.5 py-2.5 pr-11 font-body-md text-body-md" disabled="" id="s3-password" type="password" value="••••••••••••••"/>
+<div class="absolute right-0 top-0 bottom-0 px-3 flex items-center justify-center text-[#CBD5E1]">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</div>
+</div>
+</div>
+<button class="w-full btn-primary-dark font-title-md text-title-md flex items-center justify-center" disabled="" type="submit">
+              Log in
+            </button>
+<div class="text-center pt-2 space-y-1">
+<p class="font-body-md text-body-md text-[#64748B]">
+                New here? <a class="link-content font-medium" href="#">Create an account</a>
+</p>
+<p class="font-body-sm text-body-sm text-[#64748B]">
+                Staff members use this same page.
+              </p>
+</div>
+</form>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 4: ACCOUNT SUSPENDED (DESKTOP 1440px) -->
+<!-- ========================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code px-2 py-0.5 bg-[#475569] text-[#FFFFFF] rounded">STATE 4</span>
+<h2 class="font-title-md text-title-md text-[#0B192C]">Account suspended (Desktop 1440px)</h2>
+<span class="font-body-sm text-body-sm text-[#64748B]">— Neutral suspension banner with support reference code AJS-7F3K2. Form disabled.</span>
+</div>
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg shadow-sm overflow-hidden flex flex-col min-h-[640px]">
+<nav class="w-full h-16 bg-[#050A10] border-b border-[#0B1320] px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0m5L7QjsRoz2x-w9yOxN2KU-Tq71aGhFhFppbaupheMK9aZso5Uvg9_HYzbu5SmIyjkezlZDgrZsBAkO7e01e-5OZ5NhkNZj-fBa5alUA2VteBuu5wUgF8kcaFJm9xC2UUruNY-6rvIldM3xhpT0yzgR0HizwM1X7_6-bfq7nkrBUq6Eu3PsZ5I1P0Okv1-hr38jDbnN1bAiFCZA8ULhdLu4luzAMxsPPfpOzGnqYaltzkzK2f_OEPaqa3LCRFWLWUFw"/>
+</div>
+</div>
+<div class="flex items-center gap-8 font-body-md text-body-md">
+<a class="link-dark-nav" href="#">Programmes</a>
+<a class="link-dark-nav" href="#">Workshops</a>
+<a class="text-white font-medium" href="#">Log in</a>
+</div>
+</nav>
+<div class="flex-1 flex items-center justify-center p-8 py-16">
+<main class="w-full max-w-[460px] bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-[#0B192C] mb-6">Log in</h2>
+<!-- Neutral Suspension Alert Banner -->
+<div class="mb-5 p-3.5 bg-[#F1F5F9] border border-[#CBD5E1] rounded-[4px] flex items-start gap-2.5" role="alert">
+<span class="material-symbols-outlined text-[#334155] text-[20px] shrink-0" data-icon="info">info</span>
+<p class="font-body-md text-body-md text-[#334155]">
+              This account is not available. <a class="font-medium underline text-[#0F172A] hover:text-[#2563EB]" href="#">Contact support</a> and quote reference <span class="font-telemetry-code text-telemetry-code bg-[#E2E8F0] px-1 py-0.5 rounded text-[#0F172A]">AJS-7F3K2</span>.
+            </p>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div>
+<label class="block font-title-md text-title-md text-[#64748B] mb-1.5" for="s4-identifier">
+                Email or phone number
+              </label>
+<input class="w-full custom-input px-3.5 py-2.5 font-body-md text-body-md" disabled="" id="s4-identifier" type="text" value="audit.officer@fidelitybank.ng"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-title-md text-title-md text-[#64748B]" for="s4-password">
+                  Password
+                </label>
+<span class="font-body-sm text-body-sm text-[#94A3B8]">Forgot password?</span>
+</div>
+<div class="relative">
+<input class="w-full custom-input px-3.5 py-2.5 pr-11 font-body-md text-body-md" disabled="" id="s4-password" type="password" value="••••••••••••••"/>
+<div class="absolute right-0 top-0 bottom-0 px-3 flex items-center justify-center text-[#CBD5E1]">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</div>
+</div>
+</div>
+<button class="w-full btn-primary-dark font-title-md text-title-md flex items-center justify-center" disabled="" type="submit">
+              Log in
+            </button>
+<div class="text-center pt-2 space-y-1">
+<p class="font-body-md text-body-md text-[#64748B]">
+                New here? <a class="link-content font-medium" href="#">Create an account</a>
+</p>
+<p class="font-body-sm text-body-sm text-[#64748B]">
+                Staff members use this same page.
+              </p>
+</div>
+</form>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 5: LOADING / SUBMITTING (DESKTOP 1440px) -->
+<!-- ========================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code px-2 py-0.5 bg-[#2563EB] text-[#FFFFFF] rounded">STATE 5</span>
+<h2 class="font-title-md text-title-md text-[#0B192C]">Loading / Submitting (Desktop 1440px)</h2>
+<span class="font-body-sm text-body-sm text-[#64748B]">— Fields locked, spinner indicator and "Logging in..." state.</span>
+</div>
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg shadow-sm overflow-hidden flex flex-col min-h-[640px]">
+<nav class="w-full h-16 bg-[#050A10] border-b border-[#0B1320] px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-2.5 py-1.5 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABwnbQJBIjQ4WjMBZPaiVmFSfHtk9ClNAt1SkfW8o38U7-Sp-mmaB7fOvOFD2H8y2t6cFY5g4V366Ua38XiTrprnKzyCTe5neQBONskC8j6gEVRcGdEQNZehq7j5o28i8ETwp7xBjSLSpALIMtiR7rMNKeX05_lJToLVuGLy0R7MEu5hpxyRQ9IP1Bt_MOllclnG6F9AgyQWqAGjQP63azD6DN2Mf8D2uD7sdt-vQJ2lUI75x1-S7M9YhhM_Bw7Ny58Xk"/>
+</div>
+</div>
+<div class="flex items-center gap-8 font-body-md text-body-md">
+<a class="link-dark-nav" href="#">Programmes</a>
+<a class="link-dark-nav" href="#">Workshops</a>
+<a class="text-white font-medium" href="#">Log in</a>
+</div>
+</nav>
+<div class="flex-1 flex items-center justify-center p-8 py-16">
+<main class="w-full max-w-[460px] bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-[#0B192C] mb-6">Log in</h2>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div>
+<label class="block font-title-md text-title-md text-[#0F172A] mb-1.5" for="s5-identifier">
+                Email or phone number
+              </label>
+<input class="w-full custom-input px-3.5 py-2.5 font-body-md text-body-md text-[#0F172A]" disabled="" id="s5-identifier" type="text" value="b.lawal@lagoscommercial.ng"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-title-md text-title-md text-[#0F172A]" for="s5-password">
+                  Password
+                </label>
+<span class="font-body-sm text-body-sm text-[#94A3B8]">Forgot password?</span>
+</div>
+<div class="relative">
+<input class="w-full custom-input px-3.5 py-2.5 pr-11 font-body-md text-body-md text-[#0F172A]" disabled="" id="s5-password" type="password" value="CorrectPassword2025"/>
+<div class="absolute right-0 top-0 bottom-0 px-3 flex items-center justify-center text-[#94A3B8]">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+</div>
+</div>
+<!-- Active Submitting Button with Spinner -->
+<button class="w-full bg-[#0B192C] text-white min-h-[44px] rounded font-title-md text-title-md flex items-center justify-center gap-2.5 opacity-95 cursor-wait" disabled="" type="button">
+<span class="material-symbols-outlined text-[20px] animate-spinner" data-icon="progress_activity">progress_activity</span>
+<span>Logging in...</span>
+</button>
+<div class="text-center pt-2 space-y-1">
+<p class="font-body-md text-body-md text-[#475569]">
+                New here? <span class="text-[#94A3B8]">Create an account</span>
+</p>
+<p class="font-body-sm text-body-sm text-[#64748B]">
+                Staff members use this same page.
+              </p>
+</div>
+</form>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 6: MOBILE 390px (EMPTY STATE) -->
+<!-- ========================================== -->
+<section class="max-w-[1440px] mx-auto space-y-3 pb-16">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-code text-telemetry-code px-2 py-0.5 bg-[#0B192C] text-[#FFFFFF] rounded">STATE 6</span>
+<h2 class="font-title-md text-title-md text-[#0B192C]">Mobile 390px Viewport (Empty State)</h2>
+<span class="font-body-sm text-body-sm text-[#64748B]">— Plain 390px wide frame container (no phone chrome/bezel), 44px touch targets.</span>
+</div>
+<!-- Plain 390px Frame Container -->
+<div class="w-[390px] bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg shadow-sm overflow-hidden flex flex-col mx-auto md:mx-0">
+<!-- Mobile Public Header -->
+<nav class="w-full h-14 bg-[#050A10] border-b border-[#0B1320] px-4 flex items-center justify-between shrink-0">
+<div class="bg-white rounded px-2 py-1 flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYpgtc-1Bu388nCMPt2qpWV1EGMPhJLv5rhN969747tLbarAe6kXgFy7XGJr8ozQd0RGo6M83Rjyl2nxG1YwzpUu5e5CfPseWmsfHgj3VtKXbx_YNwPHEJs3khm9C0rB95wOdHsKKLzRE06OMZn7uiyNBqJgbUynNYsN9fjjgDHtKn8YTfdjalze4gbsxfndnKjDwrQz9cHjId6cHV3mQfxU9puGqxsodkXxQRIjlkeLj7MqABvChf3bQdtD5jl94V5QI"/>
+</div>
+<div class="flex items-center gap-4 font-body-sm text-body-sm">
+<a class="link-dark-nav" href="#">Programmes</a>
+<a class="text-white font-medium" href="#">Log in</a>
+</div>
+</nav>
+<!-- Mobile Content Area -->
+<main class="p-4 py-8 flex flex-col justify-center">
+<!-- 12px Radius Card on Mobile -->
+<div class="w-full bg-[#FFFFFF] border border-[#E2E8F0] rounded-[12px] p-5 shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-[#0B192C] mb-5">Log in</h2>
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<div>
+<label class="block font-title-md text-title-md text-[#0F172A] mb-1" for="m6-identifier">
+                Email or phone number
+              </label>
+<input class="w-full custom-input px-3.5 py-2.5 font-body-md text-body-md text-[#0F172A] placeholder:text-[#94A3B8]" id="m6-identifier" placeholder="b.lawal@lagoscommercial.ng or +234 803 123 4567" type="text"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="block font-title-md text-title-md text-[#0F172A]" for="m6-password">
+                  Password
+                </label>
+<a class="font-body-sm text-body-sm link-content" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<input class="w-full custom-input px-3.5 py-2.5 pr-11 font-body-md text-body-md text-[#0F172A]" id="m6-password" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-0 top-0 bottom-0 px-3 flex items-center justify-center text-[#64748B] hover:text-[#0F172A]" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<button class="w-full btn-primary-dark font-title-md text-title-md flex items-center justify-center mt-2" disabled="" type="submit">
+              Log in
+            </button>
+<div class="text-center pt-3 space-y-1.5">
+<p class="font-body-md text-body-md text-[#475569]">
+                New here? <a class="link-content font-medium" href="#">Create an account</a>
+</p>
+<p class="font-body-sm text-body-sm text-[#64748B]">
+                Staff members use this same page.
+              </p>
+</div>
+</form>
+</div>
+</main>
+</div>
+</section>
+</body></html>

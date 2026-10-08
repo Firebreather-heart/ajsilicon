@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-100" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform — Specification Board STATE-B: Account &amp; Playback States</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#dce1ff",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "primary-fixed": "#dbe2f5",
+            "tertiary": "#000000",
+            "primary": "#000000",
+            "surface-container": "#eaedff",
+            "outline": "#75777c",
+            "on-secondary-container": "#fffbff",
+            "on-primary-container": "#7c8495",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed": "#281809",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-bright": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#575f6e",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-container": "#997f6a",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#141c29",
+            "surface": "#faf8ff",
+            "primary-container": "#141c29",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-surface": "#131b2e",
+            "inverse-surface": "#283044",
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed-variant": "#3f4756",
+            "secondary": "#1d4ed8",
+            "tertiary-fixed": "#fddcc4",
+            "secondary-container": "#4069f2",
+            "on-surface-variant": "#45474c",
+            "tertiary-container": "#281809",
+            "on-secondary-fixed": "#001551",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "background": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-primary": "#bfc6d9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="text-on-surface bg-slate-100 font-body-md antialiased min-h-screen">
+<!-- ========================================================================= -->
+<!-- TOP APPLICATION SHELL (A.J. Silicon Student Ecosystem)                    -->
+<!-- ========================================================================= -->
+<header class="bg-primary-container text-on-primary docked full-width top h-16 border-b border-outline-variant flex justify-between items-center w-full px-6 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<!-- High contrast white logo badge plate -->
+<div class="bg-surface-container-lowest text-primary px-3 py-1 rounded flex items-center h-10 border border-slate-300 shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwVvoBjbqOI4se4HUo1TuYj7odCSqPJHzw9nD7hYU7w6RXOr78cBz1bclRVi5aT5vF-bEx_ZImCg_OhZbQye1xmrkTQTHaH4ARU52AmrLlmXSACUVrBH_U50RxmDoRfPxNGf1KsAekaFznyfEgbDWaP4RAKhODemWqj28Yifze5bxIq6-4onWrdNdoUGiz4EmPO2AeRylh6hWmMMoz47McswSYgpbpQ2O2rVdyu6ypwKhYZGIFvrne2A"/>
+</div>
+<div class="hidden sm:block border-l border-slate-700 pl-4">
+<span class="text-white text-body-sm font-label-md block tracking-wide">Enterprise Learning Platform</span>
+<span class="text-on-primary-container text-label-sm block">CISA Examination Preparation Environment</span>
+</div>
+</div>
+<!-- Candidate Context & Global Operational Header Data -->
+<div class="flex items-center gap-5">
+<div class="text-right hidden md:block">
+<div class="text-white text-body-sm font-label-md flex items-center justify-end gap-2">
+<span>Chinedu Eze</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-emerald-950 text-emerald-300 border border-emerald-700">Cohort 14</span>
+</div>
+<div class="text-on-primary-container text-label-sm font-code-snippet">Candidate ID: AJS-14-8812 · Lagos, NG</div>
+</div>
+<div class="flex items-center gap-2 border-l border-slate-700 pl-4">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-white hover:bg-slate-800 transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+<button aria-label="Security and Help Desk" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-white hover:bg-slate-800 transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">help</span>
+</button>
+<div class="w-9 h-9 rounded-full bg-slate-700 border border-slate-500 text-white flex items-center justify-center font-label-md text-label-sm ml-1">
+          CE
+        </div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN SPECIFICATION BOARD CANVAS (1440px Max Width Architecture)           -->
+<!-- ========================================================================= -->
+<main class="max-w-[1440px] mx-auto px-6 py-8 space-y-12">
+<!-- Spec Board Header -->
+<section class="border-b border-slate-300 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-200 text-slate-800 border border-slate-400">SPECIFICATION BOARD</span>
+<span class="text-label-sm font-semibold text-secondary uppercase tracking-wider">STATE-B: ACCOUNT &amp; PLAYBACK INTERRUPTIONS</span>
+</div>
+<h1 class="text-display font-display text-slate-900 tracking-tight">Institutional Account &amp; Playback Failure Modes</h1>
+<p class="text-slate-600 text-body-md mt-1 max-w-3xl">
+          Formal enterprise interface specifications governing session isolation, compliance suspension, DRM browser handshakes, encrypted video streams, and paginated canvas rendering.
+        </p>
+</div>
+<!-- Quick Metadata Tag Stack -->
+<div class="bg-white border border-slate-200 rounded-lg p-3 text-label-sm space-y-1 self-start md:self-auto min-w-[280px]">
+<div class="flex justify-between text-slate-500"><span>Target Surface:</span> <span class="font-medium text-slate-800">Desktop &amp; Mobile Responsive</span></div>
+<div class="flex justify-between text-slate-500"><span>Security Standard:</span> <span class="font-medium text-slate-800">ISACA / AJS-SEC-2026</span></div>
+<div class="flex justify-between text-slate-500"><span>Timezone Context:</span> <span class="font-medium text-slate-800">West Africa Time (WAT / UTC+1)</span></div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- STATE 1: ACCOUNT SUSPENDED (Compliance & Security Intervention)        -->
+<!-- ======================================================================= -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-md font-headline-md text-slate-900 flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-900 text-white text-xs flex items-center justify-center font-bold">1</span>
+          Account Suspended — Compliance &amp; Security Intervention
+        </h2>
+<span class="text-label-sm font-medium text-red-700 bg-red-50 border border-red-700 px-2.5 py-1 rounded">Critical Enforcement State</span>
+</div>
+<!-- Surface Container -->
+<div class="bg-white border border-slate-300 rounded-xl overflow-hidden shadow-sm">
+<!-- Danger Warning Header -->
+<div class="bg-red-50 border-b border-red-200 px-6 py-4 flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-red-100 border border-red-300 flex items-center justify-center flex-shrink-0 text-red-700">
+<span class="material-symbols-outlined text-[26px]">gpp_maybe</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-red-900">Account Access Temporarily Suspended</h3>
+<p class="text-body-sm text-red-800 mt-0.5">
+              Security monitoring detected multiple anomalous activities violating candidate terms (Ref: <span class="font-code-snippet font-semibold">SEC-ANOMALY-8812-LAG</span>).
+            </p>
+</div>
+</div>
+<div class="p-6 md:p-8 space-y-6">
+<!-- Anomaly Breakdown Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="border border-slate-200 bg-slate-50 p-4 rounded-lg">
+<span class="text-label-sm font-medium text-slate-500 uppercase tracking-wide block mb-1">Violation Summary</span>
+<p class="text-body-sm text-slate-800 leading-relaxed">
+                Concurrent active sessions detected across geographically disparate network nodes (<strong>Ikeja, Lagos</strong> and <strong>London, UK</strong> within 18 minutes).
+              </p>
+<div class="mt-3 pt-3 border-t border-slate-200 flex items-center justify-between text-label-sm text-slate-600">
+<span>Timestamp: 18 Oct 2026 · 14:32 WAT</span>
+<span class="font-code-snippet font-medium">Delta: 4,960 km</span>
+</div>
+</div>
+<div class="border border-slate-200 bg-slate-50 p-4 rounded-lg">
+<span class="text-label-sm font-medium text-slate-500 uppercase tracking-wide block mb-1">Regulatory &amp; Exam Governance Rule</span>
+<p class="text-body-sm text-slate-800 leading-relaxed">
+                Section 4.2 (Credential Non-Transferability &amp; Geolocation Fencing) under CISA Virtual Cohort Accreditation Guidelines.
+              </p>
+<div class="mt-3 pt-3 border-t border-slate-200 flex items-center justify-between text-label-sm text-slate-600">
+<span>Investigating Unit: Audit &amp; Trust Ops</span>
+<span class="text-emerald-700 font-medium">Log Sealed</span>
+</div>
+</div>
+</div>
+<!-- Protocol Description -->
+<div class="border-l-4 border-slate-900 bg-slate-50 pl-4 py-3 text-body-sm text-slate-700">
+<strong>Resolution Protocol:</strong> To protect candidate examination integrity, account access is locked pending verification by the A.J. Silicon Security Office. You may initiate an automated credential re-validation review or speak with an assigned compliance officer.
+          </div>
+<!-- Action Target Cluster (Min 44px Touch Targets) -->
+<div class="flex flex-wrap items-center gap-4 pt-2 border-t border-slate-200">
+<button class="h-11 min-h-[44px] px-6 rounded-md bg-[#0B1320] text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+              Submit Identity Verification Appeal
+            </button>
+<button class="h-11 min-h-[44px] px-6 rounded-md bg-transparent border border-slate-500 text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">call</span>
+              Contact Security Desk (+234 803 300 0000)
+            </button>
+<span class="text-label-sm text-slate-500 md:ml-auto">
+              Candidate Reference: <strong class="text-slate-800 font-code-snippet">AJS-14-8812</strong>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- STATE 2 & STATE 6: CONCURRENT SESSION COLLISION (DESKTOP + MOBILE 390PX)-->
+<!-- ======================================================================= -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-md font-headline-md text-slate-900 flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-900 text-white text-xs flex items-center justify-center font-bold">2</span>
+          Concurrent Session Collision / Interruption (Single Active Session Enforcement)
+        </h2>
+<span class="text-label-sm font-medium text-amber-800 bg-amber-50 border border-amber-600 px-2.5 py-1 rounded">Interactive Modal Spec &amp; Responsive View</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Desktop Modal Overlay Representation (8 Cols) -->
+<div class="lg:col-span-8 bg-slate-900/10 p-6 sm:p-10 rounded-xl border border-slate-300 flex items-center justify-center relative min-h-[440px]">
+<div class="bg-white rounded-xl border border-slate-300 shadow-md max-w-lg w-full overflow-hidden z-10">
+<!-- Modal Header with Warning Accent -->
+<div class="bg-amber-50 border-b border-amber-200 px-6 py-4 flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-800 flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-slate-900">Another Active Session Detected</h3>
+</div>
+<div class="p-6 space-y-4">
+<p class="text-body-md text-slate-700 leading-normal">
+                Your candidate account was just signed into on another device (<strong class="text-slate-900">Windows 11 · Chrome 129 in Abuja, Nigeria at 14:48 WAT</strong>).
+              </p>
+<div class="bg-blue-50 border border-blue-200 text-blue-900 p-3.5 rounded-lg text-body-sm flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-blue-700 flex-shrink-0 mt-0.5">info</span>
+<span>To protect exam intellectual property and enforce accreditation integrity, only <strong>1 concurrent active session</strong> is permitted.</span>
+</div>
+<div class="bg-slate-50 border border-slate-200 rounded p-3 text-label-sm space-y-1">
+<div class="flex justify-between"><span class="text-slate-500">Incoming IP:</span> <span class="font-code-snippet text-slate-800">102.89.44.18 (MTN Nigeria, Abuja)</span></div>
+<div class="flex justify-between"><span class="text-slate-500">Current Device:</span> <span class="font-code-snippet text-slate-800">macOS 15.1 · Safari 18.0 (Lagos)</span></div>
+</div>
+<!-- Button Row (Strict 44px Min Touch Target) -->
+<div class="pt-3 border-t border-slate-200 flex flex-col sm:flex-row gap-3">
+<button class="h-11 min-h-[44px] px-5 rounded-md bg-[#0B1320] text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors flex-1 text-center" type="button">
+                  Terminate Other Session &amp; Resume Here
+                </button>
+<button class="h-11 min-h-[44px] px-5 rounded-md bg-transparent border border-slate-500 text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors sm:w-auto" type="button">
+                  Log Out on This Device
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- STATE 6: Mobile 390px Viewport Simulation (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col items-center">
+<div class="text-label-sm font-semibold text-slate-600 mb-2 uppercase tracking-wide flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">smartphone</span>
+            State 6: Mobile 390px Simulation
+          </div>
+<!-- Explicit 390px Mobile Viewport Container -->
+<div class="w-[390px] max-w-full bg-slate-900 rounded-[28px] p-2.5 shadow-xl border-4 border-slate-800">
+<!-- Simulated Phone Screen Glass -->
+<div class="bg-white rounded-[20px] overflow-hidden flex flex-col border border-slate-300">
+<!-- Mobile Top App Bar -->
+<div class="bg-primary-container h-14 px-4 flex items-center justify-between border-b border-slate-700">
+<div class="bg-white px-2 py-0.5 rounded flex items-center">
+<img alt="A.J. Silicon Logo" class="h-4 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_SSC6F1qI_15ZXDlNjaHrdkilABu2dWL_5RCwbylrbqNObvx54jP9nvMd2k0KO8cmsy1whb5UcpDLxbODiKCcsyLDAF7ILNzRT1DXLdg7T_zQIcpeqYECifnJTUljQ5xGJmqb-DDxUvg1OpflbQk20022FZvcy3oOMEurOeUJ8xLLURT8wpDueDxE0Uq0XMEiOqeTgFE3wK5du23ZCVuQsv9Jyn3thcbd9lswqnkLiv9I0uA_MSdAQA"/>
+</div>
+<div class="text-white text-xs font-code-snippet">AJS-14-8812</div>
+</div>
+<!-- Mobile Content Body -->
+<div class="p-4 space-y-4 bg-slate-50">
+<div class="bg-white border border-slate-300 rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center gap-2.5 text-amber-800 pb-2 border-b border-slate-100">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+<span class="font-headline-sm text-body-md text-slate-900">Another Session Detected</span>
+</div>
+<p class="text-body-sm text-slate-700 leading-snug">
+                    Your account signed in on: <strong class="text-slate-900">Windows 11 · Chrome (Abuja at 14:48 WAT)</strong>. Only 1 concurrent session allowed.
+                  </p>
+<div class="bg-amber-50 border border-amber-200 rounded p-2.5 text-[12px] text-amber-900">
+                    Resuming on this phone will disconnect the session active in Abuja immediately.
+                  </div>
+<!-- Stacked 44px Touch Targets on Mobile -->
+<div class="space-y-2 pt-2">
+<button class="w-full h-11 min-h-[44px] px-3 rounded bg-[#0B1320] text-white font-label-md text-label-sm flex items-center justify-center text-center" type="button">
+                      Terminate Other Session &amp; Resume
+                    </button>
+<button class="w-full h-11 min-h-[44px] px-3 rounded bg-transparent border border-slate-500 text-slate-900 font-label-md text-label-sm flex items-center justify-center text-center" type="button">
+                      Log Out on This Device
+                    </button>
+</div>
+</div>
+<div class="text-center text-[11px] text-slate-500">
+                  Secured by A.J. Silicon Compliance Engine
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- STATE 3: UNSUPPORTED BROWSER / DRM REQUIREMENTS NOT MET                 -->
+<!-- ======================================================================= -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-md font-headline-md text-slate-900 flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-900 text-white text-xs flex items-center justify-center font-bold">3</span>
+          Unsupported Browser / DRM Requirements Not Met
+        </h2>
+<span class="text-label-sm font-medium text-blue-800 bg-blue-50 border border-blue-600 px-2.5 py-1 rounded">Compatibility Matrix Spec</span>
+</div>
+<div class="bg-white border border-slate-300 rounded-xl p-6 md:p-8 space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-blue-50 border border-blue-300 flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[28px]">lock_reset</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-slate-900">Browser Not Supported for Protected Courseware</h3>
+<p class="text-body-md text-slate-600 mt-1 max-w-4xl">
+              This module contains DRM-encrypted video lectures and protected paginated courseware requiring modern Media Source Extensions and hardware-accelerated canvas decoding.
+            </p>
+</div>
+</div>
+<!-- Compatible Browser Matrix -->
+<div class="border border-slate-200 rounded-lg overflow-hidden">
+<div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+<span class="text-label-sm font-semibold text-slate-700 uppercase tracking-wide">ISACA-Compliant Playback Environment Compatibility Matrix</span>
+<span class="text-label-sm text-slate-500">DRM Standard: Widevine L1/L3 &amp; FairPlay</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+<!-- Chrome -->
+<div class="p-4 bg-white flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-headline-sm text-body-md text-slate-900">Chrome 115+</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-600">Supported</span>
+</div>
+<p class="text-body-sm text-slate-500">Native Widevine DRM, hardware video acceleration.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-100 text-label-sm text-emerald-800 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Ready
+              </div>
+</div>
+<!-- Safari -->
+<div class="p-4 bg-white flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-headline-sm text-body-md text-slate-900">Safari 16+</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-600">Supported</span>
+</div>
+<p class="text-body-sm text-slate-500">FairPlay streaming engine, canvas copy prevention.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-100 text-label-sm text-emerald-800 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Ready
+              </div>
+</div>
+<!-- Edge -->
+<div class="p-4 bg-white flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-headline-sm text-body-md text-slate-900">Edge 115+</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-600">Supported</span>
+</div>
+<p class="text-body-sm text-slate-500">PlayReady &amp; Widevine cryptographic modules.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-100 text-label-sm text-emerald-800 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Ready
+              </div>
+</div>
+<!-- Firefox -->
+<div class="p-4 bg-white flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-headline-sm text-body-md text-slate-900">Firefox</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-600">Config Req.</span>
+</div>
+<p class="text-body-sm text-slate-500">Requires DRM Play DRM-controlled content enabled.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-100 text-label-sm text-amber-800 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tune</span> Supported with DRM enabled
+              </div>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<button class="h-11 min-h-[44px] px-6 rounded-md bg-[#0B1320] text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+            Download Chrome / Update Browser
+          </button>
+<button class="h-11 min-h-[44px] px-6 rounded-md bg-transparent border border-slate-500 text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">link</span>
+            Copy Lesson Link
+          </button>
+<span class="text-body-sm text-slate-500 ml-auto">
+            Current Detected Agent: <span class="font-code-snippet font-medium text-slate-700">Generic Gecko/20100101 (DRM Content Decryption Module Disabled)</span>
+</span>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- STATE 4: VIDEO PLAYBACK STREAM ERROR / NETWORK INTERRUPTION             -->
+<!-- ======================================================================= -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-md font-headline-md text-slate-900 flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-900 text-white text-xs flex items-center justify-center font-bold">4</span>
+          Video Playback Stream Error / Network Interruption
+        </h2>
+<span class="text-label-sm font-medium text-slate-700 bg-slate-200 border border-slate-400 px-2.5 py-1 rounded">Media Player Surface</span>
+</div>
+<div class="bg-white border border-slate-300 rounded-xl overflow-hidden p-6 md:p-8 space-y-6">
+<!-- Player Viewport Slate Mockup (16:9 Aspect Ratio Container) -->
+<div class="w-full bg-[#0B1320] rounded-lg aspect-video max-h-[420px] flex flex-col justify-between p-6 sm:p-8 relative border border-slate-800">
+<!-- Top Stream Status Overlay -->
+<div class="flex items-center justify-between text-slate-400 text-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+<span class="text-white font-medium">Domain 3: Information Systems Acquisition, Development &amp; Implementation</span>
+</div>
+<span class="font-code-snippet bg-slate-800 px-2.5 py-1 rounded text-slate-300">1080p Encrypted HLS</span>
+</div>
+<!-- Error Message Slate in Player Center -->
+<div class="max-w-md mx-auto text-center space-y-4 my-auto">
+<div class="w-14 h-14 rounded-full bg-red-950/80 border border-red-700 text-red-400 flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[32px]">wifi_off</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-headline-sm font-headline-sm text-white">Playback Interrupted — Connection to Media Stream Lost</h3>
+<p class="text-body-sm text-slate-300 leading-relaxed">
+                Failed to fetch encrypted media chunk 14 (H.264/CENC). Network timeout on local connection.
+              </p>
+</div>
+<!-- In-Player Actions (44px target) -->
+<div class="flex items-center justify-center gap-3 pt-2">
+<button class="h-11 min-h-[44px] px-6 rounded-md bg-secondary text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+                Retry Playback
+              </button>
+<button class="h-11 min-h-[44px] px-5 rounded-md bg-slate-800 text-slate-200 border border-slate-600 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+                Report Playback Issue
+              </button>
+</div>
+</div>
+<!-- Bottom Player Scrub Bar Frame (Disabled) -->
+<div class="space-y-2 pt-4 border-t border-slate-800">
+<div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-red-600 h-full w-[42%]"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-slate-400">
+<span class="font-code-snippet">32:18 / 1:16:40</span>
+<span class="font-code-snippet text-slate-300">Node: LOS-EDGE-02 · Code: ERR_DRM_MEDIA_TIMEOUT</span>
+</div>
+</div>
+</div>
+<!-- Diagnostics Box Under Player -->
+<div class="bg-slate-50 border border-slate-200 rounded-lg p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 text-label-sm">
+<div class="space-y-1">
+<span class="font-semibold text-slate-800">Client Telemetry Diagnostics</span>
+<div class="text-slate-600">Local Gateway latency: <span class="text-amber-800 font-medium">840ms (High jitter detected)</span> · Edge POP: <span class="text-slate-900 font-medium">MainOne Victoria Island Data Centre</span></div>
+</div>
+<div class="flex items-center gap-2 text-slate-500 font-code-snippet">
+<span>Buffer Health: 0.0s</span>
+<span>·</span>
+<span>Attempts: 3/5</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- STATE 5: PROTECTED DOCUMENT READER LOADING & PAGE EXCEPTION STATES     -->
+<!-- ======================================================================= -->
+<section class="space-y-3 pb-8">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-md font-headline-md text-slate-900 flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-900 text-white text-xs flex items-center justify-center font-bold">5</span>
+          Protected Document Reader Loading &amp; Page Exception States
+        </h2>
+<span class="text-label-sm font-medium text-slate-700 bg-slate-200 border border-slate-400 px-2.5 py-1 rounded">Zero-Download Canvas Architecture</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Substate A: Loading Skeleton State -->
+<div class="bg-white border border-slate-300 rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-slate-200 pb-3">
+<div>
+<span class="text-label-sm font-semibold text-slate-700 uppercase tracking-wide">State 5A: Zero-Download Canvas Viewer Skeleton</span>
+<p class="text-body-sm text-slate-500">Decrypting vectorized slide asset (Watermark: AJS-14-8812)</p>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-400">Loading Page 28</span>
+</div>
+<!-- Document Canvas Skeleton Mockup -->
+<div class="border border-slate-200 bg-slate-50 rounded-lg p-6 space-y-5 animate-pulse min-h-[340px] flex flex-col justify-between">
+<div class="space-y-4">
+<!-- Header placeholder -->
+<div class="flex items-center justify-between">
+<div class="h-5 bg-slate-300 rounded w-1/3"></div>
+<div class="h-4 bg-slate-200 rounded w-16"></div>
+</div>
+<!-- Content bars -->
+<div class="space-y-2.5 pt-2">
+<div class="h-3.5 bg-slate-300 rounded w-5/6"></div>
+<div class="h-3.5 bg-slate-200 rounded w-full"></div>
+<div class="h-3.5 bg-slate-200 rounded w-4/6"></div>
+</div>
+<!-- Graphic / Diagram placeholder block -->
+<div class="h-28 bg-slate-200 rounded-lg border border-slate-300 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[32px] text-slate-300">image</span>
+</div>
+<div class="space-y-2">
+<div class="h-3 bg-slate-200 rounded w-11/12"></div>
+<div class="h-3 bg-slate-200 rounded w-3/4"></div>
+</div>
+</div>
+<!-- Reader Watermark Overlay simulation -->
+<div class="flex items-center justify-between pt-4 border-t border-slate-200 text-label-sm text-slate-400">
+<span class="font-code-snippet">A.J. SILICON · AUDIT COURSEWARE CONFIDENTIAL</span>
+<span>Rendering Canvas...</span>
+</div>
+</div>
+<div class="text-label-sm text-slate-500 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+            Hardware crypto-decoding in progress. Print &amp; screen capture interception active.
+          </div>
+</div>
+<!-- Substate B: Render Timeout Exception State -->
+<div class="bg-white border border-slate-300 rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-slate-200 pb-3">
+<div>
+<span class="text-label-sm font-semibold text-slate-700 uppercase tracking-wide">State 5B: Document Page Exception</span>
+<p class="text-body-sm text-slate-500">Render Timeout on Page 44 (IT Governance Frameworks)</p>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-red-50 text-red-700 border border-red-400">Exception</span>
+</div>
+<!-- Document Render Failed Viewport -->
+<div class="border border-red-200 bg-red-50/50 rounded-lg p-6 min-h-[340px] flex flex-col justify-center items-center text-center space-y-4">
+<div class="w-12 h-12 rounded-full bg-red-100 border border-red-300 text-red-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">broken_image</span>
+</div>
+<div class="max-w-sm space-y-1">
+<h3 class="text-headline-sm font-headline-sm text-slate-900">Slide Rendering Interrupted</h3>
+<p class="text-body-sm text-slate-600 leading-normal">
+                The encrypted slide vector failed cryptographic handshake before the 15-second client timeout threshold.
+              </p>
+<div class="font-code-snippet text-label-sm text-slate-500 pt-1">
+                Asset: DOC_SLIDE_DOM1_P44.ENC · Code: 0x88F_CANVAS_TIMEOUT
+              </div>
+</div>
+<!-- Exception Actions (44px target) -->
+<div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+<button class="h-11 min-h-[44px] px-5 rounded-md bg-[#0B1320] text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+                Reload Slide Page
+              </button>
+<button class="h-11 min-h-[44px] px-5 rounded-md bg-white border border-slate-400 text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                Notify Instructor
+              </button>
+</div>
+</div>
+<div class="text-label-sm text-slate-500 flex items-center justify-between">
+<span>Fallback action: Proceed to next slide (Page 45)</span>
+<button class="text-secondary font-medium hover:underline flex items-center gap-1" type="button">
+              Skip slide <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ========================================================================= -->
+<!-- FOOTER AUDIT STAMP & SYSTEM METRICS                                       -->
+<!-- ========================================================================= -->
+<footer class="border-t border-slate-300 bg-white py-6 mt-12">
+<div class="max-w-[1440px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-body-sm">
+<div class="flex items-center gap-3">
+<div class="bg-white border border-slate-200 px-2 py-0.5 rounded">
+<img alt="A.J. Silicon Logo" class="h-4 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPWh2AkwHFj4G7MILchBOIU46XLgqQTfCIFQhbscLQDfHDwtqYMvfpqYy8roAUZkUhHPAftiWZRRa9NFyY3uuja3unbURXM-YOcweHuVaS8-QFUgjbLVUOAy9Zx_pIfNkZ9avHdhZYaIR7mOtn2Sy18wqsv2awp1dWAieD6HmQbanMqB_6QE4chYwmALpq6eQTYPq5Y3t1GooOLDMvWfzfuI16OKYXmJle4oIV-cKEDlBRQEj1jj9YXg"/>
+</div>
+<span>© 2026 A.J. Silicon Learning Systems. All Rights Reserved. Accredited Training Provider.</span>
+</div>
+<div class="flex items-center gap-6 text-label-sm">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-600"></span> Edge Lagos Pop Online</span>
+<span>DRM Core v4.18</span>
+<span class="text-slate-400">Board Revision: 2026.10-B</span>
+</div>
+</div>
+</footer>
+</body></html>

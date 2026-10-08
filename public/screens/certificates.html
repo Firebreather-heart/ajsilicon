@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. SILICON AUDIT PORTAL — Certificates &amp; Credentials</title>
+<!-- IBM Plex Sans font from Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration with Design System tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#141c29",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-container": "#eaedff",
+            "surface-container-highest": "#dae2fd",
+            "secondary-container": "#4069f2",
+            "inverse-primary": "#bfc6d9",
+            "on-secondary-container": "#fffbff",
+            "on-secondary-fixed": "#001551",
+            "error-container": "#ffdad6",
+            "surface-tint": "#575f6e",
+            "surface-container-low": "#f2f3ff",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary-container": "#7c8495",
+            "surface-variant": "#dae2fd",
+            "inverse-surface": "#283044",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-primary-fixed": "#141c29",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed": "#fddcc4",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#997f6a",
+            "on-primary": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "surface": "#faf8ff",
+            "tertiary-container": "#281809",
+            "outline-variant": "#c5c6cc",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#000000",
+            "primary": "#000000",
+            "primary-navy": "#0B1320",
+            "surface-slate-tech": "#152033",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "outline": "#75777c",
+            "secondary": "#1d4ed8",
+            "background": "#faf8ff",
+            "on-surface": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-tertiary-fixed": "#281809",
+            "primary-fixed": "#dbe2f5",
+            "on-background": "#131b2e",
+            "on-error-container": "#93000a",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed": "#dce1ff",
+            "on-surface-variant": "#45474c",
+            // Specific institutional tokens
+            "app-navy": "#0B1320",
+            "app-text": "#0F172A",
+            "app-muted": "#475569",
+            "app-border": "#E2E8F0",
+            "app-field-border": "#64748B",
+            "app-danger": "#B91C1C",
+            "app-danger-bg": "#FEF2F2",
+            "app-success": "#047857",
+            "app-success-bg": "#ECFDF5",
+            "app-warning": "#B45309",
+            "app-warning-bg": "#FFFBEB",
+            "app-info": "#1D4ED8",
+            "app-info-bg": "#EFF6FF"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.5rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"]
+          },
+          fontSize: {
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+      vertical-align: middle;
+    }
+    /* Specific focus ring override per system */
+    .focus-ring-standard:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #2563EB;
+    }
+    /* Mono for credential IDs */
+    .font-mono-audit {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A]">
+<!-- ========================================================================= -->
+<!-- TOP APP BAR (Shared Component: TopNavBar with mandatory styling & tokens) -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-6 max-w-full bg-[#0B1320] border-b border-[#1E293B]">
+<!-- Brand / Logo Plate -->
+<div class="flex items-center gap-6">
+<div class="h-10 px-3 bg-white rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3DoaP-6QoROoa1KJoG-anKOKZClS1BDxtYtL7fG_pEELqGzrkBqpExu9pXFRh1-UVqXi2TTGvcxNUcpWFGn1ohgixwoF03ZJ1NxZ_o_baBZU94dN5xP_aH70EItzHa-8NhEKVe931dAz7IzyCfW1wMCEbEbs3viftkpjxJqOiCuAjyxyrGd6FwVtU8sBIXgX9juNrjTNISxIHURpwZ6v0sXe7hm_jNO9tjqAggOSWs2EsOnzm1en6SQ"/>
+</div>
+<div class="hidden lg:flex items-center text-xs text-[#94A3B8] border-l border-[#334155] pl-4 font-mono-audit">
+<span class="inline-block w-2 h-2 rounded-full bg-[#047857] mr-2"></span>
+        ISACA LAGOS ACCREDITED PORTAL
+      </div>
+</div>
+<!-- Center Navigation Links (from JSON) -->
+<nav class="hidden xl:flex items-center space-x-6 text-sm">
+<span class="text-[#93C5FD] font-semibold border-b-2 border-[#10B981] pb-1 cursor-default">CISA Vault</span>
+<a class="text-[#94A3B8] font-medium hover:text-white transition-colors" href="#matrix">CRISC Matrix</a>
+<a class="text-[#94A3B8] font-medium hover:text-white transition-colors" href="#ops">CISM Ops</a>
+<a class="text-[#94A3B8] font-medium hover:text-white transition-colors" href="#lab">AAIA Lab</a>
+<a class="text-[#94A3B8] font-medium hover:text-white transition-colors" href="#forensics">Forensics</a>
+</nav>
+<!-- Trailing Staff Role, Time & Profile Cluster -->
+<div class="flex items-center gap-5">
+<!-- Plain text staff role label (Mandatory: Zero role switcher) -->
+<div class="text-right hidden sm:block">
+<div class="text-xs text-white font-medium">Role: Academic Director | Dr. Olayinka Adeleke</div>
+<div class="text-[11px] text-[#94A3B8] font-mono-audit">13:20 WAT · 05 Oct 2026</div>
+</div>
+<div class="h-6 w-px bg-[#334155] hidden sm:block"></div>
+<!-- Icon Actions -->
+<div class="flex items-center gap-2">
+<button aria-label="System Security Logs" class="w-10 h-10 rounded flex items-center justify-center text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-standard transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</button>
+<button aria-label="Notifications" class="w-10 h-10 rounded flex items-center justify-center text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-standard transition-colors relative" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-[#B91C1C] rounded-full"></span>
+</button>
+</div>
+<!-- Profile Avatar Container -->
+<div class="flex items-center pl-2">
+<div class="w-9 h-9 rounded bg-[#1E293B] border border-[#334155] flex items-center justify-center text-white text-xs font-semibold tracking-wider" title="Dr. Olayinka Adeleke">
+          OA
+        </div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE LAYOUT (SideNav Rail + Central Document Canvas) -->
+<!-- ========================================================================= -->
+<div class="flex flex-1 w-full max-w-[1440px] mx-auto">
+<!-- SIDE NAVIGATION RAIL -->
+<aside class="w-72 shrink-0 bg-[#0F172A] border-r border-[#1E293B] flex flex-col justify-between hidden md:flex min-h-[calc(100vh-4rem)]">
+<div class="p-4 space-y-6">
+<!-- Institutional Badge Header in Rail -->
+<div class="px-3 py-2 bg-[#0B1320] rounded border border-[#1E293B]">
+<div class="text-xs font-semibold text-white tracking-wide">A.J. Silicon Academy</div>
+<div class="text-[11px] text-[#94A3B8]">ISACA Lagos Gold Affiliate</div>
+</div>
+<!-- Navigation Group: ACADEMICS (ACTIVE & HIGHLIGHTED) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">Academics</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#programmes">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="menu_book">menu_book</span>
+<span>Programmes</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#cohorts">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="group">group</span>
+<span>Cohorts</span>
+</a>
+<!-- Selected item: Certificates -->
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-semibold text-white bg-[#0B1320] border-l-4 border-[#047857] rounded-r transition-colors shadow-sm" href="#certificates">
+<span class="material-symbols-outlined text-[#93C5FD]" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span>Certificates</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#curriculum">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="layers">layers</span>
+<span>Curriculum</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: CONTENT -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">Content</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#exams">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="quiz">quiz</span>
+<span>Exam Simulation</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#vault">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="folder_special">folder_special</span>
+<span>Audit Repositories</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: CANDIDATES -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">Candidates</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#candidates">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="person_search">person_search</span>
+<span>Directory</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#verifications">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="verified_user">verified_user</span>
+<span>Verification Gateway</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: SECURITY & SYSTEM -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">System &amp; Governance</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#telemetry">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="monitoring">monitoring</span>
+<span>Security Telemetry</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 text-sm font-medium text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded transition-colors" href="#audit-trail">
+<span class="material-symbols-outlined text-[#94A3B8]" data-icon="receipt_long">receipt_long</span>
+<span>Audit Trail &amp; Logs</span>
+</a>
+<!-- System feature locked for this role to satisfy spec -->
+<div class="flex items-center justify-between px-3 h-11 text-sm font-medium text-[#475569] bg-[#0B1320]/40 rounded cursor-not-allowed" title="Action locked: Requires Super-SecOps clearance">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#475569]" data-icon="tune">tune</span>
+<span>Kernel Configurations</span>
+</div>
+<span class="material-symbols-outlined text-xs text-[#64748B]" data-icon="lock">lock</span>
+</div>
+</nav>
+</div>
+</div>
+<!-- Rail Footer: Status & Terminal Lock CTA -->
+<div class="p-4 border-t border-[#1E293B] bg-[#0B1320] space-y-3">
+<div class="text-[11px] font-mono-audit text-[#94A3B8] space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-[#047857]" data-icon="lock">lock</span>
+<span>Terminal Status: Zero-Trust</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-[#94A3B8]" data-icon="verified">verified</span>
+<span>System Ver 4.9.2</span>
+</div>
+</div>
+<button class="w-full h-11 px-3 border border-[#334155] rounded text-xs font-medium text-white hover:bg-[#1E293B] transition-colors flex items-center justify-center gap-2 focus-ring-standard" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="power_settings_new">power_settings_new</span>
+          Lock Terminal Session
+        </button>
+</div>
+</aside>
+<!-- CENTRAL CONTENT CANVAS -->
+<main class="flex-1 p-6 lg:p-8 space-y-8 bg-[#F8FAFC] overflow-x-hidden">
+<!-- BREADCRUMB -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[#64748B]">
+<span>Academics</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span>Certification &amp; Credentials</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">Certificates</span>
+</nav>
+<!-- PAGE HEADER -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-[#0F172A]">Certificates</h1>
+<p class="text-sm text-[#475569] mt-1">Manage certification templates, automated issuance criteria, and audit credential status across cohorts.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-11 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white text-sm font-medium rounded flex items-center gap-2 focus-ring-standard transition-all" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+            Bulk issue to a cohort
+          </button>
+</div>
+</div>
+<!-- TABS NAVIGATION -->
+<div class="border-b border-[#E2E8F0]">
+<nav aria-label="Tabs" class="flex space-x-8">
+<button class="border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#64748B] whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm flex items-center gap-2" id="tab-btn-templates" onclick="switchMainTab('templates')" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="design_services">design_services</span>
+            Templates
+          </button>
+<button class="border-[#0B1320] text-[#0B1320] whitespace-nowrap py-3 px-1 border-b-2 font-semibold text-sm flex items-center gap-2" id="tab-btn-issued" onclick="switchMainTab('issued')" type="button">
+<span class="material-symbols-outlined text-lg text-[#047857]" data-icon="task_alt">task_alt</span>
+            Issued
+            <span class="bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]/30 py-0.5 px-2 rounded-full text-xs font-medium">342</span>
+</button>
+<button class="border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#64748B] whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm flex items-center gap-2" id="tab-btn-revoked" onclick="switchMainTab('revoked')" type="button">
+<span class="material-symbols-outlined text-lg text-[#B91C1C]" data-icon="cancel">cancel</span>
+            Revoked
+            <span class="bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]/30 py-0.5 px-2 rounded-full text-xs font-medium">14</span>
+</button>
+</nav>
+</div>
+<!-- ===================================================================== -->
+<!-- TAB 2: ISSUED CREDENTIALS (Default Master View)                        -->
+<!-- ===================================================================== -->
+<div class="space-y-6" id="tab-content-issued">
+<!-- Controls: Search, Filters, Sort -->
+<div class="bg-white p-4 rounded-xl border border-[#E2E8F0] flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
+<!-- Search input (min 44px height) -->
+<div class="relative flex-1 max-w-lg">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-[#64748B]">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+</span>
+<input class="w-full h-11 pl-10 pr-4 text-sm text-[#0F172A] placeholder-[#475569] bg-white border border-[#64748B] rounded focus-ring-standard" placeholder="Search by Certificate ID, candidate name, or email..." type="text" value=""/>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2">
+<label class="text-xs font-medium text-[#475569]" for="filter-programme">Programme:</label>
+<select class="h-11 px-3 py-2 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="filter-programme">
+<option value="all">All Programmes</option>
+<option value="cisa">CISA Exam Preparation</option>
+<option value="crisc">CRISC Enterprise Risk</option>
+<option value="cism">CISM Information Security</option>
+</select>
+</div>
+<div class="flex items-center gap-2">
+<label class="text-xs font-medium text-[#475569]" for="filter-cohort">Cohort:</label>
+<select class="h-11 px-3 py-2 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="filter-cohort">
+<option value="all">All Cohorts (2026)</option>
+<option value="2026-q3">2026 Q3 Executive Cohort</option>
+<option value="2026-q2">2026 Q2 Weekend Stream</option>
+</select>
+</div>
+<div class="flex items-center gap-2">
+<label class="text-xs font-medium text-[#475569]" for="filter-date">Issue Date:</label>
+<input class="h-11 w-32 px-3 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="filter-date" placeholder="DD MMM YYYY" type="text" value="Oct 2026"/>
+</div>
+<button class="h-11 px-4 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-sm font-medium flex items-center gap-1.5 focus-ring-standard" type="button">
+<span class="material-symbols-outlined text-base" data-icon="filter_list">filter_list</span>
+              Reset
+            </button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-xs font-medium text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-4" scope="col">Certificate ID</th>
+<th class="py-3 px-4" scope="col">Candidate Name</th>
+<th class="py-3 px-4" scope="col">Masked Email</th>
+<th class="py-3 px-4" scope="col">Programme</th>
+<th class="py-3 px-4" scope="col">Issue Date</th>
+<th class="py-3 px-4" scope="col">Issued By</th>
+<th class="py-3 px-4" scope="col">Status</th>
+<th class="py-3 px-4 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm">
+<!-- Row 1 (Target of Modal State) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono-audit text-xs font-medium text-[#0F172A]">AJS-CERT-2026-CISA-0491</td>
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">Chinedu Eze</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2 font-mono-audit text-xs text-[#475569]">
+<span id="email-masked-1">c•••••••••@zenithtech.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-xs flex items-center gap-1 focus-ring-standard p-1" onclick="toggleEmailReveal('1', 'c.eze@zenithtech.ng')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span id="email-btn-text-1">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CISA Exam Preparation Masterclass</td>
+<td class="py-3.5 px-4 text-[#475569] whitespace-nowrap">05 Oct 2026</td>
+<td class="py-3.5 px-4 text-[#475569]">Dr. O. Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="check_circle">check_circle</span>
+                      Issued
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                        Reissue
+                      </button>
+<button class="h-9 px-3 bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] rounded text-xs font-medium flex items-center gap-1 focus-ring-standard" onclick="openRevokeModal('AJS-CERT-2026-CISA-0491', 'Chinedu Eze')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Revoke
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono-audit text-xs font-medium text-[#0F172A]">AJS-CERT-2026-CRISC-0108</td>
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">Amina Babatunde</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2 font-mono-audit text-xs text-[#475569]">
+<span id="email-masked-2">a•••••••••@firstbankgroup.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-xs flex items-center gap-1 focus-ring-standard p-1" onclick="toggleEmailReveal('2', 'amina.b@firstbankgroup.ng')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span id="email-btn-text-2">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CRISC Enterprise Risk Matrix</td>
+<td class="py-3.5 px-4 text-[#475569] whitespace-nowrap">04 Oct 2026</td>
+<td class="py-3.5 px-4 text-[#475569]">Dr. O. Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="check_circle">check_circle</span>
+                      Issued
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                        Reissue
+                      </button>
+<button class="h-9 px-3 bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] rounded text-xs font-medium flex items-center gap-1 focus-ring-standard" onclick="openRevokeModal('AJS-CERT-2026-CRISC-0108', 'Amina Babatunde')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Revoke
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono-audit text-xs font-medium text-[#0F172A]">AJS-CERT-2026-CISM-0322</td>
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">Folake Adeyemi</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2 font-mono-audit text-xs text-[#475569]">
+<span id="email-masked-3">f•••••••••@stanbicsec.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-xs flex items-center gap-1 focus-ring-standard p-1" onclick="toggleEmailReveal('3', 'folake.adeyemi@stanbicsec.ng')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span id="email-btn-text-3">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CISM Information Security Governance</td>
+<td class="py-3.5 px-4 text-[#475569] whitespace-nowrap">02 Oct 2026</td>
+<td class="py-3.5 px-4 text-[#475569]">Dr. O. Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="check_circle">check_circle</span>
+                      Issued
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                        Reissue
+                      </button>
+<button class="h-9 px-3 bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] rounded text-xs font-medium flex items-center gap-1 focus-ring-standard" onclick="openRevokeModal('AJS-CERT-2026-CISM-0322', 'Folake Adeyemi')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Revoke
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono-audit text-xs font-medium text-[#0F172A]">AJS-CERT-2026-CISA-0490</td>
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">Emeka Okonkwo</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2 font-mono-audit text-xs text-[#475569]">
+<span id="email-masked-4">e•••••••••@accessholdings.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-xs flex items-center gap-1 focus-ring-standard p-1" onclick="toggleEmailReveal('4', 'emeka.okonkwo@accessholdings.ng')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span id="email-btn-text-4">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CISA Exam Preparation Masterclass</td>
+<td class="py-3.5 px-4 text-[#475569] whitespace-nowrap">01 Oct 2026</td>
+<td class="py-3.5 px-4 text-[#475569]">Dr. O. Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="check_circle">check_circle</span>
+                      Issued
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                        Reissue
+                      </button>
+<button class="h-9 px-3 bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] rounded text-xs font-medium flex items-center gap-1 focus-ring-standard" onclick="openRevokeModal('AJS-CERT-2026-CISA-0490', 'Emeka Okonkwo')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Revoke
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono-audit text-xs font-medium text-[#0F172A]">AJS-CERT-2026-AAIA-0054</td>
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">Bilikisu Danjuma</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2 font-mono-audit text-xs text-[#475569]">
+<span id="email-masked-5">b•••••••••@dangotefin.ng</span>
+<button class="text-[#1D4ED8] hover:underline text-xs flex items-center gap-1 focus-ring-standard p-1" onclick="toggleEmailReveal('5', 'b.danjuma@dangotefin.ng')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span id="email-btn-text-5">Reveal</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-[#0F172A]">Automated Audit &amp; AI Assurance Lab</td>
+<td class="py-3.5 px-4 text-[#475569] whitespace-nowrap">28 Sep 2026</td>
+<td class="py-3.5 px-4 text-[#475569]">Dr. O. Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="check_circle">check_circle</span>
+                      Issued
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                        Reissue
+                      </button>
+<button class="h-9 px-3 bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] rounded text-xs font-medium flex items-center gap-1 focus-ring-standard" onclick="openRevokeModal('AJS-CERT-2026-AAIA-0054', 'Bilikisu Danjuma')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Revoke
+                      </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Bar -->
+<div class="p-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="text-xs text-[#475569]">
+              Showing <span class="font-medium text-[#0F172A]">1</span> to <span class="font-medium text-[#0F172A]">5</span> of <span class="font-medium text-[#0F172A]">342</span> issued certificates
+            </span>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 border border-[#CBD5E1] text-[#94A3B8] bg-white rounded text-xs font-medium cursor-not-allowed" disabled="" type="button">
+                Previous
+              </button>
+<button class="h-9 px-3 bg-[#0B1320] text-white rounded text-xs font-medium focus-ring-standard" type="button">
+                1
+              </button>
+<button class="h-9 px-3 border border-[#E2E8F0] text-[#0F172A] bg-white hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                2
+              </button>
+<button class="h-9 px-3 border border-[#E2E8F0] text-[#0F172A] bg-white hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                3
+              </button>
+<span class="text-xs text-[#64748B]">...</span>
+<button class="h-9 px-3 border border-[#E2E8F0] text-[#0F172A] bg-white hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                69
+              </button>
+<button class="h-9 px-3 border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                Next
+              </button>
+</div>
+</div>
+</div>
+<!-- System Table Specification Requirement: Loading Skeleton & Empty State Preview Accordion -->
+<div class="pt-4 border-t border-[#E2E8F0] space-y-4">
+<div class="text-xs font-semibold text-[#64748B] uppercase tracking-wider">Interface States Verification</div>
+<details class="bg-white rounded-lg border border-[#E2E8F0] p-4 text-sm group">
+<summary class="cursor-pointer font-medium text-[#0F172A] flex items-center justify-between">
+<span>View Data Table Loading Skeleton State</span>
+<span class="material-symbols-outlined text-[#64748B] group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 space-y-3 pt-3 border-t border-[#E2E8F0]">
+<div class="animate-pulse space-y-3">
+<div class="h-8 bg-[#E2E8F0] rounded w-full"></div>
+<div class="h-10 bg-[#F1F5F9] rounded w-full"></div>
+<div class="h-10 bg-[#F1F5F9] rounded w-full"></div>
+<div class="h-10 bg-[#F1F5F9] rounded w-full"></div>
+</div>
+<div class="text-[11px] text-[#64748B]">Standardized zero-flicker tabular skeleton displayed during remote audit synchronization.</div>
+</div>
+</details>
+<details class="bg-white rounded-lg border border-[#E2E8F0] p-4 text-sm group">
+<summary class="cursor-pointer font-medium text-[#0F172A] flex items-center justify-between">
+<span>View Filter Zero-Results Empty State</span>
+<span class="material-symbols-outlined text-[#64748B] group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 p-8 text-center border-t border-[#E2E8F0]">
+<div class="w-12 h-12 mx-auto rounded-full bg-[#F1F5F9] flex items-center justify-center text-[#64748B] mb-3">
+<span class="material-symbols-outlined text-2xl" data-icon="search_off">search_off</span>
+</div>
+<h3 class="text-sm font-semibold text-[#0F172A]">No matching certificates located</h3>
+<p class="text-xs text-[#475569] max-w-sm mx-auto mt-1">There are no issued certificates matching your filter criteria. Verify the registration ID or reset applied filters.</p>
+<button class="mt-4 h-9 px-4 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-xs font-medium focus-ring-standard" type="button">
+                Clear all query filters
+              </button>
+</div>
+</details>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- TAB 1: TEMPLATES (Editor view & layout preview)                        -->
+<!-- ===================================================================== -->
+<div class="hidden space-y-8" id="tab-content-templates">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- LEFT / TOP COLUMN: Template Configuration Form (7 Cols) -->
+<div class="xl:col-span-7 bg-white p-6 rounded-xl border border-[#E2E8F0] space-y-6 shadow-sm">
+<div class="pb-4 border-b border-[#E2E8F0] flex items-center justify-between">
+<div>
+<h2 class="text-lg font-bold text-[#0F172A]">Certificate Template Editor</h2>
+<p class="text-xs text-[#475569]">Set credential parameters and automated threshold governance for cohorts.</p>
+</div>
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="info">info</span>
+                Active Template
+              </span>
+</div>
+<form class="space-y-5" id="template-editor-form" onsubmit="event.preventDefault();">
+<!-- Field: Template Name -->
+<div>
+<label class="block text-xs font-medium text-[#0F172A] mb-1" for="template-name">
+                  Template Name <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 px-3 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="template-name" type="text" value="ISACA CISA Masterclass Standard Certificate (2026 Edition)"/>
+<p class="text-[11px] text-[#475569] mt-1">Official label cataloged in institutional compliance register.</p>
+</div>
+<!-- Field: Programme Assignment -->
+<div>
+<label class="block text-xs font-medium text-[#0F172A] mb-1" for="programme-assignment">
+                  Programme Assignment <span class="text-[#B91C1C]">*</span>
+</label>
+<select class="w-full h-11 px-3 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="programme-assignment">
+<option value="cisa">CISA Exam Preparation Masterclass (Course ID: AJS-CRS-CISA)</option>
+<option value="crisc">CRISC Enterprise Risk Matrix (Course ID: AJS-CRS-CRISC)</option>
+<option value="cism">CISM Information Security Governance (Course ID: AJS-CRS-CISM)</option>
+<option value="aaia">Automated Audit &amp; AI Assurance Lab (Course ID: AJS-CRS-AAIA)</option>
+</select>
+</div>
+<!-- Two Column Fields: Signatory & Title -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-medium text-[#0F172A] mb-1" for="signatory-name">
+                    Designated Signatory Name <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 px-3 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="signatory-name" type="text" value="Dr. Olayinka Adeleke"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-[#0F172A] mb-1" for="signatory-title">
+                    Signatory Title &amp; Designation <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 px-3 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="signatory-title" type="text" value="Academic Director &amp; CGO"/>
+</div>
+</div>
+<!-- Issuance Criteria Rules Section -->
+<div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0] space-y-4">
+<div class="flex items-center gap-2 text-xs font-bold text-[#0F172A] uppercase tracking-wide">
+<span class="material-symbols-outlined text-base text-[#1D4ED8]" data-icon="rule">rule</span>
+                  Automated Issuance Criteria Rules
+                </div>
+<!-- Rule 1: Course Completion -->
+<div class="bg-white p-3.5 rounded border border-[#CBD5E1] space-y-2">
+<div class="flex items-center justify-between">
+<label class="text-xs font-semibold text-[#0F172A]" for="rule-completion-rate">
+                      Rule 1: Minimum Attendance &amp; Course Completion
+                    </label>
+<span class="text-xs font-mono-audit font-medium text-[#047857]">Mandatory</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-28 h-11 px-3 text-sm font-mono-audit text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="rule-completion-rate" max="100" min="50" type="number" value="100"/>
+<span class="text-xs text-[#475569]">% curriculum modules audited and verified completed.</span>
+</div>
+</div>
+<!-- Rule 2: Mock Exam Score -->
+<div class="bg-white p-3.5 rounded border border-[#CBD5E1] space-y-2">
+<div class="flex items-center justify-between">
+<label class="text-xs font-semibold text-[#0F172A]" for="rule-mock-score">
+                      Rule 2: Minimum Benchmark Mock Exam Score
+                    </label>
+<span class="text-xs font-mono-audit font-medium text-[#047857]">ISACA Calibrated</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-28 h-11 px-3 text-sm font-mono-audit text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard" id="rule-mock-score" max="800" min="200" step="10" type="number" value="450"/>
+<span class="text-xs text-[#475569]">Scaled score (Minimum 450 passing standard on 200–800 scale).</span>
+</div>
+</div>
+</div>
+<!-- Inline validation hint and Primary Submit Button -->
+<div class="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="text-xs text-[#475569] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-[#047857]" data-icon="check_circle">check_circle</span>
+<span>Parameters satisfy institutional accreditation standards.</span>
+</div>
+<button class="h-11 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white text-sm font-medium rounded flex items-center gap-2 focus-ring-standard transition-all" id="save-template-btn" type="submit">
+<span class="material-symbols-outlined text-sm" data-icon="save">save</span>
+                  Save template changes
+                </button>
+</div>
+</form>
+</div>
+<!-- RIGHT / BOTTOM COLUMN: Institutional Certificate Layout Preview (5 Cols) -->
+<div class="xl:col-span-5 space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-[#64748B]">Live Template Preview (Canvas)</span>
+<span class="text-xs font-mono-audit text-[#475569]">Aspect 1:1.414 (A4 Landscape)</span>
+</div>
+<!-- PREVIEW CARD -->
+<div class="bg-white rounded-xl border border-[#CBD5E1] p-6 shadow-sm relative overflow-hidden text-center space-y-5">
+<!-- Subtle decorative internal border representing security bond paper -->
+<div class="border border-[#CBD5E1] p-5 rounded-lg space-y-5 relative">
+<!-- Institutional Header with Logo Plate -->
+<div class="flex flex-col items-center gap-2">
+<div class="h-9 px-4 bg-white border border-[#E2E8F0] rounded flex items-center justify-center shadow-xs">
+<img alt="A.J. SILICON" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSTMNJB4sLIPXtNCrX1uJVSlGEjlQrmYFWmwL58HzR2NFGiu93m-PqO1pwHAblg1WZlhUnyZ3CFp7tfnXhSs76w1d2E46p-xzAzdDJ9DxpNchrDkBEHuII2OGBGhrFU3Fo073djHwUqHOYKDtdyDjBslKNDl4-6BkpT3q8wsERQUFFT62XY1Sjs2rmVyNLehgN0UpbcxRiitb7iAjGx3B7pmdOQBaGmdv0mrAbA-Qo1nfpS4u4Ne4Zqw"/>
+</div>
+<div class="text-[11px] font-semibold tracking-wider text-[#0F172A] uppercase">
+                    A.J. Silicon Information Security Training &amp; Governance Ltd.
+                  </div>
+<div class="text-[9px] text-[#64748B] tracking-wide">
+                    ACCREDITED ISACA LAGOS ELITE CHAPTER TRAINING AFFILIATE
+                  </div>
+</div>
+<!-- Credential Title Section -->
+<div class="space-y-1">
+<div class="text-[10px] text-[#475569] tracking-widest uppercase font-medium">This is to certify that</div>
+<div class="text-lg font-bold text-[#0F172A] tracking-tight border-b border-[#CBD5E1] pb-1 mx-8 font-serif">
+                    [Candidate Name]
+                  </div>
+<div class="text-[10px] text-[#475569] mt-2">has successfully satisfied all rigorous curriculum requirements for</div>
+<div class="text-sm font-bold text-[#0B1320] mt-1">
+                    CISA Exam Preparation Masterclass
+                  </div>
+<div class="text-[10px] text-[#64748B]">
+                    Conferred on <span class="font-semibold text-[#0F172A]">05 Oct 2026</span> at Lagos, Nigeria
+                  </div>
+</div>
+<!-- Signature & Verification Footnotes -->
+<div class="pt-4 border-t border-[#E2E8F0] grid grid-cols-2 items-end text-left gap-4">
+<!-- Signatory info -->
+<div>
+<!-- Visual mock of formal signature line -->
+<div class="h-7 w-32 border-b border-[#0F172A] mb-1 flex items-end">
+<span class="font-serif italic text-xs text-[#0F172A]">Olayinka Adeleke</span>
+</div>
+<div class="text-[10px] font-bold text-[#0F172A]">Dr. Olayinka Adeleke</div>
+<div class="text-[9px] text-[#64748B]">Academic Director &amp; CGO</div>
+</div>
+<!-- QR Code & Public Verification Box -->
+<div class="flex flex-col items-end text-right">
+<div class="w-14 h-14 border border-[#0F172A] p-1 rounded bg-white flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-2xl text-[#0F172A]" data-icon="qr_code_2">qr_code_2</span>
+</div>
+<div class="text-[9px] font-mono-audit text-[#475569] mt-1">/verify/AJS-CERT-2026-CISA-0491</div>
+</div>
+</div>
+<!-- Credential Serial Number Footer -->
+<div class="text-center pt-2">
+<span class="inline-block px-2.5 py-0.5 bg-[#F1F5F9] rounded text-[10px] font-mono-audit text-[#0F172A] border border-[#CBD5E1]">
+                    Certificate ID: AJS-CERT-2026-CISA-0491
+                  </span>
+</div>
+</div>
+</div>
+<div class="text-[11px] text-[#64748B] flex items-center gap-1.5 px-1">
+<span class="material-symbols-outlined text-xs text-[#1D4ED8]" data-icon="verified">verified</span>
+<span>Vector PDF and cryptographic verification manifest generated synchronously upon cohort approval.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- TAB 3: REVOKED CREDENTIALS                                             -->
+<!-- ===================================================================== -->
+<div class="hidden space-y-6" id="tab-content-revoked">
+<div class="bg-[#FEF2F2] border border-[#B91C1C]/40 p-4 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B91C1C] shrink-0 mt-0.5" data-icon="gavel">gavel</span>
+<div>
+<h3 class="text-xs font-bold text-[#B91C1C] uppercase tracking-wide">Revoked Audit Registry (Inadmissible Credentials)</h3>
+<p class="text-xs text-[#0F172A] mt-0.5">Revoked certificates are permanently flagged on the public verification portal with the exact justification entered during the SecOps disciplinary process.</p>
+</div>
+</div>
+<!-- Revoked Table -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-xs font-medium text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-4" scope="col">Certificate ID</th>
+<th class="py-3 px-4" scope="col">Candidate Name</th>
+<th class="py-3 px-4" scope="col">Programme</th>
+<th class="py-3 px-4" scope="col">Revocation Date</th>
+<th class="py-3 px-4" scope="col">Authorized Officer</th>
+<th class="py-3 px-4" scope="col">Status</th>
+<th class="py-3 px-4" scope="col">Required Reason Recorded</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm">
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono-audit text-xs font-medium text-[#0F172A]">AJS-CERT-2025-CISA-0219</td>
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">Yakubu Mohammed</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CISA Exam Preparation Masterclass</td>
+<td class="py-3.5 px-4 text-[#475569] whitespace-nowrap">14 Aug 2026</td>
+<td class="py-3.5 px-4 text-[#475569]">Dr. O. Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="cancel">cancel</span>
+                      Revoked
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#0F172A] max-w-xs">
+                    Disciplinary finding: Plagiarism verified in Domain 3 forensic audit log submission. Confirmed by Ethics Board.
+                  </td>
+</tr>
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono-audit text-xs font-medium text-[#0F172A]">AJS-CERT-2025-CRISC-0081</td>
+<td class="py-3.5 px-4 font-medium text-[#0F172A]">Tunde Balogun</td>
+<td class="py-3.5 px-4 text-[#0F172A]">CRISC Enterprise Risk Matrix</td>
+<td class="py-3.5 px-4 text-[#475569] whitespace-nowrap">02 Jul 2026</td>
+<td class="py-3.5 px-4 text-[#475569]">Dr. O. Adeleke</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center h-6 px-2.5 rounded text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="cancel">cancel</span>
+                      Revoked
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-xs text-[#0F172A] max-w-xs">
+                    Administrative nullification: Candidate failed to satisfy prerequisite accredited work experience verification.
+                  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="text-xs text-[#475569]">Showing 2 of 14 revoked certificates</span>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 border border-[#CBD5E1] text-[#94A3B8] bg-white rounded text-xs font-medium cursor-not-allowed" disabled="" type="button">Previous</button>
+<button class="h-9 px-3 bg-[#0B1320] text-white rounded text-xs font-medium" type="button">1</button>
+<button class="h-9 px-3 border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] rounded text-xs font-medium" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ========================================================================= -->
+<!-- STATE 2: REVOKE CONFIRMATION DIALOG OVERLAY (Interactive & Fully Rendered) -->
+<!-- ========================================================================= -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 bg-[#0B1320]/70 flex items-center justify-center p-4 hidden" id="revoke-modal-backdrop" role="dialog">
+<div class="bg-white rounded-xl border border-[#E2E8F0] max-w-lg w-full p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#FEF2F2] border border-[#B91C1C]/30 flex items-center justify-center text-[#B91C1C] shrink-0">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-[#0F172A]" id="modal-title">Revoke Certificate</h2>
+<div class="text-xs text-[#475569] font-mono-audit" id="modal-target-cert">
+              Target: AJS-CERT-2026-CISA-0491 (Chinedu Eze)
+            </div>
+</div>
+</div>
+<button aria-label="Close dialog" class="w-8 h-8 rounded flex items-center justify-center text-[#64748B] hover:text-[#0F172A] hover:bg-[#F1F5F9] focus-ring-standard" onclick="closeRevokeModal()" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Warning Banner -->
+<div class="p-3.5 bg-[#FEF2F2] border border-[#B91C1C]/40 rounded-lg text-xs text-[#B91C1C] space-y-1">
+<div class="font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="error">error</span>
+<span>Immediate Public Verification Invalidation</span>
+</div>
+<p class="leading-relaxed">
+          Executing this revocation immediately updates the live public verification gateway. Any physical certificate scan will immediately report this credential as invalid.
+        </p>
+</div>
+<!-- Required Form with character counter & validation -->
+<form class="space-y-4" id="revoke-dialog-form" onsubmit="handleRevokeSubmit(event)">
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1" for="revoke-reason">
+            Reason for revocation <span class="text-[#B91C1C]">*</span>
+</label>
+<textarea class="w-full p-3 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded focus-ring-standard placeholder-[#94A3B8]" id="revoke-reason" oninput="updateCharCount(this)" placeholder="Specify exact ethical infraction, non-compliance audit finding, or administrative defect..." required="" rows="3"></textarea>
+<div class="flex items-center justify-between text-[11px] text-[#64748B] mt-1.5">
+<span>Audit requirement: Permanent log retained under ISACA compliance rules.</span>
+<span id="char-counter">0 / 250 min chars (15)</span>
+</div>
+<p class="text-xs text-[#B91C1C] mt-1 hidden" id="revoke-error-msg">Reason is required and must contain at least 15 characters.</p>
+</div>
+<!-- Action Buttons -->
+<div class="pt-2 flex items-center justify-end gap-3 border-t border-[#E2E8F0]">
+<button class="h-11 px-5 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded text-sm font-medium focus-ring-standard" onclick="closeRevokeModal()" type="button">
+            Cancel
+          </button>
+<button class="h-11 px-5 bg-[#B91C1C] hover:bg-[#991B1B] text-white rounded text-sm font-medium flex items-center gap-2 focus-ring-standard shadow-sm" id="confirm-revoke-btn" type="submit">
+<span class="material-symbols-outlined text-sm" data-icon="gavel">gavel</span>
+            Confirm Revocation
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- FOOTER (Shared Component: Footer closure with mandatory styling)         -->
+<!-- ========================================================================= -->
+<footer class="w-full py-8 px-6 border-t border-[#1E293B] bg-[#0B1320] flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 mt-auto">
+<div class="text-xs text-[#94A3B8] space-y-1">
+<p>© 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. Accredited ISACA Lagos Elite Partner. All Sessions Digitally Watermarked.</p>
+<div class="text-[11px] font-mono-audit text-[#64748B]">Terminal Node: LAG-SEC-01 · Authorized Personnel Only · All Actions Recorded</div>
+</div>
+<div class="flex flex-wrap items-center justify-center md:justify-end gap-6 text-xs text-[#94A3B8]">
+<a class="hover:text-white transition-colors" href="#zero-trust">Zero-Trust Protocol</a>
+<a class="hover:text-white transition-colors" href="#charter">ISACA Lagos Charter</a>
+<a class="hover:text-white transition-colors" href="#verification">Automated Verification Gateway</a>
+<a class="hover:text-white transition-colors" href="#integrity">Forensic Integrity Policy</a>
+<a class="hover:text-white transition-colors" href="#secops">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- ========================================================================= -->
+<!-- JAVASCRIPT: TAB CONTROLS, SENSITIVE MASKING, & DIALOG STATE LOGIC         -->
+<!-- ========================================================================= -->
+<script>
+    // Tab switching handler
+    function switchMainTab(tabKey) {
+      // Hide all tabs
+      document.getElementById('tab-content-issued').classList.add('hidden');
+      document.getElementById('tab-content-templates').classList.add('hidden');
+      document.getElementById('tab-content-revoked').classList.add('hidden');
+
+      // Reset button styles
+      const tabs = ['issued', 'templates', 'revoked'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        if (btn) {
+          btn.className = 'border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#64748B] whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm flex items-center gap-2';
+        }
+      });
+
+      // Show chosen tab
+      const activeContent = document.getElementById('tab-content-' + tabKey);
+      if (activeContent) activeContent.classList.remove('hidden');
+
+      // Highlight active button
+      const activeBtn = document.getElementById('tab-btn-' + tabKey);
+      if (activeBtn) {
+        activeBtn.className = 'border-[#0B1320] text-[#0B1320] whitespace-nowrap py-3 px-1 border-b-2 font-semibold text-sm flex items-center gap-2';
+      }
+    }
+
+    // Masked Email Reveal Toggle
+    function toggleEmailReveal(id, actualEmail) {
+      const label = document.getElementById('email-masked-' + id);
+      const btnText = document.getElementById('email-btn-text-' + id);
+      if (!label || !btnText) return;
+
+      if (btnText.innerText === 'Reveal') {
+        label.innerText = actualEmail;
+        label.classList.add('text-[#0F172A]', 'font-semibold');
+        btnText.innerText = 'Hide';
+      } else {
+        const parts = actualEmail.split('@');
+        label.innerText = parts[0].charAt(0) + '•••••••••@' + parts[1];
+        label.classList.remove('text-[#0F172A]', 'font-semibold');
+        btnText.innerText = 'Reveal';
+      }
+    }
+
+    // Modal Dialog Controls
+    function openRevokeModal(certId, candidate) {
+      const modal = document.getElementById('revoke-modal-backdrop');
+      const targetLabel = document.getElementById('modal-target-cert');
+      if (targetLabel) {
+        targetLabel.innerText = 'Target: ' + certId + ' (' + candidate + ')';
+      }
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      const reasonInput = document.getElementById('revoke-reason');
+      if (reasonInput) reasonInput.focus();
+    }
+
+    function closeRevokeModal() {
+      const modal = document.getElementById('revoke-modal-backdrop');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+      // Reset form
+      const form = document.getElementById('revoke-dialog-form');
+      if (form) form.reset();
+      const counter = document.getElementById('char-counter');
+      if (counter) counter.innerText = '0 / 250 min chars (15)';
+      const err = document.getElementById('revoke-error-msg');
+      if (err) err.classList.add('hidden');
+    }
+
+    function updateCharCount(textarea) {
+      const counter = document.getElementById('char-counter');
+      const length = textarea.value.length;
+      if (counter) {
+        counter.innerText = length + ' / 250 min chars (15)';
+      }
+      const err = document.getElementById('revoke-error-msg');
+      if (err && length >= 15) {
+        err.classList.add('hidden');
+      }
+    }
+
+    function handleRevokeSubmit(e) {
+      e.preventDefault();
+      const textarea = document.getElementById('revoke-reason');
+      const err = document.getElementById('revoke-error-msg');
+      if (!textarea || textarea.value.trim().length < 15) {
+        if (err) err.classList.remove('hidden');
+        return;
+      }
+      // Success feedback in strict institutional tone
+      alert('Audit log recorded: Certificate marked as REVOKED under SecOps Governance protocol.');
+      closeRevokeModal();
+    }
+  </script>
+</body></html>
