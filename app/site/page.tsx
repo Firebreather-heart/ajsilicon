@@ -12,7 +12,7 @@ export default function PublicWebsite() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <main className="site-shell">
+    <main className="site-shell" suppressHydrationWarning>
       <header className="site-nav">
         <div className="site-nav-inner">
           <a className="site-logo" href="#top" aria-label="A.J. Silicon home"><span>A.J.</span><b>Silicon</b></a>
