@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAY-05: Payment Status &amp; Resolution Engine - A.J. Silicon</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#dce1ff",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "primary-fixed": "#dbe2f5",
+            "tertiary": "#000000",
+            "primary": "#000000",
+            "surface-container": "#eaedff",
+            "outline": "#75777c",
+            "on-secondary-container": "#fffbff",
+            "on-primary-container": "#7c8495",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed": "#281809",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-bright": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#575f6e",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-container": "#997f6a",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#141c29",
+            "surface": "#faf8ff",
+            "primary-container": "#141c29",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-surface": "#131b2e",
+            "inverse-surface": "#283044",
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed-variant": "#3f4756",
+            "secondary": "#1d4ed8",
+            "tertiary-fixed": "#fddcc4",
+            "secondary-container": "#4069f2",
+            "on-surface-variant": "#45474c",
+            "tertiary-container": "#281809",
+            "on-secondary-fixed": "#001551",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "background": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-primary": "#bfc6d9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "code-snippet": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input:focus, button:focus, a:focus {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TOP SHELL NAVIGATION -->
+<header class="bg-primary-container text-on-primary docked full-width top h-16 border-b border-outline-variant flex justify-between items-center w-full px-6 sticky top-0 z-50">
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest text-primary font-headline-sm px-3 py-1 rounded flex items-center h-10 border border-outline-variant">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo2BiykcNCLtmMUg5_x1q4R_KIscWjO6OH49bK3wuEXE7ejpE1-kZjyzxWqzEY11Z9sySTDol2KQi9wGeKFHdkRWh2i40SGq0ws0VzQf9icC9RFIxz6PIc_lp1OVdAfE0FaGbHyG8lAuwFNYVykub0uX33fYeuDdf2JgRrr8ijTnAhVkwBrJVHUbHoEIuTqky2kusmMNb92Y-AZBpcP_Sd3QXYhuzoU7j4eCJXWiEt_I3X-X1KIikEuA"/>
+</div>
+<div class="hidden md:flex items-center gap-2 text-on-primary-container text-body-sm font-body-sm">
+<span class="text-on-primary font-label-md">A.J. Silicon Learning Portal</span>
+<span class="text-outline">/</span>
+<span class="text-on-primary-container">Enrolment Checkout</span>
+<span class="text-outline">/</span>
+<span class="text-on-primary font-label-md bg-[#283044] px-2 py-0.5 rounded text-label-sm font-label-sm">Specification PAY-05</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 text-right">
+<div class="text-body-sm font-body-sm text-on-primary font-medium">Chinedu Eze</div>
+<div class="text-label-sm font-label-sm text-on-primary-container">Candidate ID: AJS-14-8812</div>
+</div>
+<button aria-label="Notifications" class="w-10 h-10 min-h-[44px] min-w-[44px] flex items-center justify-center text-on-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button aria-label="Help" class="w-10 h-10 min-h-[44px] min-w-[44px] flex items-center justify-center text-on-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- SUB-HEADER CONTEXT STRIP -->
+<div class="bg-surface-container-lowest border-b border-outline-variant px-6 py-3">
+<div class="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md hover:underline" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Return to Cart</span>
+</a>
+<span class="text-outline-variant">|</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Checkout Flow &gt; Payment Gateway &gt; Exception Handling State</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded border border-[#B91C1C] bg-[#FEF2F2] text-[#B91C1C] text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>Transaction Incomplete</span>
+</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Session WAT: 14:32:08</span>
+</div>
+</div>
+</div>
+<!-- MAIN CANVAS -->
+<main class="flex-1 w-full max-w-[1280px] mx-auto p-4 sm:p-6 lg:p-8 space-y-12">
+<!-- BOARD TITLE & SPECIFICATION HEADER -->
+<div class="border-b border-outline-variant pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="inline-block bg-[#283044] text-on-primary text-label-sm font-label-sm px-2.5 py-1 rounded font-mono mb-2">
+          AUDITABLE TRANSACTION WORKFLOW // SPECIFICATION: PAY-05
+        </div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Payment Resolution &amp; Exception Matrix</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-3xl mt-1">
+          Architectural specification for failed, timed-out, and abandoned checkout flows under the Paystack Nigeria gateway infrastructure. Enforces immediate remediation, seat reservation holding timers, and multi-channel reconciliation for enterprise candidates.
+        </p>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low p-2 rounded border border-outline-variant">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<span>ISACA Accredited Provider | PCI-DSS Compliant Channel</span>
+</div>
+</div>
+<!-- STATE 1: PRIMARY (CARD PAYMENT DECLINED) -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#B91C1C]"></span>
+<h2 class="text-headline-md font-headline-md text-on-surface">State 1: Card Payment Failed / Declined (Primary Default)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">HTTP Gateway Response: 402 Declined</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Main Failure Remediation Card -->
+<div class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm space-y-6">
+<!-- Failure Banner -->
+<div class="bg-[#FEF2F2] border border-[#B91C1C] rounded-lg p-5 flex items-start gap-4">
+<span class="material-symbols-outlined text-[#B91C1C] text-[32px] shrink-0 mt-0.5">error</span>
+<div class="space-y-1">
+<h3 class="text-headline-sm font-headline-sm text-[#B91C1C]">Payment not completed</h3>
+<p class="text-body-sm font-body-sm text-on-surface">
+                The card transaction could not be processed by the issuing bank. Your enrolment remains pending confirmation.
+              </p>
+<div class="mt-3 p-3 bg-white/80 rounded border border-[#B91C1C]/30 text-label-sm font-code-snippet font-mono text-on-surface">
+<span class="font-semibold text-[#B91C1C]">Paystack Gateway Error:</span> "Transaction declined: Insufficient funds or card authorization limit reached (Code: DECLINED_051)"
+              </div>
+</div>
+</div>
+<!-- Interactive Action Buttons -->
+<div class="space-y-3 pt-2">
+<div class="flex flex-col sm:flex-row gap-3">
+<button class="min-h-[44px] px-6 py-2.5 bg-[#0B1320] text-on-primary rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 hover:bg-[#1E293B] transition-colors focus:ring-2 focus:ring-secondary focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span>Try another payment method</span>
+</button>
+<button class="min-h-[44px] px-6 py-2.5 bg-transparent border border-outline text-on-surface rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 hover:bg-[#F1F5F9] transition-colors">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+<span>Retry with this card</span>
+</button>
+</div>
+<div class="flex items-center gap-4 pt-1">
+<a class="inline-flex items-center text-secondary font-label-md text-label-md hover:underline min-h-[44px]" href="#">
+                Change programme / cohort selection
+              </a>
+<span class="text-outline-variant">·</span>
+<a class="inline-flex items-center text-on-surface-variant font-label-md text-label-md hover:underline min-h-[44px]" href="#">
+                Download Pro-forma Invoice (PDF)
+              </a>
+</div>
+</div>
+<!-- Helper Guidance & Seat Reservation Holding Timer -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<div class="text-label-md font-label-md text-on-surface">Seat Hold Guarantee</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+                  Your seat in Cohort 14 is held for <strong class="text-on-surface font-semibold">14:52 minutes</strong>.
+                </div>
+</div>
+</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant bg-white border border-outline-variant px-3 py-2 rounded">
+              Ref: <span class="font-mono text-on-surface font-semibold">AJS-PAY-FAIL-20261005-8812</span>
+</div>
+</div>
+<!-- Support Disclaimer -->
+<p class="text-label-sm font-label-sm text-on-surface-variant leading-relaxed">
+            Need institutional invoice routing or direct corporate remittance? Contact admissions desk: <strong class="text-on-surface">support@ajsilicon.com</strong> or call <strong class="text-on-surface">+234 (01) 497-2281</strong> quoting the payment reference.
+          </p>
+</div>
+<!-- Order Summary Box -->
+<div class="lg:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm space-y-6">
+<div class="border-b border-outline-variant pb-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Itemized Cart Verification</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mt-1">CISA Exam Prep - Cohort 14</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">Schedule: 12 Oct - 18 Dec 2026 · Instructor-Led Virtual</p>
+</div>
+<div class="space-y-3 text-body-sm font-body-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Standard Tuition</span>
+<span class="font-mono text-on-surface font-medium">₦300,000.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>ISACA Aligned Study Pack</span>
+<span class="font-mono text-on-surface font-medium">Included</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Value Added Tax (VAT 7.5%)</span>
+<span class="font-mono text-on-surface font-medium">₦22,500.00</span>
+</div>
+<div class="border-t border-outline-variant pt-3 flex justify-between items-baseline">
+<span class="font-semibold text-on-surface">Total Payable</span>
+<span class="text-headline-sm font-headline-sm font-mono text-on-surface font-bold">₦322,500.00</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded border border-outline-variant space-y-2 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">security</span>
+<span>Audit Registration Assurance</span>
+</div>
+<p>Upon resolved remittance, your LMS credentials and candidate orientation syllabus are unlocked immediately.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- MATRIX GRID: STATE 2 & STATE 3 -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- STATE 2: BANK TRANSFER TIMED OUT / EXPIRED -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm space-y-5">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#B45309]"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">State 2: Dynamic Bank Transfer Session Expired</h3>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+            Session Timeout
+          </span>
+</div>
+<!-- Warning Callout -->
+<div class="bg-[#FFFBEB] border border-[#B45309] rounded-lg p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[24px] shrink-0 mt-0.5">timer_off</span>
+<div class="text-body-sm font-body-sm text-on-surface space-y-1">
+<div class="font-semibold text-[#B45309]">Dynamic bank transfer session expired</div>
+<p>No credit debit detected within the 30-minute validity window for dedicated virtual account <span class="font-mono font-medium">0123984711 (Titan Trust / Paystack)</span>.</p>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant space-y-2">
+<p>If funds were already debited from your financial institution, NIBSS settlement will typically reverse or settle within 2 business hours. Do not initiate an uncoordinated duplicate payment.</p>
+</div>
+<div class="pt-2 flex flex-wrap gap-3">
+<button class="min-h-[44px] px-5 py-2.5 bg-[#0B1320] text-on-primary rounded-lg text-label-md font-label-md flex items-center gap-2 hover:bg-[#1E293B] transition-colors">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+<span>Generate new bank transfer account</span>
+</button>
+<button class="min-h-[44px] px-5 py-2.5 bg-transparent border border-outline text-on-surface rounded-lg text-label-md font-label-md flex items-center gap-2 hover:bg-[#F1F5F9] transition-colors">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+<span>Pay with Card / USSD</span>
+</button>
+</div>
+</section>
+<!-- STATE 3: ABANDONED CHECKOUT RECOVERY -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm space-y-5">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">State 3: Abandoned Checkout Recovery State</h3>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+            Cart Restored
+          </span>
+</div>
+<!-- Info Callout -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[24px] shrink-0 mt-0.5">bookmark_added</span>
+<div class="text-body-sm font-body-sm text-on-surface space-y-1">
+<div class="font-semibold text-[#1D4ED8]">Resume your enrolment in CISA Exam Prep - Cohort 14</div>
+<p>You left checkout previously. <strong class="text-on-surface font-semibold">6 seats remaining</strong> in this cohort before cohort close on Friday.</p>
+</div>
+</div>
+<!-- Cart Summary Detail -->
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant flex justify-between items-center">
+<div>
+<div class="text-label-md font-label-md text-on-surface font-semibold">Saved Cart: Chinedu Eze</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant font-mono">VAT ID: AJS-NG-VAT-891 · Cart ID: #994821</div>
+</div>
+<div class="text-right">
+<div class="text-headline-sm font-headline-sm font-mono font-bold text-on-surface">₦322,500.00</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Inclusive of all taxes</div>
+</div>
+</div>
+<div class="pt-2 flex items-center gap-3">
+<button class="min-h-[44px] w-full px-5 py-2.5 bg-[#0B1320] text-on-primary rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 hover:bg-[#1E293B] transition-colors">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Instant 1-Click Paystack Checkout</span>
+</button>
+</div>
+</section>
+</div>
+<!-- STATE 4: BANK NETWORK / GATEWAY ERROR & RECONCILIATION -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm space-y-6">
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#75777C]"></span>
+<h2 class="text-headline-md font-headline-md text-on-surface">State 4: Bank Interswitch / NIBSS Gateway Timeout (Self-Reconciliation)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-mono">Status: 504 Gateway Timeout</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+<div class="md:col-span-7 space-y-3">
+<div class="bg-[#FFFBEB] border border-[#B45309] rounded-lg p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[24px] shrink-0 mt-0.5">cloud_off</span>
+<div class="text-body-sm font-body-sm text-on-surface space-y-1">
+<div class="font-semibold text-[#B45309]">Your bank did not respond in time (Issuer Timeout)</div>
+<p>If your account was debited, <strong class="text-on-surface">please do not pay again</strong>. Enter your bank retrieval reference (RRN), session ID, or Paystack reference below to instantly poll the switch and update your enrolment.</p>
+</div>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">
+            Supported transaction switches: Paystack Nigeria, NIBSS Instant Payments (NIP), Interswitch WebPAY.
+          </p>
+</div>
+<div class="md:col-span-5 bg-surface-container-low p-5 rounded-xl border border-outline-variant space-y-4">
+<label class="block text-label-md font-label-md text-on-surface font-medium" for="rrn-input">
+            Verify Debited Transaction Reference / RRN:
+          </label>
+<div class="flex flex-col sm:flex-row gap-2">
+<input class="flex-1 min-h-[44px] h-11 px-3 bg-white border border-[#64748B] rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-[#475569] focus:border-secondary focus:ring-2 focus:ring-secondary focus:outline-none" id="rrn-input" placeholder="e.g. 000013928173 or pstk_991823" type="text"/>
+<button class="min-h-[44px] px-5 py-2.5 bg-[#0B1320] text-on-primary rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 hover:bg-[#1E293B] transition-colors shrink-0">
+<span class="material-symbols-outlined text-[18px]">search_check</span>
+<span>Check Status</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span>Look for the 12-digit number on your bank SMS / debit alert.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: MOBILE SPECIFICATION VIEW (390PX VIEWPORT COMPLIANCE) -->
+<section class="border-t border-outline-variant pt-8 space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">State 5: Mobile Viewport Specification (390px Viewport Simulation)</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Demonstration of State 1 (Payment Declined) under constrained 390px mobile viewport conforming strictly to the 44px minimum touch target floor.</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low px-3 py-1 rounded border border-outline-variant self-start">Screen 390 × 844 px</span>
+</div>
+<div class="flex justify-center p-4 bg-surface-container-low rounded-xl border border-outline-variant">
+<!-- 390px Mobile Frame -->
+<div class="w-[390px] bg-white border-2 border-outline-variant rounded-2xl shadow-xl overflow-hidden flex flex-col">
+<!-- Mobile App Header -->
+<div class="bg-primary-container h-14 px-4 flex items-center justify-between border-b border-outline-variant text-on-primary">
+<div class="bg-surface-container-lowest text-primary font-headline-sm px-2 py-0.5 rounded text-xs flex items-center h-8">
+<img alt="A.J. Silicon Logo" class="h-4 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzcSr94-IwaE1tVY1DTxs_3cJHsM1swk1VLEtqLTbxRATbKiLQOGwfL83UPOU4c7D1YlFrn1oFLjbH8ty1gU7w-01qOHvCSPtM8wc7fr6FbzjaOz7WeFdOzP_rk7MtGVsQTGVubT25YtdPe42PfZiXUt0EPEXBu_dCAB5c-GTKA7H37Yc0m7Klif17V-8GoXc-CpyS5I_fg_UpqEQysJ_pRzlQMPW-bw2FG_d8W6LWg6ov-jEJ64KOIw"/>
+</div>
+<div class="text-label-sm font-label-sm font-medium">Checkout Status</div>
+<button aria-label="Close" class="w-11 h-11 flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Mobile Content Scroll Area -->
+<div class="p-4 space-y-4">
+<!-- Mobile Error Banner -->
+<div class="bg-[#FEF2F2] border border-[#B91C1C] rounded-lg p-3.5 space-y-2">
+<div class="flex items-center gap-2 text-[#B91C1C]">
+<span class="material-symbols-outlined text-[22px]">error</span>
+<span class="font-headline-sm text-[16px] leading-tight">Payment not completed</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface leading-normal">
+                Card declined by issuing bank. Insufficient funds or limit reached.
+              </p>
+<div class="bg-white/90 p-2 rounded border border-[#B91C1C]/30 text-label-sm font-mono text-[11px] text-on-surface">
+                Code: DECLINED_051 (Paystack)
+              </div>
+</div>
+<!-- Mobile Order Summary Card -->
+<div class="border border-outline-variant rounded-lg p-3.5 space-y-2.5 bg-surface-bright">
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Order Overview</div>
+<div class="font-semibold text-on-surface text-body-sm font-body-sm">CISA Exam Prep - Cohort 14</div>
+<div class="space-y-1 text-label-sm font-label-sm border-t border-outline-variant pt-2">
+<div class="flex justify-between text-on-surface-variant">
+<span>Tuition:</span>
+<span class="font-mono text-on-surface">₦300,000</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>VAT (7.5%):</span>
+<span class="font-mono text-on-surface">₦22,500</span>
+</div>
+<div class="flex justify-between font-bold text-on-surface text-body-sm pt-1 border-t border-dashed border-outline-variant">
+<span>Total:</span>
+<span class="font-mono text-[16px]">₦322,500</span>
+</div>
+</div>
+</div>
+<!-- Mobile Holding Timer -->
+<div class="p-2.5 rounded bg-[#FFFBEB] border border-[#B45309] text-label-sm font-label-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[#B45309] text-[18px]">timer</span>
+<span>Seat reserved for: <strong>14:52 mins</strong></span>
+</div>
+<!-- Mobile Action Buttons (Full 44px compliant) -->
+<div class="space-y-2.5 pt-1">
+<button class="w-full h-11 min-h-[44px] bg-[#0B1320] text-on-primary rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 font-medium">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>Try another payment method</span>
+</button>
+<button class="w-full h-11 min-h-[44px] bg-white border border-[#64748B] text-on-surface rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 font-medium">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Retry with this card</span>
+</button>
+<a class="w-full h-11 min-h-[44px] flex items-center justify-center text-secondary text-label-md font-label-md hover:underline" href="#">
+                Change programme / cohort
+              </a>
+</div>
+<!-- Mobile Reference Code & Contact -->
+<div class="text-center pt-2 pb-2 border-t border-outline-variant text-[11px] text-on-surface-variant">
+              Ref: <span class="font-mono font-medium text-on-surface">AJS-PAY-FAIL-20261005-8812</span><br/>
+              Support: support@ajsilicon.com
+            </div>
+</div>
+<!-- Mobile Simulated Bottom Nav Indicator -->
+<div class="bg-surface-container-low p-2 flex justify-center border-t border-outline-variant">
+<div class="w-32 h-1 bg-outline-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- AUDIT FOOTER -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant mt-16 py-6 px-6 text-on-surface-variant text-label-sm font-label-sm">
+<div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-4">
+<span>© 2026 A.J. Silicon Training Centre. All rights reserved.</span>
+<span class="text-outline-variant">·</span>
+<span>ISACA Accredited Channel</span>
+<span class="text-outline-variant">·</span>
+<span>CBN Regulatory Payment Guidelines Compliant</span>
+</div>
+<div class="font-mono text-on-surface-variant">
+        ENV: PROD-NG-PAYSTACK // ENGINE: PAY-05_V2.4
+      </div>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>

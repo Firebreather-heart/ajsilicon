@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>21 Awaiting bank transfer — Specification Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0B1320",
+            "outline": "#75777e",
+            "inverse-on-surface": "#ebf1ff",
+            "on-secondary-fixed": "#002113",
+            "audit-pass-mint": "#059669",
+            "outline-variant": "#c5c6cd",
+            "surface-container-highest": "#d5e3fd",
+            "background": "#F8FAFC",
+            "surface-navy-dark": "#0B1320",
+            "on-surface": "#0F172A",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-canvas": "#F8FAFC",
+            "on-tertiary-container": "#c76c00",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#000000",
+            "surface-dim": "#ccdbf4",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-tertiary-fixed": "#2f1500",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#233144",
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary-fixed-variant": "#39475f",
+            "tertiary-fixed": "#ffdcc3",
+            "surface-card": "#FFFFFF",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-fixed-variant": "#005236",
+            "pedigree-amber-light": "#F59E0B",
+            "surface-variant": "#d5e3fd",
+            "on-primary-fixed": "#0d1c32",
+            "secondary-fixed": "#6ffbbe",
+            "primary-fixed": "#d6e3ff",
+            "error": "#B91C1C",
+            "on-primary-container": "#76849f",
+            "surface-slate-tech": "#1E293B",
+            "surface-container-low": "#eff4ff",
+            "surface-container-high": "#dde9ff",
+            "error-container": "#FEF2F2",
+            "primary-container": "#0B1320",
+            "on-secondary": "#ffffff",
+            "surface-container": "#e6eeff",
+            "surface-bright": "#f8f9ff",
+            "secondary": "#047857",
+            "surface-tint": "#515f78",
+            "on-secondary-container": "#00714d",
+            "inverse-primary": "#b9c7e4",
+            "on-primary": "#ffffff",
+            "on-background": "#0F172A",
+            "on-error-container": "#7F1D1D",
+            "primary-fixed-dim": "#b9c7e4",
+            "on-surface-variant": "#475569",
+            "border-structural": "#E2E8F0",
+            "border-hairline": "#CBD5E1",
+            "link-institutional": "#1D4ED8",
+            "info-bg": "#EFF6FF",
+            "info-text": "#1D4ED8",
+            "success-bg": "#ECFDF5",
+            "success-text": "#047857",
+            "warning-bg": "#FFFBEB",
+            "warning-text": "#B45309"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem"
+          },
+          fontFamily: {
+            "title-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "telemetry-data": ["Inter", "monospace"],
+            "body-md": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "title-md": ["1.125rem", { lineHeight: "1.625rem", fontWeight: "600" }],
+            "body-sm": ["0.875rem", { lineHeight: "1.25rem", fontWeight: "400" }],
+            "headline-lg": ["2rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "label-sm": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.04em", fontWeight: "600" }],
+            "telemetry-data": ["0.875rem", { lineHeight: "1.25rem", fontWeight: "500" }],
+            "body-md": ["1rem", { lineHeight: "1.5rem", fontWeight: "400" }],
+            "label-md": ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.01em", fontWeight: "500" }],
+            "headline-sm": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "headline-md": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["1.125rem", { lineHeight: "1.75rem", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 3s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#EEF2F6] text-on-surface antialiased font-body-md py-10 px-4 md:px-8">
+<!-- ========================================== -->
+<!-- SPECIFICATION BOARD HEADER                 -->
+<!-- ========================================== -->
+<header class="max-w-[1440px] mx-auto mb-10 pb-6 border-b border-[#CBD5E1]">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="font-label-sm text-label-sm text-[#475569] uppercase tracking-wider mb-1.5 flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-[#1D4ED8]"></span>
+          DESIGN SPECIFICATION · SCREEN 21 Institutional Checkout Flow
+        </p>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] tracking-tight">
+          21 Awaiting bank transfer — Complete Specification Board
+        </h1>
+</div>
+<div class="bg-surface-card border border-border-structural rounded px-4 py-2 text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">Viewport Canvas: 1440px Desktop Grid · Lagos Core Engine</p>
+<p class="font-telemetry-data text-telemetry-data text-[#475569]">System Tokens: Strict 8px | Contrast 4.5:1+ | Touch 44px min</p>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto space-y-16">
+<!-- ========================================================================= -->
+<!-- VARIANT 1: STATE 1: WAITING (COUNTDOWN RUNNING)                           -->
+<!-- ========================================================================= -->
+<section class="border border-border-structural bg-surface-canvas rounded-xl shadow-sm overflow-hidden" id="variant-waiting">
+<!-- Variant Header Tag Bar -->
+<div class="bg-[#FFFFFF] border-b border-border-structural px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#EFF6FF] border border-[#BFDBFE] text-[#1D4ED8] font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+            State 1
+          </span>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">
+            Waiting (Countdown running, Desktop 1440px)
+          </h2>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Telemetry: Webhook polling active (interval: 3500ms)</span>
+</div>
+</div>
+<!-- Canvas Frame: 1440px Emulation -->
+<div class="w-full bg-[#FFFFFF]">
+<!-- Public Institutional Top Bar (Navy #0B1320) -->
+<div class="w-full bg-[#0B1320] border-b border-[#1E293B] px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<!-- Official Logo on light rounded plate -->
+<div class="bg-white rounded px-2.5 py-1 flex items-center shadow-xs">
+<img alt="A.J. Silicon Official Brandmark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj_UYHQsZvAcg-dXFX8EDzcyj5DddpAEkIKLr-D__fH-ih_vKvQ50YhFGpA5BT5aAY5kiSLD2IPDzJVjWqEMrOEhTm6MQlH-Fn3I5fUAmktPFwQbAAeiH8ySAT9AKXjRhJP4Fw9EMAvqyqhVrFHelj8Ydp41FqW39fi4HRfpF5YbjjnZRsT8yeRpJRx6pyUAfKXH_cy0gOK5QaC4pYlooDzlU3FRNAXQNLG7o1Bq2dfsThIB_BpBTGlJ2vtzr3H8E4mDw"/>
+</div>
+<nav aria-label="Public Navigation" class="flex items-center gap-6">
+<a class="font-body-sm text-body-sm text-[#E2E8F0] hover:text-white transition-colors duration-150" href="#">Programmes</a>
+<a class="font-body-sm text-body-sm text-[#E2E8F0] hover:text-white transition-colors duration-150" href="#">Workshops</a>
+</nav>
+</div>
+<!-- Trailing Institutional User Chip -->
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-2 bg-[#1E293B] border border-[#334155] rounded-full px-3.5 py-1.5 text-white font-label-md text-label-md">
+<span class="material-symbols-outlined text-[#93C5FD] text-[18px]">account_circle</span>
+<span>Chinedu Eze</span>
+</span>
+</div>
+</div>
+<!-- Canvas Body Content -->
+<div class="max-w-5xl mx-auto px-6 py-10">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-body-sm text-body-sm text-[#475569] mb-6">
+<span>Programmes</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>CISA Exam Prep</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>Select cohort</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>Checkout</span>
+<span class="text-[#CBD5E1]">/</span>
+<span class="text-on-surface font-medium">Bank transfer</span>
+</nav>
+<!-- Section Headings -->
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Complete your bank transfer</h3>
+<p class="font-body-md text-body-md text-[#475569] mt-1">
+              Transfer the exact amount to the dedicated Paystack virtual account below. The account is valid for this transaction only.
+            </p>
+</div>
+<!-- Structured 2-Column Checkout Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left / Main Transfer Card (Col 7) -->
+<div class="lg:col-span-7 bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-xs">
+<!-- Live Status Indicator Bar -->
+<div class="flex items-center justify-between bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-3.5 mb-6">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#1D4ED8] animate-spin-slow text-[20px]">sync</span>
+<span class="font-label-md text-label-md text-[#1D4ED8] font-semibold">Waiting for your transfer</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#1D4ED8]">Checking automatically</span>
+</div>
+<!-- 30-Minute Countdown Timer Block -->
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-5 mb-6">
+<span class="font-body-sm text-body-sm text-[#475569]">Session validity</span>
+<div class="inline-flex items-center gap-1.5 font-telemetry-data text-telemetry-data font-bold text-[#0F172A] bg-[#F8FAFC] border border-[#E2E8F0] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[18px] text-[#475569]">schedule</span>
+<span>28:42 remaining</span>
+</div>
+</div>
+<!-- Amount Row -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4 mb-6">
+<span class="block font-label-sm text-label-sm text-[#475569] uppercase font-semibold">Amount to transfer</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-headline-md text-headline-md text-[#0F172A] font-bold">₦300,000</span>
+<button class="min-h-[44px] px-4 py-2 bg-white border border-[#64748B] hover:border-[#0F172A] text-[#0F172A] rounded font-label-md text-label-md font-medium inline-flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Copy amount</span>
+</button>
+</div>
+</div>
+<!-- Bank Details Grid -->
+<div class="space-y-4 border border-[#E2E8F0] rounded-lg p-5 mb-8">
+<div class="flex justify-between items-center py-1 border-b border-[#F1F5F9]">
+<span class="font-body-sm text-body-sm text-[#475569]">Bank name</span>
+<span class="font-body-md text-body-md text-[#0F172A] font-semibold">Sample Bank</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-[#F1F5F9]">
+<div>
+<span class="block font-body-sm text-body-sm text-[#475569]">Account number</span>
+<span class="font-telemetry-data text-[1.25rem] text-[#0F172A] font-bold tracking-wider">9012345678</span>
+</div>
+<button class="min-h-[44px] px-4 py-2 bg-white border border-[#64748B] hover:border-[#0F172A] text-[#0F172A] rounded font-label-md text-label-md font-medium inline-flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Copy number</span>
+</button>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-[#F1F5F9]">
+<span class="font-body-sm text-body-sm text-[#475569]">Account name</span>
+<span class="font-body-md text-body-md text-[#0F172A] font-medium">A.J. Silicon (Paystack)</span>
+</div>
+<div class="pt-1">
+<p class="font-label-sm text-label-sm text-[#475569] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">lock</span>
+                    Single-use account generated for Chinedu Eze
+                  </p>
+</div>
+</div>
+<!-- Primary Action & Helper -->
+<div class="space-y-3">
+<button class="w-full min-h-[44px] bg-[#0B1320] hover:bg-[#1E293B] text-white rounded font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>I have paid</span>
+</button>
+<p class="font-body-sm text-body-sm text-[#475569] text-center">
+                  We confirm payment automatically. This button only checks the status.
+                </p>
+<div class="text-center pt-2">
+<a class="inline-flex items-center justify-center min-h-[44px] px-4 font-body-sm text-body-sm text-[#1D4ED8] hover:underline" href="#">
+                    Cancel
+                  </a>
+</div>
+</div>
+</div>
+<!-- Right Column / Order Recap Card (Col 5) -->
+<div class="lg:col-span-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-6 shadow-xs">
+<h4 class="font-title-md text-title-md text-[#0F172A] font-semibold border-b border-[#E2E8F0] pb-3 mb-4">
+                Order summary
+              </h4>
+<div class="space-y-3 pb-5 border-b border-[#E2E8F0]">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-body-md text-body-md text-[#0F172A] font-medium block">CISA Exam Prep</span>
+<span class="font-label-sm text-label-sm text-[#475569]">Virtual, CISA Cohort 14</span>
+</div>
+<span class="font-telemetry-data text-telemetry-data text-[#0F172A] font-medium">₦279,069.77</span>
+</div>
+</div>
+<div class="py-4 space-y-2 border-b border-[#E2E8F0]">
+<div class="flex justify-between items-center font-body-sm text-body-sm text-[#475569]">
+<span>Subtotal</span>
+<span class="font-telemetry-data">₦279,069.77</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-[#475569]">
+<span>VAT (7.5% standard rate)</span>
+<span class="font-telemetry-data">₦20,930.23</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-[#E2E8F0]">
+<span class="font-title-md text-title-md text-[#0F172A] font-bold">Total due</span>
+<span class="font-headline-sm text-headline-sm text-[#0F172A] font-bold">₦300,000</span>
+</div>
+<!-- Security Note -->
+<div class="mt-6 flex items-start gap-2.5 p-3 bg-white border border-[#E2E8F0] rounded">
+<span class="material-symbols-outlined text-[#047857] text-[20px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-[#475569]">
+                  Payments are processed by Paystack. Transferred funds are verified instantly via bank webhook.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: STATE 2: EXPIRED (ACCOUNT EXPIRED)                             -->
+<!-- ========================================================================= -->
+<section class="border border-border-structural bg-surface-canvas rounded-xl shadow-sm overflow-hidden" id="variant-expired">
+<!-- Variant Header Tag Bar -->
+<div class="bg-[#FFFFFF] border-b border-border-structural px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#FEF2F2] border border-[#FECACA] text-[#B91C1C] font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+            State 2
+          </span>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">
+            Expired (Account Expired, Desktop 1440px)
+          </h2>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-[#B91C1C] font-medium">Session Terminated: Dynamic account revoked</span>
+</div>
+</div>
+<!-- Canvas Frame: 1440px Emulation -->
+<div class="w-full bg-[#FFFFFF]">
+<!-- Public Institutional Top Bar (Navy #0B1320) -->
+<div class="w-full bg-[#0B1320] border-b border-[#1E293B] px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="bg-white rounded px-2.5 py-1 flex items-center shadow-xs">
+<img alt="A.J. Silicon Official Brandmark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbEuenC2brAFiol_-xmNMjS8XnyRyZ-OVaY-A8t6xOA4ZNYAXQmdH2yWbBviC3wNkPjY15YdpgnjJsiso3achq3wi0RATcUOtq-8ELTG_mdk3_D6ZMhV992GLueBtUtZuc5k5bXM3Ff1BPLhaw95zt9wMKYYNPotArMnftT9cUzeQqaM1uplL6XV8bASfKNo10JXZyToDSjmwRXOoUMsa3LHFs0q7x_XdkgcnvqsQW7SEGiQfNQW4-yGbJIMiCBiTHN8E"/>
+</div>
+<nav aria-label="Public Navigation" class="flex items-center gap-6">
+<a class="font-body-sm text-body-sm text-[#E2E8F0] hover:text-white transition-colors duration-150" href="#">Programmes</a>
+<a class="font-body-sm text-body-sm text-[#E2E8F0] hover:text-white transition-colors duration-150" href="#">Workshops</a>
+</nav>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-2 bg-[#1E293B] border border-[#334155] rounded-full px-3.5 py-1.5 text-white font-label-md text-label-md">
+<span class="material-symbols-outlined text-[#93C5FD] text-[18px]">account_circle</span>
+<span>Chinedu Eze</span>
+</span>
+</div>
+</div>
+<!-- Canvas Body Content -->
+<div class="max-w-5xl mx-auto px-6 py-10">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-body-sm text-body-sm text-[#475569] mb-6">
+<span>Programmes</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>CISA Exam Prep</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>Select cohort</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>Checkout</span>
+<span class="text-[#CBD5E1]">/</span>
+<span class="text-on-surface font-medium">Bank transfer</span>
+</nav>
+<!-- Section Headings -->
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Complete your bank transfer</h3>
+<p class="font-body-md text-body-md text-[#475569] mt-1">
+              Transfer the exact amount to the dedicated Paystack virtual account below. The account is valid for this transaction only.
+            </p>
+</div>
+<!-- Structured 2-Column Checkout Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left / Main Transfer Card (Col 7) -->
+<div class="lg:col-span-7 bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-xs">
+<!-- Top Alert Banner: Danger Token -->
+<div class="flex items-center gap-3 bg-[#FEF2F2] border border-[#B91C1C] rounded-lg p-4 mb-6 text-[#B91C1C]">
+<span class="material-symbols-outlined text-[22px] shrink-0">error</span>
+<span class="font-label-md text-label-md font-semibold">This account number has expired. Start again.</span>
+</div>
+<!-- Expired Countdown Timer Block -->
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-5 mb-6">
+<span class="font-body-sm text-body-sm text-[#475569]">Session validity</span>
+<div class="inline-flex items-center gap-1.5 font-telemetry-data text-telemetry-data font-bold text-[#B91C1C] bg-[#FEF2F2] border border-[#FECACA] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[18px] text-[#B91C1C]">timer_off</span>
+<span>00:00 (Expired)</span>
+</div>
+</div>
+<!-- Account details (greyed out / struck-through / opacity 0.5) -->
+<div class="opacity-50 pointer-events-none select-none space-y-4">
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4">
+<span class="block font-label-sm text-label-sm text-[#475569] uppercase font-semibold">Amount to transfer</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-headline-md text-headline-md text-[#0F172A] font-bold line-through">₦300,000</span>
+<button class="min-h-[44px] px-4 py-2 bg-white border border-[#CBD5E1] text-[#94A3B8] rounded font-label-md text-label-md font-medium inline-flex items-center gap-2" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Copy amount</span>
+</button>
+</div>
+</div>
+<div class="space-y-4 border border-[#E2E8F0] rounded-lg p-5">
+<div class="flex justify-between items-center py-1 border-b border-[#F1F5F9]">
+<span class="font-body-sm text-body-sm text-[#475569]">Bank name</span>
+<span class="font-body-md text-body-md text-[#0F172A] font-semibold line-through">Sample Bank</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-[#F1F5F9]">
+<div>
+<span class="block font-body-sm text-body-sm text-[#475569]">Account number</span>
+<span class="font-telemetry-data text-[1.25rem] text-[#0F172A] font-bold line-through tracking-wider">9012345678</span>
+</div>
+<button class="min-h-[44px] px-4 py-2 bg-white border border-[#CBD5E1] text-[#94A3B8] rounded font-label-md text-label-md font-medium inline-flex items-center gap-2" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Copy number</span>
+</button>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-sm text-body-sm text-[#475569]">Account name</span>
+<span class="font-body-md text-body-md text-[#0F172A] font-medium line-through">A.J. Silicon (Paystack)</span>
+</div>
+</div>
+</div>
+<!-- Primary Action: Start Again -->
+<div class="space-y-3 mt-8">
+<button class="w-full min-h-[44px] bg-[#0B1320] hover:bg-[#1E293B] text-white rounded font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Start again</span>
+</button>
+<p class="font-body-sm text-body-sm text-[#475569] text-center">
+                  Expired dynamic accounts cannot receive funds. Please generate a fresh checkout session.
+                </p>
+<div class="text-center pt-2">
+<a class="inline-flex items-center justify-center min-h-[44px] px-4 font-body-sm text-body-sm text-[#1D4ED8] hover:underline" href="#">
+                    Cancel
+                  </a>
+</div>
+</div>
+</div>
+<!-- Right Column / Order Recap Card (Col 5) -->
+<div class="lg:col-span-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-6 shadow-xs opacity-75">
+<h4 class="font-title-md text-title-md text-[#0F172A] font-semibold border-b border-[#E2E8F0] pb-3 mb-4">
+                Order summary
+              </h4>
+<div class="space-y-3 pb-5 border-b border-[#E2E8F0]">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-body-md text-body-md text-[#0F172A] font-medium block">CISA Exam Prep</span>
+<span class="font-label-sm text-label-sm text-[#475569]">Virtual, CISA Cohort 14</span>
+</div>
+<span class="font-telemetry-data text-telemetry-data text-[#0F172A] font-medium">₦279,069.77</span>
+</div>
+</div>
+<div class="py-4 space-y-2 border-b border-[#E2E8F0]">
+<div class="flex justify-between items-center font-body-sm text-body-sm text-[#475569]">
+<span>Subtotal</span>
+<span class="font-telemetry-data">₦279,069.77</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-[#475569]">
+<span>VAT (7.5% standard rate)</span>
+<span class="font-telemetry-data">₦20,930.23</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-[#E2E8F0]">
+<span class="font-title-md text-title-md text-[#0F172A] font-bold">Total due</span>
+<span class="font-headline-sm text-headline-sm text-[#0F172A] font-bold">₦300,000</span>
+</div>
+<div class="mt-6 flex items-start gap-2.5 p-3 bg-white border border-[#E2E8F0] rounded">
+<span class="material-symbols-outlined text-[#64748B] text-[20px] shrink-0 mt-0.5">lock_clock</span>
+<p class="font-body-sm text-body-sm text-[#475569]">
+                  Invoice reserved for student: Chinedu Eze. Uncompleted orders are unlocked after 30 minutes.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 3: STATE 3: CONFIRMED (PAYMENT CONFIRMED)                         -->
+<!-- ========================================================================= -->
+<section class="border border-border-structural bg-surface-canvas rounded-xl shadow-sm overflow-hidden" id="variant-confirmed">
+<!-- Variant Header Tag Bar -->
+<div class="bg-[#FFFFFF] border-b border-border-structural px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#ECFDF5] border border-[#A7F3D0] text-[#047857] font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+            State 3
+          </span>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">
+            Confirmed (Payment Confirmed, Desktop 1440px)
+          </h2>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-[#047857] font-medium">Bank Webhook: 200 OK · Instant Verification</span>
+</div>
+</div>
+<!-- Canvas Frame: 1440px Emulation -->
+<div class="w-full bg-[#FFFFFF]">
+<!-- Public Institutional Top Bar (Navy #0B1320) -->
+<div class="w-full bg-[#0B1320] border-b border-[#1E293B] px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="bg-white rounded px-2.5 py-1 flex items-center shadow-xs">
+<img alt="A.J. Silicon Official Brandmark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI9GS-1q-QNwO8bkzPkWl6qYMkYllZrCO4hbe3NlUnRv_Xxv9GmsmAgne2odTH6o0N6ZAdBOZJAW0fwz39XluoLw17DV9aG5_4cEnqlxkpLP50fzRVtqN8nzo4plkBVvWSaRgqQNnFgwBr8COtU2OkfZaSsdojMM4CRujKScVwybbBBo5v5u_rrrBihLjF1FZJReeY9DlDPnhtmQTwhIN7i8IBVHhi1lEUf7eNXjpsU8J14ijyBbKUa2wi_7CKIGoC7e8"/>
+</div>
+<nav aria-label="Public Navigation" class="flex items-center gap-6">
+<a class="font-body-sm text-body-sm text-[#E2E8F0] hover:text-white transition-colors duration-150" href="#">Programmes</a>
+<a class="font-body-sm text-body-sm text-[#E2E8F0] hover:text-white transition-colors duration-150" href="#">Workshops</a>
+</nav>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-2 bg-[#1E293B] border border-[#334155] rounded-full px-3.5 py-1.5 text-white font-label-md text-label-md">
+<span class="material-symbols-outlined text-[#93C5FD] text-[18px]">account_circle</span>
+<span>Chinedu Eze</span>
+</span>
+</div>
+</div>
+<!-- Canvas Body Content -->
+<div class="max-w-3xl mx-auto px-6 py-12">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center justify-center gap-2 font-body-sm text-body-sm text-[#475569] mb-8">
+<span>Programmes</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>CISA Exam Prep</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>Select cohort</span>
+<span class="text-[#CBD5E1]">/</span>
+<span>Checkout</span>
+<span class="text-[#CBD5E1]">/</span>
+<span class="text-on-surface font-medium">Payment confirmed</span>
+</nav>
+<!-- Main Confirmation Card (Centered) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-8 sm:p-10 shadow-xs text-center">
+<!-- Success Icon Badge -->
+<div class="w-16 h-16 bg-[#ECFDF5] border border-[#A7F3D0] rounded-full flex items-center justify-center mx-auto mb-5">
+<span class="material-symbols-outlined text-[#047857] text-[36px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#0F172A] font-bold">Payment confirmed</h3>
+<p class="font-body-lg text-body-lg text-[#047857] font-semibold mt-1">
+              ₦300,000 received via Bank transfer
+            </p>
+<!-- Verification Metadata Details Table -->
+<div class="mt-8 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-5 text-left space-y-3">
+<div class="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-[#E2E8F0]">
+<span class="font-body-sm text-body-sm text-[#475569]">Transaction reference</span>
+<span class="font-telemetry-data text-telemetry-data text-[#0F172A] font-semibold">PSTK-TRF-20261005-9012</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-[#E2E8F0]">
+<span class="font-body-sm text-body-sm text-[#475569]">Timestamp</span>
+<span class="font-body-sm text-body-sm text-[#0F172A] font-medium">05 Oct 2026 at 14:38 WAT</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:justify-between py-1">
+<span class="font-body-sm text-body-sm text-[#475569]">Enrolled programme</span>
+<span class="font-body-sm text-body-sm text-[#0F172A] font-medium">Enrolled in CISA Exam Prep · Cohort 14 (Virtual)</span>
+</div>
+</div>
+<!-- Actions Region -->
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-8 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded font-label-md text-label-md font-semibold transition-colors inline-flex items-center justify-center gap-2" type="button">
+<span>Continue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<a class="w-full sm:w-auto min-h-[44px] px-6 border border-[#CBD5E1] bg-white hover:bg-[#F8FAFC] text-[#1D4ED8] rounded font-label-md text-label-md font-semibold transition-colors inline-flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download receipt (PDF)</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footnote / Engineering Signoff -->
+<footer class="max-w-[1440px] mx-auto mt-12 pt-6 border-t border-[#CBD5E1] flex flex-col sm:flex-row items-center justify-between text-[#475569] font-body-sm text-body-sm">
+<p>© 2025 A.J. Silicon Academy. Institutional Systems Architecture. Lagos, Nigeria.</p>
+<div class="flex items-center gap-4 mt-2 sm:mt-0 font-telemetry-data text-[12px]">
+<span>ENGINEERING SPEC V2.1</span>
+<span>·</span>
+<span>PAYSTACK WEBHOOK ADAPTER 1.4</span>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transactions &amp; Ledger — A.J. Silicon Secure Portal</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as required -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-container": "#281809",
+            "on-primary-fixed-variant": "#3f4756",
+            "error": "#ba1a1a",
+            "outline-variant": "#c5c6cc",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-container": "#eaedff",
+            "primary-container": "#0B1320", // Aligned with Design System primary navy shell
+            "secondary-container": "#4069f2",
+            "on-tertiary-container": "#997f6a",
+            "surface-tint": "#575f6e",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed": "#fddcc4",
+            "secondary": "#1d4ed8",
+            "surface-dim": "#d2d9f4",
+            "on-surface-variant": "#475569", // Design system muted text #475569
+            "on-primary-fixed": "#141c29",
+            "secondary-fixed": "#dce1ff",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f2f3ff",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed-dim": "#b7c4ff",
+            "outline": "#75777c",
+            "on-secondary-fixed": "#001551",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-background": "#0F172A",
+            "primary-fixed": "#dbe2f5",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-secondary-container": "#fffbff",
+            "surface-variant": "#dae2fd",
+            "on-primary-container": "#7c8495",
+            "inverse-surface": "#1e293b",
+            "primary": "#0B1320",
+            "on-tertiary-fixed": "#281809",
+            "surface-bright": "#faf8ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-error": "#ffffff",
+            "on-surface": "#0F172A", // Design system text #0F172A
+            "background": "#F8FAFC",
+            "on-secondary": "#ffffff",
+            "surface": "#ffffff",
+            "tertiary": "#000000"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "1rem",
+            "space-xs": "0.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Institutional focus ring */
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col bg-background text-on-surface overflow-x-hidden">
+<!-- ========================================== -->
+<!-- Top Shell Navigation (Shared Component)    -->
+<!-- ========================================== -->
+<header class="fixed top-0 left-0 right-0 h-16 bg-primary-container text-surface-container-lowest z-50 px-6 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-6">
+<!-- High-contrast isolated white plate for Logo -->
+<div class="h-10 px-3 bg-surface-container-lowest rounded flex items-center justify-center">
+<img alt="A.J. Silicon Logo" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApe_65vANteNooUfOT8P8PBQqTWwLTYvCRrbVLvaPixxOD9jExte1BLEr9uyu4LTJh67cTOLcfhV7DSLSg0B4UAlk6SdfkG2oDz7zdXK3bUJdiw1qZ1dptZ7ekBpiOrcSdJ-32PXzOjMB62QGRRZ3EhHneP1iVT6GdRXCqsKXo1M9Z4ujgb8x_30y5cJxu3CbGxhGAI5i5vlsh-TrolAT9lI5hs4d24am4w4MN3npuOLo1ylhzw-ZDqQ"/>
+</div>
+<!-- Top nav links -->
+<nav class="hidden md:flex items-center gap-6 text-body-sm font-body-sm text-on-primary-container">
+<a class="hover:text-surface-container-lowest transition-colors" href="#vault">CISA Vault</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#crisc">CRISC Matrix</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#cism">CISM Ops</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#aaia">AAIA Lab</a>
+<a class="text-secondary-fixed font-semibold border-b-2 border-secondary-fixed pb-1" href="#governance">SecOps Governance</a>
+</nav>
+</div>
+<!-- Right TopBar Indicators -->
+<div class="flex items-center gap-5">
+<div class="hidden lg:flex items-center gap-2 text-label-sm font-label-sm text-on-primary-container">
+<span class="material-symbols-outlined text-[16px] text-surface-container-lowest" data-icon="schedule">schedule</span>
+<span>12:30 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-4 w-[1px] bg-outline hidden lg:block"></div>
+<!-- Plain text role label -->
+<span class="text-label-md font-label-md text-surface-container-lowest">
+        Role: Finance Officer | Ngozi Okonjo
+      </span>
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div aria-label="User Avatar Ngozi Okonjo" class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-label-md font-label-md font-bold">
+          NO
+        </div>
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- App Body: Sidebar + Main Content Layout     -->
+<!-- ========================================== -->
+<div class="pt-16 flex min-h-screen">
+<!-- Sidebar Navigation Rail (Shared Component) -->
+<aside class="w-64 bg-primary-container text-surface-container-lowest flex flex-col justify-between shrink-0 fixed top-16 bottom-0 left-0 border-r border-[#1E293B] z-40 overflow-y-auto">
+<div class="p-4 space-y-6">
+<div>
+<div class="px-3 py-1 mb-2 text-[11px] font-semibold uppercase tracking-wider text-on-primary-container">
+            FINANCE &amp; SETTLEMENTS
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#overview">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#subscriptions">
+<span class="material-symbols-outlined text-[20px]" data-icon="autorenew">autorenew</span>
+<span>Subscriptions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#coupons">
+<span class="material-symbols-outlined text-[20px]" data-icon="sell">sell</span>
+<span>Coupons</span>
+</a>
+<!-- ACTIVE TAB: Transactions -->
+<a class="flex items-center gap-3 px-4 py-3 bg-inverse-surface text-secondary-fixed font-semibold rounded-lg min-h-[44px]" href="#transactions">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed" data-icon="receipt_long">receipt_long</span>
+<span>Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#invoicing">
+<span class="material-symbols-outlined text-[20px]" data-icon="request_quote">request_quote</span>
+<span>Invoicing &amp; Receipts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#settlements">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Settlements</span>
+</a>
+</nav>
+</div>
+<div>
+<div class="px-3 py-1 mb-2 text-[11px] font-semibold uppercase tracking-wider text-on-primary-container">
+            AUDIT GOVERNANCE
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#audit-trail">
+<span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+<span>Audit Trail</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg transition-colors min-h-[44px]" href="#cohorts">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span>Candidate Cohorts</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Footer Rail Actions -->
+<div class="p-4 border-t border-[#1E293B] space-y-2">
+<button class="w-full flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface rounded-lg transition-colors min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="shield">shield</span>
+<span>Security Telemetry</span>
+</button>
+<button class="w-full flex items-center gap-3 px-4 py-3 text-body-sm font-body-sm text-error-container hover:bg-inverse-surface rounded-lg transition-colors min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-[20px] text-error" data-icon="logout">logout</span>
+<span class="text-error">Sign Out</span>
+</button>
+</div>
+</aside>
+<!-- Main Workspace Area -->
+<main class="ml-64 flex-1 flex flex-col p-8 max-w-[1440px]">
+<!-- Breadcrumb Hierarchy -->
+<nav aria-label="Breadcrumb" class="mb-3">
+<ol class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<li><span>Finance &amp; Operations</span></li>
+<li class="flex items-center"><span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span></li>
+<li aria-current="page" class="text-on-surface font-semibold">Transactions &amp; Ledger</li>
+</ol>
+</nav>
+<!-- Page Header with Single Primary Action -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Transactions</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+            Real-time Paystack collection settlements, statutory VAT deductions, and multi-track learner enrollments.
+          </p>
+</div>
+<!-- Primary Action -->
+<button class="inline-flex items-center justify-center gap-2 px-6 h-11 bg-primary text-on-primary hover:bg-[#1E293B] rounded-md text-label-md font-label-md font-medium transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+<!-- State Demonstration Tabs (Interactive UI Preview) -->
+<div class="mt-6 p-1.5 bg-[#EEF2F6] rounded-lg self-start inline-flex items-center gap-1 border border-[#E2E8F0]">
+<span class="text-label-sm font-label-sm font-semibold text-on-surface-variant px-3">DEMO VIEW STATE:</span>
+<button class="px-3.5 py-1.5 text-label-sm font-label-sm font-semibold rounded bg-surface-container-lowest text-on-surface shadow-sm" id="btn-state-default" onclick="setViewState('default')" type="button">
+          State 1: Default Master Table
+        </button>
+<button class="px-3.5 py-1.5 text-label-sm font-label-sm font-medium rounded text-on-surface-variant hover:text-on-surface" id="btn-state-drawer" onclick="setViewState('drawer')" type="button">
+          State 2: Detail Drawer Open
+        </button>
+<button class="px-3.5 py-1.5 text-label-sm font-label-sm font-medium rounded text-on-surface-variant hover:text-on-surface" id="btn-state-empty" onclick="setViewState('empty')" type="button">
+          State 3: Empty Filter Result
+        </button>
+</div>
+<!-- ========================================== -->
+<!-- 1. Filters Bar                             -->
+<!-- ========================================== -->
+<div class="mt-6 bg-surface border border-[#E2E8F0] rounded-xl p-4 shadow-none">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3">
+<!-- Search input -->
+<div class="lg:col-span-2 relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[20px] text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full h-11 pl-10 pr-3 bg-surface border border-[#64748B] rounded-md text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:border-secondary focus:ring-2 focus:ring-secondary/20" id="search-input" placeholder="Search reference, user name, email, or invoice..." type="text" value=""/>
+</div>
+<!-- Date Range Selector -->
+<div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-on-surface-variant pointer-events-none" data-icon="calendar_today">calendar_today</span>
+<input class="w-full h-11 pl-9 pr-3 bg-surface border border-[#64748B] rounded-md text-body-sm font-body-sm text-on-surface cursor-pointer" readonly="" type="text" value="01 Sep 2026 – 05 Oct 2026"/>
+</div>
+</div>
+<!-- Status Filter Dropdown -->
+<div>
+<select class="w-full h-11 px-3 bg-surface border border-[#64748B] rounded-md text-body-sm font-body-sm text-on-surface">
+<option value="">All Statuses</option>
+<option selected="" value="success">Success</option>
+<option value="pending">Pending</option>
+<option value="failed">Failed</option>
+<option value="refunded">Refunded</option>
+</select>
+</div>
+<!-- Channel Filter Dropdown -->
+<div>
+<select class="w-full h-11 px-3 bg-surface border border-[#64748B] rounded-md text-body-sm font-body-sm text-on-surface">
+<option value="">All Channels</option>
+<option value="card">Card</option>
+<option value="bank_transfer">Bank Transfer</option>
+<option value="ussd">USSD</option>
+</select>
+</div>
+<!-- Programme Filter Dropdown -->
+<div>
+<select class="w-full h-11 px-3 bg-surface border border-[#64748B] rounded-md text-body-sm font-body-sm text-on-surface">
+<option value="">All Programmes</option>
+<option value="cisa">CISA Exam Prep</option>
+<option value="crisc">CRISC Risk Governance</option>
+<option value="cism">CISM Executive</option>
+<option value="aaia">AAIA Lab</option>
+</select>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm font-medium">Applied Filters:</span>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#EFF6FF] text-secondary text-label-sm font-label-sm border border-[#1D4ED8]">
+              Status: All
+              <span class="material-symbols-outlined text-[14px] cursor-pointer" data-icon="close">close</span>
+</span>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#EFF6FF] text-secondary text-label-sm font-label-sm border border-[#1D4ED8]">
+              Period: 01 Sep 2026 – 05 Oct 2026
+              <span class="material-symbols-outlined text-[14px] cursor-pointer" data-icon="close">close</span>
+</span>
+</div>
+<button class="text-label-sm font-label-sm text-secondary hover:underline py-1" onclick="clearFilters()" type="button">
+            Reset all filters
+          </button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 2. Master Table Container                  -->
+<!-- ========================================== -->
+<div class="mt-6 bg-surface border border-[#E2E8F0] rounded-xl overflow-hidden shadow-none" id="master-table-container">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[12px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<th class="py-3 px-4" scope="col">Reference</th>
+<th class="py-3 px-4" scope="col">User</th>
+<th class="py-3 px-4" scope="col">Description</th>
+<th class="py-3 px-4" scope="col">Channel</th>
+<th class="py-3 px-4 text-right" scope="col">Amount (Gross)</th>
+<th class="py-3 px-4 text-right" scope="col">VAT (7.5%)</th>
+<th class="py-3 px-4 text-right" scope="col">Fee</th>
+<th class="py-3 px-4" scope="col">Status</th>
+<th class="py-3 px-4" scope="col">Date &amp; Time</th>
+<th class="py-3 px-4 text-center" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm">
+<!-- Row 1: Chinedu Eze -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono text-[13px] text-on-surface font-medium">
+<div>TXN-20261005-0891</div>
+<div class="text-[11px] text-on-surface-variant font-normal">pstk_891024801</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-on-surface">Chinedu Eze</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mt-0.5">
+<span id="email-masked-1">c••••••••@gmail.com</span>
+<button class="text-[11px] text-secondary hover:underline font-medium focus:ring-1" onclick="toggleReveal('email-masked-1', 'chinedu.eze@gmail.com', this)" type="button">
+                      Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface">
+<div class="font-medium">CISA Exam Prep - Cohort 14 Tuition</div>
+<span class="inline-block text-[11px] text-on-surface-variant">ISACA Certification Track</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="credit_card">credit_card</span>
+<span>Card •••• 4120</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-on-surface">₦450,000</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦33,750</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦2,000</td>
+<td class="py-3.5 px-4">
+<!-- Success badge (Color + Icon + Text) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-label-sm font-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Success</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant text-[13px] whitespace-nowrap">
+                  05 Oct 2026 11:45 WAT
+                </td>
+<td class="py-3.5 px-4 text-center">
+<button class="h-11 px-3 text-secondary hover:bg-[#EFF6FF] rounded inline-flex items-center justify-center text-label-md font-label-md font-medium transition-colors" onclick="openDrawer()" type="button">
+                    View detail
+                  </button>
+</td>
+</tr>
+<!-- Row 2: Folake Balogun -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono text-[13px] text-on-surface font-medium">
+<div>TXN-20261004-0612</div>
+<div class="text-[11px] text-on-surface-variant font-normal">pstk_740192834</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-on-surface">Folake Balogun</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mt-0.5">
+<span id="email-masked-2">f••••••••@pwc.com</span>
+<button class="text-[11px] text-secondary hover:underline font-medium" onclick="toggleReveal('email-masked-2', 'f.balogun@pwc.com', this)" type="button">
+                      Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface">
+<div class="font-medium">CISM Executive Masterclass</div>
+<span class="inline-block text-[11px] text-on-surface-variant">Information Security Management</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="account_balance">account_balance</span>
+<span>Bank Transfer (Access Bank)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-on-surface">₦300,000</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦22,500</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦2,000</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-label-sm font-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Success</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant text-[13px] whitespace-nowrap">
+                  04 Oct 2026 16:20 WAT
+                </td>
+<td class="py-3.5 px-4 text-center">
+<button class="h-11 px-3 text-secondary hover:bg-[#EFF6FF] rounded inline-flex items-center justify-center text-label-md font-label-md font-medium transition-colors" onclick="openDrawer()" type="button">
+                    View detail
+                  </button>
+</td>
+</tr>
+<!-- Row 3: Olumide Adeyemi -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono text-[13px] text-on-surface font-medium">
+<div>TXN-20261004-0544</div>
+<div class="text-[11px] text-on-surface-variant font-normal">pstk_638201947</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-on-surface">Olumide Adeyemi</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mt-0.5">
+<span id="email-masked-3">o••••••••@firstbank.ng</span>
+<button class="text-[11px] text-secondary hover:underline font-medium" onclick="toggleReveal('email-masked-3', 'olumide.adeyemi@firstbank.ng', this)" type="button">
+                      Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface">
+<div class="font-medium">CRISC Risk Governance Pass</div>
+<span class="inline-block text-[11px] text-on-surface-variant">Enterprise Risk Controls</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="credit_card">credit_card</span>
+<span>Card •••• 1092</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-on-surface">₦35,000</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦2,625</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦525</td>
+<td class="py-3.5 px-4">
+<!-- Failed badge (Color + Icon + Text) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-label-sm font-label-sm font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]" data-icon="error">error</span>
+<span>Failed: Insufficient Funds</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant text-[13px] whitespace-nowrap">
+                  04 Oct 2026 14:10 WAT
+                </td>
+<td class="py-3.5 px-4 text-center">
+<button class="h-11 px-3 text-secondary hover:bg-[#EFF6FF] rounded inline-flex items-center justify-center text-label-md font-label-md font-medium transition-colors" onclick="openDrawer()" type="button">
+                    View detail
+                  </button>
+</td>
+</tr>
+<!-- Row 4: Adaeze Okonkwo -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono text-[13px] text-on-surface font-medium">
+<div>TXN-20261003-0319</div>
+<div class="text-[11px] text-on-surface-variant font-normal">pstk_510928374</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-on-surface">Adaeze Okonkwo</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mt-0.5">
+<span id="email-masked-4">a••••••••@yahoo.com</span>
+<button class="text-[11px] text-secondary hover:underline font-medium" onclick="toggleReveal('email-masked-4', 'adaeze.okonkwo@yahoo.com', this)" type="button">
+                      Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface">
+<div class="font-medium">AAIA AI Governance Lab</div>
+<span class="inline-block text-[11px] text-on-surface-variant">Applied AI Auditing Framework</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="credit_card">credit_card</span>
+<span>Card •••• 9931</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-on-surface">₦70,000</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦5,250</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦1,050</td>
+<td class="py-3.5 px-4">
+<!-- Pending badge (Color + Icon + Text) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-label-sm font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span>Pending Settlement</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant text-[13px] whitespace-nowrap">
+                  03 Oct 2026 09:30 WAT
+                </td>
+<td class="py-3.5 px-4 text-center">
+<button class="h-11 px-3 text-secondary hover:bg-[#EFF6FF] rounded inline-flex items-center justify-center text-label-md font-label-md font-medium transition-colors" onclick="openDrawer()" type="button">
+                    View detail
+                  </button>
+</td>
+</tr>
+<!-- Row 5: Aminu Sanusi -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-mono text-[13px] text-on-surface font-medium">
+<div>TXN-20261002-0188</div>
+<div class="text-[11px] text-on-surface-variant font-normal">pstk_409182374</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-on-surface">Aminu Sanusi</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mt-0.5">
+<span id="email-masked-5">a••••••@stanbicibtc.com</span>
+<button class="text-[11px] text-secondary hover:underline font-medium" onclick="toggleReveal('email-masked-5', 'aminu.sanusi@stanbicibtc.com', this)" type="button">
+                      Reveal
+                    </button>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface">
+<div class="font-medium">CISA Continuous Access Monthly</div>
+<span class="inline-block text-[11px] text-on-surface-variant">Archived Session Simulator</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="credit_card">credit_card</span>
+<span>Card •••• 3411</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-on-surface">₦35,000</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦2,625</td>
+<td class="py-3.5 px-4 text-right text-on-surface-variant">₦525</td>
+<td class="py-3.5 px-4">
+<!-- Refunded badge (Color + Icon + Text) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-label-sm font-label-sm font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]" data-icon="undo">undo</span>
+<span>Refunded: Duplicate Charge</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant text-[13px] whitespace-nowrap">
+                  02 Oct 2026 15:45 WAT
+                </td>
+<td class="py-3.5 px-4 text-center">
+<button class="h-11 px-3 text-secondary hover:bg-[#EFF6FF] rounded inline-flex items-center justify-center text-label-md font-label-md font-medium transition-colors" onclick="openDrawer()" type="button">
+                    View detail
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            Showing <span class="font-semibold text-on-surface">1–5</span> of <span class="font-semibold text-on-surface">148</span> transactions
+          </p>
+<div class="flex items-center gap-2">
+<button class="h-11 px-4 border border-[#E2E8F0] rounded-md bg-surface text-on-surface-variant/50 text-label-md font-label-md cursor-not-allowed" disabled="" type="button">
+              Previous
+            </button>
+<button class="h-11 px-4 border border-[#64748B] rounded-md bg-surface text-on-surface hover:bg-[#F1F5F9] text-label-md font-label-md transition-colors" type="button">
+              Next
+            </button>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 3. State 3: Empty Filter Result State      -->
+<!-- ========================================== -->
+<div class="hidden mt-6 bg-surface border border-[#E2E8F0] rounded-xl p-16 text-center" id="empty-state-container">
+<div class="w-16 h-16 rounded-full bg-[#F1F5F9] border border-[#E2E8F0] text-on-surface-variant mx-auto flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[32px]" data-icon="search_off">search_off</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">No transactions found</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md mx-auto mt-2">
+          No ledger transactions match the search filters or criteria specified for this period. Try adjusting your query parameters or date range.
+        </p>
+<div class="mt-6">
+<button class="h-11 px-6 bg-primary text-on-primary hover:bg-[#1E293B] rounded-md text-label-md font-label-md font-medium transition-colors" onclick="clearFilters()" type="button">
+            Reset filters
+          </button>
+</div>
+</div>
+<!-- Quick Metrics Ledger Strip -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface border border-[#E2E8F0] rounded-xl p-4">
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase">Settled Gross Volume (MTD)</div>
+<div class="text-headline-md font-headline-md text-on-surface mt-1">₦48,250,000</div>
+<div class="text-[12px] text-[#047857] flex items-center gap-1 mt-1 font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+            Reconciled with Paystack Ledger
+          </div>
+</div>
+<div class="bg-surface border border-[#E2E8F0] rounded-xl p-4">
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase">VAT Collected (7.5%)</div>
+<div class="text-headline-md font-headline-md text-on-surface mt-1">₦3,618,750</div>
+<div class="text-[12px] text-on-surface-variant mt-1 font-medium">
+            FIRS Remittance Batch #2026-Q4
+          </div>
+</div>
+<div class="bg-surface border border-[#E2E8F0] rounded-xl p-4">
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase">Gateway Processing Deductions</div>
+<div class="text-headline-md font-headline-md text-on-surface mt-1">₦723,750</div>
+<div class="text-[12px] text-on-surface-variant mt-1">
+            Paystack local 1.5% fee capped at ₦2,000
+          </div>
+</div>
+<div class="bg-surface border border-[#E2E8F0] rounded-xl p-4">
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase">Active Enrolments Released</div>
+<div class="text-headline-md font-headline-md text-on-surface mt-1">142 Learners</div>
+<div class="text-[12px] text-[#047857] mt-1 font-medium">
+            100% automated licence provisioning
+          </div>
+</div>
+</div>
+</main>
+</div>
+<!-- ========================================== -->
+<!-- 4. Detail Drawer (Slide-out Variant)       -->
+<!-- ========================================== -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-none z-50 transition-opacity hidden" id="drawer-backdrop" onclick="closeDrawer()"></div>
+<aside class="fixed top-0 right-0 bottom-0 w-full max-w-xl bg-surface border-l border-[#E2E8F0] z-50 flex flex-col shadow-lg transform translate-x-full transition-transform duration-200 ease-in-out" id="detail-drawer">
+<!-- Drawer Header -->
+<div class="h-16 px-6 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center justify-between shrink-0">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Transaction Ledger Record</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">TXN-20261005-0891</h2>
+</div>
+<button aria-label="Close drawer" class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-[#E2E8F0] transition-colors" onclick="closeDrawer()" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Drawer Content Scrollable Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Primary Status & Gross Banner -->
+<div class="p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-between">
+<div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Gross Amount Paid</span>
+<div class="text-display font-display text-on-surface mt-0.5">₦450,000</div>
+</div>
+<span class="inline-flex items-center gap-1.5 h-7 px-3 rounded text-label-md font-label-md font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>Success</span>
+</span>
+</div>
+<!-- Financial Reconciliation Breakdown -->
+<div class="border border-[#E2E8F0] rounded-xl p-4">
+<h3 class="text-label-md font-label-md text-on-surface font-semibold mb-3">Reconciliation Ledger</h3>
+<dl class="space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between py-1 border-b border-[#E2E8F0]/60">
+<dt class="text-on-surface-variant">Net Institution Tuition</dt>
+<dd class="font-medium text-on-surface">₦414,250</dd>
+</div>
+<div class="flex justify-between py-1 border-b border-[#E2E8F0]/60">
+<dt class="text-on-surface-variant">Statutory VAT (7.5% FIRS)</dt>
+<dd class="font-medium text-on-surface">₦33,750</dd>
+</div>
+<div class="flex justify-between py-1">
+<dt class="text-on-surface-variant">Paystack Processing Fee (Capped)</dt>
+<dd class="font-medium text-on-surface">₦2,000</dd>
+</div>
+</dl>
+</div>
+<!-- Learner & Sponsor Profile -->
+<div class="border border-[#E2E8F0] rounded-xl p-4">
+<h3 class="text-label-md font-label-md text-on-surface font-semibold mb-3">Candidate &amp; Corporate Sponsor</h3>
+<div class="space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between items-center py-1 border-b border-[#E2E8F0]/60">
+<span class="text-on-surface-variant">Candidate Full Name</span>
+<span class="font-medium text-on-surface">Chinedu Eze</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-[#E2E8F0]/60">
+<span class="text-on-surface-variant">Email Address</span>
+<div class="flex items-center gap-2">
+<span class="font-mono text-[13px]" id="drawer-email">c••••••••@gmail.com</span>
+<button class="text-[12px] text-secondary font-medium hover:underline" onclick="toggleReveal('drawer-email', 'chinedu.eze@gmail.com', this)" type="button">
+                Reveal
+              </button>
+</div>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-[#E2E8F0]/60">
+<span class="text-on-surface-variant">Phone Number</span>
+<div class="flex items-center gap-2">
+<span class="font-mono text-[13px]" id="drawer-phone">+234 803 ••• ••89</span>
+<button class="text-[12px] text-secondary font-medium hover:underline" onclick="toggleReveal('drawer-phone', '+234 803 451 9289', this)" type="button">
+                Reveal
+              </button>
+</div>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-on-surface-variant">Corporate Sponsor</span>
+<span class="font-medium text-on-surface">Access Bank PLC</span>
+</div>
+</div>
+</div>
+<!-- Paystack Gateway Telemetry -->
+<div class="border border-[#E2E8F0] rounded-xl p-4">
+<h3 class="text-label-md font-label-md text-on-surface font-semibold mb-3">Paystack Gateway Telemetry</h3>
+<div class="grid grid-cols-2 gap-3 text-body-sm font-body-sm">
+<div>
+<span class="text-[12px] text-on-surface-variant uppercase">Gateway Reference</span>
+<div class="font-mono text-[13px] text-on-surface mt-0.5">pstk_891024801</div>
+</div>
+<div>
+<span class="text-[12px] text-on-surface-variant uppercase">Authorization Code</span>
+<div class="font-mono text-[13px] text-on-surface mt-0.5">AUTH_782019ab9</div>
+</div>
+<div>
+<span class="text-[12px] text-on-surface-variant uppercase">Gateway Response</span>
+<div class="text-on-surface mt-0.5 font-medium">Successful</div>
+</div>
+<div>
+<span class="text-[12px] text-on-surface-variant uppercase">Channel &amp; Origin</span>
+<div class="text-on-surface mt-0.5">Mastercard debit (Lagos, NG)</div>
+</div>
+</div>
+</div>
+<!-- Webhook Audit History Log -->
+<div class="border border-[#E2E8F0] rounded-xl p-4">
+<h3 class="text-label-md font-label-md text-on-surface font-semibold mb-3">Webhook Dispatch Audit Trail</h3>
+<div class="relative pl-6 space-y-3 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-[#E2E8F0]">
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#047857]"></span>
+<div class="text-[13px] font-mono text-on-surface">11:45:02 WAT — charge.success received (HTTP 200)</div>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#047857]"></span>
+<div class="text-[13px] font-mono text-on-surface">11:45:04 WAT — automated ledger reconciliation passed</div>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#047857]"></span>
+<div class="text-[13px] font-mono text-on-surface">11:45:06 WAT — licence provisioned (LIC-2026-CISA-8812)</div>
+</div>
+</div>
+</div>
+<!-- Related Enrolment Dossier -->
+<div class="border border-[#E2E8F0] rounded-xl p-4 bg-[#F8FAFC]">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-semibold uppercase">Provisioned Curriculum</span>
+<h4 class="text-headline-sm font-headline-sm text-on-surface mt-0.5">CISA Exam Prep (Cohort 14 Weekend Stream)</h4>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1 space-y-0.5">
+<div>Enrolment Identifier: <span class="font-mono text-on-surface">ENR-2026-CISA-041</span></div>
+<div>Validity Window: <span class="text-on-surface">90 days (18 Oct 2026 – 15 Dec 2026)</span></div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E2E8F0]">
+<a class="text-label-md font-label-md text-secondary hover:underline font-semibold inline-flex items-center gap-1" href="#view-enrolment">
+<span>View candidate enrolment file</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Refund Governance Warning Box -->
+<div class="p-3 bg-[#FEF2F2] border border-[#B91C1C] rounded-lg text-body-sm font-body-sm text-[#B91C1C] flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] shrink-0" data-icon="warning">warning</span>
+<div>
+<span class="font-semibold">Refund Oversight Policy:</span> Reversing this transaction will instantly invalidate candidate exam simulation seat licences and trigger compliance notification to Access Bank PLC.
+        </div>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-4 bg-[#F8FAFC] border-t border-[#E2E8F0] grid grid-cols-1 sm:grid-cols-3 gap-2 shrink-0">
+<button class="h-11 px-3 border border-[#64748B] text-on-surface hover:bg-[#F1F5F9] rounded text-label-md font-label-md font-medium transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="description">description</span>
+<span>Tax Invoice</span>
+</button>
+<button class="h-11 px-3 border border-[#64748B] text-on-surface hover:bg-[#F1F5F9] rounded text-label-md font-label-md font-medium transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="receipt">receipt</span>
+<span>Receipt</span>
+</button>
+<button class="h-11 px-3 bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] rounded text-label-md font-label-md font-medium transition-colors flex items-center justify-center gap-1.5" onclick="confirmRefundPrompt()" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="undo">undo</span>
+<span>Issue Refund</span>
+</button>
+</div>
+</aside>
+<!-- ========================================== -->
+<!-- Institutional Dossier Footer               -->
+<!-- ========================================== -->
+<footer class="mt-auto ml-64 bg-primary-container text-on-primary-container px-8 py-6 border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<div class="flex items-center gap-3">
+<span class="text-body-md font-body-md font-bold text-surface-container-lowest">A.J. Silicon</span>
+<span class="text-outline">|</span>
+<span>© 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.</span>
+</div>
+<div class="flex flex-wrap items-center gap-5 text-[13px]">
+<a class="hover:text-surface-container-lowest transition-colors" href="#compliance">DRM Compliance Policy</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#zerotrust">Zero-Trust Verification</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#hashlog">Candidate Session Hash Log</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#telemetry">Integrity Telemetry Docs</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#oversight">SecOps Oversight</a>
+</div>
+</footer>
+<!-- ========================================== -->
+<!-- Micro-interactions Script                  -->
+<!-- ========================================== -->
+<script>
+    // State switcher simulation
+    function setViewState(state) {
+      const tableContainer = document.getElementById('master-table-container');
+      const emptyContainer = document.getElementById('empty-state-container');
+      const drawer = document.getElementById('detail-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+
+      // Update button highlights
+      ['default', 'drawer', 'empty'].forEach(s => {
+        const btn = document.getElementById('btn-state-' + s);
+        if (s === state) {
+          btn.className = 'px-3.5 py-1.5 text-label-sm font-label-sm font-semibold rounded bg-surface-container-lowest text-on-surface shadow-sm';
+        } else {
+          btn.className = 'px-3.5 py-1.5 text-label-sm font-label-sm font-medium rounded text-on-surface-variant hover:text-on-surface';
+        }
+      });
+
+      if (state === 'default') {
+        tableContainer.classList.remove('hidden');
+        emptyContainer.classList.add('hidden');
+        closeDrawer();
+      } else if (state === 'drawer') {
+        tableContainer.classList.remove('hidden');
+        emptyContainer.classList.add('hidden');
+        openDrawer();
+      } else if (state === 'empty') {
+        tableContainer.classList.add('hidden');
+        emptyContainer.classList.remove('hidden');
+        closeDrawer();
+      }
+    }
+
+    // Reveal masked text control
+    function toggleReveal(elementId, realValue, btn) {
+      const target = document.getElementById(elementId);
+      if (btn.innerText === 'Reveal') {
+        target.dataset.masked = target.innerText;
+        target.innerText = realValue;
+        btn.innerText = 'Mask';
+      } else {
+        target.innerText = target.dataset.masked;
+        btn.innerText = 'Reveal';
+      }
+    }
+
+    // Detail Drawer open/close
+    function openDrawer() {
+      const drawer = document.getElementById('detail-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+      backdrop.classList.remove('hidden');
+      setTimeout(() => {
+        drawer.classList.remove('translate-x-full');
+      }, 10);
+    }
+
+    function closeDrawer() {
+      const drawer = document.getElementById('detail-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+      drawer.classList.add('translate-x-full');
+      setTimeout(() => {
+        backdrop.classList.add('hidden');
+      }, 200);
+    }
+
+    // Reset filters
+    function clearFilters() {
+      document.getElementById('search-input').value = '';
+      setViewState('default');
+    }
+
+    // Refund warning action
+    function confirmRefundPrompt() {
+      alert("Institutional Audit Protocol: Please enter regulatory authorization ticket number and reason for Paystack refund disbursement.");
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

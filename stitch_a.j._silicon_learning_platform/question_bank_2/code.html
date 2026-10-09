@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Question Bank | A.J. Silicon Academy Staff Portal</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#eaedff",
+            "tertiary-fixed": "#fddcc4",
+            "on-tertiary": "#ffffff",
+            "outline": "#75777c",
+            "secondary-container": "#4069f2",
+            "on-primary-container": "#7c8495",
+            "on-error-container": "#93000a",
+            "primary": "#0B1320",
+            "surface-container-low": "#f2f3ff",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#141c29",
+            "primary-fixed": "#dbe2f5",
+            "on-surface": "#0F172A",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#001551",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary-container": "#997f6a",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "surface": "#faf8ff",
+            "inverse-surface": "#283044",
+            "on-secondary-container": "#fffbff",
+            "outline-variant": "#c5c6cc",
+            "primary-container": "#0B1320",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-error": "#ffffff",
+            "surface-tint": "#575f6e",
+            "tertiary-container": "#281809",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-tertiary-fixed": "#281809",
+            "surface-bright": "#faf8ff",
+            "error": "#B91C1C",
+            "error-container": "#FEF2F2",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-dim": "#d2d9f4",
+            "inverse-on-surface": "#eef0ff",
+            "secondary": "#1D4ED8",
+            "tertiary": "#000000",
+            "surface-variant": "#dae2fd",
+            "on-surface-variant": "#475569",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#0F172A",
+            "primary-fixed-dim": "#bfc6d9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "headline-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Mono"],
+            "headline-lg": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Absolute adherence to 8px mathematical grid and precision tokens */
+    body {
+      background-color: #F8FAFC;
+      color: #0F172A;
+      font-family: 'IBM Plex Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    /* Structured minimal border depth */
+    .card-border {
+      border: 1px solid #E2E8F0;
+    }
+    .field-border {
+      border: 1px solid #64748B;
+    }
+
+    /* Strict Focus Rules */
+    input:focus, select:focus, button:focus, a:focus {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Subtle institutional lift only for modals & dropdowns */
+    .elevation-lift {
+      box-shadow: 0 4px 6px -1px rgba(11, 19, 32, 0.08), 0 2px 4px -2px rgba(11, 19, 32, 0.04);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-surface-container-high">
+<!-- ========================================================
+       TOP NOTIFICATION / STATE INSPECTION BANNER (FOR REVIEW)
+       ======================================================== -->
+<div class="bg-[#0B1320] border-b border-[#1E293B] text-white px-6 py-2 flex flex-wrap items-center justify-between text-xs font-medium">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-blue-900/60 text-[#93C5FD] border border-blue-700/50">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+        UI State Switcher
+      </span>
+<span class="text-slate-300">View variant:</span>
+<div class="inline-flex rounded border border-slate-700 p-0.5 bg-slate-900/80">
+<button class="px-2.5 py-1 rounded bg-blue-600 text-white font-medium transition-colors" id="btn-populated" onclick="switchView('populated')">1. Populated Table</button>
+<button class="px-2.5 py-1 rounded text-slate-300 hover:text-white transition-colors" id="btn-empty" onclick="switchView('empty')">2. Zero Items (Empty State)</button>
+<button class="px-2.5 py-1 rounded text-slate-300 hover:text-white transition-colors" id="btn-loading" onclick="switchView('loading')">3. Skeleton Loading</button>
+<button class="px-2.5 py-1 rounded text-slate-300 hover:text-white transition-colors" id="btn-import-errors" onclick="switchView('import-errors')">4. Import CSV Error Report</button>
+</div>
+</div>
+<div class="flex items-center gap-4 text-slate-400 font-mono text-[11px]">
+<span>Lagos HQ Node: 102.89.23.14</span>
+<span>•</span>
+<span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Academic DB Synced</span>
+</div>
+</div>
+<!-- ========================================================
+       STAFF TOP BAR (Fixed 64px, Navy #0B1320, Logo on Light Plate)
+       ======================================================== -->
+<header class="h-16 bg-[#0B1320] w-full px-6 flex items-center justify-between text-white shrink-0 z-30 border-b border-[#1E293B]">
+<!-- Left: Brand Plate & Context -->
+<div class="flex items-center gap-6">
+<!-- Isolated Light Rounded Plate for Official Logo -->
+<a aria-label="A.J. Silicon Academy Home" class="h-10 px-3 py-1 bg-white rounded flex items-center justify-center shrink-0 shadow-sm" href="#">
+<img alt="A.J. Silicon Academy Crest and Identity" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmpi-WdxTci0lXuqaLwS4LSJb7M1yoU1s3FdYftJun0AI0EmCxGmlL0L5O4V4wNHia8liLOCrE6ekmB1JcdCDtTOmXFO68_FEUls0-vObAL6gnna0392GaGJ7p9mj46-EweyueUQZo1HZ-JUNjNZ1V7DZ4MQl4vo2NjTObvzjJl2lKGV2GaW5_0q4rMbJ8xOHxSdcPpKdraQHGNjAwRTVVZ3m00q6m23DEw0hClqUFliynaod2tGayNQ"/>
+</a>
+<div class="h-5 w-px bg-slate-700 hidden sm:block"></div>
+<div class="hidden md:flex flex-col">
+<span class="text-xs uppercase tracking-wider text-slate-400 font-medium">Enterprise Academic Registry</span>
+<span class="text-sm font-semibold tracking-tight text-white">Staff Management Portal</span>
+</div>
+</div>
+<!-- Center/Right: WAT Clock, Plain Text Role, Profile -->
+<div class="flex items-center gap-5">
+<!-- Live WAT Clock -->
+<div class="hidden lg:flex items-center gap-1.5 text-xs text-slate-300 font-mono bg-slate-900/90 px-3 py-1.5 rounded border border-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">schedule</span>
+<span>10:15 WAT · 05 Oct 2026</span>
+</div>
+<!-- Plain Text Role (Strict requirement: Question Author) -->
+<div class="text-right border-l border-slate-700 pl-4">
+<div class="text-xs text-slate-400 leading-tight">Signed-in Role</div>
+<div class="text-sm font-medium text-white tracking-wide">Question Author</div>
+</div>
+<!-- User Profile Badge (TB) -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center text-sm font-bold text-slate-200" title="Tunde Bakare (Question Author)">
+          TB
+        </div>
+<div class="hidden xl:block">
+<div class="text-xs font-semibold text-white leading-tight">Tunde Bakare</div>
+<div class="text-[11px] text-slate-400">t.bakare@ajsilicon.ng</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================
+       PRIMARY SHELL LAYOUT: SIDEBAR + MAIN WORKSPACE
+       ======================================================== -->
+<div class="flex flex-1 w-full min-h-[calc(100vh-64px)]">
+<!-- LEFT SIDEBAR: Staff Navigation (W-64 / 256px) -->
+<aside class="w-64 bg-[#0B1320] text-slate-300 flex flex-col justify-between shrink-0 border-r border-[#1E293B]">
+<div class="p-4 space-y-6">
+<!-- Navigation Groups -->
+<nav class="space-y-6">
+<!-- Overview Group -->
+<div>
+<div class="px-3 text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">Workspace</div>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded hover:bg-slate-800 text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">dashboard</span>
+                  Overview
+                </a>
+</li>
+</ul>
+</div>
+<!-- Academics Group (Active Group with Question Bank selected) -->
+<div>
+<div class="px-3 text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">Academics</div>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded hover:bg-slate-800 text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">menu_book</span>
+                  Curricula &amp; Modules
+                </a>
+</li>
+<li>
+<!-- Question Bank: Actively Selected Tab -->
+<a aria-current="page" class="flex items-center justify-between px-3 py-2 text-sm font-medium rounded bg-[#1E293B] text-white border-l-4 border-[#2563EB]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-[#93C5FD]">rule</span>
+<span>Question Bank</span>
+</div>
+<span class="px-1.5 py-0.5 text-[11px] font-mono bg-blue-900/60 text-[#93C5FD] rounded border border-blue-700/40">248</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded hover:bg-slate-800 text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">quiz</span>
+                  Exam Blueprints
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded hover:bg-slate-800 text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">groups</span>
+                  Active Cohorts
+                </a>
+</li>
+</ul>
+</div>
+<!-- Governance & Audit Group -->
+<div>
+<div class="px-3 text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">Governance &amp; Audits</div>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded hover:bg-slate-800 text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">query_stats</span>
+                  Item Telemetry
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded hover:bg-slate-800 text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">history_edu</span>
+                  Moderation Log
+                </a>
+</li>
+<!-- Disabled item with lock icon for Question Author role -->
+<li>
+<div class="flex items-center justify-between px-3 py-2 text-sm font-medium rounded text-slate-500 cursor-not-allowed select-none" title="Accreditation sign-off restricted to Lead Audit Registrar">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-600">verified</span>
+<span>Accreditation Seal</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-slate-500" title="Restricted by Role">lock</span>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<!-- Footer Rail: Documentation & Compliance -->
+<div class="p-4 border-t border-[#1E293B] space-y-2 text-xs">
+<a class="flex items-center gap-2.5 px-3 py-2 rounded text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Item Writing Guide</span>
+</a>
+<div class="px-3 py-2 text-[11px] text-slate-500 border border-slate-800 rounded bg-slate-900/50">
+<div class="font-semibold text-slate-400">Lagos Academy Campus</div>
+<div>Victoria Island, Lagos · +234 1 270 4100</div>
+</div>
+</div>
+</aside>
+<!-- ========================================================
+         MAIN CONTENT AREA (1440px target, max-w-7xl canvas)
+         ======================================================== -->
+<main class="flex-1 overflow-y-auto bg-[#F8FAFC] p-8">
+<div class="max-w-[1280px] mx-auto space-y-6">
+<!-- BREADCRUMBS -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[#475569] font-medium">
+<a class="hover:text-[#0F172A] transition-colors" href="#">Academics</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span aria-current="page" class="text-[#0F172A]">Question bank</span>
+</nav>
+<!-- PAGE HEADER (Authoritative, with Primary and Secondary actions) -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#E2E8F0] pb-6">
+<div>
+<h1 class="text-2xl lg:text-[28px] font-semibold text-[#0F172A] tracking-tight leading-tight">Question bank</h1>
+<p class="text-sm text-[#475569] mt-1 max-w-3xl">
+              Manage examination item pools, cognitive complexity, and psychometric performance telemetry across certified curricula.
+            </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<!-- Secondary Action: Import button (Opens Error Log modal in state 4) -->
+<button class="h-11 px-5 border field-border bg-white text-[#0F172A] text-sm font-medium rounded hover:bg-[#F1F5F9] inline-flex items-center gap-2 transition-colors" onclick="switchView('import-errors')" type="button">
+<span class="material-symbols-outlined text-[20px] text-[#475569]">file_upload</span>
+<span>Import</span>
+</button>
+<!-- Primary Action: New question (44px min height, #0B1320) -->
+<button class="h-11 px-6 bg-[#0B1320] text-white text-sm font-medium rounded hover:bg-[#1E293B] inline-flex items-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New question</span>
+</button>
+</div>
+</div>
+<!-- ========================================================
+             VIEW VARIANT CONTAINER 1: POPULATED TABLE (DEFAULT)
+             ======================================================== -->
+<div class="space-y-6" id="view-populated">
+<!-- FILTERS TOOLBAR -->
+<div class="bg-white card-border rounded-xl p-5 space-y-4">
+<!-- Top Row: Search & Program Selectors -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Search stem field -->
+<div class="md:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[20px] text-[#64748B]">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-white field-border rounded text-sm text-[#0F172A] placeholder-[#64748B] focus:border-[#2563EB]" placeholder="Search questions by stem keyword, ID or syllabus code..." type="text" value="database schema alterations"/>
+</div>
+<!-- Programme filter -->
+<div class="md:col-span-2">
+<label class="sr-only" for="filter-program">Programme</label>
+<select class="w-full h-11 px-3 bg-white field-border rounded text-sm text-[#0F172A] focus:border-[#2563EB]" id="filter-program">
+<option selected="">CISA Exam Prep</option>
+<option>CRISC Risk Governance</option>
+<option>CISM Info Security</option>
+<option>AAIA Audit Fellow</option>
+</select>
+</div>
+<!-- Domain filter -->
+<div class="md:col-span-3">
+<label class="sr-only" for="filter-domain">Domain</label>
+<select class="w-full h-11 px-3 bg-white field-border rounded text-sm text-[#0F172A] focus:border-[#2563EB]" id="filter-domain">
+<option>All Domains (1 to 5)</option>
+<option selected="">Domain 1: Information Systems Auditing</option>
+<option>Domain 2: Governance &amp; IT Management</option>
+<option>Domain 3: Acquisition &amp; Dev</option>
+<option>Domain 4: Operations &amp; Resilience</option>
+<option>Domain 5: Asset Protection</option>
+</select>
+</div>
+<!-- Sort Dropdown -->
+<div class="md:col-span-2">
+<label class="sr-only" for="filter-sort">Sort</label>
+<select class="w-full h-11 px-3 bg-white field-border rounded text-sm text-[#0F172A] focus:border-[#2563EB]" id="filter-sort">
+<option selected="">Sort: Times used</option>
+<option>Sort: Lowest % correct</option>
+<option>Sort: Recently updated</option>
+</select>
+</div>
+</div>
+<!-- Bottom Row: Difficulty & Dual-Channel Status Filter Chips -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-[#E2E8F0]">
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-xs font-semibold text-[#475569] uppercase tracking-wider mr-2">Status Scope:</span>
+<!-- Status Filter Chips (Dual-Channel: Color + Icon + Text) -->
+<button class="h-8 px-3 rounded-full text-xs font-medium inline-flex items-center gap-1.5 bg-[#ECFDF5] text-[#047857] border border-[#047857]" type="button">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Published (182)</span>
+</button>
+<button class="h-8 px-3 rounded-full text-xs font-medium inline-flex items-center gap-1.5 bg-[#FFFBEB] text-[#B45309] border border-[#B45309]" type="button">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+<span>In review (34)</span>
+</button>
+<button class="h-8 px-3 rounded-full text-xs font-medium inline-flex items-center gap-1.5 bg-slate-100 text-[#475569] border border-slate-300" type="button">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+<span>Draft (21)</span>
+</button>
+<button class="h-8 px-3 rounded-full text-xs font-medium inline-flex items-center gap-1.5 bg-slate-50 text-slate-500 border border-slate-200" type="button">
+<span class="material-symbols-outlined text-[14px]">archive</span>
+<span>Retired (11)</span>
+</button>
+</div>
+<!-- Difficulty Filter Selector -->
+<div class="flex items-center gap-2">
+<span class="text-xs font-medium text-[#475569]">Difficulty:</span>
+<select class="h-8 px-2 text-xs bg-white field-border rounded text-[#0F172A]">
+<option selected="">All Difficulties</option>
+<option>Recall / Foundation</option>
+<option>Application / Intermediate</option>
+<option>Analysis / Complex</option>
+</select>
+</div>
+</div>
+</div>
+<!-- BULK ACTIONS TOOLBAR (Appears when rows selected) -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg px-5 py-3 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[20px]">check_box</span>
+<span class="text-sm font-semibold text-[#0F172A]"><span class="font-bold">2 items selected</span> in current syllabus batch</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-[#475569] font-medium hidden sm:inline">Bulk actions:</span>
+<button class="h-9 px-3 bg-white field-border text-xs font-medium text-[#0F172A] rounded hover:bg-[#F1F5F9] inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-emerald-700">publish</span>
+                Change status (Publish / Retire)
+              </button>
+<button class="h-9 px-3 bg-white field-border text-xs font-medium text-[#0F172A] rounded hover:bg-[#F1F5F9] inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#475569]">domain</span>
+                Assign domain
+              </button>
+<button class="h-9 px-3 bg-white field-border text-xs font-medium text-[#0F172A] rounded hover:bg-[#F1F5F9] inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#475569]">file_download</span>
+                Export selected
+              </button>
+<!-- Destructive Action Trigger (Opens Reason Dialog) -->
+<button class="h-9 px-3 bg-[#FEF2F2] border border-[#B91C1C] text-xs font-medium text-[#B91C1C] rounded hover:bg-[#FEE2E2] inline-flex items-center gap-1.5" onclick="openDestructiveDialog('Q-CISA-0412, Q-CISA-0891')" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+                Retire selected
+              </button>
+</div>
+</div>
+<!-- DATA TABLE (High precision, strictly tabular, 44px min touch actions) -->
+<div class="bg-white card-border rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[12px] font-semibold text-[#475569] uppercase tracking-wider">
+<th class="w-12 px-4 py-3 text-center" scope="col">
+<span class="sr-only">Select All</span>
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-0" type="checkbox"/>
+</th>
+<th class="px-4 py-3 font-mono" scope="col">ID</th>
+<th class="px-4 py-3 min-w-[340px]" scope="col">Stem Preview</th>
+<th class="px-4 py-3" scope="col">Domain</th>
+<th class="px-4 py-3" scope="col">Difficulty</th>
+<th class="px-4 py-3" scope="col">Status</th>
+<th class="px-4 py-3" scope="col">Author</th>
+<th class="px-4 py-3 text-right" scope="col">Times Used</th>
+<th class="px-4 py-3 min-w-[160px]" scope="col">Psychometrics (% Correct)</th>
+<th class="px-4 py-3 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm">
+<!-- ROW 1 (Selected, Low % Correct - At Risk) -->
+<tr class="bg-[#F8FAFC]/50 hover:bg-[#F8FAFC] transition-colors">
+<td class="px-4 py-3 text-center">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="px-4 py-3 font-mono text-xs font-semibold text-[#0F172A]">Q-CISA-0412</td>
+<td class="px-4 py-3 text-[#0F172A] leading-snug">
+<a class="font-medium text-[#1D4ED8] hover:underline" href="#">Which of the following controls is MOST effective in mitigating unauthorized database schema alterations in a production banking environment?</a>
+<div class="text-xs text-[#475569] mt-0.5">Syllabus ref: CISA 1.4 · Change Authorization &amp; DDL Trigger Controls</div>
+</td>
+<td class="px-4 py-3 text-xs font-medium text-[#475569]">Domain 1</td>
+<td class="px-4 py-3">
+<span class="text-xs font-medium text-slate-700">Complex</span>
+</td>
+<td class="px-4 py-3">
+<!-- Dual Channel Status: Published -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Published
+                      </span>
+</td>
+<td class="px-4 py-3 text-xs text-[#0F172A]">Tunde Bakare</td>
+<td class="px-4 py-3 text-xs font-mono text-right">320 times</td>
+<td class="px-4 py-3">
+<!-- Dual Channel Metric: 48% Difficult / At Risk -->
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                          48%
+                        </span>
+<span class="text-[11px] text-[#B91C1C] bg-[#FEF2F2] border border-[#B91C1C] px-1.5 py-0.5 rounded">At risk</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right">
+<button aria-label="Edit Question Q-CISA-0412" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-[#0B1320] rounded hover:bg-slate-100" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- ROW 2 (Selected, Moderate) -->
+<tr class="bg-[#F8FAFC]/50 hover:bg-[#F8FAFC] transition-colors">
+<td class="px-4 py-3 text-center">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="px-4 py-3 font-mono text-xs font-semibold text-[#0F172A]">Q-CISA-0891</td>
+<td class="px-4 py-3 text-[#0F172A] leading-snug">
+<a class="font-medium text-[#1D4ED8] hover:underline" href="#">An IS auditor evaluating a newly deployed continuous integration pipeline should verify that automated security gating enforces...</a>
+<div class="text-xs text-[#475569] mt-0.5">Syllabus ref: CISA 3.8 · DevSecOps Artifact Verification</div>
+</td>
+<td class="px-4 py-3 text-xs font-medium text-[#475569]">Domain 3</td>
+<td class="px-4 py-3">
+<span class="text-xs font-medium text-slate-700">Intermediate</span>
+</td>
+<td class="px-4 py-3">
+<!-- Dual Channel Status: In Review -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">pending</span>
+                        In review
+                      </span>
+</td>
+<td class="px-4 py-3 text-xs text-[#0F172A]">Adaeze Okonkwo</td>
+<td class="px-4 py-3 text-xs font-mono text-right">142 times</td>
+<td class="px-4 py-3">
+<!-- Dual Channel Metric: 72% Moderate -->
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+                          72%
+                        </span>
+<span class="text-[11px] text-[#B45309] bg-[#FFFBEB] border border-[#B45309] px-1.5 py-0.5 rounded">Moderate</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right">
+<button aria-label="Edit Question Q-CISA-0891" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-[#0B1320] rounded hover:bg-slate-100" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- ROW 3 (Unchecked, Well-calibrated) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="px-4 py-3 text-center">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="px-4 py-3 font-mono text-xs font-semibold text-[#0F172A]">Q-CRISC-0104</td>
+<td class="px-4 py-3 text-[#0F172A] leading-snug">
+<a class="font-medium text-[#1D4ED8] hover:underline" href="#">When defining acceptable risk tolerance for cloud microservices, executive governance should prioritize alignment with...</a>
+<div class="text-xs text-[#475569] mt-0.5">Syllabus ref: CRISC 2.2 · Enterprise Risk Framework Capacity</div>
+</td>
+<td class="px-4 py-3 text-xs font-medium text-[#475569]">Domain 2</td>
+<td class="px-4 py-3">
+<span class="text-xs font-medium text-slate-700">Foundation</span>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Published
+                      </span>
+</td>
+<td class="px-4 py-3 text-xs text-[#0F172A]">Babatunde Lawal</td>
+<td class="px-4 py-3 text-xs font-mono text-right">88 times</td>
+<td class="px-4 py-3">
+<!-- Dual Channel Metric: 89% Well-calibrated -->
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                          89%
+                        </span>
+<span class="text-[11px] text-[#047857] bg-[#ECFDF5] border border-[#047857] px-1.5 py-0.5 rounded">Calibrated</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right">
+<button aria-label="Edit Question Q-CRISC-0104" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-[#0B1320] rounded hover:bg-slate-100" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- ROW 4 (Draft state, Unused) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="px-4 py-3 text-center">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="px-4 py-3 font-mono text-xs font-semibold text-[#0F172A]">Q-CISA-0940</td>
+<td class="px-4 py-3 text-[#0F172A] leading-snug">
+<a class="font-medium text-[#1D4ED8] hover:underline" href="#">During a third-party SOC 2 Type II audit review, the finding that indicates the GREATEST residual operational exposure is:</a>
+<div class="text-xs text-[#475569] mt-0.5">Syllabus ref: CISA 4.6 · Third-Party Assurance &amp; Attestation</div>
+</td>
+<td class="px-4 py-3 text-xs font-medium text-[#475569]">Domain 4</td>
+<td class="px-4 py-3">
+<span class="text-xs font-medium text-slate-700">Complex</span>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-[#475569] border border-slate-300">
+<span class="material-symbols-outlined text-[13px]">edit_note</span>
+                        Draft
+                      </span>
+</td>
+<td class="px-4 py-3 text-xs text-[#0F172A]">Tunde Bakare</td>
+<td class="px-4 py-3 text-xs font-mono text-right text-slate-400">0 times</td>
+<td class="px-4 py-3">
+<span class="text-xs text-slate-400 italic">No telemetry yet</span>
+</td>
+<td class="px-4 py-3 text-right">
+<button aria-label="Edit Question Q-CISA-0940" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:text-[#0B1320] rounded hover:bg-slate-100" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- ROW 5 (Retired state) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors opacity-80">
+<td class="px-4 py-3 text-center">
+<input class="w-5 h-5 rounded border-[#64748B] text-[#0B1320]" type="checkbox"/>
+</td>
+<td class="px-4 py-3 font-mono text-xs font-semibold text-[#475569]">Q-CISA-0210</td>
+<td class="px-4 py-3 text-[#475569] leading-snug">
+<span class="line-through">Which legacy protocol configuration presents vulnerability during perimeter token issuance?</span>
+<div class="text-xs text-slate-400 mt-0.5">Deprecated syllabus item · Replaced by Q-CISA-0891</div>
+</td>
+<td class="px-4 py-3 text-xs font-medium text-slate-500">Domain 5</td>
+<td class="px-4 py-3">
+<span class="text-xs font-medium text-slate-500">Foundation</span>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-500 border border-slate-200">
+<span class="material-symbols-outlined text-[13px]">archive</span>
+                        Retired
+                      </span>
+</td>
+<td class="px-4 py-3 text-xs text-slate-500">Babatunde Lawal</td>
+<td class="px-4 py-3 text-xs font-mono text-right text-slate-400">540 times</td>
+<td class="px-4 py-3">
+<span class="text-xs text-slate-400 font-mono">91% (Historical)</span>
+</td>
+<td class="px-4 py-3 text-right">
+<button aria-label="Inspect Retired Question Q-CISA-0210" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-slate-400 hover:text-[#0B1320] rounded hover:bg-slate-100" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- TABLE PAGINATION CONTROLS -->
+<div class="px-5 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-4">
+<div class="text-xs text-[#475569] font-medium">
+                Showing <span class="font-bold text-[#0F172A]">1</span> to <span class="font-bold text-[#0F172A]">5</span> of <span class="font-bold text-[#0F172A]">248</span> questions
+              </div>
+<div class="flex items-center gap-1">
+<!-- Previous Button (44px min target) -->
+<button class="min-h-[44px] px-3.5 border field-border bg-white text-xs font-medium text-[#475569] rounded hover:bg-[#F1F5F9] inline-flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<!-- Page Numbers -->
+<button aria-current="page" class="min-h-[44px] min-w-[44px] bg-[#0B1320] text-white text-xs font-semibold rounded" type="button">1</button>
+<button class="min-h-[44px] min-w-[44px] bg-white border field-border text-[#0F172A] text-xs font-medium rounded hover:bg-[#F1F5F9]" type="button">2</button>
+<button class="min-h-[44px] min-w-[44px] bg-white border field-border text-[#0F172A] text-xs font-medium rounded hover:bg-[#F1F5F9]" type="button">3</button>
+<span class="px-2 text-slate-400 text-xs">…</span>
+<button class="min-h-[44px] min-w-[44px] bg-white border field-border text-[#0F172A] text-xs font-medium rounded hover:bg-[#F1F5F9]" type="button">50</button>
+<!-- Next Button (44px min target) -->
+<button class="min-h-[44px] px-3.5 border field-border bg-white text-xs font-medium text-[#0F172A] rounded hover:bg-[#F1F5F9] inline-flex items-center gap-1" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================
+             VIEW VARIANT 2: EMPTY STATE (ZERO ITEMS FOUND)
+             ======================================================== -->
+<div class="hidden" id="view-empty">
+<div class="bg-white card-border rounded-xl p-12 text-center max-w-2xl mx-auto space-y-5">
+<div class="w-16 h-16 rounded-full bg-[#EFF6FF] border border-[#1D4ED8]/30 text-[#1D4ED8] flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<div class="space-y-2">
+<h2 class="text-xl font-semibold text-[#0F172A]">No questions found</h2>
+<p class="text-sm text-[#475569] leading-relaxed">
+                No items match your active search filter criteria or syllabus code parameters. Adjust filter criteria or create a new question item.
+              </p>
+</div>
+<div class="pt-4 flex flex-wrap items-center justify-center gap-3">
+<button class="h-11 px-5 border field-border bg-white text-[#0F172A] text-sm font-medium rounded hover:bg-[#F1F5F9] inline-flex items-center gap-2" onclick="switchView('populated')" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+                Reset filters
+              </button>
+<button class="h-11 px-6 bg-[#0B1320] text-white text-sm font-medium rounded hover:bg-[#1E293B] inline-flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New question
+              </button>
+</div>
+</div>
+</div>
+<!-- ========================================================
+             VIEW VARIANT 3: LOADING SKELETON
+             ======================================================== -->
+<div class="hidden space-y-4" id="view-loading">
+<div class="bg-white card-border rounded-xl p-6 space-y-4 animate-pulse">
+<div class="h-6 bg-slate-200 rounded w-1/4"></div>
+<div class="space-y-3">
+<div class="h-12 bg-slate-100 rounded w-full"></div>
+<div class="h-12 bg-slate-100 rounded w-full"></div>
+<div class="h-12 bg-slate-100 rounded w-full"></div>
+<div class="h-12 bg-slate-100 rounded w-full"></div>
+<div class="h-12 bg-slate-100 rounded w-full"></div>
+</div>
+<div class="flex justify-between pt-4">
+<div class="h-4 bg-slate-200 rounded w-32"></div>
+<div class="h-8 bg-slate-200 rounded w-48"></div>
+</div>
+</div>
+</div>
+<!-- ========================================================
+             VIEW VARIANT 4: IMPORT ERRORS SUMMARY
+             ======================================================== -->
+<div class="hidden space-y-6" id="view-import-errors">
+<div class="bg-white card-border rounded-xl p-6 space-y-6">
+<!-- Summary Header Banner -->
+<div class="p-4 rounded-lg bg-[#FFFBEB] border border-[#B45309] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[24px] mt-0.5">warning</span>
+<div>
+<h2 class="text-base font-semibold text-[#0F172A]">Import summary: 14 imported, 3 rows with errors</h2>
+<p class="text-xs text-[#475569] mt-0.5">
+                    Batch file <code class="font-mono bg-white px-1 py-0.5 border rounded">cisa_item_pool_oct2026.csv</code> processed. Valid records were ingested into the staging draft bank.
+                  </p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-10 px-4 bg-white border field-border text-xs font-medium text-[#0F172A] rounded hover:bg-[#F1F5F9] inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#475569]">download</span>
+                  Download error log
+                </button>
+<button class="h-10 px-4 bg-[#0B1320] text-white text-xs font-medium rounded hover:bg-[#1E293B] inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+                  Re-upload CSV
+                </button>
+</div>
+</div>
+<!-- Explicit Error Table -->
+<div>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-[#475569] mb-3">Item Diagnostic Validation Table</h3>
+<div class="card-border rounded-lg overflow-hidden">
+<table class="w-full text-left border-collapse text-sm">
+<thead>
+<tr class="bg-[#F8FAFC] border-b border-[#E2E8F0] text-xs font-semibold text-[#475569] uppercase tracking-wider">
+<th class="px-4 py-3 w-28">Row Number</th>
+<th class="px-4 py-3 w-40">Target Column</th>
+<th class="px-4 py-3">Error Reason &amp; Remediation Protocol</th>
+<th class="px-4 py-3 w-32 text-right">Row Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] font-mono text-xs">
+<tr class="bg-[#FEF2F2]/30">
+<td class="px-4 py-3 font-semibold text-[#B91C1C]">Row 8</td>
+<td class="px-4 py-3 text-[#0F172A]">Option_Rationale_C</td>
+<td class="px-4 py-3 font-sans text-xs text-[#0F172A]">
+                        Distractor rationale missing for Option C. CISA item moderation requires psychometric feedback rationale for each distractor.
+                      </td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] font-sans font-medium text-[11px]">
+<span class="material-symbols-outlined text-[12px]">close</span>
+                          Rejected
+                        </span>
+</td>
+</tr>
+<tr class="bg-[#FEF2F2]/30">
+<td class="px-4 py-3 font-semibold text-[#B91C1C]">Row 15</td>
+<td class="px-4 py-3 text-[#0F172A]">Syllabus_Domain</td>
+<td class="px-4 py-3 font-sans text-xs text-[#0F172A]">
+                        Invalid domain tag 'Domain 6'. Curricula schema defines exactly Domains 1 through 5 for Certified Information Systems Auditor.
+                      </td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] font-sans font-medium text-[11px]">
+<span class="material-symbols-outlined text-[12px]">close</span>
+                          Rejected
+                        </span>
+</td>
+</tr>
+<tr class="bg-[#FEF2F2]/30">
+<td class="px-4 py-3 font-semibold text-[#B91C1C]">Row 22</td>
+<td class="px-4 py-3 text-[#0F172A]">Correct_Key</td>
+<td class="px-4 py-3 font-sans text-xs text-[#0F172A]">
+                        Correct answer key 'E' out of range [A-D]. Standard single-choice stems must resolve to options A, B, C, or D.
+                      </td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] font-sans font-medium text-[11px]">
+<span class="material-symbols-outlined text-[12px]">close</span>
+                          Rejected
+                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="h-10 px-4 bg-white border field-border text-xs font-medium text-[#0F172A] rounded hover:bg-[#F1F5F9]" onclick="switchView('populated')" type="button">
+                Return to question bank
+              </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ========================================================
+       INSTITUTIONAL FOOTER COMPONENT
+       ======================================================== -->
+<footer class="bg-white card-border border-t py-6 px-8 text-xs text-[#475569] shrink-0">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-4 text-xs font-medium">
+<a class="hover:text-[#0F172A] transition-colors" href="#">Audit Protocol</a>
+<span class="text-slate-300">•</span>
+<a class="hover:text-[#0F172A] transition-colors" href="#">Verification Registry</a>
+<span class="text-slate-300">•</span>
+<a class="hover:text-[#0F172A] transition-colors" href="#">Public Ledger Key</a>
+<span class="text-slate-300">•</span>
+<a class="hover:text-[#0F172A] transition-colors" href="#">Governance Standards</a>
+<span class="text-slate-300">•</span>
+<a class="hover:text-[#0F172A] transition-colors" href="#">Ethics &amp; Compliance</a>
+</div>
+<div class="text-slate-500 font-mono text-[11px] text-center md:text-right">
+        © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+      </div>
+</div>
+</footer>
+<!-- ========================================================
+       DESTRUCTIVE ACTION MODAL (MANDATORY REASON FIELD)
+       ======================================================== -->
+<div class="fixed inset-0 bg-[#0B1320]/60 z-50 flex items-center justify-center p-4 hidden" id="destructive-dialog">
+<div aria-labelledby="dialog-title" aria-modal="true" class="bg-white rounded-xl card-border max-w-lg w-full p-6 elevation-lift space-y-5" role="dialog">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="space-y-1">
+<h2 class="text-lg font-semibold text-[#0F172A]" id="dialog-title">Retire Examination Questions</h2>
+<p class="text-xs text-[#475569]">
+            This action will remove items <code class="font-mono font-semibold bg-slate-100 px-1 py-0.5 rounded" id="retired-ids">Q-CISA-0412</code> from active test generator pools. This requires formal institutional justification.
+          </p>
+</div>
+</div>
+<!-- Required Reason Field -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="retire-reason">
+          Audit Reason for Retirement <span class="text-[#B91C1C]">*</span>
+</label>
+<textarea class="w-full text-xs field-border rounded p-2.5 text-[#0F172A] placeholder-[#64748B] focus:border-[#2563EB]" id="retire-reason" placeholder="e.g. Syllabus revision superseded by latest regulatory standard; distractor ambiguity identified during psychometric audit..." required="" rows="3"></textarea>
+<p class="text-[11px] text-[#475569]">This justification is permanently inscribed into the immutable moderation ledger.</p>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2 border-t border-[#E2E8F0]">
+<button class="h-10 px-4 bg-white border field-border text-xs font-medium text-[#0F172A] rounded hover:bg-[#F1F5F9]" onclick="closeDestructiveDialog()" type="button">
+          Cancel
+        </button>
+<button class="h-10 px-5 bg-[#B91C1C] text-white text-xs font-medium rounded hover:bg-red-800" onclick="confirmRetirement()" type="button">
+          Confirm Retirement
+        </button>
+</div>
+</div>
+</div>
+<!-- Client-side View Switcher & Modal Controller -->
+<script>
+    function switchView(viewName) {
+      const views = ['populated', 'empty', 'loading', 'import-errors'];
+      views.forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        const btn = document.getElementById(`btn-${v}`);
+        if (el) el.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('bg-blue-600', 'text-white');
+          btn.classList.add('text-slate-300');
+        }
+      });
+
+      const activeView = document.getElementById(`view-${viewName}`);
+      const activeBtn = document.getElementById(`btn-${viewName}`);
+      if (activeView) activeView.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-300');
+        activeBtn.classList.add('bg-blue-600', 'text-white');
+      }
+    }
+
+    function openDestructiveDialog(ids) {
+      document.getElementById('retired-ids').innerText = ids;
+      document.getElementById('destructive-dialog').classList.remove('hidden');
+    }
+
+    function closeDestructiveDialog() {
+      document.getElementById('destructive-dialog').classList.add('hidden');
+    }
+
+    function confirmRetirement() {
+      const reason = document.getElementById('retire-reason').value.trim();
+      if (!reason) {
+        alert("Institutional audit compliance requires a reason before question retirement.");
+        return;
+      }
+      closeDestructiveDialog();
+      alert("Items successfully marked as Retired and signed into audit log.");
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

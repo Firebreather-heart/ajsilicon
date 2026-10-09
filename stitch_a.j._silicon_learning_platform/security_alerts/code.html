@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Alerts — A.J. Silicon Audit Portal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-navy-dark": "#0B1320",
+            "surface-slate-tech": "#141c29",
+            "audit-pass-mint": "#047857",
+            "surface-container-low": "#f8fafc",
+            "primary-fixed": "#dbe2f5",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#000000",
+            "on-tertiary-fixed": "#281809",
+            "error": "#b91c1c",
+            "surface-container-highest": "#dae2fd",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "background": "#f8fafc",
+            "primary-container": "#0B1320",
+            "outline": "#64748b",
+            "surface-bright": "#ffffff",
+            "on-primary-container": "#7c8495",
+            "on-primary-fixed": "#141c29",
+            "surface": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#e2e7ff",
+            "error-container": "#fef2f2",
+            "primary-fixed-dim": "#bfc6d9",
+            "outline-variant": "#cbd5e1",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-tint": "#575f6e",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed": "#93c5fd",
+            "on-secondary-fixed": "#001551",
+            "secondary-container": "#4069f2",
+            "on-surface": "#0f172a",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-surface-variant": "#475569",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-background": "#0f172a",
+            "tertiary-container": "#281809",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#1d4ed8",
+            "surface-container": "#f1f5f9",
+            "primary": "#0B1320",
+            "on-secondary-container": "#fffbff",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-container": "#997f6a",
+            "inverse-surface": "#283044"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "3rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+      vertical-align: middle;
+    }
+    /* Tabular numbers for financial and audit clocks */
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-body-md text-body-md antialiased bg-background text-on-surface">
+<!-- =========================================================================
+       STAFF TOP NAVIGATION SHELL (Fixed 64px, Deep Navy #0B1320)
+       ========================================================================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-gutter max-w-full bg-surface-navy-dark border-b border-surface-slate-tech text-on-primary">
+<!-- Left: Brand Plate & Product Insignia -->
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center h-10 shadow-sm border border-white/20">
+<img alt="A.J. Silicon Audit Portal" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmj3Em9zje9E997s740pb2TDlNGAPltzq3vvFhEHSQG8AGWoMTMxbfkOk64DOSzJ87R97EmhuuvhcwfytB0YwL7uzYV-0cpp5MHC9RQo-gRd2VKpXEmK3IartmgVJv4p30mLstZ_vfZvs9wbTq0fENl_Z0XZeJLOiioinuTYMRCOrfvrql7MMMEEj7hPAsn9Hg3PBC09jWWuXhtBre1zqdjLtWCkselkN8yONVgFHQRLtP2_9cAjh9vg"/>
+</div>
+<div class="hidden lg:flex items-center gap-3 pl-2 border-l border-white/10 text-outline-variant font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-audit-pass-mint"></span>
+          Terminal Live
+        </span>
+<span class="text-white/60 tabular-nums">WAT Node #04 (Ikeja Datacenter)</span>
+</div>
+</div>
+<!-- Center/Right: Role Display, Time, Notifications, User Plate -->
+<div class="flex items-center gap-6">
+<!-- Plain-text Role Display without switcher chevron -->
+<div class="hidden sm:flex flex-col text-right">
+<span class="text-white font-label-md text-label-md font-semibold tracking-wide">
+          Role: Security Officer | Chukwudi Nnamdi
+        </span>
+<span class="text-white/70 font-label-sm text-label-sm tabular-nums">
+          13:00 WAT · 05 Oct 2026
+        </span>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Notification Bell -->
+<button aria-label="Notifications" class="relative flex items-center justify-center w-11 h-11 rounded hover:bg-white/10 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-surface-navy-dark" type="button">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error border border-surface-navy-dark"></span>
+</button>
+<!-- Fixed Staff Badge -->
+<div class="flex items-center gap-3 pl-3 border-l border-white/15">
+<div class="w-10 h-10 rounded-full bg-secondary text-white font-semibold font-label-md text-label-md flex items-center justify-center border-2 border-white/20 select-none">
+            CN
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- =========================================================================
+       MAIN BODY WORKSPACE (Fixed Sidebar + Content Area)
+       ========================================================================= -->
+<div class="flex flex-1 min-h-[calc(100vh-4rem)]">
+<!-- =======================================================================
+         LEFT NAVIGATION SIDEBAR (Rail structure, #141c29 background)
+         ======================================================================= -->
+<aside aria-label="Staff Sidebar Navigation" class="w-72 shrink-0 bg-surface-slate-tech text-white border-r border-surface-navy-dark flex flex-col justify-between py-6 px-4">
+<div class="space-y-6">
+<!-- Navigation Group: SECURITY (ACTIVE GROUP) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-outline-variant/80">
+            Security &amp; Operations
+          </div>
+<nav class="space-y-1">
+<!-- Active Item: Security Alerts -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded bg-surface-navy-dark text-secondary-fixed font-label-md text-label-md font-medium border-l-2 border-audit-pass-mint transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">warning</span>
+<span>Security Alerts</span>
+</span>
+<span class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-semibold rounded-full bg-error text-white">
+                5
+              </span>
+</a>
+<!-- Inactive Security Items -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded text-outline-variant hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant">receipt_long</span>
+<span>Audit Logs</span>
+</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2.5 rounded text-outline-variant hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant">monitoring</span>
+<span>Session Monitor</span>
+</span>
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint"></span>
+</a>
+<a class="flex items-center justify-between px-3 py-2.5 rounded text-outline-variant hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant">admin_panel_settings</span>
+<span>Access Control</span>
+</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: ACADEMICS -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-outline-variant/60">
+            Academics
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-outline-variant/80 hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Curriculum Vault</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-outline-variant/80 hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>Simulation Labs</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: CANDIDATES -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-outline-variant/60">
+            Candidates
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-outline-variant/80 hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Candidate Cohorts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-outline-variant/80 hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span>Enrollment Registry</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: FINANCE -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-outline-variant/60">
+            Finance
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-outline-variant/80 hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Fee Settlements (₦)</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: SYSTEM -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-outline-variant/60">
+            System
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-outline-variant/80 hover:text-white hover:bg-surface-navy-dark/60 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">tune</span>
+<span>Global Policies</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Sidebar Institutional Footer -->
+<div class="pt-6 border-t border-surface-navy-dark space-y-3">
+<div class="p-3 bg-surface-navy-dark/80 rounded border border-white/5 space-y-1">
+<div class="flex items-center gap-2 text-white font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-audit-pass-mint text-sm">lock</span>
+            Zero-Trust Protocol
+          </div>
+<p class="text-xs text-outline-variant tabular-nums">Engine Ver 4.9.2-audit</p>
+</div>
+</div>
+</aside>
+<!-- =======================================================================
+         PRIMARY CONTENT CANVAS (Light paper-grade surface)
+         ======================================================================= -->
+<main class="flex-1 overflow-y-auto px-8 py-6 space-y-6 max-w-full bg-surface-container-low">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span>Security &amp; Operations</span>
+<span class="material-symbols-outlined text-xs text-outline">chevron_right</span>
+<span>Incident Management</span>
+<span class="material-symbols-outlined text-xs text-outline">chevron_right</span>
+<span aria-current="page" class="text-on-surface font-semibold">Security alerts</span>
+</nav>
+<!-- Page Header: Title, Description & Export CTA -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-outline-variant/60">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Security alerts</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#FEF2F2] text-error border border-error text-xs font-semibold">
+<span class="material-symbols-outlined text-sm">error</span>
+              5 Requiring Action
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Monitor anomaly detections, concurrent session violations, and investigate potential account sharing.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<!-- View State Switcher for Reviewing Both Variants -->
+<button class="min-h-[44px] px-4 rounded border border-outline bg-white text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-2 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" id="toggleDrawerBtn" type="button">
+<span class="material-symbols-outlined">vertical_split</span>
+<span>Toggle Dossier Drawer (ALT-089)</span>
+</button>
+<!-- Primary Header Action -->
+<button class="min-h-[44px] px-6 rounded bg-primary text-white hover:bg-slate-800 font-label-md text-label-md font-medium flex items-center gap-2 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<span class="material-symbols-outlined">file_download</span>
+<span>+ Export alerts report</span>
+</button>
+</div>
+</div>
+<!-- =====================================================================
+           FILTERS SECTION: Severity Pills, Status Dropdowns, Time Range
+           ===================================================================== -->
+<div class="bg-white rounded-xl border border-outline-variant p-4 space-y-4 shadow-sm">
+<!-- Severity Category Tabs -->
+<div class="flex flex-wrap items-center gap-2 pb-3 border-b border-outline-variant/60">
+<span class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant mr-2">Severity:</span>
+<button class="min-h-[36px] px-3.5 py-1.5 rounded-lg text-sm font-medium bg-primary text-white flex items-center gap-2 shadow-xs" type="button">
+<span>All Severities</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-xs">18</span>
+</button>
+<button class="min-h-[36px] px-3.5 py-1.5 rounded-lg text-sm font-medium border border-error bg-[#FEF2F2] text-error hover:bg-red-100/70 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span>Critical</span>
+<span class="font-bold text-xs">3</span>
+</button>
+<button class="min-h-[36px] px-3.5 py-1.5 rounded-lg text-sm font-medium border border-[#B45309] bg-[#FFFBEB] text-[#B45309] hover:bg-amber-100/70 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm">report</span>
+<span>High</span>
+<span class="font-bold text-xs">5</span>
+</button>
+<button class="min-h-[36px] px-3.5 py-1.5 rounded-lg text-sm font-medium border border-outline-variant bg-surface-container-low text-on-surface-variant hover:bg-slate-200/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm">info</span>
+<span>Medium</span>
+<span class="text-xs font-semibold">6</span>
+</button>
+<button class="min-h-[36px] px-3.5 py-1.5 rounded-lg text-sm font-medium border border-outline-variant bg-surface-container-low text-on-surface-variant hover:bg-slate-200/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm">help_outline</span>
+<span>Low</span>
+<span class="text-xs font-semibold">4</span>
+</button>
+</div>
+<!-- Secondary Controls: Search, Status Filter, Time Range -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+<div class="md:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-md border border-outline text-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:outline-none bg-white" placeholder="Search by Alert ID, User, or Candidate email..." type="text"/>
+</div>
+<!-- Status Filter -->
+<div class="md:col-span-3">
+<div class="relative">
+<select class="w-full h-11 pl-3 pr-8 rounded-md border border-outline text-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:outline-none bg-white appearance-none">
+<option selected="">Status: All Active &amp; Closed</option>
+<option>New (Action Required)</option>
+<option>Investigating</option>
+<option>Resolved</option>
+<option>False positive</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-sm">expand_more</span>
+</div>
+</div>
+<!-- Time Range -->
+<div class="md:col-span-4 flex items-center gap-2">
+<div class="relative flex-1">
+<select class="w-full h-11 pl-9 pr-8 rounded-md border border-outline text-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:outline-none bg-white appearance-none">
+<option selected="">Past 24 Hours (WAT)</option>
+<option>Past 7 Days</option>
+<option>Past 30 Days</option>
+<option>Custom Date Span</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">schedule</span>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-sm">expand_more</span>
+</div>
+<button class="h-11 w-11 rounded-md border border-outline flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" title="Refresh Table" type="button">
+<span class="material-symbols-outlined text-lg">refresh</span>
+</button>
+</div>
+</div>
+</div>
+<!-- =====================================================================
+           VARIANT 1: ALERTS MASTER TABLE
+           ===================================================================== -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b-2 border-outline-variant text-[12px] font-semibold uppercase tracking-wider text-on-surface-variant">
+<th class="py-3 px-4" scope="col">Alert ID &amp; Type</th>
+<th class="py-3 px-4" scope="col">Severity</th>
+<th class="py-3 px-4" scope="col">User / Account</th>
+<th class="py-3 px-4" scope="col">Evidence Summary</th>
+<th class="py-3 px-4" scope="col">Timestamp (WAT)</th>
+<th class="py-3 px-4" scope="col">Status</th>
+<th class="py-3 px-4" scope="col">Assigned To</th>
+<th class="py-3 px-4 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-sm">
+<!-- ROW 1: Impossible Travel (Critical) - Primary Target -->
+<tr class="hover:bg-slate-50/80 transition-colors bg-blue-50/30">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="font-code-snippet text-xs text-primary font-bold">ALT-20261005-089</span>
+</div>
+<div class="text-xs font-medium text-error flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">flight_takeoff</span>
+                    Impossible travel
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-semibold bg-[#FEF2F2] text-error border border-error">
+<span class="material-symbols-outlined text-xs">error</span>
+                    Critical
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Chinedu Eze</div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mt-0.5">
+<span class="masked-target tabular-nums">c••••••••@gmail.com</span>
+<button class="reveal-btn text-secondary hover:underline focus:outline-none text-[11px] font-medium" data-real="c.eze.lagos@gmail.com" type="button">Reveal</button>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<p class="text-xs text-on-surface leading-snug line-clamp-2">
+                    Logins within 22 mins from Ikeja, Lagos (IP 
+                    <span class="masked-target">102.89.••.••</span>
+<button class="reveal-btn text-secondary text-[10px] ml-0.5" data-real="102.89.44.12" type="button">Reveal</button>) 
+                    and Canary Wharf, London (IP 
+                    <span class="masked-target">82.165.•••.••</span>
+<button class="reveal-btn text-secondary text-[10px] ml-0.5" data-real="82.165.197.8" type="button">Reveal</button>).
+                  </p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap tabular-nums text-xs text-on-surface-variant">
+<span class="font-medium text-on-surface">12:38 WAT</span><br/>
+                  05 Oct 2026
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-xs">pending</span>
+                    New
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-on-surface-variant">
+<span class="italic text-slate-400">Unassigned</span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="min-h-[44px] px-3 rounded border border-outline hover:bg-slate-100 text-xs font-semibold text-primary inline-flex items-center gap-1 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" onclick="openDrawer()" type="button">
+<span>Investigate</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- ROW 2: Shared account suspected (High) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">
+<span class="font-code-snippet text-xs text-primary font-bold">ALT-20261005-084</span>
+</div>
+<div class="text-xs font-medium text-[#B45309] flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">devices</span>
+                    Shared account suspected
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-xs">report</span>
+                    High
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Amara Okafor</div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mt-0.5">
+<span class="masked-target tabular-nums">a••••••••@zenithbank.com</span>
+<button class="reveal-btn text-secondary hover:underline focus:outline-none text-[11px] font-medium" data-real="a.okafor@zenithbank.com" type="button">Reveal</button>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<p class="text-xs text-on-surface leading-snug line-clamp-2">
+                    3 concurrent streaming sessions detected across different browser user-agents simultaneously.
+                  </p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap tabular-nums text-xs text-on-surface-variant">
+<span class="font-medium text-on-surface">11:45 WAT</span><br/>
+                  05 Oct 2026
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-xs">search</span>
+                    Investigating
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-on-surface">
+                  Chukwudi Nnamdi
+                </td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="min-h-[44px] px-3 rounded border border-outline hover:bg-slate-100 text-xs font-semibold text-primary inline-flex items-center gap-1 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<span>Inspect</span>
+</button>
+</td>
+</tr>
+<!-- ROW 3: Rapid question loading (High) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">
+<span class="font-code-snippet text-xs text-primary font-bold">ALT-20261005-077</span>
+</div>
+<div class="text-xs font-medium text-[#B45309] flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">speed</span>
+                    Rapid question loading
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-xs">report</span>
+                    High
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Babatunde Adeleke</div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mt-0.5">
+<span class="masked-target tabular-nums">b••••••••@firstbankgroup.ng</span>
+<button class="reveal-btn text-secondary hover:underline focus:outline-none text-[11px] font-medium" data-real="b.adeleke@firstbankgroup.ng" type="button">Reveal</button>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<p class="text-xs text-on-surface leading-snug line-clamp-2">
+                    42 practice questions submitted in 118 seconds (avg 2.8s/question, human threshold 15s).
+                  </p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap tabular-nums text-xs text-on-surface-variant">
+<span class="font-medium text-on-surface">10:14 WAT</span><br/>
+                  05 Oct 2026
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-xs">search</span>
+                    Investigating
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-on-surface">
+                  Chukwudi Nnamdi
+                </td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="min-h-[44px] px-3 rounded border border-outline hover:bg-slate-100 text-xs font-semibold text-primary inline-flex items-center gap-1 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<span>Inspect</span>
+</button>
+</td>
+</tr>
+<!-- ROW 4: Repeated device registration (Medium) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">
+<span class="font-code-snippet text-xs text-primary font-bold">ALT-20261005-062</span>
+</div>
+<div class="text-xs font-medium text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">phonelink_lock</span>
+                    Repeated registration
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-semibold bg-surface-container text-on-surface-variant border border-outline-variant">
+<span class="material-symbols-outlined text-xs">info</span>
+                    Medium
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Olufemi Balogun</div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mt-0.5">
+<span class="masked-target tabular-nums">o••••••••@accessbankplc.com</span>
+<button class="reveal-btn text-secondary hover:underline focus:outline-none text-[11px] font-medium" data-real="o.balogun@accessbankplc.com" type="button">Reveal</button>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<p class="text-xs text-on-surface leading-snug line-clamp-2">
+                    5 authorization attempts within 3 hours exceeding standard candidate threshold.
+                  </p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap tabular-nums text-xs text-on-surface-variant">
+<span class="font-medium text-on-surface">09:30 WAT</span><br/>
+                  05 Oct 2026
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-xs">pending</span>
+                    New
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-on-surface-variant">
+<span class="italic text-slate-400">Unassigned</span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="min-h-[44px] px-3 rounded border border-outline hover:bg-slate-100 text-xs font-semibold text-primary inline-flex items-center gap-1 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<span>Inspect</span>
+</button>
+</td>
+</tr>
+<!-- ROW 5: Watermark lookup hit (Critical) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">
+<span class="font-code-snippet text-xs text-primary font-bold">ALT-20261005-049</span>
+</div>
+<div class="text-xs font-medium text-error flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">policy</span>
+                    Watermark lookup hit
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-semibold bg-[#FEF2F2] text-error border border-error">
+<span class="material-symbols-outlined text-xs">error</span>
+                    Critical
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Damilola Adeyemi</div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mt-0.5">
+<span class="masked-target tabular-nums">d••••••••@fidelitybank.ng</span>
+<button class="reveal-btn text-secondary hover:underline focus:outline-none text-[11px] font-medium" data-real="d.adeyemi@fidelitybank.ng" type="button">Reveal</button>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<p class="text-xs text-on-surface leading-snug line-clamp-2">
+                    Forensic watermark ID WTM-88219 match confirmed from external leaked module excerpt.
+                  </p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap tabular-nums text-xs text-on-surface-variant">
+<span class="font-medium text-on-surface">08:05 WAT</span><br/>
+                  05 Oct 2026
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-xs">search</span>
+                    Investigating
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-on-surface">
+                  Funke Akindele
+                </td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="min-h-[44px] px-3 rounded border border-outline hover:bg-slate-100 text-xs font-semibold text-primary inline-flex items-center gap-1 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<span>Inspect</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Count Footer -->
+<div class="px-4 py-3 bg-surface-container-low border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span>Showing <strong class="text-on-surface">1 - 5</strong> of <strong class="text-on-surface">18</strong> alerts</span>
+<span class="text-outline">·</span>
+<span class="tabular-nums">Filtered by All Severities (Past 24 Hours)</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="min-h-[36px] px-3 rounded border border-outline-variant bg-white text-slate-300 cursor-not-allowed" disabled="" type="button">
+              Previous
+            </button>
+<button class="min-h-[36px] px-3 rounded bg-primary text-white font-medium" type="button">1</button>
+<button class="min-h-[36px] px-3 rounded border border-outline-variant bg-white hover:bg-slate-50 text-on-surface" type="button">2</button>
+<button class="min-h-[36px] px-3 rounded border border-outline-variant bg-white hover:bg-slate-50 text-on-surface" type="button">3</button>
+<button class="min-h-[36px] px-3 rounded border border-outline-variant bg-white hover:bg-slate-50 text-on-surface" type="button">Next</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- =========================================================================
+       VARIANT 2: ALERT DETAIL VIEW (Open Dossier Drawer on Chinedu Eze)
+       Slide-over panel overlaying the workspace with full investigative telemetries.
+       ========================================================================= -->
+<aside aria-label="Incident Investigation Dossier" class="fixed inset-y-0 right-0 z-50 w-full max-w-2xl bg-white shadow-2xl border-l border-outline-variant flex flex-col transition-transform duration-300 translate-x-0" id="alertDrawer">
+<!-- Drawer Header -->
+<div class="px-6 py-4 bg-surface-navy-dark text-white flex items-center justify-between border-b border-surface-slate-tech">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error">emergency_home</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-code-snippet text-xs font-bold text-secondary-fixed">ALT-20261005-089</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FEF2F2] text-error">
+<span class="material-symbols-outlined text-[12px]">error</span>
+              Critical
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-white/10 text-white">
+              Status: New
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-white font-bold mt-0.5">Impossible Travel Anomaly</h2>
+</div>
+</div>
+<button aria-label="Close Investigation Drawer" class="min-h-[44px] min-w-[44px] rounded flex items-center justify-center text-outline-variant hover:text-white hover:bg-white/10 transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" onclick="closeDrawer()" type="button">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Drawer Content Scrollable Canvas -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 bg-surface-container-low">
+<!-- Candidate Profile Card -->
+<div class="bg-white rounded-xl border border-outline-variant p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-surface-navy-dark text-white font-semibold flex items-center justify-center text-sm">
+              CE
+            </div>
+<div>
+<h3 class="font-semibold text-on-surface">Chinedu Eze</h3>
+<p class="text-xs text-on-surface-variant">Candidate ID: SIL-NG-2026-4491 · Cohort 14 (CISA Exam Prep)</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-xs">verified</span>
+            Enrolled Active
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-4 text-xs">
+<div>
+<span class="text-on-surface-variant block">Institutional / Corporate Email:</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="masked-target font-medium tabular-nums text-on-surface">c••••••••@gmail.com</span>
+<button class="reveal-btn text-secondary hover:underline font-medium" data-real="c.eze.lagos@gmail.com" type="button">Reveal</button>
+</div>
+</div>
+<div>
+<span class="text-on-surface-variant block">Contact Telephone:</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="masked-target font-medium tabular-nums text-on-surface">+234 803 ••• ••20</span>
+<button class="reveal-btn text-secondary hover:underline font-medium" data-real="+234 803 491 8820" type="button">Reveal</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Geographical Telemetry & Anomaly Trace Schematic Map Card -->
+<div class="bg-white rounded-xl border border-outline-variant p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">explore</span>
+<h4 class="font-headline-sm text-sm font-bold text-on-surface">Geographical Telemetry &amp; Anomaly Trace</h4>
+</div>
+<span class="text-xs font-semibold text-error bg-red-50 px-2 py-0.5 rounded border border-error/30">
+            Speed: 13,690 km/h (Physically Impossible)
+          </span>
+</div>
+<!-- Clean Schematic Vector Map Box -->
+<div class="relative bg-surface-navy-dark text-white rounded-lg p-5 border border-surface-slate-tech overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 py-2">
+<!-- Node A: Ikeja Lagos -->
+<div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-lg p-3 w-full md:w-auto">
+<div class="w-8 h-8 rounded-full bg-audit-pass-mint/20 border border-audit-pass-mint text-audit-pass-mint flex items-center justify-center font-bold text-xs">
+                A
+              </div>
+<div>
+<div class="text-xs text-white/70">Location A (12:16 WAT)</div>
+<div class="font-semibold text-white text-sm">Ikeja, Lagos, Nigeria</div>
+<div class="text-[11px] text-white/50 tabular-nums">
+                  IP: <span class="masked-target">102.89.••.••</span>
+<button class="reveal-btn text-secondary-fixed text-[10px] ml-1" data-real="102.89.44.12" type="button">Reveal</button>
+</div>
+</div>
+</div>
+<!-- Intermediary Delta Indicator -->
+<div class="flex flex-col items-center justify-center text-center px-2">
+<div class="flex items-center gap-1 text-xs text-error font-bold">
+<span class="material-symbols-outlined text-sm animate-pulse">crisis_alert</span>
+<span>Δ 5,020 km</span>
+</div>
+<div class="w-24 h-0.5 bg-dashed border-b border-dashed border-error/80 my-1"></div>
+<span class="text-[11px] text-white/70 tabular-nums">Elapsed: 22 mins</span>
+</div>
+<!-- Node B: London Canary Wharf -->
+<div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-lg p-3 w-full md:w-auto">
+<div class="w-8 h-8 rounded-full bg-error/20 border border-error text-error flex items-center justify-center font-bold text-xs">
+                B
+              </div>
+<div>
+<div class="text-xs text-white/70">Location B (12:38 WAT)</div>
+<div class="font-semibold text-white text-sm">Canary Wharf, London, UK</div>
+<div class="text-[11px] text-white/50 tabular-nums">
+                  IP: <span class="masked-target">82.165.•••.••</span>
+<button class="reveal-btn text-secondary-fixed text-[10px] ml-1" data-real="82.165.197.8" type="button">Reveal</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-white/60">
+<span>ISP Lagos: MainOne Broadband Nigeria</span>
+<span>ISP London: British Telecommunications Plc</span>
+</div>
+</div>
+</div>
+<!-- Incident Timeline -->
+<div class="bg-white rounded-xl border border-outline-variant p-4 shadow-sm space-y-3">
+<h4 class="font-headline-sm text-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">timeline</span>
+          Incident Telemetry Timeline
+        </h4>
+<div class="relative pl-6 space-y-4 border-l-2 border-outline-variant ml-2 py-1 text-xs">
+<!-- Step 1 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-3.5 h-3.5 rounded-full bg-audit-pass-mint border-2 border-white"></span>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-semibold text-on-surface">12:16 WAT · 05 Oct 2026</span>
+<span class="text-audit-pass-mint font-medium">Session Authenticated</span>
+</div>
+<p class="text-on-surface mt-0.5">
+              Successful sign-in from Safari on macOS (Ikeja, Lagos, Nigeria). IP: 
+              <span class="masked-target font-code-snippet">102.89.••.••</span>
+<button class="reveal-btn text-secondary text-[11px] ml-1" data-real="102.89.44.12" type="button">Reveal</button>. Session ID: #SES-LAG-9910.
+            </p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-3.5 h-3.5 rounded-full bg-error border-2 border-white"></span>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-semibold text-on-surface">12:38 WAT · 05 Oct 2026</span>
+<span class="text-error font-medium">Secondary Geo-Collision</span>
+</div>
+<p class="text-on-surface mt-0.5">
+              Sign-in from Chrome on Windows 11 (London, UK). IP: 
+              <span class="masked-target font-code-snippet">82.165.•••.••</span>
+<button class="reveal-btn text-secondary text-[11px] ml-1" data-real="82.165.197.8" type="button">Reveal</button>. Session ID: #SES-LON-4412.
+            </p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-3.5 h-3.5 rounded-full bg-surface-navy-dark border-2 border-white"></span>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-semibold text-on-surface">12:38 WAT · 05 Oct 2026</span>
+<span class="text-error font-bold">Rule Triggered</span>
+</div>
+<p class="text-on-surface mt-0.5">
+              Automated anomaly rule TRIGGERED: <code class="px-1.5 py-0.5 bg-slate-100 rounded text-primary font-semibold">GEO-IMPOSSIBLE-TRAVEL-V2</code>. Incident assigned reference ALT-20261005-089.
+            </p>
+</div>
+</div>
+</div>
+<!-- Related Active Sessions List -->
+<div class="bg-white rounded-xl border border-outline-variant p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">dns</span>
+            Candidate Active Sessions (2)
+          </h4>
+<span class="text-xs text-on-surface-variant">Token Validity: Active</span>
+</div>
+<div class="space-y-2 text-xs">
+<!-- Session 1 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-low flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">Session #SES-LAG-9910</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] bg-green-100 text-audit-pass-mint border border-audit-pass-mint/30 font-semibold">Live</span>
+</div>
+<p class="text-on-surface-variant">Ikeja, Lagos · IP: <span class="masked-target">102.89.••.••</span><button class="reveal-btn text-secondary ml-1" data-real="102.89.44.12" type="button">Reveal</button> · Started 12:16 WAT</p>
+</div>
+<span class="text-on-surface-variant">Safari / macOS</span>
+</div>
+<!-- Session 2 -->
+<div class="p-3 rounded-lg border border-red-200 bg-red-50/40 flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-error">Session #SES-LON-4412</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] bg-red-100 text-error border border-error/30 font-semibold">Flagged</span>
+</div>
+<p class="text-on-surface-variant">Canary Wharf, London · IP: <span class="masked-target">82.165.•••.••</span><button class="reveal-btn text-secondary ml-1" data-real="82.165.197.8" type="button">Reveal</button> · Started 12:38 WAT</p>
+</div>
+<span class="text-on-surface-variant">Chrome / Win11</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Actions (Explicitly 44px min targets) -->
+<div class="p-4 bg-white border-t border-outline-variant flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<!-- Open Case -->
+<button class="min-h-[44px] px-4 rounded border border-outline hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+          Open Case
+        </button>
+<!-- Dismiss Alert -->
+<button class="min-h-[44px] px-4 rounded border border-outline text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" onclick="openDismissModal()" type="button">
+          Dismiss
+        </button>
+</div>
+<div class="flex items-center gap-2">
+<!-- Sign Out Sessions Warning -->
+<button class="min-h-[44px] px-4 rounded border border-[#B45309] bg-[#FFFBEB] text-[#B45309] hover:bg-amber-100 font-label-md text-label-md font-medium transition-colors focus:ring-2 focus:ring-secondary focus:outline-none flex items-center gap-1.5" onclick="confirmSignOut()" type="button">
+<span class="material-symbols-outlined text-sm">power_settings_new</span>
+<span>Sign Out Sessions</span>
+</button>
+<!-- Suspend Account Danger -->
+<button class="min-h-[44px] px-5 rounded bg-error text-white hover:bg-red-800 font-label-md text-label-md font-semibold transition-colors focus:ring-2 focus:ring-secondary focus:outline-none flex items-center gap-1.5 shadow-sm" onclick="openSuspendModal()" type="button">
+<span class="material-symbols-outlined text-sm">block</span>
+<span>Suspend Account</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- =========================================================================
+       MODAL: CONFIRM SUSPENSION DIALOG
+       Mandatory audit rationale with 44px touch targets.
+       ========================================================================= -->
+<div class="hidden fixed inset-0 z-50 overflow-y-auto bg-surface-navy-dark/70 backdrop-blur-xs flex items-center justify-center p-4" id="suspendModal">
+<div class="bg-white rounded-xl border border-outline-variant max-w-lg w-full p-6 space-y-5 shadow-2xl relative">
+<!-- Modal Header -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-[#FEF2F2] border border-error text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">gavel</span>
+</div>
+<div>
+<h3 class="font-headline-md text-lg font-bold text-on-surface">Suspend Candidate Account?</h3>
+<p class="text-sm text-on-surface-variant mt-1">
+            This action will immediately terminate active sessions and lock all courseware access for <strong>Chinedu Eze</strong> (SIL-NG-2026-4491).
+          </p>
+</div>
+</div>
+<!-- Mandatory Reason Textarea -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface" for="auditRationale">
+          Mandatory audit rationale for suspending Chinedu Eze <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-3 rounded-md border border-outline text-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:outline-none" id="auditRationale" placeholder="Enter formal compliance findings, e.g., Confirmed concurrent multi-jurisdiction authentication violation under Section 4.2 of A.J. Silicon Exam Regulations..." rows="3"></textarea>
+<span class="text-[11px] text-on-surface-variant block">This entry is immutable and logged permanently to the zero-trust audit ledger with your officer ID.</span>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-3 pt-2 border-t border-outline-variant">
+<button class="min-h-[44px] px-5 rounded border border-outline text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" onclick="closeSuspendModal()" type="button">
+          Cancel
+        </button>
+<button class="min-h-[44px] px-6 rounded bg-error text-white hover:bg-red-800 font-label-md text-label-md font-semibold transition-colors focus:ring-2 focus:ring-secondary focus:outline-none flex items-center gap-2" onclick="executeSuspension()" type="button">
+<span class="material-symbols-outlined text-sm">lock_person</span>
+<span>Confirm Suspension</span>
+</button>
+</div>
+</div>
+</div>
+<!-- =========================================================================
+       INSTITUTIONAL FOOTER CLOSURE
+       ========================================================================= -->
+<footer class="w-full py-4 px-gutter border-t border-surface-slate-tech bg-surface-navy-dark flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-xs text-outline-variant">
+<div>
+<p class="font-body-sm text-body-sm text-outline-variant">
+        © 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. All Sessions Digitally Watermarked.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-outline-variant">
+<a class="hover:text-white transition-colors" href="#">Zero-Trust Protocol</a>
+<span>·</span>
+<a class="hover:text-white transition-colors" href="#">Forensic Integrity Policy</a>
+<span>·</span>
+<a class="hover:text-white transition-colors" href="#">SecOps Disclosure</a>
+<span>·</span>
+<span class="tabular-nums text-white/50">WAT Datacenter Active</span>
+</div>
+</footer>
+<!-- =========================================================================
+       INLINE MICRO-INTERACTIONS & REVEAL SCRIPTS
+       ========================================================================= -->
+<script>
+    // Reveal masked data handlers
+    document.querySelectorAll('.reveal-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = this.previousElementSibling;
+        const realValue = this.getAttribute('data-real');
+        if (target && realValue) {
+          if (this.textContent === 'Reveal') {
+            target.textContent = realValue;
+            this.textContent = 'Hide';
+            this.classList.add('text-slate-400');
+          } else {
+            // Re-mask
+            if (realValue.includes('@')) {
+              const parts = realValue.split('@');
+              target.textContent = parts[0].charAt(0) + '••••••••@' + parts[1];
+            } else if (realValue.includes('+234')) {
+              target.textContent = '+234 803 ••• ••20';
+            } else if (realValue.startsWith('102.')) {
+              target.textContent = '102.89.••.••';
+            } else if (realValue.startsWith('82.')) {
+              target.textContent = '82.165.•••.••';
+            }
+            this.textContent = 'Reveal';
+            this.classList.remove('text-slate-400');
+          }
+        }
+      });
+    });
+
+    // Drawer Controller
+    const drawer = document.getElementById('alertDrawer');
+    const toggleDrawerBtn = document.getElementById('toggleDrawerBtn');
+
+    function openDrawer() {
+      drawer.classList.remove('translate-x-full');
+      drawer.classList.add('translate-x-0');
+    }
+
+    function closeDrawer() {
+      drawer.classList.add('translate-x-full');
+      drawer.classList.remove('translate-x-0');
+    }
+
+    toggleDrawerBtn.addEventListener('click', () => {
+      if (drawer.classList.contains('translate-x-0')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+
+    // Suspend Modal Controllers
+    const suspendModal = document.getElementById('suspendModal');
+
+    function openSuspendModal() {
+      suspendModal.classList.remove('hidden');
+    }
+
+    function closeSuspendModal() {
+      suspendModal.classList.add('hidden');
+    }
+
+    function executeSuspension() {
+      const rationale = document.getElementById('auditRationale').value;
+      if (!rationale.trim()) {
+        alert('Audit Rationale is mandatory for candidate session revocation and ledger compliance.');
+        document.getElementById('auditRationale').focus();
+        return;
+      }
+      alert('Candidate SIL-NG-2026-4491 suspended. Action recorded with Officer Chukwudi Nnamdi.');
+      closeSuspendModal();
+      closeDrawer();
+    }
+
+    function confirmSignOut() {
+      if (confirm('Terminate all concurrent candidate sessions immediately? Candidate must re-authenticate with biometric verification.')) {
+        alert('All remote sessions terminated successfully.');
+      }
+    }
+
+    function openDismissModal() {
+      const reason = prompt('Please enter mandatory compliance justification for dismissing Critical Anomaly ALT-20261005-089:');
+      if (reason && reason.trim()) {
+        alert('Alert ALT-20261005-089 marked as False Positive. Logged to SecOps audit ledger.');
+        closeDrawer();
+      }
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

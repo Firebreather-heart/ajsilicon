@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy - Enrolment Actions Specification Board</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-high": "#e2e7ff",
+            "tertiary-container": "#281809",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface": "#faf8ff",
+            "on-primary-container": "#7c8495",
+            "background": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "on-surface-variant": "#45474c",
+            "secondary": "#1d4ed8",
+            "surface-bright": "#faf8ff",
+            "primary": "#000000",
+            "inverse-surface": "#283044",
+            "surface-dim": "#d2d9f4",
+            "on-background": "#131b2e",
+            "on-tertiary-container": "#997f6a",
+            "outline": "#75777c",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-secondary-container": "#fffbff",
+            "primary-fixed": "#dbe2f5",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "outline-variant": "#c5c6cc",
+            "secondary-fixed": "#dce1ff",
+            "inverse-primary": "#bfc6d9",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-variant": "#dae2fd",
+            "surface-tint": "#575f6e",
+            "secondary-container": "#4069f2",
+            "tertiary": "#000000",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#0039b5",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container": "#eaedff",
+            "on-surface": "#131b2e",
+            "on-tertiary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#001551",
+            "on-tertiary-fixed": "#281809",
+            "on-error-container": "#93000a",
+            "primary-container": "#141c29",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-primary-fixed": "#141c29",
+            // Specific enterprise audit colors specified
+            "navy-shell": "#0B1320",
+            "link-navy": "#1D4ED8",
+            "link-dark": "#93C5FD",
+            "app-slate": "#64748B",
+            "app-border": "#E2E8F0",
+            "app-text": "#0F172A",
+            "app-muted": "#475569",
+            "danger-base": "#B91C1C",
+            "danger-bg": "#FEF2F2",
+            "success-base": "#047857",
+            "success-bg": "#ECFDF5",
+            "warning-base": "#B45309",
+            "warning-bg": "#FFFBEB",
+            "info-base": "#1D4ED8",
+            "info-bg": "#EFF6FF"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.5rem",
+            "gutter": "1.5rem",
+            "space-md": "1.5rem",
+            "space-sm": "1rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "space-lg": "2rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-focus:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+    /* Modal active glow styling override to adhere strictly to flat design guidelines */
+    input:focus, select:focus, textarea:focus {
+      border-color: #2563EB !important;
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+      box-shadow: none !important;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A] font-body-md antialiased min-h-screen flex flex-col">
+<!-- TOP APP BAR / NAVY SHELL (Exact constraints: #0B1320, 64px, White mounted plate logo, plain text staff role, no role switcher) -->
+<header class="w-full bg-[#0B1320] h-16 px-6 flex items-center justify-between z-30 sticky top-0 shadow-sm border-b border-[#1E293B]">
+<div class="flex items-center gap-6">
+<!-- White Plate for Logo with precise padding -->
+<div class="bg-white px-3 py-1.5 rounded flex items-center h-10 border border-slate-200">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMbSy5z8yH_dd-3jOumoLaTMFPZD9hz9Dk1AOZ2ql6cxGedQRsYXr6liGFIn4gDXz5-nQztZ0DJtQzWJlahzyev5gCbKdxpmtMXFgYzdXH5atmqb_DDU67VdU4EJEFlI-L0jZUlL8_pm8mUpcLu-rNcNMkApvxAQKMqB2v8HEO91PgIYl4hiOKWP_2tN_3BiUV0zNfSUfBjD3MWQnOW9hT-vaSL72PJFCvCWXk1LveDb5OtpUvy-NeeQ"/>
+</div>
+<div class="h-5 w-[1px] bg-slate-700 hidden md:block"></div>
+<div class="hidden md:flex items-center gap-2">
+<span class="text-white text-sm font-semibold tracking-wide">Enterprise Learning Platform</span>
+<span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-mono">v4.2.8</span>
+</div>
+</div>
+<!-- Right Top Shell Telemetry & Operations Identity -->
+<div class="flex items-center gap-6">
+<div class="text-right hidden sm:block">
+<div class="text-xs text-slate-400 font-mono">12:20 WAT · 05 Oct 2026</div>
+<div class="text-xs text-white font-medium flex items-center gap-1.5 justify-end">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+<span>Role: Operations Manager | Olumide Adeyemi</span>
+</div>
+</div>
+<div class="flex items-center gap-2 border-l border-slate-800 pl-4">
+<button class="w-11 h-11 flex items-center justify-center rounded text-slate-300 hover:text-white hover:bg-slate-800 custom-focus transition-colors" title="Audit Telemetry">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</button>
+<button class="w-11 h-11 flex items-center justify-center rounded text-slate-300 hover:text-white hover:bg-slate-800 custom-focus transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="w-9 h-9 rounded bg-[#1E293B] border border-slate-700 flex items-center justify-center text-white text-xs font-semibold">
+          OA
+        </div>
+</div>
+</div>
+</header>
+<!-- MAIN WORKSPACE LAYOUT -->
+<div class="flex-1 flex max-w-[1440px] w-full mx-auto">
+<!-- STAFF APPLICATION RAIL / SIDEBAR (Active: Students > Enrolments / Users) -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] shrink-0 flex flex-col justify-between hidden lg:flex py-4">
+<div class="space-y-6">
+<!-- Division Branding -->
+<div class="px-5">
+<div class="text-xs font-bold uppercase tracking-wider text-[#475569]">Operations &amp; Governance</div>
+<div class="text-xs text-[#64748B] mt-0.5">Lagos Training Hub (HQ)</div>
+</div>
+<!-- Navigation Links -->
+<nav class="space-y-1 px-3">
+<a class="flex items-center gap-3 px-3 py-2.5 text-sm rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Executive Overview</span>
+</a>
+<!-- Active Group: Students -->
+<div class="pt-2">
+<div class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-[#0F172A]">Student Governance</div>
+<a class="flex items-center gap-3 px-3 py-2.5 text-sm rounded bg-[#F1F5F9] text-[#0F172A] font-semibold border-l-4 border-[#0B1320] transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[#0B1320]">group</span>
+<span class="flex-1">Users &amp; Candidates</span>
+<span class="text-xs font-mono bg-white px-2 py-0.5 rounded border border-[#E2E8F0] text-[#0F172A]">2,410</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-sm rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="flex-1">Active Enrolments</span>
+<span class="w-2 h-2 rounded-full bg-blue-600"></span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-sm rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined">supervisor_account</span>
+<span>Cohorts Management</span>
+</a>
+</div>
+<div class="pt-3">
+<div class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-[#475569]">Curriculum &amp; Assurance</div>
+<a class="flex items-center gap-3 px-3 py-2.5 text-sm rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span>Programmes &amp; Modules</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-sm rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>Assessments &amp; Mocks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-sm rounded text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors min-h-[44px]" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span>Audit Trails &amp; Dual Sign-off</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Sidebar Footprint / Security badge -->
+<div class="px-4 pt-4 border-t border-[#E2E8F0]">
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<div class="flex items-center gap-2 text-xs font-semibold text-[#0F172A]">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">gavel</span>
+<span>Dual-Control Active</span>
+</div>
+<p class="text-[12px] text-[#475569] mt-1 leading-relaxed">
+            Policy 2026-ENG requires four-eyes verification for grant cycles &gt; 30d.
+          </p>
+</div>
+</div>
+</aside>
+<!-- MAIN BODY CANVAS -->
+<main class="flex-1 min-w-0 p-6 md:p-8 space-y-8 overflow-y-auto">
+<!-- BREADCRUMB & CONTEXT HEADER -->
+<div class="space-y-4">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-mono text-[#475569]">
+<span>Students</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Users</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#0F172A] font-medium">Chinedu Eze (AJ-LOS-2026-081)</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#1D4ED8] font-semibold">Enrolment Actions Specification Board</span>
+</nav>
+<!-- PAGE HEADER / ACTIONS CLUSTER -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-[#0F172A] flex items-center gap-3">
+              Enrolment actions dialogs
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] rounded">
+<span class="material-symbols-outlined text-[14px]">rule</span>
+                Institutional Spec Sheet
+              </span>
+</h1>
+<p class="text-sm text-[#475569] mt-1">
+              Design specifications for Candidate Enrolment State Modals, Four-Eyes Authorization Thresholds, and Dual-Staff Workflows.
+            </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-4 py-2 text-sm font-medium border border-[#64748B] text-[#0F172A] bg-white rounded-md hover:bg-[#F1F5F9] custom-focus transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Candidate History</span>
+</button>
+<button class="min-h-[44px] px-5 py-2 text-sm font-medium bg-[#0B1320] text-white rounded-md hover:bg-[#1E293B] custom-focus transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">note_add</span>
+<span>+ Log staff note</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CANDIDATE SUMMARY CARD (Base context) -->
+<section class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-none">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#E2E8F0]">
+<!-- Student Bio Data -->
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-lg bg-[#0B1320] text-white flex items-center justify-center text-xl font-bold shrink-0">
+              CE
+            </div>
+<div>
+<div class="flex items-center gap-3 flex-wrap">
+<h2 class="text-lg font-bold text-[#0F172A]">Chinedu Eze</h2>
+<span class="font-mono text-xs px-2 py-0.5 bg-[#F1F5F9] border border-[#CBD5E1] text-[#334155] rounded">ID: AJ-LOS-2026-081</span>
+<!-- Multi-modal Status Chip (Icon + Text + Shape) -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Identity Verified
+                </span>
+</div>
+<div class="mt-2 flex items-center gap-4 text-xs text-[#475569] flex-wrap">
+<span>Employer: <strong>Access Bank PLC (Internal Audit Dept)</strong></span>
+<span class="text-slate-300">|</span>
+<!-- Sensitive Masked Field with Reveal Trigger -->
+<span class="flex items-center gap-1.5">
+<span>Email:</span>
+<span class="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-800" id="masked-email">c••••••••@gmail.com</span>
+<button class="text-[#1D4ED8] hover:underline text-xs font-semibold custom-focus px-1 py-0.5" onclick="const el = document.getElementById('masked-email'); el.innerText = el.innerText.includes('•') ? 'chinedu.eze.audit@gmail.com' : 'c••••••••@gmail.com';" type="button">Reveal</button>
+</span>
+<span class="text-slate-300">|</span>
+<span>Phone: +234 803 ••• 9812</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Jump Buttons (Triggering the 4 Dialogs) -->
+<div class="flex flex-wrap items-center gap-2">
+<a class="min-h-[44px] px-3.5 py-2 text-xs font-medium rounded-md bg-[#0B1320] text-white hover:bg-[#1E293B] custom-focus transition-colors inline-flex items-center gap-1.5" href="#dialog-grant">
+<span class="material-symbols-outlined text-[16px]">add_task</span>
+              Dialog 1: Grant Access
+            </a>
+<a class="min-h-[44px] px-3.5 py-2 text-xs font-medium rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] custom-focus transition-colors inline-flex items-center gap-1.5" href="#dialog-extend">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+              Dialog 2: Extend Access
+            </a>
+<a class="min-h-[44px] px-3.5 py-2 text-xs font-medium rounded-md bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEE2E2] custom-focus transition-colors inline-flex items-center gap-1.5" href="#dialog-revoke">
+<span class="material-symbols-outlined text-[16px]">person_off</span>
+              Dialog 3: Revoke Access
+            </a>
+<a class="min-h-[44px] px-3.5 py-2 text-xs font-medium rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] custom-focus transition-colors inline-flex items-center gap-1.5" href="#dialog-transfer">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+              Dialog 4: Transfer Cohort
+            </a>
+</div>
+</div>
+<!-- Current Enrolment Detail Row -->
+<div class="mt-4 pt-2 grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<span class="text-[#64748B] block font-mono uppercase text-[11px]">Primary Active Track</span>
+<span class="text-sm font-semibold text-[#0F172A] mt-0.5 block">CISA Exam Prep</span>
+<span class="text-[#475569]">Cohort 14 (Weekend Stream)</span>
+</div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<span class="text-[#64748B] block font-mono uppercase text-[11px]">Licence Window</span>
+<span class="text-sm font-semibold text-[#0F172A] mt-0.5 block">18 Oct 2026</span>
+<span class="text-[#B45309] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 13 days remaining
+            </span>
+</div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<span class="text-[#64748B] block font-mono uppercase text-[11px]">Payment Reference</span>
+<span class="text-sm font-mono font-medium text-[#0F172A] mt-0.5 block">pstk_891024801</span>
+<span class="text-[#047857] font-medium">₦485,000 Verified (Access Bank)</span>
+</div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<span class="text-[#64748B] block font-mono uppercase text-[11px]">Academic Progress</span>
+<span class="text-sm font-semibold text-[#0F172A] mt-0.5 block">68% Syllabus · 2/4 Mocks</span>
+<span class="text-[#475569]">Last log: 04 Oct 2026 (Domain 3)</span>
+</div>
+</div>
+</section>
+<!-- SPECIFICATION BOARD SECTION DIVIDER -->
+<div class="flex items-center gap-3 pt-4">
+<span class="h-px bg-[#E2E8F0] flex-1"></span>
+<span class="text-xs font-mono uppercase tracking-wider text-[#64748B] bg-[#F8FAFC] px-3 py-1 border border-[#E2E8F0] rounded-full">
+          Comprehensive Modal Dialog Specifications
+        </span>
+<span class="h-px bg-[#E2E8F0] flex-1"></span>
+</div>
+<!-- ========================================================================= -->
+<!-- DIALOG SPECIFICATION 1: GRANT ACCESS (With Variant States A, B, and C) -->
+<!-- ========================================================================= -->
+<section class="space-y-6" id="dialog-grant">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-sm font-bold">1</span>
+<div>
+<h3 class="text-lg font-bold text-[#0F172A]">DIALOG 1: "Grant access"</h3>
+<p class="text-xs text-[#475569]">Creates new courseware entitlements with duration calculation and dual-approval check</p>
+</div>
+</div>
+<span class="text-xs font-mono text-[#64748B]">Modal Ref: MD-ENR-01</span>
+</div>
+<!-- Bento Grid for Grant Access variants & core UI -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- Core Dialog UI Layout (8 cols) -->
+<div class="xl:col-span-7 bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between bg-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[22px]">assignment_ind</span>
+<h4 class="text-base font-bold text-[#0F172A]">Grant Program Access</h4>
+</div>
+<button class="w-8 h-8 rounded hover:bg-slate-100 flex items-center justify-center text-[#64748B] hover:text-[#0F172A]">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Content Form -->
+<div class="p-6 space-y-5">
+<!-- Student Target Header Strip -->
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg flex items-center justify-between">
+<div>
+<span class="text-[11px] font-mono text-[#64748B] uppercase block">Grantee</span>
+<span class="text-sm font-semibold text-[#0F172A]">Chinedu Eze · AJ-LOS-2026-081</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-mono">Operations Dept</span>
+</div>
+<!-- Field 1: Programme dropdown -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="grant-programme">
+                  Programme <span class="text-red-600">*</span>
+</label>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 py-2 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] appearance-none custom-focus" id="grant-programme">
+<option selected="">CISA Exam Prep (Certified Information Systems Auditor)</option>
+<option>CRISC (Certified in Risk and Information Systems Control)</option>
+<option>CISM (Certified Information Security Manager)</option>
+<option>AAIA (Applied Audit Infrastructure Analytics)</option>
+</select>
+<span class="material-symbols-outlined text-slate-400 absolute right-3 top-3 pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Field 2: Cohort dropdown -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="grant-cohort">
+                  Target Cohort Stream <span class="text-red-600">*</span>
+</label>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 py-2 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] appearance-none custom-focus" id="grant-cohort">
+<option selected="">Cohort 14 (Weekend Stream) - Starts 12 Oct 2026</option>
+<option>Cohort 15 (Weekday Intensive) - Starts 02 Nov 2026</option>
+<option>Cohort 16 (Executive Flex) - Starts 09 Jan 2027</option>
+</select>
+<span class="material-symbols-outlined text-slate-400 absolute right-3 top-3 pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Field 3: Licence End Date -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="grant-end-date">
+                    Licence End Date (WAT format) <span class="text-red-600">*</span>
+</label>
+<div class="relative">
+<input class="w-full min-h-[44px] px-3.5 py-2 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] font-mono custom-focus" id="grant-end-date" type="text" value="15 Dec 2026"/>
+<span class="material-symbols-outlined text-slate-400 absolute right-3 top-3 pointer-events-none text-[20px]">calendar_today</span>
+</div>
+<span class="text-[11px] text-[#475569]">Calculated span: <strong>64 days</strong> from authorization</span>
+</div>
+<!-- Field 4: Payment Reference -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="grant-pay-ref">
+                    Payment Reference <span class="text-xs text-[#64748B] font-normal">(Optional)</span>
+</label>
+<input class="w-full min-h-[44px] px-3.5 py-2 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] font-mono custom-focus" id="grant-pay-ref" placeholder="e.g. pstk_891024801 or AC-981" type="text" value="pstk_891024801"/>
+<span class="text-[11px] text-[#047857] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span> Direct settlement confirmed
+                  </span>
+</div>
+</div>
+<!-- Field 5: Reason with mandatory inline validation -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="block text-xs font-semibold text-[#0F172A]" for="grant-reason">
+                    Governance Justification &amp; Reason <span class="text-red-600">*</span>
+</label>
+<span class="text-[11px] text-[#64748B] font-mono">min. 25 chars (42 entered)</span>
+</div>
+<textarea class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] custom-focus resize-none" id="grant-reason" placeholder="Provide audit justification for manual access creation..." rows="3">Approved corporate sponsorship letter submitted by Access Bank Head of Internal Audit.</textarea>
+<span class="text-[11px] text-[#047857] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Field verified: Justification conforms to corporate audit policy.
+                </span>
+</div>
+<!-- Four-eyes Approval Threshold Warning Banner -->
+<div class="p-3.5 bg-[#FFFBEB] border border-[#B45309] rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[20px] shrink-0 mt-0.5">warning</span>
+<div class="text-xs text-[#0F172A] leading-relaxed">
+<span class="font-bold text-[#B45309]">Four-Eyes Dual Sign-off Required:</span>
+                  Licence span is 64 days (&gt; 30-day threshold). A secondary sign-off from Babatunde Lawal (Super Admin / Faculty Chair) will be automatically queued upon submission.
+                </div>
+</div>
+</div>
+<!-- Modal Footer Buttons -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-3">
+<button class="min-h-[44px] px-5 py-2 text-sm font-medium border border-[#64748B] text-[#0F172A] bg-white rounded-md hover:bg-[#F1F5F9] custom-focus" type="button">
+                Cancel
+              </button>
+<button class="min-h-[44px] px-6 py-2 text-sm font-medium bg-[#0B1320] text-white rounded-md hover:bg-[#1E293B] custom-focus flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Grant access</span>
+</button>
+</div>
+</div>
+<!-- Variant State Cards Column (5 cols) -->
+<div class="xl:col-span-5 space-y-4">
+<div class="p-4 bg-white border border-[#E2E8F0] rounded-xl space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-[#E2E8F0]">
+<span class="text-xs font-mono font-bold text-[#0F172A] uppercase">Required State Variants</span>
+<span class="text-[11px] text-[#64748B]">Automated Rule Tree</span>
+</div>
+<!-- VARIANT A: Normal Grant (<= 30 days) -->
+<div class="p-3.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-[#0F172A] flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    Variant A: Normal Grant (≤ 30 days)
+                  </span>
+<span class="text-[11px] font-mono text-[#047857] bg-[#ECFDF5] px-1.5 py-0.5 rounded border border-[#047857]">Single Staff OK</span>
+</div>
+<p class="text-xs text-[#475569] leading-relaxed">
+                  Single approval threshold. No second sign-off trigger. Primary CTA "Grant access" is immediately active upon form validation.
+                </p>
+<div class="pt-2 flex justify-end">
+<button class="min-h-[36px] px-4 py-1.5 text-xs font-medium bg-[#0B1320] text-white rounded custom-focus flex items-center gap-1.5 opacity-90">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                    Grant access (Immediate)
+                  </button>
+</div>
+</div>
+<!-- VARIANT B: Approval Required (> 30 days) -->
+<div class="p-3.5 bg-[#FFFBEB] border border-[#B45309] rounded-lg space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-[#B45309] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">security</span>
+                    Variant B: Approval Required (&gt; 30 days)
+                  </span>
+<span class="text-[11px] font-mono text-[#B45309] bg-white px-1.5 py-0.5 rounded border border-[#B45309]">4-Eyes Queue</span>
+</div>
+<div class="text-xs text-[#0F172A] leading-relaxed">
+                  "A second approver is required for grants longer than 30 days. Request will be routed to Super Admin queue."
+                </div>
+<div class="pt-1 flex items-center justify-between text-[11px] text-[#B45309]">
+<span>Assigned routing: <strong>Babatunde Lawal</strong></span>
+<span class="font-mono">SLA: 24h</span>
+</div>
+</div>
+<!-- VARIANT C: Success Toast -->
+<div class="p-3.5 bg-[#ECFDF5] border border-[#047857] rounded-lg space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-[#047857] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                    Variant C: Success Toast Output
+                  </span>
+<span class="text-[11px] font-mono text-[#047857] bg-white px-1.5 py-0.5 rounded border border-[#047857]">Dispatched</span>
+</div>
+<div class="text-xs text-[#0F172A] leading-relaxed bg-white p-2.5 rounded border border-[#A7F3D0]">
+<p class="font-medium text-[#047857]">Enrolment granted successfully.</p>
+<p class="text-[#334155] mt-0.5">Confirmation sent to Chinedu Eze · Reference: <strong class="font-mono text-[#0F172A]">ENR-2026-CISA-041</strong></p>
+</div>
+<div class="flex items-center justify-between text-[11px] text-[#475569]">
+<span>Audit Record Hash: <span class="font-mono text-slate-700">#89f2a0</span></span>
+<span class="text-[#047857] font-semibold">Logged to Lagos Vault</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- DIALOG SPECIFICATION 2: EXTEND ACCESS -->
+<!-- ========================================================================= -->
+<section class="space-y-6 pt-6 border-t border-[#E2E8F0]" id="dialog-extend">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-sm font-bold">2</span>
+<div>
+<h3 class="text-lg font-bold text-[#0F172A]">DIALOG 2: "Extend access"</h3>
+<p class="text-xs text-[#475569]">Calculates new license expiration dates with incremental duration steppers</p>
+</div>
+</div>
+<span class="text-xs font-mono text-[#64748B]">Modal Ref: MD-ENR-02</span>
+</div>
+<div class="max-w-2xl bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<!-- Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[22px]">update</span>
+<h4 class="text-base font-bold text-[#0F172A]">Extend Enrolment Duration</h4>
+</div>
+<span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-300">Cohort 14 Target</span>
+</div>
+<div class="p-6 space-y-5">
+<!-- Field 1: Enrolment Target Fixed Display -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]">Enrolment Target</label>
+<div class="min-h-[44px] px-3.5 py-2.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-md text-sm text-[#0F172A] flex items-center justify-between">
+<span class="font-semibold">CISA Exam Prep - Cohort 14 (Weekend Stream)</span>
+<span class="text-xs text-[#475569]">Current end: <strong>18 Oct 2026</strong></span>
+</div>
+</div>
+<!-- Field 2: Additional Days Stepper / Selector -->
+<div class="space-y-2">
+<label class="block text-xs font-semibold text-[#0F172A]">
+                Additional Extension Period <span class="text-red-600">*</span>
+</label>
+<div class="grid grid-cols-4 gap-2.5">
+<button class="min-h-[44px] border border-[#64748B] hover:border-[#0B1320] rounded-md text-center py-2 text-sm font-medium custom-focus hover:bg-[#F1F5F9]" type="button">
+                  +14 days
+                </button>
+<button class="min-h-[44px] border border-[#64748B] hover:border-[#0B1320] rounded-md text-center py-2 text-sm font-medium custom-focus hover:bg-[#F1F5F9]" type="button">
+                  +30 days
+                </button>
+<button class="min-h-[44px] border-2 border-[#0B1320] bg-[#F1F5F9] rounded-md text-center py-2 text-sm font-bold custom-focus text-[#0B1320]" type="button">
+                  +60 days
+                </button>
+<button class="min-h-[44px] border border-[#64748B] hover:border-[#0B1320] rounded-md text-center py-2 text-sm font-medium custom-focus hover:bg-[#F1F5F9]" type="button">
+                  +90 days
+                </button>
+</div>
+<p class="text-[11px] text-[#475569]">Selected incremental span: <strong>60 additional calendar days</strong>.</p>
+</div>
+<!-- Field 3: New Calculated End Date Display -->
+<div class="p-3.5 bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg flex items-center justify-between">
+<div>
+<span class="text-[11px] uppercase tracking-wide font-mono text-[#1D4ED8] block">New Calculated Expiration Date</span>
+<span class="text-base font-bold text-[#0F172A] font-mono mt-0.5 block">17 Dec 2026 (23:59 WAT)</span>
+</div>
+<span class="text-xs font-medium text-[#1D4ED8] bg-white px-2.5 py-1 rounded border border-[#1D4ED8]">
+                +60 Days Computed
+              </span>
+</div>
+<!-- Field 4: Reason Textarea with validation -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="extend-reason">
+                Reason for Extension <span class="text-red-600">*</span>
+</label>
+<textarea class="w-full px-3.5 py-2 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] custom-focus resize-none" id="extend-reason" placeholder="State operational or academic grounds for extension..." rows="3">Candidate requested deferral window due to Access Bank Q4 financial year-end audit deployment. Approved by Line Supervisor.</textarea>
+<span class="text-[11px] text-[#047857] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span> Valid justification provided.
+              </span>
+</div>
+<!-- Four-eyes approval notice -->
+<div class="p-3 bg-[#FFFBEB] border border-[#B45309] rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#B45309] text-[18px] shrink-0 mt-0.5">verified_user</span>
+<div class="text-xs text-[#0F172A]">
+<strong class="text-[#B45309]">Four-Eyes Dual Sign-off Trigger:</strong>
+                Extensions exceeding 30 days require Super Admin secondary sign-off before new access credentials become operational in the courseware.
+              </div>
+</div>
+</div>
+<!-- Footer Buttons -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-3">
+<button class="min-h-[44px] px-5 py-2 text-sm font-medium border border-[#64748B] text-[#0F172A] bg-white rounded-md hover:bg-[#F1F5F9] custom-focus" type="button">
+              Cancel
+            </button>
+<button class="min-h-[44px] px-6 py-2 text-sm font-medium bg-[#0B1320] text-white rounded-md hover:bg-[#1E293B] custom-focus flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Submit extension</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- DIALOG SPECIFICATION 3: REVOKE ACCESS (Destructive) -->
+<!-- ========================================================================= -->
+<section class="space-y-6 pt-6 border-t border-[#E2E8F0]" id="dialog-revoke">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-[#B91C1C] text-white flex items-center justify-center text-sm font-bold">3</span>
+<div>
+<h3 class="text-lg font-bold text-[#0F172A]">DIALOG 3: "Revoke access"</h3>
+<p class="text-xs text-[#475569]">Destructive state workflow with compliance justification and token invalidation</p>
+</div>
+</div>
+<span class="text-xs font-mono text-[#B91C1C] font-semibold bg-[#FEF2F2] px-2 py-0.5 rounded border border-[#B91C1C]">Strict Dual-Control</span>
+</div>
+<div class="max-w-2xl bg-white border border-[#B91C1C] rounded-xl overflow-hidden shadow-sm">
+<!-- Danger Header Banner -->
+<div class="px-6 py-4 bg-[#FEF2F2] border-b border-[#FCA5A5] flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#B91C1C] text-[22px]">gavel</span>
+<h4 class="text-base font-bold text-[#B91C1C]">Revoke Enrolment Privileges</h4>
+</div>
+<span class="text-xs font-mono text-[#B91C1C] font-semibold uppercase">DESTRUCTIVE ACTION</span>
+</div>
+<div class="p-6 space-y-5">
+<!-- Warning Notice Strip -->
+<div class="p-3.5 bg-[#FEF2F2] border border-[#B91C1C] rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B91C1C] text-[20px] shrink-0 mt-0.5">block</span>
+<div class="text-xs text-[#0F172A] leading-relaxed">
+<span class="font-bold text-[#B91C1C]">Immediate Session Termination:</span>
+                Revoking access immediately terminates courseware access and invalidates active session tokens across all enrolled candidate devices.
+              </div>
+</div>
+<!-- Target Student Meta -->
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg text-xs space-y-1">
+<div class="text-[#64748B]">Target Candidate:</div>
+<div class="font-bold text-[#0F172A]">Chinedu Eze (AJ-LOS-2026-081) — CISA Exam Prep (Cohort 14)</div>
+</div>
+<!-- Field 1: Effective Timing Radios -->
+<div class="space-y-2">
+<label class="block text-xs font-semibold text-[#0F172A]">Effective Timing <span class="text-red-600">*</span></label>
+<div class="space-y-2">
+<label class="min-h-[44px] flex items-center gap-3 p-3 border border-[#64748B] rounded-md cursor-pointer hover:bg-[#F8FAFC]">
+<input checked="" class="w-4 h-4 text-[#B91C1C] focus:ring-[#B91C1C]" name="revoke-timing" type="radio"/>
+<div>
+<span class="text-sm font-semibold text-[#0F172A] block">Effective immediately</span>
+<span class="text-xs text-[#475569]">Terminates access instantly upon dual staff sign-off.</span>
+</div>
+</label>
+<label class="min-h-[44px] flex items-center gap-3 p-3 border border-[#CBD5E1] rounded-md cursor-pointer hover:bg-[#F8FAFC]">
+<input class="w-4 h-4 text-[#B91C1C] focus:ring-[#B91C1C]" name="revoke-timing" type="radio"/>
+<div class="flex-1 flex items-center justify-between">
+<div>
+<span class="text-sm font-semibold text-[#0F172A] block">Effective on scheduled date</span>
+<span class="text-xs text-[#475569]">Set a grace period until specific audit cutoff.</span>
+</div>
+<input class="min-h-[36px] w-32 px-2.5 py-1 text-xs bg-slate-100 border border-slate-300 rounded text-slate-500 font-mono" disabled="" placeholder="DD/MM/YYYY" type="text"/>
+</div>
+</label>
+</div>
+</div>
+<!-- Field 2: Mandatory Reason with audit justification -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="block text-xs font-semibold text-[#0F172A]" for="revoke-reason">
+                  Mandatory Audit Justification <span class="text-red-600">*</span>
+</label>
+<span class="text-[11px] text-[#B91C1C] font-mono">Mandatory field</span>
+</div>
+<textarea class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#B91C1C] custom-focus resize-none" id="revoke-reason" placeholder="Detail official rationale (e.g. corporate sponsorship withdrawal, compliance breach)..." rows="3">Candidate recalled by Access Bank HR due to project transfer; formal cancellation requested in memo REF-AB-092.</textarea>
+</div>
+<!-- Field 3: Notify Student Toggle / Checkbox -->
+<div class="p-3 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg">
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 text-[#0B1320] rounded border-[#64748B] focus:ring-[#2563EB]" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-[#0F172A] block">Notify candidate via registered enterprise email</span>
+<span class="text-[#475569] block mt-0.5">Send notice to <strong class="font-mono">c••••••••@gmail.com</strong> explaining revocation reason and transcript retrieval window.</span>
+</div>
+</label>
+</div>
+<!-- Four-eyes approval note -->
+<div class="p-3 bg-[#FFFBEB] border border-[#B45309] rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#B45309] text-[18px] shrink-0 mt-0.5">verified</span>
+<div class="text-xs text-[#0F172A]">
+<strong class="text-[#B45309]">Immutable Compliance Audit Record:</strong>
+                All access revocations trigger an immutable compliance audit record requiring dual-staff acknowledgment from Lagos Academy Council.
+              </div>
+</div>
+</div>
+<!-- Buttons -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-3">
+<button class="min-h-[44px] px-5 py-2 text-sm font-medium border border-[#64748B] text-[#0F172A] bg-white rounded-md hover:bg-[#F1F5F9] custom-focus" type="button">
+              Cancel
+            </button>
+<button class="min-h-[44px] px-6 py-2 text-sm font-medium bg-[#B91C1C] text-white rounded-md hover:bg-[#991B1B] custom-focus flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+<span>Confirm revocation</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- DIALOG SPECIFICATION 4: TRANSFER TO ANOTHER COHORT -->
+<!-- ========================================================================= -->
+<section class="space-y-6 pt-6 border-t border-[#E2E8F0]" id="dialog-transfer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-sm font-bold">4</span>
+<div>
+<h3 class="text-lg font-bold text-[#0F172A]">DIALOG 4: "Transfer to another cohort"</h3>
+<p class="text-xs text-[#475569]">Migrates learner across streaming cohorts while preserving academic telemetry</p>
+</div>
+</div>
+<span class="text-xs font-mono text-[#64748B]">Modal Ref: MD-ENR-04</span>
+</div>
+<div class="max-w-2xl bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<!-- Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[22px]">published_with_changes</span>
+<h4 class="text-base font-bold text-[#0F172A]">Transfer Candidate Cohort</h4>
+</div>
+<span class="text-xs px-2.5 py-1 rounded bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] font-mono font-medium">Inter-Stream Transfer</span>
+</div>
+<div class="p-6 space-y-5">
+<!-- Current vs Target Cohort Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Current Cohort (Read-only) -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#475569]">Current Cohort</label>
+<div class="min-h-[44px] px-3.5 py-2.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-md text-xs font-semibold text-[#0F172A]">
+<div>CISA Cohort 14 (Weekend Stream)</div>
+<div class="text-[11px] text-[#64748B] font-normal mt-0.5">Enrolled 18 May 2026 · Module 2 Completed</div>
+</div>
+</div>
+<!-- Target Cohort (Select) -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="target-cohort">
+                  Target Cohort <span class="text-red-600">*</span>
+</label>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 py-2 text-xs bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] appearance-none custom-focus" id="target-cohort">
+<option selected="">CISA Cohort 15 (Weekday Intensive)</option>
+<option>CISA Cohort 16 (Fast-track Executive)</option>
+</select>
+<span class="material-symbols-outlined text-slate-400 absolute right-3 top-3 pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Capacity check badge (Exact constraint: Cohort 15 has 3 seats remaining) -->
+<div class="p-3 bg-[#ECFDF5] border border-[#047857] rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#047857] text-[18px]">event_seat</span>
+<span class="text-xs font-semibold text-[#047857]">Capacity Check Passed</span>
+</div>
+<span class="text-xs font-bold text-[#047857] font-mono bg-white px-2 py-0.5 rounded border border-[#047857]">
+                Cohort 15 has 3 seats remaining
+              </span>
+</div>
+<!-- Progress Transfer Options -->
+<div class="p-3.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-2">
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 text-[#0B1320] rounded border-[#64748B] focus:ring-[#2563EB]" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-[#0F172A] block">Carry forward completed modules and mock scores</span>
+<span class="text-[#475569] block mt-0.5">Retains Domain 1 and Domain 2 diagnostic test marks (68% syllabus completion preserved).</span>
+</div>
+</label>
+</div>
+<!-- Mandatory Reason Textarea -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="transfer-reason">
+                Reason for Cohort Transfer <span class="text-red-600">*</span>
+</label>
+<textarea class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] custom-focus resize-none" id="transfer-reason" placeholder="Provide reason for inter-cohort transfer..." rows="3">Learner moved to weekday shift at Access Bank audit desk. Requested migration to Weekday Intensive to maintain attendance metrics.</textarea>
+</div>
+<!-- Four-eyes approval notice -->
+<div class="p-3 bg-[#FFFBEB] border border-[#B45309] rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#B45309] text-[18px] shrink-0 mt-0.5">verified_user</span>
+<div class="text-xs text-[#0F172A]">
+<strong class="text-[#B45309]">Four-Eyes Dual Sign-off Mandate:</strong>
+                Inter-cohort transfers after module 2 require Lead Faculty or Operations Manager dual authorization before timetable syncing.
+              </div>
+</div>
+</div>
+<!-- Buttons -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-3">
+<button class="min-h-[44px] px-5 py-2 text-sm font-medium border border-[#64748B] text-[#0F172A] bg-white rounded-md hover:bg-[#F1F5F9] custom-focus" type="button">
+              Cancel
+            </button>
+<button class="min-h-[44px] px-6 py-2 text-sm font-medium bg-[#0B1320] text-white rounded-md hover:bg-[#1E293B] custom-focus flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>Transfer cohort</span>
+</button>
+</div>
+</div>
+</section>
+<!-- AUDIT LOG SPECIFICATION PREVIEW TABLE (Bottom Ledger) -->
+<section class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden pt-4">
+<div class="px-6 pb-4 border-b border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h3 class="text-sm font-bold text-[#0F172A]">Immutable Dual-Control Audit Ledger (Candidate: Chinedu Eze)</h3>
+<p class="text-xs text-[#475569]">All actions logged in this interface record both initiator and secondary verifier timestamps.</p>
+</div>
+<span class="text-xs font-mono text-[#047857] flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span> ISO 27001 Cryptographic Stamp
+          </span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[#475569] font-mono uppercase tracking-wider">
+<th class="py-3 px-4 font-semibold">Timestamp (WAT)</th>
+<th class="py-3 px-4 font-semibold">Action Type</th>
+<th class="py-3 px-4 font-semibold">Initiator (Staff)</th>
+<th class="py-3 px-4 font-semibold">Dual Approver</th>
+<th class="py-3 px-4 font-semibold">Status</th>
+<th class="py-3 px-4 font-semibold text-right">Audit Ref</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-[#0F172A]">
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3.5 px-4 font-mono text-[#475569]">05 Oct 2026 11:45</td>
+<td class="py-3.5 px-4 font-medium">Extend Access (+60d)</td>
+<td class="py-3.5 px-4">Olumide Adeyemi (Ops Mgr)</td>
+<td class="py-3.5 px-4 text-[#B45309] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                  Babatunde Lawal (Pending Sign-off)
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[12px]">hourglass_top</span>
+                    In Four-Eyes Queue
+                  </span>
+</td>
+<td class="py-3.5 px-4 font-mono text-right text-slate-500">AUD-2026-9021</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3.5 px-4 font-mono text-[#475569]">18 May 2026 09:12</td>
+<td class="py-3.5 px-4 font-medium">Initial Grant (CISA C14)</td>
+<td class="py-3.5 px-4">Olumide Adeyemi (Ops Mgr)</td>
+<td class="py-3.5 px-4">Babatunde Lawal (Super Admin)</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[12px]">check</span>
+                    Approved &amp; Active
+                  </span>
+</td>
+<td class="py-3.5 px-4 font-mono text-right text-slate-500">AUD-2026-1184</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+<!-- INSTITUTIONAL FOOTER -->
+<footer class="w-full bg-white border-t border-[#E2E8F0] mt-auto">
+<div class="max-w-[1440px] mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#475569]">
+<div>
+        © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+      </div>
+<div class="flex items-center gap-4 flex-wrap">
+<a class="hover:text-[#0B1320] transition-colors" href="#">Audit Protocol</a>
+<span class="text-slate-300">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#">Verification Registry</a>
+<span class="text-slate-300">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#">Public Ledger Key</a>
+<span class="text-slate-300">·</span>
+<a class="hover:text-[#0B1320] transition-colors" href="#">Governance Standards</a>
+<span class="text-slate-300">·</span>
+<span class="font-mono text-slate-400">Node: LOS-HQ-01</span>
+</div>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>

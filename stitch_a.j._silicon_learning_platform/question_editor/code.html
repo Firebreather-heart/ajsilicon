@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-50" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Question Editor | A.J. Silicon Staff Management Portal</title>
+<!-- IBM Plex Sans font from Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error-container": "#93000a",
+            "surface-variant": "#dae2fd",
+            "on-secondary-fixed": "#001551",
+            "error": "#ba1a1a",
+            "surface-container-high": "#e2e7ff",
+            "inverse-surface": "#283044",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-dim": "#d2d9f4",
+            "secondary-fixed-dim": "#b7c4ff",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#997f6a",
+            "on-primary-fixed": "#141c29",
+            "primary-container": "#141c29",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#eaedff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary-fixed-dim": "#bfc6d9",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#281809",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-container": "#4069f2",
+            "surface-container-highest": "#dae2fd",
+            "on-surface": "#131b2e",
+            "primary-fixed": "#dbe2f5",
+            "background": "#faf8ff",
+            "on-error": "#ffffff",
+            "surface": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "tertiary": "#000000",
+            "surface-tint": "#575f6e",
+            "tertiary-fixed": "#fddcc4",
+            "on-primary-container": "#7c8495",
+            "primary": "#000000",
+            "inverse-primary": "#bfc6d9",
+            "outline": "#75777c",
+            "on-surface-variant": "#45474c",
+            "on-background": "#131b2e",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "secondary-fixed": "#dce1ff",
+            "surface-container-low": "#f2f3ff",
+            "secondary": "#1d4ed8",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-tertiary-fixed": "#281809",
+            "on-secondary-container": "#fffbff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.5rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem",
+            "space-md": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "headline-sm": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+      line-height: 1;
+      display: inline-block;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    /* Precise focus indicators without glow */
+    input:focus, select:focus, textarea:focus, button:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+      border-color: #2563EB !important;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col antialiased text-[#0F172A] bg-[#F8FAFC]">
+<!-- TOP SHELL NAVIGATION (Fixed 64px, Solid Institutional Deep Navy #0B1320) -->
+<header class="w-full bg-[#0B1320] text-white h-16 shrink-0 z-40 sticky top-0 px-6 flex items-center justify-between border-b border-[#1E293B]">
+<div class="flex items-center gap-6">
+<!-- Isolated Crisp White Rounded Plate for Logo -->
+<div class="bg-white px-3 h-10 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Academy Crest &amp; Wordmark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4VBAFcv5JkB1ew4Ea3qGGcPBTQ_vfQpD6YICNR8kA3_E_W5rI4KjqNhYjq0s1bm1g7N-DE2tWklLS7wg0_0Cjubgc2_YFeTMeWton84oe1_7BOxk9lYzdli8flAtIlxTEUJOYkWqFOhCGpNQ83ykA6byDkU87bTPwqract3E-Y2Ye1jBKJLpu9TwYcarxVps_4IWy_Mzp4xaZqJeW5N39iuWXVqlwBeAtAlIyHzkWnY8t9iXVR9tyZA"/>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-semibold tracking-wide text-white uppercase tracking-wider">Staff Management Portal</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#1E293B] text-[#93C5FD] border border-[#334155]">
+          Audit &amp; Assessment Ops
+        </span>
+</div>
+</div>
+<!-- Right Controls: Telemetry WAT Timestamp, User Profile, Author Details -->
+<div class="flex items-center gap-5">
+<div class="hidden md:flex items-center gap-2 text-xs text-slate-300 font-mono bg-[#141C29] px-3 py-1.5 rounded border border-[#334155]">
+<span class="material-symbols-outlined text-sm text-[#93C5FD]">schedule</span>
+<span>10:15 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col text-right">
+<span class="text-sm font-medium text-white leading-tight">Tunde Bakare</span>
+<span class="text-xs text-slate-400 font-normal">Question Author</span>
+</div>
+<div class="w-9 h-9 rounded bg-[#2563EB] text-white flex items-center justify-center font-semibold text-xs tracking-wider border border-blue-400">
+          TB
+        </div>
+</div>
+</div>
+</header>
+<!-- INTERFACE WORKSPACE (SIDEBAR + MAIN CANVAS + INSPECTION DRAWER) -->
+<div class="flex-1 flex overflow-hidden">
+<!-- LEFT RAIL NAVIGATION (Sidebar) -->
+<aside class="w-64 bg-[#FFFFFF] border-r border-[#E2E8F0] flex flex-col justify-between shrink-0 overflow-y-auto">
+<div class="py-5">
+<!-- Group 1: Academics (Active) -->
+<div class="px-5 mb-2">
+<p class="text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">Academics</p>
+</div>
+<nav class="space-y-0.5 px-3">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-lg">auto_stories</span>
+<span>Curricula &amp; Modules</span>
+</a>
+<!-- Active Question Bank -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-semibold bg-[#EFF6FF] text-[#1D4ED8] border-l-4 border-[#1D4ED8] min-h-[44px]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-lg text-[#1D4ED8]">quiz</span>
+<span>Question Bank</span>
+</div>
+<span class="bg-[#DBEAFE] text-[#1D4ED8] text-xs font-semibold px-2 py-0.5 rounded-full">248</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-lg">design_services</span>
+<span>Exam Blueprints</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-lg">groups</span>
+<span>Active Cohorts</span>
+</a>
+</nav>
+<!-- Group 2: Assurance & Logs -->
+<div class="px-5 mt-6 mb-2">
+<p class="text-[11px] font-semibold tracking-wider text-[#64748B] uppercase">Assurance &amp; Logs</p>
+</div>
+<nav class="space-y-0.5 px-3">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+<span>Governance &amp; Audits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-lg">monitoring</span>
+<span>Item Telemetry</span>
+</a>
+</nav>
+</div>
+<!-- Institutional Footer inside sidebar -->
+<div class="p-4 border-t border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="flex items-center gap-2 text-xs text-[#64748B]">
+<span class="material-symbols-outlined text-sm text-[#047857]">gavel</span>
+<span class="font-medium">ISACA Accredited Model</span>
+</div>
+<p class="text-[11px] text-[#94A3B8] mt-1 leading-snug">Item psychometric rigor aligned with CISA standard v27.</p>
+</div>
+</aside>
+<!-- CENTER & RIGHT CONTAINER -->
+<main class="flex-1 flex flex-col overflow-y-auto bg-[#F8FAFC]">
+<!-- INTERACTIVE STATE SWITCHER (Prototype Controller Bar) -->
+<section class="bg-white border-b border-[#E2E8F0] px-8 py-3 flex items-center justify-between sticky top-0 z-30 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-[#64748B] uppercase tracking-wider mr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">tune</span> State Simulator:
+          </span>
+<div class="inline-flex rounded-md shadow-sm border border-[#CBD5E1] p-0.5 bg-[#F1F5F9]">
+<button class="px-3 py-1.5 text-xs font-medium rounded text-[#475569] hover:text-[#0F172A] transition" id="btn-state-1" onclick="switchState(1)">
+              1. New Question
+            </button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded bg-[#0B1320] text-white shadow-sm transition" id="btn-state-2" onclick="switchState(2)">
+              2. Editing Published Question (Default)
+            </button>
+<button class="px-3 py-1.5 text-xs font-medium rounded text-[#475569] hover:text-[#0F172A] transition" id="btn-state-3" onclick="switchState(3)">
+              3. Validation Errors
+            </button>
+</div>
+</div>
+<div class="flex items-center gap-3 text-xs text-[#64748B]">
+<span class="flex items-center gap-1 font-mono">
+<span class="inline-block w-2 h-2 rounded-full bg-[#047857]"></span>
+            Auto-save: Synchronized
+          </span>
+<span class="text-slate-300">|</span>
+<span class="text-slate-500 font-mono">Build ID: 26.10-QAUTH</span>
+</div>
+</section>
+<!-- BREADCRUMBS & TOP PAGE TITLE -->
+<div class="px-8 pt-6 pb-4">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-xs text-[#64748B] mb-2 font-medium">
+<a class="hover:text-[#1D4ED8]" href="#">Academics</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-[#1D4ED8]" href="#">Question bank</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-[#0F172A] font-semibold" id="breadcrumb-current">Edit question Q-CISA-0412</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E2E8F0] pb-5">
+<div>
+<h1 class="text-2xl font-semibold text-[#0F172A] tracking-tight">Question editor</h1>
+<p class="text-sm text-[#475569] mt-0.5">Author psychometrically valid examination items aligned with certification frameworks.</p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 border border-[#64748B] rounded-md text-sm font-medium text-[#0F172A] bg-white hover:bg-slate-100 min-h-[44px]">
+<span class="material-symbols-outlined text-lg">save</span>
+<span>Save draft</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2 bg-[#0B1320] text-white rounded-md text-sm font-medium hover:bg-[#1E293B] min-h-[44px]">
+<span class="material-symbols-outlined text-lg">rule_folder</span>
+<span>Submit for review</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN CONTENT SPLIT (75% Form Canvas, 25% Item Intelligence Sidebar) -->
+<div class="px-8 pb-12 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- MAIN EDITOR CANVAS (8 cols on 12-col grid) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- STATE 2 WARNING BANNER: Published item notice -->
+<div class="bg-[#FFFBEB] border border-[#B45309] rounded-xl p-4 flex items-start gap-3 text-sm text-[#92400E]" id="banner-published">
+<span class="material-symbols-outlined text-[#B45309] text-xl shrink-0 mt-0.5">warning</span>
+<div class="flex-1">
+<span class="font-semibold block text-[#78350F]">Saving creates a new version. Published items cannot be overwritten directly.</span>
+<p class="text-xs text-[#92400E] mt-0.5 leading-relaxed">
+                Currently active in 3 mock exams across Cohort 14 and Cohort 15. Submitting edits will initialize <strong class="font-semibold">Version 2.0 (v2.0)</strong> and automatically route the item to faculty peer review without disrupting ongoing candidate tests.
+              </p>
+</div>
+</div>
+<!-- STATE 3 ERROR SUMMARY BANNER (Initially Hidden) -->
+<div class="hidden bg-[#FEF2F2] border border-[#B91C1C] rounded-xl p-4 flex items-start gap-3 text-sm text-[#B91C1C]" id="banner-validation">
+<span class="material-symbols-outlined text-[#B91C1C] text-xl shrink-0 mt-0.5">error</span>
+<div>
+<span class="font-semibold block text-[#991B1B]">3 Validation errors found. Cannot submit for review.</span>
+<ul class="text-xs list-disc list-inside mt-1 space-y-0.5 text-[#B91C1C]">
+<li>Question stem scenario cannot be empty or under 50 characters.</li>
+<li>Option B distractor rationale is required for psychometric auditing.</li>
+<li>At least one valid option must be flagged as the keyed answer.</li>
+</ul>
+</div>
+</div>
+<!-- SECTION 1: ITEM METADATA CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-5">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+<div class="flex items-center gap-3">
+<span class="text-xs font-mono font-semibold px-2.5 py-1 bg-[#F1F5F9] text-[#0F172A] border border-[#CBD5E1] rounded" id="meta-item-id">
+                  Q-CISA-0412
+                </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]" id="meta-version-badge">
+<span class="material-symbols-outlined text-xs fill-1">check_circle</span>
+<span>v1.3 (Published)</span>
+</span>
+</div>
+<span class="text-xs text-[#64748B]">Compliance Standard: ISACA CISA 2026 Core</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Program Selection -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="program-select">
+                  Certification Program <span class="text-red-500">*</span>
+</label>
+<select class="w-full h-[44px] bg-white border border-[#64748B] rounded-md px-3 text-sm text-[#0F172A]" id="program-select">
+<option selected="" value="cisa">CISA Exam Prep (Certified Information Systems Auditor)</option>
+<option value="cism">CISM (Certified Information Security Manager)</option>
+<option value="crisc">CRISC (Risk and Information Systems Control)</option>
+<option value="iso27001">ISO/IEC 27001 Lead Auditor Trainee</option>
+</select>
+</div>
+<!-- Domain Selection -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="domain-select">
+                  Certification Domain <span class="text-red-500">*</span>
+</label>
+<select class="w-full h-[44px] bg-white border border-[#64748B] rounded-md px-3 text-sm text-[#0F172A]" id="domain-select">
+<option selected="" value="d1">Domain 1: Information Systems Auditing Process (21%)</option>
+<option value="d2">Domain 2: Governance and Management of IT (17%)</option>
+<option value="d3">Domain 3: Information Systems Acquisition &amp; Development (12%)</option>
+<option value="d4">Domain 4: Information Systems Operations &amp; Resilience (23%)</option>
+<option value="d5">Domain 5: Protection of Information Assets (27%)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+<!-- Sub-topic selector -->
+<div class="md:col-span-1">
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="subtopic-input">
+                  Sub-Topic / Audit Objective <span class="text-red-500">*</span>
+</label>
+<input class="w-full h-[44px] bg-white border border-[#64748B] rounded-md px-3 text-sm text-[#0F172A]" id="subtopic-input" type="text" value="Change Authorization &amp; Elevated DDL Triggers"/>
+</div>
+<!-- Difficulty selector -->
+<div class="md:col-span-1">
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="difficulty-select">
+                  Cognitive Complexity <span class="text-red-500">*</span>
+</label>
+<select class="w-full h-[44px] bg-white border border-[#64748B] rounded-md px-3 text-sm text-[#0F172A]" id="difficulty-select">
+<option selected="" value="complex">Complex (Analysis &amp; Evaluation)</option>
+<option value="intermediate">Intermediate (Application)</option>
+<option value="foundation">Foundation (Recall &amp; Understanding)</option>
+</select>
+</div>
+<!-- Reference Manual Section -->
+<div class="md:col-span-1">
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="reference-input">
+                  Standard Authority &amp; Reference <span class="text-red-500">*</span>
+</label>
+<input class="w-full h-[44px] bg-white border border-[#64748B] rounded-md px-3 text-sm text-[#0F172A]" id="reference-input" type="text" value="CISA Review Manual 27th Ed., Section 1.4.2, p. 84"/>
+</div>
+</div>
+</div>
+<!-- SECTION 2: QUESTION STEM RICH TEXT EDITOR -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-base font-semibold text-[#0F172A]">Question Stem</h2>
+<p class="text-xs text-[#64748B]">Provide an authentic enterprise case or scenario. Avoid unanchored academic theory.</p>
+</div>
+<span class="text-xs font-mono text-[#64748B]" id="stem-wordcount">44 words · 318 characters</span>
+</div>
+<!-- Validation Message Placeholder for Stem -->
+<div class="hidden text-xs text-[#B91C1C] flex items-center gap-1 font-medium bg-[#FEF2F2] p-2 rounded border border-[#B91C1C]" id="error-stem">
+<span class="material-symbols-outlined text-sm">warning</span> Question stem scenario is required and cannot be empty.
+            </div>
+<!-- Toolbar container -->
+<div class="border border-[#CBD5E1] rounded-lg overflow-hidden bg-white">
+<div class="flex flex-wrap items-center gap-1 p-1.5 bg-[#F8FAFC] border-b border-[#CBD5E1]">
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Bold" type="button">
+<span class="material-symbols-outlined text-base">format_bold</span>
+</button>
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Italic" type="button">
+<span class="material-symbols-outlined text-base">format_italic</span>
+</button>
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Strikethrough" type="button">
+<span class="material-symbols-outlined text-base">format_strikethrough</span>
+</button>
+<div class="h-4 w-px bg-[#CBD5E1] mx-1"></div>
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Code block" type="button">
+<span class="material-symbols-outlined text-base">code</span>
+</button>
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Numbered list" type="button">
+<span class="material-symbols-outlined text-base">format_list_numbered</span>
+</button>
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Bulleted list" type="button">
+<span class="material-symbols-outlined text-base">format_list_bulleted</span>
+</button>
+<div class="h-4 w-px bg-[#CBD5E1] mx-1"></div>
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Insert table" type="button">
+<span class="material-symbols-outlined text-base">table_chart</span>
+</button>
+<button class="p-1.5 hover:bg-[#E2E8F0] rounded text-[#475569] hover:text-[#0F172A] min-w-[36px] min-h-[36px] flex items-center justify-center" title="Mathematical symbol" type="button">
+<span class="material-symbols-outlined text-base">functions</span>
+</button>
+<div class="ml-auto text-xs text-[#64748B] pr-2">
+                  Plain text formatted
+                </div>
+</div>
+<!-- Question textarea -->
+<textarea class="w-full p-4 text-sm text-[#0F172A] border-0 focus:ring-0 resize-y leading-relaxed" id="question-stem-textarea" placeholder="Enter scenario stem, including clear system boundaries, institutional context, and prompt directive..." rows="5">During an IS audit of a tier-1 Nigerian commercial bank core banking database migration, an auditor identifies direct DDL schema alterations executed via elevated DBA credentials during live clearing cycles. Which of the following compensating controls provides the GREATEST assurance that these changes were authorized and tamper-evident?</textarea>
+</div>
+</div>
+<!-- SECTION 3: OPTIONS & RADIO SELECTOR -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-5">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+<div>
+<h2 class="text-base font-semibold text-[#0F172A]">Options &amp; Key Selection</h2>
+<p class="text-xs text-[#64748B]">Specify 4 plausible choices. Exactly one item must be designated as the psychometric key.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-[#64748B]">Single Choice (A/B/C/D)</span>
+</div>
+</div>
+<!-- Error banner for unselected key (State 3) -->
+<div class="hidden text-xs text-[#B91C1C] flex items-center gap-1 font-medium bg-[#FEF2F2] p-2 rounded border border-[#B91C1C]" id="error-key-unselected">
+<span class="material-symbols-outlined text-sm">warning</span> You must select one option as the correct keyed answer.
+            </div>
+<div class="space-y-4" id="options-container">
+<!-- OPTION A -->
+<div class="p-4 rounded-lg border border-[#CBD5E1] bg-[#FFFFFF] transition-colors" id="opt-container-A">
+<div class="flex items-start gap-3">
+<div class="flex items-center h-6 pt-1">
+<input class="w-5 h-5 text-[#0B1320] border-[#64748B] focus:ring-[#2563EB]" id="radio-opt-A" name="correct_answer" type="radio" value="A"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-[#475569]" for="radio-opt-A">Option A (Distractor)</label>
+<span class="text-xs text-[#64748B]">Distractor</span>
+</div>
+<textarea class="w-full text-sm text-[#0F172A] border border-[#64748B] rounded-md p-2.5" id="text-opt-A" rows="2">Automated daily differential database backup logs verified by the internal database administrator.</textarea>
+</div>
+</div>
+</div>
+<!-- OPTION B (Keyed / Correct) -->
+<div class="p-4 rounded-lg border-2 border-[#047857] bg-[#F0FDF4] transition-colors" id="opt-container-B">
+<div class="flex items-start gap-3">
+<div class="flex items-center h-6 pt-1">
+<input checked="" class="w-5 h-5 text-[#047857] border-[#047857] focus:ring-[#2563EB]" id="radio-opt-B" name="correct_answer" type="radio" value="B"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-bold uppercase tracking-wider text-[#047857] flex items-center gap-1.5" for="radio-opt-B">
+<span class="material-symbols-outlined text-sm font-bold">check_circle</span>
+                        Option B (Correct Answer Key)
+                      </label>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                        Keyed Answer
+                      </span>
+</div>
+<textarea class="w-full text-sm text-[#0F172A] border border-[#047857] bg-white rounded-md p-2.5" id="text-opt-B" rows="2">Cryptographically signed continuous binary transaction log streams archived synchronously to an immutable WORM repository.</textarea>
+</div>
+</div>
+</div>
+<!-- OPTION C -->
+<div class="p-4 rounded-lg border border-[#CBD5E1] bg-[#FFFFFF] transition-colors" id="opt-container-C">
+<div class="flex items-start gap-3">
+<div class="flex items-center h-6 pt-1">
+<input class="w-5 h-5 text-[#0B1320] border-[#64748B] focus:ring-[#2563EB]" id="radio-opt-C" name="correct_answer" type="radio" value="C"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-[#475569]" for="radio-opt-C">Option C (Distractor)</label>
+<span class="text-xs text-[#64748B]">Distractor</span>
+</div>
+<textarea class="w-full text-sm text-[#0F172A] border border-[#64748B] rounded-md p-2.5" id="text-opt-C" rows="2">Bi-weekly retrospective change advisory board (CAB) sign-off documents filed in the IT governance intranet.</textarea>
+</div>
+</div>
+</div>
+<!-- OPTION D -->
+<div class="p-4 rounded-lg border border-[#CBD5E1] bg-[#FFFFFF] transition-colors" id="opt-container-D">
+<div class="flex items-start gap-3">
+<div class="flex items-center h-6 pt-1">
+<input class="w-5 h-5 text-[#0B1320] border-[#64748B] focus:ring-[#2563EB]" id="radio-opt-D" name="correct_answer" type="radio" value="D"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-[#475569]" for="radio-opt-D">Option D (Distractor)</label>
+<span class="text-xs text-[#64748B]">Distractor</span>
+</div>
+<textarea class="w-full text-sm text-[#0F172A] border border-[#64748B] rounded-md p-2.5" id="text-opt-D" rows="2">Database server operating system CPU and memory threshold monitoring alerts configured in the SIEM.</textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: DISTRACTOR RATIONALE & EXPLANATION -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-4">
+<div class="border-b border-[#E2E8F0] pb-3">
+<h2 class="text-base font-semibold text-[#0F172A]">Psychometric Rationale &amp; Distractor Justifications</h2>
+<p class="text-xs text-[#64748B]">Required by the exam accreditation committee. Explain why the keyed option is superior and why distractors fail.</p>
+</div>
+<!-- Error banner for distractor rationale (State 3) -->
+<div class="hidden text-xs text-[#B91C1C] flex items-center gap-1 font-medium bg-[#FEF2F2] p-2 rounded border border-[#B91C1C]" id="error-rationale">
+<span class="material-symbols-outlined text-sm">warning</span> Comprehensive rationale is required before submission.
+            </div>
+<div class="space-y-3">
+<label class="block text-xs font-semibold text-[#0F172A]" for="rationale-text">Detailed Explanatory Text</label>
+<textarea class="w-full text-sm text-[#0F172A] border border-[#64748B] rounded-md p-3 leading-relaxed" id="rationale-text" placeholder="Write full justification for candidates and peer reviewers..." rows="6">Option B is CORRECT because cryptographically signed continuous transaction logs streamed synchronously to Write-Once-Read-Many (WORM) storage guarantee tamper-evidence and non-repudiation. Even an elevated DBA cannot alter or purge schema modification logs post-execution without invalidating the cryptographic checksum signature chain.
+
+Option A is INCORRECT because differential database backups record data state rather than granular transaction intent, and review by the internal DBA violates segregation of duties (the DBA could conceal unauthorized modifications).
+Option C is INCORRECT because retrospective CAB sign-offs do not provide automated or technical assurance that the actual DDL commands executed during clearing cycles matched approved change parameters.
+Option D is INCORRECT because OS-level CPU/memory threshold alerts monitor server performance rather than unauthorized logical schema alterations.</textarea>
+</div>
+</div>
+<!-- BOTTOM ACTION DOCK (44px target standards) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 sticky bottom-4 shadow-sm z-20">
+<div>
+<button class="inline-flex items-center gap-2 px-4 py-2 border border-[#64748B] rounded-md text-sm font-medium text-[#0F172A] bg-white hover:bg-slate-100 min-h-[44px]" onclick="toggleStudentSimulator()">
+<span class="material-symbols-outlined text-lg text-[#1D4ED8]">visibility</span>
+<span>Preview as student</span>
+</button>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="inline-flex items-center justify-center px-4 py-2 border border-[#0F172A] rounded-md text-sm font-medium text-[#0F172A] bg-white hover:bg-slate-100 min-h-[44px]">
+                Save draft
+              </button>
+<button class="inline-flex items-center justify-center px-5 py-2 bg-[#0B1320] text-white rounded-md text-sm font-medium hover:bg-[#1E293B] min-h-[44px]">
+                Submit for review
+              </button>
+<!-- Visibly disabled publish button with explicit tooltip explaining role restrictions -->
+<div class="relative group">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E2E8F0] text-[#94A3B8] border border-[#CBD5E1] rounded-md text-sm font-medium cursor-not-allowed min-h-[44px]" disabled="">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Publish</span>
+</button>
+<div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex flex-col w-64 p-2.5 bg-[#0B1320] text-white text-xs rounded shadow-lg pointer-events-none z-50">
+<div class="font-semibold text-slate-200 flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-xs text-amber-400">admin_panel_settings</span>
+                    Requires publish permission
+                  </div>
+<span class="text-slate-300 text-[11px] leading-tight">
+                    Your role is <strong>Question Author</strong>. Only Lead Faculty Chairs or SecOps Audit Administrators have release authorization to publish items directly into live mock suites.
+                  </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL (320px sidebar / 4 cols on grid): Item History & Psychometrics -->
+<div class="lg:col-span-4 space-y-6">
+<!-- SIMULATOR THUMBNAIL / PREVIEW TRIGGER CARD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-semibold text-[#0F172A]">Candidate Experience</h3>
+<span class="text-[11px] font-mono text-[#64748B]">1280px Viewport</span>
+</div>
+<div class="cursor-pointer border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg p-3 hover:border-[#2563EB] transition group" onclick="toggleStudentSimulator()">
+<div class="h-28 bg-[#FFFFFF] rounded border border-[#E2E8F0] p-3 flex flex-col justify-between shadow-xs">
+<div class="space-y-1.5">
+<div class="h-2 w-16 bg-[#CBD5E1] rounded"></div>
+<div class="h-2.5 w-full bg-[#E2E8F0] rounded"></div>
+<div class="h-2.5 w-3/4 bg-[#E2E8F0] rounded"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 pt-2">
+<div class="h-3 bg-[#F1F5F9] rounded border border-[#E2E8F0]"></div>
+<div class="h-3 bg-[#F0FDF4] rounded border border-[#86EFAC]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs font-medium text-[#1D4ED8] mt-2 group-hover:underline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">open_in_new</span> Launch exam simulator
+                </span>
+<span class="text-[#64748B] text-[11px]">Desktop 1440px</span>
+</div>
+</div>
+</div>
+<!-- ITEM HISTORY & VERSION TIMELINE -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 space-y-4">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-[#475569]">history</span>
+<h3 class="text-sm font-semibold text-[#0F172A]">Version History</h3>
+</div>
+<span class="text-xs text-[#64748B] font-mono">Total: 4 events</span>
+</div>
+<ol class="relative border-l border-[#CBD5E1] ml-2 space-y-4 text-xs">
+<!-- v1.3 (Current) -->
+<li class="mb-4 ml-4">
+<div class="absolute -left-1.5 mt-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#047857]"></div>
+<div class="flex items-center justify-between">
+<span class="font-semibold text-[#0F172A] font-mono">v1.3 · Published</span>
+<span class="text-[11px] text-[#64748B]">05 Oct 2026, 09:14 WAT</span>
+</div>
+<p class="text-[#475569] mt-0.5">Author release: Tunde Bakare</p>
+<div class="mt-1 inline-flex items-center gap-1 text-[11px] text-[#047857] bg-[#ECFDF5] px-1.5 py-0.5 rounded border border-[#047857]">
+<span class="material-symbols-outlined text-xs">done</span> Active in Mock #2
+                </div>
+</li>
+<!-- v1.2 -->
+<li class="mb-4 ml-4">
+<div class="absolute -left-1.5 mt-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#2563EB]"></div>
+<div class="flex items-center justify-between">
+<span class="font-semibold text-[#0F172A] font-mono">v1.2 · Peer Review Approved</span>
+<span class="text-[11px] text-[#64748B]">03 Oct 2026, 16:30 WAT</span>
+</div>
+<p class="text-[#475569] mt-0.5">Approved by Lead Reviewer Adaeze Okonkwo</p>
+<p class="text-[11px] text-[#64748B] italic mt-0.5">"Scenario updated to emphasize live clearing windows."</p>
+</li>
+<!-- v1.1 -->
+<li class="mb-4 ml-4">
+<div class="absolute -left-1.5 mt-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#64748B]"></div>
+<div class="flex items-center justify-between">
+<span class="font-medium text-[#475569] font-mono">v1.1 · Submitted for Review</span>
+<span class="text-[11px] text-[#64748B]">02 Oct 2026, 11:20 WAT</span>
+</div>
+<p class="text-[#64748B] mt-0.5">Authored by Tunde Bakare</p>
+</li>
+<!-- v1.0 -->
+<li class="ml-4">
+<div class="absolute -left-1.5 mt-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#CBD5E1]"></div>
+<div class="flex items-center justify-between">
+<span class="font-medium text-[#475569] font-mono">v1.0 · Draft Initialized</span>
+<span class="text-[11px] text-[#64748B]">28 Sep 2026</span>
+</div>
+<p class="text-[#64748B] mt-0.5">Created under Domain 1 working group</p>
+</li>
+</ol>
+</div>
+<!-- PSYCHOMETRIC & USAGE STATISTICS -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 space-y-4">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-[#1D4ED8]">analytics</span>
+<h3 class="text-sm font-semibold text-[#0F172A]">Psychometrics &amp; Telemetry</h3>
+</div>
+<span class="text-xs text-[#047857] font-semibold bg-[#ECFDF5] px-2 py-0.5 rounded border border-[#047857]">High Validity</span>
+</div>
+<div class="grid grid-cols-2 gap-3 text-xs">
+<div class="p-3 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<span class="text-[#64748B] block mb-1">Times Examined</span>
+<span class="text-lg font-semibold text-[#0F172A]">320</span>
+<span class="text-[11px] text-[#64748B] block mt-0.5">Across 2 cohorts</span>
+</div>
+<div class="p-3 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<span class="text-[#64748B] block mb-1">Percent Correct</span>
+<span class="text-lg font-semibold text-[#0F172A]">64.2%</span>
+<span class="text-[11px] text-[#047857] block mt-0.5">Target: 60% – 70%</span>
+</div>
+<div class="p-3 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<span class="text-[#64748B] block mb-1">Discrimination (r-pbis)</span>
+<span class="text-lg font-semibold text-[#047857]">0.42</span>
+<span class="text-[11px] text-[#64748B] block mt-0.5">&gt; 0.35 ideal threshold</span>
+</div>
+<div class="p-3 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+<span class="text-[#64748B] block mb-1">Avg Time Spent</span>
+<span class="text-lg font-semibold text-[#0F172A]">1m 48s</span>
+<span class="text-[11px] text-[#64748B] block mt-0.5">Benchmark: 2m 00s</span>
+</div>
+</div>
+<!-- Active in Curricula List -->
+<div class="pt-2">
+<span class="text-xs font-semibold text-[#0F172A] block mb-2">Active In Deployments:</span>
+<ul class="text-xs space-y-2">
+<li class="flex items-center justify-between p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<span class="text-[#475569] font-medium">CISA Mock Simulation #2</span>
+<span class="text-[11px] font-mono text-[#047857]">Live</span>
+</li>
+<li class="flex items-center justify-between p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0]">
+<span class="text-[#475569] font-medium">Domain 1 Diagnostic Drill</span>
+<span class="text-[11px] font-mono text-[#047857]">Live</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- REGULATORY CITATION CARD -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-xl p-4 text-xs text-[#1E40AF] space-y-1.5">
+<div class="flex items-center gap-1.5 font-semibold text-[#1E3A8A]">
+<span class="material-symbols-outlined text-sm">verified</span>
+              ISACA Item Writing Guidance
+            </div>
+<p class="text-[11px] text-[#1E40AF] leading-relaxed">
+              Ensure distractors are completely plausible to an uncertified practitioner while uniquely identifying the defensible control standard per ISO/IEC 27001:2022 Control A.8.15.
+            </p>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="w-full bg-[#FFFFFF] border-t border-[#E2E8F0] mt-auto">
+<div class="w-full px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto text-xs text-[#64748B]">
+<div class="flex items-center gap-3">
+<span class="font-semibold text-[#0F172A]">A.J. Silicon Academy</span>
+<span class="text-slate-300">|</span>
+<span>Enterprise Audit Platform &amp; Examination Repository</span>
+</div>
+<div class="flex flex-wrap gap-4 font-medium">
+<a class="hover:text-[#1D4ED8]" href="#">Audit Protocol</a>
+<a class="hover:text-[#1D4ED8]" href="#">Verification Registry</a>
+<a class="hover:text-[#1D4ED8]" href="#">Governance Standards</a>
+<a class="hover:text-[#1D4ED8]" href="#">Ethics &amp; Compliance</a>
+</div>
+<p class="text-[11px] text-[#94A3B8]">
+            © 2025 A.J. Silicon Academy. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+          </p>
+</div>
+</footer>
+</main>
+</div>
+<!-- STUDENT EXAM VIEW SIMULATOR MODAL (Preview as Student) -->
+<div class="fixed inset-0 z-50 bg-[#0B1320] bg-opacity-80 backdrop-blur-xs hidden flex items-center justify-center p-4" id="student-modal">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] flex flex-col border border-[#CBD5E1] overflow-hidden">
+<!-- Modal Header mimicking Secure Exam Mode -->
+<div class="bg-[#0B1320] text-white px-6 py-4 flex items-center justify-between border-b border-[#334155]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#93C5FD]">desktop_windows</span>
+<div>
+<h3 class="text-sm font-semibold tracking-wide">Candidate Secure Testing Sandbox</h3>
+<p class="text-[11px] text-slate-300">Simulation view: CISA Final Mock Examination (Timed 4hr environment)</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-xs font-mono bg-[#1E293B] px-3 py-1 rounded text-amber-300 border border-[#334155]">
+            Remaining: 03:42:15
+          </div>
+<button class="text-slate-400 hover:text-white p-1 rounded" onclick="toggleStudentSimulator()">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</div>
+<!-- Modal Body -->
+<div class="p-8 overflow-y-auto space-y-6 flex-1">
+<div class="flex items-center justify-between text-xs text-[#64748B] border-b border-[#E2E8F0] pb-2 font-mono">
+<span>Question 48 of 150</span>
+<span>Domain 1: IS Auditing Process</span>
+</div>
+<div class="space-y-4">
+<h4 class="text-base font-semibold text-[#0F172A] leading-relaxed" id="sim-stem-text">
+            During an IS audit of a tier-1 Nigerian commercial bank core banking database migration, an auditor identifies direct DDL schema alterations executed via elevated DBA credentials during live clearing cycles. Which of the following compensating controls provides the GREATEST assurance that these changes were authorized and tamper-evident?
+          </h4>
+<div class="space-y-3 pt-2" id="sim-options-list">
+<label class="flex items-start gap-3 p-3.5 border border-[#CBD5E1] rounded-lg hover:bg-slate-50 cursor-pointer">
+<input class="mt-1 w-4 h-4 text-[#0B1320]" name="sim_choice" type="radio"/>
+<span class="text-sm text-[#0F172A]"><strong>A.</strong> Automated daily differential database backup logs verified by the internal database administrator.</span>
+</label>
+<label class="flex items-start gap-3 p-3.5 border border-[#CBD5E1] rounded-lg hover:bg-slate-50 cursor-pointer">
+<input class="mt-1 w-4 h-4 text-[#0B1320]" name="sim_choice" type="radio"/>
+<span class="text-sm text-[#0F172A]"><strong>B.</strong> Cryptographically signed continuous binary transaction log streams archived synchronously to an immutable WORM repository.</span>
+</label>
+<label class="flex items-start gap-3 p-3.5 border border-[#CBD5E1] rounded-lg hover:bg-slate-50 cursor-pointer">
+<input class="mt-1 w-4 h-4 text-[#0B1320]" name="sim_choice" type="radio"/>
+<span class="text-sm text-[#0F172A]"><strong>C.</strong> Bi-weekly retrospective change advisory board (CAB) sign-off documents filed in the IT governance intranet.</span>
+</label>
+<label class="flex items-start gap-3 p-3.5 border border-[#CBD5E1] rounded-lg hover:bg-slate-50 cursor-pointer">
+<input class="mt-1 w-4 h-4 text-[#0B1320]" name="sim_choice" type="radio"/>
+<span class="text-sm text-[#0F172A]"><strong>D.</strong> Database server operating system CPU and memory threshold monitoring alerts configured in the SIEM.</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-[#F8FAFC] border-t border-[#E2E8F0] px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 border border-[#64748B] rounded text-xs font-medium text-[#0F172A] bg-white min-h-[44px]">Flag for review</button>
+<button class="px-4 py-2 border border-[#64748B] rounded text-xs font-medium text-[#0F172A] bg-white min-h-[44px]">Previous Question</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-[#64748B]">Preview Mode (Responses not recorded)</span>
+<button class="px-5 py-2 bg-[#0B1320] text-white rounded text-xs font-semibold min-h-[44px]" onclick="toggleStudentSimulator()">Return to Editor</button>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTION LOGIC (State switching & simulator modal) -->
+<script>
+    function toggleStudentSimulator() {
+      const modal = document.getElementById('student-modal');
+      const stemText = document.getElementById('question-stem-textarea').value;
+      document.getElementById('sim-stem-text').innerText = stemText;
+      modal.classList.toggle('hidden');
+    }
+
+    function switchState(stateNumber) {
+      const btn1 = document.getElementById('btn-state-1');
+      const btn2 = document.getElementById('btn-state-2');
+      const btn3 = document.getElementById('btn-state-3');
+
+      const bannerPublished = document.getElementById('banner-published');
+      const bannerValidation = document.getElementById('banner-validation');
+      const errorStem = document.getElementById('error-stem');
+      const errorKey = document.getElementById('error-key-unselected');
+      const errorRationale = document.getElementById('error-rationale');
+
+      const stemTextarea = document.getElementById('question-stem-textarea');
+      const rationaleText = document.getElementById('rationale-text');
+      const metaItemId = document.getElementById('meta-item-id');
+      const metaVersion = document.getElementById('meta-version-badge');
+      const breadcrumbCurrent = document.getElementById('breadcrumb-current');
+
+      // Reset button styles
+      [btn1, btn2, btn3].forEach(btn => {
+        btn.className = "px-3 py-1.5 text-xs font-medium rounded text-[#475569] hover:text-[#0F172A] transition";
+      });
+
+      // Hide all error messages initially
+      bannerValidation.classList.add('hidden');
+      errorStem.classList.add('hidden');
+      errorKey.classList.add('hidden');
+      errorRationale.classList.add('hidden');
+
+      if (stateNumber === 1) {
+        // STATE 1: New Question
+        btn1.className = "px-3 py-1.5 text-xs font-semibold rounded bg-[#0B1320] text-white shadow-sm transition";
+        bannerPublished.classList.add('hidden');
+        
+        metaItemId.innerText = "Q-NEW-ITEM";
+        metaVersion.innerHTML = '<span class="material-symbols-outlined text-xs">edit_note</span><span>Draft Initial</span>';
+        metaVersion.className = "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#F1F5F9] text-[#475569] border border-[#94A3B8]";
+        breadcrumbCurrent.innerText = "Create new question";
+
+        stemTextarea.value = "";
+        stemTextarea.placeholder = "Enter scenario stem, including clear system boundaries, institutional context, and prompt directive...";
+        
+        document.getElementById('text-opt-A').value = "";
+        document.getElementById('text-opt-B').value = "";
+        document.getElementById('text-opt-C').value = "";
+        document.getElementById('text-opt-D').value = "";
+        rationaleText.value = "";
+
+        // Uncheck radio
+        document.querySelectorAll('input[name="correct_answer"]').forEach(r => r.checked = false);
+        resetOptionHighlighting();
+      } 
+      else if (stateNumber === 2) {
+        // STATE 2: Editing Published Question (Default)
+        btn2.className = "px-3 py-1.5 text-xs font-semibold rounded bg-[#0B1320] text-white shadow-sm transition";
+        bannerPublished.classList.remove('hidden');
+
+        metaItemId.innerText = "Q-CISA-0412";
+        metaVersion.innerHTML = '<span class="material-symbols-outlined text-xs fill-1">check_circle</span><span>v1.3 (Published)</span>';
+        metaVersion.className = "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]";
+        breadcrumbCurrent.innerText = "Edit question Q-CISA-0412";
+
+        stemTextarea.value = "During an IS audit of a tier-1 Nigerian commercial bank core banking database migration, an auditor identifies direct DDL schema alterations executed via elevated DBA credentials during live clearing cycles. Which of the following compensating controls provides the GREATEST assurance that these changes were authorized and tamper-evident?";
+        
+        document.getElementById('text-opt-A').value = "Automated daily differential database backup logs verified by the internal database administrator.";
+        document.getElementById('text-opt-B').value = "Cryptographically signed continuous binary transaction log streams archived synchronously to an immutable WORM repository.";
+        document.getElementById('text-opt-C').value = "Bi-weekly retrospective change advisory board (CAB) sign-off documents filed in the IT governance intranet.";
+        document.getElementById('text-opt-D').value = "Database server operating system CPU and memory threshold monitoring alerts configured in the SIEM.";
+        
+        rationaleText.value = "Option B is CORRECT because cryptographically signed continuous transaction logs streamed synchronously to Write-Once-Read-Many (WORM) storage guarantee tamper-evidence and non-repudiation. Even an elevated DBA cannot alter or purge schema modification logs post-execution without invalidating the cryptographic checksum signature chain.\n\nOption A is INCORRECT because differential database backups record data state rather than granular transaction intent, and review by the internal DBA violates segregation of duties (the DBA could conceal unauthorized modifications).\nOption C is INCORRECT because retrospective CAB sign-offs do not provide automated or technical assurance that the actual DDL commands executed during clearing cycles matched approved change parameters.\nOption D is INCORRECT because OS-level CPU/memory threshold alerts monitor server performance rather than unauthorized logical schema alterations.";
+
+        document.getElementById('radio-opt-B').checked = true;
+        setOptionBKeyed();
+      } 
+      else if (stateNumber === 3) {
+        // STATE 3: Validation Errors
+        btn3.className = "px-3 py-1.5 text-xs font-semibold rounded bg-[#B91C1C] text-white shadow-sm transition";
+        bannerPublished.classList.add('hidden');
+        bannerValidation.classList.remove('hidden');
+        
+        metaItemId.innerText = "Q-CISA-0412";
+        breadcrumbCurrent.innerText = "Edit question Q-CISA-0412 (Errors)";
+
+        // Clear stem to trigger error
+        stemTextarea.value = "";
+        errorStem.classList.remove('hidden');
+
+        // Unselect radio to trigger error
+        document.querySelectorAll('input[name="correct_answer"]').forEach(r => r.checked = false);
+        resetOptionHighlighting();
+        errorKey.classList.remove('hidden');
+
+        // Clear rationale to trigger error
+        rationaleText.value = "";
+        errorRationale.classList.remove('hidden');
+      }
+    }
+
+    function resetOptionHighlighting() {
+      ['A', 'B', 'C', 'D'].forEach(letter => {
+        const box = document.getElementById('opt-container-' + letter);
+        box.className = "p-4 rounded-lg border border-[#CBD5E1] bg-[#FFFFFF] transition-colors";
+      });
+    }
+
+    function setOptionBKeyed() {
+      resetOptionHighlighting();
+      const boxB = document.getElementById('opt-container-B');
+      boxB.className = "p-4 rounded-lg border-2 border-[#047857] bg-[#F0FDF4] transition-colors";
+    }
+
+    // Dynamic Radio Selection UI
+    document.querySelectorAll('input[name="correct_answer"]').forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        resetOptionHighlighting();
+        const selectedId = 'opt-container-' + e.target.value;
+        const targetBox = document.getElementById(selectedId);
+        if (targetBox) {
+          targetBox.className = "p-4 rounded-lg border-2 border-[#047857] bg-[#F0FDF4] transition-colors";
+        }
+      });
+    });
+  </script>
+<script src="../demo-nav.js"></script></body></html>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Secure Portal - Invoices &amp; VAT Ledger</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#575f6e",
+            "surface-bright": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#997f6a",
+            "tertiary-container": "#281809",
+            "on-primary-container": "#7c8495",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-dim": "#d2d9f4",
+            "outline": "#75777c",
+            "surface-container-high": "#e2e7ff",
+            "secondary-container": "#4069f2",
+            "on-tertiary-fixed": "#281809",
+            "error-container": "#ffdad6",
+            "primary": "#000000",
+            "tertiary": "#000000",
+            "secondary-fixed": "#dce1ff",
+            "inverse-surface": "#283044",
+            "inverse-primary": "#bfc6d9",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "outline-variant": "#c5c6cc",
+            "on-secondary-container": "#fffbff",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#001551",
+            "on-primary-fixed": "#141c29",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface": "#faf8ff",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-fixed": "#fddcc4",
+            "on-surface": "#131b2e",
+            "primary-container": "#141c29",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-background": "#131b2e",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary-fixed": "#dbe2f5",
+            "secondary": "#1d4ed8",
+            "surface-variant": "#dae2fd",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed-variant": "#584231",
+            "background": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "surface-container": "#eaedff",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-surface-variant": "#45474c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "space-sm": "1rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .focus-ring {
+      outline: none;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col antialiased bg-[#F8FAFC]">
+<!-- TopNavBar (Shared Component JSON aligned: bg-primary-container, docked top-0 z-50) -->
+<header class="bg-primary-container text-on-primary-container docked full-width top-0 z-50 shadow-sm border-b border-outline/30 sticky">
+<div class="flex justify-between items-center w-full px-6 py-3">
+<!-- Left: Logo in Isolated White Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center justify-center border border-outline-variant/40 shadow-xs">
+<img alt="A.J. Silicon Logo Mark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHdOgqWFN2iLSd1U_adIw_SxMwLtM9tzPFc274K5XC3uyvC3zHB04z__9R-Pk6TxRjZm4cUCcxXQYncYlI0A2lBe37dDfuVIydRoGyRvQbvpFNwWV3calPjx3DuaRrpTtZxzv4nAKOlqzyGwVMVCkKIV3yHX0JZhGV69i-6Hdvf60_zrsB1S4RwLCEvdccW6kuYR8PvtFtMw6Ut2L3UxZnrbwn_Um8eXPxcYrlrD-RKl5lrFvWNt-zEA"/>
+</div>
+<div class="hidden lg:flex items-center gap-2 border-l border-outline/30 pl-4">
+<span class="text-label-md font-label-md font-semibold text-surface-container-lowest">A.J. Silicon Secure Portal</span>
+<span class="text-label-sm font-label-sm text-secondary-fixed bg-inverse-surface px-2 py-0.5 rounded">Staff Governance</span>
+</div>
+</div>
+<!-- Center: Status / Global Links -->
+<div class="hidden xl:flex items-center gap-6">
+<nav class="flex items-center space-x-6">
+<a class="text-on-primary-container hover:text-surface-container-lowest text-body-sm font-body-sm transition-colors" href="#state-default">CISA Vault</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest text-body-sm font-body-sm transition-colors" href="#state-default">CRISC Matrix</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest text-body-sm font-body-sm transition-colors" href="#state-default">CISM Ops</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest text-body-sm font-body-sm transition-colors" href="#state-default">AAIA Lab</a>
+<span class="text-secondary-fixed font-semibold border-b-2 border-secondary-fixed pb-0.5 text-body-sm font-body-sm">SecOps Governance</span>
+</nav>
+</div>
+<!-- Right: User plain text & Timestamps -->
+<div class="flex items-center gap-5">
+<div class="hidden sm:flex flex-col text-right">
+<span class="text-label-sm font-label-sm text-surface-container-lowest font-medium">Role: Finance Officer | Ngozi Okonjo</span>
+<span class="text-label-sm font-label-sm text-on-primary-container font-code-snippet">12:50 WAT · 05 Oct 2026</span>
+</div>
+<div class="flex items-center gap-2">
+<!-- Notification Bell with Min Target -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<!-- User Avatar Badge -->
+<div class="w-9 h-9 rounded bg-secondary text-surface-container-lowest font-semibold flex items-center justify-center text-label-md font-label-md border border-secondary-fixed/20 shadow-xs" title="Ngozi Okonjo">
+            NO
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- Spec Board State Selector Switcher Header Bar -->
+<section class="bg-surface-container border-b border-[#E2E8F0] px-6 py-2.5 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<span class="text-label-md font-label-md font-semibold text-[#0F172A]">Staff Audit Board · Desktop Specification (1440px)</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] rounded">ISACA Lagos Gold Accredited Partner</span>
+</div>
+<!-- Inspectable State Jump Links -->
+<div class="flex items-center gap-2 text-label-sm font-label-sm flex-wrap">
+<span class="text-[#475569] font-medium mr-1">Inspect State Variants:</span>
+<button class="px-3 py-1 rounded bg-[#0B1320] text-white font-medium focus-ring" id="btn-v-default" onclick="showVariant('default')">1. Default Ledger</button>
+<button class="px-3 py-1 rounded bg-white text-[#0F172A] border border-[#64748B] hover:bg-[#F1F5F9] font-medium focus-ring" id="btn-v-modal-generate" onclick="showVariant('modal-generate')">2. Generate Modal</button>
+<button class="px-3 py-1 rounded bg-white text-[#0F172A] border border-[#64748B] hover:bg-[#F1F5F9] font-medium focus-ring" id="btn-v-modal-resend" onclick="showVariant('modal-resend')">3. Resend Toast</button>
+<button class="px-3 py-1 rounded bg-white text-[#0F172A] border border-[#64748B] hover:bg-[#F1F5F9] font-medium focus-ring" id="btn-v-empty" onclick="showVariant('empty')">4. Empty Filter</button>
+<button class="px-3 py-1 rounded bg-white text-[#0F172A] border border-[#64748B] hover:bg-[#F1F5F9] font-medium focus-ring" id="btn-v-skeleton" onclick="showVariant('skeleton')">5. Skeleton State</button>
+</div>
+</section>
+<!-- Application Body Shell (Sidebar + Main Workspace) -->
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Persistent rail: 64 width, bg-primary-container) -->
+<aside class="w-64 bg-primary-container text-surface-container-lowest flex-shrink-0 flex flex-col justify-between border-r border-outline/30 z-40 hidden md:flex">
+<div class="flex flex-col p-4 space-y-6">
+<!-- Section Header -->
+<div class="px-2">
+<p class="text-label-sm font-label-sm text-on-primary-container uppercase tracking-wider">A.J. Silicon Operations</p>
+<p class="text-headline-sm font-headline-sm text-surface-container-lowest mt-0.5">Audit &amp; Security</p>
+</div>
+<!-- Navigation Group: Core Telemetry -->
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Executive Telemetry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Candidate Cohorts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span>Exam Simulation Engine</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span>ISACA Compliance Trail</span>
+</a>
+</div>
+<!-- Navigation Group: Finance (ACTIVE GROUP) -->
+<div class="space-y-1 border-t border-outline/20 pt-4">
+<div class="px-3 pb-1 flex items-center justify-between text-label-sm font-label-sm text-secondary-fixed font-semibold tracking-wider uppercase">
+<span>Finance &amp; Billing</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<a class="flex items-center gap-3 px-3 py-1.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-1.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="autorenew">autorenew</span>
+<span>Subscriptions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-1.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="sell">sell</span>
+<span>Coupons</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-1.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Transactions</span>
+</a>
+<!-- ACTIVE ITEM IN SIDEBAR -->
+<a class="flex items-center gap-3 px-3 py-2 bg-inverse-surface text-secondary-fixed font-semibold rounded-lg text-body-sm font-body-sm" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Invoices &amp; Receipts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-1.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+<span>Webhooks &amp; Recon</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-1.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_return">assignment_return</span>
+<span>Refunds</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-1.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/50 rounded-lg text-body-sm font-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span>Settlements</span>
+</a>
+</div>
+</div>
+<!-- Rail Footer -->
+<div class="p-4 border-t border-outline/30 space-y-2">
+<button class="w-full flex items-center justify-between px-3 py-2.5 rounded bg-[#1E293B] hover:bg-inverse-surface text-surface-container-lowest text-label-md font-label-md transition-colors focus-ring" type="button">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span>Lock Terminal</span>
+</span>
+<span class="text-label-sm font-label-sm text-on-primary-container">Ctrl+L</span>
+</button>
+<div class="flex items-center justify-between pt-1 px-1 text-label-sm font-label-sm text-on-primary-container">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="shield">shield</span>
+<span>Audit Trail Active</span>
+</span>
+<button class="hover:text-surface-container-lowest transition-colors">Sign Out</button>
+</div>
+</div>
+</aside>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-8 space-y-8">
+<!-- Breadcrumb & Page Header -->
+<section class="space-y-3">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-body-sm font-body-sm text-[#475569]">
+<span>Finance &amp; Operations</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span>Billing &amp; Compliance</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">Invoices</span>
+</nav>
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-[#E2E8F0] pb-6">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">Institutional Invoices &amp; VAT Ledger</h1>
+<p class="text-body-sm font-body-sm text-[#475569] mt-1">Official Nigerian FIRS compliant billing repository, tax remittances, and enterprise sponsor accounts.</p>
+</div>
+<!-- Primary Action Header Button (min 44px) -->
+<div class="flex items-center gap-3">
+<button class="h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-body-sm font-body-sm flex items-center gap-2 shadow-xs transition-colors focus-ring" onclick="openModal('modal-generate-container')" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>+ Generate invoice</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 1: VAT Summary for Selected Period (Bento/Card Grid) -->
+<section class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 shadow-xs space-y-6">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-b border-[#E2E8F0] pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="receipt">receipt</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A]">VAT Remittance &amp; Fiscal Assessment</h2>
+<p class="text-body-sm font-body-sm text-[#475569]">FIRS statutory compliance for Q3–Q4 accredited professional certifications.</p>
+</div>
+</div>
+<!-- Period Selector (Min target 44px) -->
+<div class="flex items-center gap-2">
+<label class="text-label-sm font-label-sm text-[#475569] font-medium sr-only" for="period-selector">Billing Period</label>
+<div class="relative">
+<select class="h-[44px] pl-3 pr-8 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-[6px] text-[#0F172A] focus-ring" id="period-selector">
+<option selected="">Period: 01 Sep 2026 – 05 Oct 2026</option>
+<option>Q3 2026 (01 Jul 2026 – 30 Sep 2026)</option>
+<option>Q4 2026 (01 Oct 2026 – 31 Dec 2026)</option>
+<option>Custom Tax Filing Range</option>
+</select>
+</div>
+<button class="h-[44px] px-3.5 border border-[#64748B] hover:bg-[#F1F5F9] rounded-[6px] text-[#0F172A] flex items-center justify-center transition-colors focus-ring" title="Export FIRS VAT Schedule" type="button">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Metrics Bento Grid (8px grid aligned) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Tile 1: Total Net -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[8px] p-4 flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-[#475569] uppercase font-semibold">Total Net Invoiced</span>
+<div class="mt-2">
+<span class="text-headline-lg font-headline-lg text-[#0F172A]">₦44,651,163</span>
+<p class="text-label-sm font-label-sm text-[#475569] mt-1">Excludes consumption tax</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-[#475569]">Cohort Base</span>
+<span class="font-medium text-[#0F172A]">104 Candidates</span>
+</div>
+</div>
+<!-- Tile 2: Statutory 7.5% VAT -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8]/30 rounded-[8px] p-4 flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-[#1D4ED8] uppercase font-semibold">Statutory 7.5% VAT</span>
+<div class="mt-2">
+<span class="text-headline-lg font-headline-lg text-[#1D4ED8]">₦3,348,837</span>
+<p class="text-label-sm font-label-sm text-[#1D4ED8] mt-1">FIRS Remittance Pool</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#1D4ED8]/20 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-[#1D4ED8]">Remittance Status</span>
+<span class="inline-flex items-center gap-1 font-semibold text-[#047857]">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span> Reconciled
+                </span>
+</div>
+</div>
+<!-- Tile 3: Total Gross -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[8px] p-4 flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-[#475569] uppercase font-semibold">Total Gross Billed</span>
+<div class="mt-2">
+<span class="text-headline-lg font-headline-lg text-[#0F172A]">₦48,000,000</span>
+<p class="text-label-sm font-label-sm text-[#475569] mt-1">Payable ledger total</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-[#475569]">Settlement Ratio</span>
+<span class="font-medium text-[#047857]">92.8% Collected</span>
+</div>
+</div>
+<!-- Tile 4: Tax Identification & Status -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[8px] p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-[#475569] uppercase font-semibold">Tax Identification</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Verified
+                </span>
+</div>
+<div class="mt-2">
+<span class="font-code-snippet text-body-md font-body-md font-semibold text-[#0F172A]">TIN 10482910-0001</span>
+<p class="text-label-sm font-label-sm text-[#475569] mt-1">FIRS e-Tax Clearance</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-[#475569]">Filing Office</span>
+<span class="font-medium text-[#0F172A]">MSTO Victoria Island</span>
+</div>
+</div>
+</div>
+<!-- Settled vs Outstanding Sub-Bar Indicator -->
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-[6px] flex flex-col sm:flex-row items-center justify-between gap-3 text-body-sm font-body-sm">
+<div class="flex items-center gap-4 text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 font-medium text-[#047857]">
+<span class="w-3 h-3 rounded-full bg-[#047857]"></span> Settled VAT: ₦3,107,721 (92.8%)
+              </span>
+<span class="flex items-center gap-1.5 font-medium text-[#B45309]">
+<span class="w-3 h-3 rounded-full bg-[#B45309]"></span> Outstanding VAT: ₦241,116 (7.2%)
+              </span>
+</div>
+<span class="text-label-sm font-label-sm text-[#475569]">Next Federal Inland Revenue Remittance Due: <strong class="text-[#0F172A]">21 Oct 2026</strong></span>
+</div>
+</section>
+<!-- Dynamic State View Container -->
+<div id="state-container">
+<!-- VARIANT 1: Default Master Ledger Table -->
+<div class="space-y-4" id="variant-default">
+<!-- Controls Bar: Search & Filter Stack -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-4 flex flex-col md:flex-row gap-3 items-stretch justify-between shadow-xs">
+<!-- Search Bar -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#64748B]" data-icon="search">search</span>
+<input class="w-full h-[44px] pl-11 pr-4 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] placeholder-[#475569] focus-ring" placeholder="Search invoice number, customer name, TIN, email..." type="text"/>
+</div>
+<!-- Filter Dropdowns -->
+<div class="flex items-center gap-2 flex-wrap">
+<select class="h-[44px] px-3 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring">
+<option>Status: All (128)</option>
+<option>Status: Paid</option>
+<option>Status: Issued</option>
+<option>Status: Overdue</option>
+<option>Status: Cancelled</option>
+</select>
+<select class="h-[44px] px-3 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring">
+<option>Entity: All Corporate &amp; Direct</option>
+<option>Access Bank PLC</option>
+<option>Zenith Bank Plc</option>
+<option>First Bank Group</option>
+<option>Individual Candidates</option>
+</select>
+<button class="h-[44px] px-4 border border-[#64748B] bg-white hover:bg-[#F1F5F9] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] flex items-center gap-2 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="tune">tune</span>
+<span>More filters</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] overflow-hidden shadow-xs">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3.5 px-4 font-semibold" scope="col">Number</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">Customer / Sponsor</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">Date</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">Net Amount</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">VAT 7.5%</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">Total Amount</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">Status</th>
+<th class="py-3.5 px-4 font-semibold text-center" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm text-[#0F172A]">
+<!-- Row 1: Paid Corporate -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-code-snippet font-semibold text-[#1D4ED8]">
+<a class="underline hover:text-[#0B1320] focus-ring rounded" href="#view">INV-2026-0941</a>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">Access Bank PLC</div>
+<div class="text-label-sm font-label-sm text-[#475569]">Attn: Chinedu Eze (1 Candidate Enrolment)</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-[#475569]">05 Oct 2026</td>
+<td class="py-4 px-4 font-code-snippet text-right">₦418,605</td>
+<td class="py-4 px-4 font-code-snippet text-right text-[#475569]">₦31,395</td>
+<td class="py-4 px-4 font-code-snippet font-semibold text-right text-[#0F172A]">₦450,000</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Paid
+                        </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="h-9 px-2 text-[#0F172A] hover:bg-[#F1F5F9] rounded flex items-center gap-1 text-label-sm font-label-sm focus-ring" title="Download PDF" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="picture_as_pdf">picture_as_pdf</span> PDF
+                          </button>
+<button class="h-9 px-2 text-[#0F172A] hover:bg-[#F1F5F9] rounded flex items-center gap-1 text-label-sm font-label-sm focus-ring" onclick="openModal('modal-resend-container')" title="Resend email" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="mail">mail</span> Resend
+                          </button>
+<button class="w-9 h-9 flex items-center justify-center text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded focus-ring" title="Row overflow options" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Issued Corporate -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-code-snippet font-semibold text-[#1D4ED8]">
+<a class="underline hover:text-[#0B1320] focus-ring rounded" href="#view">INV-2026-0940</a>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">Zenith Bank Plc</div>
+<div class="text-label-sm font-label-sm text-[#475569]">Attn: Amara Okafor (CRISC Cohort)</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-[#475569]">04 Oct 2026</td>
+<td class="py-4 px-4 font-code-snippet text-right">₦279,070</td>
+<td class="py-4 px-4 font-code-snippet text-right text-[#475569]">₦20,930</td>
+<td class="py-4 px-4 font-code-snippet font-semibold text-right text-[#0F172A]">₦300,000</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> Issued
+                        </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="h-9 px-2 text-[#0F172A] hover:bg-[#F1F5F9] rounded flex items-center gap-1 text-label-sm font-label-sm focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="picture_as_pdf">picture_as_pdf</span> PDF
+                          </button>
+<button class="h-9 px-2 text-[#0F172A] hover:bg-[#F1F5F9] rounded flex items-center gap-1 text-label-sm font-label-sm focus-ring" onclick="openModal('modal-resend-container')" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="mail">mail</span> Resend
+                          </button>
+<button class="w-9 h-9 flex items-center justify-center text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Overdue Personal -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-code-snippet font-semibold text-[#1D4ED8]">
+<a class="underline hover:text-[#0B1320] focus-ring rounded" href="#view">INV-2026-0938</a>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">Babatunde Adeleke</div>
+<div class="text-label-sm font-label-sm text-[#475569]">Personal Direct Enrolment (CISM Prep)</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-[#475569]">02 Oct 2026</td>
+<td class="py-4 px-4 font-code-snippet text-right">₦576,744</td>
+<td class="py-4 px-4 font-code-snippet text-right text-[#475569]">₦43,256</td>
+<td class="py-4 px-4 font-code-snippet font-semibold text-right text-[#0F172A]">₦620,000</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span> Overdue
+                        </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="h-9 px-2 text-[#0F172A] hover:bg-[#F1F5F9] rounded flex items-center gap-1 text-label-sm font-label-sm focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="picture_as_pdf">picture_as_pdf</span> PDF
+                          </button>
+<button class="h-9 px-2 text-[#0F172A] hover:bg-[#F1F5F9] rounded flex items-center gap-1 text-label-sm font-label-sm focus-ring" onclick="openModal('modal-resend-container')" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="mail">mail</span> Resend
+                          </button>
+<button class="w-9 h-9 flex items-center justify-center text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Cancelled Corporate -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-code-snippet font-semibold text-[#475569]">
+                        INV-2026-0935
+                      </td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">First Bank Group</div>
+<div class="text-label-sm font-label-sm text-[#475569]">Corporate Batch Billing (Superseded)</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-[#475569]">28 Sep 2026</td>
+<td class="py-4 px-4 font-code-snippet text-right text-[#475569]">₦418,605</td>
+<td class="py-4 px-4 font-code-snippet text-right text-[#475569]">₦31,395</td>
+<td class="py-4 px-4 font-code-snippet text-right text-[#475569]">₦450,000</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]" data-icon="block">block</span> Cancelled
+                        </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="h-9 px-2 text-[#475569] hover:bg-[#F1F5F9] rounded flex items-center gap-1 text-label-sm font-label-sm focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="receipt">receipt</span> Audit log
+                          </button>
+<button class="w-9 h-9 flex items-center justify-center text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9] rounded focus-ring" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4 text-body-sm font-body-sm">
+<span class="text-[#475569]">Showing <strong class="text-[#0F172A]">1 to 4</strong> of <strong class="text-[#0F172A]">128</strong> total records</span>
+<div class="flex items-center gap-2">
+<button class="h-[44px] px-3 border border-[#64748B] bg-white rounded-[6px] text-[#475569] disabled:opacity-50 hover:bg-[#F1F5F9] focus-ring" disabled="" type="button">Previous</button>
+<span class="px-3 py-1 text-label-sm font-label-sm font-semibold bg-[#0B1320] text-white rounded">1</span>
+<button class="px-3 py-1 text-label-sm font-label-sm text-[#0F172A] hover:bg-[#E2E8F0] rounded" type="button">2</button>
+<button class="px-3 py-1 text-label-sm font-label-sm text-[#0F172A] hover:bg-[#E2E8F0] rounded" type="button">3</button>
+<button class="h-[44px] px-3 border border-[#64748B] bg-white rounded-[6px] text-[#0F172A] hover:bg-[#F1F5F9] focus-ring" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- VARIANT 4: Empty Filter State (Hidden by default, toggled via state buttons) -->
+<div class="hidden bg-white border border-[#E2E8F0] rounded-[12px] p-12 text-center space-y-4 shadow-xs" id="variant-empty">
+<div class="w-16 h-16 rounded-full bg-[#F1F5F9] text-[#64748B] flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[32px]" data-icon="search_off">search_off</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]">No invoices found for this query</h3>
+<p class="text-body-sm font-body-sm text-[#475569] max-w-md mx-auto mt-1">
+                There are no invoice records matching the specified query or timeframe filter in the FIRS compliance register.
+              </p>
+</div>
+<div class="pt-2">
+<button class="h-[44px] px-6 bg-white border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded-[6px] font-medium text-body-sm font-body-sm inline-flex items-center gap-2 focus-ring" onclick="showVariant('default')" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="restart_alt">restart_alt</span>
+<span>Reset all active filters</span>
+</button>
+</div>
+</div>
+<!-- VARIANT 5: Table Loading Skeleton State (Hidden by default) -->
+<div class="hidden bg-white border border-[#E2E8F0] rounded-[12px] overflow-hidden shadow-xs p-6 space-y-6" id="variant-skeleton">
+<div class="flex items-center justify-between">
+<div class="h-6 bg-[#E2E8F0] rounded w-1/4 animate-pulse"></div>
+<div class="h-10 bg-[#E2E8F0] rounded w-1/6 animate-pulse"></div>
+</div>
+<div class="space-y-4">
+<div class="h-12 bg-[#F1F5F9] rounded animate-pulse"></div>
+<div class="h-12 bg-[#F8FAFC] rounded animate-pulse"></div>
+<div class="h-12 bg-[#F1F5F9] rounded animate-pulse"></div>
+<div class="h-12 bg-[#F8FAFC] rounded animate-pulse"></div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-[#E2E8F0]">
+<div class="h-4 bg-[#E2E8F0] rounded w-32 animate-pulse"></div>
+<div class="h-8 bg-[#E2E8F0] rounded w-48 animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- MODAL / DIALOG 1: Generate Invoice Modal (State Variant 2) -->
+<div aria-labelledby="modal-generate-title" aria-modal="true" class="fixed inset-0 z-50 bg-[#0B1320]/60 backdrop-blur-none flex items-center justify-center p-4 hidden" id="modal-generate-container" role="dialog">
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] w-full max-w-3xl max-h-[92vh] overflow-y-auto shadow-2xl flex flex-col">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between bg-[#F8FAFC]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#0B1320]" data-icon="post_add">post_add</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]" id="modal-generate-title">Generate Institutional Invoice</h3>
+<p class="text-label-sm font-label-sm text-[#475569]">Issues VAT-compliant documentation according to Federal Inland Revenue specs.</p>
+</div>
+</div>
+<button aria-label="Close dialog" class="w-11 h-11 flex items-center justify-center rounded text-[#475569] hover:text-[#0F172A] hover:bg-[#E2E8F0] focus-ring" onclick="closeModal('modal-generate-container')" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-6">
+<!-- Customer Type Toggle -->
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-2">Customer Classification</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="h-[44px] border-2 border-[#0B1320] bg-[#F8FAFC] text-[#0B1320] font-semibold text-body-sm font-body-sm rounded-[6px] flex items-center justify-center gap-2 focus-ring" id="tab-corp" onclick="selectCustType('corp')" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="apartment">apartment</span>
+<span>Corporate Sponsor</span>
+</button>
+<button class="h-[44px] border border-[#64748B] text-[#475569] hover:bg-[#F1F5F9] font-medium text-body-sm font-body-sm rounded-[6px] flex items-center justify-center gap-2 focus-ring" id="tab-indiv" onclick="selectCustType('indiv')" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+<span>Individual Candidate</span>
+</button>
+</div>
+</div>
+<!-- Corporate Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Corporate / Candidate Name -->
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-1" for="cust-name">Entity / Corporate Name *</label>
+<div class="relative">
+<input class="w-full h-[44px] px-3 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring" id="cust-name" type="text" value="Access Bank PLC"/>
+</div>
+<span class="text-label-sm font-label-sm text-[#475569] mt-0.5 block">Auto-suggest matched from Verified Enterprise Directory</span>
+</div>
+<!-- Corporate TIN -->
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-1" for="cust-tin">Corporate Tax ID / TIN (FIRS)</label>
+<input class="w-full h-[44px] px-3 font-code-snippet bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring" id="cust-tin" type="text" value="00392811-0001"/>
+<span class="text-label-sm font-label-sm text-[#047857] flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span> Validated against FIRS portal
+            </span>
+</div>
+<!-- Billing Email with Masking & Reveal Control -->
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-1">Billing Contact Email *</label>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<input class="w-full h-[44px] px-3 bg-[#F8FAFC] border border-[#64748B] rounded-[6px] text-body-sm font-body-sm font-code-snippet text-[#0F172A] focus-ring" id="cust-email" readonly="" type="text" value="c••••••••@accessbankplc.com"/>
+</div>
+<!-- Min 44px Reveal Button -->
+<button class="h-[44px] px-3 border border-[#64748B] hover:bg-[#F1F5F9] rounded-[6px] text-label-sm font-label-sm font-medium text-[#0F172A] flex items-center gap-1 focus-ring" onclick="toggleReveal('cust-email', 'c••••••••@accessbankplc.com', 'c.eze@accessbankplc.com', this)" title="Reveal masked information" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</div>
+<!-- Phone Number (+234 masked) -->
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-1">Billing Phone Number *</label>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<input class="w-full h-[44px] px-3 bg-[#F8FAFC] border border-[#64748B] rounded-[6px] text-body-sm font-body-sm font-code-snippet text-[#0F172A] focus-ring" id="cust-phone" readonly="" type="text" value="+234 803 ••• ••92"/>
+</div>
+<button class="h-[44px] px-3 border border-[#64748B] hover:bg-[#F1F5F9] rounded-[6px] text-label-sm font-label-sm font-medium text-[#0F172A] flex items-center gap-1 focus-ring" onclick="toggleReveal('cust-phone', '+234 803 ••• ••92', '+234 803 449 8292', this)" title="Reveal masked phone" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Line Item Editor Section -->
+<div class="border border-[#E2E8F0] rounded-[8px] p-4 bg-[#F8FAFC] space-y-4">
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-2">
+<span class="text-label-sm font-label-sm font-semibold uppercase text-[#475569]">Certification &amp; Line Items</span>
+<span class="text-label-sm font-label-sm text-[#047857] font-medium">Standard 7.5% VAT Applied</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-end">
+<!-- Program Cohort Select -->
+<div class="md:col-span-6">
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1">Programme / Cohort</label>
+<select class="w-full h-[44px] px-3 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring">
+<option selected="">CISA Exam Prep Cohort 14 (Lagos Onsite &amp; Lab)</option>
+<option>CRISC Enterprise Risk Masterclass Q4</option>
+<option>CISM Information Security Governance 2026</option>
+<option>AAIA Artificial Intelligence Audit Accelerator</option>
+</select>
+</div>
+<!-- Quantity -->
+<div class="md:col-span-2">
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1">Quantity</label>
+<input class="w-full h-[44px] px-3 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring" min="1" type="number" value="1"/>
+</div>
+<!-- Net Unit Price -->
+<div class="md:col-span-4">
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1">Unit Net (₦)</label>
+<input class="w-full h-[44px] px-3 font-code-snippet bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring" type="text" value="418,605"/>
+</div>
+</div>
+<!-- Calculation Summary Box -->
+<div class="bg-white border border-[#E2E8F0] p-4 rounded-[6px] space-y-2">
+<div class="flex justify-between text-body-sm font-body-sm text-[#475569]">
+<span>Subtotal Net Amount:</span>
+<span class="font-code-snippet font-semibold text-[#0F172A]">₦418,605</span>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm text-[#475569]">
+<span>Statutory Value Added Tax (VAT 7.5%):</span>
+<span class="font-code-snippet font-semibold text-[#1D4ED8]">+ ₦31,395</span>
+</div>
+<div class="flex justify-between text-body-lg font-body-lg pt-2 border-t border-[#E2E8F0] text-[#0F172A] font-semibold">
+<span>Gross Payable:</span>
+<span class="font-code-snippet text-[#0B1320]">₦450,000</span>
+</div>
+</div>
+</div>
+<!-- Payment Settlement & Terms Configuration -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-1" for="due-date">Payment Due Date</label>
+<input class="w-full h-[44px] px-3 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring" id="due-date" type="text" value="19 Oct 2026 (Net 14 Days)"/>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-1">Disbursement Channel / Instructions</label>
+<select class="w-full h-[44px] px-3 bg-white border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring">
+<option selected="">Direct Paystack Dedicated Virtual Account (Instant Recon)</option>
+<option>GTBank Institutional Wire (Account: 0192837461)</option>
+<option>First Bank Treasury Transfer (Account: 2039481190)</option>
+</select>
+</div>
+</div>
+<!-- Inline Validation Notice (Design System Rule) -->
+<div class="p-3 bg-[#EFF6FF] border border-[#1D4ED8] rounded-[6px] flex items-center gap-3 text-body-sm font-body-sm text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+<span>A cryptographically signed audit copy will automatically transmit to the Lagos State Internal Revenue &amp; FIRS database.</span>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-3">
+<button class="h-[44px] px-6 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded-[6px] font-medium text-body-sm font-body-sm focus-ring" onclick="closeModal('modal-generate-container')" type="button">
+          Cancel
+        </button>
+<button class="h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-body-sm font-body-sm flex items-center gap-2 focus-ring" onclick="simulateCreateInvoice()" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+<span>Create &amp; Send Invoice</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL / DIALOG 2: Resend Email Modal & Toast (State Variant 3) -->
+<div aria-labelledby="modal-resend-title" aria-modal="true" class="fixed inset-0 z-50 bg-[#0B1320]/60 backdrop-blur-none flex items-center justify-center p-4 hidden" id="modal-resend-container" role="dialog">
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] w-full max-w-lg shadow-2xl flex flex-col overflow-hidden">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between bg-[#F8FAFC]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320]" data-icon="mark_email_read">mark_email_read</span>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A]" id="modal-resend-title">Resend Invoice Notification</h3>
+</div>
+<button aria-label="Close dialog" class="w-11 h-11 flex items-center justify-center rounded text-[#475569] hover:text-[#0F172A] hover:bg-[#E2E8F0] focus-ring" onclick="closeModal('modal-resend-container')" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4">
+<div>
+<label class="block text-label-sm font-label-sm font-semibold text-[#0F172A] mb-1">Target Recipient Address</label>
+<div class="flex items-center gap-2">
+<input class="flex-1 h-[44px] px-3 font-code-snippet bg-[#F8FAFC] border border-[#64748B] rounded-[6px] text-body-sm font-body-sm text-[#0F172A] focus-ring" id="resend-email" readonly="" type="text" value="c••••••••@accessbankplc.com"/>
+<button class="h-[44px] px-3 border border-[#64748B] hover:bg-[#F1F5F9] rounded-[6px] text-label-sm font-label-sm font-medium text-[#0F172A] flex items-center gap-1 focus-ring" onclick="toggleReveal('resend-email', 'c••••••••@accessbankplc.com', 'c.eze@accessbankplc.com', this)" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</div>
+<!-- Attachment Chip -->
+<div>
+<label class="block text-label-sm font-label-sm text-[#475569] mb-1">Attached Cryptographic Artifact</label>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-[6px] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#B91C1C]" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="text-body-sm font-body-sm font-medium text-[#0F172A]">INV-2026-0941_Signed_VAT.pdf</span>
+</div>
+<span class="text-label-sm font-label-sm text-[#475569]">284 KB</span>
+</div>
+</div>
+<!-- Checkbox with 44px min target area -->
+<label class="flex items-center gap-3 p-2 rounded hover:bg-[#F8FAFC] cursor-pointer min-h-[44px]">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus-ring" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Send carbon copy to Accounts Department (finance@ajsilicon.com)</span>
+</label>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-3">
+<button class="h-[44px] px-6 border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] rounded-[6px] font-medium text-body-sm font-body-sm focus-ring" onclick="closeModal('modal-resend-container')" type="button">
+          Cancel
+        </button>
+<button class="h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-[6px] font-medium text-body-sm font-body-sm flex items-center gap-2 focus-ring" onclick="triggerResendToast()" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+<span>Dispatch Copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- FIXED CONFIRMATION TOAST (State Variant 3 component) -->
+<aside aria-live="polite" class="fixed bottom-6 right-6 z-50 max-w-md bg-white border border-[#047857] rounded-[8px] p-4 shadow-lg flex items-start gap-3 transform translate-y-24 opacity-0 transition-all duration-300" id="toast-success" role="status">
+<div class="w-8 h-8 rounded-full bg-[#ECFDF5] text-[#047857] flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex-1">
+<h4 class="text-label-md font-label-md font-semibold text-[#0F172A]">Invoice Resent Successfully</h4>
+<p class="text-body-sm font-body-sm text-[#475569] mt-0.5">
+        Invoice <strong class="text-[#0F172A]">INV-2026-0941</strong> resent to <code class="font-code-snippet text-[#1D4ED8]">c••••••••@accessbankplc.com</code>.
+      </p>
+</div>
+<button aria-label="Dismiss toast" class="w-8 h-8 flex items-center justify-center text-[#64748B] hover:text-[#0F172A] rounded focus-ring" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</button>
+</aside>
+<!-- Institutional Dossier Footer (Shared Component JSON aligned: docked full-width, institutional_dossier) -->
+<footer class="bg-primary-container text-on-primary-container border-t border-outline/30 mt-auto">
+<div class="w-full px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+<span class="text-body-md font-body-md font-bold text-surface-container-lowest">A.J. Silicon</span>
+<span class="text-on-primary-container">© 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.</span>
+</div>
+<div class="flex items-center gap-4 flex-wrap justify-center text-label-sm font-label-sm">
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors underline" href="#drm">DRM Compliance Policy</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors underline" href="#zero-trust">Zero-Trust Verification</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors underline" href="#hash-log">Candidate Session Hash Log</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors underline" href="#telemetry">Integrity Telemetry Docs</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors underline" href="#secops">SecOps Oversight</a>
+</div>
+</div>
+</footer>
+<!-- Interactive JavaScript Logic for Specification Board States & Micro-interactions -->
+<script>
+    // State variant switcher for inspectable board requirements
+    function showVariant(variantKey) {
+      // Reset button styles
+      const buttons = ['default', 'modal-generate', 'modal-resend', 'empty', 'skeleton'];
+      buttons.forEach(k => {
+        const btn = document.getElementById('btn-v-' + k);
+        if (btn) {
+          btn.className = "px-3 py-1 rounded bg-white text-[#0F172A] border border-[#64748B] hover:bg-[#F1F5F9] font-medium focus-ring";
+        }
+      });
+
+      // Highlight active button
+      const activeBtn = document.getElementById('btn-v-' + variantKey);
+      if (activeBtn) {
+        activeBtn.className = "px-3 py-1 rounded bg-[#0B1320] text-white font-medium focus-ring";
+      }
+
+      // Hide all modals & toasts
+      closeModal('modal-generate-container');
+      closeModal('modal-resend-container');
+      hideToast();
+
+      // Show requested content variant
+      const defaultDiv = document.getElementById('variant-default');
+      const emptyDiv = document.getElementById('variant-empty');
+      const skeletonDiv = document.getElementById('variant-skeleton');
+
+      defaultDiv.classList.add('hidden');
+      emptyDiv.classList.add('hidden');
+      skeletonDiv.classList.add('hidden');
+
+      if (variantKey === 'default') {
+        defaultDiv.classList.remove('hidden');
+      } else if (variantKey === 'modal-generate') {
+        defaultDiv.classList.remove('hidden');
+        openModal('modal-generate-container');
+      } else if (variantKey === 'modal-resend') {
+        defaultDiv.classList.remove('hidden');
+        openModal('modal-resend-container');
+        triggerResendToast();
+      } else if (variantKey === 'empty') {
+        emptyDiv.classList.remove('hidden');
+      } else if (variantKey === 'skeleton') {
+        skeletonDiv.classList.remove('hidden');
+      }
+    }
+
+    // Modal helpers
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    // Customer Type Selector in Dialog
+    function selectCustType(type) {
+      const corpBtn = document.getElementById('tab-corp');
+      const indivBtn = document.getElementById('tab-indiv');
+      const nameInput = document.getElementById('cust-name');
+      const tinInput = document.getElementById('cust-tin');
+
+      if (type === 'corp') {
+        corpBtn.className = "h-[44px] border-2 border-[#0B1320] bg-[#F8FAFC] text-[#0B1320] font-semibold text-body-sm font-body-sm rounded-[6px] flex items-center justify-center gap-2 focus-ring";
+        indivBtn.className = "h-[44px] border border-[#64748B] text-[#475569] hover:bg-[#F1F5F9] font-medium text-body-sm font-body-sm rounded-[6px] flex items-center justify-center gap-2 focus-ring";
+        if (nameInput) nameInput.value = "Access Bank PLC";
+        if (tinInput) tinInput.value = "00392811-0001";
+      } else {
+        indivBtn.className = "h-[44px] border-2 border-[#0B1320] bg-[#F8FAFC] text-[#0B1320] font-semibold text-body-sm font-body-sm rounded-[6px] flex items-center justify-center gap-2 focus-ring";
+        corpBtn.className = "h-[44px] border border-[#64748B] text-[#475569] hover:bg-[#F1F5F9] font-medium text-body-sm font-body-sm rounded-[6px] flex items-center justify-center gap-2 focus-ring";
+        if (nameInput) nameInput.value = "Babatunde Adeleke (Personal Enrolment)";
+        if (tinInput) tinInput.value = "N/A - Direct Pay As You Earn";
+      }
+    }
+
+    // Mask / Reveal toggle handler
+    function toggleReveal(inputId, maskedValue, unmaskedValue, btnElement) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      const icon = btnElement.querySelector('.material-symbols-outlined');
+      const label = btnElement.querySelector('span:not(.material-symbols-outlined)');
+
+      if (input.value === maskedValue) {
+        input.value = unmaskedValue;
+        if (icon) icon.textContent = 'visibility_off';
+        if (label) label.textContent = 'Hide';
+      } else {
+        input.value = maskedValue;
+        if (icon) icon.textContent = 'visibility';
+        if (label) label.textContent = 'Reveal';
+      }
+    }
+
+    // Toast handler
+    function triggerResendToast() {
+      const toast = document.getElementById('toast-success');
+      if (toast) {
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          hideToast();
+        }, 5000);
+      }
+    }
+
+    function hideToast() {
+      const toast = document.getElementById('toast-success');
+      if (toast) {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }
+    }
+
+    function simulateCreateInvoice() {
+      closeModal('modal-generate-container');
+      triggerResendToast();
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

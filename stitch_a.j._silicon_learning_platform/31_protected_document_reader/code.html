@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon - 31 Protected Document Reader Specification Board</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#997f6a",
+            "surface-container-high": "#e2e7ff",
+            "surface-bright": "#faf8ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "background": "#faf8ff",
+            "on-surface": "#131b2e",
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-secondary-fixed": "#001551",
+            "surface-container-low": "#f2f3ff",
+            "tertiary-fixed": "#fddcc4",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-variant": "#dae2fd",
+            "primary-fixed-dim": "#bfc6d9",
+            "secondary-container": "#4069f2",
+            "surface-tint": "#575f6e",
+            "secondary": "#1d4ed8",
+            "on-error": "#ffffff",
+            "tertiary": "#000000",
+            "surface-container": "#eaedff",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#fffbff",
+            "surface-dim": "#d2d9f4",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#141c29",
+            "primary-container": "#141c29",
+            "inverse-surface": "#283044",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-background": "#131b2e",
+            "outline-variant": "#c5c6cc",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface": "#faf8ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-container-highest": "#dae2fd",
+            "on-primary-container": "#7c8495",
+            "inverse-on-surface": "#eef0ff",
+            "outline": "#75777c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "primary": "#000000",
+            "on-surface-variant": "#45474c",
+            "error": "#ba1a1a",
+            "primary-fixed": "#dbe2f5",
+            "on-tertiary-fixed": "#281809",
+            "tertiary-container": "#281809",
+            "secondary-fixed": "#dce1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "space-sm": "1rem",
+            "space-xs": "0.5rem",
+            "gutter": "1.5rem",
+            "space-md": "1.5rem",
+            "space-xl": "3rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .watermark-overlay {
+      pointer-events: none;
+      user-select: none;
+      background: radial-gradient(transparent 90%, rgba(255,255,255,0.01) 100%);
+    }
+    .watermark-pattern {
+      background-image: repeating-linear-gradient(
+        -30deg,
+        rgba(15, 23, 42, 0.14) 0px,
+        rgba(15, 23, 42, 0.14) 1px,
+        transparent 1px,
+        transparent 120px
+      );
+    }
+    /* Negative constraint enforcement */
+    .protected-canvas {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+    @media print {
+      body { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-sm antialiased m-0 p-0 selection:bg-none">
+<!-- ========================================== -->
+<!-- TOP LEVEL SPECIFICATION BOARD CONTROLLER  -->
+<!-- ========================================== -->
+<header class="bg-surface-container-lowest border-b border-outline-variant px-8 py-5">
+<div class="max-w-[1720px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center h-6 px-2.5 rounded bg-surface-container text-secondary font-label-sm font-semibold border border-secondary">
+            SPEC ID: 31
+          </span>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            Protected Document Reader — Multi-State Specification Board
+          </h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          A.J. Silicon Learning Platform · Candidate: <strong class="text-on-surface font-medium">Chinedu Eze</strong> · Enrolled: <span class="font-medium text-on-surface">CISA Exam Prep (Cohort 14)</span> · Strict DRM &amp; Negative Constraints Applied
+        </p>
+</div>
+<!-- Quick Switcher Anchors for Auditor Inspection -->
+<nav aria-label="Specification State Navigation" class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0">
+<a class="inline-flex items-center px-3 py-2 text-label-md font-label-md rounded border border-outline-variant hover:bg-surface-container-low transition-colors duration-150 text-on-surface" href="#state-reading">
+          State 1: Reading
+        </a>
+<a class="inline-flex items-center px-3 py-2 text-label-md font-label-md rounded border border-outline-variant hover:bg-surface-container-low transition-colors duration-150 text-on-surface" href="#state-loading">
+          State 2: Loading (Skeleton)
+        </a>
+<a class="inline-flex items-center px-3 py-2 text-label-md font-label-md rounded border border-outline-variant hover:bg-surface-container-low transition-colors duration-150 text-on-surface" href="#state-error">
+          State 3: Error &amp; Retry
+        </a>
+<a class="inline-flex items-center px-3 py-2 text-label-md font-label-md rounded border border-outline-variant hover:bg-surface-container-low transition-colors duration-150 text-on-surface" href="#state-mobile">
+          State 4: Mobile (390px)
+        </a>
+</nav>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- MAIN WORKSPACE CONTAINING ALL 4 STATES     -->
+<!-- ========================================== -->
+<main class="max-w-[1720px] mx-auto p-6 md:p-8 space-y-16">
+<!-- ======================================================== -->
+<!-- STATE 1: READING (DESKTOP 1440px VIEWPORT SPECIFICATION) -->
+<!-- ======================================================== -->
+<section class="space-y-4 scroll-mt-6" id="state-reading">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+            State 1: Active Reading Viewport (Desktop 1440px Shell)
+          </h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] font-label-sm text-label-sm">
+            Status: Active Render (100% Zoom)
+          </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+            Forensic Watermark: 14% Opacity
+          </span>
+</div>
+</div>
+<!-- Desktop Viewport Frame Wrapper -->
+<div class="border border-outline-variant rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<!-- Application Shell TopNavBar (Shared Component Direct Execution) -->
+<header class="bg-primary-container dark:bg-primary-container text-on-primary dark:text-on-primary h-16 flex justify-between items-center w-full px-6 border-b border-outline-variant dark:border-outline-variant">
+<!-- Left: Brand Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest text-primary font-headline-sm px-3 py-1 rounded flex items-center h-10 shadow-none border border-outline-variant">
+<img alt="A.J. Silicon Logo" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBcjv-kNymYOkPqeia3UE9t6UNH-5UBy47N4kJ62H18n9C2M3Oq4LmmLm87yPIgEnndbI642cHgsYyuXKQ_pP3yZOje_0zb1RCLAqT_fqGCzVJhlLiubfIeEfwyIwm61heqQhRGnXSYOuyDpYykwUq6H5wick7TnZVPvt5IcorPm3_I3NwYhgexe_Z6RXhA2U6aLTvHlMNf87ZcvL4q3Y5ubm54sqAUwx3EgcyhcSgC27pODZWSop9PJj1CvHcCBOAKnc"/>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-on-primary-container text-label-md font-label-md">
+<span class="text-on-primary font-medium">ISACA Lagos Gold Affiliate</span>
+<span class="text-outline">/</span>
+<span>Enterprise IT Governance &amp; Audit Virtual Portal</span>
+</div>
+</div>
+<!-- Right: Trailing Actions & Profile Chip -->
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 rounded transition-colors duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Help and Support" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 rounded transition-colors duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-6 w-px bg-outline/40 mx-1"></div>
+<!-- Profile Info: Chinedu Eze -->
+<div class="flex items-center gap-3 pl-2">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-sm font-semibold tracking-wider">
+                CE
+              </div>
+<div class="hidden xl:flex flex-col text-left">
+<span class="text-label-md font-label-md text-on-primary leading-tight">Chinedu Eze</span>
+<span class="text-label-sm font-label-sm text-on-primary-container">CISA Cohort 14 Candidate</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Shell Body (Sidebar + Content Workspace) -->
+<div class="flex min-h-[820px] bg-background">
+<!-- SideNavBar (Shared Component Direct Execution) -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest dark:bg-surface-container-low border-r border-outline-variant dark:border-outline-variant flex flex-col justify-between p-4">
+<div>
+<!-- Sidebar Header -->
+<div class="pb-4 mb-4 border-b border-outline-variant">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<h3 class="text-headline-sm font-headline-sm text-primary dark:text-on-surface">
+                    CISA Exam Prep
+                  </h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant text-xs">
+                  Cohort 14: 12 Oct - 18 Dec 2026, Virtual
+                </p>
+</div>
+<!-- Main Navigation Links -->
+<nav aria-label="Primary Navigation" class="space-y-1">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded min-h-[44px] transition-all duration-150 ease-in-out" href="#dashboard">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Modules / Programme Home (ACTIVE STATE MANDATED) -->
+<a class="bg-surface-container dark:bg-surface-container text-secondary font-label-md text-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3 rounded-r min-h-[44px] transition-all duration-150 ease-in-out font-medium" href="#modules">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded min-h-[44px] transition-all duration-150 ease-in-out" href="#practice-exams">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded min-h-[44px] transition-all duration-150 ease-in-out" href="#extend-access">
+<span class="material-symbols-outlined" data-icon="hourglass_top">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- Footer Navigation Items -->
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded min-h-[44px] transition-all duration-150 ease-in-out" href="#settings">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded min-h-[44px] transition-all duration-150 ease-in-out" href="#signout">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- Core Workspace Content Canvas -->
+<div class="flex-1 flex flex-col min-w-0 bg-[#F8FAFC]">
+<!-- Context Header & Licensing Banner -->
+<div class="px-6 py-4 bg-surface-container-lowest border-b border-outline-variant flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="min-w-0">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant mb-1">
+<span>Programme Curriculum</span>
+<span>/</span>
+<span>Domain 2: IT Governance &amp; Management</span>
+<span>/</span>
+<span class="text-on-surface font-medium">Workpaper 04</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">
+                  Domain 2 Workpaper 04: IT Governance Controls &amp; RACI Matrix.pdf
+                </h2>
+</div>
+<!-- Mandatory Licensing Micro-Banner -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] font-label-md text-label-md flex-shrink-0">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="shield">shield</span>
+<span class="font-medium">This content is licensed to you.</span>
+</div>
+</div>
+<!-- Viewer Standard Toolbar (NO download, print, or copy controls) -->
+<div class="px-6 py-2.5 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between gap-4 flex-wrap">
+<!-- Left: Paging Controls -->
+<div class="flex items-center gap-2">
+<button aria-label="Previous page" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-on-surface hover:bg-surface-container-low transition-colors duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="navigate_before">navigate_before</span>
+</button>
+<div class="px-3 font-label-md text-label-md text-on-surface font-mono">
+                  Page <strong class="font-semibold">12</strong> of <strong>48</strong>
+</div>
+<button aria-label="Next page" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-on-surface hover:bg-surface-container-low transition-colors duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="navigate_next">navigate_next</span>
+</button>
+</div>
+<!-- Center: Zoom & View Mode -->
+<div class="flex items-center gap-2">
+<button aria-label="Zoom out" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-on-surface hover:bg-surface-container-low transition-colors duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+<span class="px-2 font-label-md text-label-md text-on-surface font-mono">100%</span>
+<button aria-label="Zoom in" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-on-surface hover:bg-surface-container-low transition-colors duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<div class="h-5 w-px bg-outline-variant mx-1"></div>
+<button aria-label="Fit to width" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded border border-[#64748B] text-on-surface hover:bg-surface-container-low transition-colors duration-150" title="Fit to width" type="button">
+<span class="material-symbols-outlined" data-icon="fit_screen">fit_screen</span>
+</button>
+</div>
+<!-- Right: Bookmark Toggle (Active state) -->
+<div class="flex items-center gap-2">
+<button aria-label="Bookmark page" class="min-h-[44px] inline-flex items-center gap-2 px-3 rounded border border-secondary bg-[#EFF6FF] text-secondary font-label-md text-label-md transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-secondary" data-icon="bookmark" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+<span class="font-medium">Bookmarked</span>
+</button>
+</div>
+</div>
+<!-- Viewer Body Area: Thumbnail Strip + Document Canvas -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Vertical Thumbnail Strip -->
+<aside aria-label="Document Page Thumbnails" class="w-48 bg-[#F1F5F9] border-r border-outline-variant p-3 overflow-y-auto space-y-3 flex-shrink-0">
+<div class="text-label-sm font-label-sm text-on-surface-variant font-medium uppercase tracking-wider mb-2">
+                  Thumbnails
+                </div>
+<!-- Page 10 -->
+<button class="w-full text-left p-1.5 rounded border border-outline-variant bg-surface-container-lowest hover:border-[#64748B] transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<div class="h-28 w-full bg-[#FFFFFF] border border-[#E2E8F0] rounded p-2 flex flex-col justify-between text-[7px] text-[#64748B] leading-none overflow-hidden relative">
+<div class="space-y-1">
+<div class="h-1.5 bg-[#E2E8F0] w-3/4 rounded-sm"></div>
+<div class="h-1 bg-[#F1F5F9] w-full rounded-sm"></div>
+<div class="h-1 bg-[#F1F5F9] w-5/6 rounded-sm"></div>
+</div>
+<div class="text-right font-mono text-[9px] text-on-surface-variant font-medium">p.10</div>
+</div>
+<span class="block text-center font-label-sm text-xs mt-1 text-on-surface-variant">Page 10</span>
+</button>
+<!-- Page 11 -->
+<button class="w-full text-left p-1.5 rounded border border-outline-variant bg-surface-container-lowest hover:border-[#64748B] transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<div class="h-28 w-full bg-[#FFFFFF] border border-[#E2E8F0] rounded p-2 flex flex-col justify-between text-[7px] text-[#64748B] leading-none overflow-hidden relative">
+<div class="space-y-1">
+<div class="h-1.5 bg-[#E2E8F0] w-1/2 rounded-sm"></div>
+<div class="grid grid-cols-2 gap-1 mt-1">
+<div class="h-6 bg-[#F8FAFC] border border-[#E2E8F0]"></div>
+<div class="h-6 bg-[#F8FAFC] border border-[#E2E8F0]"></div>
+</div>
+</div>
+<div class="text-right font-mono text-[9px] text-on-surface-variant font-medium">p.11</div>
+</div>
+<span class="block text-center font-label-sm text-xs mt-1 text-on-surface-variant">Page 11</span>
+</button>
+<!-- Page 12 (ACTIVE) -->
+<button class="w-full text-left p-1.5 rounded border-2 border-secondary bg-surface-container-lowest shadow-sm focus:outline-none" type="button">
+<div class="h-28 w-full bg-[#FFFFFF] border border-secondary/40 rounded p-2 flex flex-col justify-between text-[7px] text-secondary leading-none overflow-hidden relative">
+<div class="space-y-1">
+<div class="h-1.5 bg-secondary/30 w-4/5 rounded-sm"></div>
+<div class="h-1 bg-secondary/15 w-full rounded-sm"></div>
+<div class="h-4 bg-[#EFF6FF] border border-secondary/20 rounded-xs mt-1"></div>
+</div>
+<div class="flex items-center justify-between font-mono text-[9px] text-secondary font-semibold">
+<span class="material-symbols-outlined text-[10px]" data-icon="bookmark" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+<span>p.12</span>
+</div>
+</div>
+<span class="block text-center font-label-sm text-xs mt-1 text-secondary font-semibold">Page 12 (Active)</span>
+</button>
+<!-- Page 13 -->
+<button class="w-full text-left p-1.5 rounded border border-outline-variant bg-surface-container-lowest hover:border-[#64748B] transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<div class="h-28 w-full bg-[#FFFFFF] border border-[#E2E8F0] rounded p-2 flex flex-col justify-between text-[7px] text-[#64748B] leading-none overflow-hidden relative">
+<div class="space-y-1">
+<div class="h-1.5 bg-[#E2E8F0] w-2/3 rounded-sm"></div>
+<div class="h-1 bg-[#F1F5F9] w-full rounded-sm"></div>
+</div>
+<div class="text-right font-mono text-[9px] text-on-surface-variant font-medium">p.13</div>
+</div>
+<span class="block text-center font-label-sm text-xs mt-1 text-on-surface-variant">Page 13</span>
+</button>
+<!-- Page 14 -->
+<button class="w-full text-left p-1.5 rounded border border-outline-variant bg-surface-container-lowest hover:border-[#64748B] transition-colors focus:ring-2 focus:ring-secondary focus:outline-none" type="button">
+<div class="h-28 w-full bg-[#FFFFFF] border border-[#E2E8F0] rounded p-2 flex flex-col justify-between text-[7px] text-[#64748B] leading-none overflow-hidden relative">
+<div class="space-y-1">
+<div class="h-1.5 bg-[#E2E8F0] w-3/5 rounded-sm"></div>
+<div class="h-1 bg-[#F1F5F9] w-full rounded-sm"></div>
+</div>
+<div class="text-right font-mono text-[9px] text-on-surface-variant font-medium">p.14</div>
+</div>
+<span class="block text-center font-label-sm text-xs mt-1 text-on-surface-variant">Page 14</span>
+</button>
+</aside>
+<!-- Central Protected Document Page Surface -->
+<div class="flex-1 overflow-y-auto p-8 flex justify-center bg-[#E5E7EB] protected-canvas">
+<!-- Realistic A4 Paper Workpaper Document Page -->
+<div class="w-full max-w-[840px] min-h-[1080px] bg-white border border-[#CBD5E1] shadow-md rounded p-12 relative flex flex-col justify-between">
+<!-- Forensic Watermark Layer (Strictly 14% Opacity) -->
+<div class="absolute inset-0 watermark-overlay watermark-pattern pointer-events-none flex flex-col justify-around items-center overflow-hidden z-20">
+<div class="transform -rotate-25 text-lg font-mono tracking-widest text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                      Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed Material
+                    </div>
+<div class="transform -rotate-25 text-lg font-mono tracking-widest text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                      Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed Material
+                    </div>
+<div class="transform -rotate-25 text-lg font-mono tracking-widest text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                      Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed Material
+                    </div>
+<div class="transform -rotate-25 text-lg font-mono tracking-widest text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                      Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed Material
+                    </div>
+</div>
+<!-- Document Page Content (Auditable Workpaper Structure) -->
+<div class="relative z-10 space-y-6">
+<!-- Document Header Meta -->
+<div class="border-b-2 border-primary pb-4 flex justify-between items-start">
+<div>
+<div class="text-xs uppercase font-mono tracking-wider text-on-surface-variant font-medium">
+                          ISACA CISA Candidate Workpaper · Domain 2
+                        </div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface mt-1">
+                          Enterprise IT Risk Assessment Matrix &amp; RACI Framework
+                        </h3>
+<p class="text-body-sm text-xs text-on-surface-variant mt-0.5">
+                          Section 2.4: Roles, Responsibilities, and IT Steering Committee Alignment
+                        </p>
+</div>
+<div class="text-right text-xs font-mono text-on-surface-variant">
+<div>REF: CISA-D2-WP04</div>
+<div>VER: 2026.2 (Virtual)</div>
+</div>
+</div>
+<!-- Narrative Paragraph 1 -->
+<div class="space-y-2 text-body-sm text-[#0F172A] leading-relaxed">
+<p>
+                        In executing IT audit mandates aligned to ISACA standards, the information systems auditor must verify that strategic IT goals are directly mapped to organizational risk tolerance through an empowered IT Steering Committee. Audit testing procedures require substantive inspection of meeting minutes, committee charter approvals, and verified RACI allocations for all high-impact information asset changes.
+                      </p>
+<p>
+                        The following RACI matrix details the baseline segregation of duties (SoD) required under standard IT compliance reviews for enterprise asset governance:
+                      </p>
+</div>
+<!-- Workpaper Table: Audit RACI Matrix -->
+<div class="border border-[#CBD5E1] rounded overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#CBD5E1]">
+<th class="p-3 text-xs font-semibold text-[#475569] uppercase font-mono">Control ID</th>
+<th class="p-3 text-xs font-semibold text-[#475569] uppercase">Governance Activity</th>
+<th class="p-3 text-xs font-semibold text-[#475569] uppercase text-center">Board / Risk</th>
+<th class="p-3 text-xs font-semibold text-[#475569] uppercase text-center">CIO / IT Lead</th>
+<th class="p-3 text-xs font-semibold text-[#475569] uppercase text-center">IT Auditor</th>
+<th class="p-3 text-xs font-semibold text-[#475569] uppercase">Compliance Criteria</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-xs">
+<tr class="hover:bg-[#F8FAFC]">
+<td class="p-3 font-mono font-medium text-primary">GV-01.1</td>
+<td class="p-3 font-medium text-[#0F172A]">IT Strategic Plan Sign-off</td>
+<td class="p-3 text-center font-bold text-secondary">A</td>
+<td class="p-3 text-center font-bold text-on-surface">R</td>
+<td class="p-3 text-center font-bold text-[#475569]">I</td>
+<td class="p-3 text-on-surface-variant">Annual board review minutes</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="p-3 font-mono font-medium text-primary">GV-01.2</td>
+<td class="p-3 font-medium text-[#0F172A]">Risk Appetite Calibration</td>
+<td class="p-3 text-center font-bold text-secondary">A</td>
+<td class="p-3 text-center font-bold text-on-surface">C</td>
+<td class="p-3 text-center font-bold text-[#475569]">I</td>
+<td class="p-3 text-on-surface-variant">Quantitative appetite statement</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="p-3 font-mono font-medium text-primary">GV-02.1</td>
+<td class="p-3 font-medium text-[#0F172A]">Critical SoD Conflict Reviews</td>
+<td class="p-3 text-center font-bold text-[#475569]">I</td>
+<td class="p-3 text-center font-bold text-on-surface">R</td>
+<td class="p-3 text-center font-bold text-secondary">C</td>
+<td class="p-3 text-on-surface-variant">Quarterly ERP entitlement matrix</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="p-3 font-mono font-medium text-primary">GV-03.4</td>
+<td class="p-3 font-medium text-[#0F172A]">Independent Controls Testing</td>
+<td class="p-3 text-center font-bold text-[#475569]">I</td>
+<td class="p-3 text-center font-bold text-on-surface">C</td>
+<td class="p-3 text-center font-bold text-secondary">R / A</td>
+<td class="p-3 text-on-surface-variant">Unimpeachable audit workpaper file</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- RACI Legend & Audit Note -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] p-4 rounded text-xs space-y-2">
+<div class="font-semibold text-[#0F172A] uppercase tracking-wide">Audit Workpaper Explanatory Key:</div>
+<div class="grid grid-cols-4 gap-2 text-on-surface-variant font-mono">
+<div><strong class="text-on-surface">R</strong>: Responsible</div>
+<div><strong class="text-on-surface">A</strong>: Accountable</div>
+<div><strong class="text-on-surface">C</strong>: Consulted</div>
+<div><strong class="text-on-surface">I</strong>: Informed</div>
+</div>
+<p class="text-on-surface-variant text-[11px] leading-normal pt-1 border-t border-[#E2E8F0]">
+<strong>Audit Assertion:</strong> The auditor must corroborate whether single points of failure exist in IT project sign-offs without documented Board Steering Committee escalation.
+                      </p>
+</div>
+<!-- Examination Practice Callout -->
+<div class="border-l-4 border-secondary bg-[#EFF6FF] p-3 text-xs text-[#1D4ED8]">
+<div class="font-semibold mb-0.5">Exam Focus Note (Domain 2 Practice):</div>
+<p class="text-[#0F172A]">
+                        When an exam scenario presents a conflict between operational IT management and internal audit findings regarding strategic alignment, the IT Steering Committee is the designated primary authority for final escalation.
+                      </p>
+</div>
+</div>
+<!-- Document Page Footer -->
+<div class="relative z-10 pt-4 border-t border-[#E2E8F0] flex justify-between items-center text-xs font-mono text-[#64748B]">
+<div>CONFIDENTIAL &amp; RESTRICTED — A.J. SILICON COHORT 14</div>
+<div>Page 12 of 48</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- STATE 2: LOADING (SKELETON STATE SPECIFICATION)          -->
+<!-- ======================================================== -->
+<section class="space-y-4 scroll-mt-6" id="state-loading">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-outline"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+            State 2: Page Loading &amp; Cryptographic Decryption (Skeleton View)
+          </h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#FFFBEB] text-[#B45309] border border-[#B45309] font-label-sm text-label-sm">
+            Status: Transitioning to Page 13 (Decrypting)
+          </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+            Forensic Watermark Persistent
+          </span>
+</div>
+</div>
+<!-- Desktop Viewport Frame Wrapper -->
+<div class="border border-outline-variant rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm opacity-95">
+<!-- Application Shell TopNavBar -->
+<header class="bg-primary-container text-on-primary h-16 flex justify-between items-center w-full px-6 border-b border-outline-variant">
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest text-primary font-headline-sm px-3 py-1 rounded flex items-center h-10 border border-outline-variant">
+<img alt="A.J. Silicon Logo" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4QwRpZWSrrgqe-MZkKbCao28rbRqla0v1BFiTDJuCF7picxXXEByHcUxrYqybnSWA9XeFxAFmYe_49mlC52GE-KZUqs3EQxEGj5JRGSAGxuqq5sVzVFnsSpZLzvBZWd1AMfmf58ZTLMC4DdlK08krOonzI8o3iTn4eLEwQm2RskhzJWMU4Bm9U4o1B1U3CC5PCZufTO8VSt9hc9nq1uubqC7SD0ajHfDv5g_OgDsAqMxbDFAyM_QtmRc7VViguSavpaA"/>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-on-primary-container text-label-md font-label-md">
+<span class="text-on-primary font-medium">ISACA Lagos Gold Affiliate</span>
+<span class="text-outline">/</span>
+<span>Enterprise IT Governance &amp; Audit Virtual Portal</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-3 pl-2">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-sm font-semibold">
+                CE
+              </div>
+<div class="hidden xl:flex flex-col text-left">
+<span class="text-label-md font-label-md text-on-primary leading-tight">Chinedu Eze</span>
+<span class="text-label-sm font-label-sm text-on-primary-container">CISA Cohort 14 Candidate</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Shell Body -->
+<div class="flex min-h-[640px] bg-background">
+<!-- SideNavBar (Compressed Representation for Specification) -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between p-4">
+<div class="space-y-4">
+<div class="pb-3 border-b border-outline-variant">
+<h3 class="text-headline-sm font-headline-sm text-primary">CISA Exam Prep</h3>
+<p class="text-xs text-on-surface-variant">Cohort 14: 12 Oct - 18 Dec 2026</p>
+</div>
+<nav class="space-y-1">
+<div class="px-4 py-2.5 flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-2.5 flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Modules / Programme Home</span>
+</div>
+<div class="px-4 py-2.5 flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span>Practice Exams</span>
+</div>
+</nav>
+</div>
+<div class="pt-3 border-t border-outline-variant text-xs text-on-surface-variant">
+              Licensed Session Active
+            </div>
+</aside>
+<!-- Core Canvas: Loading Transition -->
+<div class="flex-1 flex flex-col min-w-0 bg-[#F8FAFC]">
+<!-- Context Header with Licensing Banner -->
+<div class="px-6 py-4 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between">
+<div>
+<div class="text-label-sm text-on-surface-variant">Domain 2: IT Governance &amp; Management / Workpaper 04</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+                  Domain 2 Workpaper 04: IT Governance Controls &amp; RACI Matrix.pdf
+                </h2>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="shield">shield</span>
+<span>This content is licensed to you.</span>
+</div>
+</div>
+<!-- Toolbar in Loading State (Page 13, Controls Disabled) -->
+<div class="px-6 py-2.5 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<button class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded border border-[#E2E8F0] text-outline cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined" data-icon="navigate_before">navigate_before</span>
+</button>
+<div class="px-3 font-label-md text-label-md text-on-surface font-mono flex items-center gap-2">
+<span>Page <strong>13</strong> of 48</span>
+<span class="inline-block w-3 h-3 rounded-full border-2 border-secondary border-t-transparent animate-spin"></span>
+</div>
+<button class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded border border-[#E2E8F0] text-outline cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined" data-icon="navigate_next">navigate_next</span>
+</button>
+</div>
+<!-- Zoom Controls (Disabled During Fetch) -->
+<div class="flex items-center gap-2 opacity-50">
+<div class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center border border-[#64748B] rounded text-on-surface">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</div>
+<span class="px-2 font-mono text-label-md">100%</span>
+<div class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center border border-[#64748B] rounded text-on-surface">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</div>
+</div>
+<div class="min-h-[44px] inline-flex items-center gap-2 px-3 rounded border border-outline-variant text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span>Bookmark</span>
+</div>
+</div>
+<!-- Canvas View: Skeleton Loader + Persistent 14% Watermark -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Thumbnail strip with loading indicator on page 13 -->
+<div class="w-48 bg-[#F1F5F9] border-r border-outline-variant p-3 space-y-3 flex-shrink-0">
+<div class="text-label-sm text-on-surface-variant font-medium uppercase">Thumbnails</div>
+<div class="p-1.5 rounded border border-outline-variant bg-surface-container-lowest opacity-60">
+<div class="h-24 bg-white border border-[#E2E8F0] rounded p-2 text-right font-mono text-[9px]">p.12</div>
+</div>
+<!-- Page 13 in loading state -->
+<div class="p-1.5 rounded border-2 border-secondary bg-surface-container-lowest">
+<div class="h-24 bg-[#F8FAFC] border border-secondary/30 rounded p-2 flex flex-col justify-between animate-pulse">
+<div class="space-y-1">
+<div class="h-2 bg-[#E2E8F0] w-3/4 rounded"></div>
+<div class="h-1.5 bg-[#E2E8F0] w-full rounded"></div>
+<div class="h-1.5 bg-[#E2E8F0] w-2/3 rounded"></div>
+</div>
+<div class="text-right font-mono text-[9px] text-secondary font-semibold">p.13...</div>
+</div>
+</div>
+</div>
+<!-- Main Canvas Skeleton Sheet -->
+<div class="flex-1 overflow-y-auto p-8 flex justify-center bg-[#E5E7EB] protected-canvas">
+<div class="w-full max-w-[840px] min-h-[600px] bg-white border border-[#CBD5E1] shadow-md rounded p-12 relative flex flex-col justify-between">
+<!-- Watermark Stays Inflexible and Persistent Even While Loading -->
+<div class="absolute inset-0 watermark-overlay watermark-pattern pointer-events-none flex flex-col justify-around items-center overflow-hidden z-20">
+<div class="transform -rotate-25 text-lg font-mono tracking-widest text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                      Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed Material
+                    </div>
+<div class="transform -rotate-25 text-lg font-mono tracking-widest text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                      Chinedu Eze · chinedu.eze@example.com · CISA Cohort 14 · Licensed Material
+                    </div>
+</div>
+<!-- Pulsing Skeleton Geometry -->
+<div class="relative z-10 space-y-6 animate-pulse">
+<!-- Title Skeleton -->
+<div class="border-b border-[#E2E8F0] pb-4 flex justify-between items-start">
+<div class="space-y-2 w-2/3">
+<div class="h-3 bg-[#E2E8F0] w-48 rounded"></div>
+<div class="h-6 bg-[#CBD5E1] w-full rounded"></div>
+<div class="h-3 bg-[#E2E8F0] w-80 rounded"></div>
+</div>
+<div class="space-y-1">
+<div class="h-3 bg-[#E2E8F0] w-20 rounded"></div>
+<div class="h-3 bg-[#E2E8F0] w-16 rounded"></div>
+</div>
+</div>
+<!-- Paragraph Skeletons -->
+<div class="space-y-2.5">
+<div class="h-3.5 bg-[#E2E8F0] w-full rounded"></div>
+<div class="h-3.5 bg-[#E2E8F0] w-11/12 rounded"></div>
+<div class="h-3.5 bg-[#E2E8F0] w-4/5 rounded"></div>
+</div>
+<!-- Table Skeleton -->
+<div class="border border-[#CBD5E1] rounded overflow-hidden">
+<div class="h-9 bg-[#F1F5F9] border-b border-[#CBD5E1]"></div>
+<div class="p-3 space-y-3">
+<div class="h-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded"></div>
+<div class="h-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded"></div>
+<div class="h-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded"></div>
+</div>
+</div>
+<!-- Callout Box Skeleton -->
+<div class="h-20 bg-[#F8FAFC] border-l-4 border-[#CBD5E1] rounded-r p-3 space-y-2">
+<div class="h-3 bg-[#E2E8F0] w-40 rounded"></div>
+<div class="h-3 bg-[#E2E8F0] w-3/4 rounded"></div>
+</div>
+</div>
+<!-- Footer Skeleton -->
+<div class="relative z-10 pt-4 border-t border-[#E2E8F0] flex justify-between text-xs font-mono text-[#CBD5E1]">
+<div class="h-3 bg-[#E2E8F0] w-64 rounded"></div>
+<div class="h-3 bg-[#E2E8F0] w-20 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- STATE 3: ERROR & RETRY (FAILURE RECOVERY SPECIFICATION) -->
+<!-- ======================================================== -->
+<section class="space-y-4 scroll-mt-6" id="state-error">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-[#B91C1C]"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+            State 3: Error Diagnostic &amp; Secure Retry Handshake
+          </h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] font-label-sm text-label-sm">
+            Status: Error 409 Decryption Failed
+          </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+            Graceful Fallback Mode
+          </span>
+</div>
+</div>
+<!-- Desktop Viewport Frame Wrapper -->
+<div class="border border-outline-variant rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<!-- Header Shell -->
+<header class="bg-primary-container text-on-primary h-16 flex justify-between items-center w-full px-6 border-b border-outline-variant">
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest text-primary font-headline-sm px-3 py-1 rounded flex items-center h-10 border border-outline-variant">
+<img alt="A.J. Silicon Logo" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX4a7S-smLque6X2BL7Cvo8HfHtnU9qgw5BgOFZTaY701QuTycfbaJ5L0BTS9YpvCYgAMwxOtvK5_T99cO1RhD7cDBgAGBvK3QiaUl7TiLq9ePN_zSvCRYRwgZwxfzs7XH69tI1v4yg4ncPImK3IlY-nvGwEse2Dr4GfxXCdivVgOje8-9ZM_njMSUrewgo62WEEm27owyoq9CyZje5dUnatIYVNR6lNZqyZMkU7bGQ3KMceM6Z1GOXMtYz2ZJd7MWbXo"/>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-on-primary-container text-label-md font-label-md">
+<span class="text-on-primary font-medium">ISACA Lagos Gold Affiliate</span>
+<span class="text-outline">/</span>
+<span>Enterprise IT Governance &amp; Audit Virtual Portal</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-sm font-semibold">
+              CE
+            </div>
+<span class="text-label-md font-label-md text-on-primary hidden xl:inline">Chinedu Eze</span>
+</div>
+</header>
+<!-- Main Shell Body -->
+<div class="flex min-h-[580px] bg-background">
+<!-- Sidebar -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant p-4 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="pb-3 border-b border-outline-variant">
+<h3 class="text-headline-sm font-headline-sm text-primary">CISA Exam Prep</h3>
+<p class="text-xs text-on-surface-variant">Cohort 14: 12 Oct - 18 Dec 2026</p>
+</div>
+<nav class="space-y-1">
+<div class="px-4 py-2.5 flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-2.5 flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Modules / Programme Home</span>
+</div>
+</nav>
+</div>
+<div class="text-xs text-on-surface-variant pt-3 border-t border-outline-variant">
+              Session Status: Authenticated
+            </div>
+</aside>
+<!-- Viewer with Centered Error Dialogue Container -->
+<div class="flex-1 flex flex-col min-w-0 bg-[#F8FAFC]">
+<!-- Context Header with Licensing Banner -->
+<div class="px-6 py-4 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between">
+<div>
+<div class="text-label-sm text-on-surface-variant">Domain 2: IT Governance &amp; Management / Workpaper 04</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+                  Domain 2 Workpaper 04: IT Governance Controls &amp; RACI Matrix.pdf
+                </h2>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="shield">shield</span>
+<span>This content is licensed to you.</span>
+</div>
+</div>
+<!-- Viewer Workspace Center Container -->
+<div class="flex-1 flex items-center justify-center p-8 bg-[#F1F5F9]">
+<!-- Strict Error Diagnostic Card -->
+<div class="max-w-md w-full bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-8 shadow-sm text-center space-y-6">
+<!-- Danger Icon in Structured Container -->
+<div class="w-14 h-14 mx-auto rounded-full bg-[#FEF2F2] border border-[#B91C1C] flex items-center justify-center text-[#B91C1C]">
+<span class="material-symbols-outlined text-3xl" data-icon="error_outline">error_outline</span>
+</div>
+<!-- Error Copy & Diagnostics -->
+<div class="space-y-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Unable to load document page
+                  </h3>
+<p class="text-body-sm text-on-surface-variant text-sm leading-normal">
+                    The encrypted document page could not be retrieved. Please check your connection and retry.
+                  </p>
+</div>
+<!-- Forensic Diagnostic Code Box -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded p-3 text-left font-mono text-xs text-[#475569] space-y-1">
+<div class="flex justify-between">
+<span>Target Page:</span>
+<span class="font-semibold text-on-surface">Page 13 of 48</span>
+</div>
+<div class="flex justify-between">
+<span>License Verification:</span>
+<span class="font-semibold text-[#047857]">VALID (Chinedu Eze)</span>
+</div>
+<div class="flex justify-between">
+<span>Handshake Failure:</span>
+<span class="font-semibold text-[#B91C1C]">ERR_STREAM_TIMEOUT_409</span>
+</div>
+</div>
+<!-- Actions: Primary 44px Button + Secondary Link -->
+<div class="pt-2 flex flex-col gap-3">
+<button class="min-h-[44px] px-6 rounded bg-[#0B1320] hover:bg-[#1E293B] text-white font-label-md text-label-md font-medium transition-colors duration-150 flex items-center justify-center gap-2 focus:ring-2 focus:ring-secondary focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="refresh">refresh</span>
+<span>Retry</span>
+</button>
+<a class="min-h-[44px] inline-flex items-center justify-center text-label-md text-[#1D4ED8] hover:underline font-medium" href="#modules">
+                    Return to Module Overview
+                  </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- STATE 4: MOBILE VIEWPORT (390px PLAIN FRAME)            -->
+<!-- ======================================================== -->
+<section class="space-y-4 scroll-mt-6" id="state-mobile">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+            State 4: Mobile Viewport (390px Plain Frame)
+          </h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-mono">
+            390px × 844px Frame · No Device Chrome
+          </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded bg-[#EFF6FF] text-[#1D4ED8] font-label-sm text-label-sm">
+            Responsive Bottom Bar
+          </span>
+</div>
+</div>
+<!-- Centered Display of Plain 390px Viewport Frame -->
+<div class="flex justify-center p-6 bg-[#E5E7EB] rounded-xl border border-outline-variant">
+<!-- Strictly Plain 390px Frame: NO notch, NO status bar, NO home indicator -->
+<div class="w-[390px] min-h-[760px] bg-background border-2 border-[#64748B] rounded-lg shadow-lg flex flex-col justify-between overflow-hidden relative">
+<!-- Mobile App Header (Top Shell) -->
+<header class="bg-primary-container text-on-primary px-4 py-3 flex items-center justify-between border-b border-outline-variant">
+<div class="bg-surface-container-lowest px-2 py-0.5 rounded flex items-center h-8 border border-outline-variant">
+<img alt="A.J. Silicon Logo" class="h-4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVMMWdcotYMIRYCzhFoAVvxGurR7ALYrP-83ium9_OtcHNwzqTAAUpkKq8b6QAXYoW9Nk3lTqZPYA1AmMiWFot4RKnyAsfUOBQ-wm0282IK0mH20XPtDQ_2TrpxGr9bzyb1iwRtaSnQTgDpAshZT9qnO2rpoFp4ORNaAe0v_1d0pP0Jy24H1VjoVYwsd3dWVUIUTWypmypz3lqhExAFid6rK2z2or2v1bHHlP7yA_U1dnC6R37wNpB8DFLbLpQ9yPdzIY"/>
+</div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<div class="text-xs font-semibold text-on-primary leading-tight">Chinedu Eze</div>
+<div class="text-[10px] text-on-primary-container">Cohort 14</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs">
+                CE
+              </div>
+</div>
+</header>
+<!-- Mobile Document Title & Mandatory Licensing Bar -->
+<div class="p-3 bg-surface-container-lowest border-b border-outline-variant space-y-2">
+<div class="truncate text-xs font-bold text-on-surface">
+              Domain 2 Workpaper 04: IT Governance Controls &amp; RACI Matrix.pdf
+            </div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-xs font-medium">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="shield">shield</span>
+<span>This content is licensed to you.</span>
+</div>
+</div>
+<!-- Compact Touch-Optimized Mobile Toolbar (Min 44px target) -->
+<div class="px-2 py-1.5 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center">
+<button aria-label="Previous page" class="w-11 h-11 flex items-center justify-center rounded border border-[#64748B] text-on-surface" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="navigate_before">navigate_before</span>
+</button>
+<span class="px-2 font-mono text-xs text-on-surface font-medium whitespace-nowrap">
+                12 / 48
+              </span>
+<button aria-label="Next page" class="w-11 h-11 flex items-center justify-center rounded border border-[#64748B] text-on-surface" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="navigate_next">navigate_next</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Zoom mode toggle" class="w-11 h-11 flex items-center justify-center rounded border border-[#64748B] text-on-surface" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="fit_screen">fit_screen</span>
+</button>
+<button aria-label="Bookmark page" class="w-11 h-11 flex items-center justify-center rounded border border-secondary bg-[#EFF6FF] text-secondary" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="bookmark" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Mobile Document Viewport (Scaled Canvas with 14% Watermark) -->
+<div class="flex-1 bg-[#CBD5E1] p-2 overflow-y-auto protected-canvas relative flex justify-center">
+<!-- Mobile Document Sheet -->
+<div class="w-full bg-white border border-[#94A3B8] shadow-sm rounded p-3 relative flex flex-col justify-between text-[11px] leading-snug">
+<!-- Forensic Watermark: Centered and Repeated at 14% Opacity -->
+<div class="absolute inset-0 watermark-overlay watermark-pattern pointer-events-none flex flex-col justify-around items-center overflow-hidden z-20">
+<div class="transform -rotate-25 text-xs font-mono tracking-wider text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                  Chinedu Eze · chinedu.eze@example.com
+                </div>
+<div class="transform -rotate-25 text-xs font-mono tracking-wider text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                  Chinedu Eze · chinedu.eze@example.com
+                </div>
+<div class="transform -rotate-25 text-xs font-mono tracking-wider text-[#0F172A] opacity-[0.14] font-semibold whitespace-nowrap select-none">
+                  Chinedu Eze · chinedu.eze@example.com
+                </div>
+</div>
+<!-- Content Rendered for Mobile Screen -->
+<div class="relative z-10 space-y-2.5">
+<div class="border-b border-primary pb-1.5">
+<div class="text-[9px] uppercase font-mono text-[#64748B]">ISACA CISA · Domain 2</div>
+<h4 class="font-bold text-xs text-on-surface">IT Governance Controls &amp; RACI Matrix</h4>
+</div>
+<p class="text-on-surface text-[10px]">
+                  Audit testing procedures require substantive inspection of IT Steering Committee minutes and verified RACI framework allocation across enterprise applications.
+                </p>
+<!-- Compact Mobile Audit Table Card -->
+<div class="border border-[#CBD5E1] rounded overflow-hidden text-[9px]">
+<div class="bg-[#F8FAFC] p-1.5 font-semibold text-[#475569] uppercase font-mono border-b border-[#CBD5E1]">
+                    Key Audit RACI Controls
+                  </div>
+<div class="divide-y divide-[#E2E8F0] p-1 space-y-1">
+<div class="flex justify-between py-0.5">
+<span class="font-mono text-primary font-medium">GV-01.1 Strategic Sign-off</span>
+<span class="font-bold text-secondary">A: Board / R: CIO</span>
+</div>
+<div class="flex justify-between py-0.5">
+<span class="font-mono text-primary font-medium">GV-01.2 Risk Appetite Calib.</span>
+<span class="font-bold text-secondary">A: Board / C: CIO</span>
+</div>
+<div class="flex justify-between py-0.5">
+<span class="font-mono text-primary font-medium">GV-03.4 Independent Audit</span>
+<span class="font-bold text-secondary">R/A: IT Auditor</span>
+</div>
+</div>
+</div>
+<!-- Exam Callout Mobile -->
+<div class="border-l-2 border-secondary bg-[#EFF6FF] p-1.5 text-[9px] text-[#1D4ED8]">
+<strong>Exam Note:</strong> Escalation authority resides strictly with the IT Steering Committee.
+                </div>
+</div>
+<!-- Document Footer -->
+<div class="relative z-10 pt-2 mt-2 border-t border-[#E2E8F0] flex justify-between text-[9px] font-mono text-[#64748B]">
+<span>CISA Cohort 14</span>
+<span>Page 12 of 48</span>
+</div>
+</div>
+</div>
+<!-- Mobile Page Jumper Strip -->
+<div class="px-2 py-1.5 bg-[#F1F5F9] border-t border-outline-variant flex items-center gap-1.5 overflow-x-auto text-[10px]">
+<span class="font-mono text-[#64748B] flex-shrink-0 text-[10px]">Jump:</span>
+<button class="px-2 py-1 bg-white border border-[#CBD5E1] rounded font-mono">p.10</button>
+<button class="px-2 py-1 bg-white border border-[#CBD5E1] rounded font-mono">p.11</button>
+<button class="px-2 py-1 bg-secondary text-white font-mono rounded font-semibold">p.12</button>
+<button class="px-2 py-1 bg-white border border-[#CBD5E1] rounded font-mono">p.13</button>
+<button class="px-2 py-1 bg-white border border-[#CBD5E1] rounded font-mono">p.14</button>
+</div>
+<!-- BottomNavBar (Strict 44px Min Targets for Mobile) -->
+<nav aria-label="Mobile Navigation" class="h-16 bg-surface-container-lowest border-t border-outline-variant grid grid-cols-4 px-1">
+<a class="min-h-[44px] flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface" href="#home">
+<span class="material-symbols-outlined text-lg" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] mt-0.5">Home</span>
+</a>
+<!-- Active Modules Tab -->
+<a class="min-h-[44px] flex flex-col items-center justify-center text-secondary font-medium" href="#modules">
+<span class="material-symbols-outlined text-lg" data-icon="menu_book">menu_book</span>
+<span class="text-[10px] mt-0.5 font-semibold">Modules</span>
+</a>
+<a class="min-h-[44px] flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface" href="#practice">
+<span class="material-symbols-outlined text-lg" data-icon="quiz">quiz</span>
+<span class="text-[10px] mt-0.5">Simulator</span>
+</a>
+<a class="min-h-[44px] flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface" href="#account">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+<span class="text-[10px] mt-0.5">Account</span>
+</a>
+</nav>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- AUDIT CHECKLIST & COMPLIANCE VERIFICATION PANEL           -->
+<!-- ======================================================== -->
+<section class="border border-outline-variant rounded-xl bg-surface-container-lowest p-6 space-y-4">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="fact_check">fact_check</span>
+<h3 class="font-headline-sm text-headline-sm">
+          Regulatory Specification Compliance Checklist
+        </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+<div class="p-3 bg-[#ECFDF5] border border-[#047857] rounded text-[#047857] space-y-1">
+<div class="font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+            Negative Constraints
+          </div>
+<p class="text-[#0F172A]">Zero download, print, or copy controls present in DOM or styles across all 4 state viewports.</p>
+</div>
+<div class="p-3 bg-[#ECFDF5] border border-[#047857] rounded text-[#047857] space-y-1">
+<div class="font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+            Forensic Watermark
+          </div>
+<p class="text-[#0F172A]">Student identity ('Chinedu Eze · chinedu.eze@example.com') rendered at strictly 14% alpha across all canvases.</p>
+</div>
+<div class="p-3 bg-[#ECFDF5] border border-[#047857] rounded text-[#047857] space-y-1">
+<div class="font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+            Licensing Notice
+          </div>
+<p class="text-[#0F172A]">'This content is licensed to you.' prominently integrated into every viewer header container (#EFF6FF).</p>
+</div>
+<div class="p-3 bg-[#ECFDF5] border border-[#047857] rounded text-[#047857] space-y-1">
+<div class="font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+            Touch &amp; Geometry Floor
+          </div>
+<p class="text-[#0F172A]">Strict 8px mathematical grid, 44px min touch buttons, and 12px card radii enforced throughout.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Interactive State Inspection Micro-Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Prevent context menus on protected canvas to simulate enterprise viewer policy
+      document.querySelectorAll('.protected-canvas').forEach(canvas => {
+        canvas.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+        });
+      });
+    });
+  </script>
+<script src="../demo-nav.js"></script></body></html>

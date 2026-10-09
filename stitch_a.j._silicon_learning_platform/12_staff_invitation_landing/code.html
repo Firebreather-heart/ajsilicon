@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Staff Invitation Landing - Specification Sheet</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container": "#e6eeff",
+            "primary": "#000000",
+            "surface-dim": "#ccdbf3",
+            "on-tertiary-container": "#c76c00",
+            "outline": "#75777d",
+            "tertiary-container": "#2f1500",
+            "on-secondary-fixed": "#002114",
+            "secondary-fixed": "#85f8c4",
+            "surface-tint": "#525f75",
+            "secondary": "#006c4a",
+            "on-background": "#0d1c2e",
+            "inverse-primary": "#bac7e1",
+            "surface-bright": "#f8f9ff",
+            "on-surface": "#0d1c2e",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#d6e3fe",
+            "tertiary-fixed-dim": "#ffb77d",
+            "error": "#ba1a1a",
+            "tertiary": "#000000",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-variant": "#d5e3fc",
+            "surface-container-low": "#eff4ff",
+            "tertiary-fixed": "#ffdcc3",
+            "secondary-fixed-dim": "#68dba9",
+            "on-primary-fixed": "#0e1c2f",
+            "background": "#f8f9ff",
+            "surface-container-high": "#dce9ff",
+            "on-secondary-fixed-variant": "#005137",
+            "inverse-surface": "#233144",
+            "on-surface-variant": "#44474c",
+            "inverse-on-surface": "#eaf1ff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "secondary-container": "#82f5c1",
+            "outline-variant": "#c5c6cd",
+            "surface": "#f8f9ff",
+            "primary-container": "#0e1c2f",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-secondary-container": "#00714e",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d5e3fc",
+            "on-tertiary-fixed": "#2f1500",
+            "primary-fixed-dim": "#bac7e1",
+            "on-primary-container": "#77849c",
+            "on-primary-fixed-variant": "#3a475c"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.75rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "margin-mobile": "1.25rem",
+            "margin": "3rem",
+            "space-md": "1.25rem",
+            "space-lg": "2rem",
+            "space-xs": "0.375rem",
+            "space-sm": "0.75rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "gutter": "2rem"
+          },
+          fontFamily: {
+            "telemetry-code": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Inter"],
+            "display-hero": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "display-hero-mobile": ["Inter"],
+            "title-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "label-badge": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          fontSize: {
+            "telemetry-code": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "display-hero": ["48px", { lineHeight: "56px", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+            "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+            "display-hero-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "title-md": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "600" }],
+            "label-badge": ["11px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#F1F5F9] text-[#0B1320] font-body-md text-body-md antialiased min-h-screen py-10 px-4 sm:px-8">
+<!-- Outer Specification Board Wrapper -->
+<div class="max-w-[1440px] mx-auto space-y-16">
+<!-- Board Header -->
+<header class="border-b border-[#CBD5E1] pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="font-telemetry-code text-telemetry-code text-[#64748B] uppercase tracking-wider">Design Specification · Screen 12</p>
+<h1 class="font-headline-lg text-headline-lg text-[#0B1320] mt-1">Staff Invitation Landing States</h1>
+</div>
+<div class="text-right">
+<span class="font-telemetry-code text-telemetry-code bg-[#E2E8F0] text-[#334155] px-3 py-1.5 rounded-lg border border-[#CBD5E1]">
+          Viewport: Desktop 1440px
+        </span>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- STATE 1: VALID INVITATION                                                 -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<!-- Section Title & Meta -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0B1320] text-white font-telemetry-code text-xs font-semibold">1</span>
+<h2 class="font-title-md text-title-md text-[#0B1320] font-bold">State 1 · Valid Invitation</h2>
+</div>
+<span class="font-telemetry-code text-telemetry-code text-[#64748B]">Resolution: 1440 × 820px</span>
+</div>
+<!-- 1440px Canvas Frame Container -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-xl overflow-hidden shadow-sm">
+<!-- Top bar: Minimal navy header -->
+<header class="w-full h-16 bg-[#0B1320] border-b border-[#1E293B] px-8 flex items-center justify-between">
+<div class="flex items-center">
+<!-- Official Logo on compact white rounded plate -->
+<div class="bg-white rounded-lg px-2.5 py-1 flex items-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpewDqBI8YAkC_STnZ73620krqM0Ys1nm34-WSRijKcmABPlXdBgl0BZZNrMH2KrVQHmcAvdkXC6lwsQ-fuPNSojOUJAukFc9H4b_C7lo42zk3JQtPGPupZYNmZSPKw7TeWTEDek5AFmex5ZJVnrd1Nal71UgD_b2IdZ0wLNqrFIVoBFPfl9DDElbmzekfhkeDbz3DF81KQ4NZUjXnZsuSsXkg-3QgaOg0eO725qE_-x2ke0IivN56w2Utb69CNUdPmzw"/>
+</div>
+</div>
+<!-- Right side intentionally empty: No nav, no user name -->
+<div></div>
+</header>
+<!-- Canvas Content Area -->
+<main class="w-full min-h-[640px] flex items-center justify-center p-8 bg-[#F8FAFC]">
+<!-- Centered 12px radius card (max-w-[540px]) -->
+<div class="w-full max-w-[540px] bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm">
+<h3 class="text-2xl font-bold text-[#0B1320] leading-tight">
+              You have been invited to join A.J. Silicon as Instructor
+            </h3>
+<p class="text-slate-600 text-sm mt-2 mb-6">
+              n.okafor@ajsilicon.com
+            </p>
+<!-- Details list container -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4 space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 font-medium">Invited by:</span>
+<span class="font-semibold text-[#0B1320]">Babatunde Lawal</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 font-medium">Role:</span>
+<span class="font-semibold text-[#0B1320]">Instructor</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 font-medium">Invitation expires:</span>
+<span class="font-semibold text-[#0B1320]">12 Oct 2026, 17:00 WAT</span>
+</div>
+</div>
+<!-- Primary button -->
+<button class="bg-[#0B1320] text-white hover:bg-slate-900 h-11 px-6 rounded-lg font-medium text-sm w-full min-h-[44px] mt-6 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+              Accept and continue
+            </button>
+</div>
+</main>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE 2: EXPIRED INVITATION                                               -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<!-- Section Title & Meta -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0B1320] text-white font-telemetry-code text-xs font-semibold">2</span>
+<h2 class="font-title-md text-title-md text-[#0B1320] font-bold">State 2 · Expired Invitation</h2>
+</div>
+<span class="font-telemetry-code text-telemetry-code text-[#64748B]">Resolution: 1440 × 820px</span>
+</div>
+<!-- 1440px Canvas Frame Container -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-xl overflow-hidden shadow-sm">
+<!-- Top bar: Minimal navy header -->
+<header class="w-full h-16 bg-[#0B1320] border-b border-[#1E293B] px-8 flex items-center justify-between">
+<div class="flex items-center">
+<!-- Official Logo on compact white rounded plate -->
+<div class="bg-white rounded-lg px-2.5 py-1 flex items-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC67EUSqN2VISXdxtz5m0ZNXtvADD4oS-5jD5jTO3eTMEyaEU88o1BdJYNQXHpAiQkSTltInrCa-3JuAW2SatlLhWBMz593cX5OW45pxCP42hP73kdz2QmTO7oozlkK7X3kmWrkO8JY3WHRB86XKEGNUGZVRvkAO_cgj0ORw6zn1iyWQFg-TeXOYA1y5VlXdwQCleMZmuBgKpRRwu1FK1j-L7DmmDn-k1w9S3hdroC45ECdgCtQA7h3yzd7gvX9m-eh-yo"/>
+</div>
+</div>
+<div></div>
+</header>
+<!-- Canvas Content Area -->
+<main class="w-full min-h-[640px] flex items-center justify-center p-8 bg-[#F8FAFC]">
+<!-- Centered 12px radius card (max-w-[540px] text-center p-8) -->
+<div class="w-full max-w-[540px] bg-white border border-[#E2E8F0] rounded-xl p-8 text-center shadow-sm">
+<!-- Warning icon container -->
+<div class="w-12 h-12 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#B45309] mx-auto mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="warning">warning</span>
+</div>
+<h3 class="text-xl font-bold text-[#0B1320] mb-2 leading-tight">
+              This invitation has expired
+            </h3>
+<p class="text-slate-600 text-sm mb-6 max-w-sm mx-auto">
+              Invitations are valid for 7 days. Ask Babatunde Lawal to send you a new one.
+            </p>
+<!-- Text link: min 44px touch target -->
+<div class="flex justify-center">
+<a class="text-[#1D4ED8] hover:underline font-medium text-sm min-h-[44px] inline-flex items-center justify-center px-4 focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded-lg" href="#">
+                Back to Log in
+              </a>
+</div>
+</div>
+</main>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE 3: ALREADY USED INVITATION                                          -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<!-- Section Title & Meta -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0B1320] text-white font-telemetry-code text-xs font-semibold">3</span>
+<h2 class="font-title-md text-title-md text-[#0B1320] font-bold">State 3 · Already Used</h2>
+</div>
+<span class="font-telemetry-code text-telemetry-code text-[#64748B]">Resolution: 1440 × 820px</span>
+</div>
+<!-- 1440px Canvas Frame Container -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-xl overflow-hidden shadow-sm">
+<!-- Top bar: Minimal navy header -->
+<header class="w-full h-16 bg-[#0B1320] border-b border-[#1E293B] px-8 flex items-center justify-between">
+<div class="flex items-center">
+<!-- Official Logo on compact white rounded plate -->
+<div class="bg-white rounded-lg px-2.5 py-1 flex items-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvcMch7cJRrc3IbIaBPIiDp32Mu2HgoNWXoSRb79rcuYpSrxZOJq4TB2-FGeNM16SPwLptzSuOXwVopUJvj1ZOYsOaPNPXz_4bEEa96gNf1ZhYxZZXTXGSFUP3vrrtvqV9L2_G6ieusiPoDgwoUM8lBSwdzNYHk867yMRSMYKtYy0hrPTt8vyfQOSWUATq7ZJNw4F85a9ODJ66UD5UE92vlEUUmgzexkC71b3pRaS40lVCXqCM9zaIMegs8somPQEUBSE"/>
+</div>
+</div>
+<div></div>
+</header>
+<!-- Canvas Content Area -->
+<main class="w-full min-h-[640px] flex items-center justify-center p-8 bg-[#F8FAFC]">
+<!-- Centered 12px radius card (max-w-[540px] text-center p-8) -->
+<div class="w-full max-w-[540px] bg-white border border-[#E2E8F0] rounded-xl p-8 text-center shadow-sm">
+<!-- Info icon container -->
+<div class="w-12 h-12 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#1D4ED8] mx-auto mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="info">info</span>
+</div>
+<h3 class="text-xl font-bold text-[#0B1320] mb-2 leading-tight">
+              This invitation has already been used
+            </h3>
+<p class="text-slate-600 text-sm mb-6">
+              Log in with your account to continue.
+            </p>
+<!-- Primary button: min 44px target -->
+<div class="flex justify-center">
+<button class="bg-[#0B1320] text-white hover:bg-slate-900 h-11 px-8 rounded-lg font-medium text-sm min-h-[44px] inline-flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+                Log in
+              </button>
+</div>
+</div>
+</main>
+</div>
+</section>
+</div>
+<script src="../demo-nav.js"></script></body></html>

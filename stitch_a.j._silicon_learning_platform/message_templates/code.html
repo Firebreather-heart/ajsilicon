@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform - Message Templates</title>
+<!-- IBM Plex Sans Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-surface": "#283044",
+            "secondary-container": "#4069f2",
+            "error": "#ba1a1a",
+            "on-surface": "#131b2e",
+            "primary-fixed": "#dbe2f5",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "secondary-fixed": "#dce1ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-tint": "#575f6e",
+            "background": "#faf8ff",
+            "outline": "#75777c",
+            "on-secondary-fixed": "#001551",
+            "on-primary-fixed": "#141c29",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#000000",
+            "on-error-container": "#93000a",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-container": "#997f6a",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-surface-variant": "#45474c",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#fddcc4",
+            "surface-container-highest": "#dae2fd",
+            "surface-dim": "#d2d9f4",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "on-tertiary-fixed-variant": "#584231",
+            "outline-variant": "#c5c6cc",
+            "on-primary-fixed-variant": "#3f4756",
+            "secondary": "#1d4ed8",
+            "primary-container": "#141c29",
+            "on-background": "#131b2e",
+            "inverse-primary": "#bfc6d9",
+            "inverse-on-surface": "#eef0ff",
+            "on-tertiary-fixed": "#281809",
+            "surface": "#faf8ff",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-container": "#7c8495",
+            "surface-bright": "#faf8ff",
+            "primary": "#000000",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#281809",
+            "primary-fixed-dim": "#bfc6d9"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "3rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "space-sm": "1rem",
+            "space-xs": "0.5rem",
+            "space-md": "1.5rem",
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "headline-sm": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .focus-ring-custom:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col font-body-md text-body-md">
+<!-- ================= TOP APPLICATION SHELL ================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-6 bg-[#0B1320] text-white border-b border-[#1E293B]">
+<!-- Brand Insignia Plate & System Identity -->
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center h-10 border border-[#E2E8F0]">
+<img alt="A.J. Silicon Audit and Training Institution Insignia" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPvK0chHdmwo7e66BuwTcMWLnT6FIS3R6Np6BidbB315_1hHtXbna8H0HaIs2Z4GkzrGhraroEM2EWu-74i87-M2ilPq6tkgc3u8lqN1sCjTxqB5yXg4Ok8mcbzsUibpBtn7my9letiKg9njcsGYljkxd0isVjk8zgJKXYpsghIlSBV_nGjl-wpCfwIEuhXb_iAOECsiqFiD2RfrA0ZbJvF932X-V4mKELWbk2lVERtn_4yLA703gkmw"/>
+</div>
+<div class="hidden lg:flex items-center gap-3 border-l border-[#334155] pl-6">
+<span class="text-white font-semibold text-sm tracking-wide">LEARNING MANAGEMENT CONSOLE</span>
+<span class="text-[#94A3B8] text-xs font-mono bg-[#1E293B] px-2 py-0.5 rounded border border-[#334155]">PORTAL v4.9.2</span>
+</div>
+</div>
+<!-- Right Controls: Role, Clock, Notifications -->
+<div class="flex items-center gap-6 text-sm">
+<div class="hidden md:flex items-center gap-2 text-[#94A3B8] font-mono text-xs">
+<span class="material-symbols-outlined text-[#94A3B8] text-[18px]">schedule</span>
+<span>13:25 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-4 w-px bg-[#334155] hidden md:block"></div>
+<!-- Plain Text Role Label (No role switcher) -->
+<div class="flex items-center gap-2 text-xs md:text-sm text-[#F8FAFC]">
+<span class="material-symbols-outlined text-[#93C5FD] text-[18px]">badge</span>
+<span>Role: Operations Manager | Tunde Bakare</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="System Notifications" class="w-11 h-11 flex items-center justify-center rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" type="button">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button aria-label="Security Settings" class="w-11 h-11 flex items-center justify-center rounded text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" type="button">
+<span class="material-symbols-outlined">verified_user</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 w-full max-w-full">
+<!-- ================= PERMANENT SIDEBAR RAIL ================= -->
+<aside class="w-72 bg-[#0B1320] text-[#94A3B8] flex flex-col justify-between shrink-0 border-r border-[#1E293B] min-h-[calc(100vh-4rem)]">
+<div class="py-6 px-4 space-y-6">
+<!-- Navigation Groups -->
+<div>
+<span class="px-3 text-xs font-semibold text-[#64748B] tracking-wider uppercase block mb-2 font-label-sm">ACADEMICS</span>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Courseware &amp; Curricula</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">co_present</span>
+<span>Faculty Roster</span>
+</a>
+</nav>
+</div>
+<div>
+<span class="px-3 text-xs font-semibold text-[#64748B] tracking-wider uppercase block mb-2 font-label-sm">CANDIDATES</span>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Candidate Enrolments</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>Assessment Results</span>
+</a>
+</nav>
+</div>
+<!-- Highlighted 'Messaging' Sidebar Group -->
+<div class="bg-[#141C29] p-2 rounded-lg border border-[#1E293B]">
+<div class="flex items-center justify-between px-2 mb-2">
+<span class="text-xs font-semibold text-[#93C5FD] tracking-wider uppercase font-label-sm">MESSAGING</span>
+<span class="text-[10px] bg-[#1E293B] text-[#93C5FD] px-1.5 py-0.5 rounded font-mono border border-[#334155]">ACTIVE COMM</span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 rounded bg-[#0B1320] text-white font-medium border-l-4 border-[#2563EB] focus-ring-custom transition-colors shadow-sm" href="#templates-list">
+<span class="material-symbols-outlined text-[#93C5FD]">drafts</span>
+<span>Message templates</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span>Announcements</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span>Automated Triggers</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">sms</span>
+<span>SMS Delivery Logs</span>
+</a>
+</nav>
+</div>
+<div>
+<span class="px-3 text-xs font-semibold text-[#64748B] tracking-wider uppercase block mb-2 font-label-sm">SECURITY &amp; OPERATIONS</span>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span>SecOps Governance</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Audit Trail &amp; Logs</span>
+</a>
+</nav>
+</div>
+<div>
+<span class="px-3 text-xs font-semibold text-[#64748B] tracking-wider uppercase block mb-2 font-label-sm">SYSTEM</span>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 rounded text-sm text-[#94A3B8] hover:text-white hover:bg-[#1E293B] focus-ring-custom transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Global Configurations</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Rail Footer -->
+<div class="p-4 border-t border-[#1E293B] bg-[#080E18] text-xs text-[#64748B] space-y-2">
+<div class="flex items-center justify-between">
+<span>Session State:</span>
+<span class="text-emerald-400 font-mono flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#047857]"></span> Secure Guard
+          </span>
+</div>
+<p class="font-mono text-[11px] text-[#475569]">AJS-SEC-NODE-LAGOS-01</p>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT WORKSPACE ================= -->
+<main class="flex-1 bg-[#F8FAFC] min-w-0 overflow-y-auto p-6 md:p-8 space-y-8">
+<!-- Breadcrumb Bar -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs md:text-sm text-[#475569]">
+<span class="text-[#64748B]">Messaging</span>
+<span class="material-symbols-outlined text-[16px] text-[#94A3B8]">chevron_right</span>
+<span class="text-[#64748B]">Communication Config</span>
+<span class="material-symbols-outlined text-[16px] text-[#94A3B8]">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">Message templates</span>
+</nav>
+<!-- Page Header: Title + Exactly ONE primary action button in header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-[#0B1320] font-headline-lg tracking-tight">Message templates</h1>
+<p class="text-sm md:text-base text-[#475569] mt-1 max-w-3xl">
+            Configure system emails and SMS notifications triggered across candidate and staff lifecycles.
+          </p>
+</div>
+<div>
+<!-- Exactly ONE primary action button in header (min 44px touch) -->
+<button class="h-11 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium rounded-md flex items-center gap-2 focus-ring-custom transition-all shadow-sm" id="btnCreateTemplate" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>+ Create template</span>
+</button>
+</div>
+</div>
+<!-- Quick Metrics Ribbon (Audited count) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white p-4 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="text-xs text-[#64748B] font-medium font-label-sm">Total Configured Templates</div>
+<div class="text-2xl font-bold text-[#0B1320] mt-1">18</div>
+<div class="text-xs text-[#047857] flex items-center gap-1 mt-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 16 Active Production
+          </div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="text-xs text-[#64748B] font-medium font-label-sm">Primary Channel Balance</div>
+<div class="text-2xl font-bold text-[#0B1320] mt-1">12 <span class="text-xs font-normal text-[#64748B]">Email</span> / 6 <span class="text-xs font-normal text-[#64748B]">SMS</span></div>
+<div class="text-xs text-[#1D4ED8] flex items-center gap-1 mt-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span> Gateway: MTN/Airtel/BulkSMS
+          </div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="text-xs text-[#64748B] font-medium font-label-sm">Standard VAT Line Compliance</div>
+<div class="text-2xl font-bold text-[#047857] mt-1">7.5%</div>
+<div class="text-xs text-[#475569] flex items-center gap-1 mt-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">verified</span> Statutory Federal Inland Rev.
+          </div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="text-xs text-[#64748B] font-medium font-label-sm">24-Hr Delivery Success Rate</div>
+<div class="text-2xl font-bold text-[#0B1320] mt-1">99.84%</div>
+<div class="text-xs text-[#64748B] flex items-center gap-1 mt-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">done_all</span> 1,482 notices sent in WAT
+          </div>
+</div>
+</div>
+<!-- ================= SECTION 1: TEMPLATES LIST TABLE ================= -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden" id="templates-list">
+<div class="p-6 border-b border-[#E2E8F0] flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex-1 max-w-lg">
+<label class="sr-only" for="tableSearchInput">Search templates</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">search</span>
+<input class="w-full h-11 pl-10 pr-4 text-sm bg-[#FFFFFF] border border-[#64748B] rounded-md text-[#0F172A] placeholder-[#475569] focus-ring-custom" id="tableSearchInput" placeholder="Search templates by name, trigger, or key..." type="text"/>
+</div>
+</div>
+<!-- Filters & Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Channel Filter -->
+<div class="flex items-center gap-2">
+<label class="text-xs text-[#475569] font-medium" for="channelFilter">Channel:</label>
+<select class="h-11 px-3 py-2 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus-ring-custom" id="channelFilter">
+<option value="all">All Channels</option>
+<option value="email">Email</option>
+<option value="sms">SMS</option>
+</select>
+</div>
+<!-- Status Filter -->
+<div class="flex items-center gap-2">
+<label class="text-xs text-[#475569] font-medium" for="statusFilter">Status:</label>
+<select class="h-11 px-3 py-2 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus-ring-custom" id="statusFilter">
+<option value="all">All</option>
+<option value="active">Active</option>
+<option value="draft">Draft</option>
+</select>
+</div>
+<!-- State Toggle for Testing (Loading / Empty Simulation) -->
+<div class="flex items-center border border-[#CBD5E1] rounded-md p-1 bg-[#F8FAFC]">
+<button class="h-9 px-3 text-xs font-medium rounded bg-[#0B1320] text-white transition-colors" id="viewTableBtn" type="button">Table</button>
+<button class="h-9 px-3 text-xs font-medium text-[#475569] hover:text-[#0B1320] transition-colors" id="viewSkeletonBtn" type="button">Skeleton</button>
+<button class="h-9 px-3 text-xs font-medium text-[#475569] hover:text-[#0B1320] transition-colors" id="viewEmptyBtn" type="button">Empty</button>
+</div>
+</div>
+</div>
+<!-- The Table View -->
+<div class="overflow-x-auto" id="tableViewContainer">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-xs font-medium text-[#475569] uppercase tracking-wider font-label-sm">
+<th class="py-3.5 px-6">Template Name</th>
+<th class="py-3.5 px-6">Channel</th>
+<th class="py-3.5 px-6">Trigger Event</th>
+<th class="py-3.5 px-6">Last Modified</th>
+<th class="py-3.5 px-6">Status</th>
+<th class="py-3.5 px-6 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm text-[#0F172A]">
+<!-- Row 1: Selected & Active -->
+<tr class="hover:bg-[#F8FAFC] transition-colors bg-[#EFF6FF]/30">
+<td class="py-4 px-6 font-medium text-[#0F172A]">
+<div class="flex items-center gap-2">
+<span class="text-[#0B1320] font-semibold">Payment Confirmation &amp; Course Onboarding</span>
+<span class="px-1.5 py-0.5 text-[10px] bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8] rounded font-mono font-medium">EDITING</span>
+</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">key: tpl_payment_settled_onboard_v2</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-[#0F172A]">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">mail</span>
+<span>Email</span>
+</div>
+</td>
+<td class="py-4 px-6 font-mono text-xs text-[#334155]">
+                  Candidate Payment Confirmed
+                </td>
+<td class="py-4 px-6 text-xs text-[#475569]">
+                  04 Oct 2026, 16:12 WAT
+                </td>
+<td class="py-4 px-6">
+<!-- Active status badge (NEVER colour alone: icon + text + border) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Active
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 text-xs font-medium text-[#1D4ED8] hover:text-[#0B1320] border border-[#CBD5E1] rounded hover:bg-[#F1F5F9] focus-ring-custom transition-colors" type="button">Edit</button>
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Preview</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Live Class Reminder -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6 font-medium text-[#0F172A]">
+<div>Live Class Masterclass Reminder - 1hr</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">key: tpl_sms_live_session_1hr</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-[#0F172A]">
+<span class="material-symbols-outlined text-[18px] text-[#047857]">chat</span>
+<span>SMS</span>
+</div>
+</td>
+<td class="py-4 px-6 font-mono text-xs text-[#334155]">
+                  Live Class Reminder - 1hr
+                </td>
+<td class="py-4 px-6 text-xs text-[#475569]">
+                  02 Oct 2026, 09:15 WAT
+                </td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Active
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Edit</button>
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Preview</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Certificate Issued -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6 font-medium text-[#0F172A]">
+<div>Executive Certificate Award Notification</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">key: tpl_cert_issue_digital_v1</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-[#0F172A]">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">mail</span>
+<span>Email</span>
+</div>
+</td>
+<td class="py-4 px-6 font-mono text-xs text-[#334155]">
+                  Certificate Issued
+                </td>
+<td class="py-4 px-6 text-xs text-[#475569]">
+                  28 Sep 2026, 14:40 WAT
+                </td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Active
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Edit</button>
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Preview</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Password Reset OTP (SMS) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6 font-medium text-[#0F172A]">
+<div>Security Authentication OTP Dispatch</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">key: tpl_sms_otp_dispatch_v3</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-[#0F172A]">
+<span class="material-symbols-outlined text-[18px] text-[#047857]">chat</span>
+<span>SMS</span>
+</div>
+</td>
+<td class="py-4 px-6 font-mono text-xs text-[#334155]">
+                  Password Reset OTP
+                </td>
+<td class="py-4 px-6 text-xs text-[#475569]">
+                  19 Sep 2026, 17:02 WAT
+                </td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Active
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Edit</button>
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Preview</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Mock Exam Grade Advisory (Draft) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6 font-medium text-[#0F172A]">
+<div>Mock Diagnostic Score Advisory</div>
+<div class="text-xs text-[#64748B] font-mono mt-0.5">key: tpl_exam_mock_audit_draft</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-[#0F172A]">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">mail</span>
+<span>Email</span>
+</div>
+</td>
+<td class="py-4 px-6 font-mono text-xs text-[#334155]">
+                  Exam Simulation Graded
+                </td>
+<td class="py-4 px-6 text-xs text-[#475569]">
+                  14 Sep 2026, 12:00 WAT
+                </td>
+<td class="py-4 px-6">
+<!-- Draft status badge (icon + text + border) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#FFFBEB] text-[#B45309] border border-[#B45309] text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+                    Draft
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-2">
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Edit</button>
+<button class="h-9 px-3 text-xs font-medium text-[#0F172A] hover:bg-[#F1F5F9] border border-[#CBD5E1] rounded focus-ring-custom transition-colors" type="button">Preview</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Simulated Loading Skeleton (Hidden by default) -->
+<div class="hidden p-6 space-y-4" id="skeletonContainer">
+<div class="h-10 bg-slate-100 animate-pulse rounded"></div>
+<div class="h-12 bg-slate-100 animate-pulse rounded"></div>
+<div class="h-12 bg-slate-100 animate-pulse rounded"></div>
+<div class="h-12 bg-slate-100 animate-pulse rounded"></div>
+</div>
+<!-- Simulated Empty State (Hidden by default) -->
+<div class="hidden p-12 text-center space-y-3" id="emptyContainer">
+<span class="material-symbols-outlined text-4xl text-[#94A3B8]">search_off</span>
+<h3 class="text-base font-semibold text-[#0B1320]">No communication templates found</h3>
+<p class="text-sm text-[#475569] max-w-sm mx-auto">There are no templates matching your search criteria. Clear filters or create a new message configuration.</p>
+<button class="h-10 px-4 text-xs font-medium text-[#1D4ED8] border border-[#CBD5E1] rounded hover:bg-[#F1F5F9]" onclick="resetTableView()" type="button">Reset Filters</button>
+</div>
+<!-- Table Footer Pagination & Summary -->
+<div class="px-6 py-4 border-t border-[#E2E8F0] bg-[#F8FAFC] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#475569]">
+<div class="flex items-center gap-2">
+<span>Showing <span class="font-medium text-[#0F172A]">1</span> to <span class="font-medium text-[#0F172A]">5</span> of <span class="font-medium text-[#0F172A]">18</span> records</span>
+<span class="text-[#CBD5E1]">|</span>
+<span>Rows per page: 10</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="h-8 w-8 flex items-center justify-center rounded border border-[#CBD5E1] bg-white text-[#64748B] hover:text-[#0F172A] disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="h-8 w-8 flex items-center justify-center rounded bg-[#0B1320] text-white font-medium" type="button">1</button>
+<button class="h-8 w-8 flex items-center justify-center rounded border border-[#CBD5E1] bg-white text-[#475569] hover:bg-slate-50" type="button">2</button>
+<button class="h-8 w-8 flex items-center justify-center rounded border border-[#CBD5E1] bg-white text-[#64748B] hover:text-[#0F172A]" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ================= MAIN TWO-COLUMN SPLIT: EDITOR & PREVIEW ================= -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: SECTION 2 - TEMPLATE EDITOR & VARIABLES PANEL (7 Cols) -->
+<div class="xl:col-span-7 space-y-8">
+<div class="bg-white rounded-xl border border-[#E2E8F0] shadow-sm p-6 md:p-8 space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#0B1320] text-2xl">edit_document</span>
+<div>
+<h2 class="text-lg font-bold text-[#0B1320]">Template Editor: Payment Confirmation &amp; Onboarding</h2>
+<p class="text-xs text-[#64748B]">Configuring active transactional candidate dispatch template</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Active v2.3
+              </span>
+</div>
+<!-- Form Metadata Fields -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Template Name -->
+<div class="space-y-1.5 md:col-span-2">
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-label-sm" for="templateNameInput">
+                  Template Name <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 px-3.5 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus-ring-custom" id="templateNameInput" type="text" value="Payment Confirmation &amp; Course Onboarding"/>
+</div>
+<!-- Channel Selector -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-label-sm" for="channelSelectInput">
+                  Delivery Channel
+                </label>
+<select class="w-full h-11 px-3.5 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus-ring-custom" id="channelSelectInput">
+<option selected="" value="email">Email Notification</option>
+<option value="sms">SMS Text Dispatch</option>
+</select>
+</div>
+<!-- Trigger Event Dropdown -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-label-sm" for="triggerSelectInput">
+                  Trigger Event Key
+                </label>
+<select class="w-full h-11 px-3.5 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] font-mono text-xs focus-ring-custom" id="triggerSelectInput">
+<option selected="" value="payment.success.settled">payment.success.settled (Candidate Payment Confirmed)</option>
+<option value="auth.otp.requested">auth.otp.requested (Password Reset OTP)</option>
+<option value="live.class.reminder.1hr">live.class.reminder.1hr (Masterclass 1-Hour Ping)</option>
+<option value="cert.issued.accredited">cert.issued.accredited (Certificate Issued)</option>
+</select>
+</div>
+<!-- Subject Line Input -->
+<div class="space-y-1.5 md:col-span-2">
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-label-sm" for="subjectLineInput">
+                  Subject Line <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 px-3.5 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus-ring-custom font-mono text-xs md:text-sm" id="subjectLineInput" type="text" value="Receipt &amp; Access Confirmation: {{programme_name}} - A.J. Silicon"/>
+</div>
+</div>
+<!-- Variables Insertion Panel -->
+<div class="bg-[#F8FAFC] p-4 rounded-lg border border-[#E2E8F0] space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#1D4ED8]">data_object</span>
+<span class="text-xs font-semibold text-[#0B1320] uppercase tracking-wider font-label-sm">Dynamic Variables (Click to Insert)</span>
+</div>
+<span class="text-[11px] text-[#64748B]">Auto-resolved at runtime</span>
+</div>
+<div class="flex flex-wrap gap-2" id="variablesBadgeContainer">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-[#EFF6FF] border border-[#CBD5E1] hover:border-[#1D4ED8] text-[#1D4ED8] rounded text-xs font-mono transition-colors focus-ring-custom" onclick="insertVariable('{{candidate_name}}')" type="button">
+<span>{{candidate_name}}</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-[#EFF6FF] border border-[#CBD5E1] hover:border-[#1D4ED8] text-[#1D4ED8] rounded text-xs font-mono transition-colors focus-ring-custom" onclick="insertVariable('{{programme_name}}')" type="button">
+<span>{{programme_name}}</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-[#EFF6FF] border border-[#CBD5E1] hover:border-[#1D4ED8] text-[#1D4ED8] rounded text-xs font-mono transition-colors focus-ring-custom" onclick="insertVariable('{{cohort_start_date}}')" type="button">
+<span>{{cohort_start_date}}</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-[#EFF6FF] border border-[#CBD5E1] hover:border-[#1D4ED8] text-[#1D4ED8] rounded text-xs font-mono transition-colors focus-ring-custom" onclick="insertVariable('{{portal_login_link}}')" type="button">
+<span>{{portal_login_link}}</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-[#EFF6FF] border border-[#CBD5E1] hover:border-[#1D4ED8] text-[#1D4ED8] rounded text-xs font-mono transition-colors focus-ring-custom" onclick="insertVariable('{{receipt_number}}')" type="button">
+<span>{{receipt_number}}</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-[#EFF6FF] border border-[#CBD5E1] hover:border-[#1D4ED8] text-[#1D4ED8] rounded text-xs font-mono transition-colors focus-ring-custom" onclick="insertVariable('{{amount_paid}}')" type="button">
+<span>{{amount_paid}}</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-[#EFF6FF] border border-[#CBD5E1] hover:border-[#1D4ED8] text-[#1D4ED8] rounded text-xs font-mono transition-colors focus-ring-custom" onclick="insertVariable('{{support_email}}')" type="button">
+<span>{{support_email}}</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+<!-- Body Editor Area -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-label-sm" for="templateBodyText">
+                  Template Body (Markdown / Dynamic Syntax) <span class="text-[#B91C1C]">*</span>
+</label>
+<!-- Formatting Toolbar -->
+<div class="flex items-center gap-1 text-[#64748B]">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-[#F1F5F9] hover:text-[#0F172A]" title="Bold" type="button">
+<span class="material-symbols-outlined text-[18px]">format_bold</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-[#F1F5F9] hover:text-[#0F172A]" title="Italic" type="button">
+<span class="material-symbols-outlined text-[18px]">format_italic</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-[#F1F5F9] hover:text-[#0F172A]" title="Insert Link" type="button">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-[#F1F5F9] hover:text-[#0F172A]" title="Bullet List" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+</div>
+</div>
+<textarea class="w-full p-4 text-sm font-mono leading-relaxed bg-[#FFFFFF] border border-[#64748B] rounded-md text-[#0F172A] focus-ring-custom resize-y" id="templateBodyText" rows="12">Dear {{candidate_name}},
+
+This is an official payment confirmation and enrollment verification from A.J. Silicon Information Security Training &amp; Governance Ltd, Lagos.
+
+We have confirmed your remittance of {{amount_paid}} (including statutory 7.5% VAT breakdown) for the upcoming executive course: {{programme_name}}.
+
+Official Receipt Code: {{receipt_number}}
+Cohort Commencement Date: {{cohort_start_date}}
+Location/Format: Digital Audit Lab &amp; Hybrid Weekend Session, Lagos
+
+ACCESS CREDENTIALS &amp; ONBOARDING PROTOCOL:
+Your dedicated candidate portal space is now active. Please use your authenticated corporate email to initialize terminal modules:
+{{portal_login_link}}
+
+Should you require corporate invoice adjustments or billing assistance, contact our Lagos bursary governance desk directly at {{support_email}}.
+
+Best regards,
+A.J. Silicon Registrar &amp; Academic Operations
+Lagos, Nigeria</textarea>
+</div>
+<!-- Validation Note & Character Counter -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 border-t border-[#E2E8F0] text-xs text-[#475569]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span>
+<span>Template syntax validated. 7 tokens recognized and bound.</span>
+</div>
+<div class="font-mono text-right text-[#64748B]">
+<span id="charCount">764</span> characters · <span id="wordCount">104</span> words
+              </div>
+</div>
+<!-- Editor Action Bar -->
+<div class="flex items-center justify-between pt-4 border-t border-[#E2E8F0]">
+<button class="h-11 px-4 text-sm font-medium text-[#B91C1C] hover:bg-[#FEF2F2] border border-[#B91C1C] rounded-md focus-ring-custom transition-colors" type="button">
+                Discard Changes
+              </button>
+<div class="flex items-center gap-3">
+<button class="h-11 px-5 text-sm font-medium text-[#0F172A] bg-white hover:bg-[#F1F5F9] border border-[#64748B] rounded-md focus-ring-custom transition-colors" type="button">
+                  Save Draft
+                </button>
+<button class="h-11 px-6 text-sm font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded-md focus-ring-custom transition-colors shadow-sm" type="button">
+                  Publish Template (v2.4)
+                </button>
+</div>
+</div>
+</div>
+<!-- ================= SECTION 4: VERSION HISTORY PANEL ================= -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] shadow-sm p-6 md:p-8 space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#0B1320] text-2xl">history</span>
+<div>
+<h3 class="text-base font-bold text-[#0B1320]">Version History &amp; Audit Log</h3>
+<p class="text-xs text-[#64748B]">Permanent audit trail of template alterations</p>
+</div>
+</div>
+<span class="text-xs font-mono text-[#64748B]">Immutable Ledger</span>
+</div>
+<!-- Version List -->
+<div class="space-y-4">
+<!-- Version 2.3 (Current) -->
+<div class="p-4 rounded-lg border-2 border-[#1D4ED8] bg-[#EFF6FF]/40 relative space-y-2">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-[#0B1320]">Version 2.3</span>
+<span class="px-2 py-0.5 text-xs rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check</span> Current · Active
+                    </span>
+</div>
+<span class="text-xs font-mono text-[#475569]">04 Oct 2026, 16:12 WAT</span>
+</div>
+<p class="text-sm text-[#0F172A]">"Updated VAT breakdown text to reflect 7.5% statutory line"</p>
+<div class="text-xs text-[#64748B] flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+<span>Author: Tunde Bakare (Operations Manager)</span>
+</div>
+</div>
+<!-- Version 2.2 -->
+<div class="p-4 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] transition-colors space-y-2">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-[#0B1320]">Version 2.2</span>
+<span class="px-2 py-0.5 text-xs rounded bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">Archived</span>
+</div>
+<span class="text-xs font-mono text-[#475569]">22 Sep 2026, 11:05 WAT</span>
+</div>
+<p class="text-sm text-[#0F172A]">"Adjusted cohort start date variable formatting"</p>
+<div class="flex items-center justify-between pt-1">
+<div class="text-xs text-[#64748B] flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+<span>Author: Dr. O. Adeleke (Academic Director)</span>
+</div>
+<button class="h-9 px-3 text-xs font-medium text-[#1D4ED8] hover:text-[#0B1320] border border-[#CBD5E1] rounded hover:bg-white focus-ring-custom transition-colors" onclick="openRestoreDialog('2.2')" type="button">
+                    Restore version
+                  </button>
+</div>
+</div>
+<!-- Version 2.1 -->
+<div class="p-4 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] transition-colors space-y-2">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-[#0B1320]">Version 2.1</span>
+<span class="px-2 py-0.5 text-xs rounded bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">Archived</span>
+</div>
+<span class="text-xs font-mono text-[#475569]">15 Aug 2026, 09:30 WAT</span>
+</div>
+<p class="text-sm text-[#0F172A]">"Initial template creation"</p>
+<div class="flex items-center justify-between pt-1">
+<div class="text-xs text-[#64748B] flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+<span>Author: Chukwudi Nnamdi (SecOps Lead)</span>
+</div>
+<button class="h-9 px-3 text-xs font-medium text-[#1D4ED8] hover:text-[#0B1320] border border-[#CBD5E1] rounded hover:bg-white focus-ring-custom transition-colors" onclick="openRestoreDialog('2.1')" type="button">
+                    Restore version
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: SECTION 3 - LIVE SAMPLE PREVIEW & TEST DISPATCH (5 Cols) -->
+<div class="xl:col-span-5 space-y-8 sticky top-24">
+<div class="bg-white rounded-xl border border-[#E2E8F0] shadow-sm p-6 space-y-6">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320] text-2xl">preview</span>
+<h3 class="text-base font-bold text-[#0B1320]">Live Sample Preview</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-[#64748B]">Mode:</span>
+<span class="px-2 py-0.5 text-xs bg-[#F1F5F9] text-[#0F172A] rounded font-medium border border-[#CBD5E1]">Rendered Data</span>
+</div>
+</div>
+<!-- Email Client Frame Mockup -->
+<div class="border border-[#CBD5E1] rounded-lg overflow-hidden bg-white shadow-inner">
+<!-- Window Bar -->
+<div class="bg-[#0B1320] text-white px-4 py-2.5 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#B91C1C]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#B45309]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#047857]"></span>
+<span class="ml-2 font-mono text-[11px] text-[#93C5FD]">MIME Client Dispatch Inspector</span>
+</div>
+<span class="font-mono text-[10px] text-[#94A3B8]">WAT · UTF-8</span>
+</div>
+<!-- Email Headers Area -->
+<div class="p-4 bg-[#F8FAFC] border-b border-[#E2E8F0] text-xs space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-[#475569]">
+<span class="font-semibold text-[#0F172A]">To:</span>
+<span class="text-[#0F172A] font-medium" id="maskedCandidateName">Chinedu Eze</span>
+<span class="font-mono text-[#64748B]" id="maskedCandidateEmail">c••••••••@gmail.com</span>
+</div>
+<!-- Sensitive Data Reveal Control -->
+<button class="h-8 px-2.5 text-[11px] text-[#1D4ED8] hover:text-[#0B1320] border border-[#CBD5E1] rounded bg-white flex items-center gap-1 focus-ring-custom" id="btnRevealSensitive" onclick="toggleSensitiveMask()" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span id="revealText">Reveal recipient</span>
+</button>
+</div>
+<div>
+<span class="font-semibold text-[#0F172A]">From:</span>
+<span class="text-[#475569]">A.J. Silicon Academic Registrar &lt;admissions@ajsilicon.com&gt;</span>
+</div>
+<div class="pt-1 border-t border-[#E2E8F0]">
+<span class="font-semibold text-[#0F172A]">Subject:</span>
+<span class="text-[#0B1320] font-medium">Receipt &amp; Access Confirmation: CISA Exam Preparation Masterclass - A.J. Silicon</span>
+</div>
+</div>
+<!-- Rendered Email Body -->
+<div class="p-6 bg-white space-y-5 text-sm text-[#0F172A] leading-relaxed">
+<!-- Branding Header inside email -->
+<div class="pb-4 border-b border-[#E2E8F0] flex items-center justify-between">
+<div class="bg-white rounded px-2 py-0.5 border border-[#E2E8F0] inline-block">
+<img alt="A.J. Silicon Official Insignia" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvlUkhs7fTrnPOzeceY1vaR2bhvN7-ujspZGNPfLhq1TU7BmCTXSN8-pM6tIdIJemfa85QHmYbarWFees2i9WvbZR6xbgpKMbvom1gD3JgqtcsZPkM1S0vXpGOQTYo_rbyvo1ZeIVafOzIStXl3HNxJnx7QKZv60aO76_gLs8IQM8OIgcWsqW5QWKYTcpLkBhY69Sir-MoZJ9WYRjVXNlSTnsisIKJMYaHmaOSq-sz5NkHALEDR5AZeg"/>
+</div>
+<span class="text-[11px] text-[#64748B] font-mono">LAGOS CAMPUS ACADEMICS</span>
+</div>
+<p>Dear <span class="font-semibold text-[#0B1320]" id="renderedName">Chinedu Eze</span>,</p>
+<p>
+                  This is an official payment confirmation and enrollment verification from 
+                  <strong>A.J. Silicon Information Security Training &amp; Governance Ltd</strong>, Lagos.
+                </p>
+<!-- Financial Breakdown Card with Nigerian Naira ₦ -->
+<div class="p-3.5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg space-y-2 text-xs">
+<div class="flex items-center justify-between pb-2 border-b border-[#E2E8F0]">
+<span class="font-semibold text-[#0B1320]">Programme:</span>
+<span class="font-medium text-[#1D4ED8]">CISA Exam Preparation Masterclass</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[#64748B]">Remittance Settled:</span>
+<span class="font-bold text-[#047857] font-mono text-sm">₦70,000</span>
+</div>
+<div class="flex items-center justify-between text-[#64748B]">
+<span>VAT Component (7.5%):</span>
+<span class="font-mono">₦4,883.72</span>
+</div>
+<div class="flex items-center justify-between text-[#64748B] pt-1 border-t border-[#E2E8F0]">
+<span>Receipt Reference:</span>
+<span class="font-mono text-[#0B1320]">AJS-PAY-20261005-0042</span>
+</div>
+<div class="flex items-center justify-between text-[#64748B]">
+<span>Cohort Start Date:</span>
+<span class="font-medium text-[#0F172A]">17 Oct 2026 (09:00 WAT)</span>
+</div>
+</div>
+<p class="text-xs text-[#475569]">
+                  Location/Format: Digital Audit Lab &amp; Hybrid Weekend Session, Lagos.
+                </p>
+<!-- Call to Action Button in preview (Min 44px) -->
+<div class="py-2 text-center">
+<a class="inline-flex items-center justify-center h-11 px-6 rounded-md bg-[#0B1320] text-white font-medium text-xs hover:bg-[#1E293B] shadow-sm" href="#">
+                    Access Candidate Learning Terminal →
+                  </a>
+</div>
+<div class="pt-4 border-t border-[#E2E8F0] text-xs text-[#64748B] space-y-1">
+<p>Inquiries: <span class="text-[#1D4ED8]">bursary@ajsilicon.com</span></p>
+<p class="font-mono text-[10px] text-[#94A3B8]">Verification Stamp: SHA256:7b91d...0042-VERIFIED</p>
+</div>
+</div>
+</div>
+<!-- "Send Test" Dispatch Panel -->
+<div class="p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-[#0B1320] uppercase tracking-wider font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-[#1D4ED8]">forward_to_inbox</span>
+<span>Test Dispatch Simulator</span>
+</div>
+<span class="text-[11px] text-[#64748B]">Pre-production Sandbox</span>
+</div>
+<p class="text-xs text-[#475569]">
+                Send this formatted specimen to verified supervisor destinations in Lagos.
+              </p>
+<div class="space-y-2">
+<label class="block text-xs font-medium text-[#0F172A]" for="testDestinationInput">Destination Email or Phone</label>
+<div class="flex gap-2">
+<input class="flex-1 h-11 px-3 text-xs md:text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] font-mono focus-ring-custom" id="testDestinationInput" type="text" value="+234 803 ••• ••20"/>
+<!-- Send Test trigger button (min 44px touch) -->
+<button class="h-11 px-4 text-xs font-medium bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-md flex items-center gap-1.5 focus-ring-custom transition-colors shrink-0" id="btnSendTestMessage" onclick="simulateTestSend()" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Send test message</span>
+</button>
+</div>
+</div>
+<!-- Test feedback notification -->
+<div class="hidden p-3 rounded bg-[#ECFDF5] border border-[#047857] text-[#047857] text-xs flex items-center justify-between" id="testFeedbackAlert">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Test dispatch transmitted successfully to sandbox node at 13:25:40 WAT.</span>
+</span>
+<button class="text-[#047857] hover:text-[#0B1320]" onclick="closeFeedback()" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Channel Operational Status Guidance -->
+<div class="p-4 bg-white rounded-xl border border-[#E2E8F0] shadow-sm text-xs text-[#475569] space-y-2">
+<div class="flex items-center gap-2 font-semibold text-[#0B1320]">
+<span class="material-symbols-outlined text-[18px] text-[#047857]">check_circle</span>
+<span>Regulatory Disclosure Compliance</span>
+</div>
+<p>
+              In accordance with national telecommunication standards, all transactional SMS notifications undergo automatic sender verification via the Nigerian Communications Commission (NCC) authorized gateway alphanumeric ID: <strong class="text-[#0F172A]">AJSILICON</strong>.
+            </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ================= INSTITUTIONAL CLOSURE FOOTER ================= -->
+<footer class="w-full py-6 px-6 border-t border-[#1E293B] bg-[#0B1320] text-[#94A3B8] flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-xs">
+<div class="space-y-1">
+<p class="font-medium text-white">© 2025 A.J. Silicon Information Security Training &amp; Governance Ltd.</p>
+<p class="text-[#64748B]">Lagos Corporate Training Complex. All template modifications digitally signed and watermarked.</p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4 text-xs">
+<a class="text-[#93C5FD] hover:underline focus-ring-custom" href="#">Zero-Trust Protocol</a>
+<span class="text-[#334155]">·</span>
+<a class="text-[#93C5FD] hover:underline focus-ring-custom" href="#">Communication Standards</a>
+<span class="text-[#334155]">·</span>
+<a class="text-[#93C5FD] hover:underline focus-ring-custom" href="#">Forensic Integrity Policy</a>
+<span class="text-[#334155]">·</span>
+<a class="text-[#93C5FD] hover:underline focus-ring-custom" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- ================= MODAL: RESTORE VERSION CONFIRMATION ================= -->
+<div class="hidden fixed inset-0 z-50 bg-[#0B1320]/60 backdrop-blur-none flex items-center justify-center p-4" id="restoreModal">
+<div class="bg-white rounded-xl border border-[#E2E8F0] max-w-md w-full p-6 shadow-xl space-y-4">
+<div class="flex items-center gap-3 text-[#B45309]">
+<div class="w-10 h-10 rounded-full bg-[#FFFBEB] border border-[#B45309] flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">restore</span>
+</div>
+<div>
+<h4 class="text-base font-bold text-[#0B1320]">Confirm Template Rollback</h4>
+<p class="text-xs text-[#64748B]">Audited lifecycle reversion</p>
+</div>
+</div>
+<p class="text-sm text-[#0F172A]">
+        Are you certain you wish to restore <strong id="restoreModalVersion">Version 2.2</strong>? This will create a new draft iteration (Version 2.4) based on the archived snapshot and update live previews.
+      </p>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded text-xs text-[#475569]">
+<strong>Audit Rule:</strong> Previous version 2.3 will remain archived and will not be overwritten.
+      </div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="h-11 px-4 text-xs font-medium text-[#0F172A] border border-[#64748B] rounded hover:bg-[#F1F5F9] focus-ring-custom" onclick="closeRestoreDialog()" type="button">
+          Cancel
+        </button>
+<button class="h-11 px-5 text-xs font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded focus-ring-custom" onclick="confirmRestoreVersion()" type="button">
+          Confirm Rollback
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Logic Scripts -->
+<script>
+    // State management for masking sensitive data
+    let isMasked = true;
+    function toggleSensitiveMask() {
+      const emailElem = document.getElementById('maskedCandidateEmail');
+      const nameElem = document.getElementById('maskedCandidateName');
+      const testInput = document.getElementById('testDestinationInput');
+      const revealBtnText = document.getElementById('revealText');
+      
+      if (isMasked) {
+        emailElem.textContent = 'chinedu.eze@gmail.com';
+        testInput.value = '+234 803 451 9820';
+        revealBtnText.textContent = 'Mask recipient';
+        isMasked = false;
+      } else {
+        emailElem.textContent = 'c••••••••@gmail.com';
+        testInput.value = '+234 803 ••• ••20';
+        revealBtnText.textContent = 'Reveal recipient';
+        isMasked = true;
+      }
+    }
+
+    // Dynamic variable insertion into textarea
+    function insertVariable(varString) {
+      const textarea = document.getElementById('templateBodyText');
+      const startPos = textarea.selectionStart;
+      const endPos = textarea.selectionEnd;
+      const text = textarea.value;
+      
+      textarea.value = text.substring(0, startPos) + varString + text.substring(endPos, text.length);
+      textarea.focus();
+      textarea.selectionStart = startPos + varString.length;
+      textarea.selectionEnd = startPos + varString.length;
+      
+      updateCharCounter();
+    }
+
+    // Real-time character & word counter
+    const bodyTextarea = document.getElementById('templateBodyText');
+    const charCounter = document.getElementById('charCount');
+    const wordCounter = document.getElementById('wordCount');
+
+    function updateCharCounter() {
+      const val = bodyTextarea.value;
+      charCounter.textContent = val.length;
+      const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+      wordCounter.textContent = words;
+    }
+    bodyTextarea.addEventListener('input', updateCharCounter);
+
+    // Test send feedback simulator
+    function simulateTestSend() {
+      const alert = document.getElementById('testFeedbackAlert');
+      alert.classList.remove('hidden');
+      setTimeout(() => {
+        alert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+    function closeFeedback() {
+      document.getElementById('testFeedbackAlert').classList.add('hidden');
+    }
+
+    // Modal dialog controls
+    let pendingRestoreVersion = '';
+    function openRestoreDialog(version) {
+      pendingRestoreVersion = version;
+      document.getElementById('restoreModalVersion').textContent = 'Version ' + version;
+      document.getElementById('restoreModal').classList.remove('hidden');
+    }
+    function closeRestoreDialog() {
+      document.getElementById('restoreModal').classList.add('hidden');
+    }
+    function confirmRestoreVersion() {
+      closeRestoreDialog();
+      alert('Version ' + pendingRestoreVersion + ' successfully staged as new active revision draft.');
+    }
+
+    // Table view switcher controls (Table / Skeleton / Empty)
+    const tableContainer = document.getElementById('tableViewContainer');
+    const skeletonContainer = document.getElementById('skeletonContainer');
+    const emptyContainer = document.getElementById('emptyContainer');
+    const viewTableBtn = document.getElementById('viewTableBtn');
+    const viewSkeletonBtn = document.getElementById('viewSkeletonBtn');
+    const viewEmptyBtn = document.getElementById('viewEmptyBtn');
+
+    function setActiveBtn(activeBtn) {
+      [viewTableBtn, viewSkeletonBtn, viewEmptyBtn].forEach(btn => {
+        btn.classList.remove('bg-[#0B1320]', 'text-white');
+        btn.classList.add('text-[#475569]');
+      });
+      activeBtn.classList.add('bg-[#0B1320]', 'text-white');
+      activeBtn.classList.remove('text-[#475569]');
+    }
+
+    viewTableBtn.addEventListener('click', () => {
+      tableContainer.classList.remove('hidden');
+      skeletonContainer.classList.add('hidden');
+      emptyContainer.classList.add('hidden');
+      setActiveBtn(viewTableBtn);
+    });
+
+    viewSkeletonBtn.addEventListener('click', () => {
+      tableContainer.classList.add('hidden');
+      skeletonContainer.classList.remove('hidden');
+      emptyContainer.classList.add('hidden');
+      setActiveBtn(viewSkeletonBtn);
+    });
+
+    viewEmptyBtn.addEventListener('click', () => {
+      tableContainer.classList.add('hidden');
+      skeletonContainer.classList.add('hidden');
+      emptyContainer.classList.remove('hidden');
+      setActiveBtn(viewEmptyBtn);
+    });
+
+    function resetTableView() {
+      tableContainer.classList.remove('hidden');
+      skeletonContainer.classList.add('hidden');
+      emptyContainer.classList.add('hidden');
+      setActiveBtn(viewTableBtn);
+      document.getElementById('tableSearchInput').value = '';
+      document.getElementById('channelFilter').value = 'all';
+      document.getElementById('statusFilter').value = 'all';
+    }
+
+    // Filter simulation
+    document.getElementById('tableSearchInput').addEventListener('input', function(e) {
+      if (e.target.value.toLowerCase().includes('empty')) {
+        tableContainer.classList.add('hidden');
+        skeletonContainer.classList.add('hidden');
+        emptyContainer.classList.remove('hidden');
+        setActiveBtn(viewEmptyBtn);
+      }
+    });
+  </script>
+<script src="../demo-nav.js"></script></body></html>

@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roles | A.J. Silicon Learning Platform</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed-dim": "#bfc6d9",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-low": "#f2f3ff",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#dbe2f5",
+            "secondary": "#1d4ed8",
+            "on-background": "#131b2e",
+            "inverse-primary": "#bfc6d9",
+            "on-primary-fixed": "#141c29",
+            "on-secondary-container": "#fffbff",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#eaedff",
+            "on-secondary-fixed": "#001551",
+            "primary-container": "#141c29",
+            "surface-container-lowest": "#ffffff",
+            "background": "#faf8ff",
+            "on-surface": "#131b2e",
+            "inverse-surface": "#283044",
+            "on-error": "#ffffff",
+            "surface-tint": "#575f6e",
+            "surface-variant": "#dae2fd",
+            "tertiary-fixed": "#fddcc4",
+            "tertiary": "#000000",
+            "on-primary-container": "#7c8495",
+            "on-surface-variant": "#45474c",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-tertiary-fixed": "#281809",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "outline": "#75777c",
+            "outline-variant": "#c5c6cc",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary-fixed-variant": "#584231",
+            "secondary-fixed": "#dce1ff",
+            "on-tertiary-container": "#997f6a",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#4069f2",
+            "primary": "#000000",
+            "surface-dim": "#d2d9f4",
+            "tertiary-container": "#281809",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface": "#faf8ff",
+            "surface-bright": "#faf8ff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "1.5rem",
+            "space-lg": "2rem",
+            "space-sm": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.5rem",
+            "space-md": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xl": "3rem",
+            "gutter-mobile": "1rem"
+          },
+          fontFamily: {
+            "headline-sm": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Absolute compliance with custom tokens and typography */
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Native focus standard: 2px solid #2563EB, 2px offset */
+    *:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+    /* Hairline border specs */
+    .border-standard {
+      border-color: #E2E8F0;
+    }
+    .border-form {
+      border-color: #64748B;
+    }
+    /* Restrained institutional elevation */
+    .audit-shadow-subtle {
+      box-shadow: 0 4px 6px -1px rgba(11, 19, 32, 0.08), 0 2px 4px -2px rgba(11, 19, 32, 0.04);
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- ================= TOP NAVIGATION BAR (#0B1320 Navy Shell) ================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-gutter max-w-full bg-[#0B1320] text-on-primary">
+<!-- Brand Anchor & High-Contrast Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center justify-center">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain max-w-[150px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuMBNxCv2fJ_bpyeOHqlyI_-eSV5WH1nq7yAmzZsRL2KbSMm8KzxiVh9QPkDA1DKGk7iNaXEZEtafX6Ga3UXM117048307XYZFgYprkLLP8XwkPNr9kIFRtxE83HWfbyGiYYXlRNA8QJj3lX3Fpl8ZyUGINPkMGPYq7NCoa8U9iPnxf0E1VQ1pype86Dpy5cSxaoB2byDcQJHVinWsMS3vC0LKLEUTaY8EnRr86uR-4nz0czUWb3GXkQ"/>
+</div>
+<div class="h-5 w-px bg-[#1E293B] hidden md:block"></div>
+<span class="text-label-md font-label-md text-on-primary font-semibold tracking-wide hidden md:inline">
+        LEARNING PLATFORM AUDIT CONSOLE
+      </span>
+</div>
+<!-- Right Telemetry & Authenticated Identity (Plain Text, Strict Zero Switcher) -->
+<div class="flex items-center gap-6">
+<!-- Timestamp (WAT) -->
+<div class="hidden lg:flex items-center gap-2 text-label-sm font-label-sm text-[#94A3B8]">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>13:40 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-5 w-px bg-[#1E293B] hidden lg:block"></div>
+<!-- Plain Text Operator Role Stamp -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="text-body-sm font-label-md font-medium text-on-primary">Role: Super Admin | Babatunde Lawal</div>
+<div class="text-label-sm font-label-sm text-[#93C5FD]">Institutional Session: Active (Lagos Region)</div>
+</div>
+<!-- Notification Trigger (Min 44px) -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-on-primary hover:bg-[#1E293B] transition-colors relative" type="button">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#B91C1C]"></span>
+</button>
+<!-- User Initials Plate BL -->
+<div class="w-11 h-11 rounded bg-[#1E293B] border border-[#334155] text-on-primary flex items-center justify-center font-label-md font-semibold text-label-md select-none" title="Babatunde Lawal (BL)">
+          BL
+        </div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN LAYOUT WRAPPER (Sidebar + Central Canvas) ================= -->
+<div class="flex-1 flex overflow-hidden">
+<!-- ================= SIDEBAR RAIL (W-80 Desktop Navigation) ================= -->
+<aside aria-label="Application Rail" class="w-80 flex-shrink-0 bg-[#0F172A] border-r border-[#1E293B] flex flex-col justify-between overflow-y-auto select-none">
+<!-- Upper Section: Menu Groups -->
+<div class="p-4 space-y-6">
+<!-- Institution Insignia Summary -->
+<div class="px-3 py-2 bg-[#1E293B] rounded border border-[#334155] flex items-center justify-between">
+<div>
+<div class="text-label-sm font-label-sm text-on-primary font-semibold">A.J. Silicon Academy</div>
+<div class="text-label-sm font-label-sm text-[#94A3B8]">Audit, Risk &amp; IT Governance</div>
+</div>
+<span class="material-symbols-outlined text-[#93C5FD]">verified</span>
+</div>
+<!-- Group 1: Academics -->
+<div>
+<button class="w-full h-11 px-3 flex items-center justify-between text-[#94A3B8] hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-left" type="button">
+<span class="flex items-center gap-3 text-label-md font-label-md">
+<span class="material-symbols-outlined">school</span>
+              Academics
+            </span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+<!-- Group 2: Candidates -->
+<div>
+<button class="w-full h-11 px-3 flex items-center justify-between text-[#94A3B8] hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-left" type="button">
+<span class="flex items-center gap-3 text-label-md font-label-md">
+<span class="material-symbols-outlined">group</span>
+              Candidates
+            </span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+<!-- Group 3: Staff & Roles (ACTIVE CONTEXT) -->
+<div class="space-y-1">
+<div class="h-11 px-3 flex items-center justify-between text-on-primary font-semibold bg-[#1E293B] rounded-t border-b border-[#334155]">
+<span class="flex items-center gap-3 text-label-md font-label-md">
+<span class="material-symbols-outlined text-[#93C5FD]">admin_panel_settings</span>
+              Staff &amp; Roles
+            </span>
+<span class="material-symbols-outlined text-base text-[#93C5FD]">expand_less</span>
+</div>
+<!-- Submenu Tree -->
+<div class="bg-[#141C29] rounded-b border border-t-0 border-[#334155] py-2 pl-4 pr-2 space-y-1">
+<a class="h-11 px-3 flex items-center gap-3 text-[#94A3B8] hover:text-on-primary hover:bg-[#1E293B] rounded text-label-md font-label-md transition-colors" href="#staff">
+<span class="material-symbols-outlined text-base">badge</span>
+              Staff Directory
+            </a>
+<!-- Active Sub-item: Roles -->
+<a class="h-11 px-3 flex items-center justify-between bg-[#0B1320] text-on-primary font-medium border-l-2 border-[#1D4ED8] rounded-r text-label-md font-label-md transition-colors" href="#roles">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-base text-[#93C5FD]">security</span>
+                Roles
+              </span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-[#1E293B] text-[#93C5FD] border border-[#334155]">12</span>
+</a>
+</div>
+</div>
+<!-- Group 4: Security & Operations -->
+<div>
+<button class="w-full h-11 px-3 flex items-center justify-between text-[#94A3B8] hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-left" type="button">
+<span class="flex items-center gap-3 text-label-md font-label-md">
+<span class="material-symbols-outlined">policy</span>
+              Security &amp; Operations
+            </span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+<!-- Group 5: Finance -->
+<div>
+<button class="w-full h-11 px-3 flex items-center justify-between text-[#94A3B8] hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-left" type="button">
+<span class="flex items-center gap-3 text-label-md font-label-md">
+<span class="material-symbols-outlined">payments</span>
+              Finance
+            </span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+<!-- Group 6: System -->
+<div>
+<button class="w-full h-11 px-3 flex items-center justify-between text-[#94A3B8] hover:text-on-primary hover:bg-[#1E293B] rounded transition-colors text-left" type="button">
+<span class="flex items-center gap-3 text-label-md font-label-md">
+<span class="material-symbols-outlined">tune</span>
+              System
+            </span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Lower Terminal Action & Lock Session -->
+<div class="p-4 border-t border-[#1E293B] space-y-3 bg-[#0B1320]">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#94A3B8]">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#047857]"></span>
+            Terminal: Secured
+          </span>
+<span class="font-code-snippet">Ver 4.9.2</span>
+</div>
+<button class="w-full h-11 px-4 border border-[#475569] text-on-primary hover:bg-[#1E293B] active:bg-[#0F172A] rounded font-label-md text-label-md font-medium flex items-center justify-center gap-2 transition-all" onclick="alert('Terminal session locked.')" type="button">
+<span class="material-symbols-outlined text-base">lock</span>
+          Lock Terminal Session
+        </button>
+</div>
+</aside>
+<!-- ================= CENTRAL WORKSPACE CANVAS ================= -->
+<main class="flex-1 overflow-y-auto bg-[#F8FAFC]">
+<div class="max-w-[1280px] mx-auto px-margin py-space-lg space-y-6">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-label-sm font-label-sm text-[#475569]">
+<span class="hover:text-[#0F172A] cursor-pointer">Staff &amp; Governance</span>
+<span class="material-symbols-outlined text-base text-[#94A3B8]">chevron_right</span>
+<span class="hover:text-[#0F172A] cursor-pointer">Access Control</span>
+<span class="material-symbols-outlined text-base text-[#94A3B8]">chevron_right</span>
+<span aria-current="page" class="text-[#0F172A] font-semibold">Roles</span>
+</nav>
+<!-- Header Block with Primary & Secondary Actions -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b border-standard pb-6">
+<div class="space-y-1">
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">Roles</h1>
+<p class="text-body-md font-body-md text-[#475569] max-w-3xl">
+              Define access boundaries, inspect member distributions, and configure administrative roles across institutional operations.
+            </p>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<!-- Secondary Action: Duplicate Role -->
+<button class="h-11 px-5 border border-form bg-surface-container-lowest text-[#0F172A] hover:bg-[#F1F5F9] rounded font-label-md text-label-md font-medium flex items-center gap-2 transition-colors" onclick="openCreateModal('Duplicate Existing Role')" type="button">
+<span class="material-symbols-outlined text-base">content_copy</span>
+              + Duplicate role
+            </button>
+<!-- Primary Action: Create Role (#0B1320 Navy) -->
+<button class="h-11 px-6 bg-[#0B1320] text-on-primary hover:bg-[#1E293B] rounded font-label-md text-label-md font-medium flex items-center gap-2 transition-colors audit-shadow-subtle" onclick="openCreateModal('Create New Institutional Role')" type="button">
+<span class="material-symbols-outlined text-base">add</span>
+              + Create role
+            </button>
+</div>
+</div>
+<!-- Filter & Search Console -->
+<div class="bg-surface-container-lowest border border-standard rounded-xl p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4 audit-shadow-subtle">
+<!-- Search Bar -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[#64748B] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-container-lowest border border-form rounded text-body-sm font-body-sm text-[#0F172A] placeholder-[#475569] focus:outline-none focus:border-[#2563EB]" id="roleSearchInput" oninput="handleSearch(this.value)" placeholder="Search roles by name or description..." type="text"/>
+</div>
+<!-- Filter Dropdowns -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Filter by Type -->
+<div class="flex items-center">
+<label class="sr-only" for="filterType">Filter by Type</label>
+<select class="h-11 px-3 bg-surface-container-lowest border border-form rounded text-body-sm font-body-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB]" id="filterType" onchange="applyFilters()">
+<option value="All">All Types</option>
+<option value="Built-in">Built-in</option>
+<option value="Custom">Custom</option>
+</select>
+</div>
+<!-- Filter by Scope -->
+<div class="flex items-center">
+<label class="sr-only" for="filterScope">Filter by Scope</label>
+<select class="h-11 px-3 bg-surface-container-lowest border border-form rounded text-body-sm font-body-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB]" id="filterScope" onchange="applyFilters()">
+<option value="All">All Scopes</option>
+<option value="Global">Global Access</option>
+<option value="Academics">Academics</option>
+<option value="Security">Security &amp; Operations</option>
+<option value="Finance">Finance</option>
+</select>
+</div>
+<!-- Total Registry Counter -->
+<div class="h-11 px-4 bg-[#F8FAFC] border border-standard rounded flex items-center text-label-sm font-label-sm text-[#475569]">
+              Showing <span class="font-semibold text-[#0F172A] mx-1" id="displayedRoleCount">12</span> roles
+            </div>
+<!-- State Toggle Demos (Inspect Skeletons & Empty States) -->
+<div class="flex items-center gap-1 border-l border-standard pl-3 ml-2">
+<button class="h-11 px-2.5 text-label-sm font-label-sm text-[#1D4ED8] hover:bg-[#EFF6FF] rounded border border-transparent hover:border-[#1D4ED8]" onclick="toggleState('default')" title="View Default Table" type="button">Live</button>
+<button class="h-11 px-2.5 text-label-sm font-label-sm text-[#475569] hover:bg-[#F1F5F9] rounded border border-transparent" onclick="toggleState('skeleton')" title="Simulate Loading Skeleton" type="button">Skeleton</button>
+<button class="h-11 px-2.5 text-label-sm font-label-sm text-[#475569] hover:bg-[#F1F5F9] rounded border border-transparent" onclick="toggleState('empty')" title="Simulate Zero Match Empty" type="button">Empty</button>
+</div>
+</div>
+</div>
+<!-- ================= VARIANT 1: MASTER DATA TABLE (DEFAULT STATE) ================= -->
+<div class="bg-surface-container-lowest border border-standard rounded-xl overflow-hidden audit-shadow-subtle" id="viewTable">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="rolesTable">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-standard text-[#475569] text-label-sm font-label-sm tracking-wide">
+<th class="py-3 px-4 min-w-[200px]" scope="col">ROLE NAME</th>
+<th class="py-3 px-4 min-w-[340px]" scope="col">DESCRIPTION</th>
+<th class="py-3 px-4 min-w-[120px]" scope="col">MEMBERS</th>
+<th class="py-3 px-4 min-w-[160px]" scope="col">TYPE</th>
+<th class="py-3 px-4 min-w-[220px]" scope="col">LAST CHANGED</th>
+<th class="py-3 px-4 text-right min-w-[150px]" scope="col">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-standard text-body-sm font-body-sm text-[#0F172A]">
+<!-- Row 1: Super Admin -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Super Admin" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#B45309] text-base" title="Protected Authority Role">shield_lock</span>
+                      Super Admin
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Unrestricted platform governance, role assignment, cryptographic key custody, and institutional overrides.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px] items-center" href="#members-super-admin">
+                      2 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>12 Jan 2026</div>
+<div class="text-[#64748B]">by System Provisioner</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button aria-label="Delete Super Admin (Locked)" class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 2: Operations Manager -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Operations Manager" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">domain</span>
+                      Operations Manager
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Manages session schedules, automated communication triggers, cohort capacities, and facilities.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-operations-manager">
+                      3 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>04 Oct 2026</div>
+<div class="text-[#64748B]">by Babatunde Lawal</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 3: Academic Director -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Academic Director" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">school</span>
+                      Academic Director
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Curriculum oversight, accreditation verification, certificate templates, and faculty assignments.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-academic-director">
+                      2 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>15 Sep 2026</div>
+<div class="text-[#64748B]">by Babatunde Lawal</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 4: Instructor -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Instructor" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">co_present</span>
+                      Instructor
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Live masterclass delivery, cohort attendance logging, clinical feedback, and office hour moderation.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-instructor">
+                      14 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>28 Sep 2026</div>
+<div class="text-[#64748B]">by Dr. O. Adeleke</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 5: Question Author -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Question Author" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">quiz</span>
+                      Question Author
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Drafting, editing, and mapping examination items to official cognitive domain standards.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-question-author">
+                      8 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>20 Aug 2026</div>
+<div class="text-[#64748B]">by Dr. O. Adeleke</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 6: Content Manager -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Content Manager" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">video_library</span>
+                      Content Manager
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Video and syllabus ingestion, document reader page indexing, and learning asset lifecycle.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-content-manager">
+                      4 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>02 Sep 2026</div>
+<div class="text-[#64748B]">by Tunde Bakare</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 7: Support Agent -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Support Agent" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">support_agent</span>
+                      Support Agent
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Ticket triage, candidate enrollment inquiry resolution, and access escalation routing.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-support-agent">
+                      6 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>01 Oct 2026</div>
+<div class="text-[#64748B]">by Tunde Bakare</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 8: Finance Officer -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Finance Officer" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">account_balance_wallet</span>
+                      Finance Officer
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Paystack transaction monitoring, manual receipt queries, and invoicing records.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-finance-officer">
+                      3 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>18 Sep 2026</div>
+<div class="text-[#64748B]">by Babatunde Lawal</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 9: Finance Manager -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Finance Manager" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">receipt_long</span>
+                      Finance Manager
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Reconciliation approvals, payout disbursements, and statutory Nigerian VAT audit filings.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-finance-manager">
+                      2 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>18 Sep 2026</div>
+<div class="text-[#64748B]">by Babatunde Lawal</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 10: Security Officer -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Security Officer" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">security</span>
+                      Security Officer
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Surveillance alerts, concurrent session investigations, leak decoder, and access logs review.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-security-officer">
+                      3 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>05 Oct 2026</div>
+<div class="text-[#64748B]">by Chukwudi Nnamdi</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 11: Auditor -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Auditor" data-type="Built-in">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">fact_check</span>
+                      Auditor
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Read-only non-repudiation ledger inspection, compliance export verification, and integrity checks.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-auditor">
+                      4 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm">lock</span>
+                      Built-in
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>14 Jun 2026</div>
+<div class="text-[#64748B]">by Babatunde Lawal</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<div class="relative group inline-block">
+<button class="h-11 px-3 text-[#94A3B8] cursor-not-allowed rounded text-label-sm font-label-sm font-medium flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">lock</span> Delete
+                        </button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-50 w-64 p-2 bg-[#0B1320] text-on-primary text-label-sm rounded shadow-lg border border-[#334155] text-left">
+                          Built-in roles are core to system governance and cannot be deleted
+                        </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 12: Marketing Editor (CUSTOM ROLE - ACTIVE ACTIONABLE) -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" data-name="Marketing Editor" data-type="Custom">
+<td class="py-3 px-4 font-label-md font-semibold text-[#0F172A] whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#64748B] text-base">campaign</span>
+                      Marketing Editor
+                    </div>
+</td>
+<td class="py-3 px-4 text-[#475569]">
+                    Public catalogue previews, early-bird promotional coupons, and workshop announcement copy.
+                  </td>
+<td class="py-3 px-4 whitespace-nowrap">
+<a class="text-[#1D4ED8] hover:underline font-label-md inline-flex items-center gap-1 min-h-[44px] min-w-[44px]" href="#members-marketing-editor">
+                      2 members
+                      <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 h-6 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-sm">tune</span>
+                      Custom
+                    </span>
+</td>
+<td class="py-3 px-4 text-label-sm text-[#475569] whitespace-nowrap">
+<div>29 Sep 2026</div>
+<div class="text-[#64748B]">by Tunde Bakare</div>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center justify-end gap-1">
+<button class="h-11 px-3 text-[#1D4ED8] hover:bg-[#EFF6FF] rounded text-label-sm font-label-sm font-medium" type="button">Edit</button>
+<button class="h-11 px-3 text-[#475569] hover:bg-[#F1F5F9] rounded text-label-sm font-label-sm font-medium" type="button">Duplicate</button>
+<button class="h-11 px-3 text-[#B91C1C] hover:bg-[#FEF2F2] rounded text-label-sm font-label-sm font-medium flex items-center gap-1" onclick="confirmDeleteCustomRole()" type="button">
+<span class="material-symbols-outlined text-sm">delete</span> Delete
+                      </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Strict Non-Repudiation Footer Metadata Bar -->
+<div class="bg-[#F8FAFC] border-t border-standard px-4 py-3 flex flex-col sm:flex-row sm:items-center justify-between text-label-sm font-label-sm text-[#475569] gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-[#047857]">verified_user</span>
+<span>11 System-protected Built-in roles · 1 User-configured Custom role</span>
+</div>
+<div>Institutional Access Control Policy v2.4 (Lagos Cluster)</div>
+</div>
+</div>
+<!-- ================= VARIANT 2: LOADING SKELETON STATE ================= -->
+<div class="hidden bg-surface-container-lowest border border-standard rounded-xl p-4 audit-shadow-subtle" id="viewSkeleton">
+<div class="flex items-center justify-between mb-4">
+<div class="h-5 w-48 bg-[#E2E8F0] rounded animate-pulse"></div>
+<div class="h-5 w-24 bg-[#E2E8F0] rounded animate-pulse"></div>
+</div>
+<div class="space-y-4">
+<div class="h-12 bg-[#F1F5F9] rounded flex items-center px-4 gap-4 animate-pulse">
+<div class="h-4 w-32 bg-[#CBD5E1] rounded"></div>
+<div class="h-4 flex-1 bg-[#CBD5E1] rounded"></div>
+<div class="h-4 w-20 bg-[#CBD5E1] rounded"></div>
+<div class="h-4 w-24 bg-[#CBD5E1] rounded"></div>
+</div>
+<div class="h-12 bg-[#F8FAFC] rounded flex items-center px-4 gap-4 animate-pulse">
+<div class="h-4 w-28 bg-[#E2E8F0] rounded"></div>
+<div class="h-4 flex-1 bg-[#E2E8F0] rounded"></div>
+<div class="h-4 w-16 bg-[#E2E8F0] rounded"></div>
+<div class="h-4 w-24 bg-[#E2E8F0] rounded"></div>
+</div>
+<div class="h-12 bg-[#F1F5F9] rounded flex items-center px-4 gap-4 animate-pulse">
+<div class="h-4 w-36 bg-[#CBD5E1] rounded"></div>
+<div class="h-4 flex-1 bg-[#CBD5E1] rounded"></div>
+<div class="h-4 w-20 bg-[#CBD5E1] rounded"></div>
+<div class="h-4 w-24 bg-[#CBD5E1] rounded"></div>
+</div>
+<div class="h-12 bg-[#F8FAFC] rounded flex items-center px-4 gap-4 animate-pulse">
+<div class="h-4 w-24 bg-[#E2E8F0] rounded"></div>
+<div class="h-4 flex-1 bg-[#E2E8F0] rounded"></div>
+<div class="h-4 w-16 bg-[#E2E8F0] rounded"></div>
+<div class="h-4 w-24 bg-[#E2E8F0] rounded"></div>
+</div>
+</div>
+<div class="mt-4 text-center text-label-sm font-label-sm text-[#64748B]">
+            Synchronizing cryptographic permissions ledger...
+          </div>
+</div>
+<!-- ================= VARIANT 3: EMPTY ZERO-STATE ================= -->
+<div class="hidden bg-surface-container-lowest border border-standard rounded-xl p-12 text-center audit-shadow-subtle" id="viewEmpty">
+<div class="w-12 h-12 mx-auto rounded-full bg-[#EFF6FF] border border-[#1D4ED8] flex items-center justify-center text-[#1D4ED8] mb-4">
+<span class="material-symbols-outlined text-2xl">search_off</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-[#0F172A] mb-1">No matching roles identified</h3>
+<p class="text-body-sm font-body-sm text-[#475569] max-w-md mx-auto mb-6">
+            No institutional role matches the specified search filter criteria or scope restrictions. Please verify role taxonomy or reset query filters.
+          </p>
+<button class="h-11 px-5 border border-form bg-surface-container-lowest text-[#0F172A] hover:bg-[#F1F5F9] rounded font-label-md text-label-md font-medium inline-flex items-center gap-2" onclick="resetFilters()" type="button">
+<span class="material-symbols-outlined text-base">restart_alt</span>
+            Clear all filters
+          </button>
+</div>
+</div>
+</main>
+</div>
+<!-- ================= INSTITUTIONAL FOOTER CLOSURE ================= -->
+<footer class="w-full py-space-lg px-gutter border-t border-[#1E293B] bg-[#0B1320] flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-on-primary select-none">
+<div class="space-y-1">
+<div class="text-label-sm font-label-sm text-[#94A3B8]">
+        © 2026 A.J. Silicon Learning Platform Ltd. All Sessions Digitally Watermarked.
+      </div>
+<div class="text-label-sm font-label-sm text-[#64748B]">
+        Enterprise Risk Governance &amp; IT Security Training Academy · Lagos, Nigeria
+      </div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6 text-label-sm font-label-sm text-[#94A3B8]">
+<a class="hover:text-on-primary transition-colors" href="#zero-trust">Zero-Trust Protocol</a>
+<span class="text-[#334155]">·</span>
+<a class="hover:text-on-primary transition-colors" href="#charter">Audit Charter</a>
+<span class="text-[#334155]">·</span>
+<a class="hover:text-on-primary transition-colors" href="#verification">Verification Gateway</a>
+<span class="text-[#334155]">·</span>
+<a class="hover:text-on-primary transition-colors" href="#secops">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- ================= MODAL: CREATE / DUPLICATE ROLE COMPONENT ================= -->
+<div class="fixed inset-0 z-50 bg-[#0B1320]/75 hidden items-center justify-center p-4" id="createRoleModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full border border-standard audit-shadow-subtle overflow-hidden flex flex-col max-h-[90vh]">
+<!-- Modal Header -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-b border-standard flex items-center justify-between">
+<div>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A]" id="modalTitle">Create New Institutional Role</h2>
+<p class="text-label-sm font-label-sm text-[#475569]">Set boundary definitions and granular operational authorities</p>
+</div>
+<button aria-label="Close Modal" class="w-11 h-11 flex items-center justify-center text-[#475569] hover:text-[#0F172A] hover:bg-[#E2E8F0] rounded" onclick="closeCreateModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body (Scrollable) -->
+<div class="p-6 space-y-6 overflow-y-auto">
+<!-- Field 1: Role Name -->
+<div class="space-y-1">
+<label class="block text-label-md font-label-md text-[#0F172A]" for="newRoleName">
+            Role Name <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 px-3 bg-surface-container-lowest border border-form rounded text-body-sm font-body-sm text-[#0F172A] placeholder-[#475569] focus:outline-none focus:border-[#2563EB]" id="newRoleName" placeholder="e.g., Regional Compliance Reviewer" type="text" value="Regional Compliance Reviewer"/>
+</div>
+<!-- Field 2: Base Role Template Selector -->
+<div class="space-y-1">
+<label class="block text-label-md font-label-md text-[#0F172A]" for="baseRoleTemplate">
+            Base Role Template <span class="text-[#475569] font-normal">(Inherit baseline privileges)</span>
+</label>
+<select class="w-full h-11 px-3 bg-surface-container-lowest border border-form rounded text-body-sm font-body-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB]" id="baseRoleTemplate">
+<option value="none">-- Start from custom scratch --</option>
+<option selected="" value="Auditor">Clone from: Auditor (Read-only ledger)</option>
+<option value="Content Manager">Clone from: Content Manager (Syllabus &amp; Assets)</option>
+<option value="Support Agent">Clone from: Support Agent (Inquiry triage)</option>
+<option value="Question Author">Clone from: Question Author (Item drafting)</option>
+</select>
+</div>
+<!-- Field 3: Scope Description -->
+<div class="space-y-1">
+<label class="block text-label-md font-label-md text-[#0F172A]" for="newRoleDescription">
+            Description &amp; Operational Remit <span class="text-[#B91C1C]">*</span>
+</label>
+<textarea class="w-full p-3 bg-surface-container-lowest border border-form rounded text-body-sm font-body-sm text-[#0F172A] placeholder-[#475569] focus:outline-none focus:border-[#2563EB]" id="newRoleDescription" placeholder="Document scope justification for non-repudiation audit filing..." rows="2">Quarterly spot-check verification of academic transcripts and attendance ledgers across Lagos training centers.</textarea>
+</div>
+<!-- Field 4: Granular Permission Matrix -->
+<div class="space-y-3">
+<div class="text-label-md font-label-md text-[#0F172A]">Granular Privilege Allocations</div>
+<div class="border border-standard rounded-lg p-4 space-y-4 bg-[#F8FAFC]">
+<!-- Category: Academics -->
+<div>
+<div class="text-label-sm font-label-sm font-semibold text-[#0F172A] mb-2 uppercase tracking-wider">Academics &amp; Curriculum</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+<label class="flex items-center gap-3 p-2 bg-surface-container-lowest rounded border border-standard cursor-pointer min-h-[44px]">
+<input checked="" class="w-5 h-5 text-[#0B1320] border-form rounded focus:ring-0" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">View syllabi &amp; item banks</span>
+</label>
+<label class="flex items-center gap-3 p-2 bg-surface-container-lowest rounded border border-standard cursor-pointer min-h-[44px]">
+<input class="w-5 h-5 text-[#0B1320] border-form rounded focus:ring-0" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Publish courseware revisions</span>
+</label>
+</div>
+</div>
+<!-- Category: Security & Audit -->
+<div>
+<div class="text-label-sm font-label-sm font-semibold text-[#0F172A] mb-2 uppercase tracking-wider">Security &amp; Non-Repudiation</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+<label class="flex items-center gap-3 p-2 bg-surface-container-lowest rounded border border-standard cursor-pointer min-h-[44px]">
+<input checked="" class="w-5 h-5 text-[#0B1320] border-form rounded focus:ring-0" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Inspect immutable event logs</span>
+</label>
+<label class="flex items-center gap-3 p-2 bg-surface-container-lowest rounded border border-standard cursor-pointer min-h-[44px]">
+<input class="w-5 h-5 text-[#0B1320] border-form rounded focus:ring-0" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Override access tokens</span>
+</label>
+</div>
+</div>
+<!-- Category: Finance -->
+<div>
+<div class="text-label-sm font-label-sm font-semibold text-[#0F172A] mb-2 uppercase tracking-wider">Finance &amp; Transactions</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+<label class="flex items-center gap-3 p-2 bg-surface-container-lowest rounded border border-standard cursor-pointer min-h-[44px]">
+<input class="w-5 h-5 text-[#0B1320] border-form rounded focus:ring-0" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Query Paystack payouts</span>
+</label>
+<label class="flex items-center gap-3 p-2 bg-surface-container-lowest rounded border border-standard cursor-pointer min-h-[44px]">
+<input class="w-5 h-5 text-[#0B1320] border-form rounded focus:ring-0" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-[#0F172A]">Generate Nigerian VAT summaries</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-standard flex items-center justify-end gap-3">
+<button class="h-11 px-5 border border-form bg-surface-container-lowest text-[#0F172A] hover:bg-[#F1F5F9] rounded font-label-md text-label-md font-medium transition-colors" onclick="closeCreateModal()" type="button">
+          Cancel
+        </button>
+<button class="h-11 px-6 bg-[#0B1320] text-on-primary hover:bg-[#1E293B] rounded font-label-md text-label-md font-medium flex items-center gap-2 transition-colors" onclick="saveNewRole()" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+          Save Role Configuration
+        </button>
+</div>
+</div>
+</div>
+<!-- Micro-interactions and state controller -->
+<script>
+    // State Switcher (Default Table, Loading Skeleton, Empty Zero-State)
+    function toggleState(state) {
+      const viewTable = document.getElementById('viewTable');
+      const viewSkeleton = document.getElementById('viewSkeleton');
+      const viewEmpty = document.getElementById('viewEmpty');
+
+      viewTable.classList.add('hidden');
+      viewSkeleton.classList.add('hidden');
+      viewEmpty.classList.add('hidden');
+
+      if (state === 'default') {
+        viewTable.classList.remove('hidden');
+      } else if (state === 'skeleton') {
+        viewSkeleton.classList.remove('hidden');
+      } else if (state === 'empty') {
+        viewEmpty.classList.remove('hidden');
+      }
+    }
+
+    // Modal Manager
+    function openCreateModal(titleText) {
+      if (titleText) {
+        document.getElementById('modalTitle').textContent = titleText;
+      }
+      const modal = document.getElementById('createRoleModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeCreateModal() {
+      const modal = document.getElementById('createRoleModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveNewRole() {
+      alert("Role draft provisioned and committed to access registry.");
+      closeCreateModal();
+    }
+
+    function confirmDeleteCustomRole() {
+      if (confirm("Are you certain you wish to revoke and delete custom role 'Marketing Editor'? This action will be appended to the Lagos compliance log.")) {
+        alert("Custom role 'Marketing Editor' has been removed from platform scope.");
+      }
+    }
+
+    // Interactive Table Search & Filters
+    function handleSearch(term) {
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = (document.getElementById('roleSearchInput').value || '').toLowerCase();
+      const typeFilter = document.getElementById('filterType').value;
+      const rows = document.querySelectorAll('#rolesTable tbody tr');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const roleName = (row.getAttribute('data-name') || '').toLowerCase();
+        const roleType = row.getAttribute('data-type') || '';
+        const roleDesc = row.children[1].textContent.toLowerCase();
+
+        const matchesQuery = roleName.includes(query) || roleDesc.includes(query);
+        const matchesType = (typeFilter === 'All') || (roleType === typeFilter);
+
+        if (matchesQuery && matchesType) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      document.getElementById('displayedRoleCount').textContent = visibleCount;
+
+      if (visibleCount === 0) {
+        toggleState('empty');
+      } else {
+        const viewTable = document.getElementById('viewTable');
+        const viewEmpty = document.getElementById('viewEmpty');
+        viewTable.classList.remove('hidden');
+        viewEmpty.classList.add('hidden');
+      }
+    }
+
+    function resetFilters() {
+      document.getElementById('roleSearchInput').value = '';
+      document.getElementById('filterType').value = 'All';
+      document.getElementById('filterScope').value = 'All';
+      applyFilters();
+      toggleState('default');
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

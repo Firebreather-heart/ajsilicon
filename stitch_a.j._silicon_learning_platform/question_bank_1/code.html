@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy - Question Bank Specification Board</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Verbatim Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#141c29",
+            "surface-bright": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "on-primary-fixed": "#141c29",
+            "primary-fixed-dim": "#bfc6d9",
+            "primary": "#000000",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-secondary-fixed": "#001551",
+            "secondary-container": "#4069f2",
+            "on-error-container": "#93000a",
+            "secondary": "#1d4ed8",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#283044",
+            "on-error": "#ffffff",
+            "surface-tint": "#575f6e",
+            "on-secondary-container": "#fffbff",
+            "background": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "inverse-primary": "#bfc6d9",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-fixed-variant": "#0039b5",
+            "tertiary-fixed": "#fddcc4",
+            "tertiary": "#000000",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#45474c",
+            "on-background": "#131b2e",
+            "on-tertiary-container": "#997f6a",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-surface": "#131b2e",
+            "surface": "#faf8ff",
+            "primary-fixed": "#dbe2f5",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#281809",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c5c6cc",
+            "outline": "#75777c",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-fixed": "#281809",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#dce1ff",
+            "on-primary-container": "#7c8495"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.5rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "label-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 4px;
+    }
+    .focus-ring-strict:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A] font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+<!-- TOP SHELL: Solid Navy #0B1320, 64px height -->
+<header class="w-full bg-[#0B1320] text-white h-16 flex items-center justify-between px-6 z-30 shrink-0 select-none border-b border-[#1E293B]">
+<!-- Left: Brand / Academic Portal -->
+<div class="flex items-center gap-4">
+<div class="h-9 px-3 rounded bg-white flex items-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUGLVySnFTuO88PeuFoVI5BPjKWxq6C6F7Aajzj5FfM4Amvb0deh7S0V4lOp_QSbu0KYuLsjFhYI0h7GtVtsU4N2Y0XEsVwDpJuIRrIgFMCrinaydzvvqwTpllqIyl2Nv8bXiya3gL7GS1nA7T2DhGkpvl5MfmI6T1Ov2v0yDiS86u-xKeE010HWz6rg-EATPnlryXNeNXXpfmabSXDXfjUxyslsVlJ7WJRqdGPxrZC-2NYTSMiGz7_Q"/>
+</div>
+<div class="hidden md:flex flex-col border-l border-slate-700 pl-4 py-0.5">
+<span class="font-headline-sm text-label-md text-white font-semibold leading-tight">Staff Management Portal</span>
+<span class="text-slate-400 font-label-sm text-[11px] tracking-wide">Academic Item Registry &amp; Telemetry</span>
+</div>
+</div>
+<!-- Center/Right: Time, System Telemetry, Staff Profile -->
+<div class="flex items-center gap-6">
+<!-- Sync Status & WAT Clock -->
+<div class="hidden lg:flex items-center gap-4 text-slate-300 font-code-snippet text-code-snippet border-r border-slate-800 pr-6">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-500/20"></span>
+<span class="text-slate-300 font-body-sm text-[13px]">10:15 WAT · 05 Oct 2026</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-400 text-[12px]">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">sync_alt</span>
+<span>Ledger Synced</span>
+</div>
+</div>
+<!-- User Profile (Locked Role: Plain text Question Author, no dropdown) -->
+<div class="flex items-center gap-3">
+<div class="flex flex-col text-right">
+<div class="flex items-center gap-2 justify-end">
+<span class="font-label-md text-label-md text-white font-medium">Tunde Bakare</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-label-sm text-[11px]">Question Author</span>
+</div>
+<span class="text-slate-400 font-body-sm text-[12px]">t.bakare@ajsilicon.ng</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-700 text-white font-medium flex items-center justify-center border border-slate-600 shadow-inner text-sm tracking-wider">
+          TB
+        </div>
+</div>
+</div>
+</header>
+<!-- APPLICATION BODY LAYOUT (Sidebar docked left + Main Content Area) -->
+<div class="flex flex-1 w-full overflow-hidden">
+<!-- SIDEBAR: Docked Left (260px wide, structured borders) -->
+<aside class="w-[260px] bg-white border-r border-[#E2E8F0] flex flex-col justify-between shrink-0 select-none">
+<div class="p-4 space-y-6">
+<!-- Group: Academics (Active Group) -->
+<div>
+<div class="px-3 mb-2 flex items-center justify-between">
+<span class="font-label-sm text-[11px] font-semibold text-slate-500 tracking-wider">ACADEMICS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+</div>
+<nav class="space-y-1">
+<a class="h-11 px-3 rounded flex items-center gap-3 text-slate-700 hover:bg-[#F8FAFC] hover:text-slate-900 font-body-sm text-body-sm transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-slate-700 hover:bg-[#F8FAFC] hover:text-slate-900 font-body-sm text-body-sm transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">layers</span>
+<span>Curricula &amp; Modules</span>
+</a>
+<!-- Active Nav Item: Question Bank with badge '248' -->
+<a class="h-11 px-3 rounded flex items-center justify-between bg-[#F1F5F9] text-[#0B1320] font-label-md text-label-md font-semibold border-l-4 border-[#0B1320] transition-colors focus-ring-strict" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#0B1320] text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span>Question Bank</span>
+</div>
+<span class="px-2 py-0.5 text-[12px] font-semibold rounded bg-[#0B1320] text-white">248</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-slate-700 hover:bg-[#F8FAFC] hover:text-slate-900 font-body-sm text-body-sm transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">rule</span>
+<span>Exam Blueprints</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-slate-700 hover:bg-[#F8FAFC] hover:text-slate-900 font-body-sm text-body-sm transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">groups</span>
+<span>Active Cohorts</span>
+</a>
+</nav>
+</div>
+<!-- Group: Governance & System -->
+<div>
+<div class="px-3 mb-2">
+<span class="font-label-sm text-[11px] font-semibold text-slate-500 tracking-wider">ASSURANCE &amp; LOGS</span>
+</div>
+<nav class="space-y-1">
+<a class="h-11 px-3 rounded flex items-center gap-3 text-slate-700 hover:bg-[#F8FAFC] hover:text-slate-900 font-body-sm text-body-sm transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">verified_user</span>
+<span>Governance &amp; Audits</span>
+</a>
+<a class="h-11 px-3 rounded flex items-center gap-3 text-slate-700 hover:bg-[#F8FAFC] hover:text-slate-900 font-body-sm text-body-sm transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">query_stats</span>
+<span>Item Telemetry</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Sidebar Footprint / Institutional Accreditation Info -->
+<div class="p-4 border-t border-[#E2E8F0] bg-slate-50 text-[12px] text-slate-500 flex flex-col gap-1">
+<div class="flex items-center gap-2 font-medium text-slate-700">
+<span class="material-symbols-outlined text-[16px] text-slate-600">lock</span>
+<span>Item Bank Node: AKO-01</span>
+</div>
+<span>Registry Standard: ISO/IEC 17024</span>
+<span class="text-slate-400">Cryptographically signed</span>
+</div>
+</aside>
+<!-- MAIN CONTENT VIEWPORT -->
+<main class="flex-1 overflow-y-auto custom-scroll flex flex-col bg-[#F8FAFC]">
+<!-- SPECIFICATION VIEW SWITCHER BAR (TABS) -->
+<div class="w-full bg-white border-b border-[#E2E8F0] px-8 pt-4 pb-0 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs font-semibold text-slate-500 tracking-wider">
+<span class="material-symbols-outlined text-sm text-blue-600">view_compact</span>
+<span>SPECIFICATION BOARD DEMONSTRATION STATES</span>
+</div>
+<span class="text-[12px] text-slate-400">Desktop Viewport: 1440px Reference Specification</span>
+</div>
+<div class="flex gap-4">
+<button class="h-10 px-4 text-sm font-semibold border-b-2 border-[#0B1320] text-[#0B1320] flex items-center gap-2 transition-all" id="tab-btn-populated" onclick="switchState('populated')">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+<span>1. Populated Table (Default)</span>
+</button>
+<button class="h-10 px-4 text-sm font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 transition-all" id="tab-btn-empty" onclick="switchState('empty')">
+<span class="material-symbols-outlined text-[18px]">filter_alt_off</span>
+<span>2. Empty State</span>
+</button>
+<button class="h-10 px-4 text-sm font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 transition-all" id="tab-btn-errors" onclick="switchState('errors')">
+<span class="material-symbols-outlined text-[18px] text-amber-600">warning</span>
+<span>3. Import Errors Summary</span>
+<span class="ml-1 px-1.5 py-0.2 rounded text-[11px] bg-amber-100 text-amber-800 font-semibold">3</span>
+</button>
+</div>
+</div>
+<!-- MAIN PAGE CONTENT CONTAINER -->
+<div class="p-8 max-w-[1400px] w-full mx-auto space-y-6">
+<!-- Page Header & Breadcrumbs -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-[#E2E8F0]">
+<div>
+<nav class="flex items-center gap-2 text-body-sm font-body-sm text-slate-500 mb-1">
+<span>Academics</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-slate-900 font-medium">Question bank</span>
+</nav>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">Question bank</h1>
+<p class="text-body-sm font-body-sm text-slate-600 mt-1 max-w-3xl">
+              Manage examination item pools, cognitive complexity, and psychometric performance telemetry across certified curricula.
+            </p>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- Secondary: Import (min 44px height) -->
+<button class="h-[44px] px-4 py-2.5 rounded-lg border border-[#64748B] bg-white text-slate-800 hover:bg-slate-50 font-label-md text-label-md font-medium flex items-center gap-2 focus-ring-strict transition-colors" onclick="switchState('errors')">
+<span class="material-symbols-outlined text-[20px] text-slate-600">file_upload</span>
+<span>Import</span>
+</button>
+<!-- Primary: New Question (min 44px height, solid #0B1320) -->
+<button class="h-[44px] px-5 py-2.5 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] font-label-md text-label-md font-medium flex items-center gap-2 focus-ring-strict transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New question</span>
+</button>
+</div>
+</div>
+<!-- 1. POPULATED TABLE VIEW (DEFAULT) -->
+<div class="space-y-6" id="state-populated">
+<!-- Filters Card -->
+<div class="bg-white p-5 rounded-[12px] border border-[#E2E8F0] shadow-sm space-y-4">
+<!-- Top Filter Row: Search & Dropdowns -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+<!-- Search Input -->
+<div class="md:col-span-4 relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="w-full h-[44px] pl-10 pr-4 rounded-md border border-[#64748B] bg-white text-slate-900 text-body-sm placeholder:text-slate-500 focus-ring-strict text-[14px]" placeholder="Search stem, keywords or syllabus reference..." type="text" value="database schema alterations"/>
+</div>
+<!-- Programme Filter -->
+<div class="md:col-span-3">
+<select class="w-full h-[44px] px-3.5 rounded-md border border-[#64748B] bg-white text-slate-800 text-body-sm focus-ring-strict text-[14px]">
+<option selected="">CISA Exam Prep</option>
+<option>CRISC Certification</option>
+<option>CISM Leadership</option>
+<option>AAIA Artificial Intelligence Audit</option>
+</select>
+</div>
+<!-- Domain Filter -->
+<div class="md:col-span-3">
+<select class="w-full h-[44px] px-3.5 rounded-md border border-[#64748B] bg-white text-slate-800 text-body-sm focus-ring-strict text-[14px]">
+<option>All Domains</option>
+<option selected="">Domain 1: Information System Auditing</option>
+<option>Domain 2: Governance &amp; Management</option>
+<option>Domain 3: Systems Acquisition</option>
+<option>Domain 4: Operations &amp; Maintenance</option>
+<option>Domain 5: Asset Protection</option>
+</select>
+</div>
+<!-- Difficulty Filter -->
+<div class="md:col-span-2">
+<select class="w-full h-[44px] px-3 rounded-md border border-[#64748B] bg-white text-slate-800 text-body-sm focus-ring-strict text-[14px]">
+<option selected="">All Difficulties</option>
+<option>Foundation</option>
+<option>Intermediate</option>
+<option>Complex / Scenario</option>
+</select>
+</div>
+</div>
+<!-- Bottom Filter Row: Status Chips & Sort Dropdown -->
+<div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+<!-- Status Chips with Icons & Counts (Never color alone) -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-xs font-semibold text-slate-500 uppercase tracking-wider mr-1">Lifecycle:</span>
+<!-- All Statuses -->
+<button class="h-[34px] px-3 rounded-full text-xs font-medium bg-[#0B1320] text-white flex items-center gap-1.5 focus-ring-strict">
+<span>All (248)</span>
+</button>
+<!-- Draft -->
+<button class="h-[34px] px-3 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-300 hover:bg-slate-200 flex items-center gap-1.5 focus-ring-strict">
+<span class="material-symbols-outlined text-[16px] text-slate-500">edit_note</span>
+<span>Draft</span>
+<span class="font-semibold text-slate-600">(21)</span>
+</button>
+<!-- In Review -->
+<button class="h-[34px] px-3 rounded-full text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309] hover:bg-amber-100 flex items-center gap-1.5 focus-ring-strict">
+<span class="material-symbols-outlined text-[16px] text-[#B45309]">hourglass_empty</span>
+<span>In review</span>
+<span class="font-semibold text-[#B45309]">(34)</span>
+</button>
+<!-- Published -->
+<button class="h-[34px] px-3 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857] hover:bg-emerald-100 flex items-center gap-1.5 focus-ring-strict">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">check_circle</span>
+<span>Published</span>
+<span class="font-semibold text-[#047857]">(182)</span>
+</button>
+<!-- Retired -->
+<button class="h-[34px] px-3 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-400 hover:bg-slate-200 flex items-center gap-1.5 focus-ring-strict">
+<span class="material-symbols-outlined text-[16px] text-slate-500">archive</span>
+<span>Retired</span>
+<span class="font-semibold text-slate-500">(11)</span>
+</button>
+</div>
+<!-- Sort Dropdown -->
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 font-medium">Order:</span>
+<select class="h-[36px] px-3 rounded border border-slate-300 bg-white text-slate-700 text-xs font-medium focus-ring-strict">
+<option selected="">Sort: Times used (descending)</option>
+<option>Sort: Percent correct (low to high)</option>
+<option>Sort: Percent correct (high to low)</option>
+<option>Sort: Recently created</option>
+<option>Sort: Item ID (ascending)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- 2. BULK ACTIONS BAR (When items selected) -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-[10px] px-5 py-3 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 rounded border-slate-400 text-[#0B1320] focus-ring-strict cursor-pointer" type="checkbox"/>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-[#1D4ED8]">2 items selected</span>
+<span class="text-xs text-slate-600">in current syllabus batch</span>
+</div>
+</div>
+<!-- Bulk Action Buttons (Minimum 44px touch height) -->
+<div class="flex items-center gap-2 flex-wrap">
+<button class="h-[44px] px-4 rounded-md border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs font-medium flex items-center gap-2 focus-ring-strict">
+<span class="material-symbols-outlined text-[18px] text-slate-600">published_with_changes</span>
+<span>Change status (Publish / Retire)</span>
+</button>
+<button class="h-[44px] px-4 rounded-md border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs font-medium flex items-center gap-2 focus-ring-strict">
+<span class="material-symbols-outlined text-[18px] text-slate-600">label</span>
+<span>Assign domain</span>
+</button>
+<button class="h-[44px] px-4 rounded-md border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs font-medium flex items-center gap-2 focus-ring-strict">
+<span class="material-symbols-outlined text-[18px] text-slate-600">download</span>
+<span>Export selected</span>
+</button>
+<!-- Destructive Action Button -->
+<button class="h-[44px] px-4 rounded-md border border-[#B91C1C] bg-[#FEF2F2] hover:bg-[#FEE2E2] text-[#B91C1C] text-xs font-medium flex items-center gap-2 focus-ring-strict">
+<span class="material-symbols-outlined text-[18px] text-[#B91C1C]">archive</span>
+<span>Retire selected</span>
+</button>
+</div>
+</div>
+<!-- 3. DATA TABLE CONTAINER -->
+<div class="bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="overflow-x-auto custom-scroll">
+<table class="w-full text-left border-collapse min-w-[1100px]">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-slate-600 font-label-sm text-[12px] tracking-wider uppercase">
+<th class="w-12 px-4 py-3.5 text-center">
+<span class="sr-only">Select All</span>
+<input class="w-4 h-4 rounded border-slate-400 text-[#0B1320] focus-ring-strict cursor-pointer" type="checkbox"/>
+</th>
+<th class="px-4 py-3.5 w-32">Item ID</th>
+<th class="px-4 py-3.5 min-w-[340px]">Question Stem Preview</th>
+<th class="px-4 py-3.5 w-44">Domain</th>
+<th class="px-4 py-3.5 w-32">Difficulty</th>
+<th class="px-4 py-3.5 w-36">Status</th>
+<th class="px-4 py-3.5 w-36">Author</th>
+<th class="px-4 py-3.5 w-28 text-right">Times Used</th>
+<th class="px-4 py-3.5 w-36 text-right">Calibration</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm text-[14px]">
+<!-- ROW 1 (Selected) -->
+<tr class="bg-blue-50/40 hover:bg-slate-50 transition-colors">
+<td class="px-4 py-4 text-center">
+<input checked="" class="w-4 h-4 rounded border-slate-400 text-[#0B1320] focus-ring-strict cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-4 py-4 font-code-snippet text-code-snippet font-semibold text-slate-900 whitespace-nowrap">
+                      Q-CISA-0412
+                    </td>
+<td class="px-4 py-4">
+<div class="font-medium text-[#0F172A] leading-snug">
+                        During an IS audit of a tier-1 Nigerian commercial bank core banking database migration, an auditor identifies direct DDL schema alterations executed via elevated DBA credentials during live clearing cycles...
+                      </div>
+<div class="text-[12px] text-slate-500 mt-1 flex items-center gap-2">
+<span class="inline-flex items-center text-slate-400"><span class="material-symbols-outlined text-[14px] mr-1">book</span>Syllabus Ref: D1-AO-04</span>
+<span>•</span>
+<span>4 Options (MCQ Single Answer)</span>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700">
+<span class="font-medium">Domain 1</span>
+<span class="block text-[12px] text-slate-500">IS Auditing Process</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-50 text-amber-900 border border-amber-200">
+                        Complex
+                      </span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Published</span>
+</span>
+</td>
+<td class="px-4 py-4 whitespace-nowrap text-slate-700">
+                      Tunde Bakare
+                    </td>
+<td class="px-4 py-4 text-right font-code-snippet text-slate-800 font-medium">
+                      320 times
+                    </td>
+<td class="px-4 py-4 text-right">
+<div class="inline-flex flex-col items-end">
+<span class="font-code-snippet font-semibold text-emerald-700">68% correct</span>
+<span class="text-[11px] text-slate-400">P-value calibrated</span>
+</div>
+</td>
+</tr>
+<!-- ROW 2 (Selected) -->
+<tr class="bg-blue-50/40 hover:bg-slate-50 transition-colors">
+<td class="px-4 py-4 text-center">
+<input checked="" class="w-4 h-4 rounded border-slate-400 text-[#0B1320] focus-ring-strict cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-4 py-4 font-code-snippet text-code-snippet font-semibold text-slate-900 whitespace-nowrap">
+                      Q-CISA-0891
+                    </td>
+<td class="px-4 py-4">
+<div class="font-medium text-[#0F172A] leading-snug">
+                        In evaluating a payment aggregator's continuous integration and automated deployment pipeline (CI/CD), which automated audit control gate provides the GREATEST assurance against unauthorized container privilege escalation?
+                      </div>
+<div class="text-[12px] text-slate-500 mt-1 flex items-center gap-2">
+<span class="inline-flex items-center text-slate-400"><span class="material-symbols-outlined text-[14px] mr-1">book</span>Syllabus Ref: D3-DEV-12</span>
+<span>•</span>
+<span>Scenario Item</span>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700">
+<span class="font-medium">Domain 3</span>
+<span class="block text-[12px] text-slate-500">Systems Acquisition</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-900 border border-blue-200">
+                        Intermediate
+                      </span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Published</span>
+</span>
+</td>
+<td class="px-4 py-4 whitespace-nowrap text-slate-700">
+                      Adaeze Okonkwo
+                    </td>
+<td class="px-4 py-4 text-right font-code-snippet text-slate-800 font-medium">
+                      142 times
+                    </td>
+<td class="px-4 py-4 text-right">
+<div class="inline-flex flex-col items-end">
+<span class="font-code-snippet font-semibold text-slate-800">54% correct</span>
+<span class="text-[11px] text-slate-400">High discrimination</span>
+</div>
+</td>
+</tr>
+<!-- ROW 3 (In review) -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-4 py-4 text-center">
+<input class="w-4 h-4 rounded border-slate-400 text-[#0B1320] focus-ring-strict cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-4 py-4 font-code-snippet text-code-snippet font-semibold text-slate-900 whitespace-nowrap">
+                      Q-CRISC-0104
+                    </td>
+<td class="px-4 py-4">
+<div class="font-medium text-[#0F172A] leading-snug">
+                        A Lagos-headquartered digital lending firm expands microservice integrations with unregulated third-party credit scoring APIs. Which metric BEST establishes the enterprise risk tolerance threshold?
+                      </div>
+<div class="text-[12px] text-slate-500 mt-1 flex items-center gap-2">
+<span class="inline-flex items-center text-slate-400"><span class="material-symbols-outlined text-[14px] mr-1">book</span>Syllabus Ref: D2-KRI-09</span>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700">
+<span class="font-medium">Domain 2</span>
+<span class="block text-[12px] text-slate-500">Governance &amp; Mgt</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800 border border-slate-300">
+                        Foundation
+                      </span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[15px]">hourglass_empty</span>
+<span>In review</span>
+</span>
+</td>
+<td class="px-4 py-4 whitespace-nowrap text-slate-700">
+                      Babatunde Lawal
+                    </td>
+<td class="px-4 py-4 text-right font-code-snippet text-slate-800 font-medium">
+                      88 times
+                    </td>
+<td class="px-4 py-4 text-right">
+<div class="inline-flex flex-col items-end">
+<span class="font-code-snippet font-semibold text-emerald-700">82% correct</span>
+<span class="text-[11px] text-slate-400">Baseline normative</span>
+</div>
+</td>
+</tr>
+<!-- ROW 4 (Draft) -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-4 py-4 text-center">
+<input class="w-4 h-4 rounded border-slate-400 text-[#0B1320] focus-ring-strict cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-4 py-4 font-code-snippet text-code-snippet font-semibold text-slate-900 whitespace-nowrap">
+                      Q-CISA-0940
+                    </td>
+<td class="px-4 py-4">
+<div class="font-medium text-[#0F172A] leading-snug">
+                        When reviewing a cloud hyperscaler's annual SOC 2 Type II attestation, an auditor notes that User Entity Controls (CUECs) regarding multi-factor authentication (MFA) enforcement were unconfigured by the local financial institution...
+                      </div>
+<div class="text-[12px] text-slate-500 mt-1 flex items-center gap-2">
+<span class="inline-flex items-center text-slate-400"><span class="material-symbols-outlined text-[14px] mr-1">book</span>Syllabus Ref: D5-SEC-01</span>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700">
+<span class="font-medium">Domain 5</span>
+<span class="block text-[12px] text-slate-500">Asset Protection</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-50 text-amber-900 border border-amber-200">
+                        Complex
+                      </span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-slate-100 text-slate-700 border border-slate-300">
+<span class="material-symbols-outlined text-[15px]">edit_note</span>
+<span>Draft</span>
+</span>
+</td>
+<td class="px-4 py-4 whitespace-nowrap text-slate-700">
+                      Tunde Bakare
+                    </td>
+<td class="px-4 py-4 text-right font-code-snippet text-slate-500 font-medium">
+                      0 times
+                    </td>
+<td class="px-4 py-4 text-right">
+<div class="inline-flex flex-col items-end">
+<span class="font-code-snippet text-slate-400 font-medium">-- (uncalibrated)</span>
+<span class="text-[11px] text-slate-400">Pre-test queue</span>
+</div>
+</td>
+</tr>
+<!-- ROW 5 (Retired) -->
+<tr class="hover:bg-slate-50 transition-colors opacity-85">
+<td class="px-4 py-4 text-center">
+<input class="w-4 h-4 rounded border-slate-400 text-[#0B1320] focus-ring-strict cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-4 py-4 font-code-snippet text-code-snippet font-semibold text-slate-600 whitespace-nowrap">
+                      Q-CISA-0210
+                    </td>
+<td class="px-4 py-4">
+<div class="font-medium text-slate-700 line-through decoration-slate-400 leading-snug">
+                        Legacy dial-up fallback authentication requirements for remote disaster recovery site branch telemetry under Nigerian Banking Act guidelines (2012 circular superseded)...
+                      </div>
+<div class="text-[12px] text-slate-400 mt-1 flex items-center gap-2">
+<span>Retired due to syllabus deprecation</span>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-600">
+<span class="font-medium">Domain 4</span>
+<span class="block text-[12px] text-slate-500">Ops &amp; Maintenance</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-900 border border-blue-200">
+                        Intermediate
+                      </span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-slate-100 text-slate-600 border border-slate-400">
+<span class="material-symbols-outlined text-[15px]">archive</span>
+<span>Retired</span>
+</span>
+</td>
+<td class="px-4 py-4 whitespace-nowrap text-slate-600">
+                      Adaeze Okonkwo
+                    </td>
+<td class="px-4 py-4 text-right font-code-snippet text-slate-600 font-medium">
+                      215 times
+                    </td>
+<td class="px-4 py-4 text-right">
+<div class="inline-flex flex-col items-end">
+<span class="font-code-snippet font-semibold text-red-700">41% correct</span>
+<span class="text-[11px] text-slate-400">High distractor bias</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Bar -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="text-body-sm text-slate-600">
+                Showing <span class="font-semibold text-slate-900">1</span> to <span class="font-semibold text-slate-900">5</span> of <span class="font-semibold text-slate-900">248</span> questions
+              </span>
+<div class="flex items-center gap-1.5">
+<button class="h-[44px] px-3.5 rounded border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium flex items-center gap-1 focus-ring-strict disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<button class="h-[44px] w-[44px] rounded bg-[#0B1320] text-white text-xs font-semibold flex items-center justify-center focus-ring-strict">
+                  1
+                </button>
+<button class="h-[44px] w-[44px] rounded border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs font-semibold flex items-center justify-center focus-ring-strict">
+                  2
+                </button>
+<button class="h-[44px] w-[44px] rounded border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs font-semibold flex items-center justify-center focus-ring-strict">
+                  3
+                </button>
+<span class="px-2 text-slate-400 text-sm">...</span>
+<button class="h-[44px] w-[44px] rounded border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs font-semibold flex items-center justify-center focus-ring-strict">
+                  50
+                </button>
+<button class="h-[44px] px-3.5 rounded border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium flex items-center gap-1 focus-ring-strict">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. EMPTY STATE VIEW -->
+<div class="hidden bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm p-16 text-center max-w-2xl mx-auto my-12" id="state-empty">
+<div class="w-16 h-16 rounded-full bg-slate-100 text-slate-500 mx-auto flex items-center justify-center mb-4 border border-slate-200">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-slate-900 font-semibold mb-2">No questions match your filter criteria</h2>
+<p class="text-body-sm font-body-sm text-slate-600 leading-relaxed max-w-md mx-auto mb-8">
+            Adjust your domain or difficulty selection, clear active keyword searches, or author a new question item for this certified curriculum.
+          </p>
+<div class="flex items-center justify-center gap-3">
+<button class="h-[44px] px-5 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-label-md text-label-md font-medium flex items-center gap-2 focus-ring-strict" onclick="switchState('populated')">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Reset filters</span>
+</button>
+<button class="h-[44px] px-5 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] font-label-md text-label-md font-medium flex items-center gap-2 focus-ring-strict">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New question</span>
+</button>
+</div>
+</div>
+<!-- 3. IMPORT ERRORS SUMMARY VIEW -->
+<div class="hidden space-y-6" id="state-errors">
+<!-- Diagnostic Banner -->
+<div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-[12px] border-y border-r border-amber-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-slate-900 font-semibold">
+                  Import CSV Error Report — 14 items imported successfully, 3 rows with errors
+                </h3>
+<p class="text-body-sm text-slate-600 mt-1">
+                  Target: <span class="font-semibold text-slate-800">CISA Exam Prep</span> Item Bank · Upload batch: <span class="font-code-snippet text-xs">BATCH_20261005_CISA_09</span>. Invalid records have been held in staging.
+                </p>
+</div>
+</div>
+<!-- Action buttons for diagnostic -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="h-[44px] px-4 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-label-md text-xs font-medium flex items-center gap-2 focus-ring-strict">
+<span class="material-symbols-outlined text-[18px] text-slate-600">download</span>
+<span>Download error log (CSV)</span>
+</button>
+<button class="h-[44px] px-4 rounded-lg bg-[#0B1320] hover:bg-[#1E293B] text-white font-label-md text-xs font-medium flex items-center gap-2 focus-ring-strict">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+<span>Re-upload corrected file</span>
+</button>
+</div>
+</div>
+<!-- Itemized Error Table -->
+<div class="bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-4 bg-slate-50 border-b border-[#E2E8F0] flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-slate-800">Syntax &amp; Schema Validation Diagnostics</span>
+<span class="text-xs text-slate-500 font-mono">Parser Engine: v2.4-strict</span>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-100 text-slate-600 font-label-sm text-[12px] tracking-wider uppercase border-b border-[#E2E8F0]">
+<th class="px-5 py-3.5 w-24">Row</th>
+<th class="px-5 py-3.5 w-48">Column</th>
+<th class="px-5 py-3.5">Diagnostic Description &amp; Recommended Remediation</th>
+<th class="px-5 py-3.5 w-32 text-right">Severity</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm text-[14px]">
+<!-- Error 1 -->
+<tr class="hover:bg-slate-50">
+<td class="px-5 py-4 font-code-snippet font-semibold text-slate-900">
+                    Row 18
+                  </td>
+<td class="px-5 py-4 font-code-snippet text-slate-700">
+                    Answer Key
+                  </td>
+<td class="px-5 py-4">
+<div class="text-[#B91C1C] font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">error</span>
+<span>Value 'E' is invalid. Must be A, B, C, or D.</span>
+</div>
+<p class="text-xs text-slate-600 mt-1">
+                      Nigerian CISA single-response items strictly permit 4 options (A-D). Option E is prohibited under the 2026 syllabus guidelines.
+                    </p>
+</td>
+<td class="px-5 py-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[13px]">block</span>
+<span>Fatal</span>
+</span>
+</td>
+</tr>
+<!-- Error 2 -->
+<tr class="hover:bg-slate-50">
+<td class="px-5 py-4 font-code-snippet font-semibold text-slate-900">
+                    Row 42
+                  </td>
+<td class="px-5 py-4 font-code-snippet text-slate-700">
+                    Domain Tag
+                  </td>
+<td class="px-5 py-4">
+<div class="text-[#B91C1C] font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">error</span>
+<span>Unrecognized domain code 'DOM-9'. Must match syllabus domains 1 through 5.</span>
+</div>
+<p class="text-xs text-slate-600 mt-1">
+                      Target curriculum contains exactly five accredited competency domains. Re-tag item to DOM-1, DOM-2, DOM-3, DOM-4, or DOM-5.
+                    </p>
+</td>
+<td class="px-5 py-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[13px]">block</span>
+<span>Fatal</span>
+</span>
+</td>
+</tr>
+<!-- Error 3 -->
+<tr class="hover:bg-slate-50">
+<td class="px-5 py-4 font-code-snippet font-semibold text-slate-900">
+                    Row 87
+                  </td>
+<td class="px-5 py-4 font-code-snippet text-slate-700">
+                    Rationale
+                  </td>
+<td class="px-5 py-4">
+<div class="text-[#B45309] font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Mandatory field 'distractor_explanation' missing.</span>
+</div>
+<p class="text-xs text-slate-600 mt-1">
+                      Institutional accreditation mandates justification rationale for why incorrect choices are invalid for post-exam review feedback.
+                    </p>
+</td>
+<td class="px-5 py-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[13px]">report</span>
+<span>Required</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 bg-slate-50 border-t border-[#E2E8F0] flex justify-end">
+<button class="h-[44px] px-5 rounded-md bg-white border border-[#64748B] hover:bg-slate-100 text-slate-800 text-xs font-medium focus-ring-strict" onclick="switchState('populated')">
+                Return to Item Bank
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- INSTITUTIONAL FOOTER -->
+<footer class="mt-auto border-t border-[#E2E8F0] bg-white py-6 px-8 select-none">
+<div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm text-[13px] text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-slate-400">verified</span>
+<span>© 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.</span>
+</div>
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-blue-700 underline transition-colors" href="#">Audit Protocol</a>
+<a class="hover:text-blue-700 underline transition-colors" href="#">Verification Registry</a>
+<a class="hover:text-blue-700 underline transition-colors" href="#">Public Ledger Key</a>
+<a class="hover:text-blue-700 underline transition-colors" href="#">Ethics &amp; Compliance</a>
+<a class="hover:text-blue-700 underline transition-colors" href="#">System Telemetry</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Micro-interaction state switcher script -->
+<script>
+    function switchState(stateName) {
+      // Elements
+      const populatedSec = document.getElementById('state-populated');
+      const emptySec = document.getElementById('state-empty');
+      const errorsSec = document.getElementById('state-errors');
+
+      const btnPopulated = document.getElementById('tab-btn-populated');
+      const btnEmpty = document.getElementById('tab-btn-empty');
+      const btnErrors = document.getElementById('tab-btn-errors');
+
+      // Reset tabs styling
+      [btnPopulated, btnEmpty, btnErrors].forEach(btn => {
+        btn.classList.remove('border-[#0B1320]', 'text-[#0B1320]', 'font-semibold');
+        btn.classList.add('border-transparent', 'text-slate-500', 'font-medium');
+      });
+
+      // Hide all states
+      populatedSec.classList.add('hidden');
+      emptySec.classList.add('hidden');
+      errorsSec.classList.add('hidden');
+
+      // Activate selected state
+      if (stateName === 'populated') {
+        populatedSec.classList.remove('hidden');
+        btnPopulated.classList.add('border-[#0B1320]', 'text-[#0B1320]', 'font-semibold');
+        btnPopulated.classList.remove('border-transparent', 'text-slate-500');
+      } else if (stateName === 'empty') {
+        emptySec.classList.remove('hidden');
+        btnEmpty.classList.add('border-[#0B1320]', 'text-[#0B1320]', 'font-semibold');
+        btnEmpty.classList.remove('border-transparent', 'text-slate-500');
+      } else if (stateName === 'errors') {
+        errorsSec.classList.remove('hidden');
+        btnErrors.classList.add('border-[#0B1320]', 'text-[#0B1320]', 'font-semibold');
+        btnErrors.classList.remove('border-transparent', 'text-slate-500');
+      }
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

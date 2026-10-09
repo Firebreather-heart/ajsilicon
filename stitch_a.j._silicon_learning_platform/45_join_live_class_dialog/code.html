@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon - 45 Join Live Class Dialog Specification</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed": "#fddcc4",
+            "surface-tint": "#575f6e",
+            "outline": "#75777c",
+            "secondary": "#1d4ed8",
+            "surface-variant": "#dae2fd",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container": "#eaedff",
+            "surface-bright": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "surface": "#faf8ff",
+            "on-tertiary-fixed": "#281809",
+            "on-surface-variant": "#45474c",
+            "tertiary": "#000000",
+            "inverse-primary": "#bfc6d9",
+            "inverse-surface": "#283044",
+            "tertiary-container": "#281809",
+            "outline-variant": "#c5c6cc",
+            "on-primary-fixed": "#141c29",
+            "on-surface": "#131b2e",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#dce1ff",
+            "error": "#ba1a1a",
+            "primary-container": "#141c29",
+            "on-primary-fixed-variant": "#3f4756",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-primary-container": "#7c8495",
+            "on-secondary": "#ffffff",
+            "on-background": "#131b2e",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-secondary-fixed": "#001551",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#997f6a",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-container": "#4069f2",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-fixed-variant": "#584231",
+            "primary": "#000000",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-secondary-container": "#fffbff",
+            "primary-fixed": "#dbe2f5"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem"
+          },
+          fontFamily: {
+            "label-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .focus-ring-strict:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+    .elevation-subtle {
+      box-shadow: 0 4px 6px -1px rgba(11, 19, 32, 0.08), 0 2px 4px -2px rgba(11, 19, 32, 0.04);
+    }
+    .elevation-modal {
+      box-shadow: 0 20px 25px -5px rgba(11, 19, 32, 0.15), 0 8px 10px -6px rgba(11, 19, 32, 0.10);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- ========================================== -->
+<!-- TOP SYSTEM SPECIFICATION BAR (METADATA)   -->
+<!-- ========================================== -->
+<header class="bg-[#0B1320] text-white border-b border-outline-variant/30 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs font-label-md">
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container/20 text-[#93C5FD] font-label-sm border border-secondary/40">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+        SPECIFICATION BOARD
+      </span>
+<span class="font-semibold text-white tracking-wide">Screen 45: Join live class dialog</span>
+<span class="text-on-primary-container">·</span>
+<span class="text-on-primary-container">Parent: 32 Live classes (Desktop 1440px)</span>
+</div>
+<div class="flex items-center gap-6 text-on-primary-container">
+<span>Candidate: <strong class="text-white font-medium">Chinedu Eze (CE)</strong></span>
+<span>Cohort: <strong class="text-white font-medium">CISA Cohort 14 (Virtual)</strong></span>
+<span class="inline-flex items-center gap-1 text-[#ECFDF5]">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+        Audited Production Tokens
+      </span>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- OFFICIAL STUDENT APPLICATION SHELL: HEADER -->
+<!-- ========================================== -->
+<div class="bg-primary-container text-on-primary border-b border-outline-variant flex justify-between items-center w-full px-6 h-16 sticky top-0 z-40">
+<!-- Left: Brand Logo & Context -->
+<div class="flex items-center gap-6">
+<!-- Official Logo on high-contrast white plate with padding and rounded corners -->
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon - Information Technology, Audit &amp; Governance Institute" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDySlj-xBv3AXUPwxun79QdXO7rLPKc4G1PPAoauW7pHK6b8loPXUvQ47hd_CGbQdMKVr0oNz_Ls49ND2vObXdrmn2PGxknT2vJRkqebW7_ddS7LnqurkwM8vOfBNhOniyyjHfudtHCxV9jf_QbkVEE2IXTzARCn_H4105xpSqRfh9IbyhC9YiJkD0gvImu6S_3aPu4OQQc_xB9cPmST9aVDT_A6D0HmjzabKu_sHeZPTSXcRC22QnVIQ"/>
+</div>
+<div class="h-6 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="hidden md:flex flex-col">
+<span class="text-white font-headline-sm text-sm font-semibold tracking-tight">CISA Exam Prep</span>
+<span class="text-on-primary-container text-xs font-body-sm">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</span>
+</div>
+</div>
+<!-- Center/Right: Live Clock & Trailing User Actions -->
+<div class="flex items-center gap-5">
+<!-- Session Clock (WAT) -->
+<div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container-highest/10 border border-outline-variant/30 text-xs font-label-md text-white">
+<span class="material-symbols-outlined text-[16px] text-[#93C5FD]">schedule</span>
+<span>14:30 WAT · 05 Oct 2026</span>
+</div>
+<!-- Icon Actions (From JSON: notifications, help) -->
+<div class="flex items-center gap-1">
+<button aria-label="Notifications" class="w-10 h-10 rounded flex items-center justify-center text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150 relative focus-ring-strict" type="button">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error border border-primary-container"></span>
+</button>
+<button aria-label="Help centre" class="w-10 h-10 rounded flex items-center justify-center text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150 focus-ring-strict" type="button">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<!-- Signed-in Student Profile Pill -->
+<div class="flex items-center gap-3 pl-1">
+<div class="w-9 h-9 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center font-bold text-xs border border-white/20 select-none">
+          CE
+        </div>
+<div class="hidden sm:flex flex-col text-left">
+<span class="text-white text-xs font-medium leading-tight">Chinedu Eze</span>
+<span class="text-[#93C5FD] text-[11px] leading-tight font-label-sm">Candidate · CISA C14</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- MAIN SHELL LAYOUT: SIDEBAR + CONTENT CANVAS-->
+<!-- ========================================== -->
+<div class="flex min-h-[calc(100vh-6.5rem)]">
+<!-- SIDEBAR NAVIGATION -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant hidden md:flex flex-col justify-between p-4 shrink-0">
+<div class="flex flex-col gap-1">
+<!-- Programme Badge Header in Sidebar -->
+<div class="pb-4 mb-2 border-b border-outline-variant/60 px-2">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-sm font-semibold">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<span>CISA Cohort 14</span>
+</div>
+<p class="text-on-surface-variant text-xs mt-0.5">ISACA Certified Audit Track</p>
+</div>
+<!-- Navigation Tabs -->
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<!-- ACTIVE TAB: Live classes -->
+<a class="bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-2.5 rounded-r flex items-center gap-3 text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+<span class="font-semibold">Live classes</span>
+<span class="ml-auto w-2 h-2 rounded-full bg-[#047857]"></span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+<span>Recordings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span>Progress</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+<span>Certificates and credits</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+<div class="my-2 border-t border-outline-variant/50"></div>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span>Help centre</span>
+</a>
+</div>
+<!-- Footer navigation -->
+<div class="border-t border-outline-variant/60 pt-3 flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2 rounded flex items-center gap-3 font-label-md text-sm transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CANVAS: SPECIFICATION BOARD & DIALOG STATES -->
+<main class="flex-1 bg-surface p-6 lg:p-8 max-w-[1280px] mx-auto overflow-y-auto">
+<!-- Breadcrumbs & Section Title -->
+<div class="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/50 pb-5">
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-label-md text-on-surface-variant mb-1">
+<a class="hover:text-secondary" href="#">CISA Cohort 14</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-secondary" href="#">32 Live classes</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">45 Join Live Class Dialog (Spec Matrix)</span>
+</nav>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">
+            Join Live Class — Modal Dialog Specifications
+          </h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+            Displaying the 3 comprehensive behavioral states for virtual classroom admittance under A.J. Silicon IT Audit governance rules.
+          </p>
+</div>
+<!-- Technical Badge -->
+<div class="flex items-center gap-2 self-start md:self-auto">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#ECFDF5] border border-[#047857] text-[#047857] text-xs font-label-md">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            WCAG 2.1 AA Compliant
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] text-xs font-label-md">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+            44px Min Touch Floors
+          </span>
+</div>
+</div>
+<!-- BACKGROUND CONTEXT REFERENCE: Page 32 "Live Classes" Table Sample (Dimmed/Context) -->
+<section class="mb-10 bg-surface-container-lowest rounded-xl border border-outline-variant/80 p-5 shadow-sm opacity-90">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320]">calendar_month</span>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A]">Page 32: Live Classes Schedule (Cohorted View)</h2>
+</div>
+<span class="text-xs text-on-surface-variant font-label-sm">Active Schedule Canvas Reference</span>
+</div>
+<div class="overflow-x-auto border border-outline-variant rounded-lg">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-outline-variant text-[#475569] font-label-md">
+<th class="py-3 px-4 uppercase tracking-wider">Date &amp; Time (WAT)</th>
+<th class="py-3 px-4 uppercase tracking-wider">Domain / Module Title</th>
+<th class="py-3 px-4 uppercase tracking-wider">Lead Instructor</th>
+<th class="py-3 px-4 uppercase tracking-wider">Session Status</th>
+<th class="py-3 px-4 uppercase tracking-wider text-right">Modal Trigger</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-body-sm text-[#0F172A]">
+<tr class="bg-[#EFF6FF]/40 hover:bg-[#EFF6FF]/60 transition-colors">
+<td class="py-3 px-4 font-semibold text-secondary">Today · 14:00 - 16:30</td>
+<td class="py-3 px-4">Domain 1: Information System Auditing Process - Governance Review &amp; Workpapers</td>
+<td class="py-3 px-4">Lead Governance Auditor</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-label-md bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#047857] animate-pulse"></span>
+                    Live Now
+                  </span>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center px-3 py-1.5 rounded bg-[#0B1320] text-white text-xs font-label-md">
+                    Inspect Variant 1 →
+                  </span>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-4 text-on-surface-variant">Tomorrow · 10:00 - 12:30</td>
+<td class="py-3 px-4">Domain 2: IT Governance &amp; Management Frameworks (COBIT 2019)</td>
+<td class="py-3 px-4">Senior Risk Partner</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-label-md bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    Scheduled
+                  </span>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="text-xs text-secondary font-label-md">Inspect Variant 2 →</span>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-4 text-on-surface-variant">02 Oct 2026 · 14:00 - 16:00</td>
+<td class="py-3 px-4">Orientation &amp; ISACA Exam Methodology Overview</td>
+<td class="py-3 px-4">Programme Director</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-label-md bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                    Concluded
+                  </span>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="text-xs text-secondary font-label-md">Inspect Variant 3 →</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SPECIFICATION BOARD: 3 STATE DIALOG VARIANTS             -->
+<!-- ======================================================== -->
+<div class="space-y-12">
+<!-- ======================================================== -->
+<!-- VARIANT 1: STATE "AVAILABLE" (SESSION CURRENTLY OPEN)   -->
+<!-- ======================================================== -->
+<article class="bg-surface-container-lowest border-2 border-secondary/30 rounded-xl p-6 lg:p-8 elevation-subtle relative overflow-hidden">
+<!-- State Label Flag -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-6 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-[#047857] text-white font-mono text-xs font-bold uppercase tracking-wider">
+                Variant 1 of 3
+              </span>
+<h2 class="text-headline-md font-headline-md text-[#0F172A]">
+                State: Available (Joining Window Active)
+              </h2>
+</div>
+<div class="flex items-center gap-2 text-xs font-label-md text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-[#10B981]"></span>
+<span>Class In Session · Admittance Enabled · Link Activated</span>
+</div>
+</div>
+<!-- Dialog Preview Container (Simulating Desktop Modal in Audited Frame) -->
+<div class="max-w-2xl mx-auto bg-white rounded-xl border border-outline-variant elevation-modal overflow-hidden">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between bg-[#F8FAFC]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[22px]">video_camera_front</span>
+<h3 class="font-headline-sm text-base text-[#0B1320] font-semibold tracking-tight">Join Live Class</h3>
+</div>
+<button aria-label="Close dialog" class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-[#0F172A] hover:bg-[#E2E8F0]/60 transition-colors focus-ring-strict" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content Body -->
+<div class="p-6 space-y-6">
+<!-- Class & Cohort Context Section -->
+<div>
+<div class="flex flex-wrap items-center gap-2 mb-2">
+<!-- Live Status Chip -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-label-md bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="w-2 h-2 rounded-full bg-[#047857] animate-ping"></span>
+<span class="font-semibold">Live Now</span>
+<span class="text-[11px] font-normal text-[#047857]">· Started 30 mins ago</span>
+</span>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-label-md bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[13px]">school</span>
+                    CISA Cohort 14 (Virtual)
+                  </span>
+</div>
+<h4 class="text-headline-md font-headline-md text-[#0F172A] leading-snug">
+                  Domain 1: Information System Auditing Process - Governance Review &amp; Workpapers
+                </h4>
+<div class="mt-2 flex flex-wrap items-center gap-y-1 gap-x-4 text-xs font-body-sm text-[#475569]">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">person</span>
+<span>Instructor: <strong class="text-[#0F172A] font-medium">Lead Governance Auditor</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">schedule</span>
+<span>Today, 05 Oct 2026 · 14:00 - 16:30 WAT</span>
+</div>
+</div>
+</div>
+<!-- Meeting Credentials Block -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4 space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-[#E2E8F0]">
+<span class="text-xs font-label-md text-[#475569] uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">vpn_key</span>
+                    Secure Classroom Credentials
+                  </span>
+<span class="text-[11px] text-[#64748B]">Authorized for candidate CE</span>
+</div>
+<!-- Credential Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+<!-- Meeting ID -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-label-md text-[#475569]" for="zoom-id-1">Zoom Meeting ID</label>
+<div class="flex items-center border border-[#64748B] rounded-md bg-white overflow-hidden h-11 focus-within:border-[#2563EB]">
+<input class="w-full px-3 py-2 text-sm font-mono font-medium text-[#0F172A] bg-transparent border-none focus:ring-0 focus:outline-none" id="zoom-id-1" readonly="" type="text" value="849 2011 9842"/>
+<button class="h-11 px-3 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0F172A] border-l border-[#64748B] flex items-center gap-1 text-xs font-label-md transition-colors focus-ring-strict min-w-[70px] justify-center" onclick="navigator.clipboard.writeText('849 2011 9842'); alert('Meeting ID Copied: 849 2011 9842');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+</div>
+<!-- Passcode -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-label-md text-[#475569]" for="zoom-pass-1">Passcode</label>
+<div class="flex items-center border border-[#64748B] rounded-md bg-white overflow-hidden h-11 focus-within:border-[#2563EB]">
+<input class="w-full px-3 py-2 text-sm font-mono font-semibold text-[#0F172A] bg-transparent border-none focus:ring-0 focus:outline-none" id="zoom-pass-1" readonly="" type="text" value="CISA2026#NG"/>
+<button class="h-11 px-3 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0F172A] border-l border-[#64748B] flex items-center gap-1 text-xs font-label-md transition-colors focus-ring-strict min-w-[70px] justify-center" onclick="navigator.clipboard.writeText('CISA2026#NG'); alert('Passcode Copied: CISA2026#NG');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Regulatory & License Compliance Callout -->
+<div class="rounded-lg p-3.5 bg-[#FFFBEB] border border-[#B45309] flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[20px] shrink-0 mt-0.5">shield</span>
+<div class="text-xs font-body-sm text-[#0F172A]">
+<strong class="font-semibold text-[#B45309]">Institutional Policy:</strong>
+<span> Sharing the class link or recording is a licence breach. Student access is watermarked and audited in accordance with A.J. Silicon compliance standards.</span>
+</div>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col-reverse sm:flex-row items-center justify-between gap-3">
+<button class="w-full sm:w-auto h-11 px-6 rounded-md bg-transparent border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] text-sm font-label-md flex items-center justify-center transition-colors focus-ring-strict" type="button">
+                Close
+              </button>
+<div class="w-full sm:w-auto flex items-center gap-3">
+<!-- Primary CTA: 44px min height, #0B1320, 6px radius, font weight 500 -->
+<a class="w-full sm:w-auto h-11 px-6 rounded-md bg-[#0B1320] text-white hover:bg-[#1E293B] text-sm font-medium flex items-center justify-center gap-2 shadow-sm transition-colors focus-ring-strict" href="https://zoom.us" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>Open Zoom</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- ======================================================== -->
+<!-- VARIANT 2: STATE "WINDOW CLOSED - NOT OPEN YET"          -->
+<!-- ======================================================== -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 lg:p-8 elevation-subtle relative overflow-hidden">
+<!-- State Label Flag -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-6 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-[#B45309] text-white font-mono text-xs font-bold uppercase tracking-wider">
+                Variant 2 of 3
+              </span>
+<h2 class="text-headline-md font-headline-md text-[#0F172A]">
+                State: Window Closed — Not Open Yet
+              </h2>
+</div>
+<div class="flex items-center gap-2 text-xs font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-[#B45309]">lock_clock</span>
+<span>Scheduled Session · Activation 15 mins prior (09:45 WAT)</span>
+</div>
+</div>
+<!-- Dialog Preview Container -->
+<div class="max-w-2xl mx-auto bg-white rounded-xl border border-outline-variant elevation-modal overflow-hidden">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between bg-[#F8FAFC]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[22px]">lock_clock</span>
+<h3 class="font-headline-sm text-base text-[#0B1320] font-semibold tracking-tight">Live Class Access</h3>
+</div>
+<button aria-label="Close dialog" class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-[#0F172A] hover:bg-[#E2E8F0]/60 transition-colors focus-ring-strict" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content Body -->
+<div class="p-6 space-y-6">
+<!-- Class & Cohort Context Section -->
+<div>
+<div class="flex flex-wrap items-center gap-2 mb-2">
+<!-- Scheduled Status Chip (Color never alone: paired with icon and text) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-label-md bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">event</span>
+<span class="font-semibold">Scheduled</span>
+</span>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-label-md bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">
+<span class="material-symbols-outlined text-[13px]">school</span>
+                    CISA Cohort 14 (Virtual)
+                  </span>
+</div>
+<h4 class="text-headline-md font-headline-md text-[#0F172A] leading-snug">
+                  Domain 2: IT Governance &amp; Management Frameworks (COBIT 2019)
+                </h4>
+<div class="mt-2 flex flex-wrap items-center gap-y-1 gap-x-4 text-xs font-body-sm text-[#475569]">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">person</span>
+<span>Instructor: <strong class="text-[#0F172A] font-medium">Senior Risk Partner</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">schedule</span>
+<span>Tomorrow, 06 Oct 2026 · 10:00 - 12:30 WAT</span>
+</div>
+</div>
+</div>
+<!-- Message Block: Window Closed Notice -->
+<div class="rounded-lg p-4 bg-[#EFF6FF] border border-[#1D4ED8] flex items-start gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[22px] shrink-0 mt-0.5">info</span>
+<div class="text-xs font-body-sm text-[#0F172A] space-y-1">
+<p class="font-semibold text-[#1D4ED8] text-sm">This class is not open yet.</p>
+<p class="text-[#334155]">
+                    The joining link activates 15 minutes before scheduled start time (<strong>09:45 WAT</strong>). Meeting rooms are kept strictly locked until identity-verified facilitators enter.
+                  </p>
+</div>
+</div>
+<!-- Masked Meeting Credentials Block -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4 space-y-3 opacity-75">
+<div class="flex items-center justify-between pb-2 border-b border-[#E2E8F0]">
+<span class="text-xs font-label-md text-[#64748B] uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">lock</span>
+                    Meeting Credentials (Masked)
+                  </span>
+<span class="text-[11px] text-[#64748B]">Locked until 09:45 WAT</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+<!-- Disabled Meeting ID -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-label-md text-[#64748B]">Zoom Meeting ID</label>
+<div class="flex items-center border border-[#CBD5E1] rounded-md bg-[#F1F5F9] h-11 px-3 text-[#94A3B8] cursor-not-allowed">
+<span class="material-symbols-outlined text-[16px] mr-2">lock</span>
+<span class="text-xs font-mono tracking-widest">•••• •••• ••••</span>
+</div>
+</div>
+<!-- Disabled Passcode -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-label-md text-[#64748B]">Passcode</label>
+<div class="flex items-center border border-[#CBD5E1] rounded-md bg-[#F1F5F9] h-11 px-3 text-[#94A3B8] cursor-not-allowed">
+<span class="material-symbols-outlined text-[16px] mr-2">lock</span>
+<span class="text-xs font-mono tracking-widest">••••••••••</span>
+</div>
+</div>
+</div>
+</div>
+<!-- License Compliance Reminder Callout -->
+<div class="rounded-lg p-3 bg-[#FFFBEB] border border-[#B45309] flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#B45309] text-[18px] shrink-0 mt-0.5">warning</span>
+<p class="text-xs font-body-sm text-[#0F172A]">
+<strong class="font-semibold text-[#B45309]">Compliance Reminder:</strong> Sharing the class link or recording is a licence breach.
+                </p>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col-reverse sm:flex-row items-center justify-between gap-3">
+<button class="w-full sm:w-auto h-11 px-6 rounded-md bg-transparent border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] text-sm font-label-md flex items-center justify-center transition-colors focus-ring-strict" type="button">
+                Close
+              </button>
+<div class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-3">
+<button class="w-full sm:w-auto h-11 px-4 rounded-md bg-transparent border border-[#64748B] text-[#1D4ED8] hover:bg-[#EFF6FF] text-sm font-label-md flex items-center justify-center gap-1.5 transition-colors focus-ring-strict" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Add to Calendar (.ics)</span>
+</button>
+<!-- Disabled Open Zoom Button -->
+<button class="w-full sm:w-auto h-11 px-6 rounded-md bg-[#CBD5E1] text-[#64748B] text-sm font-medium flex items-center justify-center gap-2 cursor-not-allowed shadow-none" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Open Zoom</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- ======================================================== -->
+<!-- VARIANT 3: STATE "WINDOW CLOSED - CLASS HAS ENDED"       -->
+<!-- ======================================================== -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 lg:p-8 elevation-subtle relative overflow-hidden">
+<!-- State Label Flag -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-6 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-[#475569] text-white font-mono text-xs font-bold uppercase tracking-wider">
+                Variant 3 of 3
+              </span>
+<h2 class="text-headline-md font-headline-md text-[#0F172A]">
+                State: Window Closed — Class Has Ended
+              </h2>
+</div>
+<div class="flex items-center gap-2 text-xs font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-[#475569]">history</span>
+<span>Past Session · Zoom Disabled · Redirecting to Recordings</span>
+</div>
+</div>
+<!-- Dialog Preview Container -->
+<div class="max-w-2xl mx-auto bg-white rounded-xl border border-outline-variant elevation-modal overflow-hidden">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between bg-[#F8FAFC]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#475569] text-[22px]">check_circle</span>
+<h3 class="font-headline-sm text-base text-[#0B1320] font-semibold tracking-tight">Live Class Concluded</h3>
+</div>
+<button aria-label="Close dialog" class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-[#0F172A] hover:bg-[#E2E8F0]/60 transition-colors focus-ring-strict" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content Body -->
+<div class="p-6 space-y-6">
+<!-- Class & Cohort Context Section -->
+<div>
+<div class="flex flex-wrap items-center gap-2 mb-2">
+<!-- Concluded Status Chip -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-xs font-label-md bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span class="font-semibold">Concluded</span>
+</span>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-xs font-label-md bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">
+<span class="material-symbols-outlined text-[13px]">school</span>
+                    CISA Cohort 14 (Virtual)
+                  </span>
+</div>
+<h4 class="text-headline-md font-headline-md text-[#0F172A] leading-snug">
+                  Orientation &amp; ISACA Exam Methodology Overview
+                </h4>
+<div class="mt-2 flex flex-wrap items-center gap-y-1 gap-x-4 text-xs font-body-sm text-[#475569]">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">person</span>
+<span>Instructor: <strong class="text-[#0F172A] font-medium">Programme Director</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">calendar_today</span>
+<span>Concluded: 02 Oct 2026 · 14:00 - 16:00 WAT</span>
+</div>
+</div>
+</div>
+<!-- Message Block: Concluded Notice -->
+<div class="rounded-lg p-4 bg-[#F8FAFC] border border-[#CBD5E1] flex items-start gap-3">
+<span class="material-symbols-outlined text-[#475569] text-[22px] shrink-0 mt-0.5">video_library</span>
+<div class="text-xs font-body-sm text-[#0F172A] space-y-1">
+<p class="font-semibold text-[#0F172A] text-sm">This class has ended.</p>
+<p class="text-[#475569]">
+                    The verified session recording will be published to your Recordings library within 24 hours of session adjournment after QA verification.
+                  </p>
+</div>
+</div>
+<!-- Recordings Dispatch Preview Box -->
+<div class="border border-[#E2E8F0] rounded-lg p-4 bg-[#FFFFFF] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-[#EFF6FF] border border-[#1D4ED8]/30 flex items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined">play_circle</span>
+</div>
+<div>
+<span class="text-xs font-semibold text-[#0F172A] block">Orientation Audio-Video Archive</span>
+<span class="text-[11px] text-[#64748B]">Processing transcript, slides &amp; Q&amp;A log</span>
+</div>
+</div>
+<span class="text-xs font-label-md text-[#1D4ED8] bg-[#EFF6FF] px-2.5 py-1 rounded border border-[#1D4ED8]/30">
+                  Ready in 4 hrs
+                </span>
+</div>
+<!-- License Compliance Reminder Callout -->
+<div class="rounded-lg p-3 bg-[#FFFBEB] border border-[#B45309] flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#B45309] text-[18px] shrink-0 mt-0.5">shield</span>
+<p class="text-xs font-body-sm text-[#0F172A]">
+<strong class="font-semibold text-[#B45309]">Compliance Notice:</strong> Class recordings are governed under single-candidate enterprise licensing. Offline distribution is strictly prohibited.
+                </p>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col-reverse sm:flex-row items-center justify-between gap-3">
+<button class="w-full sm:w-auto h-11 px-6 rounded-md bg-transparent border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] text-sm font-label-md flex items-center justify-center transition-colors focus-ring-strict" type="button">
+                Close
+              </button>
+<div class="w-full sm:w-auto flex items-center gap-3">
+<!-- Action: Go to Recordings library (secondary or text link style button with 44px floor) -->
+<a class="w-full sm:w-auto h-11 px-5 rounded-md bg-white border border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#EFF6FF] text-sm font-medium flex items-center justify-center gap-2 transition-colors focus-ring-strict" href="#">
+<span class="material-symbols-outlined text-[18px]">video_library</span>
+<span>Go to Recordings library</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- DESIGN AUDIT TOKEN FOOTER -->
+<footer class="mt-12 pt-6 border-t border-outline-variant text-xs text-[#64748B] font-body-sm flex flex-col md:flex-row justify-between items-center gap-4">
+<div>
+<span>© 2026 A.J. Silicon Learning Platform, Lagos, Nigeria. IT Audit &amp; Risk Governance Centre.</span>
+</div>
+<div class="flex items-center gap-4 text-xs font-label-md">
+<span class="text-[#0B1320] font-semibold">Strict 8px Grid Enforcement</span>
+<span>·</span>
+<span class="text-[#1D4ED8]">IBM Plex Sans Body 16px</span>
+<span>·</span>
+<span class="text-[#047857]">Status Icon+Text Pairings Verified</span>
+</div>
+</footer>
+</main>
+</div>
+<script src="../demo-nav.js"></script></body></html>

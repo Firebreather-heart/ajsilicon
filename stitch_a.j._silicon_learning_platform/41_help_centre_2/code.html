@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform - Help Centre</title>
+<!-- Google Font: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#141c29",
+            "surface-variant": "#dae2fd",
+            "outline": "#75777c",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "primary-container": "#0B1320",
+            "primary-fixed": "#dbe2f5",
+            "on-primary-fixed-variant": "#3f4756",
+            "background": "#faf8ff",
+            "secondary-fixed": "#dce1ff",
+            "on-primary-container": "#7c8495",
+            "surface-container-high": "#e2e7ff",
+            "inverse-surface": "#283044",
+            "on-surface-variant": "#45474c",
+            "primary": "#0B1320",
+            "on-tertiary-fixed": "#281809",
+            "tertiary-container": "#281809",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-error": "#ffffff",
+            "on-background": "#131b2e",
+            "on-secondary-fixed": "#001551",
+            "surface-tint": "#575f6e",
+            "error": "#B91C1C",
+            "surface-dim": "#d2d9f4",
+            "inverse-primary": "#bfc6d9",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-container": "#fffbff",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "secondary-container": "#4069f2",
+            "on-surface": "#0F172A",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#eaedff",
+            "on-primary": "#ffffff",
+            "surface": "#ffffff",
+            "outline-variant": "#E2E8F0",
+            "error-container": "#FEF2F2",
+            "tertiary-fixed": "#fddcc4",
+            "primary-fixed-dim": "#bfc6d9",
+            "inverse-on-surface": "#eef0ff",
+            "secondary": "#1D4ED8",
+            "surface-bright": "#faf8ff",
+            "tertiary": "#000000",
+            "on-tertiary-container": "#997f6a",
+            "on-tertiary-fixed-variant": "#584231",
+            "tertiary-fixed-dim": "#e0c1a9"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "gutter-mobile": "1rem",
+            gutter: "1.5rem",
+            "space-lg": "2rem",
+            margin: "2rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-md": "1.5rem",
+            "space-sm": "1rem"
+          },
+          fontFamily: {
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            display: ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            display: ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .icon-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input:focus, textarea:focus, select:focus, button:focus {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col antialiased bg-[#F8FAFC]">
+<!-- TopNavBar (Shared Component JSON Blueprint Executed) -->
+<header class="bg-primary-container text-on-primary docked full-width top h-16 border-b border-outline-variant flex justify-between items-center w-full px-6 sticky top-0 z-40">
+<div class="flex items-center gap-6">
+<!-- Official A.J. Silicon Logo on White Plate -->
+<a aria-label="A.J. Silicon Platform Home" class="bg-surface-container-lowest text-primary px-3 py-1 rounded flex items-center h-10 border border-outline-variant transition-opacity hover:opacity-95" href="#">
+<img alt="A.J. Silicon Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCTCL1ObHWaaaMRLhuLeBkjThwXfw8-speSOzgzpr5lYY12kB6o-76sdYK0cq5FCYPoQFsAjKrT5AIvr3idofs03pFiEECiA1KXx68w4Pr0Ys91C4_ibiHarIG_7hrI8-vIlqL34auX8WF43JNqR770ggeX8S3tCVBzdTVHu1GtZDCK8s8nmSBbGlPqAwxj26FEcu8JGptJv0EHwqnWrqAu-7J0-dvvOzXXzic9VgkXSdWp-mafkfhtA"/>
+</a>
+<div class="hidden lg:flex items-center gap-2 pl-4 border-l border-slate-700/60">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-label-sm text-[#93C5FD] bg-slate-800 border border-slate-700">Enterprise Registry</span>
+<span class="text-xs text-on-primary-container font-body-sm tracking-wide">CISA Cohort 14 Academic Terminal</span>
+</div>
+</div>
+<!-- Right utility controls -->
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-1 text-xs text-on-primary-container mr-2 font-mono">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 mr-1.5"></span>
+        14:30 WAT · 05 Oct 2026
+      </div>
+<button aria-label="Notifications (1 Unread)" class="relative p-2 rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-[#0B1320]"></span>
+</button>
+<!-- Active Help icon per spec -->
+<a aria-current="page" aria-label="Help Centre (Current Page)" class="p-2 rounded text-on-primary bg-secondary/30 ring-1 ring-secondary transition-colors duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center" href="#help-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</a>
+<!-- Signed in Student Profile Badge -->
+<div class="flex items-center gap-3 pl-3 border-l border-slate-700/60">
+<div class="w-9 h-9 rounded bg-[#1D4ED8] text-white flex items-center justify-center font-label-md text-sm font-semibold tracking-wider border border-blue-400/40">
+          CE
+        </div>
+<div class="hidden sm:flex flex-col text-left">
+<span class="text-xs font-label-md text-white font-medium leading-none mb-1">Chinedu Eze</span>
+<span class="text-[11px] text-on-primary-container leading-none font-body-sm">CISA Candidate #84920</span>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 min-h-[calc(100vh-4rem)]">
+<!-- SideNavBar (Shared Component JSON Blueprint Executed) -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between shrink-0">
+<div class="p-4 flex flex-col">
+<!-- Cohort Badge Header Box -->
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant mb-5">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="school">school</span>
+<span class="font-headline-sm text-sm text-primary font-semibold">CISA Exam Prep</span>
+</div>
+<p class="text-xs font-body-sm text-on-surface-variant leading-relaxed">
+            Cohort 14: 12 Oct - 18 Dec 2026, Virtual
+          </p>
+<div class="mt-2.5 pt-2 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500 font-label-sm">
+<span>ISACA Aligned Scope</span>
+<span class="font-mono text-secondary font-medium">Registered Browser</span>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav aria-label="Student Main Navigation" class="space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu_book">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="quiz">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="trending_up">trending_up</span>
+<span>Progress</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified">verified</span>
+<span>Certificates and credits</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="hourglass_top">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+<!-- Active Destination: Help centre -->
+<a aria-current="page" class="bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3 text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#help-center">
+<span class="material-symbols-outlined text-[20px] text-secondary" data-icon="help_center">help_center</span>
+<span class="font-semibold text-secondary">Help centre</span>
+</a>
+</nav>
+</div>
+<!-- Footer Tabs -->
+<div class="p-4 border-t border-outline-variant space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<button class="w-full text-left text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md rounded text-sm min-h-[44px] transition-all duration-150 ease-in-out" type="button">
+<span class="material-symbols-outlined text-[20px] text-error" data-icon="logout">logout</span>
+<span class="text-slate-700">Sign out</span>
+</button>
+</div>
+</aside>
+<!-- Main Specification Board & Canvas (Desktop 1440px specification) -->
+<main class="flex-1 overflow-y-auto px-8 py-8 max-w-[1280px]" id="help-center">
+<!-- Variant State Switcher / Specification Controller -->
+<div class="mb-8 p-4 bg-white rounded-xl border border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="tune">tune</span>
+<div>
+<h2 class="font-headline-sm text-sm font-semibold text-primary">Help Centre Board Specification &amp; States</h2>
+<p class="text-xs text-on-surface-variant font-body-sm">Audit specification for Student Support workflow. Toggle interactive preview states below.</p>
+</div>
+</div>
+<div aria-label="Variant States" class="inline-flex rounded-lg border border-outline-variant p-1 bg-surface-container-low" role="tablist">
+<button aria-selected="true" class="px-3 py-1.5 rounded-md text-xs font-label-md bg-white text-secondary font-medium shadow-xs border border-outline-variant min-h-[36px]" id="btn-var1" onclick="switchVariant('v1')" role="tab" type="button">
+            Variant 1: Open Ticket State
+          </button>
+<button aria-selected="false" class="px-3 py-1.5 rounded-md text-xs font-label-md text-on-surface-variant hover:text-primary font-medium min-h-[36px]" id="btn-var2" onclick="switchVariant('v2')" role="tab" type="button">
+            Variant 2: No Tickets State (Fresh)
+          </button>
+<button aria-selected="false" class="px-3 py-1.5 rounded-md text-xs font-label-md text-on-surface-variant hover:text-primary font-medium min-h-[36px]" id="btn-var3" onclick="switchVariant('v3')" role="tab" type="button">
+            Variant 3: Resolved Ticket State
+          </button>
+</div>
+</div>
+<!-- Header & Universal Search Section -->
+<section aria-labelledby="help-header-title" class="mb-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-label-sm font-semibold bg-blue-50 text-secondary border border-blue-200">ACADEMIC &amp; REGULATORY SUPPORT</span>
+<span class="text-xs text-slate-500 font-body-sm">SLA: Replies within 4 hours (08:00 - 18:00 WAT)</span>
+</div>
+<h1 class="font-display text-2xl lg:text-3xl font-semibold text-[#0B1320] tracking-tight" id="help-header-title">Student Help Centre</h1>
+<p class="text-sm font-body-md text-slate-600 mt-1 max-w-2xl">
+              Official inquiry desk for CISA Cohort 14 candidate administration, practice simulator diagnostics, bursar remittances, and continuing education transcripts.
+            </p>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0B1320] text-white hover:bg-[#1E293B] rounded-md font-label-md text-sm min-h-[44px] transition-colors border border-transparent" onclick="document.getElementById('raise-ticket-card').scrollIntoView({ behavior: 'smooth' })" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+<span>Raise new ticket</span>
+</button>
+</div>
+<!-- 1. Search bar with clear placeholder -->
+<div class="relative w-full max-w-3xl">
+<label class="sr-only" for="help-search-input">Search help articles, guides or FAQs</label>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</div>
+<input class="block w-full pl-11 pr-24 py-3 bg-white text-[#0F172A] placeholder-[#475569] text-sm font-body-md rounded-md border border-[#64748B] focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 min-h-[44px]" id="help-search-input" placeholder="Search help articles, guides or FAQs..." type="search"/>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center">
+<kbd class="hidden sm:inline-block px-2 py-1 text-[11px] font-mono text-slate-500 bg-slate-100 border border-slate-300 rounded">Press ↵</kbd>
+</div>
+</div>
+</section>
+<!-- 2. FAQ Categories Grid (4-5 cards) -->
+<section aria-labelledby="faq-categories-heading" class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-sm text-base font-semibold text-[#0B1320]" id="faq-categories-heading">Curriculum &amp; Operational Knowledge Bases</h2>
+<span class="text-xs font-label-sm text-slate-500">5 Essential Domains</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<!-- Card 1 -->
+<a class="p-4 bg-white rounded-xl border border-outline-variant hover:border-[#64748B] hover:shadow-xs transition-all group flex flex-col justify-between min-h-[140px]" href="#">
+<div>
+<div class="w-9 h-9 rounded bg-blue-50 text-secondary border border-blue-200 flex items-center justify-center mb-3 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="assignment_ind">assignment_ind</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug">Enrolment &amp; Licences</h3>
+<p class="text-xs font-body-sm text-slate-600 mt-1 line-clamp-2">Student identification, LMS seat validation, cohort schedule transfers.</p>
+</div>
+<span class="text-xs font-label-sm text-secondary font-medium inline-flex items-center gap-1 mt-3">
+              12 Articles <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</a>
+<!-- Card 2 -->
+<a class="p-4 bg-white rounded-xl border border-outline-variant hover:border-[#64748B] hover:shadow-xs transition-all group flex flex-col justify-between min-h-[140px]" href="#">
+<div>
+<div class="w-9 h-9 rounded bg-blue-50 text-secondary border border-blue-200 flex items-center justify-center mb-3 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="video_camera_front">video_camera_front</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug">Live Classes &amp; Zoom</h3>
+<p class="text-xs font-body-sm text-slate-600 mt-1 line-clamp-2">Virtual lecture calendar, audio sync, attendance logs, session playbacks.</p>
+</div>
+<span class="text-xs font-label-sm text-secondary font-medium inline-flex items-center gap-1 mt-3">
+              8 Articles <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</a>
+<!-- Card 3 -->
+<a class="p-4 bg-white rounded-xl border border-outline-variant hover:border-[#64748B] hover:shadow-xs transition-all group flex flex-col justify-between min-h-[140px]" href="#">
+<div>
+<div class="w-9 h-9 rounded bg-blue-50 text-secondary border border-blue-200 flex items-center justify-center mb-3 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug">Mock Exams &amp; Practice Hub</h3>
+<p class="text-xs font-body-sm text-slate-600 mt-1 line-clamp-2">Timer resets, question bank explanations, diagnostic scorecards.</p>
+</div>
+<span class="text-xs font-label-sm text-secondary font-medium inline-flex items-center gap-1 mt-3">
+              19 Articles <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</a>
+<!-- Card 4 -->
+<a class="p-4 bg-white rounded-xl border border-outline-variant hover:border-[#64748B] hover:shadow-xs transition-all group flex flex-col justify-between min-h-[140px]" href="#">
+<div>
+<div class="w-9 h-9 rounded bg-blue-50 text-secondary border border-blue-200 flex items-center justify-center mb-3 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug">Certificates &amp; CPE Credits</h3>
+<p class="text-xs font-body-sm text-slate-600 mt-1 line-clamp-2">CPE hour verification letters, official transcripts, completion awards.</p>
+</div>
+<span class="text-xs font-label-sm text-secondary font-medium inline-flex items-center gap-1 mt-3">
+              10 Articles <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</a>
+<!-- Card 5 -->
+<a class="p-4 bg-white rounded-xl border border-outline-variant hover:border-[#64748B] hover:shadow-xs transition-all group flex flex-col justify-between min-h-[140px]" href="#">
+<div>
+<div class="w-9 h-9 rounded bg-blue-50 text-secondary border border-blue-200 flex items-center justify-center mb-3 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance">account_balance</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug">Payments &amp; Bursar</h3>
+<p class="text-xs font-body-sm text-slate-600 mt-1 line-clamp-2">Electronic bank transfer reconciliations, VAT receipts, corporate invoicing.</p>
+</div>
+<span class="text-xs font-label-sm text-secondary font-medium inline-flex items-center gap-1 mt-3">
+              15 Articles <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</a>
+</div>
+</section>
+<!-- MAIN AUDIT WORKSPACE: Tickets & Detail Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start mb-10">
+<!-- LEFT COLUMN: 4. "My tickets" list (Span 5 on Desktop) -->
+<section aria-labelledby="my-tickets-heading" class="lg:col-span-5 bg-white rounded-xl border border-outline-variant p-5 shadow-xs flex flex-col min-h-[620px]">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant mb-4">
+<div>
+<h2 class="font-headline-sm text-base font-semibold text-[#0B1320]" id="my-tickets-heading">My Support Tickets</h2>
+<p class="text-xs font-body-sm text-slate-500">Official inquiries logged to Student Support</p>
+</div>
+<span class="px-2 py-0.5 rounded text-xs font-label-sm font-medium bg-slate-100 text-slate-700 border border-slate-300" id="ticket-count-badge">
+              3 Records
+            </span>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="flex flex-col gap-3 mb-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-300 rounded-md text-slate-800 placeholder-slate-400 min-h-[38px] focus:bg-white focus:border-secondary" placeholder="Filter by Ticket ID or title..." type="text"/>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="inline-flex rounded-md border border-slate-300 p-0.5 bg-slate-100 text-xs">
+<button class="px-2.5 py-1 rounded bg-white text-slate-900 font-label-sm shadow-2xs font-medium" type="button">All</button>
+<button class="px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 font-label-sm" type="button">Open</button>
+<button class="px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 font-label-sm" type="button">Resolved</button>
+</div>
+<div class="flex items-center gap-1 text-xs text-slate-500 font-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="sort">sort</span>
+<span>Sort: Most Recent</span>
+</div>
+</div>
+</div>
+<!-- Tickets Container (Dynamic with Variants) -->
+<div class="space-y-3 flex-1 overflow-y-auto pr-1" id="tickets-list-container">
+<!-- Ticket Item 1: Open (Active in Variant 1) -->
+<div class="p-3.5 rounded-lg border-2 border-secondary bg-blue-50/40 cursor-pointer transition-all hover:bg-blue-50/70 relative" id="ticket-item-1" onclick="selectTicket('TCK-2026-0891')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<span class="font-mono text-xs font-semibold text-secondary">TCK-2026-0891</span>
+<!-- Status badge: In progress paired with icon -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]" data-icon="pending">pending</span>
+<span>In progress</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug mb-1">
+                Domain 3 Mock Exam Diagnostic score reset request
+              </h3>
+<p class="text-xs font-body-sm text-slate-600 line-clamp-1 mb-2">
+                Candidate experienced timed disconnection during Module 3 audit practice simulator.
+              </p>
+<div class="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-200 font-mono">
+<span>Cat: Mock Exam Access</span>
+<span>05 Oct 2026 · 11:20 WAT</span>
+</div>
+</div>
+<!-- Ticket Item 2: Resolved (Active in Variant 3) -->
+<div class="p-3.5 rounded-lg border border-outline-variant bg-white hover:bg-slate-50 cursor-pointer transition-all relative" id="ticket-item-2" onclick="selectTicket('TCK-2026-0814')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<span class="font-mono text-xs font-semibold text-slate-700">TCK-2026-0814</span>
+<!-- Status badge: Resolved paired with icon -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Resolved</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug mb-1">
+                Corporate Bursar e-Receipt for Cohort 14 Tuition
+              </h3>
+<p class="text-xs font-body-sm text-slate-600 line-clamp-1 mb-2">
+                Need official stamp and VAT identification for tax compliance audit submission.
+              </p>
+<div class="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-200 font-mono">
+<span>Cat: Payment &amp; Invoicing</span>
+<span>28 Sep 2026 · 09:14 WAT</span>
+</div>
+</div>
+<!-- Ticket Item 3: Closed/Historical -->
+<div class="p-3.5 rounded-lg border border-outline-variant bg-white hover:bg-slate-50 cursor-pointer transition-all opacity-85" id="ticket-item-3">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<span class="font-mono text-xs font-semibold text-slate-700">TCK-2026-0772</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Resolved</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-[#0B1320] leading-snug mb-1">
+                Virtual Classroom Audio Playback Desynchronisation
+              </h3>
+<p class="text-xs font-body-sm text-slate-600 line-clamp-1 mb-2">
+                Week 1 Governance lecture stream had 3-second audio lag on mobile browsers.
+              </p>
+<div class="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-200 font-mono">
+<span>Cat: Class Attendance</span>
+<span>19 Sep 2026 · 16:45 WAT</span>
+</div>
+</div>
+</div>
+<!-- Empty State Container (Used exclusively in Variant 2) -->
+<div class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center border-2 border-dashed border-slate-200 rounded-lg" id="tickets-empty-container">
+<div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-3">
+<span class="material-symbols-outlined text-[28px]" data-icon="mark_chat_unread">mark_chat_unread</span>
+</div>
+<h3 class="font-headline-sm text-sm font-semibold text-primary mb-1">No support tickets raised yet</h3>
+<p class="text-xs font-body-sm text-slate-500 max-w-xs mb-4">
+              All your submitted academic, syllabus, and administrative tickets will appear in this audit register.
+            </p>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 bg-white text-secondary border border-secondary rounded font-label-sm text-xs min-h-[44px] hover:bg-blue-50" onclick="document.getElementById('ticket-subject').focus()" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>Submit your first inquiry</span>
+</button>
+</div>
+<div class="pt-3 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between font-body-sm">
+<span>Showing latest submissions</span>
+<span class="font-mono">Timezone: West Africa Time (WAT)</span>
+</div>
+</section>
+<!-- RIGHT COLUMN: 5. Ticket Detail View (Span 7 on Desktop) -->
+<section aria-labelledby="ticket-detail-title" class="lg:col-span-7 bg-white rounded-xl border border-outline-variant p-6 shadow-xs flex flex-col min-h-[620px]">
+<!-- STATE A: Open Ticket Detail (Variant 1 Default) -->
+<div class="flex flex-col h-full" id="detail-view-open">
+<!-- Header with Title, ID, Category, Badge, Timestamp -->
+<div class="pb-5 border-b border-outline-variant">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-semibold px-2 py-0.5 bg-slate-100 border border-slate-300 rounded text-slate-800">TCK-2026-0891</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-label-sm font-medium bg-blue-50 text-secondary border border-blue-200">
+                    Category: Mock Exam Access
+                  </span>
+</div>
+<!-- Status Badge paired with icon -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[16px]" data-icon="pending">pending</span>
+<span>In progress</span>
+</span>
+</div>
+<h2 class="font-headline-md text-lg font-semibold text-[#0B1320] leading-snug" id="ticket-detail-title">
+                Domain 3 Mock Exam Diagnostic score reset request
+              </h2>
+<div class="flex items-center gap-4 text-xs font-body-sm text-slate-500 mt-2 font-mono">
+<span>Created: 05 Oct 2026 · 11:20 WAT</span>
+<span>•</span>
+<span>Last updated: 05 Oct 2026 · 13:42 WAT</span>
+</div>
+</div>
+<!-- Chronological Message Thread -->
+<div class="py-5 space-y-4 flex-1 overflow-y-auto">
+<!-- Message 1: Student Message -->
+<div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#1D4ED8] text-white text-[10px] font-semibold flex items-center justify-center">CE</div>
+<span class="text-xs font-label-md font-semibold text-slate-900">Chinedu Eze (You)</span>
+<span class="text-[11px] text-slate-500">Student Candidate</span>
+</div>
+<span class="text-[11px] font-mono text-slate-500">05 Oct 2026 · 11:20 WAT</span>
+</div>
+<div class="text-sm font-body-sm text-slate-800 leading-relaxed space-y-2">
+<p>
+                    Good morning Academic Support Desk, I was attempting the Domain 3 "Information Systems Acquisition, Development &amp; Implementation" 90-question timed diagnostic test.
+                  </p>
+<p>
+                    Around question 54, my local network connectivity dropped. When the session re-established, the platform locked the submission with a partial score of 44%. Could the diagnostic attempt counter be re-allocated to my registered profile so I can complete the assessment properly?
+                  </p>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-200 flex items-center gap-2 text-xs text-slate-600 font-mono">
+<span class="material-symbols-outlined text-[16px] text-slate-500" data-icon="attach_file">attach_file</span>
+<span>diagnostic_error_log_0510.png (480 KB)</span>
+</div>
+</div>
+<!-- Message 2: Support Agent Reply -->
+<div class="bg-blue-50/50 border border-blue-200 rounded-lg p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#0B1320] text-white text-[10px] font-semibold flex items-center justify-center">AB</div>
+<span class="text-xs font-label-md font-semibold text-[#0B1320]">Amina Bello</span>
+<span class="text-[11px] text-secondary font-medium">· Academic Support Desk</span>
+</div>
+<span class="text-[11px] font-mono text-slate-500">05 Oct 2026 · 13:42 WAT</span>
+</div>
+<div class="text-sm font-body-sm text-slate-800 leading-relaxed space-y-2">
+<p>
+                    Hello Chinedu, thank you for reaching out to the Academic Audit Support Desk. We have reviewed your telemetry log for Domain 3 Practice Assessment #2.
+                  </p>
+<p>
+                    The sudden timeout was verified due to the mid-session socket interruption. I have escalated this to the CISA Assessment Registrar to release a fresh token for your registered browser session. Please allow approximately 30 minutes for the database record to propagate.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Reply Box Textarea with Send reply & Attachment Trigger -->
+<div class="pt-4 border-t border-outline-variant">
+<label class="block text-xs font-label-md text-slate-700 mb-1.5 font-medium" for="ticket-reply-text">Add Message to this Thread</label>
+<textarea class="block w-full p-3 bg-white text-[#0F172A] placeholder-[#475569] text-sm font-body-sm rounded-md border border-[#64748B] focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 mb-3 resize-none" id="ticket-reply-text" placeholder="Type your response to Academic Support Desk..." rows="3"></textarea>
+<div class="flex items-center justify-between gap-3">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-label-md text-slate-700 hover:text-slate-900 border border-slate-300 rounded hover:bg-slate-50 min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="attach_file">attach_file</span>
+<span>Attach document (PDF/PNG)</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0B1320] text-white hover:bg-[#1E293B] rounded-md font-label-md text-sm min-h-[44px] transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+<span>Send reply</span>
+</button>
+</div>
+</div>
+</div>
+<!-- STATE B: Resolved Ticket Detail (Variant 3 Specific) -->
+<div class="hidden flex-col h-full" id="detail-view-resolved">
+<div class="pb-5 border-b border-outline-variant">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-semibold px-2 py-0.5 bg-slate-100 border border-slate-300 rounded text-slate-800">TCK-2026-0814</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-label-sm font-medium bg-blue-50 text-secondary border border-blue-200">
+                    Category: Payment &amp; Invoicing
+                  </span>
+</div>
+<!-- Status Badge: Resolved paired with green check icon -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>Resolved</span>
+</span>
+</div>
+<h2 class="font-headline-md text-lg font-semibold text-[#0B1320] leading-snug">
+                Corporate Bursar e-Receipt for Cohort 14 Tuition
+              </h2>
+<div class="flex items-center gap-4 text-xs font-body-sm text-slate-500 mt-2 font-mono">
+<span>Created: 28 Sep 2026 · 09:14 WAT</span>
+<span>•</span>
+<span>Resolved: 29 Sep 2026 · 14:10 WAT</span>
+</div>
+</div>
+<!-- Resolution Summary Banner from Academic Registrar -->
+<div class="my-4 p-4 rounded-lg bg-[#ECFDF5] border border-[#047857]/40 flex items-start gap-3">
+<span class="material-symbols-outlined text-[#047857] text-[22px] shrink-0 mt-0.5" data-icon="verified_user">verified_user</span>
+<div class="text-xs font-body-sm text-[#047857]">
+<strong class="font-label-md block text-[#047857] mb-1 font-semibold">Resolution Notice · Bursar &amp; Student Finance Division</strong>
+                The stamped e-receipt document with Corporate Tax Clearance and Nigerian TIN invoice registration has been generated and appended to your portal profile under "Finance &amp; Receipts".
+              </div>
+</div>
+<!-- Thread -->
+<div class="py-2 space-y-4 flex-1 overflow-y-auto">
+<!-- Message 1 -->
+<div class="bg-slate-50 border border-slate-200 rounded-lg p-3.5">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-xs font-label-md font-semibold text-slate-900">Chinedu Eze (You)</span>
+<span class="text-[11px] font-mono text-slate-500">28 Sep 2026 · 09:14 WAT</span>
+</div>
+<p class="text-sm font-body-sm text-slate-800">
+                  Please generate a formal VAT receipt for the ₦450,000 Cohort 14 tuition wire transfer paid via Zenith Bank. My sponsor requires the tax clearance reference by month-end.
+                </p>
+</div>
+<!-- Message 2 -->
+<div class="bg-blue-50/40 border border-blue-200 rounded-lg p-3.5">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-xs font-label-md font-semibold text-[#0B1320]">Tunde Bakare · Finance Bursar</span>
+<span class="text-[11px] font-mono text-slate-500">29 Sep 2026 · 14:10 WAT</span>
+</div>
+<p class="text-sm font-body-sm text-slate-800">
+                  Good day Mr. Eze. The transaction has been reconciled. The verified VAT receipt with serial AJ-2026-BUR-4910 has been issued.
+                </p>
+<div class="mt-2.5 pt-2 border-t border-blue-100 flex items-center gap-2 text-xs text-secondary font-mono">
+<span class="material-symbols-outlined text-[16px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>AJ_Silicon_Official_Receipt_4910.pdf (1.2 MB)</span>
+</div>
+</div>
+</div>
+<!-- Closed Thread Notice & Reopen Action -->
+<div class="pt-4 border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-50 -mx-6 -mb-6 p-6 rounded-b-xl border-t">
+<div class="flex items-center gap-2 text-xs text-slate-600 font-body-sm">
+<span class="material-symbols-outlined text-slate-500 text-[18px]" data-icon="lock">lock</span>
+<span>This inquiry is resolved and closed for direct messaging.</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-white text-slate-800 border border-[#64748B] hover:bg-slate-100 rounded-md font-label-md text-xs min-h-[44px]" onclick="alert('Ticket TCK-2026-0814 reopened. Status changed to In progress.')" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="replay">replay</span>
+<span>Reopen ticket</span>
+</button>
+</div>
+</div>
+<!-- STATE C: No Tickets Selected Placeholder (Variant 2 Fresh State) -->
+<div class="hidden flex-col items-center justify-center h-full text-center p-8" id="detail-view-empty">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
+<span class="material-symbols-outlined text-[32px]" data-icon="support_agent">support_agent</span>
+</div>
+<h3 class="font-headline-sm text-base font-semibold text-primary mb-1">A.J. Silicon Student Desk Standby</h3>
+<p class="text-sm font-body-sm text-slate-600 max-w-sm mb-6">
+              Select a logged inquiry on the left to inspect updates, or submit a new ticket using the registrar form below.
+            </p>
+<div class="p-4 bg-slate-50 border border-slate-200 rounded-lg text-left text-xs text-slate-600 max-w-md space-y-1">
+<div class="font-semibold text-slate-800 font-label-md mb-1">Guaranteed Service Standards:</div>
+<div>• Academic diagnostics: 2 to 4 business hours</div>
+<div>• Bursar reconciliation: 24 business hours</div>
+<div>• CPE Transcripts: Issued within 48 hours of course completion</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 3. "Raise a ticket" Form Section -->
+<section aria-labelledby="raise-ticket-heading" class="bg-white rounded-xl border border-outline-variant p-6 shadow-xs" id="raise-ticket-card">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-outline-variant mb-6 gap-2">
+<div>
+<h2 class="font-headline-md text-lg font-semibold text-[#0B1320]" id="raise-ticket-heading">Raise an Academic or Administrative Ticket</h2>
+<p class="text-xs font-body-sm text-slate-500">Directly routed to CISA Cohort 14 conveners and operational administrators.</p>
+</div>
+<span class="text-xs text-slate-500 font-mono">Form Ref: STU-TCK-V4</span>
+</div>
+<form class="space-y-6" id="ticket-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Category Dropdown -->
+<div>
+<label class="block text-xs font-label-md font-medium text-[#0F172A] mb-1.5" for="ticket-category">
+                Support Category <span class="text-[#B91C1C]">*</span>
+</label>
+<select class="block w-full px-3 py-2.5 bg-white text-[#0F172A] text-sm font-body-sm rounded-md border border-[#64748B] focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 min-h-[44px]" id="ticket-category" onchange="validateForm()" required="">
+<option disabled="" selected="" value="">Select appropriate category...</option>
+<option value="mock-exam">Mock Exam Access &amp; Score Diagnostics</option>
+<option value="payment">Payment &amp; Invoicing (Bursar)</option>
+<option value="certificate">Certificate &amp; CPE Credit Accreditation</option>
+<option value="attendance">Class Attendance &amp; Virtual Lecture Playback</option>
+<option value="other">General Academic Program Support</option>
+</select>
+<p class="text-[11px] text-slate-500 mt-1 font-body-sm">Directs your inquiry to the specialised faculty unit.</p>
+</div>
+<!-- Subject Text Input with Inline Validation State -->
+<div>
+<label class="block text-xs font-label-md font-medium text-[#0F172A] mb-1.5" for="ticket-subject">
+                Inquiry Subject <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="block w-full px-3 py-2.5 bg-white text-[#0F172A] placeholder-[#475569] text-sm font-body-sm rounded-md border border-[#64748B] focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 min-h-[44px]" id="ticket-subject" oninput="validateForm()" placeholder="e.g. Domain 4 question #28 explanation ambiguity" required="" type="text"/>
+<div class="text-[11px] text-slate-500 mt-1 font-body-sm flex items-center justify-between" id="subject-helper">
+<span>Summarise your issue concisely (minimum 8 characters).</span>
+<span class="font-mono" id="subject-counter">0/80</span>
+</div>
+</div>
+</div>
+<!-- Message Textarea -->
+<div>
+<label class="block text-xs font-label-md font-medium text-[#0F172A] mb-1.5" for="ticket-message">
+              Detailed Description &amp; Context <span class="text-[#B91C1C]">*</span>
+</label>
+<textarea class="block w-full p-3 bg-white text-[#0F172A] placeholder-[#475569] text-sm font-body-sm rounded-md border border-[#64748B] focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 min-h-[100px]" id="ticket-message" oninput="validateForm()" placeholder="Provide specific details including module number, assessment timestamp (WAT), or transaction reference to facilitate rapid resolution..." required="" rows="4"></textarea>
+<p class="text-[11px] text-slate-500 mt-1 font-body-sm">All diagnostic statements are logged into your institutional candidate record.</p>
+</div>
+<!-- Attachment File Upload Box -->
+<div>
+<label class="block text-xs font-label-md font-medium text-[#0F172A] mb-1.5">
+              Supporting Documentation (Optional)
+            </label>
+<div class="border-2 border-dashed border-[#64748B]/50 hover:border-secondary rounded-lg p-5 bg-slate-50/50 flex flex-col items-center justify-center text-center cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-[32px] text-slate-400 group-hover:text-secondary mb-1" data-icon="cloud_upload">cloud_upload</span>
+<p class="text-xs font-label-md text-slate-700 font-medium">
+                Click to browse or drag and drop supporting records
+              </p>
+<p class="text-[11px] text-slate-500 mt-0.5 font-mono">
+                Accepted: PDF, PNG up to 10MB (Screenshots, Wire remittance advices, or question slips)
+              </p>
+<input accept=".pdf,image/png" class="hidden" id="ticket-file" type="file"/>
+</div>
+</div>
+<!-- Form Action Footer with Disabled State and Visual Validation -->
+<div class="pt-4 border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-body-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-400" data-icon="security">security</span>
+<span>All submissions are cryptographically associated with student ID <strong>CE-84920</strong>.</span>
+</div>
+<!-- Submit Ticket Primary Button (44px min height) -->
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#0B1320] text-white rounded-md font-label-md text-sm min-h-[44px] transition-all opacity-50 cursor-not-allowed hover:bg-[#1E293B]" disabled="" id="submit-ticket-btn" type="submit">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+<span>Submit ticket</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Institutional Footer Note -->
+<footer class="mt-12 pt-6 border-t border-slate-200 text-xs text-slate-500 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm pb-8">
+<div>
+          © 2026 A.J. Silicon Learning Systems. Authorized ISACA Academic Alignment Programme.
+        </div>
+<div class="flex items-center gap-4 font-mono text-[11px]">
+<span>Security Level: Enterprise Audited</span>
+<span>•</span>
+<span>Platform Time: WAT (UTC+1)</span>
+</div>
+</footer>
+</main>
+</div>
+<!-- Inline Vanilla Script for Interactive Specifications -->
+<script>
+    function validateForm() {
+      const cat = document.getElementById('ticket-category').value;
+      const subj = document.getElementById('ticket-subject').value.trim();
+      const msg = document.getElementById('ticket-message').value.trim();
+      const btn = document.getElementById('submit-ticket-btn');
+      const counter = document.getElementById('subject-counter');
+
+      if (counter) {
+        counter.textContent = subj.length + '/80';
+      }
+
+      const isValid = cat !== "" && subj.length >= 8 && msg.length >= 10;
+
+      if (isValid) {
+        btn.removeAttribute('disabled');
+        btn.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else {
+        btn.setAttribute('disabled', 'true');
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    }
+
+    function handleFormSubmit() {
+      alert("Ticket successfully submitted! Assigned Reference: TCK-2026-0892. A confirmation email has been dispatched to Chinedu Eze.");
+      document.getElementById('ticket-form').reset();
+      validateForm();
+    }
+
+    function selectTicket(ticketId) {
+      if (ticketId === 'TCK-2026-0891') {
+        switchVariant('v1');
+      } else if (ticketId === 'TCK-2026-0814') {
+        switchVariant('v3');
+      }
+    }
+
+    function switchVariant(variantKey) {
+      const btnV1 = document.getElementById('btn-var1');
+      const btnV2 = document.getElementById('btn-var2');
+      const btnV3 = document.getElementById('btn-var3');
+
+      const ticketsList = document.getElementById('tickets-list-container');
+      const ticketsEmpty = document.getElementById('tickets-empty-container');
+      const countBadge = document.getElementById('ticket-count-badge');
+
+      const detailOpen = document.getElementById('detail-view-open');
+      const detailResolved = document.getElementById('detail-view-resolved');
+      const detailEmpty = document.getElementById('detail-view-empty');
+
+      const item1 = document.getElementById('ticket-item-1');
+      const item2 = document.getElementById('ticket-item-2');
+
+      // Reset button styles
+      [btnV1, btnV2, btnV3].forEach(b => {
+        b.className = "px-3 py-1.5 rounded-md text-xs font-label-md text-on-surface-variant hover:text-primary font-medium min-h-[36px]";
+        b.setAttribute('aria-selected', 'false');
+      });
+
+      if (variantKey === 'v1') {
+        // Variant 1: Open Ticket State
+        btnV1.className = "px-3 py-1.5 rounded-md text-xs font-label-md bg-white text-secondary font-medium shadow-xs border border-outline-variant min-h-[36px]";
+        btnV1.setAttribute('aria-selected', 'true');
+
+        ticketsList.classList.remove('hidden');
+        ticketsEmpty.classList.add('hidden');
+        countBadge.textContent = "3 Records";
+
+        detailOpen.classList.remove('hidden');
+        detailResolved.classList.add('hidden');
+        detailEmpty.classList.add('hidden');
+
+        item1.className = "p-3.5 rounded-lg border-2 border-secondary bg-blue-50/40 cursor-pointer transition-all hover:bg-blue-50/70 relative";
+        item2.className = "p-3.5 rounded-lg border border-outline-variant bg-white hover:bg-slate-50 cursor-pointer transition-all relative";
+      } 
+      else if (variantKey === 'v2') {
+        // Variant 2: No Tickets State (Fresh student)
+        btnV2.className = "px-3 py-1.5 rounded-md text-xs font-label-md bg-white text-secondary font-medium shadow-xs border border-outline-variant min-h-[36px]";
+        btnV2.setAttribute('aria-selected', 'true');
+
+        ticketsList.classList.add('hidden');
+        ticketsEmpty.classList.remove('hidden');
+        countBadge.textContent = "0 Records";
+
+        detailOpen.classList.add('hidden');
+        detailResolved.classList.add('hidden');
+        detailEmpty.classList.remove('hidden');
+      } 
+      else if (variantKey === 'v3') {
+        // Variant 3: Resolved Ticket State
+        btnV3.className = "px-3 py-1.5 rounded-md text-xs font-label-md bg-white text-secondary font-medium shadow-xs border border-outline-variant min-h-[36px]";
+        btnV3.setAttribute('aria-selected', 'true');
+
+        ticketsList.classList.remove('hidden');
+        ticketsEmpty.classList.add('hidden');
+        countBadge.textContent = "3 Records";
+
+        detailOpen.classList.add('hidden');
+        detailResolved.classList.remove('hidden');
+        detailEmpty.classList.add('hidden');
+
+        item1.className = "p-3.5 rounded-lg border border-outline-variant bg-white hover:bg-slate-50 cursor-pointer transition-all relative";
+        item2.className = "p-3.5 rounded-lg border-2 border-[#047857] bg-emerald-50/40 cursor-pointer transition-all relative";
+      }
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13 Programme catalogue Specification Board</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0B1320',
+            'link-white': '#1D4ED8',
+            'link-navy': '#93C5FD',
+            'focus-ring': '#2563EB',
+            danger: '#B91C1C',
+            'danger-fill': '#FEF2F2',
+            success: '#047857',
+            'success-fill': '#ECFDF5',
+            warning: '#B45309',
+            'warning-fill': '#FFFBEB',
+            info: '#1D4ED8',
+            'info-fill': '#EFF6FF',
+            textMain: '#0F172A',
+            textMuted: '#475569',
+            formBorder: '#64748B',
+            cardBorder: '#E2E8F0',
+            navyChrome: '#0B1320',
+            navyBorder: '#1E293B',
+            canvasBg: '#F8FAFC'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+    }
+    .custom-ring:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-[#EEF2F6] text-textMain font-sans antialiased min-h-screen p-6 md:p-12 space-y-16">
+
+  <!-- TOP SPECIFICATION HEADER -->
+  <header class="max-w-[1440px] mx-auto pb-4 border-b border-slate-300">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <p class="text-xs font-semibold tracking-wider text-textMuted uppercase">Design Specification · Screen 13</p>
+        <h1 class="text-2xl md:text-3xl font-bold text-textMain tracking-tight">Programme catalogue — Complete State Board</h1>
+        <p class="text-sm text-textMuted mt-1">Conforming to A.J. Silicon Institutional Design Tokens: Primary #0B1320, Links #1D4ED8 / #93C5FD, Form Borders #64748B, Cards 12px radius, 44px min touch target.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center px-2.5 py-1 rounded bg-slate-200 text-xs font-medium text-slate-800">Viewport: Desktop 1440px & Mobile 390px</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded bg-slate-200 text-xs font-medium text-slate-800">Public Top Bar</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- STATE 1: RESULTS (9 CARDS) - DESKTOP 1440PX -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold">1</span>
+        <h2 class="text-sm font-semibold text-textMain">State 1 · Results (9 cards, default state)</h2>
+      </div>
+      <span class="text-xs text-textMuted font-mono">Desktop 1440px</span>
+    </div>
+
+    <!-- 1440PX DESKTOP FRAME CONTAINER -->
+    <div class="w-full bg-canvasBg min-h-[900px] flex flex-col">
+      <!-- Public Top Bar -->
+      <nav class="w-full bg-navyChrome px-8 py-3 flex items-center justify-between border-b border-navyBorder">
+        <div class="flex items-center gap-8">
+          <a href="#" class="inline-flex items-center bg-white px-2.5 py-1 rounded shadow-sm custom-ring">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwKqGSwIBiS-0zqBKvwo0rulvlTWQwmYewXlF6PeShtbdvP48yJr-TzXOgJC4ZXreHfo0svFnRIjxCSvAuDgmqLIR-bqXiV-wHYpy9Ao1r6g_punVEIjKFrWGtJw-3qjmFCBsNULMcYadByQheNX52uYdMdRAnM7U5Dz5AIk_QkR7crzCzc6tdfE6GGQiOuBRFazutZe07uZ-2TxkDm0rGQZ1QPjVTxtUfdcIFtvtlS9ixiGXT5lQrn2twjYNGHPs2n5Y" alt="A.J. Silicon" class="h-6 w-auto object-contain">
+          </a>
+          <div class="flex items-center gap-6 text-sm font-medium text-slate-200">
+            <a href="#" class="text-link-navy border-b-2 border-link-navy pb-0.5 font-semibold">Programmes</a>
+            <a href="#" class="text-slate-300 hover:text-white transition-colors">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-link-navy hover:underline">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="w-full max-w-7xl mx-auto px-6 py-8 flex-1 flex flex-col space-y-8">
+        
+        <!-- Diagnostic Banner -->
+        <div class="w-full bg-info-fill border border-blue-200 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start gap-3.5">
+            <span class="material-symbols-outlined text-info text-2xl mt-0.5">quiz</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-textMain">Evaluate your readiness with our free 15-question diagnostic</h3>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-blue-100 text-info border border-blue-200">Phase 2</span>
+              </div>
+              <p class="text-sm text-textMuted mt-0.5">Instant domain-level scoring across CISA, CISM, CRISC, and AAIA syllabi to identify knowledge gaps before enrolling.</p>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <button type="button" class="min-h-[44px] px-5 py-2.5 bg-primary hover:bg-slate-800 text-white text-sm font-medium rounded-lg custom-ring transition-colors">Take diagnostic</button>
+          </div>
+        </div>
+
+        <!-- Title & Controls Header -->
+        <div class="space-y-6">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-bold text-textMain tracking-tight">Programmes</h2>
+              <p class="text-sm text-textMuted mt-1">Accredited professional certification prep, foundational courses, and masterclass workshops.</p>
+            </div>
+            <!-- Search & Sort Row -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <div class="relative min-w-[280px]">
+                <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xl pointer-events-none">search</span>
+                <input type="text" placeholder="Search programmes..." class="w-full min-h-[44px] pl-10 pr-4 py-2 bg-white border border-formBorder rounded-lg text-sm text-textMain placeholder-slate-400 custom-ring">
+              </div>
+              <div class="flex items-center gap-2">
+                <label for="sort-1" class="text-xs font-medium text-textMuted whitespace-nowrap">Sort:</label>
+                <select id="sort-1" class="min-h-[44px] px-3 py-2 bg-white border border-formBorder rounded-lg text-sm text-textMain custom-ring">
+                  <option selected>Soonest</option>
+                  <option>Price low to high</option>
+                  <option>Price high to low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Groups Row -->
+          <div class="bg-white p-4 rounded-xl border border-cardBorder flex flex-wrap items-center gap-6 text-sm">
+            <!-- Type Filter Chips -->
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-medium text-textMuted">Type:</span>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">Exam prep</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">Fundamentals</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">Workshop</button>
+            </div>
+
+            <div class="h-4 w-px bg-slate-200"></div>
+
+            <!-- Body Filter Chips (Text chips, no logos) -->
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-medium text-textMuted">Body:</span>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">ISACA</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">ACCA</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">ICAN</button>
+            </div>
+
+            <div class="h-4 w-px bg-slate-200"></div>
+
+            <!-- Mode Filter Chips -->
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-medium text-textMuted">Mode:</span>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">Physical</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain hover:bg-slate-100 custom-ring">Virtual</button>
+            </div>
+
+            <div class="h-4 w-px bg-slate-200"></div>
+
+            <!-- Start Month Select Filter -->
+            <div class="flex items-center gap-2">
+              <label for="month-1" class="text-xs font-medium text-textMuted">Start month:</label>
+              <select id="month-1" class="min-h-[36px] px-2.5 py-1 bg-white border border-formBorder rounded-lg text-xs text-textMain custom-ring">
+                <option selected>All upcoming</option>
+                <option>November 2026</option>
+                <option>December 2026</option>
+                <option>January 2027</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 Programme Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 8 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified Information Systems Auditor (CISA) Prep</h4>
+              <p class="text-xs text-textMuted">Official ISACA curriculum comprehensive review, practice drills, and mock exams.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">10 Nov 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-warning flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 4 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦350,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 6 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified Information Security Manager (CISM) Prep</h4>
+              <p class="text-xs text-textMuted">Security governance, incident management, and risk frameworks for leadership.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">17 Nov 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 9 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦380,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 6 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified in Risk and Information Systems Control (CRISC)</h4>
+              <p class="text-xs text-textMuted">Enterprise risk governance, IT response design, and operational resilience.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">24 Nov 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 12 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦360,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Fundamentals</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 4 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">IT Risk & Controls Fundamentals</h4>
+              <p class="text-xs text-textMuted">Core internal controls, control testing procedures, and reporting frameworks.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">01 Dec 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 8 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦195,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Fundamentals</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 5 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">IT Audit Foundations for Finance Professionals</h4>
+              <p class="text-xs text-textMuted">Tailored for ICAN and chartered accountants transitioning to technology assurance.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">08 Dec 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 15 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦210,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 6 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">AI Auditor & Governance Certification (AAIA)</h4>
+              <p class="text-xs text-textMuted">Auditing algorithmic integrity, generative AI governance, and compliance models.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">15 Dec 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-warning flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 2 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦420,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Workshop</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 3 days
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Cybersecurity Incident Response & Forensics Workshop</h4>
+              <p class="text-xs text-textMuted">Hands-on crisis simulation, chain of custody, and regulatory breach notification.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">12 Jan 2027</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 6 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦150,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Workshop</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 2 days
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">SOC 2 Type II Readiness & Evidentiary Audit Lab</h4>
+              <p class="text-xs text-textMuted">Practical workshop on building continuous compliance pipelines for service organizations.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">19 Jan 2027</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 10 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦175,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 8 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified Information Security Auditor Weekend Cohort</h4>
+              <p class="text-xs text-textMuted">Saturday & Sunday intensive sessions designed specifically for working executives.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">23 Jan 2027</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 7 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦365,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination Component -->
+        <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-textMuted">Showing <span class="font-semibold text-textMain">1–9</span> of <span class="font-semibold text-textMain">24</span> programmes</p>
+          <div class="flex items-center gap-1">
+            <button class="min-h-[44px] px-3 py-2 rounded-lg border border-formBorder bg-white text-slate-400 text-xs font-medium disabled:opacity-50 cursor-not-allowed flex items-center gap-1" disabled>
+              <span class="material-symbols-outlined text-base">chevron_left</span> Previous
+            </button>
+            <button class="min-h-[44px] w-10 py-2 rounded-lg bg-primary text-white text-xs font-semibold custom-ring">1</button>
+            <button class="min-h-[44px] w-10 py-2 rounded-lg border border-formBorder bg-white text-textMain hover:bg-slate-50 text-xs font-medium custom-ring">2</button>
+            <button class="min-h-[44px] w-10 py-2 rounded-lg border border-formBorder bg-white text-textMain hover:bg-slate-50 text-xs font-medium custom-ring">3</button>
+            <button class="min-h-[44px] px-3 py-2 rounded-lg border border-formBorder bg-white text-textMain hover:bg-slate-50 text-xs font-medium custom-ring flex items-center gap-1">
+              Next <span class="material-symbols-outlined text-base">chevron_right</span>
+            </button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 2: NO RESULTS (EMPTY STATE)          -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold">2</span>
+        <h2 class="text-sm font-semibold text-textMain">State 2 · No results (Empty state with "Clear filters")</h2>
+      </div>
+      <span class="text-xs text-textMuted font-mono">Desktop 1440px</span>
+    </div>
+
+    <div class="w-full bg-canvasBg flex flex-col">
+      <!-- Public Top Bar -->
+      <nav class="w-full bg-navyChrome px-8 py-3 flex items-center justify-between border-b border-navyBorder">
+        <div class="flex items-center gap-8">
+          <a href="#" class="inline-flex items-center bg-white px-2.5 py-1 rounded shadow-sm custom-ring">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz3XnOuMlDM2eSgwfLvW4qyRZRhIjkyFXNr6vKldwr1uoX9MrWcvzq5ptHUfTHcfrksEpzwXefeBryT5RknU917OoMbzP40FU3-NXDZhOGXpVp5BffTQVs7j4P9M1O6hl1g6wSXZwlTUgascZXSHF0jq9wjhfOpcrgFIppY08ROORay7s-c2_fz79mCfUV4yb9EhiuoFUMhT4w_BUlSFtliYjkJpC-8x5hrNqWNOzeShjSj4TBr76yyETyuaKsUEr1rR0" alt="A.J. Silicon" class="h-6 w-auto object-contain">
+          </a>
+          <div class="flex items-center gap-6 text-sm font-medium text-slate-200">
+            <a href="#" class="text-link-navy border-b-2 border-link-navy pb-0.5 font-semibold">Programmes</a>
+            <a href="#" class="text-slate-300 hover:text-white transition-colors">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-link-navy hover:underline">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="w-full max-w-7xl mx-auto px-6 py-8 flex-1 flex flex-col space-y-8">
+        
+        <!-- Diagnostic Banner -->
+        <div class="w-full bg-info-fill border border-blue-200 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start gap-3.5">
+            <span class="material-symbols-outlined text-info text-2xl mt-0.5">quiz</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-textMain">Evaluate your readiness with our free 15-question diagnostic</h3>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-blue-100 text-info border border-blue-200">Phase 2</span>
+              </div>
+              <p class="text-sm text-textMuted mt-0.5">Instant domain-level scoring across CISA, CISM, CRISC, and AAIA syllabi to identify knowledge gaps before enrolling.</p>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <button type="button" class="min-h-[44px] px-5 py-2.5 bg-primary hover:bg-slate-800 text-white text-sm font-medium rounded-lg custom-ring transition-colors">Take diagnostic</button>
+          </div>
+        </div>
+
+        <!-- Title & Controls Header -->
+        <div class="space-y-6">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-bold text-textMain tracking-tight">Programmes</h2>
+              <p class="text-sm text-textMuted mt-1">Accredited professional certification prep, foundational courses, and masterclass workshops.</p>
+            </div>
+            <!-- Search & Sort Row -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <div class="relative min-w-[280px]">
+                <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xl pointer-events-none">search</span>
+                <input type="text" value="Quantum cryptography" class="w-full min-h-[44px] pl-10 pr-4 py-2 bg-white border border-formBorder rounded-lg text-sm text-textMain custom-ring">
+              </div>
+              <div class="flex items-center gap-2">
+                <label for="sort-2" class="text-xs font-medium text-textMuted whitespace-nowrap">Sort:</label>
+                <select id="sort-2" class="min-h-[44px] px-3 py-2 bg-white border border-formBorder rounded-lg text-sm text-textMain custom-ring">
+                  <option selected>Soonest</option>
+                  <option>Price low to high</option>
+                  <option>Price high to low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Groups Row -->
+          <div class="bg-white p-4 rounded-xl border border-cardBorder flex flex-wrap items-center gap-6 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-medium text-textMuted">Type:</span>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Exam prep</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Fundamentals</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Workshop</button>
+            </div>
+            <div class="h-4 w-px bg-slate-200"></div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-medium text-textMuted">Body:</span>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">ISACA</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">ACCA</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">ICAN</button>
+            </div>
+            <div class="h-4 w-px bg-slate-200"></div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-medium text-textMuted">Mode:</span>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Physical</button>
+              <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Virtual</button>
+            </div>
+            <div class="h-4 w-px bg-slate-200"></div>
+            <div class="flex items-center gap-2">
+              <label for="month-2" class="text-xs font-medium text-textMuted">Start month:</label>
+              <select id="month-2" class="min-h-[36px] px-2.5 py-1 bg-white border border-formBorder rounded-lg text-xs text-textMain">
+                <option selected>All upcoming</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty State Container -->
+        <div class="bg-white rounded-xl border border-cardBorder p-16 text-center max-w-2xl mx-auto my-12 space-y-4">
+          <div class="w-16 h-16 mx-auto rounded-full bg-slate-100 flex items-center justify-center">
+            <span class="material-symbols-outlined text-3xl text-slate-500">search_off</span>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-lg font-bold text-textMain">No programmes match your search</h3>
+            <p class="text-sm text-textMuted">We couldn't find any courses matching "Quantum cryptography" with the selected filters. Try broadening your keywords or clearing filters.</p>
+          </div>
+          <div class="pt-4">
+            <button type="button" class="min-h-[44px] px-6 py-2.5 bg-primary hover:bg-slate-800 text-white text-sm font-medium rounded-lg custom-ring transition-colors inline-flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg">filter_alt_off</span> Clear filters
+            </button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 3: LOADING SKELETON                  -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold">3</span>
+        <h2 class="text-sm font-semibold text-textMain">State 3 · Loading skeleton</h2>
+      </div>
+      <span class="text-xs text-textMuted font-mono">Desktop 1440px</span>
+    </div>
+
+    <div class="w-full bg-canvasBg flex flex-col">
+      <!-- Public Top Bar -->
+      <nav class="w-full bg-navyChrome px-8 py-3 flex items-center justify-between border-b border-navyBorder">
+        <div class="flex items-center gap-8">
+          <a href="#" class="inline-flex items-center bg-white px-2.5 py-1 rounded shadow-sm custom-ring">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi-g0nzWFQKMIZdHuog65w_j8N9nL9oRLUoBiNeW4T0QCoHpIjNMgF1lP4KKMpu1cse3pNdH5FkdyBnteT8au8G9XRA-4C727WIntEI2hhchRShC0DifjjuesleaE64jvi4QUdc6HynOcwqorlyYrvVNQA6ryflVmF2Wrp6cSB2rEAe5zJntlZjVIqxqOyqzoisLgIDwz6Z0d36GIylIv35vpp-wNbmqfMDGS3EmJ6Xd7YNJ6FBLfgVQhRwnXzPYFRnFI" alt="A.J. Silicon" class="h-6 w-auto object-contain">
+          </a>
+          <div class="flex items-center gap-6 text-sm font-medium text-slate-200">
+            <a href="#" class="text-link-navy border-b-2 border-link-navy pb-0.5 font-semibold">Programmes</a>
+            <a href="#" class="text-slate-300 hover:text-white transition-colors">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-link-navy hover:underline">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Content Skeleton -->
+      <main class="w-full max-w-7xl mx-auto px-6 py-8 flex-1 flex flex-col space-y-8 animate-pulse">
+        
+        <!-- Diagnostic Banner Skeleton -->
+        <div class="w-full bg-slate-200 rounded-xl p-6 h-24"></div>
+
+        <!-- Controls Header Skeleton -->
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="space-y-2">
+              <div class="h-7 w-48 bg-slate-300 rounded"></div>
+              <div class="h-4 w-72 bg-slate-200 rounded"></div>
+            </div>
+            <div class="flex gap-3">
+              <div class="h-11 w-64 bg-slate-200 rounded-lg"></div>
+              <div class="h-11 w-32 bg-slate-200 rounded-lg"></div>
+            </div>
+          </div>
+          <div class="h-14 bg-slate-200 rounded-xl"></div>
+        </div>
+
+        <!-- 6 Skeleton Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Repeat 6 skeleton cards -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 space-y-4">
+            <div class="flex justify-between">
+              <div class="h-5 w-20 bg-slate-200 rounded"></div>
+              <div class="h-5 w-16 bg-slate-200 rounded"></div>
+            </div>
+            <div class="h-6 w-5/6 bg-slate-300 rounded"></div>
+            <div class="h-4 w-full bg-slate-200 rounded"></div>
+            <div class="h-4 w-4/6 bg-slate-200 rounded"></div>
+            <div class="pt-4 border-t border-slate-100 space-y-2">
+              <div class="h-4 w-1/2 bg-slate-200 rounded"></div>
+              <div class="h-4 w-1/3 bg-slate-200 rounded"></div>
+            </div>
+            <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+              <div class="h-7 w-24 bg-slate-300 rounded"></div>
+              <div class="h-11 w-28 bg-slate-300 rounded-lg"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-cardBorder p-6 space-y-4">
+            <div class="flex justify-between">
+              <div class="h-5 w-20 bg-slate-200 rounded"></div>
+              <div class="h-5 w-16 bg-slate-200 rounded"></div>
+            </div>
+            <div class="h-6 w-5/6 bg-slate-300 rounded"></div>
+            <div class="h-4 w-full bg-slate-200 rounded"></div>
+            <div class="h-4 w-4/6 bg-slate-200 rounded"></div>
+            <div class="pt-4 border-t border-slate-100 space-y-2">
+              <div class="h-4 w-1/2 bg-slate-200 rounded"></div>
+              <div class="h-4 w-1/3 bg-slate-200 rounded"></div>
+            </div>
+            <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+              <div class="h-7 w-24 bg-slate-300 rounded"></div>
+              <div class="h-11 w-28 bg-slate-300 rounded-lg"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-cardBorder p-6 space-y-4">
+            <div class="flex justify-between">
+              <div class="h-5 w-20 bg-slate-200 rounded"></div>
+              <div class="h-5 w-16 bg-slate-200 rounded"></div>
+            </div>
+            <div class="h-6 w-5/6 bg-slate-300 rounded"></div>
+            <div class="h-4 w-full bg-slate-200 rounded"></div>
+            <div class="h-4 w-4/6 bg-slate-200 rounded"></div>
+            <div class="pt-4 border-t border-slate-100 space-y-2">
+              <div class="h-4 w-1/2 bg-slate-200 rounded"></div>
+              <div class="h-4 w-1/3 bg-slate-200 rounded"></div>
+            </div>
+            <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+              <div class="h-7 w-24 bg-slate-300 rounded"></div>
+              <div class="h-11 w-28 bg-slate-300 rounded-lg"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-cardBorder p-6 space-y-4">
+            <div class="flex justify-between">
+              <div class="h-5 w-20 bg-slate-200 rounded"></div>
+              <div class="h-5 w-16 bg-slate-200 rounded"></div>
+            </div>
+            <div class="h-6 w-5/6 bg-slate-300 rounded"></div>
+            <div class="h-4 w-full bg-slate-200 rounded"></div>
+            <div class="h-4 w-4/6 bg-slate-200 rounded"></div>
+            <div class="pt-4 border-t border-slate-100 space-y-2">
+              <div class="h-4 w-1/2 bg-slate-200 rounded"></div>
+              <div class="h-4 w-1/3 bg-slate-200 rounded"></div>
+            </div>
+            <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+              <div class="h-7 w-24 bg-slate-300 rounded"></div>
+              <div class="h-11 w-28 bg-slate-300 rounded-lg"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-cardBorder p-6 space-y-4">
+            <div class="flex justify-between">
+              <div class="h-5 w-20 bg-slate-200 rounded"></div>
+              <div class="h-5 w-16 bg-slate-200 rounded"></div>
+            </div>
+            <div class="h-6 w-5/6 bg-slate-300 rounded"></div>
+            <div class="h-4 w-full bg-slate-200 rounded"></div>
+            <div class="h-4 w-4/6 bg-slate-200 rounded"></div>
+            <div class="pt-4 border-t border-slate-100 space-y-2">
+              <div class="h-4 w-1/2 bg-slate-200 rounded"></div>
+              <div class="h-4 w-1/3 bg-slate-200 rounded"></div>
+            </div>
+            <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+              <div class="h-7 w-24 bg-slate-300 rounded"></div>
+              <div class="h-11 w-28 bg-slate-300 rounded-lg"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-cardBorder p-6 space-y-4">
+            <div class="flex justify-between">
+              <div class="h-5 w-20 bg-slate-200 rounded"></div>
+              <div class="h-5 w-16 bg-slate-200 rounded"></div>
+            </div>
+            <div class="h-6 w-5/6 bg-slate-300 rounded"></div>
+            <div class="h-4 w-full bg-slate-200 rounded"></div>
+            <div class="h-4 w-4/6 bg-slate-200 rounded"></div>
+            <div class="pt-4 border-t border-slate-100 space-y-2">
+              <div class="h-4 w-1/2 bg-slate-200 rounded"></div>
+              <div class="h-4 w-1/3 bg-slate-200 rounded"></div>
+            </div>
+            <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+              <div class="h-7 w-24 bg-slate-300 rounded"></div>
+              <div class="h-11 w-28 bg-slate-300 rounded-lg"></div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 4: FILTERS APPLIED                   -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold">4</span>
+        <h2 class="text-sm font-semibold text-textMain">State 4 · Filters applied (2 chips active, result count shown)</h2>
+      </div>
+      <span class="text-xs text-textMuted font-mono">Desktop 1440px</span>
+    </div>
+
+    <div class="w-full bg-canvasBg flex flex-col">
+      <!-- Public Top Bar -->
+      <nav class="w-full bg-navyChrome px-8 py-3 flex items-center justify-between border-b border-navyBorder">
+        <div class="flex items-center gap-8">
+          <a href="#" class="inline-flex items-center bg-white px-2.5 py-1 rounded shadow-sm custom-ring">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxc1u5OXDq9PVDsZBHhiZXfxpBphsO2hA2bvxo5mlqOtM7ASfflujkvLVquTUq9IwSnngL8uGkh_tBGKnSXlSg1DoLywOxMuVcnosYDDZZ3ivovNGOOGNZ18MDzMPRmiLY3KWIYXT7Euq19G0tNz3w6CQwA4zldJaTUroXXt4ulfMiDLkAHHN5Zcl0uvFX47WQwkNbI2S7aTg0F6O48vwzqBZHBj4sZ_ZQreUMuPK9_3fr0K--jLOpgZ6pmWu6f-cTZ3E" alt="A.J. Silicon" class="h-6 w-auto object-contain">
+          </a>
+          <div class="flex items-center gap-6 text-sm font-medium text-slate-200">
+            <a href="#" class="text-link-navy border-b-2 border-link-navy pb-0.5 font-semibold">Programmes</a>
+            <a href="#" class="text-slate-300 hover:text-white transition-colors">Workshops</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm font-medium text-link-navy hover:underline">Log in</a>
+        </div>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="w-full max-w-7xl mx-auto px-6 py-8 flex-1 flex flex-col space-y-8">
+        
+        <!-- Diagnostic Banner -->
+        <div class="w-full bg-info-fill border border-blue-200 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start gap-3.5">
+            <span class="material-symbols-outlined text-info text-2xl mt-0.5">quiz</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-textMain">Evaluate your readiness with our free 15-question diagnostic</h3>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-blue-100 text-info border border-blue-200">Phase 2</span>
+              </div>
+              <p class="text-sm text-textMuted mt-0.5">Instant domain-level scoring across CISA, CISM, CRISC, and AAIA syllabi to identify knowledge gaps before enrolling.</p>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <button type="button" class="min-h-[44px] px-5 py-2.5 bg-primary hover:bg-slate-800 text-white text-sm font-medium rounded-lg custom-ring transition-colors">Take diagnostic</button>
+          </div>
+        </div>
+
+        <!-- Title & Controls Header -->
+        <div class="space-y-6">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-3">
+                <h2 class="text-2xl font-bold text-textMain tracking-tight">Programmes</h2>
+                <!-- Filter result count badge -->
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">
+                  Showing 4 results
+                </span>
+              </div>
+              <p class="text-sm text-textMuted mt-1">Filtered by Exam prep and ISACA certified curricula.</p>
+            </div>
+            <!-- Search & Sort Row -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <div class="relative min-w-[280px]">
+                <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xl pointer-events-none">search</span>
+                <input type="text" placeholder="Search programmes..." class="w-full min-h-[44px] pl-10 pr-4 py-2 bg-white border border-formBorder rounded-lg text-sm text-textMain custom-ring">
+              </div>
+              <div class="flex items-center gap-2">
+                <label for="sort-4" class="text-xs font-medium text-textMuted whitespace-nowrap">Sort:</label>
+                <select id="sort-4" class="min-h-[44px] px-3 py-2 bg-white border border-formBorder rounded-lg text-sm text-textMain custom-ring">
+                  <option selected>Soonest</option>
+                  <option>Price low to high</option>
+                  <option>Price high to low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Groups Row with 2 ACTIVE CHIPS -->
+          <div class="bg-white p-4 rounded-xl border border-cardBorder flex flex-wrap items-center justify-between gap-4 text-sm">
+            <div class="flex flex-wrap items-center gap-6">
+              <!-- Type Filter Chips (Exam prep ACTIVE) -->
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-medium text-textMuted">Type:</span>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full bg-primary text-white text-xs font-medium flex items-center gap-1.5 custom-ring">
+                  Exam prep
+                  <span class="material-symbols-outlined text-xs">close</span>
+                </button>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Fundamentals</button>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Workshop</button>
+              </div>
+
+              <div class="h-4 w-px bg-slate-200"></div>
+
+              <!-- Body Filter Chips (ISACA ACTIVE) -->
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-medium text-textMuted">Body:</span>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full bg-primary text-white text-xs font-medium flex items-center gap-1.5 custom-ring">
+                  ISACA
+                  <span class="material-symbols-outlined text-xs">close</span>
+                </button>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">ACCA</button>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">ICAN</button>
+              </div>
+
+              <div class="h-4 w-px bg-slate-200"></div>
+
+              <!-- Mode Filter Chips -->
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-medium text-textMuted">Mode:</span>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Physical</button>
+                <button class="min-h-[36px] px-3 py-1.5 rounded-full border border-formBorder bg-slate-50 text-xs font-medium text-textMain">Virtual</button>
+              </div>
+            </div>
+
+            <!-- Clear Active Filters Link -->
+            <button class="text-xs font-semibold text-link-white hover:underline flex items-center gap-1">
+              <span class="material-symbols-outlined text-xs">restart_alt</span> Reset all filters
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Filtered Results Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Filtered Card 1 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 8 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified Information Systems Auditor (CISA) Prep</h4>
+              <p class="text-xs text-textMuted">Official ISACA curriculum comprehensive review, practice drills, and mock exams.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">10 Nov 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-warning flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 4 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦350,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Filtered Card 2 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 6 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified Information Security Manager (CISM) Prep</h4>
+              <p class="text-xs text-textMuted">Security governance, incident management, and risk frameworks for leadership.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">17 Nov 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 9 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦380,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Filtered Card 3 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 6 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified in Risk and Information Systems Control (CRISC)</h4>
+              <p class="text-xs text-textMuted">Enterprise risk governance, IT response design, and operational resilience.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">24 Nov 2026</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 12 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦360,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+          <!-- Filtered Card 4 -->
+          <div class="bg-white rounded-xl border border-cardBorder p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-xs font-medium text-textMuted flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span> 8 weeks
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-textMain leading-snug">Certified Information Security Auditor Weekend Cohort</h4>
+              <p class="text-xs text-textMuted">Saturday & Sunday intensive sessions designed specifically for working executives.</p>
+              <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Next start date:</span>
+                  <span class="font-medium text-textMain">23 Jan 2027</span>
+                </div>
+                <div class="flex items-center justify-between text-textMuted">
+                  <span>Seats left:</span>
+                  <span class="font-medium text-textMain flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">event_seat</span> 7 seats left
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-textMuted block">Price from</span>
+                <span class="text-lg font-bold text-textMain">₦365,000</span>
+              </div>
+              <button class="min-h-[44px] px-4 py-2 bg-primary hover:bg-slate-800 text-white text-xs font-medium rounded-lg custom-ring transition-colors">View details</button>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 5: MOBILE 390PX (RESULTS)            -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold">5</span>
+        <h2 class="text-sm font-semibold text-textMain">State 5 · Mobile 390px (Results, plain frame without device chrome)</h2>
+      </div>
+      <span class="text-xs text-textMuted font-mono">Mobile 390px Viewport</span>
+    </div>
+
+    <div class="p-8 bg-slate-200 flex justify-center">
+      <!-- 390PX MOBILE FRAME (No status bar, no home indicator) -->
+      <div class="w-[390px] bg-canvasBg border border-slate-300 shadow-md flex flex-col text-textMain text-sm">
+        
+        <!-- Mobile Top Bar -->
+        <nav class="w-full bg-navyChrome px-4 py-3 flex items-center justify-between border-b border-navyBorder">
+          <a href="#" class="inline-flex items-center bg-white px-2 py-0.5 rounded shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVXu5Sygl_gkvPdMlnNr7McVxGILN7YLEX_fD-vwp96gD0QjgNF6wvTd2w7mMeLbSU9KdowRcbdT5sLCebnaRXu1iFQpotumtPbCRrW5RWJe_63OzNdf2n5ouzZ4z97CR73j7d7C7Mg16ZTzeaPzrq0QBHsOdr1IUzUZEQr56JiZv0RYfL3iJImz2g0j3TgOnpKnN9vO7X7KGDmbRizCOFhUYTKzzw4TdwfHZF0-HXx2kukGg5OoAXDhxl6YwQprRBh54" alt="A.J. Silicon" class="h-5 w-auto object-contain">
+          </a>
+          <div class="flex items-center gap-4 text-xs font-medium text-slate-200">
+            <a href="#" class="text-link-navy font-semibold">Programmes</a>
+            <a href="#" class="text-slate-300">Workshops</a>
+            <a href="#" class="text-link-navy hover:underline">Log in</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Main Content -->
+        <main class="p-4 space-y-5">
+          
+          <!-- Mobile Diagnostic Banner -->
+          <div class="bg-info-fill border border-blue-200 rounded-xl p-3.5 space-y-2.5">
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-info text-xl mt-0.5">quiz</span>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-xs font-bold text-textMain">Free 15-question diagnostic</h3>
+                  <span class="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-semibold bg-blue-100 text-info">Phase 2</span>
+                </div>
+                <p class="text-[11px] text-textMuted mt-0.5">Test your readiness across CISA, CISM & CRISC syllabi.</p>
+              </div>
+            </div>
+            <button class="w-full min-h-[44px] bg-primary text-white text-xs font-medium rounded-lg custom-ring">Take diagnostic</button>
+          </div>
+
+          <!-- Page Title & Search -->
+          <div class="space-y-3">
+            <h2 class="text-xl font-bold text-textMain tracking-tight">Programmes</h2>
+            
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none">search</span>
+              <input type="text" placeholder="Search programmes..." class="w-full min-h-[44px] pl-9 pr-3 py-2 bg-white border border-formBorder rounded-lg text-xs text-textMain placeholder-slate-400 custom-ring">
+            </div>
+
+            <!-- Mobile Filter Chips (Horizontally Scrollable) -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
+              <button class="min-h-[36px] px-3 py-1 rounded-full border border-formBorder bg-white whitespace-nowrap text-textMain">Exam prep</button>
+              <button class="min-h-[36px] px-3 py-1 rounded-full border border-formBorder bg-white whitespace-nowrap text-textMain">Fundamentals</button>
+              <button class="min-h-[36px] px-3 py-1 rounded-full border border-formBorder bg-white whitespace-nowrap text-textMain">Workshop</button>
+              <button class="min-h-[36px] px-3 py-1 rounded-full border border-formBorder bg-white whitespace-nowrap text-textMain">ISACA</button>
+              <button class="min-h-[36px] px-3 py-1 rounded-full border border-formBorder bg-white whitespace-nowrap text-textMain">ICAN</button>
+            </div>
+
+            <!-- Sort Bar -->
+            <div class="flex items-center justify-between pt-1 text-xs text-textMuted">
+              <span>Showing 9 results</span>
+              <div class="flex items-center gap-1.5">
+                <label for="mobile-sort" class="text-[11px]">Sort:</label>
+                <select id="mobile-sort" class="min-h-[36px] px-2 py-1 bg-white border border-formBorder rounded text-xs text-textMain">
+                  <option>Soonest</option>
+                  <option>Price low to high</option>
+                  <option>Price high to low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Cards List -->
+          <div class="space-y-4">
+            
+            <!-- Mobile Card 1 -->
+            <div class="bg-white rounded-xl border border-cardBorder p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-[11px] text-textMuted">8 weeks</span>
+              </div>
+              <h4 class="text-sm font-bold text-textMain leading-snug">Certified Information Systems Auditor (CISA) Prep</h4>
+              <div class="text-[11px] text-textMuted space-y-0.5 pt-1 border-t border-slate-100">
+                <div class="flex justify-between">
+                  <span>Start date:</span>
+                  <span class="font-medium text-textMain">10 Nov 2026</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Seats:</span>
+                  <span class="font-medium text-warning">4 seats left</span>
+                </div>
+              </div>
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-textMuted block">Price from</span>
+                  <span class="text-sm font-bold text-textMain">₦350,000</span>
+                </div>
+                <button class="min-h-[44px] px-3 py-1.5 bg-primary text-white text-xs font-medium rounded-lg custom-ring">View details</button>
+              </div>
+            </div>
+
+            <!-- Mobile Card 2 -->
+            <div class="bg-white rounded-xl border border-cardBorder p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200">Exam prep</span>
+                <span class="text-[11px] text-textMuted">6 weeks</span>
+              </div>
+              <h4 class="text-sm font-bold text-textMain leading-snug">Certified Information Security Manager (CISM) Prep</h4>
+              <div class="text-[11px] text-textMuted space-y-0.5 pt-1 border-t border-slate-100">
+                <div class="flex justify-between">
+                  <span>Start date:</span>
+                  <span class="font-medium text-textMain">17 Nov 2026</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Seats:</span>
+                  <span class="font-medium text-textMain">9 seats left</span>
+                </div>
+              </div>
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-textMuted block">Price from</span>
+                  <span class="text-sm font-bold text-textMain">₦380,000</span>
+                </div>
+                <button class="min-h-[44px] px-3 py-1.5 bg-primary text-white text-xs font-medium rounded-lg custom-ring">View details</button>
+              </div>
+            </div>
+
+            <!-- Mobile Card 3 -->
+            <div class="bg-white rounded-xl border border-cardBorder p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200">Fundamentals</span>
+                <span class="text-[11px] text-textMuted">4 weeks</span>
+              </div>
+              <h4 class="text-sm font-bold text-textMain leading-snug">IT Risk & Controls Fundamentals</h4>
+              <div class="text-[11px] text-textMuted space-y-0.5 pt-1 border-t border-slate-100">
+                <div class="flex justify-between">
+                  <span>Start date:</span>
+                  <span class="font-medium text-textMain">01 Dec 2026</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Seats:</span>
+                  <span class="font-medium text-textMain">8 seats left</span>
+                </div>
+              </div>
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-textMuted block">Price from</span>
+                  <span class="text-sm font-bold text-textMain">₦195,000</span>
+                </div>
+                <button class="min-h-[44px] px-3 py-1.5 bg-primary text-white text-xs font-medium rounded-lg custom-ring">View details</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Mobile Pagination -->
+          <div class="pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+            <button class="min-h-[44px] px-3 py-1.5 border border-formBorder bg-white rounded text-slate-400" disabled>Previous</button>
+            <span class="text-textMuted">Page 1 of 3</span>
+            <button class="min-h-[44px] px-3 py-1.5 border border-formBorder bg-white rounded text-textMain">Next</button>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </section>
+
+<script src="../demo-nav.js"></script></body>
+</html>

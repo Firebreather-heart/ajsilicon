@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Audit Portal - View as Student Session</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-navy-dark": "#0B1320",
+            "surface-slate-tech": "#1E293B",
+            "audit-pass-mint": "#047857",
+            "audit-fail-crimson": "#B91C1C",
+            "pedigree-amber": "#B45309",
+            "pedigree-amber-light": "#FFFBEB",
+            "surface-tint": "#575f6e",
+            "on-error": "#ffffff",
+            "primary-fixed": "#dbe2f5",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed": "#fddcc4",
+            "on-tertiary-fixed-variant": "#584231",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-container": "#281809",
+            "on-tertiary-container": "#997f6a",
+            "on-secondary-container": "#fffbff",
+            "on-primary-fixed": "#141c29",
+            "outline-variant": "#c5c6cc",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-primary": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#bfc6d9",
+            "primary": "#0B1320",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary-fixed": "#001551",
+            "on-primary-container": "#7c8495",
+            "surface-container": "#eaedff",
+            "surface-dim": "#d2d9f4",
+            "on-surface": "#0F172A",
+            "tertiary": "#000000",
+            "on-background": "#131b2e",
+            "on-error-container": "#93000a",
+            "error": "#B91C1C",
+            "secondary-fixed": "#dce1ff",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "secondary-container": "#4069f2",
+            "primary-container": "#141c29",
+            "on-surface-variant": "#475569",
+            "secondary": "#1d4ed8",
+            "on-tertiary-fixed": "#281809",
+            "surface-variant": "#dae2fd",
+            "inverse-surface": "#283044",
+            "surface-container-low": "#f2f3ff",
+            "background": "#faf8ff",
+            "outline": "#64748B",
+            "on-primary-fixed-variant": "#3f4756",
+            "primary-fixed-dim": "#bfc6d9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-md": "1.5rem",
+            "space-xs": "0.5rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full font-body-md text-on-surface bg-[#F8FAFC] antialiased flex flex-col selection:bg-surface-slate-tech selection:text-white">
+<!-- ========================================================================= -->
+<!-- TOP NAVIGATION BAR (Docked, 64px, #0B1320 Navy)                           -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-gutter max-w-full bg-surface-navy-dark border-b border-surface-slate-tech flex-shrink-0">
+<div class="flex items-center gap-6">
+<!-- White high-contrast plate for logo -->
+<div class="bg-white px-3 py-1.5 rounded flex items-center justify-center h-10 border border-slate-200">
+<img alt="A.J. Silicon Learning Platform" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnxRf-zyGPC72NkGAmT-OkIsS4NfAz1eIyofQ3rjBB_n-ELMSQaqJazlaOL2tly_tgBV3yYAsK5wR7S7pM90T8Ylw1AOH9DOch6cGOUQ6V8PBu9CznNOMt47xirZnmuWeqoiSsnktkyaEeYFN7EVDEgbEMIq-RwE6dFcKzCkcb35_elZfPklQVSbpIs_GxiEDhKuUp3a9k1vaj_DTmZIE61XdC7PlestkfF6_ZlHPMUHRiwP9BvRA-Gw"/>
+</div>
+<div class="h-6 w-px bg-surface-slate-tech hidden md:block"></div>
+<span class="text-white font-headline-sm text-headline-sm tracking-wide hidden lg:inline">A.J. SILICON AUDIT PORTAL</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Timestamp in WAT -->
+<div class="flex items-center gap-2 text-outline-variant text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>14:20 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-6 w-px bg-surface-slate-tech"></div>
+<!-- Plain Text Role (No dropdown) -->
+<div class="text-white text-body-sm font-body-sm font-medium">
+        Role: Support Agent | Tunde Bakare
+      </div>
+<!-- Trailing Action Icons -->
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-outline-variant hover:text-white transition-colors rounded focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-[#0B1320]" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<!-- User Avatar Badge "TB" -->
+<div class="w-10 h-10 rounded bg-[#1E293B] border border-slate-600 flex items-center justify-center text-white font-semibold text-sm select-none" title="Tunde Bakare (Support Agent)">
+          TB
+        </div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE LAYOUT (SIDEBAR + CONTENT CANVAS)                          -->
+<!-- ========================================================================= -->
+<div class="flex flex-1 overflow-hidden relative">
+<!-- PERSISTENT STAFF SIDEBAR (Fixed 320px / 80 width scale) -->
+<aside class="w-80 flex-shrink-0 bg-[#1E293B] border-r border-[#0B1320] flex flex-col justify-between p-gutter h-[calc(100vh-4rem)] overflow-y-auto">
+<div>
+<div class="pb-4 mb-4 border-b border-slate-700">
+<h2 class="text-white font-headline-sm text-headline-sm">A.J. Silicon Academy</h2>
+<p class="text-outline-variant text-body-sm font-body-sm mt-0.5">Staff Support Operations</p>
+</div>
+<nav aria-label="Staff Navigation" class="space-y-1.5">
+<a class="flex items-center gap-3 px-space-md py-space-sm text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<!-- Active: Students / Candidates Group -->
+<a class="flex items-center gap-3 px-space-md py-space-sm bg-surface-navy-dark text-[#dce1ff] font-medium rounded border-l-2 border-audit-pass-mint min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px] text-emerald-400">group</span>
+<span class="text-label-md font-label-md font-semibold">Students</span>
+<span class="ml-auto text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 bg-slate-800 text-slate-300 rounded border border-slate-700">Active</span>
+</a>
+<a class="flex items-center gap-3 px-space-md py-space-sm text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">co_present</span>
+<span class="text-label-md font-label-md">Cohorts</span>
+</a>
+<a class="flex items-center gap-3 px-space-md py-space-sm text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+<span class="text-label-md font-label-md">Tickets &amp; Inquiries</span>
+</a>
+<a class="flex items-center gap-3 px-space-md py-space-sm text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-all duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="text-label-md font-label-md">Audit Trail</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer / Lock Terminal -->
+<div class="pt-4 border-t border-slate-700 space-y-3">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-surface-navy-dark hover:bg-black text-white text-body-sm font-medium rounded border border-slate-700 transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Lock Terminal Session</span>
+</button>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline-variant px-1 pt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-emerald-500">verified</span>
+            Zero-Trust Session
+          </span>
+<span>Ver 4.9.2</span>
+</div>
+</div>
+</aside>
+<!-- MAIN SCROLLABLE AUDIT & SESSION WORKSPACE -->
+<main class="flex-1 overflow-y-auto bg-[#F8FAFC] pb-16">
+<!-- Breadcrumbs & Page Header -->
+<div class="bg-white border-b border-[#E2E8F0] px-8 py-6">
+<div class="max-w-[1280px] mx-auto">
+<!-- Breadcrumb trail -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-label-sm font-label-sm text-[#475569] mb-3">
+<span>Staff &amp; Support</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Students</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#0F172A] font-semibold">View as Student Session</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A]">View as Student Session</h1>
+<p class="font-body-sm text-body-sm text-[#475569] mt-1">
+                Temporary impersonation session for candidate troubleshooting, ticket resolution, and verification. Governed by dual-audit logging.
+              </p>
+</div>
+<!-- Header Single Primary Action Button -->
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white text-body-sm font-medium rounded-md transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" onclick="scrollToSection('start-dialog-variant')" type="button">
+<span class="material-symbols-outlined text-[20px]">person_pin</span>
+<span>Initiate Impersonation</span>
+</button>
+</div>
+</div>
+<!-- Section Switcher Tabs to view all three mandated states clearly -->
+<div class="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center gap-3 text-label-md font-label-md">
+<span class="text-[#475569] font-medium mr-2">Jump to State Variant:</span>
+<a class="px-3 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-[#0F172A] font-medium transition-colors border border-slate-300" href="#start-dialog-variant">
+              1. Start Dialog
+            </a>
+<a class="px-3 py-1.5 rounded bg-amber-50 hover:bg-amber-100 text-[#B45309] font-medium transition-colors border border-amber-300" href="#active-state-variant">
+              2. Active Session
+            </a>
+<a class="px-3 py-1.5 rounded bg-emerald-50 hover:bg-emerald-100 text-[#047857] font-medium transition-colors border border-emerald-300" href="#expired-state-variant">
+              3. Expired / Sealed
+            </a>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 py-8 space-y-16">
+<!-- =================================================================== -->
+<!-- VARIANT 1: START DIALOG / INITIATE MODAL                            -->
+<!-- =================================================================== -->
+<section class="scroll-mt-6" id="start-dialog-variant">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-7 h-7 rounded-full bg-[#0B1320] text-white font-bold text-xs flex items-center justify-center">1</span>
+<h2 class="font-headline-md text-headline-md text-[#0F172A]">Start Dialog Variant (Initiation Modal)</h2>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-label-sm font-label-sm bg-blue-50 text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">info</span>
+              Pre-Flight Authorization
+            </span>
+</div>
+<!-- Embedded Model Visual Canvas -->
+<div class="bg-slate-200/70 p-6 md:p-10 rounded-xl border border-slate-300 flex items-center justify-center">
+<!-- The Modal Container -->
+<div class="w-full max-w-2xl bg-white rounded-xl border border-[#E2E8F0] shadow-md overflow-hidden">
+<!-- Modal Header -->
+<div class="px-6 py-5 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#0B1320] text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">admin_panel_settings</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A]">Initiate Student Impersonation</h3>
+<p class="font-body-sm text-body-sm text-[#475569]">Authorization required under Support Protocol SP-04</p>
+</div>
+</div>
+<button aria-label="Close dialog" class="w-11 h-11 flex items-center justify-center text-[#64748B] hover:text-[#0F172A] rounded focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Form Body -->
+<form class="p-6 space-y-5" onsubmit="event.preventDefault();">
+<!-- Field: Student Lookup with Masked sensitive info & Reveal control -->
+<div>
+<label class="block font-label-md text-label-md text-[#0F172A] mb-1.5" for="student-select">
+                    Select Target Student Candidate <span class="text-[#B91C1C]">*</span>
+</label>
+<div class="relative">
+<div class="min-h-[44px] w-full px-3.5 py-2.5 bg-white border border-[#64748B] rounded-md text-[#0F172A] font-body-sm flex items-center justify-between focus-within:border-[#2563EB] focus-within:ring-2 focus-within:ring-[#2563EB] focus-within:ring-offset-2">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-[#64748B] text-[20px]">person</span>
+<div class="truncate">
+<span class="font-medium text-[#0F172A]">Chinedu Eze</span>
+<span class="text-[#475569] mx-1">(STU-LOS-2026-0842,</span>
+<span class="font-mono text-xs text-[#0F172A]" id="masked-email">ch•••••.•••@example.com</span>
+<span class="text-[#475569]">)</span>
+</div>
+</div>
+<!-- Reveal Sensitive Info Control -->
+<button class="min-h-[32px] px-2.5 py-1 text-xs font-medium text-[#1D4ED8] hover:bg-blue-50 rounded flex items-center gap-1 border border-blue-200 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]" id="reveal-toggle-btn" onclick="toggleSensitiveEmail()" type="button">
+<span class="material-symbols-outlined text-[16px]" id="reveal-icon">visibility</span>
+<span id="reveal-label">Reveal</span>
+</button>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-[#475569] mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+                    Verified candidate in CISA Exam Prep Cohort 14 (Lagos Center).
+                  </p>
+</div>
+<!-- Field: Required Reason Field with Validation -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="ticket-reason">
+                      Support Ticket &amp; Justification <span class="text-[#B91C1C]">*</span>
+</label>
+<span class="text-xs text-[#047857] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Valid ticket syntax verified
+                    </span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 bg-white border border-[#64748B] rounded-md text-[#0F172A] font-body-sm focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="ticket-reason" placeholder="e.g. Troubleshooting live lecture access ticket #TKT-8492" type="text" value="Troubleshooting live lecture access ticket #TKT-8492"/>
+<p class="font-label-sm text-label-sm text-[#475569] mt-1">Ticket reference will be committed to the cryptographic ledger.</p>
+</div>
+<!-- Field: Session Duration Fixed at 15 minutes -->
+<div>
+<label class="block font-label-md text-label-md text-[#0F172A] mb-1.5">
+                    Session Duration Cap
+                  </label>
+<div class="min-h-[44px] px-3.5 py-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded-md flex items-center justify-between text-[#0F172A]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#B45309] text-[20px]">alarm</span>
+<span class="font-medium text-body-sm">15 minutes</span>
+<span class="text-xs text-[#475569]">(Fixed policy window)</span>
+</div>
+<span class="inline-flex items-center h-6 px-2.5 rounded text-label-sm font-label-sm bg-amber-50 text-[#B45309] border border-[#B45309]">
+                      Auto-terminating
+                    </span>
+</div>
+</div>
+<!-- Explicit Warning Box -->
+<div class="p-4 bg-[#FFFBEB] border border-[#B45309] rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[22px] flex-shrink-0 mt-0.5">warning</span>
+<div>
+<h4 class="font-label-md text-label-md text-[#78350F] font-semibold">Strict Read-Only Enforcement</h4>
+<p class="font-body-sm text-body-sm text-[#78350F] mt-0.5">
+                      Session is strictly read-only. All actions, clicks, and page loads are logged in the non-repudiation audit ledger.
+                    </p>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="pt-4 border-t border-[#E2E8F0] flex items-center justify-end gap-3">
+<button class="min-h-[44px] px-5 bg-transparent border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] text-body-sm font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+                    Cancel
+                  </button>
+<button class="min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white text-body-sm font-medium rounded-md transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+<span>Start session</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- =================================================================== -->
+<!-- VARIANT 2: ACTIVE STATE (STUDENT DASHBOARD OVERVIEW)                -->
+<!-- =================================================================== -->
+<section class="scroll-mt-6" id="active-state-variant">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-7 h-7 rounded-full bg-[#B45309] text-white font-bold text-xs flex items-center justify-center">2</span>
+<h2 class="font-headline-md text-headline-md text-[#0F172A]">Active State Variant (Impersonation Mode Live)</h2>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-label-sm font-label-sm bg-amber-50 text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+              Live Read-Only Stream
+            </span>
+</div>
+<div class="rounded-xl border border-[#E2E8F0] bg-white overflow-hidden shadow-sm">
+<!-- MANDATORY PERSISTENT TOP WARNING BANNER (Docked) -->
+<div class="w-full bg-[#FFFBEB] border-b border-[#B45309] px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[24px]">visibility</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-[#78350F]">
+                    Viewing as Chinedu Eze · Read-only mode · 12:40 remaining
+                  </span>
+<p class="font-body-sm text-xs text-[#78350F]">
+                    Operator: Tunde Bakare (Support) · Ticket #TKT-8492 · Interactive inputs disabled
+                  </p>
+</div>
+</div>
+<!-- High contrast exit button (44px, danger/dark button) -->
+<button class="min-h-[44px] px-5 bg-[#B91C1C] hover:bg-[#991B1B] text-white text-body-sm font-medium rounded-md transition-colors flex items-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#B91C1C] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[20px]">exit_to_app</span>
+<span>Exit session</span>
+</button>
+</div>
+<!-- Student Dashboard Content -->
+<div class="p-8 space-y-8 bg-[#FAF8FF]/40">
+<!-- Student Profile & Enrolled Programme Overview -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-[#EAEDFF] border border-blue-200 text-[#1D4ED8] font-bold text-2xl flex items-center justify-center">
+                    CE
+                  </div>
+<div>
+<div class="flex items-center gap-3">
+<h3 class="font-headline-md text-headline-md text-[#0F172A]">Chinedu Eze</h3>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                        Enrolled Candidate
+                      </span>
+</div>
+<p class="font-body-sm text-body-sm text-[#475569] mt-0.5">
+                      CISA Exam Prep (Cohort 14) · Student ID: STU-LOS-2026-0842 · Lagos Center
+                    </p>
+</div>
+</div>
+<!-- Disabled Candidate Action 1: Edit Profile -->
+<div class="relative group">
+<button class="min-h-[44px] px-4 bg-slate-100 border border-slate-300 text-slate-400 font-medium rounded-md flex items-center gap-2 cursor-not-allowed select-none" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Edit Profile</span>
+</button>
+<!-- Tooltip -->
+<div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1320] text-white text-xs rounded shadow-lg whitespace-nowrap z-20">
+<span class="material-symbols-outlined text-[14px] text-amber-400">lock</span>
+<span>Read-only while viewing as a student</span>
+</div>
+</div>
+</div>
+<!-- Upcoming Live Class Notice Card -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#1D4ED8] text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">broadcast_on_home</span>
+</div>
+<div>
+<span class="text-xs font-semibold text-[#1D4ED8] uppercase tracking-wider">Live Lecture Broadcast Notice</span>
+<h4 class="font-headline-sm text-headline-sm text-[#0F172A] mt-0.5">
+                      Domain 3: Information Systems Acquisition, Development &amp; Implementation
+                    </h4>
+<p class="font-body-sm text-body-sm text-[#475569] mt-1">
+                      Scheduled for: 06 Oct 2026 at 10:00 WAT · Lecturer: Dr. Folashade Adeyemi
+                    </p>
+</div>
+</div>
+<!-- Disabled Candidate Action 2: Join Virtual Lecture -->
+<div class="relative group flex-shrink-0">
+<button class="min-h-[44px] px-5 bg-slate-200 border border-slate-300 text-slate-500 font-medium rounded-md flex items-center gap-2 cursor-not-allowed select-none" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Join Live Session</span>
+</button>
+<div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1320] text-white text-xs rounded shadow-lg whitespace-nowrap z-20">
+<span class="material-symbols-outlined text-[14px] text-amber-400">lock</span>
+<span>Read-only while viewing as a student</span>
+</div>
+</div>
+</div>
+<!-- Module Progress Bento Grid -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-[#0F172A]">CISA Curriculum Modules &amp; Progress</h4>
+<p class="font-body-sm text-body-sm text-[#475569]">Overall Cohort Completion: 48% completed (Domain 1 &amp; 2 certified)</p>
+</div>
+<!-- Tuition status chip -->
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                      Tuition Paid: ₦450,000
+                    </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Module 1: Complete -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-mono font-medium text-[#475569]">DOMAIN 1</span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                          100% Passed
+                        </span>
+</div>
+<h5 class="font-headline-sm text-[16px] text-[#0F172A] leading-snug">
+                        Information System Auditing Process
+                      </h5>
+<p class="text-xs text-[#475569] mt-2">12 Quizzes completed · Diagnostic score: 88%</p>
+</div>
+<!-- Disabled Action: Download Notes -->
+<div class="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="text-xs text-slate-500">Material verified</span>
+<div class="relative group">
+<button class="min-h-[44px] px-3 bg-slate-100 border border-slate-300 text-slate-400 text-xs font-medium rounded flex items-center gap-1 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Download Notes</span>
+</button>
+<div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1320] text-white text-xs rounded shadow-lg whitespace-nowrap z-20">
+<span class="material-symbols-outlined text-[14px] text-amber-400">lock</span>
+<span>Read-only while viewing as a student</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 2: In Review -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-mono font-medium text-[#475569]">DOMAIN 2</span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                          100% Passed
+                        </span>
+</div>
+<h5 class="font-headline-sm text-[16px] text-[#0F172A] leading-snug">
+                        Governance &amp; Management of IT
+                      </h5>
+<p class="text-xs text-[#475569] mt-2">10 Quizzes completed · Diagnostic score: 82%</p>
+</div>
+<div class="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="text-xs text-slate-500">Material verified</span>
+<div class="relative group">
+<button class="min-h-[44px] px-3 bg-slate-100 border border-slate-300 text-slate-400 text-xs font-medium rounded flex items-center gap-1 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Download Notes</span>
+</button>
+<div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1320] text-white text-xs rounded shadow-lg whitespace-nowrap z-20">
+<span class="material-symbols-outlined text-[14px] text-amber-400">lock</span>
+<span>Read-only while viewing as a student</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 3: Active Assessment with Disabled "Take Exam" -->
+<div class="bg-white border-2 border-blue-200 rounded-xl p-6 flex flex-col justify-between bg-blue-50/20">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-mono font-semibold text-[#1D4ED8]">DOMAIN 3 (ACTIVE)</span>
+<span class="inline-flex items-center gap-1 h-6 px-2 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+                          Pending Review
+                        </span>
+</div>
+<h5 class="font-headline-sm text-[16px] text-[#0F172A] leading-snug">
+                        IS Acquisition, Development &amp; Implementation
+                      </h5>
+<p class="text-xs text-[#475569] mt-2">Diagnostic Exam Assessment pending completion</p>
+</div>
+<!-- Disabled Action: Take Exam -->
+<div class="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="text-xs text-[#B45309] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                        Assessment Mode
+                      </span>
+<div class="relative group">
+<button class="min-h-[44px] px-4 bg-slate-200 border border-slate-400 text-slate-500 font-medium text-xs rounded flex items-center gap-1.5 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Take Exam</span>
+</button>
+<div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1320] text-white text-xs rounded shadow-lg whitespace-nowrap z-20">
+<span class="material-symbols-outlined text-[14px] text-amber-400">lock</span>
+<span>Read-only while viewing as a student</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Disabled Payment Submission Row -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div>
+<h5 class="font-headline-sm text-body-md font-semibold text-[#0F172A]">Examination Registry &amp; Vouchers</h5>
+<p class="font-body-sm text-body-sm text-[#475569]">Official ISACA testing voucher scheduled for November 2026 window.</p>
+</div>
+</div>
+<div class="relative group">
+<button class="min-h-[44px] px-4 bg-slate-100 border border-slate-300 text-slate-400 font-medium rounded-md flex items-center gap-2 cursor-not-allowed select-none" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Submit Payment</span>
+</button>
+<div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1320] text-white text-xs rounded shadow-lg whitespace-nowrap z-20">
+<span class="material-symbols-outlined text-[14px] text-amber-400">lock</span>
+<span>Read-only while viewing as a student</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================================== -->
+<!-- VARIANT 3: EXPIRED / END SCREEN CONFIRMATION CARD                   -->
+<!-- =================================================================== -->
+<section class="scroll-mt-6" id="expired-state-variant">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-7 h-7 rounded-full bg-[#047857] text-white font-bold text-xs flex items-center justify-center">3</span>
+<h2 class="font-headline-md text-headline-md text-[#0F172A]">Expired / End Screen Variant (Audited Closure)</h2>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+              Cryptographically Sealed
+            </span>
+</div>
+<!-- Clean Terminal Confirmation Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<!-- Terminal Header -->
+<div class="p-8 bg-[#F8FAFC] border-b border-[#E2E8F0] flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-[#ECFDF5] border border-[#047857] flex items-center justify-center text-[#047857]">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Session Ended &amp; Sealed
+                    </span>
+<span class="text-xs text-[#475569] font-mono">ID: SES-20261005-8492</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#0F172A] mt-1">
+                    Student Impersonation Terminal Terminated
+                  </h3>
+<p class="font-body-sm text-body-sm text-[#475569]">
+                    Read-only proxy decommissioned. All socket connections severed at 14:17:52 WAT.
+                  </p>
+</div>
+</div>
+<!-- Prominent Audit Confirmation Callout -->
+<div class="bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[24px]">fact_check</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-[#1D4ED8]">This session was logged</span>
+<p class="text-xs text-[#1D4ED8]/80">Entry stored in non-repudiation registry</p>
+</div>
+</div>
+</div>
+<!-- Session Telemetry Log Summary Table -->
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm text-[#0F172A] mb-4">
+                Session Telemetry Log Summary
+              </h4>
+<div class="border border-[#E2E8F0] rounded-lg overflow-hidden mb-6">
+<table class="w-full text-left border-collapse">
+<tbody>
+<tr class="border-b border-[#E2E8F0] bg-white">
+<th class="w-1/3 py-3.5 px-6 font-label-md text-label-md text-[#475569] bg-[#F8FAFC]">
+                        Student Impersonated
+                      </th>
+<td class="py-3.5 px-6 font-body-sm text-body-sm text-[#0F172A] font-medium">
+                        Chinedu Eze <span class="text-xs font-mono text-[#475569]">(STU-LOS-2026-0842)</span>
+</td>
+</tr>
+<tr class="border-b border-[#E2E8F0] bg-white">
+<th class="py-3.5 px-6 font-label-md text-label-md text-[#475569] bg-[#F8FAFC]">
+                        Operator Identity
+                      </th>
+<td class="py-3.5 px-6 font-body-sm text-body-sm text-[#0F172A]">
+                        Tunde Bakare, Support Agent <span class="text-xs text-[#475569]">(SEC-OP-019)</span>
+</td>
+</tr>
+<tr class="border-b border-[#E2E8F0] bg-white">
+<th class="py-3.5 px-6 font-label-md text-label-md text-[#475569] bg-[#F8FAFC]">
+                        Session Timestamps
+                      </th>
+<td class="py-3.5 px-6 font-body-sm text-body-sm text-[#0F172A]">
+                        Start: <span class="font-mono text-xs">14:05:12 WAT</span> · End: <span class="font-mono text-xs">14:17:52 WAT</span> (05 Oct 2026)
+                      </td>
+</tr>
+<tr class="border-b border-[#E2E8F0] bg-white">
+<th class="py-3.5 px-6 font-label-md text-label-md text-[#475569] bg-[#F8FAFC]">
+                        Recorded Duration
+                      </th>
+<td class="py-3.5 px-6 font-body-sm text-body-sm text-[#0F172A] font-medium">
+                        12m 40s <span class="text-xs text-[#475569]">(Terminated prior to 15m cap)</span>
+</td>
+</tr>
+<tr class="border-b border-[#E2E8F0] bg-white">
+<th class="py-3.5 px-6 font-label-md text-label-md text-[#475569] bg-[#F8FAFC]">
+                        Reason Recorded
+                      </th>
+<td class="py-3.5 px-6 font-body-sm text-body-sm text-[#0F172A]">
+                        Troubleshooting live lecture access ticket #TKT-8492 resolution
+                      </td>
+</tr>
+<tr class="bg-white">
+<th class="py-3.5 px-6 font-label-md text-label-md text-[#475569] bg-[#F8FAFC]">
+                        Cryptographic Audit Hash
+                      </th>
+<td class="py-3.5 px-6 font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs px-2.5 py-1 bg-[#1E293B] text-emerald-400 rounded">
+                            SHA-256 [0x7E3F...91B2]
+                          </span>
+<span class="text-xs text-[#047857] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                            Dual-Signed Non-Repudiated
+                          </span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Terminal Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#E2E8F0]">
+<div class="flex items-center gap-2 text-xs text-[#475569]">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
+<span>Session lock released. Operator terminal returned to base SecOps privileges.</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="min-h-[44px] px-5 bg-transparent border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] text-body-sm font-medium rounded-md transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB]" href="#">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>View audit entry in ledger</span>
+</a>
+<button class="min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white text-body-sm font-medium rounded-md transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Return to Students directory</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- ========================================================================= -->
+<!-- FOOTER (Institutional Closure)                                            -->
+<!-- ========================================================================= -->
+<footer class="w-full py-space-lg px-gutter border-t border-surface-slate-tech bg-surface-navy-dark flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 flex-shrink-0">
+<div class="text-outline-variant font-body-sm text-body-sm">
+      © 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. All Sessions Digitally Watermarked.
+    </div>
+<div class="flex flex-wrap items-center justify-center gap-6 text-label-sm font-label-sm text-outline-variant">
+<a class="hover:text-white transition-colors duration-150" href="#">Zero-Trust Protocol</a>
+<a class="hover:text-white transition-colors duration-150" href="#">Charter Verification</a>
+<a class="hover:text-white transition-colors duration-150" href="#">Forensic Integrity Policy</a>
+<a class="hover:text-white transition-colors duration-150" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- Micro-interaction script for Reveal toggle -->
+<script>
+    let isMasked = true;
+    function toggleSensitiveEmail() {
+      const emailElem = document.getElementById('masked-email');
+      const iconElem = document.getElementById('reveal-icon');
+      const labelElem = document.getElementById('reveal-label');
+      
+      if (isMasked) {
+        emailElem.textContent = 'chinedu.eze@example.com';
+        iconElem.textContent = 'visibility_off';
+        labelElem.textContent = 'Mask';
+        isMasked = false;
+      } else {
+        emailElem.textContent = 'ch•••••.•••@example.com';
+        iconElem.textContent = 'visibility';
+        labelElem.textContent = 'Reveal';
+        isMasked = true;
+      }
+    }
+
+    function scrollToSection(id) {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

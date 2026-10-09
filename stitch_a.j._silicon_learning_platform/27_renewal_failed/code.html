@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Academy — Specification Board: 27 Renewal Failed</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#ebf1ff",
+            "tertiary-container": "#2f1500",
+            "border-structural": "#E2E8F0",
+            "inverse-primary": "#b9c7e4",
+            "tertiary-fixed": "#ffdcc3",
+            "on-tertiary-fixed": "#2f1500",
+            "surface": "#f8f9ff",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#6ffbbe",
+            "on-error": "#ffffff",
+            "surface-canvas": "#F8FAFC",
+            "border-hairline": "#CBD5E1",
+            "surface-container": "#e6eeff",
+            "on-primary-fixed": "#0d1c32",
+            "surface-container-highest": "#d5e3fd",
+            "on-secondary-fixed": "#002113",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-card": "#FFFFFF",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-navy-dark": "#0B1320",
+            "error": "#ba1a1a",
+            "on-background": "#0d1c2f",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#c76c00",
+            "on-primary-container": "#76849f",
+            "primary-fixed": "#d6e3ff",
+            "surface-bright": "#f8f9ff",
+            "inverse-surface": "#233144",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary": "#ffffff",
+            "background": "#f8f9ff",
+            "on-surface-variant": "#44474d",
+            "secondary-container": "#6cf8bb",
+            "primary-fixed-dim": "#b9c7e4",
+            "on-primary": "#ffffff",
+            "primary-container": "#0d1c32",
+            "primary": "#0B1320",
+            "secondary": "#006c49",
+            "tertiary": "#000000",
+            "on-primary-fixed-variant": "#39475f",
+            "surface-dim": "#ccdbf4",
+            "pedigree-amber-light": "#F59E0B",
+            "tertiary-fixed-dim": "#ffb77d",
+            "error-container": "#ffdad6",
+            "surface-tint": "#515f78",
+            "surface-slate-tech": "#1E293B",
+            "surface-container-high": "#dde9ff",
+            "on-surface": "#0d1c2f",
+            "outline-variant": "#c5c6cd",
+            "surface-variant": "#d5e3fd",
+            "audit-pass-mint": "#059669",
+            "on-secondary-container": "#00714d",
+            "outline": "#75777e",
+            /* Specification tokens */
+            "spec-navy": "#0B1320",
+            "spec-link": "#1D4ED8",
+            "spec-link-dark": "#93C5FD",
+            "spec-text": "#0F172A",
+            "spec-muted": "#475569",
+            "spec-border": "#E2E8F0",
+            "spec-field-border": "#64748B",
+            "spec-danger": "#B91C1C",
+            "spec-danger-bg": "#FEF2F2",
+            "spec-danger-border": "#FECACA",
+            "spec-warning": "#B45309",
+            "spec-warning-bg": "#FFFBEB",
+            "spec-warning-border": "#FDE68A",
+            "spec-success": "#047857",
+            "spec-success-bg": "#ECFDF5",
+            "spec-success-border": "#A7F3D0",
+            "spec-info": "#1D4ED8",
+            "spec-info-bg": "#EFF6FF",
+            "spec-info-border": "#BFDBFE"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "card": "12px",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "telemetry-data": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "display-hero-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "display-hero": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "telemetry-data": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "500" }],
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-hero-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.625rem", "fontWeight": "600" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }],
+            "display-hero": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .spec-card {
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+    }
+  </style>
+</head>
+<body class="bg-surface-canvas text-spec-text font-body-md antialiased selection:bg-surface-container selection:text-spec-navy">
+<!-- ========================================== -->
+<!-- INSTITUTIONAL SPECIFICATION BOARD HEADER   -->
+<!-- ========================================== -->
+<header class="bg-spec-navy border-b border-surface-slate-tech text-white py-6 px-8 sticky top-0 z-50 shadow-sm">
+<div class="max-w-[1520px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex items-center gap-4">
+<div class="bg-white rounded px-3 py-1.5 inline-flex items-center justify-center">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBUhGtVehRgXaZGJqaIPx9ZuE0CYNypaNq5YVRsX4BHYaLFoTzTvrHv6JMK--sfSqDH-mjC0yaqxkEcwFKOuhtRHTg-G6mHdacvCYLiVEtvsJFbWTAEgHpkIkASbgkSj4gf719bh-q_qvPhsL8rIYAmPTf7UAov7wkMWVvxkISjCg9xVMlSroe2vsXn4TFL9_Wu8f9DNG3qs_NkrHsoeL3LCMScDj1oY-GboFWmO5q6eiWTXxSZxY7VKOmnXkbt1U1yI4"/>
+</div>
+<div class="h-6 w-px bg-slate-700"></div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">System Specification Board: 27 Renewal failed</span>
+<span class="bg-spec-warning-bg text-spec-warning border border-spec-warning-border text-label-sm font-label-sm px-2 py-0.5 rounded font-semibold uppercase tracking-wider">Release Matrix v4.2</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-0.5">Desktop viewport standard: 1440px canvas · Institutional Billing Failure Protocol</p>
+</div>
+</div>
+<div class="flex items-center gap-6 text-slate-300 text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="font-telemetry-data text-telemetry-data text-slate-200">ISO/IEC 27001 Accredited</span>
+</div>
+<div class="h-4 w-px bg-slate-700"></div>
+<div class="text-right">
+<span class="block text-slate-400 font-label-sm text-label-sm">Audited Cohort Target</span>
+<span class="font-medium text-white">CISA Exam Prep (Cohort 14)</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- MAIN SPECIFICATION BOARD CANVAS            -->
+<!-- ========================================== -->
+<main class="max-w-[1520px] mx-auto p-8 space-y-16">
+<!-- ========================================================================= -->
+<!-- SECTION 1: STATE 1 — BANNER VERSION (IN GRACE PERIOD)                     -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<div class="border-b border-spec-border pb-3 flex justify-between items-end">
+<div>
+<span class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase tracking-wider">Screen State 1 of 4</span>
+<h2 class="text-headline-md font-headline-md text-spec-navy font-bold">Banner Version — In Grace Period (Active Access Remains)</h2>
+<p class="text-body-sm font-body-sm text-spec-muted mt-1">Rendered immediately beneath the global top bar on the Student Dashboard. Student maintains operational exam vault access until 12 Nov 2026.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-spec-warning-bg text-spec-warning border border-spec-warning-border px-2.5 py-1 rounded text-label-sm font-label-sm font-semibold">Active Grace Window (7 Days Remaining)</span>
+</div>
+</div>
+<!-- DESKTOP SCREEN EMULATION (1440px proportional container) -->
+<div class="w-full bg-white border border-spec-border rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Top App Bar -->
+<div class="bg-spec-navy h-16 px-6 flex items-center justify-between border-b border-surface-slate-tech">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center">
+<img alt="A.J. SILICON" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkFTmCHGf_zYwCPPQGISofGjXLWIZfyqI7c5nPldw7T5f2ln8UuX0_OARwKlR0NFKb4Esaxg5zqNZ6l7NjzcwBOpp8Fkk7Nl343LTdR6LSpY29cFSu8aBzvhGHmAbVdDenkpEUaysvauT5GJdrWjXXapYF2FaekK8qhOQhqGGWBymSX_8tOx1b_wUSWWuGTeSaeYPqSmfO03C4r5K0PlMtHxOgcWTDOCAPVp-OBOpgTWLd_f1ZHja-ryTJS99lFO2ZrVA"/>
+</div>
+<span class="text-slate-400 text-label-md font-label-md border-l border-slate-700 pl-4">Enterprise Student Portal</span>
+</div>
+<!-- Profile Badge -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="text-white text-body-sm font-body-sm font-medium">Chinedu Eze</div>
+<div class="text-slate-400 text-label-sm font-label-sm">CISA Cohort 14 · Candidate</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-white font-title-md text-title-md font-semibold">
+              CE
+            </div>
+</div>
+</div>
+<!-- STATE 1 ALERT BANNER (IN GRACE PERIOD) -->
+<div class="bg-spec-warning-bg border-b border-spec-warning-border px-8 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-spec-warning text-[24px]">warning</span>
+<div class="flex flex-wrap items-center gap-x-3 text-spec-text text-body-sm font-body-sm">
+<span class="font-semibold text-spec-warning">Payment Failed:</span>
+<span>Your payment of <strong>₦15,000</strong> failed on <strong>05 Nov 2026</strong>.</span>
+<span class="text-spec-muted">Reason: Card declined by your bank.</span>
+<span class="inline-flex items-center gap-1 bg-white/70 border border-spec-warning-border px-2 py-0.5 rounded text-label-sm font-label-sm text-spec-warning font-medium">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                Your access continues until 12 Nov 2026
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end md:self-auto shrink-0">
+<a class="text-spec-link text-body-sm font-body-sm font-semibold hover:underline" href="#state-2-card">View details</a>
+<button class="min-h-[44px] px-5 bg-spec-navy hover:bg-slate-800 text-white rounded text-body-sm font-body-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB]">
+              Update card
+            </button>
+</div>
+</div>
+<!-- Student Application Shell Body (Sidebar + Active Dashboard) -->
+<div class="flex min-h-[420px]">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-spec-border bg-surface-canvas p-4 flex flex-col justify-between shrink-0">
+<div class="space-y-4">
+<!-- Enrolled Program Card -->
+<div class="bg-white border border-spec-border rounded-lg p-3 shadow-xs">
+<span class="text-label-sm font-label-sm text-spec-muted uppercase font-semibold block mb-1">Enrolled Program</span>
+<h4 class="text-body-sm font-body-sm font-bold text-spec-navy leading-snug">CISA Exam Prep</h4>
+<p class="text-label-sm font-label-sm text-spec-muted mt-1">Cohort 14: 12 Oct – 18 Dec 2026, virtual</p>
+<div class="mt-2 inline-flex items-center gap-1.5 text-spec-success text-label-sm font-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-spec-success"></span>
+                  Active in Grace
+                </div>
+</div>
+<!-- Navigation Items -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded bg-surface-container text-spec-navy font-semibold text-body-sm border-l-2 border-spec-navy" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  Modules
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                  Practice Exams
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+                  Extend Access
+                </a>
+<div class="pt-2">
+<div class="flex items-center gap-3 px-3 py-2 text-spec-muted text-body-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                  </div>
+<div class="pl-9 pr-2 space-y-1 mt-0.5">
+<a class="block py-1 text-label-md font-label-md text-spec-link font-medium" href="#">Payment methods / Subscriptions</a>
+</div>
+</div>
+</nav>
+</div>
+<div class="pt-4 border-t border-spec-border">
+<a class="flex items-center gap-3 px-3 py-2 text-spec-muted hover:text-spec-danger text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- Main Dashboard View Content (Active access during grace period) -->
+<div class="flex-1 p-8 bg-surface-canvas space-y-6">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="text-headline-sm font-headline-sm font-bold text-spec-navy">Cohort 14 Executive Dashboard</h3>
+<p class="text-body-sm font-body-sm text-spec-muted">Academic progress: Domain 3 (Information Systems Acquisition, Development &amp; Implementation)</p>
+</div>
+<div class="bg-white px-3 py-1.5 rounded border border-spec-border text-label-sm font-label-sm font-medium text-spec-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-spec-success">verified_user</span>
+                Telemetry Live · Access Confirmed
+              </div>
+</div>
+<!-- Bento Diagnostic Grid (Unrestricted During Grace Period) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="spec-card p-5">
+<div class="flex justify-between items-center text-spec-muted text-label-sm font-label-sm">
+<span>Diagnostic Readiness</span>
+<span class="font-semibold text-spec-success">74.2%</span>
+</div>
+<div class="mt-3 text-headline-sm font-headline-sm font-bold text-spec-navy">Domain Mastery: 4/5</div>
+<div class="w-full bg-slate-100 rounded-full h-2 mt-3 overflow-hidden">
+<div class="bg-audit-pass-mint h-full rounded-full" style="width: 74%"></div>
+</div>
+<div class="mt-3 text-label-sm font-label-sm text-spec-muted">Next live proctored drill: 09 Nov 2026</div>
+</div>
+<div class="spec-card p-5">
+<div class="flex justify-between items-center text-spec-muted text-label-sm font-label-sm">
+<span>Vault Resources</span>
+<span class="font-semibold text-spec-navy">12 Unlocked</span>
+</div>
+<div class="mt-3 text-headline-sm font-headline-sm font-bold text-spec-navy">Audit Workpapers</div>
+<p class="mt-2 text-body-sm font-body-sm text-spec-muted">Full access maintained under standard 7-day grace window.</p>
+</div>
+<div class="spec-card p-5 bg-spec-info-bg border-spec-info-border">
+<div class="flex items-center gap-2 text-spec-info text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                  Subscription Status
+                </div>
+<div class="mt-2 text-body-md font-body-md font-bold text-spec-navy">Grace Window Active</div>
+<p class="mt-1 text-label-sm font-label-sm text-spec-muted">Resolve billing before 12 Nov 2026 to ensure uninterrupted practice exam access.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 2: STATE 2 — FULL PAGE VERSION (IN GRACE PERIOD)                  -->
+<!-- ========================================================================= -->
+<section class="space-y-4 pt-6" id="state-2-card">
+<div class="border-b border-spec-border pb-3 flex justify-between items-end">
+<div>
+<span class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase tracking-wider">Screen State 2 of 4</span>
+<h2 class="text-headline-md font-headline-md text-spec-navy font-bold">Full Page Version — In Grace Period (Resolution Console)</h2>
+<p class="text-body-sm font-body-sm text-spec-muted mt-1">Deep link target at <code>Settings &gt; Payment methods &amp; subscriptions &gt; Renewal failed</code>. Detailed retry timeline visible.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-spec-info-bg text-spec-info border border-spec-info-border px-2.5 py-1 rounded text-label-sm font-label-sm font-semibold">Scheduled Automatic Retries</span>
+</div>
+</div>
+<!-- DESKTOP SCREEN EMULATION -->
+<div class="w-full bg-white border border-spec-border rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Top App Bar -->
+<div class="bg-spec-navy h-16 px-6 flex items-center justify-between border-b border-surface-slate-tech">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center">
+<img alt="A.J. SILICON" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4xnqqvuH_2pAIE1DSaYY-l1dc0waaEYSleRMxAer2TLIif_4RHnPaT4HGLb9rJxXtO9U-QF0qY2Worn9pW4uA8LsXINNqKlgU2fbTniIdfdWpSFrM40R27bmBjTWGjV5Y51FM2BMR-Hqk75hG4PUPtq5B7_GabQqGRQ09AzjmfKpReJ79J1G7QMERDqE7bN_XMnkv6P9_74ieaNGKKTXCvRqUjaaic7bMAUSXfFirCSUo1_URJvbit1ApTBREhn89aoU"/>
+</div>
+<span class="text-slate-400 text-label-md font-label-md border-l border-slate-700 pl-4">Enterprise Student Portal</span>
+</div>
+<!-- Profile Badge -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="text-white text-body-sm font-body-sm font-medium">Chinedu Eze</div>
+<div class="text-slate-400 text-label-sm font-label-sm">CISA Cohort 14 · Candidate</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-white font-title-md text-title-md font-semibold">
+              CE
+            </div>
+</div>
+</div>
+<!-- Student Application Shell Body -->
+<div class="flex min-h-[580px]">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-spec-border bg-surface-canvas p-4 flex flex-col justify-between shrink-0">
+<div class="space-y-4">
+<div class="bg-white border border-spec-border rounded-lg p-3 shadow-xs">
+<span class="text-label-sm font-label-sm text-spec-muted uppercase font-semibold block mb-1">Enrolled Program</span>
+<h4 class="text-body-sm font-body-sm font-bold text-spec-navy leading-snug">CISA Exam Prep</h4>
+<p class="text-label-sm font-label-sm text-spec-muted mt-1">Cohort 14: 12 Oct – 18 Dec 2026, virtual</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  Modules
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                  Practice Exams
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+                  Extend Access
+                </a>
+<div class="pt-2">
+<div class="flex items-center gap-3 px-3 py-2 text-spec-navy text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                  </div>
+<div class="pl-9 pr-2 space-y-1 mt-0.5">
+<a class="block py-1 text-label-md font-label-md text-spec-link font-semibold bg-surface-container rounded px-2" href="#">Payment methods / Subscriptions</a>
+</div>
+</div>
+</nav>
+</div>
+<div class="pt-4 border-t border-spec-border">
+<a class="flex items-center gap-3 px-3 py-2 text-spec-muted hover:text-spec-danger text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- Main Resolution Canvas -->
+<div class="flex-1 p-8 bg-surface-canvas">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-spec-muted mb-6">
+<a class="hover:text-spec-navy" href="#">Settings</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-spec-navy" href="#">Payment methods &amp; subscriptions</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-spec-navy font-semibold">Renewal failed</span>
+</nav>
+<!-- Card Container (12px radius, #E2E8F0 border, white background) -->
+<div class="max-w-3xl spec-card p-8 shadow-xs">
+<div class="flex items-start justify-between border-b border-spec-border pb-5">
+<div>
+<div class="inline-flex items-center gap-2 bg-spec-danger-bg border border-spec-danger-border text-spec-danger px-2.5 py-1 rounded text-label-sm font-label-sm font-semibold mb-2">
+<span class="material-symbols-outlined text-[16px]">error</span>
+                    Transaction Declined
+                  </div>
+<h1 class="text-headline-md font-headline-md text-spec-navy font-bold">Renewal payment failed</h1>
+<p class="text-body-sm font-body-sm text-spec-muted mt-1">CISA Exam Prep Cohort 14 Monthly Membership Renewal</p>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-spec-muted block">Amount Due</span>
+<span class="text-headline-md font-headline-md font-bold text-spec-navy">₦15,000</span>
+</div>
+</div>
+<!-- Failure Details Panel -->
+<div class="mt-6 bg-slate-50 border border-spec-border rounded-lg p-5 space-y-4">
+<h4 class="text-label-md font-label-md font-semibold text-spec-navy uppercase tracking-wider">Transaction Diagnostics</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-body-sm font-body-sm">
+<div>
+<span class="text-spec-muted block text-label-sm font-label-sm">Payment Attempt</span>
+<span class="font-medium text-spec-navy">Your payment of ₦15,000 failed on 05 Nov 2026</span>
+</div>
+<div>
+<span class="text-spec-muted block text-label-sm font-label-sm">Decline Classification</span>
+<span class="font-medium text-spec-danger">Card declined by your bank</span>
+</div>
+<div>
+<span class="text-spec-muted block text-label-sm font-label-sm">Target Payment Method</span>
+<div class="flex items-center gap-2 font-medium text-spec-navy mt-0.5">
+<span class="material-symbols-outlined text-[20px] text-slate-500">credit_card</span>
+                      Mastercard ending in 4242 (Exp 09/28)
+                    </div>
+</div>
+<div>
+<span class="text-spec-muted block text-label-sm font-label-sm">Gateway Response Code</span>
+<span class="font-telemetry-data text-telemetry-data text-slate-700">ERR_BANK_DECLINED_DO_NOT_HONOR</span>
+</div>
+</div>
+</div>
+<!-- Structured Retry Schedule -->
+<div class="mt-6 space-y-3">
+<h4 class="text-label-md font-label-md font-semibold text-spec-navy uppercase tracking-wider">Automated Retry Schedule</h4>
+<div class="border border-spec-border rounded-lg divide-y divide-spec-border">
+<div class="p-3.5 flex items-center justify-between bg-spec-danger-bg/40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-spec-danger text-[20px]">cancel</span>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-spec-navy">Attempt 1 (Primary)</div>
+<div class="text-label-sm font-label-sm text-spec-muted">05 Nov 2026 at 02:14 WAT</div>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-spec-danger font-semibold bg-white border border-spec-danger-border px-2 py-0.5 rounded">Failed: Declined</span>
+</div>
+<div class="p-3.5 flex items-center justify-between bg-white">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-spec-info text-[20px]">schedule</span>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-spec-navy">Attempt 2 (Automatic Retry)</div>
+<div class="text-label-sm font-label-sm text-spec-muted">Scheduled for 08 Nov 2026 at 09:00 WAT</div>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-spec-info font-semibold bg-spec-info-bg border border-spec-info-border px-2 py-0.5 rounded">Scheduled</span>
+</div>
+<div class="p-3.5 flex items-center justify-between bg-white">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">event</span>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-spec-navy">Final Attempt (Grace Period Expiry)</div>
+<div class="text-label-sm font-label-sm text-spec-muted">Scheduled for 12 Nov 2026 at 18:00 WAT</div>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-slate-500 font-medium">Pending Prior Retry</span>
+</div>
+</div>
+<p class="text-label-sm font-label-sm text-spec-muted">Next attempts: <strong>08 Nov 2026</strong> and <strong>12 Nov 2026</strong>. If payment is not cleared by 12 Nov 2026, exam workspace access will pause.</p>
+</div>
+<!-- Access Status Line Banner (Info banner #EFF6FF) -->
+<div class="mt-6 bg-spec-info-bg border border-spec-info-border rounded-lg p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-spec-info text-[22px] mt-0.5">info</span>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-spec-navy">Your access continues until 12 Nov 2026</div>
+<div class="text-body-sm font-body-sm text-spec-muted mt-0.5">Your active grace period guarantees uninterrupted access to course materials, mock drills, and virtual classes while your bank settles the transaction.</div>
+</div>
+</div>
+<!-- Action Bar (Min 44px touch targets) -->
+<div class="mt-8 pt-5 border-t border-spec-border flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-6 bg-spec-navy hover:bg-slate-800 text-white rounded font-medium text-body-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB]">
+                    Update card
+                  </button>
+<button class="min-h-[44px] px-5 bg-white border border-spec-field-border text-spec-text hover:bg-slate-50 rounded font-medium text-body-sm transition-colors">
+                    Retry payment now
+                  </button>
+</div>
+<div>
+<a class="text-spec-link hover:underline text-body-sm font-body-sm font-medium inline-flex items-center gap-1.5 min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+                    View invoice #INV-2026-8812
+                  </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 3: STATE 3 — BANNER VERSION (ACCESS PAUSED)                       -->
+<!-- ========================================================================= -->
+<section class="space-y-4 pt-6">
+<div class="border-b border-spec-border pb-3 flex justify-between items-end">
+<div>
+<span class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase tracking-wider">Screen State 3 of 4</span>
+<h2 class="text-headline-md font-headline-md text-spec-navy font-bold">Banner Version — Access Paused (Grace Period Expired)</h2>
+<p class="text-body-sm font-body-sm text-spec-muted mt-1">Rendered under the top bar after 12 Nov 2026 expiry. Student workspace and exam vaults are locked.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-spec-danger-bg text-spec-danger border border-spec-danger-border px-2.5 py-1 rounded text-label-sm font-label-sm font-semibold">Workspace Paused</span>
+</div>
+</div>
+<!-- DESKTOP SCREEN EMULATION -->
+<div class="w-full bg-white border border-spec-border rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Top App Bar -->
+<div class="bg-spec-navy h-16 px-6 flex items-center justify-between border-b border-surface-slate-tech">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center">
+<img alt="A.J. SILICON" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQqOE1v8LgoMdKzJz9EifUupXcQzhh2LMHmbvzM20hBzSAE1uTeQ0bwJx2rdTMkliTQnsg_j_Clqqq6wkD9-B0Jjr2EyqCX8PlJVi9mM9l-eD9lBVYC7KVqaOUobkWy1j6tfaHfOmWvClmZWrxqJBdjGbgOlB4NxFWO9jue14ppru35w7s_oxf30pdagFif7A8Y-ESNymtrQs4iJFrzCC-hPpiZKwLAPuNvqA6ZgyuSVrGPNaz1unP-AWzNZB_njU4og"/>
+</div>
+<span class="text-slate-400 text-label-md font-label-md border-l border-slate-700 pl-4">Enterprise Student Portal</span>
+</div>
+<!-- Profile Badge -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="text-white text-body-sm font-body-sm font-medium">Chinedu Eze</div>
+<div class="text-slate-400 text-label-sm font-label-sm">CISA Cohort 14 · Candidate</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-white font-title-md text-title-md font-semibold">
+              CE
+            </div>
+</div>
+</div>
+<!-- STATE 3 ALERT BANNER (ACCESS PAUSED) -->
+<div class="bg-spec-danger-bg border-b border-spec-danger-border px-8 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-spec-danger text-[24px]">error</span>
+<div class="flex flex-wrap items-center gap-x-3 text-spec-text text-body-sm font-body-sm">
+<span class="font-semibold text-spec-danger">Renewal Payment Failed:</span>
+<span>Your payment of <strong>₦15,000</strong> failed on <strong>05 Nov 2026</strong>.</span>
+<span class="text-spec-muted">Reason: Card declined by your bank.</span>
+<span class="inline-flex items-center gap-1 bg-white border border-spec-danger-border px-2 py-0.5 rounded text-label-sm font-label-sm text-spec-danger font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                Access is paused until payment succeeds
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end md:self-auto shrink-0">
+<a class="text-spec-link text-body-sm font-body-sm font-semibold hover:underline" href="#state-4-card">View invoice</a>
+<button class="min-h-[44px] px-6 bg-spec-navy hover:bg-slate-800 text-white rounded text-body-sm font-body-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB]">
+              Update card
+            </button>
+</div>
+</div>
+<!-- Student Application Shell Body (With Locked Content Overlay) -->
+<div class="flex min-h-[420px]">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-spec-border bg-surface-canvas p-4 flex flex-col justify-between shrink-0">
+<div class="space-y-4">
+<div class="bg-white border border-spec-border rounded-lg p-3 shadow-xs">
+<span class="text-label-sm font-label-sm text-spec-muted uppercase font-semibold block mb-1">Enrolled Program</span>
+<h4 class="text-body-sm font-body-sm font-bold text-spec-navy leading-snug">CISA Exam Prep</h4>
+<p class="text-label-sm font-label-sm text-spec-muted mt-1">Cohort 14: 12 Oct – 18 Dec 2026, virtual</p>
+<div class="mt-2 inline-flex items-center gap-1.5 text-spec-danger text-label-sm font-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-spec-danger"></span>
+                  Access Paused
+                </div>
+</div>
+<nav class="space-y-1 opacity-70">
+<div class="flex items-center justify-between px-3 py-2.5 rounded bg-slate-100 text-slate-500 text-body-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                    Dashboard
+                  </div>
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</div>
+<div class="flex items-center justify-between px-3 py-2.5 rounded text-slate-400 text-body-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                    Modules
+                  </div>
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</div>
+<div class="flex items-center justify-between px-3 py-2.5 rounded text-slate-400 text-body-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                    Practice Exams
+                  </div>
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</div>
+<div class="pt-2">
+<div class="flex items-center gap-3 px-3 py-2 text-spec-navy text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                  </div>
+<div class="pl-9 pr-2 space-y-1 mt-0.5">
+<a class="block py-1 text-label-md font-label-md text-spec-link font-medium" href="#">Payment methods / Subscriptions</a>
+</div>
+</div>
+</nav>
+</div>
+<div class="pt-4 border-t border-spec-border">
+<a class="flex items-center gap-3 px-3 py-2 text-spec-muted hover:text-spec-danger text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- Main Dashboard View Content (Locked state presentation) -->
+<div class="flex-1 p-8 bg-surface-canvas relative">
+<!-- Restricted Access Interstitial Overlay -->
+<div class="max-w-2xl mx-auto my-6 spec-card p-8 text-center space-y-4 border-slate-300">
+<div class="w-14 h-14 rounded-full bg-spec-danger-bg text-spec-danger flex items-center justify-center mx-auto border border-spec-danger-border">
+<span class="material-symbols-outlined text-[32px]">lock</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm font-bold text-spec-navy">Candidate Workspace Temporarily Paused</h3>
+<p class="text-body-sm font-body-sm text-spec-muted mt-2 max-w-lg mx-auto">
+                  Automatic retry attempts scheduled between 05 Nov and 12 Nov 2026 were unsuccessful. Your study streak, mock scores, and notes are securely preserved.
+                </p>
+</div>
+<div class="p-4 bg-slate-50 border border-spec-border rounded text-left flex items-center justify-between text-body-sm">
+<div>
+<div class="text-label-sm font-label-sm text-spec-muted">Outstanding Renewal Fee</div>
+<div class="font-bold text-spec-navy text-title-md">₦15,000</div>
+</div>
+<button class="min-h-[44px] px-6 bg-spec-navy hover:bg-slate-800 text-white rounded font-medium text-body-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB]">
+                  Update card &amp; Restore Access
+                </button>
+</div>
+<div class="text-label-sm font-label-sm text-spec-muted">
+                Immediate reactivation occurs upon successful payment confirmation.
+              </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 4: STATE 4 — FULL PAGE VERSION (ACCESS PAUSED)                    -->
+<!-- ========================================================================= -->
+<section class="space-y-4 pt-6" id="state-4-card">
+<div class="border-b border-spec-border pb-3 flex justify-between items-end">
+<div>
+<span class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase tracking-wider">Screen State 4 of 4</span>
+<h2 class="text-headline-md font-headline-md text-spec-navy font-bold">Full Page Version — Access Paused (Exhausted Retries)</h2>
+<p class="text-body-sm font-body-sm text-spec-muted mt-1">Institutional resolution console showing retry exhaustion and direct settlement pathways.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-spec-danger-bg text-spec-danger border border-spec-danger-border px-2.5 py-1 rounded text-label-sm font-label-sm font-semibold">Automatic Retries Exhausted</span>
+</div>
+</div>
+<!-- DESKTOP SCREEN EMULATION -->
+<div class="w-full bg-white border border-spec-border rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Top App Bar -->
+<div class="bg-spec-navy h-16 px-6 flex items-center justify-between border-b border-surface-slate-tech">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center">
+<img alt="A.J. SILICON" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPKVp7iiTdMOKch9LJ6kssxG8cLFeMjaG0hV9gCbdjv9rxgB44doUHA6HtlT2I9UqqqkWJH5gMld4BXM31EVOV10I9TgRjabdSa3iwqk760HTdqNlLpEHEHH3zPuCJdALkymfWVI0H_2acOeFN5JcMYgBrhW4cMRWQ8BUNAnOO_v3_KcbgBDnGGwVDOokvUc2vWjfYVDoC3hQAq9hGBsaAgN2q2St6qCrW4nEomisU_f-93OvrFVK5vq_TyI4yas5Z2-c"/>
+</div>
+<span class="text-slate-400 text-label-md font-label-md border-l border-slate-700 pl-4">Enterprise Student Portal</span>
+</div>
+<!-- Profile Badge -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="text-white text-body-sm font-body-sm font-medium">Chinedu Eze</div>
+<div class="text-slate-400 text-label-sm font-label-sm">CISA Cohort 14 · Candidate</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-white font-title-md text-title-md font-semibold">
+              CE
+            </div>
+</div>
+</div>
+<!-- Student Application Shell Body -->
+<div class="flex min-h-[580px]">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-spec-border bg-surface-canvas p-4 flex flex-col justify-between shrink-0">
+<div class="space-y-4">
+<div class="bg-white border border-spec-border rounded-lg p-3 shadow-xs">
+<span class="text-label-sm font-label-sm text-spec-muted uppercase font-semibold block mb-1">Enrolled Program</span>
+<h4 class="text-body-sm font-body-sm font-bold text-spec-navy leading-snug">CISA Exam Prep</h4>
+<p class="text-label-sm font-label-sm text-spec-muted mt-1">Cohort 14: 12 Oct – 18 Dec 2026, virtual</p>
+<div class="mt-2 inline-flex items-center gap-1.5 text-spec-danger text-label-sm font-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-spec-danger"></span>
+                  Access Paused
+                </div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  Modules
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+                  Practice Exams
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-spec-muted hover:text-spec-navy hover:bg-white text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+                  Extend Access
+                </a>
+<div class="pt-2">
+<div class="flex items-center gap-3 px-3 py-2 text-spec-navy text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                  </div>
+<div class="pl-9 pr-2 space-y-1 mt-0.5">
+<a class="block py-1 text-label-md font-label-md text-spec-link font-semibold bg-surface-container rounded px-2" href="#">Payment methods / Subscriptions</a>
+</div>
+</div>
+</nav>
+</div>
+<div class="pt-4 border-t border-spec-border">
+<a class="flex items-center gap-3 px-3 py-2 text-spec-muted hover:text-spec-danger text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </a>
+</div>
+</aside>
+<!-- Main Resolution Canvas -->
+<div class="flex-1 p-8 bg-surface-canvas">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-spec-muted mb-6">
+<a class="hover:text-spec-navy" href="#">Settings</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-spec-navy" href="#">Payment methods &amp; subscriptions</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-spec-navy font-semibold">Renewal failed</span>
+</nav>
+<!-- Card Container (12px radius, #E2E8F0 border, white background) -->
+<div class="max-w-3xl spec-card p-8 shadow-xs">
+<div class="flex items-start justify-between border-b border-spec-border pb-5">
+<div>
+<div class="inline-flex items-center gap-2 bg-spec-danger-bg border border-spec-danger-border text-spec-danger px-2.5 py-1 rounded text-label-sm font-label-sm font-semibold mb-2">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+                    Grace Window Concluded
+                  </div>
+<h1 class="text-headline-md font-headline-md text-spec-navy font-bold">Subscription access paused</h1>
+<p class="text-body-sm font-body-sm text-spec-muted mt-1">Outstanding balance requires resolution to re-enable cohort resources.</p>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-spec-muted block">Outstanding Balance</span>
+<span class="text-headline-md font-headline-md font-bold text-spec-navy">₦15,000</span>
+</div>
+</div>
+<!-- Failure Breakdown Panel -->
+<div class="mt-6 bg-slate-50 border border-spec-border rounded-lg p-5 space-y-3">
+<h4 class="text-label-md font-label-md font-semibold text-spec-navy uppercase tracking-wider">Breakdown of Failure</h4>
+<div class="text-body-sm font-body-sm space-y-1.5">
+<p class="text-spec-text">Your payment of <strong>₦15,000</strong> failed on <strong>05 Nov 2026</strong>.</p>
+<p class="text-spec-danger font-medium">Reason: Card declined by your bank.</p>
+<p class="text-spec-muted text-label-sm font-label-sm">Primary payment instrument: Mastercard ending in 4242</p>
+</div>
+</div>
+<!-- Retry Schedule: Exhausted Timeline -->
+<div class="mt-6 space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="text-label-md font-label-md font-semibold text-spec-navy uppercase tracking-wider">Retry Audit Log</h4>
+<span class="text-label-sm font-label-sm text-spec-danger font-semibold">All 3 automated attempts exhausted</span>
+</div>
+<div class="border border-spec-danger-border bg-spec-danger-bg/20 rounded-lg p-4">
+<p class="text-body-sm font-body-sm text-spec-navy font-medium">
+                    Automatic retries exhausted (Attempts on 05 Nov, 08 Nov, and 12 Nov 2026 failed).
+                  </p>
+<div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-2 text-label-sm font-label-sm text-spec-muted">
+<div class="bg-white p-2.5 rounded border border-spec-border">
+<span class="block font-semibold text-spec-navy">05 Nov 2026</span>
+<span class="text-spec-danger">Declined by issuer</span>
+</div>
+<div class="bg-white p-2.5 rounded border border-spec-border">
+<span class="block font-semibold text-spec-navy">08 Nov 2026</span>
+<span class="text-spec-danger">Insufficient balance</span>
+</div>
+<div class="bg-white p-2.5 rounded border border-spec-border">
+<span class="block font-semibold text-spec-navy">12 Nov 2026</span>
+<span class="text-spec-danger">Final attempt failed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Access Status Line (Warning/Alert Banner) -->
+<div class="mt-6 bg-spec-warning-bg border border-spec-warning-border rounded-lg p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-spec-warning text-[22px] mt-0.5">warning</span>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-spec-navy">Access is paused until payment succeeds</div>
+<div class="text-body-sm font-body-sm text-spec-muted mt-0.5">Mock question engines, weekly telemetry, and live sessions are paused. Update your billing credentials below to immediately restore full privileges.</div>
+</div>
+</div>
+<!-- Actions Area (Min 44px touch targets) -->
+<div class="mt-8 pt-5 border-t border-spec-border flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-6 bg-spec-navy hover:bg-slate-800 text-white rounded font-medium text-body-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB]">
+                    Update card
+                  </button>
+<button class="min-h-[44px] px-5 bg-white border border-spec-field-border text-spec-text hover:bg-slate-50 rounded font-medium text-body-sm transition-colors">
+                    Pay via Direct Transfer
+                  </button>
+</div>
+<div>
+<a class="text-spec-danger hover:underline text-body-sm font-body-sm font-medium inline-flex items-center min-h-[44px]" href="#">
+                    Cancel subscription
+                  </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 5: INSTITUTIONAL DESIGN TOKENS & PROTOCOL SPECIFICATION           -->
+<!-- ========================================================================= -->
+<section class="spec-card p-8 bg-white border-spec-border space-y-6">
+<div class="border-b border-spec-border pb-4">
+<h3 class="text-headline-sm font-headline-sm font-bold text-spec-navy">Design Token &amp; State Transition Reference</h3>
+<p class="text-body-sm font-body-sm text-spec-muted">Hardened parameters governing billing failure resolution within the A.J. Silicon enterprise ecosystem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="p-4 rounded border border-spec-border bg-slate-50 space-y-2">
+<div class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase">Color Palette Authority</div>
+<ul class="text-label-sm font-label-sm space-y-1 text-slate-700">
+<li><span class="font-mono text-spec-navy font-semibold">#0B1320</span> Primary Navy</li>
+<li><span class="font-mono text-spec-link font-semibold">#1D4ED8</span> Institutional Link</li>
+<li><span class="font-mono text-spec-danger font-semibold">#B91C1C</span> Danger Accent</li>
+<li><span class="font-mono text-spec-warning font-semibold">#B45309</span> Warning Amber</li>
+<li><span class="font-mono text-spec-success font-semibold">#047857</span> Success Emerald</li>
+</ul>
+</div>
+<div class="p-4 rounded border border-spec-border bg-slate-50 space-y-2">
+<div class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase">Containers &amp; Surfaces</div>
+<ul class="text-label-sm font-label-sm space-y-1 text-slate-700">
+<li>Danger Fill: <span class="font-mono font-semibold">#FEF2F2</span> / <span class="font-mono font-semibold">#FECACA</span></li>
+<li>Warning Fill: <span class="font-mono font-semibold">#FFFBEB</span> / <span class="font-mono font-semibold">#FDE68A</span></li>
+<li>Info Fill: <span class="font-mono font-semibold">#EFF6FF</span> / <span class="font-mono font-semibold">#BFDBFE</span></li>
+<li>Cards: <span class="font-mono font-semibold">12px radius</span>, <span class="font-mono font-semibold">#E2E8F0</span></li>
+</ul>
+</div>
+<div class="p-4 rounded border border-spec-border bg-slate-50 space-y-2">
+<div class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase">Interaction Controls</div>
+<ul class="text-label-sm font-label-sm space-y-1 text-slate-700">
+<li>Min Touch Target: <span class="font-semibold text-spec-navy">44px</span> height</li>
+<li>Focus Ring: <span class="font-mono font-semibold">#2563EB</span> (2px offset 2px)</li>
+<li>Form Field Border: <span class="font-mono font-semibold">#64748B</span></li>
+<li>Text Alignment: Icon paired + text</li>
+</ul>
+</div>
+<div class="p-4 rounded border border-spec-border bg-slate-50 space-y-2">
+<div class="text-label-sm font-label-sm font-semibold text-spec-muted uppercase">Grace Protocol</div>
+<ul class="text-label-sm font-label-sm space-y-1 text-slate-700">
+<li>Window: <strong>7 full calendar days</strong></li>
+<li>Retry cadence: Day 0, Day 3, Day 7</li>
+<li>Day 0 to 7: Active grace, modules open</li>
+<li>Day 7+: Automatic lock out to interstitial</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- ========================================== -->
+<!-- INSTITUTIONAL FOOTER                       -->
+<!-- ========================================== -->
+<footer class="bg-surface-container-lowest border-t border-border-structural mt-20 py-8 px-8">
+<div class="max-w-[1520px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm text-spec-muted">
+<div>
+        © 2025 A.J. Silicon Academy &amp; Enterprise Audit Platform. Cryptographically Verified ISO/IEC 27001 &amp; SOC 2 Type II Accredited.
+      </div>
+<div class="flex items-center gap-6">
+<a class="hover:text-spec-navy hover:underline" href="#">Audit Protocol</a>
+<a class="hover:text-spec-navy hover:underline" href="#">Verification Registry</a>
+<a class="hover:text-spec-navy hover:underline" href="#">Governance Standards</a>
+<a class="hover:text-spec-navy hover:underline" href="#">Ethics &amp; Compliance</a>
+</div>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>

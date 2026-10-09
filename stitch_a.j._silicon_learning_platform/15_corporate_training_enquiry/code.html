@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Corporate training enquiry</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #0F172A;
+    background-color: #F8FAFC;
+    margin: 0;
+    padding: 0;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  .focus-ring:focus-within, .focus-ring:focus {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-custom {
+    animation: spin 1s linear infinite;
+  }
+</style>
+</head>
+<body class="p-8 space-y-16">
+
+  <!-- Header spec label -->
+  <div class="max-w-[1440px] mx-auto border-b border-[#E2E8F0] pb-4">
+    <div class="text-xs uppercase tracking-wider text-[#475569] font-semibold">Design Specification · Screen 15</div>
+    <h1 class="text-2xl font-bold text-[#0F172A]">Corporate Training Enquiry — Complete State Board</h1>
+    <p class="text-sm text-[#475569] mt-1">Tokens: Primary #0B1320, Link #1D4ED8, Link-on-dark #93C5FD, Focus #2563EB, Danger #B91C1C, Success #047857, Border #64748B, Cards 12px, 44px min touch.</p>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- STATE 1: EMPTY (DESKTOP 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+    <!-- State Bar -->
+    <div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#E2E8F0] flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0B1320] text-white text-xs font-bold">1</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 1: Empty Form (Default State)</span>
+      </div>
+      <span class="text-xs text-[#475569] font-mono">Viewport: Desktop 1440px · Public Simple Top Bar</span>
+    </div>
+
+    <!-- Public Top Bar -->
+    <header class="bg-[#0B1320] h-16 px-8 flex items-center justify-between border-b border-[#1E293B]">
+      <div class="flex items-center gap-8">
+        <div class="bg-white px-2 py-1 rounded inline-flex items-center">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxoVgjNpKOT_x_nWGT7gt7R2TDpY2KV6BK58gV0v7qarvbWprkzsc-63aPEcN4aH8ZvVLADxJ34_HhWCKvYR95lEgl7qHeFdHHfZVUy5BHXhqSQPkuhgwn_ipHKU3pDpYzDnIbfGW9GwLN0h2bLmjmwX8Q4sLq0vbR8aAQRN2PI7camXb3bjstKpOvO2HmQrOFsxBSbh1IoQv5nPswuMh3Gx4ZpXV-jwxwx1hC_PHeEsan59aBRUJAySWOO8ge7vg1uJQ" alt="A.J. SILICON" class="h-6 object-contain" />
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#" class="text-[#93C5FD] hover:underline focus:outline-none focus:ring-2 focus:ring-[#2563EB]">Programmes</a>
+          <a href="#" class="text-white hover:underline focus:outline-none focus:ring-2 focus:ring-[#2563EB]">Workshops</a>
+        </nav>
+      </div>
+      <div>
+        <a href="#" class="text-[#93C5FD] hover:underline text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#2563EB]">Log in</a>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="p-8 md:p-12 max-w-6xl mx-auto">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-[#0F172A]">Corporate training</h2>
+        <p class="text-base text-[#475569] mt-2">Upskill your internal audit, risk, and technology compliance teams with tailored curricula aligned to international standards.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left: Form -->
+        <div class="lg:col-span-8 bg-white border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Company name -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="c_name_1">Company name</label>
+                <input type="text" id="c_name_1" placeholder="e.g. First Horizon Bank" class="w-full h-11 px-3.5 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+              </div>
+
+              <!-- Contact name -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="cnt_name_1">Contact name</label>
+                <input type="text" id="cnt_name_1" placeholder="e.g. Babatunde Lawal" class="w-full h-11 px-3.5 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Work email -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="email_1">Work email</label>
+                <input type="email" id="email_1" placeholder="name@company.com" class="w-full h-11 px-3.5 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+              </div>
+
+              <!-- Phone with +234 prefix -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="phone_1">Phone number</label>
+                <div class="flex rounded-lg border border-[#64748B] overflow-hidden focus-ring h-11">
+                  <span class="inline-flex items-center px-3.5 bg-[#F1F5F9] border-r border-[#64748B] text-sm font-medium text-[#0F172A]">+234</span>
+                  <input type="tel" id="phone_1" placeholder="803 000 0000" class="flex-1 px-3.5 text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none bg-white" />
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Headcount range select -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="headcount_1">Headcount range</label>
+                <select id="headcount_1" class="w-full h-11 px-3.5 text-sm text-[#475569] border border-[#64748B] rounded-lg focus-ring bg-white">
+                  <option value="" disabled selected>Select estimated learners</option>
+                  <option value="5-10">5 – 10 participants</option>
+                  <option value="11-25">11 – 25 participants</option>
+                  <option value="26-50">26 – 50 participants</option>
+                  <option value="50+">50+ participants</option>
+                </select>
+              </div>
+
+              <!-- Delivery mode select -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="mode_1">Delivery mode</label>
+                <select id="mode_1" class="w-full h-11 px-3.5 text-sm text-[#475569] border border-[#64748B] rounded-lg focus-ring bg-white">
+                  <option value="" disabled selected>Select delivery format</option>
+                  <option value="physical">Physical</option>
+                  <option value="virtual">Virtual</option>
+                  <option value="hybrid">Hybrid</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Programme multi-select -->
+            <div>
+              <label class="block text-sm font-medium text-[#0F172A] mb-1.5">Programmes of interest (select all that apply)</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 p-3.5 border border-[#64748B] rounded-lg bg-white">
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" />
+                  <span class="text-sm text-[#0F172A]">CISA Exam Prep</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" />
+                  <span class="text-sm text-[#0F172A]">CISM Security Manager</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" />
+                  <span class="text-sm text-[#0F172A]">CRISC Risk & Information Systems</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" />
+                  <span class="text-sm text-[#0F172A]">AI Auditor & Governance (AAIA)</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" />
+                  <span class="text-sm text-[#0F172A]">IT Risk & Controls Fundamentals</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB]" />
+                  <span class="text-sm text-[#0F172A]">Cybersecurity Incident Response</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Preferred dates -->
+            <div>
+              <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="dates_1">Preferred dates</label>
+              <input type="text" id="dates_1" placeholder="e.g. Q4 2026 or starting November 2026" class="w-full h-11 px-3.5 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="msg_1">Message</label>
+              <textarea id="msg_1" rows="4" placeholder="Tell us about your team's learning objectives, current skill levels, or specific accreditation targets..." class="w-full p-3.5 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white"></textarea>
+            </div>
+
+            <!-- Button: disabled-until-valid -->
+            <div class="pt-2">
+              <button type="button" disabled class="w-full sm:w-auto min-h-[44px] px-8 py-2.5 bg-[#E2E8F0] text-[#94A3B8] font-medium text-sm rounded-lg cursor-not-allowed transition-colors">
+                Send enquiry
+              </button>
+              <p class="text-xs text-[#475569] mt-2">All fields marked are required to prepare a custom institutional proposal.</p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column: What happens next -->
+        <div class="lg:col-span-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-[12px] p-6 space-y-6">
+          <div class="border-b border-[#E2E8F0] pb-4">
+            <h3 class="text-lg font-bold text-[#0F172A]">What happens next</h3>
+            <p class="text-xs text-[#475569] mt-1">Our corporate advisory team facilitates cohort onboarding with minimal operational downtime.</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">We reply within 2 working days</p>
+                <p class="text-xs text-[#475569] mt-0.5">A designated education director reviews your requirements and schedules an initial briefing call.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">We agree scope and dates</p>
+                <p class="text-xs text-[#475569] mt-0.5">We customize module pacing, case studies, and delivery schedules to align with your corporate fiscal calendar.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">You receive a quote</p>
+                <p class="text-xs text-[#475569] mt-0.5">A formal commercial proposal and service level agreement are issued with corporate group rate concessions.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Institutional Trust Box -->
+          <div class="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-4 flex items-start gap-3">
+            <span class="material-symbols-outlined text-[#1D4ED8] text-xl shrink-0 mt-0.5">verified</span>
+            <div class="text-xs text-[#1D4ED8] leading-relaxed">
+              <strong class="font-semibold block text-[#0F172A] mb-0.5">Corporate Assurance</strong>
+              Programmes earn recognized CPE hours and qualify for continuing professional development credit across leading accounting and audit bodies.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 2: VALIDATION ERRORS (DESKTOP 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+    <!-- State Bar -->
+    <div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#E2E8F0] flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#B91C1C] text-white text-xs font-bold">2</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 2: Validation Errors</span>
+      </div>
+      <span class="text-xs text-[#B91C1C] font-semibold flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">error</span> Inline field errors with #B91C1C borders & fills
+      </span>
+    </div>
+
+    <!-- Public Top Bar -->
+    <header class="bg-[#0B1320] h-16 px-8 flex items-center justify-between border-b border-[#1E293B]">
+      <div class="flex items-center gap-8">
+        <div class="bg-white px-2 py-1 rounded inline-flex items-center">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzPK7wiEs92LEM1ZVx4r5kTmNzoNv8yLeuVYqtQWGcfSJlAidiveS38Bfy7R0WnVZDiUpouylRBQd3BNJe8l-5dJGAwa7qDRszKlXFHp12Rasf0B8PyugrJP12ZpQ2-xqoofHkftCGx8stXin6CNnAPdhFsUfPp-wmwGpgdR00HHAlMhl8yLFRqbgyPETgQ-kppxMBSYZ8bFjrtH4PWUnI8BXXWbiJ8_xejI9mJ_dW_ZpwJL_XlrqTGfjA9v0fVKi_SBI" alt="A.J. SILICON" class="h-6 object-contain" />
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#" class="text-[#93C5FD] hover:underline">Programmes</a>
+          <a href="#" class="text-white hover:underline">Workshops</a>
+        </nav>
+      </div>
+      <div>
+        <a href="#" class="text-[#93C5FD] hover:underline text-sm font-medium">Log in</a>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="p-8 md:p-12 max-w-6xl mx-auto">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-[#0F172A]">Corporate training</h2>
+        <p class="text-base text-[#475569] mt-2">Upskill your internal audit, risk, and technology compliance teams with tailored curricula aligned to international standards.</p>
+      </div>
+
+      <!-- Top Summary Error Banner -->
+      <div class="mb-8 p-4 bg-[#FEF2F2] border border-[#FCA5A5] rounded-lg flex items-start gap-3 text-[#B91C1C]">
+        <span class="material-symbols-outlined text-xl shrink-0 mt-0.5">error</span>
+        <div class="text-sm">
+          <strong class="font-semibold block">Please correct the 5 errors below before submitting.</strong>
+          Ensure all required fields are accurately filled and a valid corporate email format is provided.
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left: Form with errors -->
+        <div class="lg:col-span-8 bg-white border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Company name (Error) -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="c_name_2">Company name</label>
+                <input type="text" id="c_name_2" value="" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#B91C1C] bg-[#FEF2F2] rounded-lg focus-ring" />
+                <p class="mt-1.5 text-xs text-[#B91C1C] flex items-center gap-1 font-medium">
+                  <span class="material-symbols-outlined text-sm">warning</span> Enter your company or institutional name.
+                </p>
+              </div>
+
+              <!-- Contact name (Valid) -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="cnt_name_2">Contact name</label>
+                <input type="text" id="cnt_name_2" value="Babatunde Lawal" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#64748B] rounded-lg focus-ring bg-white" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Work email (Error: invalid format) -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="email_2">Work email</label>
+                <input type="email" id="email_2" value="babatunde@notanemail" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#B91C1C] bg-[#FEF2F2] rounded-lg focus-ring" />
+                <p class="mt-1.5 text-xs text-[#B91C1C] flex items-center gap-1 font-medium">
+                  <span class="material-symbols-outlined text-sm">warning</span> Enter a valid work email address (e.g. name@company.com).
+                </p>
+              </div>
+
+              <!-- Phone with +234 prefix (Error: empty) -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="phone_2">Phone number</label>
+                <div class="flex rounded-lg border border-[#B91C1C] bg-[#FEF2F2] overflow-hidden focus-ring h-11">
+                  <span class="inline-flex items-center px-3.5 bg-[#FEE2E2] border-r border-[#B91C1C] text-sm font-medium text-[#B91C1C]">+234</span>
+                  <input type="tel" id="phone_2" value="" class="flex-1 px-3.5 text-sm text-[#0F172A] focus:outline-none bg-transparent" />
+                </div>
+                <p class="mt-1.5 text-xs text-[#B91C1C] flex items-center gap-1 font-medium">
+                  <span class="material-symbols-outlined text-sm">warning</span> Enter a valid Nigerian phone number.
+                </p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Headcount range select (Error) -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="headcount_2">Headcount range</label>
+                <select id="headcount_2" class="w-full h-11 px-3.5 text-sm text-[#B91C1C] border border-[#B91C1C] bg-[#FEF2F2] rounded-lg focus-ring">
+                  <option value="" disabled selected>Select estimated learners</option>
+                  <option value="5-10">5 – 10 participants</option>
+                  <option value="11-25">11 – 25 participants</option>
+                </select>
+                <p class="mt-1.5 text-xs text-[#B91C1C] flex items-center gap-1 font-medium">
+                  <span class="material-symbols-outlined text-sm">warning</span> Please select an estimated headcount range.
+                </p>
+              </div>
+
+              <!-- Delivery mode select (Valid) -->
+              <div>
+                <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="mode_2">Delivery mode</label>
+                <select id="mode_2" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#64748B] rounded-lg focus-ring bg-white">
+                  <option value="hybrid" selected>Hybrid</option>
+                  <option value="physical">Physical</option>
+                  <option value="virtual">Virtual</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Programme multi-select (Error: none checked) -->
+            <div>
+              <label class="block text-sm font-medium text-[#0F172A] mb-1.5">Programmes of interest (select all that apply)</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 p-3.5 border border-[#B91C1C] bg-[#FEF2F2] rounded-lg">
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#B91C1C] text-[#0B1320]" />
+                  <span class="text-sm text-[#0F172A]">CISA Exam Prep</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#B91C1C] text-[#0B1320]" />
+                  <span class="text-sm text-[#0F172A]">CISM Security Manager</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#B91C1C] text-[#0B1320]" />
+                  <span class="text-sm text-[#0F172A]">CRISC Risk & Information Systems</span>
+                </label>
+                <label class="flex items-center gap-3 p-1 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#B91C1C] text-[#0B1320]" />
+                  <span class="text-sm text-[#0F172A]">AI Auditor & Governance (AAIA)</span>
+                </label>
+              </div>
+              <p class="mt-1.5 text-xs text-[#B91C1C] flex items-center gap-1 font-medium">
+                <span class="material-symbols-outlined text-sm">warning</span> Please select at least one programme of interest.
+              </p>
+            </div>
+
+            <!-- Preferred dates -->
+            <div>
+              <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="dates_2">Preferred dates</label>
+              <input type="text" id="dates_2" value="Mid-November 2026" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#64748B] rounded-lg focus-ring bg-white" />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label class="block text-sm font-medium text-[#0F172A] mb-1.5" for="msg_2">Message</label>
+              <textarea id="msg_2" rows="4" class="w-full p-3.5 text-sm text-[#0F172A] border border-[#64748B] rounded-lg focus-ring bg-white">We are looking to certify 15 senior internal auditors.</textarea>
+            </div>
+
+            <!-- Button: disabled-until-valid -->
+            <div class="pt-2">
+              <button type="button" disabled class="w-full sm:w-auto min-h-[44px] px-8 py-2.5 bg-[#E2E8F0] text-[#94A3B8] font-medium text-sm rounded-lg cursor-not-allowed transition-colors">
+                Send enquiry
+              </button>
+              <p class="text-xs text-[#B91C1C] mt-2 font-medium">Resolve all highlighted validation errors to enable submission.</p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column: What happens next -->
+        <div class="lg:col-span-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-[12px] p-6 space-y-6">
+          <div class="border-b border-[#E2E8F0] pb-4">
+            <h3 class="text-lg font-bold text-[#0F172A]">What happens next</h3>
+            <p class="text-xs text-[#475569] mt-1">Our corporate advisory team facilitates cohort onboarding with minimal operational downtime.</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">We reply within 2 working days</p>
+                <p class="text-xs text-[#475569] mt-0.5">A designated education director reviews your requirements and schedules an initial briefing call.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">We agree scope and dates</p>
+                <p class="text-xs text-[#475569] mt-0.5">We customize module pacing, case studies, and delivery schedules to align with your corporate fiscal calendar.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">You receive a quote</p>
+                <p class="text-xs text-[#475569] mt-0.5">A formal commercial proposal and service level agreement are issued with corporate group rate concessions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 3: SUBMITTING (DESKTOP 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+    <!-- State Bar -->
+    <div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#E2E8F0] flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0B1320] text-white text-xs font-bold">3</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 3: Submitting (In-Flight API State)</span>
+      </div>
+      <span class="text-xs text-[#475569] font-mono">Fields disabled · Button shows spinner & "Sending enquiry..."</span>
+    </div>
+
+    <!-- Public Top Bar -->
+    <header class="bg-[#0B1320] h-16 px-8 flex items-center justify-between border-b border-[#1E293B]">
+      <div class="flex items-center gap-8">
+        <div class="bg-white px-2 py-1 rounded inline-flex items-center">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOj6q1-115ycJZjabkTmI9IldPMsOLlyPUfGLcxBZRUsyUA7EGtbuyYG9N0NNk1V_cilOofIAL6qhctw87FZyApS60LzkkWss3o2y39ujplVrCAYtViwjKmmoewlSc_UJIMAK2zsF65aIBpRV07KaAPn6hxGfIKUSZxbLX_nHPUsCW6_BkWLR37y0IWC8lyLcQXp9bzieSSLAvMaDuWeRzWcK6zsIb6PiOhNrEyjs5n8AqIhAsSSH5v1bnCWDx-IMSp3o" alt="A.J. SILICON" class="h-6 object-contain" />
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#" class="text-[#93C5FD] hover:underline">Programmes</a>
+          <a href="#" class="text-white hover:underline">Workshops</a>
+        </nav>
+      </div>
+      <div>
+        <a href="#" class="text-[#93C5FD] hover:underline text-sm font-medium">Log in</a>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="p-8 md:p-12 max-w-6xl mx-auto">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-[#0F172A]">Corporate training</h2>
+        <p class="text-base text-[#475569] mt-2">Upskill your internal audit, risk, and technology compliance teams with tailored curricula aligned to international standards.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left: Form (Disabled) -->
+        <div class="lg:col-span-8 bg-white border border-[#E2E8F0] rounded-[12px] p-8 shadow-sm opacity-95">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-[#475569] mb-1.5">Company name</label>
+                <input type="text" disabled value="Zenith Trust & Assurance Ltd" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg cursor-not-allowed" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-[#475569] mb-1.5">Contact name</label>
+                <input type="text" disabled value="Ngozi Okonkwo" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg cursor-not-allowed" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-[#475569] mb-1.5">Work email</label>
+                <input type="email" disabled value="n.okonkwo@zenithtrust.ng" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg cursor-not-allowed" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-[#475569] mb-1.5">Phone number</label>
+                <div class="flex rounded-lg border border-[#CBD5E1] bg-[#F8FAFC] overflow-hidden h-11">
+                  <span class="inline-flex items-center px-3.5 bg-[#E2E8F0] border-r border-[#CBD5E1] text-sm font-medium text-[#475569]">+234</span>
+                  <input type="tel" disabled value="802 345 6789" class="flex-1 px-3.5 text-sm text-[#0F172A] bg-transparent cursor-not-allowed" />
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-[#475569] mb-1.5">Headcount range</label>
+                <select disabled class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg cursor-not-allowed">
+                  <option selected>11 – 25 participants</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-[#475569] mb-1.5">Delivery mode</label>
+                <select disabled class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg cursor-not-allowed">
+                  <option selected>Physical</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-[#475569] mb-1.5">Programmes of interest</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 p-3.5 border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg">
+                <label class="flex items-center gap-3 p-1">
+                  <input type="checkbox" checked disabled class="w-4 h-4 rounded text-[#0B1320]" />
+                  <span class="text-sm font-medium text-[#0F172A]">CISA Exam Prep</span>
+                </label>
+                <label class="flex items-center gap-3 p-1">
+                  <input type="checkbox" checked disabled class="w-4 h-4 rounded text-[#0B1320]" />
+                  <span class="text-sm font-medium text-[#0F172A]">AI Auditor & Governance (AAIA)</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-[#475569] mb-1.5">Preferred dates</label>
+              <input type="text" disabled value="Cohort starting 16 November 2026" class="w-full h-11 px-3.5 text-sm text-[#0F172A] border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg cursor-not-allowed" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-[#475569] mb-1.5">Message</label>
+              <textarea disabled rows="3" class="w-full p-3.5 text-sm text-[#0F172A] border border-[#CBD5E1] bg-[#F8FAFC] rounded-lg cursor-not-allowed">Requesting dedicated physical cohort session at our Victoria Island executive office.</textarea>
+            </div>
+
+            <!-- Submitting Button -->
+            <div class="pt-2">
+              <button type="button" disabled class="w-full sm:w-auto min-h-[44px] px-8 py-2.5 bg-[#0B1320] text-white font-medium text-sm rounded-lg flex items-center justify-center gap-3 cursor-wait shadow-sm">
+                <svg class="w-4 h-4 text-white animate-spin-custom" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Sending enquiry...</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column -->
+        <div class="lg:col-span-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-[12px] p-6 space-y-6">
+          <div class="border-b border-[#E2E8F0] pb-4">
+            <h3 class="text-lg font-bold text-[#0F172A]">What happens next</h3>
+            <p class="text-xs text-[#475569] mt-1">Our corporate advisory team facilitates cohort onboarding with minimal operational downtime.</p>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">We reply within 2 working days</p>
+                <p class="text-xs text-[#475569] mt-0.5">A designated education director reviews your requirements and schedules an initial briefing call.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">We agree scope and dates</p>
+                <p class="text-xs text-[#475569] mt-0.5">We customize module pacing, case studies, and delivery schedules to align with your corporate fiscal calendar.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</div>
+              <div>
+                <p class="text-sm font-semibold text-[#0F172A]">You receive a quote</p>
+                <p class="text-xs text-[#475569] mt-0.5">A formal commercial proposal and service level agreement are issued with corporate group rate concessions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 4: SUCCESS CONFIRMATION (DESKTOP 1440px) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+    <!-- State Bar -->
+    <div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#E2E8F0] flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#047857] text-white text-xs font-bold">4</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 4: Success Confirmation</span>
+      </div>
+      <span class="text-xs text-[#047857] font-semibold flex items-center gap-1 font-mono">
+        <span class="material-symbols-outlined text-sm">check_circle</span> Reference: ENQ-2026-0148
+      </span>
+    </div>
+
+    <!-- Public Top Bar -->
+    <header class="bg-[#0B1320] h-16 px-8 flex items-center justify-between border-b border-[#1E293B]">
+      <div class="flex items-center gap-8">
+        <div class="bg-white px-2 py-1 rounded inline-flex items-center">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqIfrG02xAquMN8cFFjijbh9qzydnIp9LKAQWTg3SX0RASvPS3-w1K-ts18Cw7x3ZmhR7OdEXUuu_MqDhXSzKMCHCEBChdizjaqLlnSbt2wjJv05LXQt8uDlv82sXl9DnyrMDQ_mlGAVgsi_gZeRLU4cEOPbevDu3nY4wRRppyzD_rcjR-AWPCE5o1m3G0PV0rHVoXg2Oe47qw1V5GtLa5tF5_ev6wWZz9q8ZzO9BYluuTVb78a5ByQZCF76BmuLdY0Dw" alt="A.J. SILICON" class="h-6 object-contain" />
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#" class="text-[#93C5FD] hover:underline">Programmes</a>
+          <a href="#" class="text-white hover:underline">Workshops</a>
+        </nav>
+      </div>
+      <div>
+        <a href="#" class="text-[#93C5FD] hover:underline text-sm font-medium">Log in</a>
+      </div>
+    </header>
+
+    <!-- Main Content Area: Success Card -->
+    <main class="p-8 md:p-16 max-w-4xl mx-auto">
+      <div class="bg-white border border-[#E2E8F0] rounded-[12px] p-8 md:p-12 shadow-sm text-center">
+        <!-- Success Icon -->
+        <div class="w-16 h-16 mx-auto rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center text-[#047857] mb-6">
+          <span class="material-symbols-outlined text-3xl">check_circle</span>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0F172A]">Enquiry received</h2>
+        <p class="text-base text-[#475569] mt-2 max-w-lg mx-auto">
+          Thank you for reaching out. We have logged your institutional enquiry and routed it to our Corporate Training Advisory team in Lagos.
+        </p>
+
+        <!-- Reference Number Box -->
+        <div class="my-8 inline-block bg-[#F8FAFC] border border-[#CBD5E1] rounded-xl px-8 py-5 text-center">
+          <div class="text-xs uppercase tracking-wider text-[#475569] font-medium">Enquiry Reference Number</div>
+          <div class="text-2xl md:text-3xl font-mono font-bold text-[#0B1320] mt-1 tracking-tight">ENQ-2026-0148</div>
+          <div class="text-xs text-[#047857] font-medium mt-1 flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-sm">mark_email_read</span> Confirmation email sent to n.okonkwo@zenithtrust.ng
+          </div>
+        </div>
+
+        <!-- Submission Summary Checklist -->
+        <div class="max-w-xl mx-auto text-left bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-5 mb-8 space-y-3">
+          <div class="text-xs font-bold uppercase tracking-wider text-[#475569] border-b border-[#E2E8F0] pb-2">Enquiry Summary</div>
+          <div class="grid grid-cols-2 gap-y-2 text-sm">
+            <span class="text-[#475569]">Company:</span>
+            <span class="font-medium text-[#0F172A] text-right">Zenith Trust & Assurance Ltd</span>
+            <span class="text-[#475569]">Primary Contact:</span>
+            <span class="font-medium text-[#0F172A] text-right">Ngozi Okonkwo</span>
+            <span class="text-[#475569]">Programmes:</span>
+            <span class="font-medium text-[#0F172A] text-right">CISA Prep, AAIA Lab</span>
+            <span class="text-[#475569]">Cohort Size / Mode:</span>
+            <span class="font-medium text-[#0F172A] text-right">11 – 25 · Physical</span>
+          </div>
+        </div>
+
+        <!-- Next Steps Reminder -->
+        <div class="max-w-xl mx-auto text-left border-l-2 border-[#0B1320] pl-4 py-1 text-xs text-[#475569] space-y-1 mb-8">
+          <p class="font-semibold text-[#0F172A]">Expected Follow-up Timeline:</p>
+          <p>• Our executive director will reply within <strong>2 working days</strong> (by 07 Oct 2026, 17:00 WAT).</p>
+          <p>• For urgent procurement inquiries, call +234 1 234 5678 quoting reference <strong>ENQ-2026-0148</strong>.</p>
+        </div>
+
+        <!-- Action Links -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#" class="w-full sm:w-auto min-h-[44px] px-8 py-2.5 bg-[#0B1320] text-white font-medium text-sm rounded-lg hover:bg-[#1E293B] flex items-center justify-center gap-2 focus-ring">
+            <span>Return to Programmes</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <a href="#" class="w-full sm:w-auto min-h-[44px] px-6 py-2.5 bg-white border border-[#64748B] text-[#0F172A] font-medium text-sm rounded-lg hover:bg-[#F8FAFC] flex items-center justify-center focus-ring">
+            <span>Download Corporate Brochure (PDF)</span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- STATE 5: MOBILE 390px (EMPTY STATE) -->
+  <!-- ========================================== -->
+  <section class="max-w-[1440px] mx-auto bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden p-6 md:p-8">
+    <!-- State Bar -->
+    <div class="bg-[#F1F5F9] px-6 py-3 rounded-lg border border-[#E2E8F0] mb-8 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0B1320] text-white text-xs font-bold">5</span>
+        <span class="text-sm font-bold text-[#0F172A]">State 5: Mobile 390px (Empty Form)</span>
+      </div>
+      <span class="text-xs text-[#475569] font-mono">Plain 390px wide frame · No phone status bar · No home indicator</span>
+    </div>
+
+    <!-- 390px Outer Container -->
+    <div class="flex justify-center">
+      <div class="w-[390px] border border-[#CBD5E1] rounded-2xl bg-[#F8FAFC] overflow-hidden shadow-md">
+
+        <!-- Mobile Public Header (Plain frame, no status bar) -->
+        <header class="bg-[#0B1320] h-14 px-4 flex items-center justify-between border-b border-[#1E293B]">
+          <div class="bg-white px-2 py-0.5 rounded inline-flex items-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfRi1DQqMnH7A8hm2zabq5xqzIA0QEmFjlRb5ddMoKTwoPCRyKP1NucDjRYiZG0Wj6GPh8z0llrZ03wmEFzgBFQK-mxGL46rp-laiOu3uNBy7Aubs7gnk3ivNoC53zeZvIZ7Sh4zVmk19EG8ulXtpKQDd1rpDzkMILYsvbcnvalnzgAMjyTZsimPx536U1AIcS9Aw5AfJKk6W3lIiCeF9n5rsgiu13ZWPfrA_inBoDqDwFbkyPfbTaBL_DiiyKgTzGde4" alt="A.J. SILICON" class="h-5 object-contain" />
+          </div>
+          <div class="flex items-center gap-4 text-xs font-medium">
+            <a href="#" class="text-[#93C5FD]">Programmes</a>
+            <a href="#" class="text-[#93C5FD]">Log in</a>
+          </div>
+        </header>
+
+        <!-- Mobile Body Content -->
+        <div class="p-4 space-y-6">
+          <div>
+            <h2 class="text-xl font-bold text-[#0F172A]">Corporate training</h2>
+            <p class="text-xs text-[#475569] mt-1 leading-relaxed">Upskill your internal audit, risk, and compliance teams with tailored curricula.</p>
+          </div>
+
+          <!-- Mobile Form Card -->
+          <div class="bg-white border border-[#E2E8F0] rounded-[12px] p-4 shadow-sm space-y-4">
+            <!-- Company name -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_c_name">Company name</label>
+              <input type="text" id="m_c_name" placeholder="e.g. First Horizon Bank" class="w-full h-11 px-3 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+            </div>
+
+            <!-- Contact name -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_cnt_name">Contact name</label>
+              <input type="text" id="m_cnt_name" placeholder="e.g. Babatunde Lawal" class="w-full h-11 px-3 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+            </div>
+
+            <!-- Work email -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_email">Work email</label>
+              <input type="email" id="m_email" placeholder="name@company.com" class="w-full h-11 px-3 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+            </div>
+
+            <!-- Phone with +234 -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_phone">Phone number</label>
+              <div class="flex rounded-lg border border-[#64748B] overflow-hidden h-11 focus-ring">
+                <span class="inline-flex items-center px-3 bg-[#F1F5F9] border-r border-[#64748B] text-xs font-medium text-[#0F172A]">+234</span>
+                <input type="tel" id="m_phone" placeholder="803 000 0000" class="flex-1 px-3 text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none bg-white" />
+              </div>
+            </div>
+
+            <!-- Headcount -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_headcount">Headcount range</label>
+              <select id="m_headcount" class="w-full h-11 px-3 text-xs text-[#475569] border border-[#64748B] rounded-lg focus-ring bg-white">
+                <option value="" disabled selected>Select estimated learners</option>
+                <option value="5-10">5 – 10 participants</option>
+                <option value="11-25">11 – 25 participants</option>
+                <option value="26-50">26 – 50 participants</option>
+                <option value="50+">50+ participants</option>
+              </select>
+            </div>
+
+            <!-- Delivery mode -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_mode">Delivery mode</label>
+              <select id="m_mode" class="w-full h-11 px-3 text-xs text-[#475569] border border-[#64748B] rounded-lg focus-ring bg-white">
+                <option value="" disabled selected>Select delivery format</option>
+                <option value="physical">Physical</option>
+                <option value="virtual">Virtual</option>
+                <option value="hybrid">Hybrid</option>
+              </select>
+            </div>
+
+            <!-- Programmes of interest -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1">Programmes of interest</label>
+              <div class="space-y-2 p-3 border border-[#64748B] rounded-lg bg-white">
+                <label class="flex items-center gap-2.5 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]" />
+                  <span class="text-xs text-[#0F172A]">CISA Exam Prep</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]" />
+                  <span class="text-xs text-[#0F172A]">CISM Security Manager</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]" />
+                  <span class="text-xs text-[#0F172A]">CRISC Risk & Info Systems</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]" />
+                  <span class="text-xs text-[#0F172A]">AI Auditor (AAIA)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Preferred dates -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_dates">Preferred dates</label>
+              <input type="text" id="m_dates" placeholder="e.g. Q4 2026" class="w-full h-11 px-3 text-sm text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white" />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label class="block text-xs font-medium text-[#0F172A] mb-1" for="m_msg">Message</label>
+              <textarea id="m_msg" rows="3" placeholder="Brief outline of training objectives..." class="w-full p-3 text-xs text-[#0F172A] placeholder-[#94A3B8] border border-[#64748B] rounded-lg focus-ring bg-white"></textarea>
+            </div>
+
+            <!-- Primary button -->
+            <button type="button" disabled class="w-full min-h-[44px] py-2.5 bg-[#E2E8F0] text-[#94A3B8] font-medium text-sm rounded-lg cursor-not-allowed">
+              Send enquiry
+            </button>
+          </div>
+
+          <!-- Mobile What happens next Card -->
+          <div class="bg-white border border-[#E2E8F0] rounded-[12px] p-4 space-y-4">
+            <h3 class="text-sm font-bold text-[#0F172A] border-b border-[#E2E8F0] pb-2">What happens next</h3>
+            <div class="space-y-3">
+              <div class="flex items-start gap-2.5">
+                <div class="w-5 h-5 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">1</div>
+                <div>
+                  <p class="text-xs font-semibold text-[#0F172A]">We reply within 2 working days</p>
+                  <p class="text-[11px] text-[#475569] mt-0.5">An education director reviews your requirements.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <div class="w-5 h-5 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">2</div>
+                <div>
+                  <p class="text-xs font-semibold text-[#0F172A]">We agree scope and dates</p>
+                  <p class="text-[11px] text-[#475569] mt-0.5">Module pacing customized to your fiscal calendar.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <div class="w-5 h-5 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">3</div>
+                <div>
+                  <p class="text-xs font-semibold text-[#0F172A]">You receive a quote</p>
+                  <p class="text-[11px] text-[#475569] mt-0.5">Formal proposal with corporate group concessions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Institutional Footer Note -->
+          <div class="text-center py-2 text-[11px] text-[#64748B]">
+            © 2026 A.J. Silicon. Accredited Institutional Learning.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="../demo-nav.js"></script></body>
+</html>

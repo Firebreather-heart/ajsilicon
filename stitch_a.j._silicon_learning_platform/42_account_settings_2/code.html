@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform - Account Settings Specification</title>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#fddcc4",
+            "primary-fixed-dim": "#bfc6d9",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-error": "#ffffff",
+            "surface": "#faf8ff",
+            "on-tertiary-container": "#997f6a",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-container-highest": "#dae2fd",
+            "surface-bright": "#faf8ff",
+            "inverse-primary": "#bfc6d9",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#7c8495",
+            "on-surface": "#131b2e",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-tint": "#575f6e",
+            "secondary": "#1d4ed8",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary": "#ffffff",
+            "secondary-container": "#4069f2",
+            "error-container": "#ffdad6",
+            "outline-variant": "#c5c6cc",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "tertiary": "#000000",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed": "#281809",
+            "surface-dim": "#d2d9f4",
+            "secondary-fixed": "#dce1ff",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-secondary-container": "#fffbff",
+            "on-background": "#131b2e",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#45474c",
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed": "#141c29",
+            "primary-container": "#141c29",
+            "primary": "#000000",
+            "tertiary-container": "#281809",
+            "primary-fixed": "#dbe2f5",
+            "on-secondary-fixed": "#001551",
+            "outline": "#75777c",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.5rem",
+            "space-md": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-sm": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      vertical-align: middle;
+    }
+    /* Institutional Form Styling */
+    .form-input-audit {
+      height: 44px;
+      border: 1px solid #64748B;
+      border-radius: 6px;
+      background-color: #FFFFFF;
+      color: #0F172A;
+      padding: 0 14px;
+      font-size: 14px;
+      line-height: 20px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .form-input-audit:focus {
+      border-color: #2563EB;
+      box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #2563EB;
+    }
+    .form-input-audit:disabled, .form-input-audit[readonly] {
+      background-color: #F8FAFC;
+      color: #475569;
+      border-color: #CBD5E1;
+      cursor: not-allowed;
+    }
+    .btn-primary-action {
+      height: 44px;
+      background-color: #0B1320;
+      color: #FFFFFF;
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 6px;
+      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.15s ease-in-out;
+      border: 1px solid transparent;
+      min-width: 44px;
+      cursor: pointer;
+    }
+    .btn-primary-action:hover:not(:disabled) {
+      background-color: #1E293B;
+    }
+    .btn-primary-action:disabled {
+      background-color: #94A3B8;
+      cursor: not-allowed;
+      opacity: 0.75;
+    }
+    .btn-secondary-action {
+      height: 44px;
+      background-color: #FFFFFF;
+      color: #0F172A;
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 6px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid #64748B;
+      transition: background-color 0.15s ease-in-out;
+      cursor: pointer;
+    }
+    .btn-secondary-action:hover {
+      background-color: #F1F5F9;
+    }
+    .btn-danger-action {
+      height: 44px;
+      background-color: #FEF2F2;
+      color: #B91C1C;
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 6px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid #B91C1C;
+      transition: background-color 0.15s ease-in-out;
+      cursor: pointer;
+    }
+    .btn-danger-action:hover {
+      background-color: #FEE2E2;
+    }
+    .touch-target-checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 1px solid #64748B;
+      accent-color: #0B1320;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A]">
+<!-- TOP-LEVEL BOARD IDENTIFIER (Desktop 1440px Specification Board) -->
+<header class="bg-[#0B1320] text-white px-8 py-4 border-b border-[#1E293B] flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 border border-[#E2E8F0]">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJCbtM9RMZAPoVAqdH_ED8Rm7XQRhFpBNiRivUs_CeNQf9G_ka9vL93pSN0TTZTqvJwJ2Hk_EIVmM-xcA0G-bOZkn8MIVgcH0Kd34lMXrmA4Swrb7YiJ-d9K0UGxhdEeqJMLG6Q6zyx9gHBt2Pi0Ixcqb9ek2zsY8FK940r5IP3OORS04bokRW20AfMPHBfnJ13q0ZCVCU_12qKuTwxBM9IWGJ514l2iE98bp6fYyurvs2bJCTFIdYqA"/>
+</div>
+<div>
+<h1 class="text-white text-base font-semibold leading-tight">Desktop 1440px Specification Board</h1>
+<p class="text-[#94A3B8] text-xs">CISA Cohort 14 · Account Settings Component Architecture &amp; Multi-Tab State Matrix</p>
+</div>
+</div>
+<div class="flex items-center gap-6 text-xs text-[#94A3B8]">
+<span>Jurisdiction: Lagos, Nigeria (WAT)</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1E293B] text-[#93C5FD] border border-[#334155]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+        Official ISACA-Aligned Curriculum System
+      </span>
+</div>
+</header>
+<!-- SPECIFICATION BOARD CONTENT: 4 COMPLETE 1440px APPLICATION SHELL FRAMES -->
+<main class="p-8 max-w-[1520px] mx-auto space-y-16">
+<!-- ========================================================================= -->
+<!-- FRAME 1: TAB PROFILE VARIANT                                              -->
+<!-- ========================================================================= -->
+<section class="border border-[#CBD5E1] rounded-xl bg-white shadow-sm overflow-hidden" id="spec-frame-profile">
+<!-- Frame Metatag -->
+<div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#CBD5E1] flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white text-xs font-semibold rounded">FRAME 1 OF 4</span>
+<span class="text-xs font-medium text-[#475569]">Tab: Profile (Active) · Width: 1440px Baseline Spec</span>
+</div>
+<span class="text-xs text-[#475569]">Signed-in: Chinedu Eze (CE) · Senior IT Audit Associate</span>
+</div>
+<!-- Complete 1440px Simulated Application Canvas -->
+<div class="w-full bg-[#F8FAFC] flex flex-col min-h-[920px]">
+<!-- NAV TOPBAR (Navy #0B1320) -->
+<header class="bg-[#0B1320] h-16 w-full px-6 flex items-center justify-between z-10">
+<div class="flex items-center gap-6">
+<!-- White rounded plate for logo -->
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 border border-[#E2E8F0]">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU6NLaWhqS-Ek1G-4GLTiQk8Cw4-Y-7FYDK2nw2D4wTUBqT_43bEKBl2017XyBesqC2Upqvpoq-SFUOJO-_W1usY6X0XlPBH2hb9kX8rPtUNI29dhKZroAYDHXECcpmK3Y64YH2lPrkHGfHY-bnzIi4vRnlvymxrQ8eK02NVbxfeGH7ZnUFZb0uO7YMFhAbb7wrGLTZOo3_PUTn2-Wz0VeCDTgIhoxdorP8VFOZcgqR-pnPNmFpwZapA"/>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<span class="text-[#94A3B8] text-xs font-normal">A.J. Silicon Learning Platform</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- WAT Timestamp -->
+<div class="text-[#94A3B8] text-xs font-mono">14:30 WAT · 05 Oct 2026</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B] transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B] transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<!-- Profile Badge -->
+<div class="flex items-center gap-3 pl-2 border-l border-[#334155]">
+<div class="w-9 h-9 rounded-full bg-[#1E293B] border border-[#475569] flex items-center justify-center text-white font-semibold text-xs tracking-wider">
+                CE
+              </div>
+<div class="text-left">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[11px] text-[#94A3B8] leading-tight">CISA Candidate</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY: SIDEBAR + MAIN CONTENT AREA -->
+<div class="flex flex-1">
+<!-- SIDEBAR NAVIGATION (Width: 264px) -->
+<aside class="w-64 min-w-[16rem] bg-white border-r border-[#E2E8F0] flex flex-col justify-between p-4">
+<div>
+<!-- Cohort Badge Header -->
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg mb-6">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[18px]">school</span>
+<span class="text-xs font-semibold text-[#0F172A]">CISA Exam Prep</span>
+</div>
+<div class="text-[11px] text-[#475569] leading-snug">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+<!-- Main Navigation Links -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  Modules / Programme Home
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#exams">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                  Practice Exams
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#progress">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+                  Progress
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#certificates">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+                  Certificates and credits
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                  Extend Access
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] min-h-[44px]" href="#help">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                  Help centre
+                </a>
+</nav>
+</div>
+<!-- Footer Links (Settings Active) -->
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border-l-4 border-[#1D4ED8] min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined text-[20px] text-[#1D4ED8]">settings</span>
+                Settings
+              </a>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#FEF2F2] hover:text-[#B91C1C] min-h-[44px] transition-colors text-left" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </button>
+</div>
+</aside>
+<!-- MAIN CANVAS: ACCOUNT SETTINGS TAB PROFILE -->
+<main class="flex-1 p-8 max-w-[1152px]">
+<!-- Header & Tabs -->
+<div class="mb-8">
+<h2 class="text-2xl font-semibold text-[#0F172A] tracking-tight">Account Settings</h2>
+<p class="text-sm text-[#475569] mt-1">Manage your participant credentials, official verification details, and active browser sessions.</p>
+<!-- Tabs Navigation -->
+<div class="flex border-b border-[#E2E8F0] mt-6 gap-8">
+<button class="py-3 px-1 text-sm font-semibold text-[#1D4ED8] border-b-2 border-[#1D4ED8] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                  Profile
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                  Security
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                  Notifications
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+                  Privacy
+                </button>
+</div>
+</div>
+<!-- PROFILE CONTENT SECTION -->
+<div class="space-y-8">
+<!-- Form Card -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<h3 class="text-base font-semibold text-[#0F172A] mb-4 pb-3 border-b border-[#E2E8F0]">Candidate Identification</h3>
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<!-- Full Name (Read-only) -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="fullName-f1">
+                        Full Name (Legal Identity)
+                      </label>
+<input class="form-input-audit" id="fullName-f1" readonly="" type="text" value="Chinedu Eze"/>
+<p class="text-xs text-[#475569] mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#475569]">info</span>
+                        Contact support to change legal name on certificates
+                      </p>
+</div>
+<!-- Email Address (Verified) -->
+<div>
+<div class="flex justify-between items-center mb-1.5">
+<label class="block text-xs font-semibold text-[#0F172A]" for="email-f1">Email Address</label>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                          Verified
+                        </span>
+</div>
+<input class="form-input-audit" id="email-f1" readonly="" type="email" value="chinedu.eze@example.com"/>
+<p class="text-xs text-[#475569] mt-1.5">Official audit correspondence and digital certificate key delivery address.</p>
+</div>
+<!-- Phone Number -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="phone-f1">
+                        Phone Number (SMS / WhatsApp Alerts)
+                      </label>
+<input class="form-input-audit" id="phone-f1" type="tel" value="+234 803 456 7890"/>
+<p class="text-xs text-[#047857] mt-1.5 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[15px]">check</span>
+                        Valid Nigerian mobile number (+234 format verified)
+                      </p>
+</div>
+<!-- Job Title -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="jobTitle-f1">
+                        Job Title
+                      </label>
+<input class="form-input-audit" id="jobTitle-f1" type="text" value="Senior IT Audit Associate"/>
+<p class="text-xs text-[#475569] mt-1.5">Printed on executive cohort directory and ISACA CPE records.</p>
+</div>
+<!-- Organization / Employer -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="org-f1">
+                        Organization / Employer
+                      </label>
+<input class="form-input-audit" id="org-f1" type="text" value="First Assurance Bank of Nigeria"/>
+</div>
+<!-- City / State -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="city-f1">
+                        City / State
+                      </label>
+<input class="form-input-audit" id="city-f1" type="text" value="Lagos, Lagos State, Nigeria"/>
+</div>
+<!-- Professional Registration Number (Optional) -->
+<div class="col-span-2">
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="regNo-f1">
+                        Professional Registration Number (Optional)
+                      </label>
+<input class="form-input-audit max-w-md" id="regNo-f1" type="text" value="ICAN/ACA/49120"/>
+<p class="text-xs text-[#475569] mt-1.5">Used for continuous professional education (CPE) direct accreditation reporting.</p>
+</div>
+</div>
+<div class="pt-4 border-t border-[#E2E8F0] flex justify-end">
+<button class="btn-primary-action" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                      Save profile changes
+                    </button>
+</div>
+</form>
+</div>
+<!-- Registered Browsers Section -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-start mb-4 pb-3 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-[#0F172A]">Registered Browsers</h3>
+<p class="text-xs text-[#475569] mt-0.5">Authorised browser sessions registered to participate in CISA Cohort 14 live virtual simulations.</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[15px]">devices</span>
+                    2 of 3 Allowed
+                  </span>
+</div>
+<div class="space-y-3">
+<!-- Browser 1 -->
+<div class="p-4 border border-[#E2E8F0] rounded-lg flex items-center justify-between bg-[#F8FAFC]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white border border-[#CBD5E1] flex items-center justify-center text-[#0B1320]">
+<span class="material-symbols-outlined text-[20px]">laptop_mac</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-[#0F172A] flex items-center gap-2">
+                          Chrome 128 on macOS
+                          <span class="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 bg-[#ECFDF5] text-[#047857] border border-[#047857] rounded">
+<span class="material-symbols-outlined text-[13px]">radio_button_checked</span>
+                            Current session
+                          </span>
+</div>
+<div class="text-xs text-[#475569] mt-0.5">Registered 12 Oct 2026 · IP: 102.89.42.18 (Lagos, Nigeria)</div>
+</div>
+</div>
+<span class="text-xs text-[#64748B] font-medium italic">Active Session</span>
+</div>
+<!-- Browser 2 -->
+<div class="p-4 border border-[#E2E8F0] rounded-lg flex items-center justify-between bg-white">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#F8FAFC] border border-[#CBD5E1] flex items-center justify-center text-[#475569]">
+<span class="material-symbols-outlined text-[20px]">desktop_windows</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Edge 126 on Windows 11</div>
+<div class="text-xs text-[#475569] mt-0.5">Registered 14 Oct 2026 · Last accessed: 18 Oct 2026</div>
+</div>
+</div>
+<button class="btn-secondary-action !h-10 text-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+                      Remove browser
+                    </button>
+</div>
+</div>
+<!-- Inline Confirmation Modal Preview Spec -->
+<div class="mt-6 p-4 bg-[#FFFBEB] border border-[#F59E0B] rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-[#B45309] text-[20px] mt-0.5">help_outline</span>
+<div class="text-xs text-[#0F172A] flex-1">
+<div class="font-semibold text-[#B45309]">Specification note on 'Remove browser' interaction:</div>
+                    Triggering removal spawns an immediate modal confirmation requiring explicit student validation: 
+                    <em>"Revoke access for Edge 126 on Windows 11? You must re-authenticate with 2FA to register a substitute browser."</em>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- FRAME 2: TAB SECURITY VARIANT                                             -->
+<!-- ========================================================================= -->
+<section class="border border-[#CBD5E1] rounded-xl bg-white shadow-sm overflow-hidden" id="spec-frame-security">
+<!-- Frame Metatag -->
+<div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#CBD5E1] flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white text-xs font-semibold rounded">FRAME 2 OF 4</span>
+<span class="text-xs font-medium text-[#475569]">Tab: Security (Active) · Width: 1440px Baseline Spec</span>
+</div>
+<span class="text-xs text-[#475569]">Two-Factor Authentication &amp; Cryptographic Access Control</span>
+</div>
+<div class="w-full bg-[#F8FAFC] flex flex-col min-h-[920px]">
+<!-- NAV TOPBAR (Navy #0B1320) -->
+<header class="bg-[#0B1320] h-16 w-full px-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 border border-[#E2E8F0]">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHV6RSo5CAK9NJj3XzhTAZYFp1en070RIuRHEHvVxbqB_g1kTFXv5r5tJZxU7uOCnES94-QDMFGBd3qrjrNdSzsZkMjvfuZFxtgfg02alWYDicTNaRgZsL5qBb9ohcLq0ns09vnwE_MbxCPGq0mPZ_6pUuQInA0u32YAMJOrji__3W4GZLBXa0qse-COA7voPV87wXHCYiSjhgRT0HkV05EO3IeeIaWwHtvULuKlgATeLlH93cL15EQA"/>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<span class="text-[#94A3B8] text-xs font-normal">A.J. Silicon Learning Platform</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-[#94A3B8] text-xs font-mono">14:30 WAT · 05 Oct 2026</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B]" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B]" type="button">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-2 border-l border-[#334155]">
+<div class="w-9 h-9 rounded-full bg-[#1E293B] border border-[#475569] flex items-center justify-center text-white font-semibold text-xs tracking-wider">
+                CE
+              </div>
+<div class="text-left">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[11px] text-[#94A3B8] leading-tight">CISA Candidate</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY -->
+<div class="flex flex-1">
+<!-- SIDEBAR -->
+<aside class="w-64 min-w-[16rem] bg-white border-r border-[#E2E8F0] flex flex-col justify-between p-4">
+<div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg mb-6">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[18px]">school</span>
+<span class="text-xs font-semibold text-[#0F172A]">CISA Exam Prep</span>
+</div>
+<div class="text-[11px] text-[#475569] leading-snug">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  Modules / Programme Home
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#exams">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                  Practice Exams
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#progress">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+                  Progress
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#certificates">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+                  Certificates and credits
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                  Extend Access
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#help">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                  Help centre
+                </a>
+</nav>
+</div>
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border-l-4 border-[#1D4ED8] min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined text-[20px] text-[#1D4ED8]">settings</span>
+                Settings
+              </a>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#FEF2F2] hover:text-[#B91C1C] min-h-[44px] text-left" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </button>
+</div>
+</aside>
+<!-- MAIN CANVAS: TAB SECURITY -->
+<main class="flex-1 p-8 max-w-[1152px]">
+<div class="mb-8">
+<h2 class="text-2xl font-semibold text-[#0F172A] tracking-tight">Account Settings</h2>
+<p class="text-sm text-[#475569] mt-1">Manage authentication security, credential policies, and verification tokens.</p>
+<!-- Tabs Navigation -->
+<div class="flex border-b border-[#E2E8F0] mt-6 gap-8">
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                  Profile
+                </button>
+<button class="py-3 px-1 text-sm font-semibold text-[#1D4ED8] border-b-2 border-[#1D4ED8] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                  Security
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                  Notifications
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+                  Privacy
+                </button>
+</div>
+</div>
+<!-- SECURITY CONTENT -->
+<div class="space-y-8">
+<!-- SECTION 1: CHANGE PASSWORD -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<h3 class="text-base font-semibold text-[#0F172A] mb-1">Change Password</h3>
+<p class="text-xs text-[#475569] mb-6">Choose a resilient password conforming to international audit system security baselines.</p>
+<form class="max-w-xl space-y-4">
+<!-- Current Password -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="currentPassword-f2">
+                      Current Password
+                    </label>
+<input class="form-input-audit" id="currentPassword-f2" type="password" value="••••••••••••••••"/>
+</div>
+<!-- New Password -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="newPassword-f2">
+                      New Password
+                    </label>
+<input class="form-input-audit" id="newPassword-f2" placeholder="Enter new password" type="password"/>
+<!-- Password Requirements Checklist -->
+<div class="mt-3 p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<div class="text-xs font-semibold text-[#0F172A] mb-2">Password requirements checklist:</div>
+<ul class="space-y-1.5 text-xs">
+<li class="flex items-center gap-2 text-[#047857]">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                          Minimum 8+ characters in length
+                        </li>
+<li class="flex items-center gap-2 text-[#047857]">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                          Contains at least one numerical digit (0-9)
+                        </li>
+<li class="flex items-center gap-2 text-[#475569]">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">radio_button_unchecked</span>
+                          Contains at least one special symbol (!@#$%^&amp;*)
+                        </li>
+</ul>
+</div>
+</div>
+<!-- Confirm New Password -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1.5" for="confirmPassword-f2">
+                      Confirm New Password
+                    </label>
+<input class="form-input-audit" id="confirmPassword-f2" placeholder="Re-enter new password" type="password"/>
+<p class="text-xs text-[#B91C1C] mt-1.5 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[15px]">error</span>
+                      Passwords must match before submission
+                    </p>
+</div>
+<!-- Button (Disabled-until-valid spec pattern) -->
+<div class="pt-2">
+<button class="btn-primary-action" disabled="" type="button">
+                      Update password
+                    </button>
+<span class="text-xs text-[#64748B] ml-3 italic">Button enables when all criteria match</span>
+</div>
+</form>
+</div>
+<!-- SECTION 2: TWO-FACTOR VERIFICATION -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<div class="flex items-start justify-between pb-4 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-[#0F172A]">Two-Factor Verification</h3>
+<p class="text-xs text-[#475569] mt-0.5">Mandatory security requirement for all Cohort 14 enterprise exam candidates.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+                    Enabled
+                  </span>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Enabled via SMS / Authenticator (+234 803 ••• ••90)</div>
+<div class="text-xs text-[#475569] mt-0.5">Prompted upon sign-in from unrecognised browser environments.</div>
+</div>
+</div>
+<button class="btn-secondary-action" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                    Configure two-factor
+                  </button>
+</div>
+</div>
+<!-- SECTION 3: BACKUP CODES -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<h3 class="text-base font-semibold text-[#0F172A] mb-1">Backup Codes</h3>
+<p class="text-xs text-[#475569] mb-4">You have 8 active backup codes remaining. Use backup codes if you lose access to your primary 2FA method.</p>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg mb-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#64748B] text-[20px]">pin</span>
+<span class="text-xs font-mono font-medium text-[#0F172A]">8 active single-use cryptographic recovery tokens stored</span>
+</div>
+<span class="text-[11px] font-medium text-[#047857] bg-[#ECFDF5] px-2 py-0.5 rounded border border-[#047857]">Audited</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="btn-secondary-action" type="button">
+<span class="material-symbols-outlined text-[18px]">key</span>
+                    View backup codes
+                  </button>
+<button class="btn-secondary-action" type="button">
+<span class="material-symbols-outlined text-[18px]">autorenew</span>
+                    Generate new backup codes
+                  </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- FRAME 3: TAB NOTIFICATIONS VARIANT                                        -->
+<!-- ========================================================================= -->
+<section class="border border-[#CBD5E1] rounded-xl bg-white shadow-sm overflow-hidden" id="spec-frame-notifications">
+<!-- Frame Metatag -->
+<div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#CBD5E1] flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white text-xs font-semibold rounded">FRAME 3 OF 4</span>
+<span class="text-xs font-medium text-[#475569]">Tab: Notifications (Active) · Width: 1440px Baseline Spec</span>
+</div>
+<span class="text-xs text-[#475569]">Granular Channel Matrix (Email &amp; SMS Multi-Dispatch)</span>
+</div>
+<div class="w-full bg-[#F8FAFC] flex flex-col min-h-[920px]">
+<!-- NAV TOPBAR (Navy #0B1320) -->
+<header class="bg-[#0B1320] h-16 w-full px-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 border border-[#E2E8F0]">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADofDcELabCiUYGvTpEnSekDYsjdCu0kUxwS1B-nSm0fcP8Z2SKvPyfV-92FF9GLQbTGnH0JJfLoICoLFXvfly69YxamTAuJf_Pyg9DTY-wdy5TZjp6dU03zb77G9Wuh2VfFwV8MV4S6Gdf4ZY3ZES_r6d9vH2sFi5-cR_71ame19K_q0WuxHztfRRyGfp1BRHfDHbjk4LPdiQHxqA7QOObbpleIzGXz8NXRzNwgQ89GzaoFyTjST8sw"/>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<span class="text-[#94A3B8] text-xs font-normal">A.J. Silicon Learning Platform</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-[#94A3B8] text-xs font-mono">14:30 WAT · 05 Oct 2026</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B]" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B]" type="button">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-2 border-l border-[#334155]">
+<div class="w-9 h-9 rounded-full bg-[#1E293B] border border-[#475569] flex items-center justify-center text-white font-semibold text-xs tracking-wider">
+                CE
+              </div>
+<div class="text-left">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[11px] text-[#94A3B8] leading-tight">CISA Candidate</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY -->
+<div class="flex flex-1">
+<!-- SIDEBAR -->
+<aside class="w-64 min-w-[16rem] bg-white border-r border-[#E2E8F0] flex flex-col justify-between p-4">
+<div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg mb-6">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[18px]">school</span>
+<span class="text-xs font-semibold text-[#0F172A]">CISA Exam Prep</span>
+</div>
+<div class="text-[11px] text-[#475569] leading-snug">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  Modules / Programme Home
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#exams">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                  Practice Exams
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#progress">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+                  Progress
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#certificates">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+                  Certificates and credits
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                  Extend Access
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#help">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                  Help centre
+                </a>
+</nav>
+</div>
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border-l-4 border-[#1D4ED8] min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined text-[20px] text-[#1D4ED8]">settings</span>
+                Settings
+              </a>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#FEF2F2] hover:text-[#B91C1C] min-h-[44px] text-left" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </button>
+</div>
+</aside>
+<!-- MAIN CANVAS: TAB NOTIFICATIONS -->
+<main class="flex-1 p-8 max-w-[1152px]">
+<div class="mb-8">
+<h2 class="text-2xl font-semibold text-[#0F172A] tracking-tight">Account Settings</h2>
+<p class="text-sm text-[#475569] mt-1">Configure automated notifications, lecture alarms, and bursar payment dispatches.</p>
+<!-- Tabs Navigation -->
+<div class="flex border-b border-[#E2E8F0] mt-6 gap-8">
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                  Profile
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                  Security
+                </button>
+<button class="py-3 px-1 text-sm font-semibold text-[#1D4ED8] border-b-2 border-[#1D4ED8] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                  Notifications
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+                  Privacy
+                </button>
+</div>
+</div>
+<!-- NOTIFICATIONS MATRIX -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-6 pb-4 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-base font-semibold text-[#0F172A]">Notification Preferences</h3>
+<p class="text-xs text-[#475569] mt-0.5">Select communication channels for academic updates and administrative dispatches.</p>
+</div>
+<div class="flex items-center gap-8 text-xs font-semibold text-[#475569] pr-4">
+<span class="w-16 text-center">EMAIL</span>
+<span class="w-16 text-center">SMS</span>
+</div>
+</div>
+<!-- Notification Rows List -->
+<div class="divide-y divide-[#E2E8F0]">
+<!-- Item 1: Class & Live Lecture Reminders -->
+<div class="py-4 flex items-center justify-between">
+<div class="pr-6 max-w-xl">
+<div class="text-sm font-medium text-[#0F172A]">Class &amp; Live Lecture Reminders</div>
+<div class="text-xs text-[#475569] mt-0.5">Dispatches Zoom credentials and schedule updates 30 minutes before Cohort 14 live sessions begin.</div>
+</div>
+<div class="flex items-center gap-8 pr-4">
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="Email Class &amp; Live Lecture Reminders" checked="" class="touch-target-checkbox" type="checkbox"/>
+</div>
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="SMS Class &amp; Live Lecture Reminders" checked="" class="touch-target-checkbox" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Item 2: Licence Expiry & Access Alerts -->
+<div class="py-4 flex items-center justify-between">
+<div class="pr-6 max-w-xl">
+<div class="text-sm font-medium text-[#0F172A]">Licence Expiry &amp; Access Alerts</div>
+<div class="text-xs text-[#475569] mt-0.5">Alerts you 14 days and 48 hours prior to the expiration of courseware and question databank licences.</div>
+</div>
+<div class="flex items-center gap-8 pr-4">
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="Email Licence Expiry Alerts" checked="" class="touch-target-checkbox" type="checkbox"/>
+</div>
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="SMS Licence Expiry Alerts" checked="" class="touch-target-checkbox" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Item 3: Mock Exam & Diagnostic Announcements -->
+<div class="py-4 flex items-center justify-between">
+<div class="pr-6 max-w-xl">
+<div class="text-sm font-medium text-[#0F172A]">Mock Exam &amp; Diagnostic Announcements</div>
+<div class="text-xs text-[#475569] mt-0.5">Notifies you when scored domain performance diagnostic results and benchmark percentiles are calculated.</div>
+</div>
+<div class="flex items-center gap-8 pr-4">
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="Email Mock Exam Announcements" checked="" class="touch-target-checkbox" type="checkbox"/>
+</div>
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="SMS Mock Exam Announcements" class="touch-target-checkbox" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Item 4: Bursar & Tuition Payment Receipts -->
+<div class="py-4 flex items-center justify-between">
+<div class="pr-6 max-w-xl">
+<div class="text-sm font-medium text-[#0F172A]">Bursar &amp; Tuition Payment Receipts</div>
+<div class="text-xs text-[#475569] mt-0.5">Formal tax invoices, instalment acknowledgements, and official ₦70,000 course extension payment receipts.</div>
+</div>
+<div class="flex items-center gap-8 pr-4">
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="Email Bursar Receipts" checked="" class="touch-target-checkbox" type="checkbox"/>
+</div>
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="SMS Bursar Receipts" class="touch-target-checkbox" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Item 5: Account Security & New Sign-in Alerts -->
+<div class="py-4 flex items-center justify-between">
+<div class="pr-6 max-w-xl">
+<div class="text-sm font-medium text-[#0F172A] flex items-center gap-2">
+                      Account Security &amp; New Sign-in Alerts
+                      <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#1D4ED8] bg-[#EFF6FF] px-2 py-0.5 rounded border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+                        Mandatory
+                      </span>
+</div>
+<div class="text-xs text-[#475569] mt-0.5">Immediate alerts upon access from an unrecognised browser or password modification. Email cannot be deactivated.</div>
+</div>
+<div class="flex items-center gap-8 pr-4">
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="Email Account Security (Mandatory)" checked="" class="touch-target-checkbox cursor-not-allowed opacity-70" disabled="" type="checkbox"/>
+</div>
+<div class="w-16 flex justify-center items-center min-h-[44px]">
+<input aria-label="SMS Account Security" checked="" class="touch-target-checkbox" type="checkbox"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="mt-8 pt-4 border-t border-[#E2E8F0] flex justify-end">
+<button class="btn-primary-action" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+                  Save notification preferences
+                </button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- FRAME 4: TAB PRIVACY VARIANT (WITH MODAL CONFIRMATION PREVIEW)            -->
+<!-- ========================================================================= -->
+<section class="border border-[#CBD5E1] rounded-xl bg-white shadow-sm overflow-hidden" id="spec-frame-privacy">
+<!-- Frame Metatag -->
+<div class="bg-[#F1F5F9] px-6 py-3 border-b border-[#CBD5E1] flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white text-xs font-semibold rounded">FRAME 4 OF 4</span>
+<span class="text-xs font-medium text-[#475569]">Tab: Privacy (Active) &amp; Destruction Dialog Spec · Width: 1440px Baseline Spec</span>
+</div>
+<span class="text-xs text-[#475569]">Data Governance &amp; Irreversible Purge Protocol</span>
+</div>
+<div class="w-full bg-[#F8FAFC] flex flex-col min-h-[920px]">
+<!-- NAV TOPBAR (Navy #0B1320) -->
+<header class="bg-[#0B1320] h-16 w-full px-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="bg-white rounded px-3 py-1 flex items-center h-10 border border-[#E2E8F0]">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVByPRTzvBJNr9vhMUxVV2eoNxlhc5AnwcWDfinAZCVel7w7JWGhFNreAm1EQKPoRaeErkfmaWoIVH-BGDflN8AV7GZgUfcpVxgGS99yEeDHHnG57rjALT6pRJLOjuN18AF4qtHBFlonR0FG1yQMpUq6dH_PnG3k_a14JEJGTm524pynvjAGWHKAyyIdBl1govXFgLP0ocjfmpG5mcaHl_TARkD_j2s5_lkmvFk3eVQi1YPgN-huMI4w"/>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<span class="text-[#94A3B8] text-xs font-normal">A.J. Silicon Learning Platform</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-[#94A3B8] text-xs font-mono">14:30 WAT · 05 Oct 2026</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B]" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded hover:bg-[#1E293B]" type="button">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-2 border-l border-[#334155]">
+<div class="w-9 h-9 rounded-full bg-[#1E293B] border border-[#475569] flex items-center justify-center text-white font-semibold text-xs tracking-wider">
+                CE
+              </div>
+<div class="text-left">
+<div class="text-xs font-medium text-white leading-tight">Chinedu Eze</div>
+<div class="text-[11px] text-[#94A3B8] leading-tight">CISA Candidate</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SHELL BODY -->
+<div class="flex flex-1">
+<!-- SIDEBAR -->
+<aside class="w-64 min-w-[16rem] bg-white border-r border-[#E2E8F0] flex flex-col justify-between p-4">
+<div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg mb-6">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[18px]">school</span>
+<span class="text-xs font-semibold text-[#0F172A]">CISA Exam Prep</span>
+</div>
+<div class="text-[11px] text-[#475569] leading-snug">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                  Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  Modules / Programme Home
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#exams">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+                  Practice Exams
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#progress">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+                  Progress
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#certificates">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+                  Certificates and credits
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+                  Extend Access
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#F8FAFC] min-h-[44px]" href="#help">
+<span class="material-symbols-outlined text-[20px]">support</span>
+                  Help centre
+                </a>
+</nav>
+</div>
+<div class="pt-4 border-t border-[#E2E8F0] space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border-l-4 border-[#1D4ED8] min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined text-[20px] text-[#1D4ED8]">settings</span>
+                Settings
+              </a>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium text-[#475569] hover:bg-[#FEF2F2] hover:text-[#B91C1C] min-h-[44px] text-left" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign out
+              </button>
+</div>
+</aside>
+<!-- MAIN CANVAS: TAB PRIVACY -->
+<main class="flex-1 p-8 max-w-[1152px]">
+<div class="mb-8">
+<h2 class="text-2xl font-semibold text-[#0F172A] tracking-tight">Account Settings</h2>
+<p class="text-sm text-[#475569] mt-1">Manage personal data exports, regulatory audit records, and account lifecycle procedures.</p>
+<!-- Tabs Navigation -->
+<div class="flex border-b border-[#E2E8F0] mt-6 gap-8">
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                  Profile
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                  Security
+                </button>
+<button class="py-3 px-1 text-sm font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                  Notifications
+                </button>
+<button class="py-3 px-1 text-sm font-semibold text-[#1D4ED8] border-b-2 border-[#1D4ED8] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+                  Privacy
+                </button>
+</div>
+</div>
+<!-- PRIVACY SUBSECTIONS -->
+<div class="space-y-8">
+<!-- 1. DOWNLOAD MY DATA -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="max-w-2xl">
+<h3 class="text-base font-semibold text-[#0F172A]">Download my data</h3>
+<p class="text-xs text-[#475569] mt-2 leading-relaxed">
+                      Request an auditable archive of your learning history, exam transcripts, certificate verification hashes, and bursar payment records. Archives are generated in JSON/PDF format within 24 hours.
+                    </p>
+<div class="mt-4 flex items-center gap-2 text-xs text-[#047857] font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                      All files encrypted with AES-256 and signed by A.J. Silicon Registry
+                    </div>
+</div>
+<button class="btn-secondary-action shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Request data archive
+                  </button>
+</div>
+</div>
+<!-- 2. REQUEST ACCOUNT DELETION (DANGER ZONE) -->
+<div class="bg-[#FEF2F2] border border-[#FECACA] rounded-xl p-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-white border border-[#FCA5A5] flex items-center justify-center text-[#B91C1C] shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="flex-1">
+<h3 class="text-base font-semibold text-[#B91C1C]">Account Deletion &amp; Data Purge</h3>
+<p class="text-xs text-[#0F172A] mt-2 leading-relaxed">
+                      Deleting your account will immediately revoke all access to active cohort lecture recordings, diagnostic test history, and prevent re-issuance of lost certificates. This action requires administrative verification and cannot be undone.
+                    </p>
+<div class="mt-6 flex items-center gap-4">
+<button class="btn-danger-action" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+                        Request account deletion
+                      </button>
+<span class="text-xs text-[#475569]">Requires multi-factor authorization and bursar clearance</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. SPECIFICATION MODAL PREVIEW (Confirm account deletion request) -->
+<div class="border-2 border-dashed border-[#CBD5E1] rounded-xl p-6 bg-[#F8FAFC]">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2 py-0.5 bg-[#475569] text-white text-[11px] font-semibold rounded">DIALOG SPECIFICATION</span>
+<span class="text-xs font-semibold text-[#0F172A]">Destination State: 'Confirm account deletion request' Modal Dialog</span>
+</div>
+<!-- Rendered Modal Dialog Component -->
+<div class="max-w-lg mx-auto bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-md">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2 text-[#B91C1C] font-semibold text-sm">
+<span class="material-symbols-outlined text-[20px]">report</span>
+                      Confirm account deletion request
+                    </div>
+<button aria-label="Close dialog" class="w-8 h-8 flex items-center justify-center text-[#64748B] hover:text-[#0F172A]" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="py-4 space-y-3">
+<p class="text-xs text-[#0F172A] leading-relaxed">
+                      Please confirm that you wish to request irreversible account deletion for participant 
+                      <strong class="font-semibold text-[#0B1320]">Chinedu Eze</strong>.
+                    </p>
+<div class="p-3 bg-[#FEF2F2] border border-[#FECACA] rounded text-xs text-[#B91C1C]">
+                      Warning: 8 modules of CISA Exam Prep (Cohort 14) and 4 mock diagnostic transcripts will be permanently expunged.
+                    </div>
+<div>
+<label class="block text-xs font-medium text-[#475569] mb-1" for="deleteConfirmation-f4">
+                        Type <code class="font-bold text-[#0B1320]">DELETE-CHINEDU-EZE</code> to confirm:
+                      </label>
+<input class="form-input-audit" id="deleteConfirmation-f4" placeholder="DELETE-CHINEDU-EZE" type="text"/>
+</div>
+</div>
+<div class="pt-3 border-t border-[#E2E8F0] flex justify-end gap-3">
+<button class="btn-secondary-action" type="button">
+                      Cancel
+                    </button>
+<button class="btn-danger-action" type="button">
+                      Proceed with Deletion
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+</main>
+<!-- SPECIFICATION BOARD FOOTER -->
+<footer class="mt-16 bg-[#0B1320] border-t border-[#1E293B] py-8 text-center text-xs text-[#94A3B8]">
+<div class="max-w-4xl mx-auto space-y-2">
+<div class="flex justify-center items-center gap-4 text-white font-medium">
+<span>A.J. Silicon Learning Platform</span>
+<span>•</span>
+<span>CISA Exam Prep Cohort 14</span>
+<span>•</span>
+<span>Lagos, Nigeria</span>
+</div>
+<p class="text-[#64748B]">
+        Rigorous IT Audit, Governance &amp; Regulatory Risk Learning Architecture. All actions governed by strict verification protocols.
+      </p>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>

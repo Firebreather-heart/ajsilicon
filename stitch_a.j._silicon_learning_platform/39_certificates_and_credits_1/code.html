@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon - 39 Certificates and credits Specification Board</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error": "#ffffff",
+            "outline": "#75777c",
+            "secondary-fixed-dim": "#b7c4ff",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#bfc6d9",
+            "background": "#faf8ff",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-secondary-container": "#fffbff",
+            "on-surface-variant": "#45474c",
+            "on-secondary-fixed-variant": "#0039b5",
+            "inverse-surface": "#283044",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "outline-variant": "#c5c6cc",
+            "primary": "#000000",
+            "surface-container-high": "#e2e7ff",
+            "secondary-container": "#4069f2",
+            "on-tertiary-container": "#997f6a",
+            "on-background": "#131b2e",
+            "tertiary-fixed": "#fddcc4",
+            "on-primary-container": "#7c8495",
+            "primary-fixed": "#dbe2f5",
+            "surface-tint": "#575f6e",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#eaedff",
+            "on-tertiary-fixed-variant": "#584231",
+            "tertiary": "#000000",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-fixed": "#281809",
+            "surface-bright": "#faf8ff",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "secondary": "#1d4ed8",
+            "surface-variant": "#dae2fd",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "primary-container": "#0b1320",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-primary-fixed": "#141c29",
+            "on-secondary-fixed": "#001551",
+            "secondary-fixed": "#dce1ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#281809"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "gutter": "1.5rem",
+            "space-xl": "3rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-sm": "1rem"
+          },
+          fontFamily: {
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    /* Explicit interactive focus ring matching design system */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-body-md text-body-md bg-[#F8FAFC] text-[#0F172A]">
+<!-- TOP SHELL: Navy Top Bar (Fixed 64px, Shared Component TopNavBar) -->
+<header class="bg-[#0B1320] text-on-primary sticky top-0 z-50 h-16 w-full flex items-center justify-between px-6 border-b border-[#1E293B]">
+<div class="flex items-center gap-4">
+<!-- Isolated Logo Plate -->
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoIwdnH2wJMOh_PYRByu7adRfsCglvN1RSOlQXS1P5m0XqAM13xk_OkVGApRRLFVXoa5mXiBbaRP49acGuFg8WUIBx2bv0ds5fmYx9ot-HITdCcw-RGVYZ94OwtniBZzmtT4Q8Ay2GTO6nSGCU9SFmWmYXkGoYdU5XsKbtbS43_GoThhoQr4qeTVDL9pZ0HeYYGjxfROLFMBt3CLMNWPyq7fVE9OwtI2lOrkUOizDbhhTdRA1RVtHnDw"/>
+</div>
+<div class="hidden sm:block border-l border-slate-700 pl-4">
+<span class="font-headline-sm text-headline-sm text-white tracking-tight">Learning Platform</span>
+</div>
+</div>
+<!-- Student Auth Identity (Chinedu Eze) -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-slate-300 hover:text-white rounded transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Help &amp; Documentation" class="w-11 h-11 flex items-center justify-center text-slate-300 hover:text-white rounded transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-slate-700 mx-1"></div>
+<div class="flex items-center gap-3 pl-1">
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-slate-600 flex items-center justify-center font-label-md text-label-md font-semibold text-white">
+          CE
+        </div>
+<div class="hidden md:flex flex-col text-left">
+<span class="font-label-md text-label-md text-white font-medium">Chinedu Eze</span>
+<span class="text-xs text-slate-400">CISA Candidate · Cohort 14 Virtual</span>
+</div>
+</div>
+</div>
+</header>
+<!-- SPECIFICATION BOARD BANNER & CONTROLS -->
+<div class="bg-slate-900 border-b border-slate-800 text-white px-6 py-3 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="bg-blue-600 text-white text-xs font-semibold px-2 py-0.5 rounded uppercase tracking-wider">Design Spec 39</span>
+<h1 class="font-headline-sm text-headline-sm text-white">39 Certificates and credits — Specification Board</h1>
+<span class="text-xs text-slate-400">| Viewport: 1440px Desktop Grid</span>
+</div>
+<!-- Variant Quick Switcher for Specification Testing -->
+<div class="flex items-center gap-2 text-xs">
+<span class="text-slate-400 font-medium">Jump to Spec State:</span>
+<a class="px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium transition-colors" href="#variant-1">Variant 1 (Populated)</a>
+<a class="px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium transition-colors" href="#variant-2">Variant 2 (No Certificates)</a>
+<a class="px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium transition-colors" href="#variant-3">Variant 3 (Revoked)</a>
+</div>
+</div>
+<!-- APPLICATION BODY LAYOUT (SIDEBAR + MAIN CANVAS) -->
+<div class="flex-1 flex w-full">
+<!-- LEFT SIDEBAR NAVIGATION (Shared Component SideNavBar) -->
+<aside class="w-64 min-w-[16rem] bg-white border-r border-[#E2E8F0] flex flex-col justify-between py-6 flex-shrink-0">
+<div class="flex flex-col gap-6 px-4">
+<!-- Programme Header Card -->
+<div class="p-3.5 bg-slate-50 border border-slate-200 rounded-lg">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-blue-700 text-xl" data-icon="menu_book">menu_book</span>
+<span class="font-headline-sm text-sm font-semibold text-[#0F172A]">CISA Exam Prep</span>
+</div>
+<p class="text-xs text-slate-500 leading-snug">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</p>
+</div>
+<!-- Navigation Tab Cluster -->
+<nav aria-label="Portal Navigation" class="flex flex-col gap-1">
+<a class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500" data-icon="menu_book">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500" data-icon="quiz">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500" data-icon="monitoring">monitoring</span>
+<span>Progress</span>
+</a>
+<!-- Active Nav State -->
+<a aria-current="page" class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md bg-blue-50 text-blue-700 border-l-4 border-blue-700 font-semibold rounded-r transition-colors" href="#">
+<span class="material-symbols-outlined text-blue-700" data-icon="workspace_premium">workspace_premium</span>
+<span>Certificates &amp; Credits</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500" data-icon="hourglass_top">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- Footer Tab Links -->
+<div class="px-4 border-t border-slate-200 pt-4 flex flex-col gap-1">
+<a class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="h-11 px-3 flex items-center gap-3 font-label-md text-label-md text-slate-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500" data-icon="logout">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- WORKSPACE CANVAS (Contains all 3 Required Specification Variants) -->
+<main class="flex-1 overflow-y-auto px-8 py-8 space-y-16 max-w-[1280px]">
+<!-- ========================================================================= -->
+<!-- VARIANT 1: POPULATED STATE (Certificates Present + Credits Ledger + Table) -->
+<!-- ========================================================================= -->
+<section class="space-y-8 bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm" id="variant-1">
+<!-- State Header Tag -->
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-emerald-50 text-[#047857] border border-[#047857] text-xs font-semibold rounded">Specification State 1.0</span>
+<span class="text-sm font-semibold uppercase tracking-wider text-slate-700">Variant 1: Certificates Present (Earned &amp; Populated)</span>
+</div>
+<span class="text-xs text-slate-500">Live Production Mockup · WAT Timezone</span>
+</div>
+<!-- 1. Screen Header -->
+<div class="space-y-4">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="text-xs text-slate-500 font-medium">
+<span>Student Portal</span>
+<span class="mx-2 text-slate-400">/</span>
+<span>Accreditations</span>
+<span class="mx-2 text-slate-400">/</span>
+<span class="text-slate-900 font-semibold">Certificates &amp; Credits</span>
+</nav>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-[#0F172A] tracking-tight">
+                Certificates &amp; Continuing Professional Education (CPE) Credits
+              </h2>
+<p class="font-body-md text-body-md text-[#475569] mt-1">
+                Authoritative credential repository and automated CPD credit ledger for ISACA and ICAN professional affiliations.
+              </p>
+</div>
+<!-- Global Action Buttons (Touch floor: 44px) -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="min-h-[44px] px-5 py-2.5 bg-transparent border border-[#64748B] hover:bg-slate-100 text-[#0F172A] font-label-md text-label-md rounded-md flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="file_download">file_download</span>
+<span>Export Credit Transcript (.PDF)</span>
+</button>
+<button class="min-h-[44px] px-5 py-2.5 bg-[#0B1320] hover:bg-slate-800 text-white font-label-md text-label-md rounded-md flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>Add external credit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 2. Certificates List / Cards (Issued Certificate) -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] font-semibold">Conferred Credentials</h3>
+<span class="text-xs text-slate-500">1 Issued Programme Credential</span>
+</div>
+<div class="border border-[#E2E8F0] rounded-xl p-6 bg-slate-50/50 hover:bg-white transition-all">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="space-y-4 max-w-2xl">
+<div class="flex items-center gap-3 flex-wrap">
+<!-- Status Chip: Checkmark + Issued (Rule: Never color alone) -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium rounded">
+<span class="material-symbols-outlined text-sm fill-icon" data-icon="check_circle">check_circle</span>
+<span>Issued &amp; Verified</span>
+</span>
+<span class="text-xs text-slate-500">Issue Date: <strong class="text-slate-700">18 Dec 2026</strong></span>
+<span class="text-xs text-slate-400">•</span>
+<span class="text-xs text-slate-500 font-mono">ID: <strong class="text-slate-800">AJS-CERT-2026-CISA-0418</strong></span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-[#0F172A]">CISA Executive Exam Preparation Programme</h4>
+<p class="font-label-md text-label-md text-slate-600 mt-0.5">Certificate of Completion &amp; Professional Attainment</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+<div class="bg-white p-3 border border-[#E2E8F0] rounded-lg">
+<span class="text-xs text-slate-500 block">Accompanying Accreditations</span>
+<span class="text-sm font-semibold text-slate-900 mt-0.5 block">40 ISACA CPE Hours / 20 ICAN Units</span>
+</div>
+<div class="bg-white p-3 border border-[#E2E8F0] rounded-lg">
+<span class="text-xs text-slate-500 block">Cryptographic Hash (SHA-256)</span>
+<span class="text-xs font-mono text-slate-700 truncate block mt-0.5">8f0c2a8497d312...ee84b12</span>
+</div>
+</div>
+</div>
+<!-- Action Cluster (44px target floor) -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0 min-w-[210px]">
+<button class="min-h-[44px] w-full px-4 py-2.5 bg-[#0B1320] hover:bg-slate-800 text-white text-sm font-medium rounded-md flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+<span>Download PDF</span>
+</button>
+<button class="min-h-[44px] w-full px-4 py-2.5 bg-white border border-[#64748B] hover:bg-slate-100 text-slate-900 text-sm font-medium rounded-md flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+<span>Share verification link</span>
+</button>
+<div class="text-center pt-1">
+<a class="inline-flex items-center gap-1 text-sm text-[#1D4ED8] hover:underline font-medium min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+<span>Verify on Public Registry</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Credits Ledger by Professional Body (ISACA & ICAN - Text Only, No Logos) -->
+<div class="space-y-4 pt-2">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] font-semibold">Continuing Education Ledger by Professional Body</h3>
+<span class="text-xs text-slate-500">Automated Audit-Grade Synchronization</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Body 1: ISACA CPE Hours -->
+<div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">Affiliation Body</span>
+<h4 class="text-lg font-bold text-[#0F172A] mt-1.5">ISACA CPE Hours</h4>
+<p class="text-xs text-slate-500">Jan 2026 – Dec 2026 Cycle</p>
+</div>
+<a class="text-xs text-[#1D4ED8] hover:underline font-medium min-h-[44px] flex items-center" href="#">Edit Target</a>
+</div>
+<div>
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="text-sm font-semibold text-slate-900">34 / 40 Annual Target Hours (85%)</span>
+<span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+<span>On Track</span>
+</span>
+</div>
+<!-- Progress bar 85% -->
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+<div class="bg-[#0B1320] h-full rounded-full" style="width: 85%;"></div>
+</div>
+<div class="flex justify-between text-xs text-slate-500 mt-2">
+<span>6.0 Hours remaining</span>
+<span>Target: 40.0 Hrs</span>
+</div>
+</div>
+</div>
+<!-- Body 2: ICAN Credit Units -->
+<div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-300">Chartered Body</span>
+<h4 class="text-lg font-bold text-[#0F172A] mt-1.5">ICAN Credit Units</h4>
+<p class="text-xs text-slate-500">Institute of Chartered Accountants of Nigeria · 2026 Triennium</p>
+</div>
+<a class="text-xs text-[#1D4ED8] hover:underline font-medium min-h-[44px] flex items-center" href="#">Edit Target</a>
+</div>
+<div>
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="text-sm font-semibold text-slate-900">18 / 30 Mandatory Credit Units (60%)</span>
+<span class="inline-flex items-center gap-1 text-xs font-medium text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-300">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+<span>In Progress</span>
+</span>
+</div>
+<!-- Progress bar 60% -->
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+<div class="bg-[#1D4ED8] h-full rounded-full" style="width: 60%;"></div>
+</div>
+<div class="flex justify-between text-xs text-slate-500 mt-2">
+<span>12.0 Units remaining</span>
+<span>Target: 30.0 Units</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. "Add External Credit" Modal / Sheet Preview Callout -->
+<div class="border-2 border-dashed border-[#64748B] rounded-xl p-6 bg-slate-50/70 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-700" data-icon="post_add">post_add</span>
+<h4 class="font-headline-sm text-sm font-semibold text-[#0F172A]">External Credit Submission Form (Self-Reporting Modal Specification)</h4>
+</div>
+<span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Specification View</span>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-3 gap-4" onsubmit="event.preventDefault();">
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Professional Affiliation Body *</label>
+<select class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-slate-800">
+<option selected="">ISACA (Information Systems Audit and Control Association)</option>
+<option>ICAN (Institute of Chartered Accountants of Nigeria)</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Activity / Programme Title *</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-slate-800 placeholder-slate-400" placeholder="e.g. NIST CSF 2.0 Implementation Clinic" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Sponsoring Organization *</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-slate-800 placeholder-slate-400" placeholder="e.g. ISACA Lagos Chapter / Deloitte West Africa" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Completion Date (WAT) *</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-slate-800" type="date" value="2026-11-14"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Hours / Credit Units Claimed *</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-sm text-slate-800" step="0.5" type="number" value="4.0"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Evidence Certificate (PDF, PNG ≤ 10MB) *</label>
+<input class="w-full h-11 text-xs text-slate-500 file:mr-3 file:py-2.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-slate-200 file:text-slate-800 hover:file:bg-slate-300 border border-[#64748B] rounded-md bg-white" type="file"/>
+</div>
+<div class="md:col-span-3 flex items-center justify-between pt-2 border-t border-slate-200">
+<span class="text-xs text-slate-500">All submissions require auditable attendance proof and are subject to verification by A.J. Silicon audit liaisons.</span>
+<div class="flex gap-2">
+<button class="min-h-[44px] px-4 py-2 border border-slate-300 text-sm font-medium text-slate-700 rounded hover:bg-slate-100" type="button">Cancel</button>
+<button class="min-h-[44px] px-5 py-2 bg-[#0B1320] text-sm font-medium text-white rounded hover:bg-slate-800" type="submit">Submit for Audit Review</button>
+</div>
+</div>
+</form>
+</div>
+<!-- 5. CPE & Credit Entries Table -->
+<div class="space-y-4 pt-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A] font-semibold">CPE &amp; Credit Activity Log</h3>
+<!-- Table Controls (Search, Filters, Sort) -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<input class="h-11 pl-9 pr-3 text-xs bg-white border border-[#64748B] rounded-md w-56 placeholder-slate-400" placeholder="Search activities..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-3 text-slate-400 text-sm" data-icon="search">search</span>
+</div>
+<select class="h-11 px-3 text-xs bg-white border border-[#64748B] rounded-md text-slate-700 min-w-[130px]">
+<option>All Bodies</option>
+<option>ISACA only</option>
+<option>ICAN only</option>
+</select>
+<select class="h-11 px-3 text-xs bg-white border border-[#64748B] rounded-md text-slate-700">
+<option>Sort: Date (Newest first)</option>
+<option>Sort: Date (Oldest first)</option>
+<option>Sort: Hours (High to Low)</option>
+</select>
+</div>
+</div>
+<!-- Structured Audit Table -->
+<div class="overflow-x-auto border border-[#E2E8F0] rounded-xl bg-white">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 border-b-2 border-[#E2E8F0] text-xs font-semibold text-slate-600 uppercase tracking-wider">
+<th class="py-3 px-4">Date</th>
+<th class="py-3 px-4">Activity / Session Title</th>
+<th class="py-3 px-4">Body &amp; Category</th>
+<th class="py-3 px-4">Earned</th>
+<th class="py-3 px-4">Verification Status</th>
+<th class="py-3 px-4 text-right">Audit Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm text-[#0F172A]">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-3.5 px-4 font-medium text-slate-700 whitespace-nowrap">24 Oct 2026</td>
+<td class="py-3.5 px-4 font-semibold text-slate-900">IT Governance Controls Masterclass (COBIT 2019)</td>
+<td class="py-3.5 px-4 text-slate-600">ISACA (Technical)</td>
+<td class="py-3.5 px-4 font-mono font-medium">2.5 Hours</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium rounded">
+<span class="material-symbols-outlined text-xs fill-icon" data-icon="check_circle">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 text-xs font-medium text-[#1D4ED8] hover:underline inline-flex items-center" type="button">
+                      View Attendance Log
+                    </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-3.5 px-4 font-medium text-slate-700 whitespace-nowrap">17 Oct 2026</td>
+<td class="py-3.5 px-4 font-semibold text-slate-900">SDLC Security Architecture Walkthrough</td>
+<td class="py-3.5 px-4 text-slate-600">ISACA (Technical)</td>
+<td class="py-3.5 px-4 font-mono font-medium">2.0 Hours</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium rounded">
+<span class="material-symbols-outlined text-xs fill-icon" data-icon="check_circle">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 text-xs font-medium text-[#1D4ED8] hover:underline inline-flex items-center" type="button">
+                      View Attendance Log
+                    </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-3.5 px-4 font-medium text-slate-700 whitespace-nowrap">10 Oct 2026</td>
+<td class="py-3.5 px-4 font-semibold text-slate-900">Audit Charter &amp; Fieldwork Clinic</td>
+<td class="py-3.5 px-4 text-slate-600">ICAN (Audit &amp; Assurance)</td>
+<td class="py-3.5 px-4 font-mono font-medium">3.0 Units</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium rounded">
+<span class="material-symbols-outlined text-xs fill-icon" data-icon="check_circle">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 text-xs font-medium text-[#1D4ED8] hover:underline inline-flex items-center" type="button">
+                      View Attendance Log
+                    </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-3.5 px-4 font-medium text-slate-700 whitespace-nowrap">03 Oct 2026</td>
+<td class="py-3.5 px-4 font-semibold text-slate-900">Disaster Recovery &amp; BCM Evaluation Workshop</td>
+<td class="py-3.5 px-4 text-slate-600">ISACA (Technical)</td>
+<td class="py-3.5 px-4 font-mono font-medium">2.5 Hours</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-[#FFFBEB] text-[#B45309] border border-[#B45309] text-xs font-medium rounded">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+<span>Pending Review</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 text-xs font-medium text-[#1D4ED8] hover:underline inline-flex items-center" type="button">
+                      View Submission
+                    </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-3.5 px-4 font-medium text-slate-700 whitespace-nowrap">26 Sep 2026</td>
+<td class="py-3.5 px-4 font-semibold text-slate-900">Fintech Regulatory Compliance Framework (CBN/NDPR)</td>
+<td class="py-3.5 px-4 text-slate-600">ICAN (Governance)</td>
+<td class="py-3.5 px-4 font-mono font-medium">2.0 Units</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-[#ECFDF5] text-[#047857] border border-[#047857] text-xs font-medium rounded">
+<span class="material-symbols-outlined text-xs fill-icon" data-icon="check_circle">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 text-xs font-medium text-[#1D4ED8] hover:underline inline-flex items-center" type="button">
+                      View Attendance Log
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination (44px target floor) -->
+<div class="px-6 py-3 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+<span>Showing 1 to 5 of 14 entries</span>
+<div class="flex items-center gap-1">
+<button class="min-h-[44px] min-w-[44px] px-3 flex items-center justify-center border border-slate-300 rounded text-slate-500 hover:bg-slate-100 disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] px-3 flex items-center justify-center bg-[#0B1320] text-white font-medium rounded" type="button">1</button>
+<button class="min-h-[44px] min-w-[44px] px-3 flex items-center justify-center border border-slate-300 rounded text-slate-700 hover:bg-slate-100" type="button">2</button>
+<button class="min-h-[44px] min-w-[44px] px-3 flex items-center justify-center border border-slate-300 rounded text-slate-700 hover:bg-slate-100" type="button">3</button>
+<button class="min-h-[44px] min-w-[44px] px-3 flex items-center justify-center border border-slate-300 rounded text-slate-700 hover:bg-slate-100" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: NO CERTIFICATES YET (Empty Certificates Banner + Active Ledger) -->
+<!-- ========================================================================= -->
+<section class="space-y-8 bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm" id="variant-2">
+<!-- State Header Tag -->
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-semibold rounded">Specification State 2.0</span>
+<span class="text-sm font-semibold uppercase tracking-wider text-slate-700">Variant 2: No Certificates Yet (Initial Progress State)</span>
+</div>
+<span class="text-xs text-slate-500">Pre-Completion State</span>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg font-bold text-[#0F172A] tracking-tight">
+            Certificates &amp; Continuing Professional Education (CPE) Credits
+          </h2>
+<p class="font-body-md text-body-md text-[#475569]">
+            Authoritative credential repository and automated CPD credit ledger for ISACA and ICAN professional affiliations.
+          </p>
+</div>
+<!-- Clean Empty State Container -->
+<div class="border border-[#E2E8F0] rounded-xl p-8 bg-slate-50 text-center space-y-4 max-w-3xl mx-auto">
+<div class="w-14 h-14 rounded-full bg-slate-200 text-slate-600 mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="school">school</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-bold text-[#0F172A]">No certificates issued yet</h3>
+<p class="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
+              Certificates are automatically generated upon completing 100% of module lessons and passing the final CISA exit diagnostic simulation with ≥ 450 scaled score. Current progress: <strong class="text-slate-900">68% complete</strong>.
+            </p>
+</div>
+<!-- Progress Visualization Bar -->
+<div class="max-w-md mx-auto pt-2">
+<div class="flex justify-between text-xs text-slate-500 mb-1">
+<span>Exit Criteria Progress</span>
+<span class="font-semibold text-slate-800">68% Complete</span>
+</div>
+<div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+<div class="bg-blue-600 h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-1.5 text-sm font-medium text-[#1D4ED8] hover:underline min-h-[44px]" href="#">
+<span class="material-symbols-outlined text-base" data-icon="rule">rule</span>
+<span>View Programme Requirements</span>
+</a>
+</div>
+</div>
+<!-- Guidance Note: Credit Ledger Remains Operational -->
+<div class="border-l-4 border-blue-600 bg-blue-50/60 p-4 rounded-r-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-700 shrink-0 mt-0.5" data-icon="info">info</span>
+<div class="text-xs text-blue-900 space-y-1">
+<strong class="font-semibold block text-sm">Credits Ledger Remains Active</strong>
+<p class="leading-relaxed">Although programme graduation is still underway, continuing professional education credits earned from completed live clinics, webinars, and masterclasses have been calculated and logged into your affiliated registries below.</p>
+</div>
+</div>
+<!-- Ledger for Variant 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-3">
+<span class="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">Affiliation Body</span>
+<h4 class="text-lg font-bold text-[#0F172A]">ISACA CPE Hours</h4>
+<p class="text-xs text-slate-500">Jan 2026 – Dec 2026 Cycle</p>
+<div class="flex items-baseline justify-between pt-2">
+<span class="text-sm font-semibold text-slate-900">22 / 40 Target Hours (55%)</span>
+<span class="text-xs text-slate-600 font-medium">18 Hrs Remaining</span>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+<div class="bg-[#0B1320] h-full rounded-full" style="width: 55%;"></div>
+</div>
+</div>
+<div class="border border-[#E2E8F0] rounded-xl p-6 bg-white space-y-3">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-300">Chartered Body</span>
+<h4 class="text-lg font-bold text-[#0F172A]">ICAN Credit Units</h4>
+<p class="text-xs text-slate-500">2026 Triennium Reporting Window</p>
+<div class="flex items-baseline justify-between pt-2">
+<span class="text-sm font-semibold text-slate-900">12 / 30 Target Units (40%)</span>
+<span class="text-xs text-slate-600 font-medium">18 Units Remaining</span>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+<div class="bg-[#1D4ED8] h-full rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 3: REVOKED CERTIFICATE STATE (Audit Revocation & Disabled Actions) -->
+<!-- ========================================================================= -->
+<section class="space-y-8 bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-sm" id="variant-3">
+<!-- State Header Tag -->
+<div class="flex items-center justify-between border-b border-[#E2E8F0] pb-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-red-50 text-[#B91C1C] border border-[#B91C1C] text-xs font-semibold rounded">Specification State 3.0</span>
+<span class="text-sm font-semibold uppercase tracking-wider text-slate-700">Variant 3: Revoked Certificate State (Audit Inquiry)</span>
+</div>
+<span class="text-xs text-red-600 font-medium">Strict Compliance Notice</span>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg font-bold text-[#0F172A] tracking-tight">
+            Certificates &amp; Continuing Professional Education (CPE) Credits
+          </h2>
+<p class="font-body-md text-body-md text-[#475569]">
+            Authoritative credential repository and automated CPD credit ledger for ISACA and ICAN professional affiliations.
+          </p>
+</div>
+<!-- Revoked Certificate Card -->
+<div class="border-2 border-red-300 rounded-xl p-6 bg-red-50/20 space-y-6">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="space-y-4 max-w-2xl">
+<!-- Revocation Status Chip (Never color alone: alert icon + text) -->
+<div class="flex items-center gap-3 flex-wrap">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] text-xs font-bold rounded">
+<span class="material-symbols-outlined text-sm" data-icon="cancel">cancel</span>
+<span>Revoked</span>
+</span>
+<span class="text-xs text-slate-500 font-mono">ID: AJS-CERT-2026-CISA-0418</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-slate-800 line-through decoration-red-500">CISA Executive Exam Preparation Programme</h4>
+<p class="font-label-md text-label-md text-slate-600">Certificate of Completion &amp; Professional Attainment</p>
+</div>
+<!-- Prominent Revocation Disclosure -->
+<div class="bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] p-4 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-xl shrink-0 mt-0.5" data-icon="error">error</span>
+<div class="space-y-1">
+<span class="text-xs font-bold uppercase tracking-wide block">Credential Revocation Disclosure</span>
+<p class="text-sm font-medium leading-relaxed">
+                    Revoked on 02 Nov 2026: Academic integrity inquiry ref #AUD-2026-088. Downloads disabled.
+                  </p>
+<p class="text-xs text-slate-600 mt-1">This credential has been marked invalid on public registries and does not convey accredited CPE standing.</p>
+</div>
+</div>
+</div>
+<!-- Disabled Actions with Minimum 44px Touch Targets -->
+<div class="flex flex-col gap-2.5 shrink-0 min-w-[220px]">
+<button aria-disabled="true" class="min-h-[44px] w-full px-4 py-2.5 bg-slate-200 text-slate-400 text-sm font-medium rounded-md flex items-center justify-center gap-2 cursor-not-allowed border border-slate-300" disabled="" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+<span>Download PDF (Disabled)</span>
+</button>
+<button aria-disabled="true" class="min-h-[44px] w-full px-4 py-2.5 bg-slate-100 text-slate-400 text-sm font-medium rounded-md flex items-center justify-center gap-2 cursor-not-allowed border border-slate-200" disabled="" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="link_off">link_off</span>
+<span>Verification Link Inactive</span>
+</button>
+<div class="pt-2 text-center">
+<a class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B91C1C] hover:underline min-h-[44px]" href="#contact-registrar">
+<span class="material-symbols-outlined text-base" data-icon="contact_support">contact_support</span>
+<span>Contact Audit Registrar</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Ledger Impact in Revoked State -->
+<div class="border border-[#E2E8F0] rounded-xl p-5 bg-slate-50 flex items-center justify-between text-xs text-slate-600">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-600" data-icon="warning">warning</span>
+<span>Ledger entries associated with revoked credentials are quarantined from automated affiliate dispatch pending inquiry resolution.</span>
+</div>
+<span class="font-mono text-slate-500">Notice #NOT-2026-11</span>
+</div>
+</section>
+</main>
+</div>
+<!-- COMPLIANCE & METADATA FOOTER (Specification Footer) -->
+<footer class="bg-white border-t border-[#E2E8F0] px-8 py-4 text-xs text-slate-500 flex flex-col md:flex-row items-center justify-between gap-2">
+<div>
+<span>© 2026 A.J. Silicon Learning Systems Limited. All rights reserved. Registered Provider for ISACA &amp; ICAN Continuing Education.</span>
+</div>
+<div class="flex items-center gap-4 text-slate-600">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-emerald-700" data-icon="verified_user">verified_user</span>
+<span>Cryptographically Signed Repository</span>
+</span>
+<span>•</span>
+<span>Server Time: 18 Dec 2026, 14:32 WAT</span>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>

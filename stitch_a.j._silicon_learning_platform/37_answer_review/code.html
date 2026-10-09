@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon - 37 Answer Review Specification Board</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#141c29",
+            "inverse-on-surface": "#eef0ff",
+            "background": "#faf8ff",
+            "secondary-container": "#4069f2",
+            "on-secondary-container": "#fffbff",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c5c6cc",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary-container": "#141c29",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#dbe2f5",
+            "on-tertiary-fixed-variant": "#584231",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-container-low": "#f2f3ff",
+            "tertiary": "#000000",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-tertiary-fixed": "#281809",
+            "on-tertiary-container": "#997f6a",
+            "inverse-primary": "#bfc6d9",
+            "surface-container-highest": "#dae2fd",
+            "surface": "#faf8ff",
+            "on-background": "#131b2e",
+            "surface-tint": "#575f6e",
+            "error": "#ba1a1a",
+            "tertiary-container": "#281809",
+            "tertiary-fixed": "#fddcc4",
+            "primary": "#000000",
+            "on-primary-container": "#7c8495",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "outline": "#75777c",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed": "#001551",
+            "surface-container-high": "#e2e7ff",
+            "surface-bright": "#faf8ff",
+            "on-error-container": "#93000a",
+            "surface-container": "#eaedff",
+            "surface-variant": "#dae2fd",
+            "primary-fixed-dim": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#45474c",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-surface": "#283044",
+            "on-primary": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "3rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-md": "1.5rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem"
+          },
+          fontFamily: {
+            "headline-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Specification Board Annotations */
+    .spec-badge {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#F1F5F9] text-on-surface antialiased font-body-md min-h-screen">
+<!-- TOP SPECIFICATION HEADER BANNER -->
+<header class="bg-primary-container text-on-primary border-b border-outline-variant px-8 py-4 flex flex-wrap justify-between items-center gap-4">
+<div>
+<div class="flex items-center gap-3">
+<span class="spec-badge bg-secondary text-on-secondary">Spec Board 37</span>
+<h1 class="font-headline-md text-headline-md text-on-primary tracking-tight">Answer Review — Desktop (1440px Canvas)</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+        Context: Student Application Shell · Candidate: Chinedu Eze (Cohort 14 Virtual) · Discipline: Precision IT Audit / CISA Exam Engine
+      </p>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm px-3 py-1 bg-surface-container-lowest/10 text-on-primary rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px]">verified</span> Formal Compliance Review
+      </span>
+<span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm px-3 py-1 bg-surface-container-lowest/10 text-on-primary rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px]">grid_4x4</span> 8px Precision Grid
+      </span>
+</div>
+</header>
+<!-- MAIN CANVAS CONTAINER -->
+<main class="max-w-[1560px] mx-auto p-8 space-y-12">
+<!-- ========================================== -->
+<!-- VARIANT 1: CANONICAL SCREEN — WRONG ANSWER STATE -->
+<!-- ========================================== -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="spec-badge bg-[#0B1320] text-white">Variant 1 · Primary Focus</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Canonical Answer Review — Incorrect Response Evaluation (Question 42)</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Filter: Wrong (38) · Touch Targets ≥ 44px · Two-Column Workspace</span>
+</div>
+<!-- DESKTOP 1440px APPLICATION FRAME EMBED -->
+<div class="w-full bg-background rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col min-h-[920px]">
+<!-- [1] TopNavBar Component (from Shared Components JSON) -->
+<header class="bg-primary-container dark:bg-primary-container text-on-primary dark:text-on-primary border-b border-outline-variant dark:border-outline-variant docked full-width top h-16 flex justify-between items-center w-full px-6 shrink-0">
+<!-- Brand Logo plate -->
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest text-primary px-3 py-1 rounded h-10 flex items-center justify-center shadow-sm">
+<!-- Provided logo image -->
+<img alt="A.J. Silicon" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPNQmilb55jNbjuH9CdyYX1L5jQ5K1eca-k-arn78xQIibY9-qXGx2lH15WhLYkazEyx-fq9BjFhocuT5TBDRn9NYrAj4O003VzKhxa4NJL15684KKxqPwTHTHPlVSJBuFFeFMvAfqgY0iHrcNLBN_8nMIbkSyC9RBIz2Ly2AIO_MfA301Pqx1C6r9mpWh0spkwLBII7KUE5UAeYeE_9SJnmihm961S54B9RBSnqHxpQKHbIR00WjK9w"/>
+</div>
+<span class="text-on-primary-container font-label-sm text-label-sm border-l border-outline-variant/40 pl-4 hidden sm:inline-block">
+              Professional Certification Academy
+            </span>
+</div>
+<!-- Trailing Context & Student Profile (Role Switcher STRICTLY HIDDEN) -->
+<div class="flex items-center gap-4">
+<!-- Trailing Icons: notifications, help -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150 ease-in-out" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Help &amp; Documentation" class="w-11 h-11 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors duration-150 ease-in-out" type="button">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<!-- User ID Plate -->
+<div class="flex items-center gap-3 pl-2 border-l border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-headline-sm text-sm flex items-center justify-center font-semibold">
+                CE
+              </div>
+<div class="text-left hidden md:block">
+<div class="font-label-md text-label-md text-on-primary font-medium leading-tight">Chinedu Eze</div>
+<div class="font-label-sm text-xs text-on-primary-container leading-tight">CISA Candidate · Virtual</div>
+</div>
+</div>
+</div>
+</header>
+<!-- APP BODY: SideNav + Content Area -->
+<div class="flex flex-1 relative">
+<!-- [2] SideNavBar Component (from Shared Components JSON) -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest dark:bg-surface-container-low border-r border-outline-variant dark:border-outline-variant p-4 flex flex-col justify-between shrink-0">
+<!-- Header Section inside SideNav -->
+<div>
+<div class="pb-4 mb-3 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="shield">shield</span>
+<div class="font-headline-sm text-headline-sm text-primary dark:text-on-surface">CISA Exam Prep</div>
+</div>
+<div class="font-body-sm text-xs text-on-surface-variant mt-1">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</div>
+</div>
+<!-- Main Navigation Links -->
+<nav class="space-y-1">
+<!-- Tab 1: Dashboard (inactive) -->
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md transition-all duration-150 ease-in-out rounded min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Tab 2: Modules / Programme Home (inactive) -->
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md transition-all duration-150 ease-in-out rounded min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<!-- Tab 3: Practice Exams (ACTIVE) -->
+<a class="bg-surface-container dark:bg-surface-container text-secondary font-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3 transition-all duration-150 ease-in-out rounded-r min-h-[44px]" href="#practice-exams">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-semibold">Practice Exams</span>
+</a>
+<!-- Sub-nav indicator for Answer Review -->
+<div class="pl-11 pr-3 py-1.5 flex items-center gap-2 text-secondary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">arrow_right</span>
+<span>Answer Review</span>
+</div>
+<!-- Tab 4: Extend Access (inactive) -->
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md transition-all duration-150 ease-in-out rounded min-h-[44px]" href="#extend-access">
+<span class="material-symbols-outlined" data-icon="hourglass_top">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- SideNav Footer Tabs -->
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md transition-all duration-150 ease-in-out rounded min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md transition-all duration-150 ease-in-out rounded min-h-[44px]" href="#signout">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- [3] MAIN CONTENT CANVAS: Answer Review Workspace -->
+<div class="flex-1 flex flex-col bg-[#F8FAFC] overflow-y-auto">
+<!-- Breadcrumb & Exam Return Navigation Bar -->
+<div class="bg-surface-container-lowest border-b border-[#E2E8F0] px-8 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3 text-body-sm font-body-sm">
+<a class="inline-flex items-center gap-1.5 text-secondary hover:underline font-medium min-h-[44px] items-center" href="#practice-exams">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                  Back to exam diagnostic results
+                </a>
+<span class="text-outline">/</span>
+<span class="text-on-surface font-medium">Full Mock Examination #03: Governance &amp; Security Baseline</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+                  Score: 74.6% (Scaled: 542 / 800)
+                </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                  Pass Threshold Met
+                </span>
+</div>
+</div>
+<!-- WORKSPACE LAYOUT: 12-Column Responsive Bento Layout -->
+<div class="p-8 max-w-[1280px] w-full mx-auto space-y-6">
+<!-- Filter Tabs & Jump List Bar Container -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 shadow-sm space-y-5">
+<!-- Filter Tabs Controls -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface mr-2">Filter By:</span>
+<!-- Tab: All (150) -->
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-label-md transition-colors text-on-surface-variant hover:bg-surface-container-low border border-transparent" type="button">
+                      All <span class="ml-1 text-xs px-2 py-0.5 rounded-full bg-[#E2E8F0] text-[#0F172A] font-semibold">150</span>
+</button>
+<!-- Tab: Wrong (38) — ACTIVE IN THIS VARIANT -->
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-label-md bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] font-semibold flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                      Wrong <span class="ml-1 text-xs px-2 py-0.5 rounded-full bg-[#B91C1C] text-white font-semibold">38</span>
+</button>
+<!-- Tab: Flagged (5) -->
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low border border-transparent flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#B45309]">flag</span>
+                      Flagged <span class="ml-1 text-xs px-2 py-0.5 rounded-full bg-[#FFFBEB] text-[#B45309] border border-[#B45309]/30 font-semibold">5</span>
+</button>
+</div>
+<!-- Legend Information -->
+<div class="flex items-center gap-4 text-xs font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#ECFDF5] border border-[#047857] inline-flex items-center justify-center text-[10px] text-[#047857]">✓</span>
+<span>Correct</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#FEF2F2] border border-[#B91C1C] inline-flex items-center justify-center text-[10px] text-[#B91C1C]">✕</span>
+<span>Incorrect</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#FFFBEB] border border-[#B45309] inline-flex items-center justify-center text-[10px] text-[#B45309]">⚑</span>
+<span>Flagged</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-white border-2 border-secondary ring-2 ring-secondary/20 inline-flex items-center justify-center"></span>
+<span>Active</span>
+</div>
+</div>
+</div>
+<!-- Jump List Grid (Filtered to Wrong Subset: 38 Questions, showing key sequence) -->
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Question Jump Navigator (Filtered: 38 Incorrect Responses)</span>
+<span class="font-label-sm text-xs text-outline">Click any node to inspect rationale</span>
+</div>
+<!-- Strip / Grid of Question Numbers -->
+<div class="grid grid-cols-12 sm:grid-cols-16 md:grid-cols-19 lg:grid-cols-20 gap-2">
+<!-- Question 3 (Incorrect) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      03
+                    </button>
+<!-- Question 7 (Incorrect) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      07
+                    </button>
+<!-- Question 11 (Incorrect + Flagged) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FFFBEB] border border-[#B45309] text-[#B45309] font-semibold hover:opacity-80 relative">
+                      11
+                      <span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#B45309]"></span>
+</button>
+<!-- Question 18 (Incorrect) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      18
+                    </button>
+<!-- Question 22 (Incorrect) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      22
+                    </button>
+<!-- Question 29 (Incorrect) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      29
+                    </button>
+<!-- Question 34 (Incorrect) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      34
+                    </button>
+<!-- Question 39 (Incorrect) -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      39
+                    </button>
+<!-- QUESTION 42: CURRENT ACTIVE SELECTION (Double ring / crisp highlight) -->
+<button aria-current="true" class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border-2 border-[#B91C1C] text-[#B91C1C] font-bold ring-2 ring-secondary ring-offset-2 scale-105 shadow-sm">
+                      42
+                    </button>
+<!-- Subsequent questions -->
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      48
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      51
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FFFBEB] border border-[#B45309] text-[#B45309] relative">
+                      59
+                      <span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#B45309]"></span>
+</button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      63
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      70
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      77
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      84
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      92
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      99
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      105
+                    </button>
+<button class="h-9 w-9 rounded flex items-center justify-center font-label-sm text-xs bg-[#FEF2F2] border border-[#B91C1C] text-[#B91C1C] hover:opacity-80">
+                      112
+                    </button>
+</div>
+</div>
+</div>
+<!-- Question Details Pane (Canonical Inspection Card) -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden">
+<!-- Card Header -->
+<div class="px-8 py-5 border-b border-[#E2E8F0] bg-[#F8FAFC] flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="font-headline-sm text-headline-sm text-on-surface">Question 42 of 150</span>
+<span class="text-outline">·</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Attempt #03 (14 Nov 2026)</span>
+</div>
+<div class="flex items-center gap-3">
+<!-- ISACA Domain Tag -->
+<span class="inline-flex items-center px-3 py-1 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+                      Domain 2: Governance &amp; Management of IT
+                    </span>
+<!-- Outcome Tag -->
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded text-label-sm font-label-sm bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] font-semibold">
+<span class="material-symbols-outlined text-[16px]">cancel</span> Incorrect
+                    </span>
+<!-- Flag Status -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[16px]">flag</span> Flagged during exam
+                    </span>
+</div>
+</div>
+<!-- Stem Area -->
+<div class="p-8 space-y-6">
+<div class="space-y-3">
+<span class="font-label-sm text-xs uppercase tracking-wider text-outline font-semibold">Question Scenario</span>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed font-normal">
+                      During an IT audit of a commercial banking institution, an IS auditor identifies that database administrators (DBAs) possess full administrative privileges enabling direct table schema changes, automated script executions, and direct update privileges over production financial ledgers without separate developer staging. Which of the following recommendations represents the <strong class="font-semibold text-on-surface underline">MOST</strong> effective compensating control to mitigate the risk of unauthorized data alterations?
+                    </p>
+</div>
+<!-- Options List with Status States -->
+<div class="space-y-3 pt-2">
+<span class="font-label-sm text-xs uppercase tracking-wider text-outline font-semibold">Answer Evaluation</span>
+<!-- Option A (Distractor - Unselected) -->
+<div class="p-4 rounded-lg border border-[#E2E8F0] bg-white flex items-start gap-4">
+<span class="w-7 h-7 rounded border border-[#64748B] flex items-center justify-center font-label-md text-xs font-semibold text-on-surface shrink-0 mt-0.5">
+                        A
+                      </span>
+<div class="flex-1 font-body-md text-body-md text-on-surface pt-0.5">
+                        Requiring quarterly supervisor sign-offs on database account active listings.
+                      </div>
+</div>
+<!-- Option B (Selected by Candidate - INCORRECT) -->
+<div class="p-4 rounded-lg border-2 border-[#B91C1C] bg-[#FEF2F2] flex items-start gap-4 transition-all">
+<span class="w-7 h-7 rounded bg-[#B91C1C] text-white flex items-center justify-center font-label-md text-xs font-bold shrink-0 mt-0.5 shadow-sm">
+                        B
+                      </span>
+<div class="flex-1 space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="font-body-md text-body-md text-[#0F172A] font-medium">
+                            Implementing continuous automated alerting to the IT security manager whenever standard database maintenance windows are scheduled.
+                          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-xs px-2.5 py-1 rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+                            Your answer (Incorrect)
+                          </span>
+</div>
+</div>
+</div>
+<!-- Option C (CORRECT ANSWER) -->
+<div class="p-4 rounded-lg border-2 border-[#047857] bg-[#ECFDF5] flex items-start gap-4 transition-all">
+<span class="w-7 h-7 rounded bg-[#047857] text-white flex items-center justify-center font-label-md text-xs font-bold shrink-0 mt-0.5 shadow-sm">
+                        C
+                      </span>
+<div class="flex-1 space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="font-body-md text-body-md text-[#0F172A] font-semibold">
+                            Enabling immutable database transaction logging shipped offsite to write-once media with independent daily reconciliation against financial journals.
+                          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-xs px-2.5 py-1 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                            Correct answer
+                          </span>
+</div>
+</div>
+</div>
+<!-- Option D (Distractor - Unselected) -->
+<div class="p-4 rounded-lg border border-[#E2E8F0] bg-white flex items-start gap-4">
+<span class="w-7 h-7 rounded border border-[#64748B] flex items-center justify-center font-label-md text-xs font-semibold text-on-surface shrink-0 mt-0.5">
+                        D
+                      </span>
+<div class="flex-1 font-body-md text-body-md text-on-surface pt-0.5">
+                        Enforcing annual non-disclosure and conflict of interest agreements across all privileged administrative staff.
+                      </div>
+</div>
+</div>
+<!-- Authoritative Rationale & ISACA Alignment Box -->
+<div class="mt-8 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-6 space-y-4">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-base">
+<span class="material-symbols-outlined text-secondary" data-icon="menu_book">menu_book</span>
+<span class="font-semibold text-[#0F172A]">Explanation &amp; ISACA Standards Alignment</span>
+</div>
+<div class="space-y-3 font-body-md text-body-md text-on-surface leading-relaxed">
+<p>
+<strong class="font-semibold text-primary">Core Principle:</strong> In circumstances where strict segregation of duties (SoD) cannot be enforced—such as small DBA departments having broad access across database production engines—independent, tamper-evident audit logging combined with daily third-party reconciliation serves as the primary compensating detective control.
+                      </p>
+<p>
+<strong class="font-semibold text-primary">Why Option C is correct:</strong> Sending database modification logs to immutable or offsite storage ensures that even a superuser or DBA cannot delete evidence of illicit manipulation. Independent financial reconciliation verifies ledger integrity against external sources, discovering discrepancies rapidly.
+                      </p>
+<p>
+<strong class="font-semibold text-primary">Why Option B is incorrect:</strong> While automated schedule notifications provide administrative visibility, they fail to record or detect the actual granular SQL transactions executed during or outside scheduled maintenance intervals.
+                      </p>
+</div>
+<div class="pt-3 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-3 text-xs font-label-sm text-on-surface-variant">
+<span class="font-medium">
+                        Reference: <span class="text-[#0F172A] font-semibold">CISA Review Manual (CRM 27th Edition), Section 2.3.2: Compensating Controls &amp; Privileged Access Architecture</span>
+</span>
+<span class="text-outline">ISACA Task Statement: T2.4 (Evaluate IT Organization &amp; Personnel Controls)</span>
+</div>
+</div>
+</div>
+<!-- Footer Navigation Controls (Minimum 44px Touch Targets) -->
+<div class="px-8 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-between">
+<!-- Previous Button -->
+<button class="min-h-[44px] px-6 py-2 rounded-lg border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] font-label-md text-label-md font-medium inline-flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Previous Question (Q41)
+                  </button>
+<div class="flex items-center gap-4">
+<button class="min-h-[44px] px-4 py-2 text-on-surface-variant hover:text-on-surface font-label-md text-label-md inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+                      Update Flag Status
+                    </button>
+<!-- Next Button -->
+<button class="min-h-[44px] px-6 py-2 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] font-label-md text-label-md font-medium inline-flex items-center gap-2 transition-colors shadow-sm" type="button">
+                      Next Question (Q43)
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- VARIANT 2 & 3: COMPACT SPECIFICATION VARIANTS -->
+<!-- ========================================== -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- VARIANT 2: CORRECT ANSWER STATE -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="spec-badge bg-[#047857] text-white">Variant 2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Correct Answer State (Question 15)</h3>
+</div>
+<span class="font-label-sm text-xs text-on-surface-variant">Validated Response · Reinforcement Mode</span>
+</div>
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl shadow-sm p-6 space-y-5">
+<!-- Mini Header -->
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
+<div>
+<div class="font-headline-sm text-base text-on-surface font-semibold">Question 15 of 150 · Attempt #03</div>
+<span class="inline-flex items-center mt-1 px-2.5 py-0.5 rounded text-xs font-label-sm bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+                Domain 1: Information System Auditing Process
+              </span>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] border border-[#047857] font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Correct
+            </span>
+</div>
+<!-- Question Stem -->
+<p class="font-body-md text-body-md text-on-surface">
+            An IS auditor preparing an audit charter must ensure the document explicitly establishes which of the following core governance attributes?
+          </p>
+<!-- Selected Option (Correct) -->
+<div class="p-4 rounded-lg border-2 border-[#047857] bg-[#ECFDF5] flex items-start gap-3">
+<span class="w-6 h-6 rounded bg-[#047857] text-white flex items-center justify-center font-label-sm text-xs font-bold shrink-0">
+              A
+            </span>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-[#0F172A] font-semibold">
+                  The overall authority, scope, and responsibility of the audit function.
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-xs px-2 py-0.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Your answer (Correct)
+                </span>
+</div>
+</div>
+</div>
+<!-- Distractor (Unselected) -->
+<div class="p-3.5 rounded-lg border border-[#E2E8F0] bg-white opacity-70 flex items-start gap-3">
+<span class="w-6 h-6 rounded border border-[#64748B] flex items-center justify-center font-label-sm text-xs font-medium text-on-surface shrink-0">
+              B
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface">
+              The detailed calendar of specific operational network vulnerability tests.
+            </span>
+</div>
+<!-- Concise Reinforcement Box -->
+<div class="rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-4 text-xs font-body-sm space-y-2">
+<div class="font-semibold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">fact_check</span>
+              Authoritative Consensus &amp; Standard
+            </div>
+<p class="text-on-surface leading-normal">
+              Per ISACA Standard 1001 (Audit Charter), the charter must clearly articulate authority, operational scope, and reporting independence directly approved by the audit committee or highest authority.
+            </p>
+<div class="text-outline font-medium pt-1 border-t border-[#E2E8F0]">
+              CRM Reference: Chapter 1.2.1 Audit Charter Mandates
+            </div>
+</div>
+</div>
+</section>
+<!-- VARIANT 3: EMPTY FILTER STATE -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="spec-badge bg-[#64748B] text-white">Variant 3</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Empty Filter State</h3>
+</div>
+<span class="font-label-sm text-xs text-on-surface-variant">Zero Flagged Items in Exam Attempt</span>
+</div>
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl shadow-sm p-8 min-h-[380px] flex flex-col justify-between">
+<!-- Filter Tabs Strip with Zero Count on Flagged -->
+<div class="flex items-center gap-2 pb-4 border-b border-[#E2E8F0]">
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low border border-transparent">
+              All <span class="ml-1 text-xs px-2 py-0.5 rounded-full bg-[#E2E8F0]">150</span>
+</button>
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low border border-transparent">
+              Wrong <span class="ml-1 text-xs px-2 py-0.5 rounded-full bg-[#E2E8F0]">38</span>
+</button>
+<button class="min-h-[44px] px-4 py-2 rounded-lg font-label-md text-label-md bg-[#FFFBEB] text-[#B45309] border border-[#B45309] font-semibold flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+              Flagged <span class="ml-1 text-xs px-2 py-0.5 rounded-full bg-[#B45309] text-white font-semibold">0</span>
+</button>
+</div>
+<!-- Empty State Graphic & Content -->
+<div class="py-12 flex flex-col items-center justify-center text-center space-y-3">
+<div class="w-14 h-14 rounded-full bg-[#F1F5F9] border border-[#E2E8F0] flex items-center justify-center text-[#64748B]">
+<span class="material-symbols-outlined text-[28px]">flag_circle</span>
+</div>
+<div class="space-y-1">
+<div class="font-headline-sm text-headline-sm text-[#0F172A]">No Flagged Questions in this Attempt</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mx-auto">
+                Candidate Chinedu Eze did not mark any questions with the review flag during the 4-hour mock testing window.
+              </p>
+</div>
+<div class="pt-2">
+<button class="min-h-[44px] px-5 py-2.5 rounded-lg border border-[#64748B] text-[#0F172A] hover:bg-[#F1F5F9] font-label-md text-label-md font-medium inline-flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_list_off</span>
+                Reset Filter to All (150 Questions)
+              </button>
+</div>
+</div>
+<!-- Guidance Note -->
+<div class="pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-xs text-outline">
+<span>ISACA CISA Examination Simulator v4.2</span>
+<span>All responses permanently audited in Candidate Record</span>
+</div>
+</div>
+</section>
+</div>
+<!-- SPECIFICATION TECHNICAL NOTES & TOKEN LEDGER -->
+<section class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-8 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">tune</span>
+<h3 class="font-headline-md text-headline-md text-[#0F172A]">Technical Token Ledger &amp; Accessibility Verification</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-body-sm">
+<div class="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
+<div class="font-label-md font-semibold text-[#0F172A] flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#0B1320]"></span> Color Tokens (Audit Standard)
+          </div>
+<ul class="space-y-1 text-xs text-on-surface-variant font-code-snippet">
+<li>Primary Shell: #0B1320 (Deep Navy)</li>
+<li>Link &amp; Info: #1D4ED8 on #EFF6FF</li>
+<li>Pass / Certified: #047857 on #ECFDF5</li>
+<li>Error / High Risk: #B91C1C on #FEF2F2</li>
+<li>Flagged / Review: #B45309 on #FFFBEB</li>
+</ul>
+</div>
+<div class="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
+<div class="font-label-md font-semibold text-[#0F172A] flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span> Non-Color Distinction Mandate
+          </div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Status indicators pair explicit icon glyphs (<code>cancel</code>, <code>check_circle</code>, <code>flag</code>) alongside unambiguous textual badges ("Your answer (Incorrect)", "Correct answer") to guarantee 100% WCAG AAA accessibility for field audit inspectors.
+          </p>
+</div>
+<div class="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
+<div class="font-label-md font-semibold text-[#0F172A] flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#64748B]"></span> Touch Targets &amp; Spacing Grid
+          </div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Strict adherence to the 8px baseline. Jump nodes observe a minimum dimension footprint, while all buttons, tab toggles, and breadcrumb anchors enforce the ≥ 44px x 44px touch floor with a 2px crisp focus ring.
+          </p>
+</div>
+</div>
+</section>
+</main>
+<footer class="text-center py-8 text-xs text-on-surface-variant border-t border-outline-variant/30 mt-12 bg-white">
+    A.J. Silicon Learning Systems · CISA Cohort 14 Virtual Examination Workspace · Desktop 1440px Specification Canvas
+  </footer>
+<script src="../demo-nav.js"></script></body></html>

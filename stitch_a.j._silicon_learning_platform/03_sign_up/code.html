@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 Sign up - A.J. Silicon Learning Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-[#F1F5F9] text-[#0D1C2E] min-h-screen antialiased">
+
+  <!-- Spec Header -->
+  <aside class="bg-[#050A10] border-b border-slate-800 text-white px-8 py-4 sticky top-0 z-50 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+      <h1 class="text-sm font-semibold tracking-wide uppercase text-slate-200">Screen 03: Sign up &bull; Specification & Interactive State Matrix</h1>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400 font-mono">
+      <span>Desktop 1440px &amp; Mobile 390px</span>
+      <span>&bull;</span>
+      <span>WCAG AA &bull; 44px Min Touch Target</span>
+    </div>
+  </aside>
+
+  <!-- State Navigation Bar -->
+  <div class="bg-white border-b border-slate-200 px-8 py-3 sticky top-14 z-40 flex items-center gap-2 overflow-x-auto shadow-xs text-xs font-medium">
+    <span class="text-slate-400 font-mono mr-2">Jump to State:</span>
+    <a href="#state-1" class="px-3 py-1.5 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">1. Desktop Empty</a>
+    <a href="#state-2" class="px-3 py-1.5 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">2. Desktop Inline Errors</a>
+    <a href="#state-3" class="px-3 py-1.5 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">3. Desktop Email Already Registered</a>
+    <a href="#state-4" class="px-3 py-1.5 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">4. Desktop Submitting</a>
+    <a href="#state-5" class="px-3 py-1.5 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">5. Mobile (390px)</a>
+  </div>
+
+  <main class="max-w-[1520px] mx-auto p-8 space-y-16">
+
+    <!-- ========================================================================= -->
+    <!-- STATE 1: DESKTOP EMPTY (1440px) -->
+    <!-- ========================================================================= -->
+    <section id="state-1" class="space-y-3">
+      <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-[#0B1320] text-white flex items-center justify-center text-xs font-semibold">1</span>
+          <h2 class="text-base font-semibold text-slate-900">State 1: Desktop Empty (1440px)</h2>
+        </div>
+        <span class="text-xs text-slate-500 font-mono">Pristine Inputs &bull; Checklist Neutral &bull; Primary CTA Disabled Until Valid</span>
+      </div>
+
+      <div class="w-full max-w-[1440px] mx-auto bg-[#F8FAFC] border border-slate-300 rounded shadow-sm overflow-hidden">
+        <!-- Public Top Bar -->
+        <header class="h-16 bg-[#050A10] border-b border-slate-800 px-8 flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <a href="#" class="bg-white px-2.5 py-1 rounded border border-slate-200 flex items-center shadow-xs">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh837IJu6SeYB9uJLMIMsYn2bLplYHzZ1B5RhfuP2NSIA8POWbb0ifDLy-_UzD4ea8mtPcZGdqqIjWoANxiP7iW2Pa2DThKgKqxRi-BUK1FKlSIZX736TX5fa8nW7A1qMI_KO8T7EmPlGhTS9SErm4_QJ1ln50P6Ds_QaKa8YXv96QcvPf6f7rmHIFDRg_XyNZh7oNsl6pQ6aDkKDahlYBbLbiG9B3qYKANVNdXhbkMFHyohDsUNJ1s7K51CyqMaDts-A" alt="A.J. Silicon official brand logo" class="h-6 w-auto object-contain">
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+              <a href="#" class="text-slate-300 hover:text-white transition-colors">Programmes</a>
+              <a href="#" class="text-slate-300 hover:text-white transition-colors">Workshops</a>
+            </nav>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="#" class="text-sm font-medium text-[#93C5FD] hover:underline focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-[#050A10] rounded px-2 py-1">Log in</a>
+          </div>
+        </header>
+
+        <!-- Main Form Container -->
+        <div class="py-14 px-6 flex justify-center">
+          <div class="w-full max-w-[540px] bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm p-8 md:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono mb-3 border border-slate-200">
+                <span class="material-symbols-outlined text-[14px]">school</span> STUDENT PORTAL REGISTRATION
+              </span>
+              <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Create your student account</h3>
+              <p class="text-sm text-slate-600 mt-1">Join the premier audit, risk and IT governance learning community.</p>
+            </div>
+
+            <form class="space-y-5" onsubmit="event.preventDefault();">
+              <!-- First & Last Name -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="s1-fname" class="block text-xs font-semibold text-slate-800 mb-1.5">First name</label>
+                  <input type="text" id="s1-fname" placeholder="e.g. Babatunde" class="w-full h-11 px-3.5 bg-white border border-[#64748B] rounded text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+                </div>
+                <div>
+                  <label for="s1-lname" class="block text-xs font-semibold text-slate-800 mb-1.5">Last name</label>
+                  <input type="text" id="s1-lname" placeholder="e.g. Lawal" class="w-full h-11 px-3.5 bg-white border border-[#64748B] rounded text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="s1-email" class="block text-xs font-semibold text-slate-800 mb-1.5">Email address</label>
+                <div class="relative">
+                  <input type="email" id="s1-email" placeholder="b.lawal@lagoscommercial.ng" class="w-full h-11 pl-10 pr-3.5 bg-white border border-[#64748B] rounded text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-lg pointer-events-none">mail</span>
+                </div>
+              </div>
+
+              <!-- Phone (+234) -->
+              <div>
+                <label for="s1-phone" class="block text-xs font-semibold text-slate-800 mb-1.5">Phone number</label>
+                <div class="flex rounded shadow-xs">
+                  <span class="inline-flex items-center px-3.5 border border-r-0 border-[#64748B] bg-slate-50 text-slate-700 text-sm font-mono rounded-l select-none">+234</span>
+                  <input type="tel" id="s1-phone" placeholder="803 123 4567" class="flex-1 h-11 px-3.5 bg-white border border-[#64748B] rounded-r text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+                </div>
+              </div>
+
+              <!-- Password with Rule Checklist -->
+              <div>
+                <label for="s1-password" class="block text-xs font-semibold text-slate-800 mb-1.5">Password</label>
+                <div class="relative">
+                  <input type="password" id="s1-password" placeholder="Create a strong password" class="w-full h-11 pl-10 pr-10 bg-white border border-[#64748B] rounded text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0B1320] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-lg pointer-events-none">lock</span>
+                  <button type="button" aria-label="Toggle password visibility" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 focus:outline-none">
+                    <span class="material-symbols-outlined text-lg">visibility</span>
+                  </button>
+                </div>
+
+                <!-- Password Checklist: Neutral State -->
+                <div class="mt-3 p-3.5 bg-slate-50 border border-slate-200 rounded space-y-2">
+                  <p class="text-xs font-semibold text-slate-700">Password requirements:</p>
+                  <ul class="space-y-1.5 text-xs text-slate-600">
+                    <li class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-slate-400 text-sm">radio_button_unchecked</span>
+                      <span>Length: at least 8 characters</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-slate-400 text-sm">radio_button_unchecked</span>
+                      <span>Number: at least one numerical digit (0–9)</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-slate-400 text-sm">radio_button_unchecked</span>
+                      <span>Symbol: at least one special character (!@#$%^&*)</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Terms & Privacy Checkbox -->
+              <div class="pt-1">
+                <label class="flex items-start gap-3 cursor-pointer group">
+                  <input type="checkbox" id="s1-terms" class="mt-0.5 w-4 h-4 text-[#0B1320] border-slate-400 rounded focus:ring-[#2563EB]">
+                  <span class="text-xs text-slate-600 group-hover:text-slate-900 leading-relaxed select-none">
+                    I agree to the <a href="#" class="text-[#0B1320] font-semibold underline hover:text-blue-700">Terms of Service</a> and <a href="#" class="text-[#0B1320] font-semibold underline hover:text-blue-700">Privacy Policy</a>.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Primary Action: Disabled Until Valid -->
+              <div class="pt-2">
+                <button type="submit" disabled class="w-full h-11 min-h-[44px] px-6 rounded bg-slate-200 text-slate-400 text-sm font-semibold cursor-not-allowed border border-slate-300 flex items-center justify-center gap-2">
+                  <span>Create account</span>
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+              </div>
+
+              <!-- Footer Sign-in link -->
+              <div class="text-center pt-1">
+                <p class="text-xs text-slate-600">
+                  Already have an account? <a href="#" class="font-semibold text-[#0B1320] hover:underline hover:text-blue-700">Log in</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- STATE 2: DESKTOP INLINE ERRORS (1440px) -->
+    <!-- ========================================================================= -->
+    <section id="state-2" class="space-y-3">
+      <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-red-700 text-white flex items-center justify-center text-xs font-semibold">2</span>
+          <h2 class="text-base font-semibold text-slate-900">State 2: Desktop Inline Errors (1440px)</h2>
+        </div>
+        <span class="text-xs text-red-700 font-mono font-medium">Field-Level Validation &bull; Error Icons &bull; Password Rules Evaluated</span>
+      </div>
+
+      <div class="w-full max-w-[1440px] mx-auto bg-[#F8FAFC] border border-slate-300 rounded shadow-sm overflow-hidden">
+        <header class="h-16 bg-[#050A10] border-b border-slate-800 px-8 flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <a href="#" class="bg-white px-2.5 py-1 rounded border border-slate-200 flex items-center">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7BzfOiKyfVb-L1PYGiAcqQyF6IS1nt9UjIFbJdylIZQScxNwqVSarsJp7rR9-zY_wG_I7DspmfVjbaVZrelEaSLWk3FzawXhH8b9TVme4IvTCQWFZgsJ2Lpi2Y1zfoCeZ0r2jSZyB0Wue7DdhlsDMj22wzhpwuWMpfL0eBIfuv6fBBTEWFBJBwig42JyfM67Y0fi7hALPdFkvhVQ4CZunSkWZsahdijMXwXw6sUNZIyw6_v7CsxkEfAYURmcKbBujuSM" alt="A.J. Silicon official brand logo" class="h-6 w-auto object-contain">
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+              <a href="#" class="text-slate-300 hover:text-white">Programmes</a>
+              <a href="#" class="text-slate-300 hover:text-white">Workshops</a>
+            </nav>
+          </div>
+          <a href="#" class="text-sm font-medium text-[#93C5FD] hover:underline">Log in</a>
+        </header>
+
+        <div class="py-14 px-6 flex justify-center">
+          <div class="w-full max-w-[540px] bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm p-8 md:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono mb-3 border border-slate-200">
+                <span class="material-symbols-outlined text-[14px]">school</span> STUDENT PORTAL REGISTRATION
+              </span>
+              <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Create your student account</h3>
+              <p class="text-sm text-slate-600 mt-1">Join the premier audit, risk and IT governance learning community.</p>
+            </div>
+
+            <form class="space-y-5" onsubmit="event.preventDefault();">
+              <!-- Names Filled -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="s2-fname" class="block text-xs font-semibold text-slate-800 mb-1.5">First name</label>
+                  <input type="text" id="s2-fname" value="Folake" class="w-full h-11 px-3.5 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+                <div>
+                  <label for="s2-lname" class="block text-xs font-semibold text-slate-800 mb-1.5">Last name</label>
+                  <input type="text" id="s2-lname" value="Adeyemi" class="w-full h-11 px-3.5 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+              </div>
+
+              <!-- Email in Error -->
+              <div>
+                <label for="s2-email" class="block text-xs font-semibold text-red-900 mb-1.5">Email address</label>
+                <div class="relative">
+                  <input type="email" id="s2-email" value="folake.adeyemi@" aria-invalid="true" aria-describedby="s2-email-err" class="w-full h-11 pl-10 pr-10 bg-red-50/50 border-2 border-red-600 rounded text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-600">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-red-600 text-lg pointer-events-none">mail</span>
+                  <span class="material-symbols-outlined absolute right-3 top-3 text-red-600 text-lg pointer-events-none">error</span>
+                </div>
+                <p id="s2-email-err" class="flex items-center gap-1.5 text-xs text-red-700 font-medium mt-1.5">
+                  <span class="material-symbols-outlined text-sm text-red-700">cancel</span>
+                  <span>Enter a valid email address (e.g. name@company.ng)</span>
+                </p>
+              </div>
+
+              <!-- Phone in Error -->
+              <div>
+                <label for="s2-phone" class="block text-xs font-semibold text-red-900 mb-1.5">Phone number</label>
+                <div class="flex rounded shadow-xs">
+                  <span class="inline-flex items-center px-3.5 border-2 border-r-0 border-red-600 bg-red-50 text-red-900 text-sm font-mono rounded-l select-none">+234</span>
+                  <input type="tel" id="s2-phone" value="80344" aria-invalid="true" aria-describedby="s2-phone-err" class="flex-1 h-11 px-3.5 bg-red-50/50 border-2 border-red-600 rounded-r text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-600">
+                </div>
+                <p id="s2-phone-err" class="flex items-center gap-1.5 text-xs text-red-700 font-medium mt-1.5">
+                  <span class="material-symbols-outlined text-sm text-red-700">cancel</span>
+                  <span>Phone number must be 10 digits after +234 (e.g. 803 123 4567)</span>
+                </p>
+              </div>
+
+              <!-- Password with Partial Rules Met / Failed -->
+              <div>
+                <label for="s2-password" class="block text-xs font-semibold text-red-900 mb-1.5">Password</label>
+                <div class="relative">
+                  <input type="password" id="s2-password" value="secret" aria-invalid="true" class="w-full h-11 pl-10 pr-10 bg-red-50/50 border-2 border-red-600 rounded text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-600">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-red-600 text-lg pointer-events-none">lock</span>
+                  <button type="button" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 focus:outline-none">
+                    <span class="material-symbols-outlined text-lg">visibility</span>
+                  </button>
+                </div>
+
+                <!-- Password Checklist: Evaluated with Icon + Text -->
+                <div class="mt-3 p-3.5 bg-slate-50 border border-slate-200 rounded space-y-2">
+                  <div class="flex items-center justify-between">
+                    <p class="text-xs font-semibold text-slate-800">Password requirements:</p>
+                    <span class="text-[11px] font-mono text-red-700 bg-red-100 px-2 py-0.5 rounded font-medium">0 of 3 passed</span>
+                  </div>
+                  <ul class="space-y-1.5 text-xs">
+                    <li class="flex items-center gap-2 text-red-700 font-medium">
+                      <span class="material-symbols-outlined text-red-700 text-sm">cancel</span>
+                      <span>Length: at least 8 characters (current: 6)</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-red-700 font-medium">
+                      <span class="material-symbols-outlined text-red-700 text-sm">cancel</span>
+                      <span>Number: missing numerical digit (0–9)</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-red-700 font-medium">
+                      <span class="material-symbols-outlined text-red-700 text-sm">cancel</span>
+                      <span>Symbol: missing special character (!@#$%^&*)</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Terms Unchecked -->
+              <div class="pt-1">
+                <label class="flex items-start gap-3 cursor-pointer">
+                  <input type="checkbox" id="s2-terms" class="mt-0.5 w-4 h-4 text-[#0B1320] border-slate-400 rounded focus:ring-[#2563EB]">
+                  <span class="text-xs text-slate-600 leading-relaxed select-none">
+                    I agree to the <a href="#" class="text-[#0B1320] font-semibold underline">Terms of Service</a> and <a href="#" class="text-[#0B1320] font-semibold underline">Privacy Policy</a>.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Button Disabled Due to Errors -->
+              <div class="pt-2">
+                <button type="submit" disabled class="w-full h-11 min-h-[44px] px-6 rounded bg-slate-200 text-slate-400 text-sm font-semibold cursor-not-allowed border border-slate-300 flex items-center justify-center gap-2">
+                  <span>Create account</span>
+                  <span class="material-symbols-outlined text-sm">block</span>
+                </button>
+              </div>
+
+              <div class="text-center pt-1">
+                <p class="text-xs text-slate-600">
+                  Already have an account? <a href="#" class="font-semibold text-[#0B1320] hover:underline">Log in</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- STATE 3: DESKTOP EMAIL ALREADY REGISTERED (1440px) -->
+    <!-- ========================================================================= -->
+    <section id="state-3" class="space-y-3">
+      <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-amber-700 text-white flex items-center justify-center text-xs font-semibold">3</span>
+          <h2 class="text-base font-semibold text-slate-900">State 3: Desktop Email Already Registered (1440px)</h2>
+        </div>
+        <span class="text-xs text-amber-800 font-mono font-medium">Server Account Collision &bull; Inline Message with Direct Log In Link</span>
+      </div>
+
+      <div class="w-full max-w-[1440px] mx-auto bg-[#F8FAFC] border border-slate-300 rounded shadow-sm overflow-hidden">
+        <header class="h-16 bg-[#050A10] border-b border-slate-800 px-8 flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <a href="#" class="bg-white px-2.5 py-1 rounded border border-slate-200 flex items-center">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSlDcB_4qBJXg0ayyLIPxKEZ6LNbY_aGCRzK6dNn4ee_fFS5XzUmZZ_RmEyQKwoHgsmjTTWvvXnkgDRanFGyGu_sdyZJEtuHlWdIGxxW9AdfPIVhhin6z-nEwQoSc8jHtcwFJZ9cxLvJu2C-3BCCqeUtUpoKjHbgV4YEEeOi0MxgKZVgY5CB1JM1ab-NSjXwqpb8S-63bZGdi7YyIppn9f_HNYfG_IS1Nn7beNMT3TNY1UVJYjStdAfk3zemi1slqy_zQ" alt="A.J. Silicon official brand logo" class="h-6 w-auto object-contain">
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+              <a href="#" class="text-slate-300 hover:text-white">Programmes</a>
+              <a href="#" class="text-slate-300 hover:text-white">Workshops</a>
+            </nav>
+          </div>
+          <a href="#" class="text-sm font-medium text-[#93C5FD] hover:underline">Log in</a>
+        </header>
+
+        <div class="py-14 px-6 flex justify-center">
+          <div class="w-full max-w-[540px] bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm p-8 md:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono mb-3 border border-slate-200">
+                <span class="material-symbols-outlined text-[14px]">school</span> STUDENT PORTAL REGISTRATION
+              </span>
+              <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Create your student account</h3>
+              <p class="text-sm text-slate-600 mt-1">Join the premier audit, risk and IT governance learning community.</p>
+            </div>
+
+            <form class="space-y-5" onsubmit="event.preventDefault();">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="s3-fname" class="block text-xs font-semibold text-slate-800 mb-1.5">First name</label>
+                  <input type="text" id="s3-fname" value="Chinedu" class="w-full h-11 px-3.5 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+                <div>
+                  <label for="s3-lname" class="block text-xs font-semibold text-slate-800 mb-1.5">Last name</label>
+                  <input type="text" id="s3-lname" value="Eze" class="w-full h-11 px-3.5 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+              </div>
+
+              <!-- Email with Conflict Alert Box -->
+              <div>
+                <label for="s3-email" class="block text-xs font-semibold text-amber-900 mb-1.5">Email address</label>
+                <div class="relative">
+                  <input type="email" id="s3-email" value="chinedu.eze@lagoscommercial.ng" aria-invalid="true" aria-describedby="s3-email-collision" class="w-full h-11 pl-10 pr-10 bg-amber-50/50 border-2 border-amber-600 rounded text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-600 font-medium">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-amber-700 text-lg pointer-events-none">mail</span>
+                  <span class="material-symbols-outlined absolute right-3 top-3 text-amber-700 text-lg pointer-events-none">warning</span>
+                </div>
+                <!-- Required Inline message with Log in link -->
+                <div id="s3-email-collision" class="mt-2 p-3 bg-amber-50 border border-amber-300 rounded flex items-start gap-2.5">
+                  <span class="material-symbols-outlined text-amber-800 text-base shrink-0 mt-0.5">info</span>
+                  <div class="text-xs text-amber-950 leading-relaxed">
+                    <span>This email is already registered. </span>
+                    <a href="#" class="font-semibold text-[#0B1320] underline decoration-[#0B1320] hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded px-0.5">
+                      Log in
+                    </a>
+                    <span> to access your learning portal, or reset your password.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label for="s3-phone" class="block text-xs font-semibold text-slate-800 mb-1.5">Phone number</label>
+                <div class="flex rounded shadow-xs">
+                  <span class="inline-flex items-center px-3.5 border border-r-0 border-[#64748B] bg-slate-50 text-slate-700 text-sm font-mono rounded-l select-none">+234</span>
+                  <input type="tel" id="s3-phone" value="802 888 1904" class="flex-1 h-11 px-3.5 bg-white border border-[#64748B] rounded-r text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+              </div>
+
+              <!-- Password All Passed -->
+              <div>
+                <label for="s3-password" class="block text-xs font-semibold text-slate-800 mb-1.5">Password</label>
+                <div class="relative">
+                  <input type="password" id="s3-password" value="AuditPro2026!#" class="w-full h-11 pl-10 pr-10 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-lg pointer-events-none">lock</span>
+                  <button type="button" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 focus:outline-none">
+                    <span class="material-symbols-outlined text-lg">visibility</span>
+                  </button>
+                </div>
+
+                <!-- Password Requirements: All Satisfied -->
+                <div class="mt-3 p-3 bg-emerald-50 border border-emerald-200 rounded space-y-1.5">
+                  <p class="text-xs font-semibold text-emerald-900 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-emerald-700 text-sm">verified</span>
+                    All security criteria satisfied:
+                  </p>
+                  <ul class="space-y-1 text-xs text-emerald-800">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-700 text-sm">check_circle</span> 8+ characters</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-700 text-sm">check_circle</span> Numerical digit included</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-700 text-sm">check_circle</span> Special character included</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Consent Checked -->
+              <div class="pt-1">
+                <label class="flex items-start gap-3 cursor-pointer">
+                  <input type="checkbox" id="s3-terms" checked class="mt-0.5 w-4 h-4 text-[#0B1320] border-slate-400 rounded focus:ring-[#2563EB]">
+                  <span class="text-xs text-slate-700 leading-relaxed select-none">
+                    I agree to the <a href="#" class="text-[#0B1320] font-semibold underline">Terms of Service</a> and <a href="#" class="text-[#0B1320] font-semibold underline">Privacy Policy</a>.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Action Disabled due to collision -->
+              <div class="pt-2">
+                <button type="submit" disabled class="w-full h-11 min-h-[44px] px-6 rounded bg-slate-200 text-slate-400 text-sm font-semibold cursor-not-allowed border border-slate-300 flex items-center justify-center gap-2">
+                  <span>Create account</span>
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+              </div>
+
+              <div class="text-center pt-1">
+                <p class="text-xs text-slate-600">
+                  Already have an account? <a href="#" class="font-semibold text-[#0B1320] hover:underline">Log in</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- STATE 4: DESKTOP SUBMITTING (1440px) -->
+    <!-- ========================================================================= -->
+    <section id="state-4" class="space-y-3">
+      <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-blue-700 text-white flex items-center justify-center text-xs font-semibold">4</span>
+          <h2 class="text-base font-semibold text-slate-900">State 4: Desktop Submitting (1440px)</h2>
+        </div>
+        <span class="text-xs text-blue-800 font-mono font-medium">Spinner Active &bull; All Fields Disabled &bull; Form Interaction Locked</span>
+      </div>
+
+      <div class="w-full max-w-[1440px] mx-auto bg-[#F8FAFC] border border-slate-300 rounded shadow-sm overflow-hidden">
+        <header class="h-16 bg-[#050A10] border-b border-slate-800 px-8 flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <a href="#" class="bg-white px-2.5 py-1 rounded border border-slate-200 flex items-center">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhFRs7O6CpiOiqrfNI72CUUO-Ne05Eojcfn2azi24GJDBk0o9Mir-49PjZ_9Xrk5yS4mA-T1t45jUQkEfwKnyiPGLrtpKvV1FpLmRGGyA-E2cSFB79w3qvo2EkLHDiguf76iwCZkrfFlgb5LYztL6CnjnqqPXW3O0yy7u_J_-Vtbcv9uWHcq2Cjb3y_dwQCiHTbpqmWeemo9n_uez7ROakn0MQ2A6qhQ8Cqn1MFXZ12kWNhs4p6T4DD3Tv6YiFlbjoqXk" alt="A.J. Silicon official brand logo" class="h-6 w-auto object-contain">
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+              <a href="#" class="text-slate-300 hover:text-white">Programmes</a>
+              <a href="#" class="text-slate-300 hover:text-white">Workshops</a>
+            </nav>
+          </div>
+          <a href="#" class="text-sm font-medium text-[#93C5FD]">Log in</a>
+        </header>
+
+        <div class="py-14 px-6 flex justify-center">
+          <div class="w-full max-w-[540px] bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm p-8 md:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono mb-3 border border-slate-200">
+                <span class="material-symbols-outlined text-[14px]">school</span> STUDENT PORTAL REGISTRATION
+              </span>
+              <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Create your student account</h3>
+              <p class="text-sm text-slate-600 mt-1">Join the premier audit, risk and IT governance learning community.</p>
+            </div>
+
+            <form class="space-y-5" onsubmit="event.preventDefault();">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1.5 opacity-70">First name</label>
+                  <input type="text" value="Babatunde" disabled class="w-full h-11 px-3.5 bg-slate-50 border border-slate-300 rounded text-sm text-slate-800 opacity-70 cursor-not-allowed select-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1.5 opacity-70">Last name</label>
+                  <input type="text" value="Lawal" disabled class="w-full h-11 px-3.5 bg-slate-50 border border-slate-300 rounded text-sm text-slate-800 opacity-70 cursor-not-allowed select-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1.5 opacity-70">Email address</label>
+                <div class="relative">
+                  <input type="email" value="b.lawal@lagoscommercial.ng" disabled class="w-full h-11 pl-10 pr-3.5 bg-slate-50 border border-slate-300 rounded text-sm text-slate-800 opacity-70 cursor-not-allowed select-none">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-lg pointer-events-none opacity-70">mail</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1.5 opacity-70">Phone number</label>
+                <div class="flex rounded">
+                  <span class="inline-flex items-center px-3.5 border border-r-0 border-slate-300 bg-slate-100 text-slate-600 text-sm font-mono rounded-l opacity-70 cursor-not-allowed select-none">+234</span>
+                  <input type="tel" value="803 123 4567" disabled class="flex-1 h-11 px-3.5 bg-slate-50 border border-slate-300 rounded-r text-sm text-slate-800 opacity-70 cursor-not-allowed select-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1.5 opacity-70">Password</label>
+                <div class="relative">
+                  <input type="password" value="SuperAudit2026#!" disabled class="w-full h-11 pl-10 pr-10 bg-slate-50 border border-slate-300 rounded text-sm text-slate-800 opacity-70 cursor-not-allowed select-none">
+                  <span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-lg pointer-events-none opacity-70">lock</span>
+                </div>
+              </div>
+
+              <div class="pt-1">
+                <label class="flex items-start gap-3 opacity-70 cursor-not-allowed">
+                  <input type="checkbox" checked disabled class="mt-0.5 w-4 h-4 text-[#0B1320] border-slate-300 rounded cursor-not-allowed">
+                  <span class="text-xs text-slate-600 leading-relaxed select-none">
+                    I agree to the Terms of Service and Privacy Policy.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Button in Submitting Mode with Spinner -->
+              <div class="pt-2">
+                <button type="button" disabled class="w-full h-11 min-h-[44px] px-6 rounded bg-[#0B1320] text-white text-sm font-semibold cursor-wait border border-[#0B1320] flex items-center justify-center gap-2.5 shadow-xs">
+                  <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>Creating account...</span>
+                </button>
+              </div>
+
+              <div class="text-center pt-1">
+                <p class="text-xs text-slate-400">
+                  Already have an account? Log in
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- STATE 5: MOBILE (390px Viewport) -->
+    <!-- ========================================================================= -->
+    <section id="state-5" class="space-y-3">
+      <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-slate-800 text-white flex items-center justify-center text-xs font-semibold">5</span>
+          <h2 class="text-base font-semibold text-slate-900">State 5: Mobile Sign Up (390px Viewport)</h2>
+        </div>
+        <span class="text-xs text-slate-500 font-mono">Touch Optimised &bull; 44px Minimum Touch Targets &bull; Clean Public Header</span>
+      </div>
+
+      <div class="flex justify-center py-4">
+        <!-- 390px Mobile Frame -->
+        <div class="w-[390px] bg-[#F8FAFC] border-2 border-slate-400 rounded-[28px] shadow-xl overflow-hidden">
+          
+          <!-- Mobile Status Bar (Realistic Mock) -->
+          <div class="bg-[#050A10] text-white px-6 pt-3 pb-1 flex justify-between items-center text-xs font-semibold select-none">
+            <span>09:41</span>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px]">signal_cellular_alt</span>
+              <span class="material-symbols-outlined text-[13px]">wifi</span>
+              <span class="material-symbols-outlined text-[14px]">battery_full</span>
+            </div>
+          </div>
+
+          <!-- Mobile Public Top Bar -->
+          <header class="h-14 bg-[#050A10] border-b border-slate-800 px-4 flex items-center justify-between">
+            <div class="bg-white px-2 py-0.5 rounded border border-slate-200 flex items-center">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKRxRut_avbDHdEA6wuTAsDGPHz6JEN6MCHI--EgpqSxCkmDvhwfEUWqzVs5kj49R_fLeYI9SotBR6niL82z3eVIv21Gh5QUfRDwS4mGbr3ZqjLGBbofKwNWW-a2_8q17efCFMYdRuHJlb2A7xnO3F3ucGC8qqp0kSR1EuqfNLKPKsB6ty_o3SXqDbcHjTgGMWsYoX63WuU6MJhpYbR6k2uEuKgeiHJYt46w4MGGO_i9QC7u_e0fnYbyzrdIzJV1VAk_Y" alt="A.J. Silicon official brand logo" class="h-5 w-auto object-contain">
+            </div>
+            <a href="#" class="text-xs font-medium text-[#93C5FD] hover:underline focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded px-2 py-1">Log in</a>
+          </header>
+
+          <!-- Mobile Form Content -->
+          <div class="p-5">
+            <div class="bg-white rounded-[12px] border border-[#E2E8F0] shadow-sm p-5 space-y-4">
+              
+              <div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-mono mb-2 border border-slate-200">
+                  <span class="material-symbols-outlined text-[12px]">school</span> STUDENT PORTAL
+                </span>
+                <h3 class="text-lg font-bold text-slate-900 tracking-tight leading-snug">Create your student account</h3>
+                <p class="text-xs text-slate-600 mt-1">Audit, risk &amp; IT governance training.</p>
+              </div>
+
+              <form class="space-y-4" onsubmit="event.preventDefault();">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-800 mb-1">First name</label>
+                  <input type="text" placeholder="Babatunde" class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-800 mb-1">Last name</label>
+                  <input type="text" placeholder="Lawal" class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-800 mb-1">Email address</label>
+                  <input type="email" placeholder="b.lawal@lagoscommercial.ng" class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-800 mb-1">Phone number</label>
+                  <div class="flex rounded shadow-xs">
+                    <span class="inline-flex items-center px-3 border border-r-0 border-[#64748B] bg-slate-50 text-slate-700 text-xs font-mono rounded-l select-none">+234</span>
+                    <input type="tel" placeholder="803 123 4567" class="flex-1 h-11 px-3 bg-white border border-[#64748B] rounded-r text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-800 mb-1">Password</label>
+                  <input type="password" placeholder="Create a password" class="w-full h-11 px-3 bg-white border border-[#64748B] rounded text-sm text-slate-900 focus:outline-none focus:border-[#0B1320]">
+
+                  <!-- Compact Checklist for Mobile -->
+                  <div class="mt-2.5 p-2.5 bg-slate-50 border border-slate-200 rounded space-y-1.5 text-[11px] text-slate-600">
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-slate-400 text-xs">radio_button_unchecked</span>
+                      <span>8+ characters</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-slate-400 text-xs">radio_button_unchecked</span>
+                      <span>Number (0–9)</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-slate-400 text-xs">radio_button_unchecked</span>
+                      <span>Special symbol (!@#$%^&*)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-0.5">
+                  <label class="flex items-start gap-2.5 cursor-pointer">
+                    <input type="checkbox" class="mt-0.5 w-4 h-4 text-[#0B1320] border-slate-400 rounded focus:ring-[#2563EB]">
+                    <span class="text-[11px] text-slate-600 leading-snug select-none">
+                      I agree to the <a href="#" class="font-semibold text-[#0B1320] underline">Terms of Service</a> &amp; <a href="#" class="font-semibold text-[#0B1320] underline">Privacy Policy</a>.
+                    </span>
+                  </label>
+                </div>
+
+                <div class="pt-1">
+                  <button type="submit" disabled class="w-full h-11 min-h-[44px] px-4 rounded bg-slate-200 text-slate-400 text-xs font-semibold cursor-not-allowed border border-slate-300 flex items-center justify-center gap-1.5">
+                    <span>Create account</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                  </button>
+                </div>
+
+                <div class="text-center pt-1">
+                  <p class="text-xs text-slate-600">
+                    Already have an account? <a href="#" class="font-semibold text-[#0B1320] hover:underline">Log in</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Bottom Home Indicator Bar -->
+          <div class="pb-3 flex justify-center">
+            <div class="w-32 h-1 bg-slate-400 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+<script src="../demo-nav.js"></script></body>
+</html>

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exam Builder - A.J. Silicon Audit Portal</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#bfc6d9",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-secondary-fixed": "#001551",
+            "error-container": "#ffdad6",
+            "secondary": "#1d4ed8",
+            "on-primary-fixed": "#141c29",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "primary-fixed": "#dbe2f5",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-primary": "#bfc6d9",
+            "surface-container": "#eaedff",
+            "primary-container": "#141c29",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-primary-container": "#7c8495",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-variant": "#dae2fd",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#283044",
+            "surface-container-highest": "#dae2fd",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "primary": "#0B1320",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed": "#281809",
+            "surface-dim": "#d2d9f4",
+            "surface": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "on-tertiary-container": "#997f6a",
+            "tertiary-container": "#281809",
+            "background": "#faf8ff",
+            "on-surface": "#0F172A",
+            "on-error": "#ffffff",
+            "surface-tint": "#575f6e",
+            "on-error-container": "#93000a",
+            "tertiary": "#000000",
+            "on-surface-variant": "#475569",
+            "secondary-fixed": "#dce1ff",
+            "on-secondary-container": "#fffbff",
+            "on-primary": "#ffffff",
+            "secondary-container": "#4069f2",
+            "outline": "#64748B",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1.5rem",
+            "margin": "2rem",
+            "space-sm": "1rem",
+            "space-xl": "3rem"
+          },
+          "fontFamily": {
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .min-touch {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-on-surface bg-[#FAF8FF] antialiased flex flex-col">
+<!-- TOP NAV BAR (Institutional Staff Application Shell) -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-gutter max-w-full bg-[#0B1320] border-b border-[#1E293B]">
+<div class="flex items-center gap-6">
+<!-- Isolated White Plate for Logo -->
+<div class="h-10 px-3 bg-white rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Academy Insignia" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQZN9sxyKOGZIqUPpdbYjkr03wBQw1u5k6s0Y6fo9IeNyqW0VTgnD8hGpdwONvr1PpxUNH6VFJPq8TQDhns_w-73iUvFGL_Prg-sO2RDz53I7XMsNk4p7-MpdNPOx1ceg5W1s3K8PuaL3sFie_yTKl9cClEoiuJj_WUL2dwbsWjkzLc9aFlyZONADm2nP_nn1Nrr1EgoI241JMTDcqAzvPFKDAQzdP2XUMbSSeVRV5iLSJTC_FbwMxrA"/>
+</div>
+<div class="h-5 w-px bg-slate-700"></div>
+<span class="font-headline-sm text-headline-sm text-white tracking-tight">Staff Learning Platform</span>
+<span class="text-label-sm font-label-sm bg-[#1E293B] text-slate-300 px-2 py-0.5 rounded border border-slate-700">Lagos Campus Core</span>
+</div>
+<!-- Middle: Search / Scope -->
+<div class="hidden md:flex items-center text-slate-400 font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-400">schedule</span>WAT (Lagos) 11:42 AM</span>
+<span class="mx-3 text-slate-600">|</span>
+<span class="flex items-center gap-1 text-slate-300"><span class="material-symbols-outlined text-emerald-400">verified_user</span>Session Active: Zero-Trust</span>
+</div>
+<!-- Right Controls: Role & User Info -->
+<div class="flex items-center gap-4">
+<div class="text-right">
+<div class="font-label-md text-label-md text-white">Dr. Folashade Adeyemi</div>
+<div class="font-label-sm text-label-sm text-slate-400">Role: Academic Director</div>
+</div>
+<div class="w-10 h-10 rounded bg-[#1E293B] border border-slate-700 flex items-center justify-center text-white font-label-md text-label-md">
+        FA
+      </div>
+</div>
+</header>
+<!-- BODY CONTENT AREA: Sidebar + Workspace -->
+<div class="flex flex-1 overflow-hidden">
+<!-- STAFF SIDEBAR -->
+<aside class="w-72 bg-[#0B1320] border-r border-[#1E293B] flex flex-col justify-between p-4 flex-shrink-0 overflow-y-auto">
+<div class="space-y-6">
+<div>
+<div class="px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider text-slate-400">Governance &amp; Ops</div>
+<nav class="mt-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-[#1E293B] rounded min-touch transition-colors" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-md text-label-md">Executive Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-[#1E293B] rounded min-touch transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Candidate Cohorts</span>
+</a>
+</nav>
+</div>
+<div>
+<div class="px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider text-[#93C5FD] font-semibold flex items-center justify-between">
+<span>Academics</span>
+<span class="text-[11px] bg-[#1E293B] text-slate-300 px-1.5 py-0.5 rounded">Active Group</span>
+</div>
+<nav class="mt-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-[#1E293B] rounded min-touch transition-colors" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-md text-label-md">Item Question Bank</span>
+</a>
+<!-- Active Link: Exam Blueprints -->
+<a class="flex items-center gap-3 px-3 py-2 bg-[#1E293B] text-white font-medium rounded border-l-4 border-[#2563EB] min-touch" href="#">
+<span class="material-symbols-outlined text-[#93C5FD]">architecture</span>
+<span class="font-label-md text-label-md font-semibold">Exam Blueprints</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-[#1E293B] rounded min-touch transition-colors" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-label-md text-label-md">Mock Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-[#1E293B] rounded min-touch transition-colors" href="#">
+<span class="material-symbols-outlined">grading</span>
+<span class="font-label-md text-label-md">Grading Moderation</span>
+</a>
+</nav>
+</div>
+<div>
+<div class="px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider text-slate-400">Compliance &amp; Security</div>
+<nav class="mt-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-[#1E293B] rounded min-touch transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Integrity Audit Logs</span>
+</a>
+<div class="flex items-center justify-between px-3 py-2 text-slate-500 rounded cursor-not-allowed" title="Permission requires Chief Information Security Officer role">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">key</span>
+<span class="font-label-md text-label-md">Cryptographic Keys</span>
+</span>
+<span class="material-symbols-outlined text-slate-600">lock</span>
+</div>
+</nav>
+</div>
+</div>
+<!-- Sidebar Institutional Footer -->
+<div class="pt-4 border-t border-[#1E293B] space-y-2">
+<div class="text-[12px] text-slate-400">Accredited Academic Registry</div>
+<div class="text-[11px] text-slate-500 font-code-snippet">Build v4.19.8-prod • Lagos Core</div>
+</div>
+</aside>
+<!-- MAIN INTERACTIVE WORKSPACE (1440px Grid Context) -->
+<main class="flex-1 overflow-y-auto bg-[#F8FAFC]">
+<!-- Interactive State Switcher Bar (Prompt Requirement) -->
+<div class="bg-white border-b border-[#E2E8F0] px-8 py-2.5">
+<div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-[#475569] font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#1D4ED8]">tune</span>
+              Select Prototype State:
+            </span>
+</div>
+<div class="inline-flex rounded-lg border border-[#CBD5E1] p-1 bg-[#F1F5F9] gap-1" role="tablist">
+<button class="px-3 py-1.5 text-xs font-medium rounded transition-all bg-white text-[#0F172A] shadow-sm border border-[#E2E8F0]" id="tab-valid" onclick="switchState('valid')">
+              1. Valid blueprint (Default)
+            </button>
+<button class="px-3 py-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] rounded transition-all" id="tab-weight-error" onclick="switchState('weight-error')">
+              2. Weights do not total (142/150)
+            </button>
+<button class="px-3 py-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] rounded transition-all" id="tab-shortfall-warning" onclick="switchState('shortfall-warning')">
+              3. Pool shortfall (Domain 5)
+            </button>
+<button class="px-3 py-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] rounded transition-all" id="tab-empty" onclick="switchState('empty')">
+              4. Empty form
+            </button>
+<button class="px-3 py-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] rounded transition-all" id="tab-skeleton" onclick="switchState('skeleton')">
+              5. Loading skeleton
+            </button>
+</div>
+</div>
+</div>
+<!-- WORKSPACE CONTAINER -->
+<div class="max-w-6xl mx-auto px-8 py-8 space-y-6">
+<!-- Breadcrumbs & Institutional Page Header -->
+<div class="space-y-1">
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-[#475569]">
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Academics</a>
+<span class="text-slate-400">/</span>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Exam Blueprints</a>
+<span class="text-slate-400">/</span>
+<span class="text-[#0F172A] font-medium" id="breadcrumb-title">CISA Full Mock Examination 2026</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] tracking-tight">Exam Blueprint Builder</h1>
+<p class="font-body-sm text-body-sm text-[#475569] mt-1">Configure psychometric distribution quotas, anti-scraping throttles, and scoring parameters for professional cohorts.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-[#0F172A] bg-white border border-[#64748B] hover:bg-[#F1F5F9] rounded min-touch transition-colors" type="button">
+<span class="material-symbols-outlined mr-2">visibility</span>
+                Preview
+              </button>
+<button class="px-6 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded min-touch transition-colors focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="header-save-btn" type="button">
+<span class="material-symbols-outlined mr-2">save</span>
+                Save exam blueprint
+              </button>
+</div>
+</div>
+</div>
+<!-- SKELETON VIEW STATE (HIDDEN BY DEFAULT) -->
+<div class="hidden space-y-6 animate-pulse" id="state-skeleton-view">
+<div class="bg-white rounded-[12px] border border-[#E2E8F0] p-6 space-y-6">
+<div class="h-6 bg-slate-200 rounded w-1/4"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="h-12 bg-slate-100 rounded"></div>
+<div class="h-12 bg-slate-100 rounded"></div>
+<div class="h-12 bg-slate-100 rounded"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="h-12 bg-slate-100 rounded"></div>
+<div class="h-12 bg-slate-100 rounded"></div>
+<div class="h-12 bg-slate-100 rounded"></div>
+<div class="h-12 bg-slate-100 rounded"></div>
+</div>
+</div>
+<div class="bg-white rounded-[12px] border border-[#E2E8F0] p-6 space-y-4">
+<div class="h-6 bg-slate-200 rounded w-1/3"></div>
+<div class="h-48 bg-slate-100 rounded"></div>
+</div>
+</div>
+<!-- MAIN FORM WORKFLOW CONTAINER -->
+<div class="space-y-6" id="main-form-content">
+<!-- Global Form Banner Alert (Visible on Error or Warning States) -->
+<div class="hidden" id="status-banner">
+<!-- Rendered dynamically via JavaScript switch -->
+</div>
+<!-- SECTION 1: EXAM SPECIFICATION & PSYCHOMETRIC PARAMETERS -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 shadow-sm">
+<div class="border-b border-[#E2E8F0] pb-4 mb-6 flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A]">Core Configuration Parameters</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mt-0.5">Define exam taxonomy, pacing ceilings, and scoring thresholds.</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-sm mr-1">policy</span>
+                ISACA Aligned
+              </span>
+</div>
+<form class="space-y-6" id="blueprint-form">
+<!-- Row 1: Name, Type, Delivery Duration -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Exam Name -->
+<div class="md:col-span-6 space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="exam-name">Exam Blueprint Title <span class="text-[#B91C1C]">*</span></label>
+<input class="w-full h-[44px] px-3.5 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB] placeholder-[#475569]" id="exam-name" type="text" value="CISA Full Mock Examination 2026"/>
+<p class="hidden font-body-sm text-body-sm text-[#B91C1C] flex items-center gap-1 mt-1" id="exam-name-error">
+<span class="material-symbols-outlined text-sm">error</span> Exam blueprint title is required.
+                  </p>
+</div>
+<!-- Exam Type Selector -->
+<div class="md:col-span-3 space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]">Delivery Type <span class="text-[#B91C1C]">*</span></label>
+<div class="grid grid-cols-3 gap-1 bg-[#F1F5F9] p-1 rounded border border-[#E2E8F0] h-[44px]">
+<button class="exam-type-pill active bg-[#0B1320] text-white rounded text-xs font-medium flex items-center justify-center" type="button">Mock</button>
+<button class="exam-type-pill text-[#475569] hover:text-[#0F172A] text-xs font-medium flex items-center justify-center" type="button">Domain</button>
+<button class="exam-type-pill text-[#475569] hover:text-[#0F172A] text-xs font-medium flex items-center justify-center" type="button">Diag</button>
+</div>
+</div>
+<!-- Total Duration -->
+<div class="md:col-span-3 space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="duration">Time Limit (Minutes) <span class="text-[#B91C1C]">*</span></label>
+<div class="relative">
+<input class="w-full h-[44px] px-3.5 pr-14 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB]" id="duration" type="number" value="240"/>
+<span class="absolute right-3.5 top-3 text-xs text-[#475569] font-medium pointer-events-none">4.0 hrs</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Questions, Scaled Scores, Pass Mark -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="total-questions">Total Question Quota <span class="text-[#B91C1C]">*</span></label>
+<input class="w-full h-[44px] px-3.5 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB]" id="total-questions" type="number" value="150"/>
+<p class="font-label-sm text-label-sm text-[#475569]">Target cohort item allocation</p>
+</div>
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="score-min">Scaled Scale Minimum</label>
+<input class="w-full h-[44px] px-3.5 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB]" id="score-min" type="number" value="200"/>
+<p class="font-label-sm text-label-sm text-[#475569]">Baseline psychometric floor</p>
+</div>
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="score-max">Scaled Scale Maximum</label>
+<input class="w-full h-[44px] px-3.5 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB]" id="score-max" type="number" value="800"/>
+<p class="font-label-sm text-label-sm text-[#475569]">Maximum scaled score</p>
+</div>
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="score-pass">Pass Benchmark (Scaled) <span class="text-[#B91C1C]">*</span></label>
+<input class="w-full h-[44px] px-3.5 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB]" id="score-pass" type="number" value="450"/>
+<p class="font-label-sm text-label-sm text-[#475569]">ISACA standard 450 pass mark</p>
+</div>
+</div>
+<!-- Row 3: Security & Candidate Pacing Safeguards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-[#E2E8F0]">
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="attempts-limit">Attempts Per Day Limit</label>
+<div class="flex items-center gap-2">
+<input class="w-28 h-[44px] px-3.5 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB]" id="attempts-limit" type="number" value="2"/>
+<span class="font-body-sm text-body-sm text-[#475569]">attempts per candidate per rolling 24 hours</span>
+</div>
+<p class="font-label-sm text-label-sm text-[#475569] mt-1">Prevents brute-force memorandum memorization</p>
+</div>
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-[#0F172A]" for="pace-limiter">Anti-Scraping Pace Limiter</label>
+<div class="flex items-center gap-2">
+<input class="w-28 h-[44px] px-3.5 bg-white border border-[#64748B] rounded text-[#0F172A] font-body-md text-body-md focus:border-[#2563EB]" id="pace-limiter" type="number" value="20"/>
+<span class="font-body-sm text-body-sm text-[#475569]">minimum seconds mandatory per question</span>
+</div>
+<p class="font-label-sm text-label-sm text-[#475569] mt-1">Speeds below threshold automatically flag session for forensic review</p>
+</div>
+</div>
+<!-- Row 4: Question Pool Delivery Rules & Distractor Shuffle -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-[#E2E8F0]">
+<div>
+<span class="block font-label-md text-label-md text-[#0F172A] mb-2">Item Delivery Mode</span>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-3 border border-[#E2E8F0] rounded cursor-pointer hover:bg-[#F8FAFC]">
+<input checked="" class="w-5 h-5 text-[#0B1320] focus:ring-[#2563EB]" name="delivery_mode" type="radio" value="random"/>
+<div>
+<div class="font-label-md text-label-md text-[#0F172A]">Random dynamic draw from published pool</div>
+<div class="font-body-sm text-body-sm text-[#475569]">Generates unique permutations per candidate according to domain quota</div>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 border border-[#E2E8F0] rounded cursor-pointer hover:bg-[#F8FAFC]">
+<input class="w-5 h-5 text-[#0B1320] focus:ring-[#2563EB]" name="delivery_mode" type="radio" value="fixed"/>
+<div>
+<div class="font-label-md text-label-md text-[#0F172A]">Fixed standardized test form</div>
+<div class="font-body-sm text-body-sm text-[#475569]">All candidates receive identical items in locked sequence</div>
+</div>
+</label>
+</div>
+</div>
+<div class="space-y-3">
+<span class="block font-label-md text-label-md text-[#0F172A]">Distractor Permutation &amp; Safeguards</span>
+<label class="flex items-start gap-3 p-3 border border-[#E2E8F0] rounded cursor-pointer hover:bg-[#F8FAFC]">
+<input checked="" class="w-5 h-5 mt-0.5 text-[#0B1320] rounded focus:ring-[#2563EB]" id="shuffle-options" type="checkbox"/>
+<div>
+<div class="font-label-md text-label-md text-[#0F172A]">Shuffle distractor options (A/B/C/D) per candidate</div>
+<div class="font-body-sm text-body-sm text-[#475569]">Randomizes letter placement of multiple-choice keys while retaining semantic integrity</div>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 border border-[#E2E8F0] rounded cursor-pointer hover:bg-[#F8FAFC]">
+<input checked="" class="w-5 h-5 mt-0.5 text-[#0B1320] rounded focus:ring-[#2563EB]" id="watermark-prompt" type="checkbox"/>
+<div>
+<div class="font-label-md text-label-md text-[#0F172A]">Embed forensic candidate watermarks on prompt canvas</div>
+<div class="font-body-sm text-body-sm text-[#475569]">Renders faint candidate registration ID across question text</div>
+</div>
+</label>
+</div>
+</div>
+</form>
+</div>
+<!-- SECTION 2: PSYCHOMETRIC DOMAIN WEIGHTS & QUOTA TABLE -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-6 shadow-sm space-y-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E2E8F0] pb-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A]">Psychometric Domain Weights &amp; Quotas</h2>
+<p class="font-body-sm text-body-sm text-[#475569] mt-0.5">Sum of allocated questions must match configured quota (150 questions). Percentages calculate dynamically.</p>
+</div>
+<!-- Table Filter & Search Controls -->
+<div class="flex items-center gap-3">
+<div class="relative">
+<input class="h-[44px] pl-9 pr-3 text-body-sm font-body-sm border border-[#64748B] rounded focus:border-[#2563EB] w-48" placeholder="Search domains..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-3 text-[#475569]">search</span>
+</div>
+<button class="h-[44px] px-3 bg-white border border-[#64748B] text-[#0F172A] rounded font-label-sm text-label-sm inline-flex items-center gap-1.5 hover:bg-[#F1F5F9]" type="button">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter Pool
+                </button>
+</div>
+</div>
+<!-- THE SPECIFICATION TABLE -->
+<div class="overflow-x-auto border border-[#E2E8F0] rounded">
+<table class="w-full text-left border-collapse" id="blueprint-table">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[#475569] font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 font-semibold">Domain Description</th>
+<th class="py-3 px-4 font-semibold w-28 text-center">Weight (%)</th>
+<th class="py-3 px-4 font-semibold w-36 text-center">Allocated Items</th>
+<th class="py-3 px-4 font-semibold w-40 text-center">Available in Pool</th>
+<th class="py-3 px-4 font-semibold w-48">Inventory Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] font-body-sm text-body-sm text-[#0F172A]">
+<!-- Domain 1 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-medium">
+                      Domain 1: Information Systems Auditing Process
+                    </td>
+<td class="py-3.5 px-4 text-center font-code-snippet font-medium" id="d1-weight">21%</td>
+<td class="py-3.5 px-4 text-center">
+<input class="w-20 h-9 text-center border border-[#64748B] rounded font-medium focus:border-[#2563EB] text-[#0F172A]" id="d1-input" onchange="recalculateTable()" type="number" value="31"/>
+</td>
+<td class="py-3.5 px-4 text-center font-code-snippet text-[#475569]">84 items</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1">check_circle</span> Sufficient
+                      </span>
+</td>
+</tr>
+<!-- Domain 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-medium">
+                      Domain 2: Governance and Management of IT
+                    </td>
+<td class="py-3.5 px-4 text-center font-code-snippet font-medium" id="d2-weight">16%</td>
+<td class="py-3.5 px-4 text-center">
+<input class="w-20 h-9 text-center border border-[#64748B] rounded font-medium focus:border-[#2563EB] text-[#0F172A]" id="d2-input" onchange="recalculateTable()" type="number" value="24"/>
+</td>
+<td class="py-3.5 px-4 text-center font-code-snippet text-[#475569]">62 items</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1">check_circle</span> Sufficient
+                      </span>
+</td>
+</tr>
+<!-- Domain 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-medium">
+                      Domain 3: Systems Acquisition, Development &amp; Implementation
+                    </td>
+<td class="py-3.5 px-4 text-center font-code-snippet font-medium" id="d3-weight">18%</td>
+<td class="py-3.5 px-4 text-center">
+<input class="w-20 h-9 text-center border border-[#64748B] rounded font-medium focus:border-[#2563EB] text-[#0F172A]" id="d3-input" onchange="recalculateTable()" type="number" value="27"/>
+</td>
+<td class="py-3.5 px-4 text-center font-code-snippet text-[#475569]">70 items</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1">check_circle</span> Sufficient
+                      </span>
+</td>
+</tr>
+<!-- Domain 4 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4 font-medium">
+                      Domain 4: Information Systems Operations &amp; Business Resilience
+                    </td>
+<td class="py-3.5 px-4 text-center font-code-snippet font-medium" id="d4-weight">20%</td>
+<td class="py-3.5 px-4 text-center">
+<input class="w-20 h-9 text-center border border-[#64748B] rounded font-medium focus:border-[#2563EB] text-[#0F172A]" id="d4-input" onchange="recalculateTable()" type="number" value="30"/>
+</td>
+<td class="py-3.5 px-4 text-center font-code-snippet text-[#475569]">78 items</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1">check_circle</span> Sufficient
+                      </span>
+</td>
+</tr>
+<!-- Domain 5 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors" id="row-d5">
+<td class="py-3.5 px-4 font-medium">
+                      Domain 5: Protection of Information Assets
+                    </td>
+<td class="py-3.5 px-4 text-center font-code-snippet font-medium" id="d5-weight">25%</td>
+<td class="py-3.5 px-4 text-center">
+<input class="w-20 h-9 text-center border border-[#64748B] rounded font-medium focus:border-[#2563EB] text-[#0F172A]" id="d5-input" onchange="recalculateTable()" type="number" value="38"/>
+</td>
+<td class="py-3.5 px-4 text-center font-code-snippet text-[#475569]" id="d5-pool">95 items</td>
+<td class="py-3.5 px-4" id="d5-status-cell">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1">check_circle</span> Sufficient
+                      </span>
+</td>
+</tr>
+</tbody>
+<!-- TOTAL FOOTER ROW -->
+<tfoot>
+<tr class="bg-[#F8FAFC] border-t-2 border-[#CBD5E1] font-semibold text-[#0F172A]" id="total-row">
+<td class="py-3.5 px-4 text-sm font-semibold uppercase tracking-wider">
+                      Blueprint Total Allocation
+                    </td>
+<td class="py-3.5 px-4 text-center font-code-snippet" id="total-weight-label">100%</td>
+<td class="py-3.5 px-4 text-center font-code-snippet" id="total-allocated-label">150 / 150 items</td>
+<td class="py-3.5 px-4 text-center font-code-snippet text-[#475569]">389 items total</td>
+<td class="py-3.5 px-4" id="total-status-cell">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-xs mr-1">task_alt</span> Valid &amp; Synchronized
+                      </span>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<!-- INLINE TABLE ERROR MESSAGE (for State 2) -->
+<div class="hidden p-3 bg-[#FEF2F2] border border-[#B91C1C] rounded text-[#B91C1C] text-sm flex items-start gap-2.5" id="inline-weight-error">
+<span class="material-symbols-outlined text-[#B91C1C] flex-shrink-0 mt-0.5">error</span>
+<div>
+<strong class="font-semibold">Psychometric Allocation Mismatch:</strong>
+<span id="weight-error-text">Total domain questions (142) does not match required total question count (150). Allocate 8 more questions to proceed.</span>
+</div>
+</div>
+<!-- INLINE DOMAIN SHORTFALL WARNING (for State 3) -->
+<div class="hidden p-3 bg-[#FFFBEB] border border-[#B45309] rounded text-[#B45309] text-sm flex items-start gap-2.5" id="inline-shortfall-warning">
+<span class="material-symbols-outlined text-[#B45309] flex-shrink-0 mt-0.5">warning</span>
+<div>
+<strong class="font-semibold">Insufficient Authoring Pool in Domain 5:</strong>
+<span>Domain 5 requires 38 questions but only 32 published questions exist in active pool. Author or publish additional items to fulfill this blueprint.</span>
+</div>
+</div>
+<!-- Pagination & Table Metas -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#475569] pt-2">
+<span>Showing 5 of 5 Core Competency Domains • Standard Syllabus v2026.1</span>
+<span class="font-code-snippet">Last psychometric audit: 05 Oct 2026 09:15 WAT</span>
+</div>
+</div>
+<!-- SECTION 3: FORM BOTTOM ACTIONS -->
+<div class="bg-white border border-[#E2E8F0] rounded-[12px] p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-xs text-[#475569]">
+<span class="material-symbols-outlined text-sm text-emerald-600">verified</span>
+<span>All changes validated under Chief Governance Officer supervision</span>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="min-touch px-4 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-[#0F172A] bg-white border border-[#64748B] hover:bg-[#F1F5F9] rounded transition-colors" type="button">
+                Preview Exam Form
+              </button>
+<button class="min-touch px-4 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-[#0F172A] bg-white border border-[#64748B] hover:bg-[#F1F5F9] rounded transition-colors" type="button">
+                Save Draft
+              </button>
+<button class="min-touch px-6 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded transition-colors focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="form-save-btn" type="button">
+                Save Exam Blueprint
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- INSTITUTIONAL CLOSURE FOOTER -->
+<footer class="w-full py-space-lg px-gutter border-t border-[#CBD5E1] bg-[#0B1320] flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 mt-12 text-slate-400 font-body-sm text-body-sm">
+<div>
+<div class="font-label-md text-label-md text-white font-semibold">A.J. Silicon Audit Portal</div>
+<p class="text-xs text-slate-400 mt-1">© 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. Accredited ISACA Lagos Elite Partner. All Sessions Digitally Watermarked.</p>
+</div>
+<div class="flex flex-wrap gap-4 text-xs font-label-sm text-label-sm">
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Zero-Trust Protocol</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">ISACA Lagos Charter</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Automated Verification Gateway</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Forensic Integrity Policy</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- JAVASCRIPT STATE ENGINE & INTERACTION LOGIC -->
+<script>
+    // State Switcher Functionality
+    function switchState(stateName) {
+      // 1. Reset tabs styling
+      const tabs = ['valid', 'weight-error', 'shortfall-warning', 'empty', 'skeleton'];
+      tabs.forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        if (el) {
+          el.className = "px-3 py-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] rounded transition-all";
+        }
+      });
+      const activeTab = document.getElementById('tab-' + stateName);
+      if (activeTab) {
+        activeTab.className = "px-3 py-1.5 text-xs font-medium rounded transition-all bg-white text-[#0F172A] shadow-sm border border-[#E2E8F0]";
+      }
+
+      // Hide skeleton and show form
+      const skeletonView = document.getElementById('state-skeleton-view');
+      const formContent = document.getElementById('main-form-content');
+      const weightErrorBox = document.getElementById('inline-weight-error');
+      const shortfallWarningBox = document.getElementById('inline-shortfall-warning');
+      const saveBtnHeader = document.getElementById('header-save-btn');
+      const saveBtnFooter = document.getElementById('form-save-btn');
+      const examNameInput = document.getElementById('exam-name');
+      const totalQInput = document.getElementById('total-questions');
+      const breadcrumbTitle = document.getElementById('breadcrumb-title');
+
+      skeletonView.classList.add('hidden');
+      formContent.classList.remove('hidden');
+      weightErrorBox.classList.add('hidden');
+      shortfallWarningBox.classList.add('hidden');
+
+      // Re-enable save buttons by default
+      enableSaveButtons(true);
+
+      if (stateName === 'valid') {
+        // STATE 1: Default Valid Blueprint
+        examNameInput.value = "CISA Full Mock Examination 2026";
+        totalQInput.value = "150";
+        breadcrumbTitle.textContent = "CISA Full Mock Examination 2026";
+        setDomainValues([31, 24, 27, 30, 38]);
+        setD5Pool(95, "Sufficient", "bg-[#ECFDF5]", "text-[#047857]", "border-[#047857]", "check_circle");
+        updateTotalRow(150, 100, true);
+      } 
+      else if (stateName === 'weight-error') {
+        // STATE 2: Weights do not total (142 / 150)
+        examNameInput.value = "CISA Full Mock Examination 2026";
+        totalQInput.value = "150";
+        breadcrumbTitle.textContent = "CISA Full Mock Examination 2026 (Under-allocated)";
+        setDomainValues([31, 24, 27, 30, 30]); // Domain 5 reduced by 8 => total 142
+        setD5Pool(95, "Sufficient", "bg-[#ECFDF5]", "text-[#047857]", "border-[#047857]", "check_circle");
+        
+        weightErrorBox.classList.remove('hidden');
+        document.getElementById('weight-error-text').textContent = "Total domain questions (142) does not match required total question count (150). Allocate 8 more questions to proceed.";
+        updateTotalRow(142, 94.6, false, "Mismatch: 142 / 150");
+        enableSaveButtons(false);
+      }
+      else if (stateName === 'shortfall-warning') {
+        // STATE 3: Not enough published questions in Domain 5
+        examNameInput.value = "CISA Full Mock Examination 2026";
+        totalQInput.value = "150";
+        breadcrumbTitle.textContent = "CISA Full Mock Examination 2026 (Inventory Shortfall)";
+        setDomainValues([31, 24, 27, 30, 38]);
+        setD5Pool(32, "Shortfall (-6)", "bg-[#FEF2F2]", "text-[#B91C1C]", "border-[#B91C1C]", "error");
+        
+        shortfallWarningBox.classList.remove('hidden');
+        updateTotalRow(150, 100, true);
+        // Can save draft, but warn user
+      }
+      else if (stateName === 'empty') {
+        // STATE 4: Empty Form
+        examNameInput.value = "";
+        totalQInput.value = "";
+        document.getElementById('duration').value = "";
+        document.getElementById('score-pass').value = "";
+        breadcrumbTitle.textContent = "Untitled Blueprint";
+        setDomainValues([0, 0, 0, 0, 0]);
+        setD5Pool(95, "Sufficient", "bg-[#ECFDF5]", "text-[#047857]", "border-[#047857]", "check_circle");
+        updateTotalRow(0, 0, false, "0 Questions Allocated");
+        enableSaveButtons(false);
+      }
+      else if (stateName === 'skeleton') {
+        // STATE 5: Skeleton Loader
+        formContent.classList.add('hidden');
+        skeletonView.classList.remove('hidden');
+      }
+    }
+
+    function setDomainValues(values) {
+      document.getElementById('d1-input').value = values[0];
+      document.getElementById('d2-input').value = values[1];
+      document.getElementById('d3-input').value = values[2];
+      document.getElementById('d4-input').value = values[3];
+      document.getElementById('d5-input').value = values[4];
+      
+      const total = values.reduce((a, b) => a + b, 0);
+      document.getElementById('d1-weight').textContent = total > 0 ? Math.round((values[0]/total)*100) + '%' : '0%';
+      document.getElementById('d2-weight').textContent = total > 0 ? Math.round((values[1]/total)*100) + '%' : '0%';
+      document.getElementById('d3-weight').textContent = total > 0 ? Math.round((values[2]/total)*100) + '%' : '0%';
+      document.getElementById('d4-weight').textContent = total > 0 ? Math.round((values[3]/total)*100) + '%' : '0%';
+      document.getElementById('d5-weight').textContent = total > 0 ? Math.round((values[4]/total)*100) + '%' : '0%';
+    }
+
+    function setD5Pool(poolCount, statusText, bgClass, textClass, borderClass, iconName) {
+      document.getElementById('d5-pool').textContent = poolCount + ' items';
+      const statusCell = document.getElementById('d5-status-cell');
+      statusCell.innerHTML = `
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${bgClass} ${textClass} border ${borderClass}">
+          <span class="material-symbols-outlined text-xs mr-1">${iconName}</span> ${statusText}
+        </span>
+      `;
+    }
+
+    function updateTotalRow(allocated, weight, isValid, customStatus) {
+      const weightLabel = document.getElementById('total-weight-label');
+      const allocatedLabel = document.getElementById('total-allocated-label');
+      const statusCell = document.getElementById('total-status-cell');
+
+      weightLabel.textContent = Math.round(weight) + '%';
+      allocatedLabel.textContent = allocated + ' / 150 items';
+
+      if (isValid) {
+        statusCell.innerHTML = `
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+            <span class="material-symbols-outlined text-xs mr-1">task_alt</span> Valid &amp; Synchronized
+          </span>
+        `;
+      } else {
+        statusCell.innerHTML = `
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+            <span class="material-symbols-outlined text-xs mr-1">error</span> ${customStatus || 'Allocation Error'}
+          </span>
+        `;
+      }
+    }
+
+    function enableSaveButtons(enabled) {
+      const b1 = document.getElementById('header-save-btn');
+      const b2 = document.getElementById('form-save-btn');
+      if (enabled) {
+        b1.disabled = false;
+        b1.className = "px-6 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded min-touch transition-colors focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2";
+        b2.disabled = false;
+        b2.className = "min-touch px-6 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-white bg-[#0B1320] hover:bg-[#1E293B] rounded transition-colors focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2";
+      } else {
+        b1.disabled = true;
+        b1.className = "px-6 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-slate-400 bg-slate-200 rounded min-touch cursor-not-allowed";
+        b2.disabled = true;
+        b2.className = "min-touch px-6 h-[44px] inline-flex items-center justify-center font-label-md text-label-md font-medium text-slate-400 bg-slate-200 rounded min-touch cursor-not-allowed";
+      }
+    }
+
+    function recalculateTable() {
+      const v1 = parseInt(document.getElementById('d1-input').value) || 0;
+      const v2 = parseInt(document.getElementById('d2-input').value) || 0;
+      const v3 = parseInt(document.getElementById('d3-input').value) || 0;
+      const v4 = parseInt(document.getElementById('d4-input').value) || 0;
+      const v5 = parseInt(document.getElementById('d5-input').value) || 0;
+      const total = v1 + v2 + v3 + v4 + v5;
+      const target = parseInt(document.getElementById('total-questions').value) || 150;
+
+      setDomainValues([v1, v2, v3, v4, v5]);
+
+      const weightErrorBox = document.getElementById('inline-weight-error');
+      if (total === target) {
+        weightErrorBox.classList.add('hidden');
+        updateTotalRow(total, 100, true);
+        enableSaveButtons(true);
+      } else {
+        weightErrorBox.classList.remove('hidden');
+        const diff = target - total;
+        document.getElementById('weight-error-text').textContent = 
+          `Total domain questions (${total}) does not match required total question count (${target}). ` + 
+          (diff > 0 ? `Allocate ${diff} more questions to proceed.` : `Reduce by ${Math.abs(diff)} questions to proceed.`);
+        updateTotalRow(total, (total/target)*100, false, `Mismatch: ${total} / ${target}`);
+        enableSaveButtons(false);
+      }
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Session Scheduler — A.J. Silicon Learning Platform</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-tint": "#575f6e",
+            "surface-container-high": "#e2e7ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "on-surface-variant": "#45474c",
+            "surface-bright": "#faf8ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "inverse-surface": "#283044",
+            "primary-fixed": "#dbe2f5",
+            "surface-container": "#eaedff",
+            "primary-fixed-dim": "#bfc6d9",
+            "primary-container": "#141c29",
+            "surface": "#faf8ff",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-error": "#ffffff",
+            "tertiary": "#000000",
+            "on-primary-fixed": "#141c29",
+            "on-background": "#131b2e",
+            "outline": "#75777c",
+            "primary": "#000000",
+            "secondary-container": "#4069f2",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-primary-container": "#7c8495",
+            "surface-dim": "#d2d9f4",
+            "on-surface": "#131b2e",
+            "outline-variant": "#c5c6cc",
+            "background": "#faf8ff",
+            "on-tertiary-fixed": "#281809",
+            "on-tertiary-container": "#997f6a",
+            "tertiary-container": "#281809",
+            "on-secondary-fixed": "#001551",
+            "inverse-primary": "#bfc6d9",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#fddcc4",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#dce1ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#fffbff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "secondary": "#1d4ed8"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1.5rem",
+            "space-xs": "0.5rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem"
+          },
+          fontFamily: {
+            "headline-lg": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .custom-focus:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col antialiased text-[#0F172A]">
+<!-- Top App Bar (Staff Application Shell: Deep Navy #0B1320) -->
+<header class="w-full bg-[#0B1320] h-16 px-6 flex items-center justify-between border-b border-[#1E293B] sticky top-0 z-40 select-none">
+<div class="flex items-center gap-6">
+<!-- Logo Container on White Rounded Plate -->
+<div class="h-10 px-3 bg-white rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe2K7FS2ytxTIhTCvNWDW5OJFaaquunAqfLeiCtlzypzodDh8VWntBd0frASC1ABr2kTnvVrc6x-WrAjyeYDXIani2m4EOm4xslX5AfR2LQFJ2BPys_eGJr_cNZG8KxSFRr_S8RZG8X_cCFvGpjJDpgdubiQy7EwZ5PYuNfAm_NIFsYZNhmixLav7NGswKwNd01hWWC5YylSSqsNmqzv5LQMI-lAUFXt1RfPInhy_qQKTvWH5DRY7xbg"/>
+</div>
+<div class="h-5 w-[1px] bg-[#334155]"></div>
+<div class="flex items-center gap-2">
+<span class="text-white font-semibold text-[15px] tracking-tight">Staff Portal</span>
+<span class="text-[#64748B] text-xs font-mono px-2 py-0.5 rounded bg-[#1E293B] text-slate-300">Lagos Academy Hub</span>
+</div>
+</div>
+<!-- Center/Right Shell Utility: Clock & User Details -->
+<div class="flex items-center gap-5">
+<!-- WAT Live Clock Display -->
+<div class="flex items-center gap-2 text-slate-300 text-xs font-mono bg-[#1E293B] px-3 py-1.5 rounded border border-[#334155]">
+<span class="material-symbols-outlined text-[16px] text-slate-400">schedule</span>
+<span class="tracking-wide">10:15 WAT · 05 Oct 2026</span>
+</div>
+<!-- Notifications Icon Target (Min 44x44px) -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#1E293B] rounded transition-colors custom-focus" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="h-6 w-[1px] bg-[#334155]"></div>
+<!-- Staff Profile Details -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="text-white text-sm font-medium leading-none">Adaeze Okonkwo</div>
+<div class="text-[#94A3B8] text-xs leading-none mt-1">Instructor</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#475569] flex items-center justify-center text-white text-xs font-semibold tracking-wider">
+          AO
+        </div>
+</div>
+</div>
+</header>
+<!-- Shell Frame: Sidebar + Main Content Area -->
+<div class="flex-1 flex w-full max-w-[1440px] mx-auto overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 bg-white border-r border-[#E2E8F0] min-h-[calc(100vh-64px)] flex flex-col justify-between p-4">
+<div class="space-y-6">
+<!-- Section: Academics (Active Group) -->
+<div>
+<div class="text-[11px] font-semibold text-[#64748B] uppercase tracking-wider px-3 mb-2">Academics</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">dashboard</span>
+              Faculty Home
+            </a>
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">groups</span>
+              Cohorts
+            </a>
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">menu_book</span>
+              Curriculum
+            </a>
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">quiz</span>
+              Question Bank
+            </a>
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">insights</span>
+              Readiness Analytics
+            </a>
+<!-- Active Item: Schedule -->
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-semibold bg-[#0B1320] text-white transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-white">calendar_month</span>
+              Schedule
+            </a>
+</nav>
+</div>
+<!-- Section: Operations -->
+<div>
+<div class="text-[11px] font-semibold text-[#64748B] uppercase tracking-wider px-3 mb-2">Operations</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">assignment_turned_in</span>
+              Evaluations
+            </a>
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">verified</span>
+              Accreditation Vault
+            </a>
+</nav>
+</div>
+<!-- Section: Settings -->
+<div>
+<div class="text-[11px] font-semibold text-[#64748B] uppercase tracking-wider px-3 mb-2">Settings</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 h-10 rounded text-sm font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors custom-focus" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#64748B]">settings</span>
+              Portal Config
+            </a>
+</nav>
+</div>
+</div>
+<!-- Institutional Footer Identity within Sidebar -->
+<div class="pt-4 border-t border-[#E2E8F0] text-xs text-[#64748B] space-y-1">
+<p class="font-medium text-[#0F172A]">A.J. Silicon Training Hub</p>
+<p>Lagos, Nigeria · West Africa</p>
+<p class="text-[11px] text-[#94A3B8]">v4.18.2 Staff Console</p>
+</div>
+</aside>
+<!-- Canvas: Main Working Content -->
+<main class="flex-1 min-w-0 bg-[#F8FAFC] flex flex-col p-8 overflow-y-auto">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[#64748B] mb-3">
+<span class="hover:text-[#0F172A]">Staff Portal</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-[#0F172A]">Academics</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-[#0F172A]">Schedule</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-semibold text-[#0F172A]">Live Session Scheduler</span>
+</nav>
+<!-- Page Header -->
+<div class="flex items-start justify-between pb-6 border-b border-[#E2E8F0]">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-[#0F172A]">Live session scheduler</h1>
+<p class="text-sm text-[#475569] mt-1 max-w-2xl">
+            Plan synchronous virtual lectures, manage cohort calendar events, and reconcile post-session attendance.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white text-sm font-medium rounded-md flex items-center gap-2 transition-colors custom-focus shadow-sm" onclick="toggleDrawer(true)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            Schedule new session
+          </button>
+</div>
+</div>
+<!-- State Variant Switcher Bar (Interactive testing bar for the 5 specified screen scenarios) -->
+<div class="mt-6 bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs font-semibold text-[#1D4ED8]">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Interactive State Variant Switcher:</span>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<button class="px-3 h-8 text-xs font-medium rounded bg-[#0B1320] text-white transition-colors" id="btn-var-scheduled" onclick="setVariant('scheduled')" type="button">1. Scheduled (Default)</button>
+<button class="px-3 h-8 text-xs font-medium rounded bg-white text-[#0F172A] border border-[#CBD5E1] hover:bg-[#F1F5F9] transition-colors" id="btn-var-inprogress" onclick="setVariant('inprogress')" type="button">2. In Progress (Live)</button>
+<button class="px-3 h-8 text-xs font-medium rounded bg-white text-[#0F172A] border border-[#CBD5E1] hover:bg-[#F1F5F9] transition-colors" id="btn-var-completed" onclick="setVariant('completed')" type="button">3. Completed w/ Attendance</button>
+<button class="px-3 h-8 text-xs font-medium rounded bg-white text-[#0F172A] border border-[#CBD5E1] hover:bg-[#F1F5F9] transition-colors" id="btn-var-missinglink" onclick="setVariant('missinglink')" type="button">4. Link Missing</button>
+<button class="px-3 h-8 text-xs font-medium rounded bg-white text-[#0F172A] border border-[#CBD5E1] hover:bg-[#F1F5F9] transition-colors" id="btn-var-cancelled" onclick="setVariant('cancelled')" type="button">5. Cancelled</button>
+</div>
+</div>
+<!-- Dynamic Contextual Alert Banner (Responsive to State Selection) -->
+<div class="mt-4 hidden" id="dynamic-context-banner"></div>
+<!-- View Controls & Filter Bar -->
+<div class="mt-6 bg-white border border-[#E2E8F0] rounded-xl p-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Left Filter Group -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Calendar / List Toggle -->
+<div class="inline-flex rounded-md border border-[#64748B] p-0.5 bg-white">
+<button class="px-3 py-1.5 text-xs font-medium rounded bg-[#0B1320] text-white flex items-center gap-1.5 min-h-[32px]" type="button">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+              List View
+            </button>
+<button class="px-3 py-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] flex items-center gap-1.5 min-h-[32px]" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_view_month</span>
+              Calendar
+            </button>
+</div>
+<!-- Cohort Selector Dropdown -->
+<div class="relative min-w-[240px]">
+<select class="w-full h-11 pl-3 pr-8 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus">
+<option selected="">CISA Exam Prep — Cohort 14</option>
+<option>CRISC Risk Architecture — Cohort 05</option>
+<option>CISM Information Security — Cohort 09</option>
+<option>Executive IT Governance — Cohort 02</option>
+</select>
+</div>
+<!-- Search Topic Input -->
+<div class="relative min-w-[260px]">
+<span class="material-symbols-outlined text-[18px] text-[#64748B] absolute left-3 top-3 pointer-events-none">search</span>
+<input class="w-full h-11 pl-9 pr-3 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] placeholder-[#64748B] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" placeholder="Search session topic or domain..." type="text"/>
+</div>
+<!-- Date Range Selector Filter -->
+<div class="relative">
+<button class="h-11 px-3 border border-[#64748B] rounded-md bg-white text-sm text-[#0F172A] flex items-center gap-2 hover:bg-[#F8FAFC] custom-focus" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">date_range</span>
+<span>05 Oct 2026 – 31 Oct 2026</span>
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Status Filter Chips -->
+<div class="flex items-center gap-1 text-xs">
+<span class="text-[#64748B] font-medium mr-2">Filter status:</span>
+<button class="px-2.5 py-1 rounded-full font-medium bg-[#0B1320] text-white" type="button">All</button>
+<button class="px-2.5 py-1 rounded-full font-medium text-[#475569] hover:bg-[#F1F5F9]" type="button">Scheduled</button>
+<button class="px-2.5 py-1 rounded-full font-medium text-[#475569] hover:bg-[#F1F5F9]" type="button">Live</button>
+<button class="px-2.5 py-1 rounded-full font-medium text-[#475569] hover:bg-[#F1F5F9]" type="button">Completed</button>
+<button class="px-2.5 py-1 rounded-full font-medium text-[#475569] hover:bg-[#F1F5F9]" type="button">Cancelled</button>
+</div>
+</div>
+<!-- MAIN CONTAINER: Sessions Roster & Contextual Attendance Panel -->
+<div class="mt-6 space-y-6">
+<!-- VARIANT DISPLAY SECTION -->
+<div id="session-variant-container">
+<!-- Will be updated dynamically by JavaScript -->
+</div>
+<!-- SESSIONS ROSTER TABLE (Permanent institutional audit catalog) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 border-b border-[#E2E8F0] flex items-center justify-between bg-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-[#0B1320]">event_upcoming</span>
+<h2 class="text-base font-semibold text-[#0F172A]">Cohort Synchronous Schedule Master Log</h2>
+</div>
+<span class="text-xs text-[#64748B]">Showing 4 sessions for selected cohort</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-xs font-semibold text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-4">Session Date &amp; WAT Time</th>
+<th class="py-3 px-4">Topic / Curriculum Domain</th>
+<th class="py-3 px-4">Instructor</th>
+<th class="py-3 px-4">Teleconference URL</th>
+<th class="py-3 px-4">Session Status</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm text-[#0F172A]">
+<!-- Row 1: Scheduled Upcoming -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">10 Oct 2026</div>
+<div class="text-xs text-[#64748B] font-mono">09:00 WAT – 11:30 WAT</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Domain 4: Information Systems Operations &amp; Maintenance</div>
+<div class="text-xs text-[#64748B]">CISA Exam Prep — Cohort 14</div>
+</td>
+<td class="py-3.5 px-4 text-xs">
+<div class="font-medium">Adaeze Okonkwo</div>
+<div class="text-[#64748B]">Lead Faculty</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">link</span>
+                      Zoom Configured
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                      Scheduled
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#1D4ED8] hover:bg-[#F1F5F9] rounded text-xs font-medium custom-focus" onclick="setVariant('scheduled')" title="Inspect Session" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[#475569] hover:bg-[#F1F5F9] rounded text-xs font-medium custom-focus" onclick="toggleDrawer(true)" title="Edit Parameters" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: In Progress -->
+<tr class="hover:bg-[#F8FAFC] transition-colors bg-[#F0FDF4]/40">
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">05 Oct 2026 (Today)</div>
+<div class="text-xs text-[#047857] font-mono font-medium">10:00 WAT – 12:00 WAT</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Domain 3: Systems Acquisition, Development &amp; Implementation</div>
+<div class="text-xs text-[#64748B]">CISA Exam Prep — Cohort 14</div>
+</td>
+<td class="py-3.5 px-4 text-xs">
+<div class="font-medium">Adaeze Okonkwo</div>
+<div class="text-[#64748B]">Lead Faculty</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+                      Active Bridge
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="w-2 h-2 rounded-full bg-[#047857] animate-pulse"></span>
+                      Live Now (WAT)
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 inline-flex items-center gap-1.5 bg-[#047857] text-white hover:bg-[#065f46] rounded text-xs font-medium custom-focus" onclick="setVariant('inprogress')" type="button">
+<span class="material-symbols-outlined text-[16px]">login</span>
+                      Join as Host
+                    </button>
+</td>
+</tr>
+<!-- Row 3: Completed Session with Post-Attendance Reconcile -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">28 Sep 2026</div>
+<div class="text-xs text-[#64748B] font-mono">09:00 WAT – 11:30 WAT</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Domain 2: Governance &amp; Management of IT Audit Policies</div>
+<div class="text-xs text-[#64748B]">CISA Exam Prep — Cohort 14</div>
+</td>
+<td class="py-3.5 px-4 text-xs">
+<div class="font-medium">Adaeze Okonkwo</div>
+<div class="text-[#64748B]">Lead Faculty</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="text-xs text-[#64748B] font-mono">Archived Bridge</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Completed
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 inline-flex items-center gap-1.5 border border-[#64748B] hover:bg-[#F1F5F9] text-[#0F172A] rounded text-xs font-medium custom-focus" onclick="setVariant('completed')" type="button">
+<span class="material-symbols-outlined text-[16px]">fact_check</span>
+                      Attendance Logs (48)
+                    </button>
+</td>
+</tr>
+<!-- Row 4: Link Missing Alert -->
+<tr class="hover:bg-[#F8FAFC] transition-colors bg-[#FFFBEB]/40">
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">17 Oct 2026</div>
+<div class="text-xs text-[#64748B] font-mono">09:00 WAT – 11:30 WAT</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-medium text-[#0F172A]">Domain 5: Protection of Information Assets &amp; Encryption</div>
+<div class="text-xs text-[#64748B]">CISA Exam Prep — Cohort 14</div>
+</td>
+<td class="py-3.5 px-4 text-xs">
+<div class="font-medium">Adaeze Okonkwo</div>
+<div class="text-[#64748B]">Lead Faculty</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">link_off</span>
+                      Missing URL
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                      Action Required
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="min-h-[44px] px-3 inline-flex items-center gap-1.5 bg-[#B45309] text-white hover:bg-[#92400e] rounded text-xs font-medium custom-focus" onclick="setVariant('missinglink')" type="button">
+<span class="material-symbols-outlined text-[16px]">add_link</span>
+                      Add Zoom Link
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- SLIDE-OVER DRAWER: "Schedule New Session" / Inspection Form -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="session-drawer" role="dialog">
+<!-- Backdrop -->
+<div class="fixed inset-0 bg-[#0B1320]/60 transition-opacity" onclick="toggleDrawer(false)"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+<div class="w-screen max-w-xl bg-white border-l border-[#E2E8F0] shadow-2xl flex flex-col justify-between">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-[#E2E8F0] bg-[#F8FAFC] flex items-center justify-between">
+<div>
+<h2 class="text-lg font-bold text-[#0F172A]" id="slide-over-title">Schedule Synchronous Live Lecture</h2>
+<p class="text-xs text-[#64748B] mt-0.5">Define telemetry bridge and calendar schedule for enterprise cohort.</p>
+</div>
+<button class="w-11 h-11 flex items-center justify-center rounded text-[#64748B] hover:text-[#0F172A] hover:bg-[#E2E8F0] custom-focus" onclick="toggleDrawer(false)" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Form Body -->
+<form class="p-6 overflow-y-auto space-y-5 flex-1" id="new-session-form">
+<!-- Session Title -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider mb-1.5" for="session-title">Session Title</label>
+<input class="w-full h-11 px-3 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-title" type="text" value="CISA Live Masterclass: Domain 4 Operations &amp; Maintenance"/>
+</div>
+<!-- Programme & Cohort -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider mb-1.5" for="session-cohort">Programme &amp; Target Cohort</label>
+<select class="w-full h-11 px-3 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-cohort">
+<option selected="">CISA Exam Prep — Cohort 14</option>
+<option>CRISC Risk Architecture — Cohort 05</option>
+<option>CISM Information Security — Cohort 09</option>
+</select>
+</div>
+<!-- Curriculum Domain / Topic -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider mb-1.5" for="session-domain">Topic / Curriculum Domain</label>
+<input class="w-full h-11 px-3 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-domain" type="text" value="Domain 4: Information Systems Operations, Maintenance and Service Management"/>
+</div>
+<!-- Date & Time Row (WAT) -->
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider mb-1.5" for="session-date">Date (WAT Standard)</label>
+<input class="w-full h-11 px-3 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-date" type="text" value="10 Oct 2026"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider mb-1.5" for="session-time">Time Interval (WAT)</label>
+<div class="flex items-center gap-2">
+<input class="w-1/2 h-11 px-2.5 text-xs font-mono bg-white border border-[#64748B] rounded-md text-[#0F172A] text-center focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-start" type="text" value="09:00 WAT"/>
+<span class="text-xs text-[#64748B]">to</span>
+<input class="w-1/2 h-11 px-2.5 text-xs font-mono bg-white border border-[#64748B] rounded-md text-[#0F172A] text-center focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-end" type="text" value="11:30 WAT"/>
+</div>
+<p class="text-[11px] text-[#64748B] mt-1">Total runtime: 2 hrs 30 mins</p>
+</div>
+</div>
+<!-- Zoom Bridge Settings & Validation Indicator -->
+<div class="p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-[#0F172A] uppercase tracking-wider">Teleconference Telemetry</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Valid Zoom API link syntax
+              </span>
+</div>
+<div>
+<label class="block text-xs text-[#475569] mb-1" for="session-url">Zoom Meeting Join URL</label>
+<input class="w-full h-11 px-3 text-xs font-mono bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-url" type="url" value="https://us02web.zoom.us/j/84920194821"/>
+</div>
+<div>
+<label class="block text-xs text-[#475569] mb-1" for="session-passcode">Zoom Passcode</label>
+<input class="w-full h-11 px-3 text-xs font-mono bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-passcode" type="text" value="CISA2026"/>
+</div>
+</div>
+<!-- Notes for Candidates -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider mb-1.5" for="session-notes">Candidate Preparation Instructions</label>
+<textarea class="w-full p-3 text-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 custom-focus" id="session-notes" rows="2">Review CRM chapter 4 slides and practice questions 45-60 before class.</textarea>
+</div>
+<!-- Automated Reminders Checkboxes -->
+<div>
+<span class="block text-xs font-semibold text-[#0F172A] uppercase tracking-wider mb-2">Automated Candidate Reminders</span>
+<div class="space-y-2">
+<label class="flex items-center gap-3 min-h-[44px] cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB] custom-focus" type="checkbox"/>
+<span class="text-sm text-[#0F172A]">Send email and portal notification 24 hours before</span>
+</label>
+<label class="flex items-center gap-3 min-h-[44px] cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB] custom-focus" type="checkbox"/>
+<span class="text-sm text-[#0F172A]">Send reminder 2 hours before session start</span>
+</label>
+<label class="flex items-center gap-3 min-h-[44px] cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB] custom-focus" type="checkbox"/>
+<span class="text-sm text-[#0F172A]">Broadcast Zoom launch link 15 minutes before session</span>
+</label>
+</div>
+</div>
+<!-- Recurring Option -->
+<div class="pt-2 border-t border-[#E2E8F0]">
+<label class="flex items-center gap-3 min-h-[44px] cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-[#64748B] text-[#0B1320] focus:ring-[#2563EB] custom-focus" type="checkbox"/>
+<span class="text-sm font-medium text-[#0F172A]">Repeat weekly on Saturdays until 18 Dec 2026</span>
+</label>
+</div>
+</form>
+<!-- Drawer Footer Actions -->
+<div class="p-6 border-t border-[#E2E8F0] bg-[#F8FAFC] flex items-center justify-end gap-3">
+<button class="min-h-[44px] px-5 border border-[#64748B] hover:bg-[#E2E8F0] text-[#0F172A] rounded-md text-sm font-medium transition-colors custom-focus" onclick="toggleDrawer(false)" type="button">
+            Cancel
+          </button>
+<button class="min-h-[44px] px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white rounded-md text-sm font-medium transition-colors custom-focus" onclick="saveSession()" type="button">
+            Save session
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Institutional Platform Footer -->
+<footer class="w-full bg-white border-t border-[#E2E8F0] py-6 px-8 mt-12 text-xs text-[#64748B]">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="font-semibold text-[#0F172A]">A.J. Silicon Academy &amp; Enterprise Audit Hub</span>
+<span>·</span>
+<span>Lagos, Nigeria</span>
+<span>·</span>
+<span>ISO/IEC 27001 &amp; SOC 2 Type II Accredited Protocols</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-[#0F172A]" href="#">Audit Protocol</a>
+<a class="hover:text-[#0F172A]" href="#">Verification Registry</a>
+<a class="hover:text-[#0F172A]" href="#">Public Ledger Key</a>
+<a class="hover:text-[#0F172A]" href="#">Ethics &amp; Compliance</a>
+<a class="hover:text-[#0F172A]" href="#">System Telemetry</a>
+</div>
+</div>
+</footer>
+<!-- JAVASCRIPT: State Switcher and Drawer Interaction -->
+<script>
+    function toggleDrawer(open) {
+      const drawer = document.getElementById('session-drawer');
+      if (open) {
+        drawer.classList.remove('hidden');
+      } else {
+        drawer.classList.add('hidden');
+      }
+    }
+
+    function saveSession() {
+      alert("Session saved successfully to CISA Exam Prep Cohort 14 calendar log.");
+      toggleDrawer(false);
+    }
+
+    // Set interactive variant representation
+    function setVariant(variant) {
+      const container = document.getElementById('session-variant-container');
+      const banner = document.getElementById('dynamic-context-banner');
+
+      // Update switcher active styling
+      ['scheduled', 'inprogress', 'completed', 'missinglink', 'cancelled'].forEach(v => {
+        const btn = document.getElementById(`btn-var-${v}`);
+        if (v === variant) {
+          btn.className = 'px-3 h-8 text-xs font-medium rounded bg-[#0B1320] text-white transition-colors';
+        } else {
+          btn.className = 'px-3 h-8 text-xs font-medium rounded bg-white text-[#0F172A] border border-[#CBD5E1] hover:bg-[#F1F5F9] transition-colors';
+        }
+      });
+
+      if (variant === 'scheduled') {
+        banner.className = 'hidden';
+        container.innerHTML = `
+          <div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+            <div class="flex items-start justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+                    <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                    Scheduled (Upcoming)
+                  </span>
+                  <span class="text-xs text-[#64748B]">Session ID: SES-2026-CISA-04</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#0F172A]">CISA Live Masterclass: Domain 4 Operations & Maintenance</h3>
+                <p class="text-sm text-[#475569] mt-1">CISA Exam Prep — Cohort 14 · Instructor: Adaeze Okonkwo</p>
+              </div>
+              <div class="text-right">
+                <div class="text-xs font-medium text-[#64748B]">COUNTDOWN TO LECTURE</div>
+                <div class="text-lg font-bold text-[#0F172A] font-mono mt-0.5">4 days 22 hrs 45 mins</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-6 border-t border-[#E2E8F0] text-sm">
+              <div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+                <div class="text-xs font-semibold text-[#64748B] uppercase">Schedule & Duration</div>
+                <div class="font-medium text-[#0F172A] mt-1">Saturday, 10 Oct 2026</div>
+                <div class="text-xs text-[#64748B] font-mono mt-0.5">09:00 WAT – 11:30 WAT (2h 30m)</div>
+              </div>
+              <div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+                <div class="text-xs font-semibold text-[#64748B] uppercase">Teleconference Credentials</div>
+                <div class="font-mono text-xs text-[#1D4ED8] mt-1 break-all">https://us02web.zoom.us/j/84920194821</div>
+                <div class="text-xs text-[#64748B] mt-0.5">Passcode: <span class="font-mono font-medium text-[#0F172A]">CISA2026</span></div>
+              </div>
+              <div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+                <div class="text-xs font-semibold text-[#64748B] uppercase">Candidate Reminders</div>
+                <div class="font-medium text-[#047857] text-xs flex items-center gap-1 mt-1">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                  Automated notifications queued
+                </div>
+                <div class="text-xs text-[#64748B] mt-0.5">24h, 2h, and 15m intervals active</div>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-[#F8FAFC] rounded-md border border-[#E2E8F0] text-xs text-[#475569] flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-[#64748B]">info</span>
+              <span>Candidate Preparation Note: <em>"Review CRM chapter 4 slides and practice questions 45-60 before class."</em></span>
+            </div>
+          </div>
+        `;
+      } else if (variant === 'inprogress') {
+        banner.className = 'mt-4 bg-[#ECFDF5] border border-[#047857] rounded-lg p-3 flex items-center justify-between text-xs text-[#047857]';
+        banner.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#047857] animate-ping"></span>
+            <span class="font-semibold text-sm">LIVE BROADCAST IN PROGRESS:</span>
+            <span>Domain 3 Systems Acquisition, Development & Implementation is currently transmitting.</span>
+          </div>
+          <span class="font-mono">Active Attendees Clicked: 46 candidates</span>
+        `;
+        container.innerHTML = `
+          <div class="bg-white border-2 border-[#047857] rounded-xl p-6 shadow-sm">
+            <div class="flex items-start justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-bold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                    <span class="w-2 h-2 rounded-full bg-[#047857] animate-pulse"></span>
+                    Live Now (WAT)
+                  </span>
+                  <span class="text-xs text-[#64748B] font-mono">Started 10:00 WAT · Elapsed: 15 mins</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#0F172A]">CISA Live Masterclass: Domain 3 Systems Acquisition</h3>
+                <p class="text-sm text-[#475569] mt-1">CISA Exam Prep — Cohort 14 · Host: Adaeze Okonkwo</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://zoom.us" target="_blank" class="min-h-[44px] px-6 bg-[#047857] hover:bg-[#065f46] text-white text-sm font-semibold rounded-md flex items-center gap-2 transition-colors custom-focus shadow">
+                  <span class="material-symbols-outlined text-[20px]">videocam</span>
+                  Join as Host
+                </a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-6 border-t border-[#E2E8F0]">
+              <div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+                <div class="text-xs font-semibold text-[#64748B] uppercase">Meeting URL & Bridge</div>
+                <div class="font-mono text-xs text-[#1D4ED8] mt-1">https://us02web.zoom.us/j/81290384711</div>
+                <div class="text-xs text-[#047857] font-medium mt-1">Zoom Meeting Host Claim Code: 994012</div>
+              </div>
+              <div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+                <div class="text-xs font-semibold text-[#64748B] uppercase">Live Roster Ingestion</div>
+                <div class="text-base font-bold text-[#0F172A] mt-1">46 of 52 Enrolled Candidates</div>
+                <div class="text-xs text-[#64748B] mt-0.5">88.4% join click participation rate</div>
+              </div>
+              <div class="p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0]">
+                <div class="text-xs font-semibold text-[#64748B] uppercase">Scheduled Conclude</div>
+                <div class="text-sm font-medium text-[#0F172A] mt-1">12:00 WAT (1 hr 45 mins remaining)</div>
+                <div class="text-xs text-[#64748B] mt-0.5">Automated recording reconciliation queued</div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (variant === 'completed') {
+        banner.className = 'hidden';
+        container.innerHTML = `
+          <div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+            <!-- Header for Completed Session -->
+            <div class="flex items-start justify-between pb-6 border-b border-[#E2E8F0]">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1]">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Completed Session
+                  </span>
+                  <span class="text-xs text-[#64748B]">Ended 28 Sep 2026 · 11:32 WAT</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#0F172A]">CISA Live Masterclass: Domain 2 IT Governance & Management</h3>
+                <p class="text-sm text-[#475569] mt-1">CISA Exam Prep — Cohort 14 · Lecturer: Adaeze Okonkwo</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button type="button" class="min-h-[44px] px-4 bg-[#0B1320] hover:bg-[#1E293B] text-white text-xs font-medium rounded-md flex items-center gap-2 custom-focus">
+                  <span class="material-symbols-outlined text-[18px]">cloud_upload</span>
+                  Upload recording
+                </button>
+              </div>
+            </div>
+
+            <!-- MANDATORY AUDIT DISCLOSURE NOTICE -->
+            <div class="mt-6 p-4 bg-[#FFFBEB] border border-[#B45309] rounded-lg flex items-start gap-3">
+              <span class="material-symbols-outlined text-[20px] text-[#B45309] mt-0.5">gavel</span>
+              <div>
+                <div class="text-xs font-bold text-[#B45309] uppercase tracking-wide">Institutional Attendance Audit Notice</div>
+                <p class="text-xs text-[#0F172A] mt-0.5 font-medium leading-relaxed">
+                  Join clicks, not verified attendance. Logs capture students who clicked the Zoom launch URL. Reconcile with Zoom roster before certifying credits.
+                </p>
+              </div>
+            </div>
+
+            <!-- Post-Session Attendance Table Area -->
+            <div class="mt-6">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <h4 class="text-sm font-bold text-[#0F172A]">Candidate Launch Records &amp; Attendance Reconciliation</h4>
+                  <span class="text-xs text-[#64748B] font-mono">4 Candidates Sampled</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="alert('Attendance reconciled and cryptographically committed.')" class="min-h-[36px] px-4 bg-[#047857] hover:bg-[#065f46] text-white text-xs font-medium rounded custom-focus">
+                    Save attendance state
+                  </button>
+                </div>
+              </div>
+
+              <div class="border border-[#E2E8F0] rounded-lg overflow-hidden">
+                <table class="w-full text-left border-collapse text-xs">
+                  <thead>
+                    <tr class="bg-[#F8FAFC] border-b border-[#E2E8F0] text-[#475569] uppercase font-semibold">
+                      <th class="py-2.5 px-3 w-10 text-center"><input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]"></th>
+                      <th class="py-2.5 px-3">Student Name &amp; Sponsoring Organisation</th>
+                      <th class="py-2.5 px-3">Click Timestamp (WAT)</th>
+                      <th class="py-2.5 px-3">Launch Count</th>
+                      <th class="py-2.5 px-3">Ingested Status</th>
+                      <th class="py-2.5 px-3">Manual Override ("Mark Attended")</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-[#E2E8F0] text-[#0F172A]">
+                    <tr class="hover:bg-[#F8FAFC]">
+                      <td class="py-3 px-3 text-center"><input type="checkbox" checked class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]"></td>
+                      <td class="py-3 px-3">
+                        <div class="font-semibold text-sm">Chinedu Eze</div>
+                        <div class="text-[#64748B]">First Bank Nigeria</div>
+                      </td>
+                      <td class="py-3 px-3 font-mono">09:02 WAT</td>
+                      <td class="py-3 px-3">1 launch</td>
+                      <td class="py-3 px-3">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Join Clicked
+                        </span>
+                      </td>
+                      <td class="py-3 px-3">
+                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                          <input type="checkbox" checked class="w-4 h-4 text-[#0B1320] rounded border-[#64748B]">
+                          <span class="text-xs text-[#64748B]">Verified Present</span>
+                        </label>
+                      </td>
+                    </tr>
+
+                    <tr class="hover:bg-[#F8FAFC]">
+                      <td class="py-3 px-3 text-center"><input type="checkbox" checked class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]"></td>
+                      <td class="py-3 px-3">
+                        <div class="font-semibold text-sm">Blessing Okon</div>
+                        <div class="text-[#64748B]">Access Bank Plc</div>
+                      </td>
+                      <td class="py-3 px-3 font-mono">08:58 WAT</td>
+                      <td class="py-3 px-3">2 launches</td>
+                      <td class="py-3 px-3">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Join Clicked
+                        </span>
+                      </td>
+                      <td class="py-3 px-3">
+                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                          <input type="checkbox" checked class="w-4 h-4 text-[#0B1320] rounded border-[#64748B]">
+                          <span class="text-xs text-[#64748B]">Verified Present</span>
+                        </label>
+                      </td>
+                    </tr>
+
+                    <tr class="hover:bg-[#F8FAFC]">
+                      <td class="py-3 px-3 text-center"><input type="checkbox" class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]"></td>
+                      <td class="py-3 px-3">
+                        <div class="font-semibold text-sm">Tunde Bakare</div>
+                        <div class="text-[#64748B]">Fidelity Bank</div>
+                      </td>
+                      <td class="py-3 px-3 font-mono text-[#64748B]">—</td>
+                      <td class="py-3 px-3 text-[#64748B]">0</td>
+                      <td class="py-3 px-3">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+                          <span class="material-symbols-outlined text-[13px]">close</span>
+                          Absent
+                        </span>
+                      </td>
+                      <td class="py-3 px-3">
+                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                          <input type="checkbox" onchange="promptReason(this)" class="w-4 h-4 text-[#0B1320] rounded border-[#64748B]">
+                          <span class="text-xs text-[#64748B]">Override to Attended</span>
+                        </label>
+                      </td>
+                    </tr>
+
+                    <tr class="hover:bg-[#F8FAFC]">
+                      <td class="py-3 px-3 text-center"><input type="checkbox" checked class="w-4 h-4 rounded border-[#64748B] text-[#0B1320]"></td>
+                      <td class="py-3 px-3">
+                        <div class="font-semibold text-sm">Amina Bello</div>
+                        <div class="text-[#64748B]">Zenith Bank Plc</div>
+                      </td>
+                      <td class="py-3 px-3 font-mono">09:14 WAT</td>
+                      <td class="py-3 px-3">1 launch</td>
+                      <td class="py-3 px-3">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Join Clicked
+                        </span>
+                      </td>
+                      <td class="py-3 px-3">
+                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                          <input type="checkbox" checked class="w-4 h-4 text-[#0B1320] rounded border-[#64748B]">
+                          <span class="text-xs text-[#64748B]">Verified Present</span>
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (variant === 'missinglink') {
+        banner.className = 'mt-4 bg-[#FFFBEB] border border-[#B45309] rounded-lg p-3 flex items-center justify-between text-xs text-[#B45309]';
+        banner.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">warning</span>
+            <span class="font-semibold text-sm">TELEMETRY LINK DEFICIT:</span>
+            <span>Add the Zoom link before students can join Saturday's scheduled session.</span>
+          </div>
+          <button type="button" onclick="toggleDrawer(true)" class="min-h-[36px] px-3 bg-[#B45309] hover:bg-[#92400e] text-white rounded font-medium">Add Link Now</button>
+        `;
+        container.innerHTML = `
+          <div class="bg-white border-2 border-[#B45309] rounded-xl p-6 shadow-sm">
+            <div class="flex items-start justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+                    <span class="material-symbols-outlined text-[14px]">link_off</span>
+                    Link Missing
+                  </span>
+                  <span class="text-xs text-[#64748B]">Scheduled: 17 Oct 2026 · 09:00 WAT</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#0F172A]">CISA Live Masterclass: Domain 5 Protection of Assets</h3>
+                <p class="text-sm text-[#475569] mt-1">CISA Exam Prep — Cohort 14 · Instructor: Adaeze Okonkwo</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button type="button" onclick="toggleDrawer(true)" class="min-h-[44px] px-5 bg-[#B45309] hover:bg-[#92400e] text-white text-sm font-medium rounded-md flex items-center gap-2 custom-focus">
+                  <span class="material-symbols-outlined text-[18px]">add_link</span>
+                  Provide Zoom Bridge URL
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-[#FFFBEB]/50 rounded-lg border border-[#FDE68A] flex items-center gap-3">
+              <span class="material-symbols-outlined text-[24px] text-[#B45309]">error</span>
+              <div class="text-xs text-[#0F172A]">
+                <strong class="text-[#B45309]">Audit Notification:</strong> Candidates enrolled in Cohort 14 will not receive automated calendar bridge reminders until a valid https teleconference endpoint is committed to the registry.
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (variant === 'cancelled') {
+        banner.className = 'hidden';
+        container.innerHTML = `
+          <div class="bg-white border border-[#B91C1C] rounded-xl p-6 shadow-sm">
+            <div class="flex items-start justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+                    <span class="material-symbols-outlined text-[14px]">cancel</span>
+                    Session Cancelled
+                  </span>
+                  <span class="text-xs text-[#64748B] font-mono">Cancelled on 04 Oct 2026 at 16:22 WAT</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#0F172A] line-through">CRISC Risk Response Simulation Workshop</h3>
+                <p class="text-sm text-[#475569] mt-1">CRISC — Cohort 05 · Assigned Instructor: Babatunde Lawal</p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-[#64748B]">Audited Cancellation Record</span>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-[#FEF2F2] rounded-lg border border-[#F87171] space-y-1">
+              <div class="text-xs font-bold text-[#B91C1C] uppercase tracking-wide">Required Reason of Record:</div>
+              <div class="text-sm font-medium text-[#0F172A]">Instructor medical rescheduling</div>
+              <div class="text-xs text-[#64748B] pt-1">
+                Candidate registry broadcast dispatched on 04 Oct 2026 at 16:30 WAT. Replacement makeup session pending faculty board approval.
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function promptReason(checkbox) {
+      if (checkbox.checked) {
+        const reason = prompt("Enter required audit override justification for candidate attendance (e.g. In-person room attendance verified, Zoom login discrepancy):");
+        if (!reason || reason.trim() === "") {
+          checkbox.checked = false;
+        } else {
+          alert("Override registered: " + reason);
+        }
+      }
+    }
+
+    // Initialize Default Variant
+    document.addEventListener("DOMContentLoaded", function() {
+      setVariant('scheduled');
+    });
+  </script>
+<script src="../demo-nav.js"></script></body></html>

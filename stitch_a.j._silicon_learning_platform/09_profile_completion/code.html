@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform - Profile Completion UI Specification</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#006c4a",
+            "tertiary": "#000000",
+            "on-primary-container": "#77849c",
+            "outline-variant": "#c5c6cd",
+            "on-primary-fixed-variant": "#3a475c",
+            "surface": "#f8f9ff",
+            "on-surface": "#0d1c2e",
+            "surface-tint": "#525f75",
+            "tertiary-fixed-dim": "#ffb77d",
+            "tertiary-fixed": "#ffdcc3",
+            "on-tertiary-fixed": "#2f1500",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#85f8c4",
+            "secondary-fixed-dim": "#68dba9",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#c76c00",
+            "surface-container-highest": "#d5e3fc",
+            "secondary-container": "#82f5c1",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "surface-container-low": "#eff4ff",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#005137",
+            "on-secondary-fixed": "#002114",
+            "surface-bright": "#f8f9ff",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "on-primary": "#ffffff",
+            "on-background": "#0d1c2e",
+            "inverse-primary": "#bac7e1",
+            "outline": "#75777d",
+            "primary-fixed": "#d6e3fe",
+            "primary-fixed-dim": "#bac7e1",
+            "background": "#f8f9ff",
+            "inverse-surface": "#233144",
+            "surface-container": "#e6eeff",
+            "primary": "#000000",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#2f1500",
+            "on-primary-fixed": "#0e1c2f",
+            "surface-variant": "#d5e3fc",
+            "primary-container": "#0e1c2f",
+            "on-secondary-container": "#00714e",
+            "on-surface-variant": "#44474c",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-dim": "#ccdbf3",
+            /* Institutional tokens defined in requirements */
+            "aj-navy": "#0B1320",
+            "aj-topbar": "#050A10",
+            "aj-blue-link": "#1D4ED8",
+            "aj-blue-dark": "#93C5FD",
+            "aj-border": "#64748B",
+            "aj-border-light": "#CBD5E1",
+            "aj-border-hairline": "#E2E8F0"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-sm": "0.75rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1.25rem",
+            "gutter": "2rem",
+            "margin": "3rem",
+            "space-md": "1.25rem",
+            "space-xl": "3rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.375rem"
+          },
+          fontFamily: {
+            "headline-md": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "display-hero-mobile": ["Inter", "sans-serif"],
+            "telemetry-code": ["JetBrains Mono", "monospace"],
+            "headline-lg-mobile": ["Inter", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "display-hero": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-badge": ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "display-hero-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "telemetry-code": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "display-hero": ["48px", { lineHeight: "56px", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+            "title-md": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "600" }],
+            "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+            "label-badge": ["11px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-[#F1F5F9] text-[#0d1c2e] antialiased min-h-screen py-8 px-4 font-body-md">
+<!-- Specification Board Header -->
+<header class="max-w-[1480px] mx-auto mb-10 pb-6 border-b border-[#CBD5E1]">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="inline-flex items-center gap-2 px-2.5 py-1 bg-[#0B1320] text-white rounded text-[11px] font-telemetry-code uppercase tracking-wider mb-3">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+          Component Specification Board
+        </div>
+<h1 class="text-headline-lg font-headline-lg text-[#0B1320] tracking-tight">Profile Completion: All 4 State Variants</h1>
+<p class="text-body-md font-body-md text-[#44474c] mt-1 max-w-3xl">
+          Presented on the authoritative A.J. Silicon Learning Platform architecture for Lagos risk, audit, and governance candidates. Calm, strictly bounded, high-assurance design adhering to 44px touch targets and rigid typographic hierarchies.
+        </p>
+</div>
+<div class="flex items-center gap-4 text-body-sm font-telemetry-code text-[#44474c] bg-white p-3 border border-[#CBD5E1] rounded">
+<div><span class="text-[#64748B]">Viewport:</span> 1440px / 390px</div>
+<div class="w-px h-4 bg-[#CBD5E1]"></div>
+<div><span class="text-[#64748B]">Auth User:</span> Chinedu Eze</div>
+</div>
+</div>
+</header>
+<!-- Main Specification Grid -->
+<main class="max-w-[1480px] mx-auto space-y-16">
+<!-- ========================================== -->
+<!-- STATE 1: EMPTY (Desktop 1440px)            -->
+<!-- ========================================== -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white font-telemetry-code text-[12px] font-semibold rounded">STATE 1</span>
+<h2 class="text-title-md font-title-md text-[#0B1320]">Desktop 1440px Specification — Empty State (Initial Entry)</h2>
+</div>
+<span class="text-body-sm font-telemetry-code text-[#64748B]">Progress: 0 of 6 fields completed (0%)</span>
+</div>
+<!-- 1440px Frame Emulation -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded overflow-hidden shadow-sm">
+<!-- Standard Public Top Bar -->
+<header class="bg-[#050A10] h-16 px-8 flex items-center justify-between border-b border-[#1E293B]">
+<div class="flex items-center gap-8">
+<!-- White rounded plate containing official logo exactly as supplied -->
+<div class="bg-white px-3 py-1 rounded-md flex items-center justify-center shadow-xs">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATW85DkZszqkFaPANIa9RH3obJuT_bm7Cqg6U7t7qO1BrYAnKgCFElCY0M6INaGxlZQOaR7liSoX7unNdhOC7oO_RKRuh0jFe1Om84KcUD-jPKc4Dsoe38ec1Zlg0QwxLZFj8g8B5KH_yNfpe3b7q2tIXkarBYk2oI3NtHTTv1qD9v81CyAZkT1VR2o4Roxw31yaxjaEbiqaCLbG8xH5JdXhtREj24vYbDu10Qd4ea0R7wA2rVPu_WNix2hzlChuTa1D0"/>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Programmes</a>
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Workshops</a>
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Log in</a>
+</nav>
+</div>
+<div class="flex items-center">
+<span class="text-body-sm font-body-sm font-medium text-white tracking-wide">Chinedu Eze</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="py-12 px-6 flex justify-center bg-[#F8FAFC]">
+<div class="w-full max-w-[640px] bg-white border border-[#E2E8F0] rounded p-8 sm:p-10 shadow-[0_1px_3px_0_rgba(15,23,42,0.03)]">
+<!-- Heading & Subtext -->
+<div class="mb-6">
+<h2 class="text-headline-md font-headline-md text-[#0B1320]">Complete your profile</h2>
+<p class="text-body-md font-body-md text-[#44474c] mt-1">This helps us recommend the right programmes. You can change it later.</p>
+</div>
+<!-- Progress Indicator: 0 of 6 completed -->
+<div class="mb-8 pb-6 border-b border-[#F1F5F9]">
+<div class="flex justify-between items-center text-body-sm font-body-sm mb-2">
+<span class="font-medium text-[#0B1320]">Profile completion</span>
+<span class="font-telemetry-code text-[#64748B]">0 of 6 fields completed</span>
+</div>
+<!-- 6 segmented indicators -->
+<div class="grid grid-cols-6 gap-2">
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+</div>
+</div>
+<!-- Form Fields (All Optional) -->
+<form class="space-y-6">
+<!-- 1. Employer -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="emp-1">Employer</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] placeholder-[#64748B] bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="emp-1" placeholder="e.g. Lagos Commercial Bank" type="text"/>
+</div>
+<!-- 2. Job title -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="job-1">Job title</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] placeholder-[#64748B] bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="job-1" placeholder="e.g. Internal Auditor" type="text"/>
+</div>
+<!-- 3. Years of experience -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="exp-1">Years of experience</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 pr-10 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="exp-1">
+<option disabled="" selected="" value="">Select experience bracket</option>
+<option value="less-1">Less than 1 year</option>
+<option value="1-3">1 to 3 years</option>
+<option value="4-7">4 to 7 years</option>
+<option value="8-12">8 to 12 years</option>
+<option value="more-12">More than 12 years</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- 4. Certification goal (Chips) -->
+<div class="space-y-2">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">Certification goal</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    CISA
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    CISM
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    CRISC
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    AAIA
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    ACCA Data Analytics
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    IT Risk Fundamentals
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    IT Audit Fundamentals
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    Other
+                  </button>
+</div>
+</div>
+<!-- 5. ISACA member ID -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="isaca-1">ISACA member ID</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] placeholder-[#64748B] bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="isaca-1" placeholder="e.g. 1049281" type="text"/>
+<p class="text-[12px] font-body-sm text-[#64748B]">Only if you are an ISACA member</p>
+</div>
+<!-- 6. How did you hear about us? -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="source-1">How did you hear about us?</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 pr-10 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="source-1">
+<option disabled="" selected="" value="">Select an option</option>
+<option value="search">Search engine</option>
+<option value="linkedin">LinkedIn</option>
+<option value="colleague">Colleague or friend</option>
+<option value="isaca-event">ISACA Lagos Chapter event</option>
+<option value="email">Email</option>
+<option value="other">Other</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="pt-6 border-t border-[#F1F5F9] flex flex-col sm:flex-row items-center justify-between gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-6 py-2.5 rounded bg-[#CBD5E1] text-[#64748B] font-medium text-body-md cursor-not-allowed text-center" disabled="" type="button">
+                  Save and continue
+                </button>
+<a class="min-h-[44px] inline-flex items-center text-[#1D4ED8] hover:underline text-body-md font-medium" href="#">
+                  Skip for now
+                </a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 2: PARTLY FILLED (Desktop 1440px)     -->
+<!-- ========================================== -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white font-telemetry-code text-[12px] font-semibold rounded">STATE 2</span>
+<h2 class="text-title-md font-title-md text-[#0B1320]">Desktop 1440px Specification — Partly Filled (Ready for Submission)</h2>
+</div>
+<span class="text-body-sm font-telemetry-code text-[#047857] font-semibold">Progress: 3 of 6 fields completed (50%)</span>
+</div>
+<!-- 1440px Frame Emulation -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded overflow-hidden shadow-sm">
+<!-- Standard Public Top Bar -->
+<header class="bg-[#050A10] h-16 px-8 flex items-center justify-between border-b border-[#1E293B]">
+<div class="flex items-center gap-8">
+<div class="bg-white px-3 py-1 rounded-md flex items-center justify-center shadow-xs">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNiRuVAStkT8mJjuaDaSBw9YFeDHDGX4qxZMBn_ttlAA6erwKD64JSsOfyjclxDVZxewHfpqvm0UeAibeesOl5pBPoMu0Ed8mTKvIjuOYM4Vv0CJxJ3wuA1EAZjErtQ0E1-NbDY7GcSuaLXrenFvv_rC5_wClcmwt1I-g5bDqv9Qq59m-C7IdZBsSZMgU9EgVGA58x4GmpD1c8gBIQdeRHG0NJPe9tddtk68LjDOGxinuEr7PpLZ9SvKRJhicOp6TyZtM"/>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Programmes</a>
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Workshops</a>
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Log in</a>
+</nav>
+</div>
+<div class="flex items-center">
+<span class="text-body-sm font-body-sm font-medium text-white tracking-wide">Chinedu Eze</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="py-12 px-6 flex justify-center bg-[#F8FAFC]">
+<div class="w-full max-w-[640px] bg-white border border-[#E2E8F0] rounded p-8 sm:p-10 shadow-[0_1px_3px_0_rgba(15,23,42,0.03)]">
+<div class="mb-6">
+<h2 class="text-headline-md font-headline-md text-[#0B1320]">Complete your profile</h2>
+<p class="text-body-md font-body-md text-[#44474c] mt-1">This helps us recommend the right programmes. You can change it later.</p>
+</div>
+<!-- Progress Indicator: 3 of 6 completed -->
+<div class="mb-8 pb-6 border-b border-[#F1F5F9]">
+<div class="flex justify-between items-center text-body-sm font-body-sm mb-2">
+<span class="font-medium text-[#0B1320]">Profile completion</span>
+<span class="font-telemetry-code text-[#0B1320] font-semibold">3 of 6 fields completed</span>
+</div>
+<div class="grid grid-cols-6 gap-2">
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+</div>
+</div>
+<form class="space-y-6">
+<!-- 1. Employer (Filled) -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="emp-2">Employer</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] font-medium bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="emp-2" type="text" value="Lagos Commercial Bank"/>
+</div>
+<!-- 2. Job title (Filled) -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="job-2">Job title</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] font-medium bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="job-2" type="text" value="Internal Auditor"/>
+</div>
+<!-- 3. Years of experience (Empty) -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="exp-2">Years of experience</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 pr-10 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="exp-2">
+<option disabled="" selected="" value="">Select experience bracket</option>
+<option value="less-1">Less than 1 year</option>
+<option value="1-3">1 to 3 years</option>
+<option value="4-7">4 to 7 years</option>
+<option value="8-12">8 to 12 years</option>
+<option value="more-12">More than 12 years</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- 4. Certification goal (Filled with CISA & CRISC selected) -->
+<div class="space-y-2">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">Certification goal</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<!-- Selected: CISA -->
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-[#0B1320] text-white border border-[#0B1320] flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px] text-white">check</span>
+                    CISA
+                  </button>
+<!-- Unselected: CISM -->
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    CISM
+                  </button>
+<!-- Selected: CRISC -->
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-[#0B1320] text-white border border-[#0B1320] flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px] text-white">check</span>
+                    CRISC
+                  </button>
+<!-- Unselected others -->
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    AAIA
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    ACCA Data Analytics
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    IT Risk Fundamentals
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    IT Audit Fundamentals
+                  </button>
+<button class="min-h-[44px] px-3.5 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] hover:bg-[#F8FAFC] flex items-center gap-1.5" type="button">
+                    Other
+                  </button>
+</div>
+</div>
+<!-- 5. ISACA member ID (Empty) -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="isaca-2">ISACA member ID</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] placeholder-[#64748B] bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="isaca-2" placeholder="e.g. 1049281" type="text"/>
+<p class="text-[12px] font-body-sm text-[#64748B]">Only if you are an ISACA member</p>
+</div>
+<!-- 6. How did you hear about us? (Empty) -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="source-2">How did you hear about us?</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 pr-10 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB]" id="source-2">
+<option disabled="" selected="" value="">Select an option</option>
+<option value="search">Search engine</option>
+<option value="linkedin">LinkedIn</option>
+<option value="colleague">Colleague or friend</option>
+<option value="isaca-event">ISACA Lagos Chapter event</option>
+<option value="email">Email</option>
+<option value="other">Other</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- Enabled Action State -->
+<div class="pt-6 border-t border-[#F1F5F9] flex flex-col sm:flex-row items-center justify-between gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-8 py-2.5 rounded bg-[#0B1320] text-white hover:bg-[#0F172A] font-medium text-body-md transition-colors text-center shadow-xs" type="button">
+                  Save and continue
+                </button>
+<a class="min-h-[44px] inline-flex items-center text-[#1D4ED8] hover:underline text-body-md font-medium" href="#">
+                  Skip for now
+                </a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 3: DROPDOWN OPEN (Desktop 1440px)     -->
+<!-- ========================================== -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white font-telemetry-code text-[12px] font-semibold rounded">STATE 3</span>
+<h2 class="text-title-md font-title-md text-[#0B1320]">Desktop 1440px Specification — Multi-select Dropdown Menu Open</h2>
+</div>
+<span class="text-body-sm font-telemetry-code text-[#64748B]">Popover interaction state on Certification Goal</span>
+</div>
+<!-- 1440px Frame Emulation -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded overflow-hidden shadow-sm">
+<!-- Standard Public Top Bar -->
+<header class="bg-[#050A10] h-16 px-8 flex items-center justify-between border-b border-[#1E293B]">
+<div class="flex items-center gap-8">
+<div class="bg-white px-3 py-1 rounded-md flex items-center justify-center shadow-xs">
+<img alt="A.J. SILICON" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk0cALM5g0VHsP-B7TjgbReAapTCcvdTl4OLM6HkE6uyMcCdfH-TrZz86oMsoGxispFwFV0bEdnLH_rdwuwAL32lGtUHSudUcFW7EKJdtwvltFQ5fRZQAC8Zh_Rc6Xr4kco-tvnzslKNyjTYpuUxALe6GuEpCboeTcwjmfBLaNET50T7vhZ6Z0xSi7SqnILV91XcHa9bRrxB9vbTlbsbWRa3KaKDwhMUOicB856x7cGoX_U01iLVJFvfYCWo7Hl8tFJew"/>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Programmes</a>
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Workshops</a>
+<a class="text-body-sm font-body-sm text-[#93C5FD] hover:text-white transition-colors" href="#">Log in</a>
+</nav>
+</div>
+<div class="flex items-center">
+<span class="text-body-sm font-body-sm font-medium text-white tracking-wide">Chinedu Eze</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="py-12 px-6 flex justify-center bg-[#F8FAFC]">
+<div class="w-full max-w-[640px] bg-white border border-[#E2E8F0] rounded p-8 sm:p-10 shadow-[0_1px_3px_0_rgba(15,23,42,0.03)]">
+<div class="mb-6">
+<h2 class="text-headline-md font-headline-md text-[#0B1320]">Complete your profile</h2>
+<p class="text-body-md font-body-md text-[#44474c] mt-1">This helps us recommend the right programmes. You can change it later.</p>
+</div>
+<!-- Progress Indicator -->
+<div class="mb-8 pb-6 border-b border-[#F1F5F9]">
+<div class="flex justify-between items-center text-body-sm font-body-sm mb-2">
+<span class="font-medium text-[#0B1320]">Profile completion</span>
+<span class="font-telemetry-code text-[#0B1320] font-semibold">3 of 6 fields completed</span>
+</div>
+<div class="grid grid-cols-6 gap-2">
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+</div>
+</div>
+<form class="space-y-6">
+<!-- 1. Employer -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">Employer</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] font-medium bg-white border border-[#64748B] rounded focus:outline-none" type="text" value="Lagos Commercial Bank"/>
+</div>
+<!-- 2. Job title -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">Job title</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] font-medium bg-white border border-[#64748B] rounded focus:outline-none" type="text" value="Internal Auditor"/>
+</div>
+<!-- 3. Years of experience -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">Years of experience</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 pr-10 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none">
+<option disabled="" selected="" value="">Select experience bracket</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- 4. Certification goal (WITH OPEN DROPDOWN POPOVER) -->
+<div class="space-y-2 relative">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">Certification goal</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<!-- Input trigger showing selected chips -->
+<div class="w-full min-h-[44px] p-2 bg-white border-2 border-[#2563EB] rounded flex flex-wrap items-center justify-between gap-2 shadow-sm">
+<div class="flex flex-wrap gap-1.5 items-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#0B1320] text-white text-[12px] font-medium rounded">
+                      CISA
+                      <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#0B1320] text-white text-[12px] font-medium rounded">
+                      CRISC
+                      <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="text-body-sm text-[#64748B] pl-1">Select certifications...</span>
+</div>
+<span class="material-symbols-outlined text-[#2563EB]">expand_less</span>
+</div>
+<!-- Open Dropdown Container -->
+<div class="absolute left-0 right-0 top-full mt-1.5 bg-white border border-[#64748B] rounded shadow-sm z-30 py-2 divide-y divide-[#F1F5F9]">
+<div class="p-2 space-y-1 max-h-64 overflow-y-auto">
+<!-- [x] CISA -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input checked="" class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0 accent-[#0B1320]" type="checkbox"/>
+<span class="text-body-md font-medium text-[#0B1320]">CISA</span>
+<span class="text-[11px] font-telemetry-code text-[#64748B] ml-auto">Selected</span>
+</label>
+<!-- [ ] CISM -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-md text-[#0B1320]">CISM</span>
+</label>
+<!-- [x] CRISC -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input checked="" class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0 accent-[#0B1320]" type="checkbox"/>
+<span class="text-body-md font-medium text-[#0B1320]">CRISC</span>
+<span class="text-[11px] font-telemetry-code text-[#64748B] ml-auto">Selected</span>
+</label>
+<!-- [ ] AAIA -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-md text-[#0B1320]">AAIA</span>
+</label>
+<!-- [ ] ACCA Data Analytics -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-md text-[#0B1320]">ACCA Data Analytics</span>
+</label>
+<!-- [ ] IT Risk Fundamentals -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-md text-[#0B1320]">IT Risk Fundamentals</span>
+</label>
+<!-- [ ] IT Audit Fundamentals -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-md text-[#0B1320]">IT Audit Fundamentals</span>
+</label>
+<!-- [ ] Other -->
+<label class="flex items-center gap-3 px-3 py-2 hover:bg-[#F8FAFC] rounded cursor-pointer min-h-[44px]">
+<input class="w-4 h-4 text-[#0B1320] border-[#64748B] rounded focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-md text-[#0B1320]">Other</span>
+</label>
+</div>
+<div class="p-2 bg-[#F8FAFC] flex justify-between items-center text-[12px] font-body-sm text-[#64748B]">
+<span>2 certifications selected</span>
+<button class="text-[#1D4ED8] font-medium hover:underline" type="button">Done</button>
+</div>
+</div>
+</div>
+<!-- 5. ISACA member ID -->
+<div class="space-y-1.5 pt-4">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">ISACA member ID</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3.5 text-body-md text-[#0B1320] placeholder-[#64748B] bg-white border border-[#64748B] rounded" placeholder="e.g. 1049281" type="text"/>
+<p class="text-[12px] font-body-sm text-[#64748B]">Only if you are an ISACA member</p>
+</div>
+<!-- 6. How did you hear about us? -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">How did you hear about us?</label>
+<span class="text-[12px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3.5 pr-10 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none">
+<option disabled="" selected="" value="">Select an option</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- Action State -->
+<div class="pt-6 border-t border-[#F1F5F9] flex flex-col sm:flex-row items-center justify-between gap-4">
+<button class="w-full sm:w-auto min-h-[44px] px-8 py-2.5 rounded bg-[#0B1320] text-white font-medium text-body-md" type="button">
+                  Save and continue
+                </button>
+<a class="min-h-[44px] inline-flex items-center text-[#1D4ED8] hover:underline text-body-md font-medium" href="#">
+                  Skip for now
+                </a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- STATE 4: MOBILE 390PX (Partly Filled)       -->
+<!-- ========================================== -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 bg-[#0B1320] text-white font-telemetry-code text-[12px] font-semibold rounded">STATE 4</span>
+<h2 class="text-title-md font-title-md text-[#0B1320]">Mobile 390px Specification — Partly Filled (Strict 390px, No Device Chrome)</h2>
+</div>
+<span class="text-body-sm font-telemetry-code text-[#64748B]">Width: 390px viewport</span>
+</div>
+<!-- Centered 390px frame with no status bar, no home indicator -->
+<div class="flex justify-center">
+<div class="w-[390px] bg-[#F8FAFC] border border-[#CBD5E1] rounded overflow-hidden shadow-sm">
+<!-- Simple Public Top Bar for Mobile -->
+<header class="bg-[#050A10] h-16 px-4 flex items-center justify-between border-b border-[#1E293B]">
+<div class="bg-white px-2.5 py-1 rounded flex items-center justify-center shadow-xs">
+<img alt="A.J. SILICON" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa_vYcAJAZph6aL0Vo3-HXILoQMadrjboY5y5bT1I1BfBXgKEsv-6r6-PaLLgcrjm0-hA2yIg9_P3oy2Yvq08uGmW3BFvKEWixhfnrn_DQ6iP5NDGnSthyc4dZ-1eDQIOgVjF7k2vNuNwsY4AyDIWt6qeZukGCrueEVndC22ps6e5XFutV5_54tebuAQdVoUd-PzK28OiI6UOY1-ZzUPKFcH3etsWbIRdUXiukO5RD2zWad6ZLZNiYtNQ81EwhmHNhz7o"/>
+</div>
+<div class="flex items-center">
+<span class="text-[13px] font-body-sm font-medium text-white tracking-wide truncate max-w-[140px]">Chinedu Eze</span>
+</div>
+</header>
+<!-- Mobile Content Container -->
+<div class="p-4 bg-[#F8FAFC]">
+<div class="bg-white border border-[#E2E8F0] rounded p-5 shadow-[0_1px_3px_0_rgba(15,23,42,0.03)]">
+<!-- Heading -->
+<div class="mb-5">
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-[#0B1320]">Complete your profile</h2>
+<p class="text-body-sm font-body-sm text-[#44474c] mt-1">This helps us recommend the right programmes. You can change it later.</p>
+</div>
+<!-- Progress Indicator: 3 of 6 fields completed -->
+<div class="mb-6 pb-4 border-b border-[#F1F5F9]">
+<div class="flex justify-between items-center text-[12px] font-body-sm mb-2">
+<span class="font-medium text-[#0B1320]">Profile completion</span>
+<span class="font-telemetry-code text-[#0B1320] font-semibold">3 of 6 completed</span>
+</div>
+<div class="grid grid-cols-6 gap-1.5">
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-[#0B1320]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+<div class="h-2 rounded-[1px] bg-white border border-[#64748B]"></div>
+</div>
+</div>
+<!-- Form Fields -->
+<form class="space-y-5">
+<!-- 1. Employer -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="m-emp">Employer</label>
+<span class="text-[11px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3 text-body-md text-[#0B1320] font-medium bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB]" id="m-emp" type="text" value="Lagos Commercial Bank"/>
+</div>
+<!-- 2. Job title -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="m-job">Job title</label>
+<span class="text-[11px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3 text-body-md text-[#0B1320] font-medium bg-white border border-[#64748B] rounded focus:outline-none focus:ring-1 focus:ring-[#2563EB]" id="m-job" type="text" value="Internal Auditor"/>
+</div>
+<!-- 3. Years of experience -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="m-exp">Years of experience</label>
+<span class="text-[11px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3 pr-9 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none" id="m-exp">
+<option disabled="" selected="" value="">Select experience</option>
+<option value="less-1">Less than 1 year</option>
+<option value="1-3">1 to 3 years</option>
+<option value="4-7">4 to 7 years</option>
+<option value="8-12">8 to 12 years</option>
+<option value="more-12">More than 12 years</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- 4. Certification goal (Chips) -->
+<div class="space-y-1.5">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]">Certification goal</label>
+<span class="text-[11px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-0.5">
+<!-- Selected: CISA -->
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-[#0B1320] text-white border border-[#0B1320] flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[15px] text-white">check</span>
+                      CISA
+                    </button>
+<!-- Unselected: CISM -->
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] flex items-center gap-1.5" type="button">
+                      CISM
+                    </button>
+<!-- Selected: CRISC -->
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-[#0B1320] text-white border border-[#0B1320] flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[15px] text-white">check</span>
+                      CRISC
+                    </button>
+<!-- Other Chips -->
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] flex items-center gap-1.5" type="button">
+                      AAIA
+                    </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] flex items-center gap-1.5" type="button">
+                      ACCA Data Analytics
+                    </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] flex items-center gap-1.5" type="button">
+                      IT Risk Fundamentals
+                    </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] flex items-center gap-1.5" type="button">
+                      IT Audit Fundamentals
+                    </button>
+<button class="min-h-[44px] px-3 py-2 rounded text-body-sm font-medium bg-white text-[#0B1320] border border-[#64748B] flex items-center gap-1.5" type="button">
+                      Other
+                    </button>
+</div>
+</div>
+<!-- 5. ISACA member ID -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="m-isaca">ISACA member ID</label>
+<span class="text-[11px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<input class="w-full min-h-[44px] px-3 text-body-md text-[#0B1320] placeholder-[#64748B] bg-white border border-[#64748B] rounded" id="m-isaca" placeholder="e.g. 1049281" type="text"/>
+<p class="text-[11px] font-body-sm text-[#64748B]">Only if you are an ISACA member</p>
+</div>
+<!-- 6. How did you hear about us? -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<label class="text-body-sm font-body-sm font-medium text-[#0B1320]" for="m-source">How did you hear about us?</label>
+<span class="text-[11px] font-body-sm text-[#64748B]">Optional</span>
+</div>
+<div class="relative">
+<select class="w-full min-h-[44px] px-3 pr-9 text-body-md text-[#64748B] bg-white border border-[#64748B] rounded appearance-none" id="m-source">
+<option disabled="" selected="" value="">Select an option</option>
+<option value="search">Search engine</option>
+<option value="linkedin">LinkedIn</option>
+<option value="colleague">Colleague or friend</option>
+<option value="isaca-event">ISACA Lagos Chapter event</option>
+<option value="email">Email</option>
+<option value="other">Other</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B]">expand_more</span>
+</div>
+</div>
+<!-- Mobile Action Stack -->
+<div class="pt-5 border-t border-[#F1F5F9] flex flex-col gap-3">
+<button class="w-full min-h-[44px] py-2.5 rounded bg-[#0B1320] text-white font-medium text-body-md text-center shadow-xs" type="button">
+                    Save and continue
+                  </button>
+<a class="min-h-[44px] w-full flex items-center justify-center text-[#1D4ED8] hover:underline text-body-md font-medium text-center" href="#">
+                    Skip for now
+                  </a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Institutional Specification Footer -->
+<footer class="max-w-[1480px] mx-auto mt-16 pt-6 border-t border-[#CBD5E1] flex flex-col sm:flex-row justify-between items-center text-body-sm font-telemetry-code text-[#64748B] gap-4">
+<div>
+      A.J. Silicon Learning Platform Specification • Lagos, Nigeria
+    </div>
+<div class="flex items-center gap-6">
+<span>Touch Target Spec: 44px strictly compliant</span>
+<span>Color System: Non-neon high assurance</span>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>

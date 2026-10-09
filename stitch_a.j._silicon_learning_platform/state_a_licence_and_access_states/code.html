@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-100" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform — Licence &amp; Access States (STATE-A Specification Board)</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed": "#dce1ff",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#b7c4ff",
+            "primary-fixed": "#dbe2f5",
+            "tertiary": "#000000",
+            "primary": "#000000",
+            "surface-container": "#eaedff",
+            "outline": "#75777c",
+            "on-secondary-container": "#fffbff",
+            "on-primary-container": "#7c8495",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-tertiary-fixed": "#281809",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-bright": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#575f6e",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-container": "#997f6a",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#141c29",
+            "surface": "#faf8ff",
+            "primary-container": "#141c29",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-surface": "#131b2e",
+            "inverse-surface": "#283044",
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed-variant": "#3f4756",
+            "secondary": "#1d4ed8",
+            "tertiary-fixed": "#fddcc4",
+            "secondary-container": "#4069f2",
+            "on-surface-variant": "#45474c",
+            "tertiary-container": "#281809",
+            "on-secondary-fixed": "#001551",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "background": "#faf8ff",
+            "outline-variant": "#c5c6cc",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-primary": "#bfc6d9"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "2rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem"
+          },
+          fontFamily: {
+            "headline-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+    }
+    .btn-focus {
+      outline: none;
+    }
+    .btn-focus:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="min-h-full bg-slate-100 text-on-surface antialiased p-6 md:p-10 space-y-12">
+<!-- Board Header (Specification Metadata & Context) -->
+<header class="max-w-[1440px] mx-auto bg-surface-container-lowest border border-outline-variant p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center h-6 px-2.5 text-label-sm font-label-sm bg-surface-container text-secondary border border-secondary rounded">SPECIFICATION STATE-A</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Document ID: AJS-SPEC-2026-REV3</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight mt-1">Licence &amp; Access States (Enterprise Student Shell)</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Institutional IT Audit &amp; Cybersecurity Platform · Candidate: <strong class="text-on-surface">Chinedu Eze</strong> (AJS-14-8812) · Target: Desktop 1440px &amp; 390px Mobile Viewport</p>
+</div>
+<!-- State quick jump navigation -->
+<div class="flex flex-wrap items-center gap-2 text-label-sm font-label-sm">
+<a class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-on-surface rounded border border-outline-variant transition-colors" href="#state-1">1. Licence Expired</a>
+<a class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-on-surface rounded border border-outline-variant transition-colors" href="#state-2">2. Upcoming Cohort</a>
+<a class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-on-surface rounded border border-outline-variant transition-colors" href="#state-3">3. Device Limit (2/2)</a>
+<a class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-on-surface rounded border border-outline-variant transition-colors" href="#state-mobile">4. Mobile 390px</a>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- STATE 1: LICENCE EXPIRED (DESKTOP FULL SHELL)                             -->
+<!-- ========================================================================= -->
+<section class="max-w-[1440px] mx-auto space-y-3" id="state-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-error text-on-primary text-label-sm font-headline-sm">1</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">State 1: Licence Expired (Primary Access Blocked)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Rendered in Standard Candidate Application Shell (1440px Canvas)</span>
+</div>
+<!-- Application Shell Wrapper -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<!-- TopNavBar Component (Shared Anchor) -->
+<header class="bg-primary-container text-on-primary flex justify-between items-center w-full px-6 h-16 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<!-- Logo plate -->
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center">
+<img alt="A.J. Silicon" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBAq0PBmmhYWhBY7-owMMfOPacIm6F3PLpjQ1gLvsl35Oo_rDwHW1ntQqLGHldmn48J7BxLw7-2W_MV80C1g7202gqkbrEwUZT-2JPYkgDaVOzMr73mR6Soj4U-oRhbHQvRuIISnVOOd9XISiVPkfZ3xb9m-8amzByNuwb5bVkIDpDUt7EwSae9yR168-jw0Jy5MLJ4BRj2snGIJOQNzGgOqHoON8tXIhcRZwDlgg5fpna4VqH9U-eqA"/>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<span class="text-label-md font-label-md text-on-primary font-semibold hidden md:inline">IT Audit &amp; Assurance Academy</span>
+</div>
+<!-- Trailing candidate metadata -->
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-primary-container hover:text-on-primary transition-colors btn-focus rounded" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Help &amp; Support" class="w-11 h-11 flex items-center justify-center text-on-primary-container hover:text-on-primary transition-colors btn-focus rounded" type="button">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="w-9 h-9 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-on-primary text-label-sm font-label-md font-semibold">
+              CE
+            </div>
+<div class="text-left hidden lg:block leading-tight">
+<div class="text-label-md font-label-md text-on-primary font-medium">Chinedu Eze</div>
+<div class="text-label-sm font-label-sm text-on-primary-container">ID: AJS-14-8812</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Shell Body: SideNavBar + Canvas -->
+<div class="flex min-h-[640px]">
+<!-- SideNav component (Shared Anchor) -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant p-4 flex flex-col justify-between hidden md:flex">
+<div>
+<!-- Cohort Header Badge -->
+<div class="pb-4 mb-4 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<span class="text-label-md font-label-md text-primary font-semibold">CISA Exam Prep</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-1 leading-snug">Cohort 14: 12 Oct - 18 Dec 2026, Virtual</p>
+</div>
+<!-- Vertical Navigation Tabs -->
+<nav class="space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span>Practice Exams</span>
+</a>
+<!-- Active state mapped directly to 'Extend Access' due to expired status -->
+<a class="bg-surface-container text-secondary font-label-md text-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="hourglass_top">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- SideNav Footer -->
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 flex items-center gap-3 font-label-md text-label-md rounded" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 flex items-center gap-3 font-label-md text-label-md rounded" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas (Work Area) -->
+<main class="flex-1 bg-surface-bright p-6 lg:p-10 flex flex-col justify-center items-center">
+<div class="w-full max-w-3xl space-y-6">
+<!-- Danger Header Container -->
+<div class="bg-red-50 border border-error rounded-xl p-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 min-w-[2.5rem] rounded-lg bg-red-100 flex items-center justify-center text-error border border-red-200">
+<span class="material-symbols-outlined text-2xl" data-icon="lock">lock</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h3 class="text-headline-md font-headline-md text-error tracking-tight">Enrolment Licence Expired</h3>
+<span class="inline-flex items-center h-6 px-2 text-label-sm font-label-sm bg-red-100 text-error border border-error rounded">Access Paused</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed pt-1">
+                    Your 90-day study licence for <strong class="font-semibold text-primary">CISA Exam Prep (Cohort 14)</strong> expired on <strong class="font-semibold text-primary">30 Sep 2026</strong>. Access to DRM video lectures, protected slides, and practice exams is currently paused.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Detailed Status Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant mb-6">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Academic Record</span>
+<h4 class="text-headline-sm font-headline-sm text-primary">Enrolment &amp; Progress Summary</h4>
+</div>
+<span class="inline-flex items-center h-6 px-2.5 text-label-sm font-label-sm bg-red-50 text-error border border-error rounded font-medium">Expired 00:00 WAT</span>
+</div>
+<!-- 4-Column Metric Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-2">
+<div class="space-y-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Programme Name</span>
+<span class="text-body-md font-body-md font-semibold text-primary block">CISA Exam Prep</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Cohort 14 Virtual</span>
+</div>
+<div class="space-y-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Enrolment Start</span>
+<span class="text-body-md font-body-md font-semibold text-primary block">01 Jul 2026</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">09:00 WAT</span>
+</div>
+<div class="space-y-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Expiry Date</span>
+<span class="text-body-md font-body-md font-semibold text-error block">30 Sep 2026</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">23:59 WAT</span>
+</div>
+<div class="space-y-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Completed Lessons</span>
+<span class="text-body-md font-body-md font-semibold text-primary block">34 of 42 lessons</span>
+<span class="text-label-sm font-label-sm text-secondary font-medium">81% Complete</span>
+</div>
+</div>
+<!-- Progress bar line -->
+<div class="mt-6 pt-4 border-t border-outline-variant flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Completed curriculum coursework remains archived on record.</span>
+<span class="text-label-sm font-label-sm font-medium text-primary">8 lessons remaining</span>
+</div>
+</div>
+<!-- Action Controls (Standard 44px Buttons) -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+<button class="h-11 px-6 bg-primary-container text-on-primary hover:bg-slate-800 rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 btn-focus font-medium" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Extend access (+30 days for ₦45,000)</span>
+</button>
+<button class="h-11 px-6 bg-surface-container-lowest border border-slate-500 text-on-surface hover:bg-slate-50 rounded-lg text-label-md font-label-md flex items-center justify-center btn-focus font-medium" type="button">
+                View all extension plans
+              </button>
+<div class="sm:ml-auto flex items-center justify-center py-2 sm:py-0">
+<a class="text-secondary hover:underline text-label-md font-label-md flex items-center gap-1.5 btn-focus rounded py-1 px-2 font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+<span>Download certificate of attendance (if completed)</span>
+</a>
+</div>
+</div>
+<!-- Institutional Support Reference Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex items-center gap-3 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" data-icon="contact_support">contact_support</span>
+<p>
+                Have corporate sponsorship or need an invoice? Contact <a class="text-secondary hover:underline font-medium" href="mailto:support@ajsilicon.com">support@ajsilicon.com</a> or call <a class="text-secondary hover:underline font-medium" href="tel:+2348033000000">+234 803 300 0000</a>.
+              </p>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE 2: LICENCE NOT STARTED (UPCOMING COHORT)                            -->
+<!-- ========================================================================= -->
+<section class="max-w-[1440px] mx-auto space-y-3 pt-6" id="state-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-secondary text-on-primary text-label-sm font-headline-sm">2</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">State 2: Licence Not Started (Upcoming Cohort Countdown)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Pre-term Orientation &amp; Readiness State</span>
+</div>
+<!-- Application Canvas with Shell Header -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<!-- Mini Shell Bar for Context -->
+<div class="bg-primary-container text-on-primary flex justify-between items-center px-6 h-14 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-lowest h-8 px-2 py-0.5 rounded flex items-center">
+<img alt="A.J. Silicon" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjjPnYDyjC5xXJtMc2RT4GutkxjBUODjAaIE3eoCoUTHV8F0nmYTsABRw14uQnWUSrobjX1g_o5fpPEe3sBcLjJKB5byBOqmSCZfcgRRMLFdFfdvehwvQagyTXejgYnE9s8i3lMVoCNXOI-TGDGf_x5LDIGXwQ09Fudvmd-gF8AvUUgzwQ02PBdz9VUgumbGdFZ8_wnn1EwSZYVcadBSJq_-OOD0rnijDBRftzkWFbvMEWsYENnxLN3Q"/>
+</div>
+<span class="text-label-md font-label-md text-on-primary font-medium">AAIA Artificial Intelligence Auditor · Cohort 03</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-primary-container">
+<span class="material-symbols-outlined text-lg" data-icon="lock_clock">lock_clock</span>
+<span>Access Schedule Pending</span>
+</div>
+</div>
+<!-- Main State Content Area -->
+<div class="p-8 lg:p-12 bg-surface-bright">
+<div class="max-w-4xl mx-auto space-y-6">
+<!-- Info/Calendar Banner Container -->
+<div class="bg-blue-50 border border-secondary rounded-xl p-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 min-w-[2.5rem] rounded-lg bg-blue-100 flex items-center justify-center text-secondary border border-blue-200">
+<span class="material-symbols-outlined text-2xl" data-icon="calendar_clock">calendar_clock</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h3 class="text-headline-md font-headline-md text-secondary tracking-tight">Cohort Begins in 7 Days</h3>
+<span class="inline-flex items-center h-6 px-2.5 text-label-sm font-label-sm bg-blue-100 text-secondary border border-secondary rounded font-medium">Seat Confirmed</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed pt-1">
+                  Your enrolment in <strong class="font-semibold text-primary">AAIA Artificial Intelligence Auditor (Cohort 03)</strong> is confirmed, but the cohort has not commenced yet. Learning materials will unlock automatically on orientation day.
+                </p>
+</div>
+</div>
+</div>
+<!-- Schedule & Faculty Verification Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 space-y-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-xl" data-icon="event">event</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider font-medium">Start Date &amp; Time</span>
+</div>
+<div class="text-headline-sm font-headline-sm text-primary">12 Oct 2026</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">09:00 West Africa Time (WAT)</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 space-y-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-xl" data-icon="video_camera_front">video_camera_front</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider font-medium">Orientation Webinar</span>
+</div>
+<div class="text-headline-sm font-headline-sm text-primary">Saturday 10 Oct 2026</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">10:00 WAT (Zoom Link via email)</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 space-y-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-xl" data-icon="school">school</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider font-medium">Faculty Lead</span>
+</div>
+<div class="text-headline-sm font-headline-sm text-primary">Dr. O. Adeleke</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">CISA, CRISC, Fellow ISACA</div>
+</div>
+</div>
+<!-- Preparatory Actions Table/Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h4 class="text-headline-sm font-headline-sm text-primary mb-4 pb-3 border-b border-outline-variant">
+              Recommended Candidate Preparatory Actions
+            </h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-slate-50/50 hover:bg-slate-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div>
+<span class="text-label-md font-label-md text-primary font-medium block">Download Pre-Reading Syllabus (PDF)</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Domain 1: Governance of Enterprise AI Systems (1.4 MB)</span>
+</div>
+</div>
+<button class="h-11 px-4 bg-surface-container-lowest border border-slate-500 hover:bg-slate-100 text-on-surface rounded text-label-sm font-label-md btn-focus" type="button">
+                  Download
+                </button>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-slate-50/50 hover:bg-slate-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit_calendar">edit_calendar</span>
+<div>
+<span class="text-label-md font-label-md text-primary font-medium block">Add Cohort Schedule to Calendar (.ics)</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Sync 8 weekend lecture sessions to Outlook or Google Calendar</span>
+</div>
+</div>
+<button class="h-11 px-4 bg-surface-container-lowest border border-slate-500 hover:bg-slate-100 text-on-surface rounded text-label-sm font-label-md btn-focus" type="button">
+                  Sync Calendar
+                </button>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-slate-50/50 hover:bg-slate-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="security_update_good">security_update_good</span>
+<div>
+<span class="text-label-md font-label-md text-primary font-medium block">Verify Registered Browser/Device</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Ensure current computer complies with DRM player hardware acceleration</span>
+</div>
+</div>
+<button class="h-11 px-4 bg-surface-container-lowest border border-slate-500 hover:bg-slate-100 text-on-surface rounded text-label-sm font-label-md btn-focus" type="button">
+                  Check Browser
+                </button>
+</div>
+</div>
+</div>
+<!-- Locked Classroom CTA Banner -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-slate-100 border border-outline-variant rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="lock">lock</span>
+<span class="text-body-sm font-body-sm text-on-surface">DRM video vault and lab simulators open on official start date.</span>
+</div>
+<!-- Primary disabled CTA with countdown badge -->
+<button class="h-11 px-6 bg-slate-300 text-slate-600 rounded-lg text-label-md font-label-md cursor-not-allowed flex items-center gap-2 border border-slate-400 font-medium" disabled="" type="button">
+<span class="material-symbols-outlined text-base" data-icon="timer">timer</span>
+<span>Classroom Opens 12 Oct 2026 (Countdown: 6d 14h 22m)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE 3: DEVICE LIMIT REACHED (SLOT OCCUPANCY FULL)                       -->
+<!-- ========================================================================= -->
+<section class="max-w-[1440px] mx-auto space-y-3 pt-6" id="state-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-on-primary text-label-sm font-headline-sm">3</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">State 3: Device Registration Limit Reached (Security Policy Enforcement)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Anti-Piracy &amp; Concurrent Login Protection</span>
+</div>
+<!-- Application Canvas with Shell Header -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<!-- Mini Shell Header -->
+<div class="bg-primary-container text-on-primary flex justify-between items-center px-6 h-14 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-lowest h-8 px-2 py-0.5 rounded flex items-center">
+<img alt="A.J. Silicon" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC51z5rdohadprQJZQt0zTJ9Ovyqmako0n4uePrEpSTlRzDVxQySpISu8c5sJahE1jW94brOd4vfn1LlDFxsWsfaCipCufZb54kzrn5ZwgauNNvfAk7GLCrAIBGQFOzKsqSeLZVAXX5xYD1TrDMU4UZ2vT9cCQhCCJTJIo6UU8yQFUQ52dfRBqS97yNmLwAKU1CQnxSXOer_cRY3vM-wfvG9HMAt5R8F_fl75DB3UvDTUN13fAVBHGTVw"/>
+</div>
+<span class="text-label-md font-label-md text-on-primary font-medium">Hardware Identity Authentication Gateway</span>
+</div>
+<span class="inline-flex items-center h-6 px-2 text-label-sm font-label-sm bg-amber-500/20 text-amber-300 border border-amber-400/40 rounded">Security Enforcement</span>
+</div>
+<div class="p-8 lg:p-12 bg-surface-bright">
+<div class="max-w-3xl mx-auto space-y-6">
+<!-- Warning Header Container -->
+<div class="bg-amber-50 border border-amber-600 rounded-xl p-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 min-w-[2.5rem] rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 border border-amber-300">
+<span class="material-symbols-outlined text-2xl" data-icon="devices">devices</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h3 class="text-headline-md font-headline-md text-amber-800 tracking-tight">Device Registration Limit Reached (2 of 2 Devices Active)</h3>
+<span class="inline-flex items-center h-6 px-2 text-label-sm font-label-sm bg-amber-100 text-amber-800 border border-amber-600 rounded font-medium">Slots Occupied</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed pt-1">
+                  To prevent unauthorized sharing and protect examination intellectual property, A.J. Silicon permits a maximum of 2 active registered browsers per candidate account.
+                </p>
+</div>
+</div>
+</div>
+<!-- Active Registered Devices List Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+<div>
+<h4 class="text-headline-sm font-headline-sm text-primary">Registered Hardware Slots</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Review authorized browsers currently holding cryptographic access tokens.</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold bg-slate-100 px-2.5 py-1 rounded border border-outline-variant">Quota: 2/2</span>
+</div>
+<div class="space-y-3">
+<!-- Device 1: Current Browser -->
+<div class="p-4 rounded-xl border border-outline-variant bg-white flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700">
+<span class="material-symbols-outlined text-xl" data-icon="laptop_mac">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-body-md font-body-md font-semibold text-primary">Chrome 129 on macOS</span>
+<span class="inline-flex items-center h-5 px-2 text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-700 rounded font-medium">Active Now (Current Browser)</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                      Lagos, Nigeria · IP: 102.89.44.*** · Registered 01 Jul 2026
+                    </div>
+</div>
+</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-emerald-700 text-base" data-icon="check_circle">check_circle</span>
+<span>Primary Slot</span>
+</div>
+</div>
+<!-- Device 2: Mobile device candidate -->
+<div class="p-4 rounded-xl border border-outline-variant bg-white flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" data-icon="smartphone">smartphone</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-body-md font-body-md font-semibold text-primary">Safari 18 on iOS (iPhone 15)</span>
+<span class="inline-flex items-center h-5 px-2 text-label-sm font-label-sm bg-slate-100 text-on-surface-variant border border-outline-variant rounded">Secondary Device</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                      Ikeja, Lagos · Last active yesterday at 18:40 WAT
+                    </div>
+</div>
+</div>
+<div>
+<button class="h-11 px-4 text-error bg-red-50 hover:bg-red-100 border border-error rounded-lg text-label-sm font-label-md flex items-center gap-1.5 btn-focus" type="button">
+<span class="material-symbols-outlined text-base" data-icon="delete">delete</span>
+<span>De-register Device</span>
+</button>
+</div>
+</div>
+</div>
+<!-- De-registration Policy Warning Box -->
+<div class="p-4 bg-slate-50 border border-outline-variant rounded-lg flex items-start gap-3 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-amber-700 text-xl" data-icon="info">info</span>
+<div>
+<strong class="font-semibold text-on-surface">Institutional Audit Policy:</strong> De-registering a device allows you to register this new device. You can switch devices a maximum of 2 times per academic cohort term.
+              </div>
+</div>
+</div>
+<!-- Action Controls (Standard 44px Buttons) -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+<button class="h-11 px-6 bg-primary-container text-on-primary hover:bg-slate-800 rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 btn-focus font-medium" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="swap_horiz">swap_horiz</span>
+<span>Replace Device 2 with this browser</span>
+</button>
+<button class="h-11 px-6 bg-surface-container-lowest border border-slate-500 text-on-surface hover:bg-slate-50 rounded-lg text-label-md font-label-md flex items-center justify-center btn-focus font-medium" type="button">
+              Cancel &amp; Return to Dashboard
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE 4: MOBILE 390px VIEWPORT SIMULATION (STATE 1 EXPIRED)              -->
+<!-- ========================================================================= -->
+<section class="max-w-[1440px] mx-auto space-y-3 pt-6 pb-12" id="state-mobile">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-800 text-on-primary text-label-sm font-headline-sm">4</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">State 4: Mobile 390px Viewport Simulation (State 1 Licence Expired)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">390px Device Layout · 44px Minimum Touch Floor</span>
+</div>
+<!-- Centered phone chassis container -->
+<div class="flex justify-center p-4 bg-slate-200/60 rounded-xl border border-outline-variant">
+<!-- 390px Mobile Viewport Container -->
+<div class="w-[390px] bg-surface-bright border-2 border-slate-400 rounded-3xl shadow-xl overflow-hidden flex flex-col font-sans">
+<!-- Mobile System Status Bar -->
+<div class="bg-primary-container text-on-primary px-6 pt-3 pb-2 flex justify-between items-center text-xs">
+<span class="font-semibold">09:41 WAT</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-xs" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-xs" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Mobile App Top Bar -->
+<header class="bg-primary-container text-on-primary px-4 py-3 flex items-center justify-between border-b border-slate-800">
+<div class="flex items-center gap-2">
+<div class="bg-white px-2 py-1 rounded">
+<img alt="A.J. Silicon" class="h-4 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQmYfMlBPK5CYMP-tPCtc-c_kPcZqn-uSGC4W-_oq1bRlZgbBIGWuzgudOchAOvKXIYXM4JzJBVF6Au0UYk0IvOB_5X1arOdviPW_kx4fY9yEPK3HKPmL0xwws4nz3H2Lyy4SCiFs2eIVA8e09p3-srXcnQmg9Evxz9mfQCQ1EJhz7HCGROc7zJny-SuUrm4e95x0FwxrfsWB_SxFsPIL8a2ffFjeAempNUG1WudfDljXgdUCOrRbwxg"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-primary-container hover:text-on-primary btn-focus rounded" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-on-primary text-xs font-semibold">
+              CE
+            </div>
+</div>
+</header>
+<!-- Mobile Scrollable Canvas Content -->
+<div class="p-4 space-y-4 overflow-y-auto">
+<!-- Mobile Danger Card -->
+<div class="bg-red-50 border border-error rounded-xl p-4 space-y-2">
+<div class="flex items-center gap-2.5 text-error">
+<span class="material-symbols-outlined text-xl" data-icon="lock">lock</span>
+<h3 class="text-headline-sm font-headline-sm tracking-tight text-error leading-tight">Enrolment Licence Expired</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface leading-relaxed">
+              Your 90-day study licence for <strong class="font-semibold text-primary">CISA Exam Prep (Cohort 14)</strong> expired on <strong class="font-semibold text-primary">30 Sep 2026</strong>. Access to video lectures and practice exams is currently paused.
+            </p>
+</div>
+<!-- Mobile Academic Metrics Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium uppercase tracking-wider">Course Summary</span>
+<span class="inline-flex items-center h-5 px-2 text-label-sm font-label-sm bg-red-50 text-error border border-error rounded">Expired</span>
+</div>
+<div class="grid grid-cols-2 gap-3 text-left">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Programme</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary block mt-0.5">CISA Prep</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Progress</span>
+<span class="text-body-sm font-body-sm font-semibold text-secondary block mt-0.5">34 / 42 Lessons</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Started</span>
+<span class="text-body-sm font-body-sm text-on-surface block mt-0.5">01 Jul 2026</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Expired On</span>
+<span class="text-body-sm font-body-sm text-error font-semibold block mt-0.5">30 Sep 2026</span>
+</div>
+</div>
+</div>
+<!-- Mobile Action Controls: 44px Stacked Buttons -->
+<div class="space-y-2.5 pt-1">
+<button class="w-full h-11 px-4 bg-primary-container text-on-primary hover:bg-slate-800 rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 btn-focus font-medium" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Extend access (+30 days: ₦45,000)</span>
+</button>
+<button class="w-full h-11 px-4 bg-surface-container-lowest border border-slate-500 text-on-surface hover:bg-slate-50 rounded-lg text-label-md font-label-md flex items-center justify-center btn-focus font-medium" type="button">
+              View all extension plans
+            </button>
+<a class="w-full h-11 text-secondary text-label-sm font-label-md flex items-center justify-center gap-1 btn-focus rounded text-center" href="#">
+<span class="material-symbols-outlined text-base" data-icon="download">download</span>
+<span>Download certificate of attendance</span>
+</a>
+</div>
+<!-- Mobile Support Footer -->
+<div class="p-3 bg-surface-container-lowest border border-outline-variant rounded-lg text-label-sm font-body-sm text-on-surface-variant leading-snug">
+            Need sponsorship invoice? Contact <a class="text-secondary underline" href="mailto:support@ajsilicon.com">support@ajsilicon.com</a> or <a class="text-secondary underline" href="tel:+2348033000000">+234 803 300 0000</a>.
+          </div>
+</div>
+<!-- Mobile Bottom Tab Bar (Responsive Navigation Anchor) -->
+<nav class="bg-surface-container-lowest border-t border-outline-variant grid grid-cols-4 h-16 mt-auto">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary gap-0.5" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span class="text-label-sm font-label-sm text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary gap-0.5" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+<span class="text-label-sm font-label-sm text-[10px]">Modules</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary gap-0.5" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="quiz">quiz</span>
+<span class="text-label-sm font-label-sm text-[10px]">Exams</span>
+</a>
+<!-- Active Tab on Mobile -->
+<a class="flex flex-col items-center justify-center text-secondary gap-0.5 font-semibold" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="hourglass_top">hourglass_top</span>
+<span class="text-label-sm font-label-sm text-[10px]">Extend</span>
+</a>
+</nav>
+</div>
+</div>
+</section>
+<script src="../demo-nav.js"></script></body></html>

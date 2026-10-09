@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Subscription Plans — A.J. Silicon Secure Portal</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#e0c1a9",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-fixed": "#dce1ff",
+            "on-tertiary-fixed": "#281809",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-container": "#997f6a",
+            "outline-variant": "#c5c6cc",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "tertiary": "#000000",
+            "primary-fixed-dim": "#bfc6d9",
+            "on-error-container": "#93000a",
+            "outline": "#75777c",
+            "surface": "#faf8ff",
+            "on-surface-variant": "#45474c",
+            "surface-tint": "#575f6e",
+            "error": "#ba1a1a",
+            "tertiary-container": "#281809",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#141c29",
+            "on-primary-fixed": "#141c29",
+            "on-background": "#131b2e",
+            "tertiary-fixed": "#fddcc4",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed": "#001551",
+            "background": "#faf8ff",
+            "on-surface": "#131b2e",
+            "inverse-primary": "#bfc6d9",
+            "primary": "#000000",
+            "surface-variant": "#dae2fd",
+            "on-secondary-container": "#fffbff",
+            "primary-fixed": "#dbe2f5",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-surface": "#283044",
+            "on-primary-container": "#7c8495",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#4069f2"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "1rem",
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xl": "3rem",
+            "space-md": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    /* Explicit touch floor and focus ring */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col antialiased bg-[#F8FAFC]">
+<!-- Top Operational Shell Navigation (Docked 64px height, deep navy #0B1320) -->
+<header class="h-16 bg-[#0B1320] text-white flex items-center justify-between px-6 border-b border-[#1E293B] sticky top-0 z-50">
+<!-- Left: Brand encapsulation plate -->
+<div class="flex items-center gap-6">
+<div class="p-1.5 px-3 bg-white rounded-md inline-flex items-center shadow-sm">
+<img alt="A.J. Silicon Institutional Logo Mark" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQhl9qT7raK3eLTZwY6qr1FVZ0lA0yXu6OmsgqhpQJk2pWokYT1yxj9cCbVns8MLR6Q0Ah_3leuGQuuFjWugMEtyAqF0x4LdZqx53YM3aU97t0m_r8M4u3VK1gToHikalAW0X6PJEUv6ZGmneAOuzjm6lEBfvb6hhOR9mM4DVqyfw_lY4NvW_dPkkhJzft4K_JF_SDGmZ25RSvTScfjSOB7fVv6XJpgJMLzFVgqwFAmAk9cBro1unYYg"/>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<span class="text-white text-body-sm font-body-sm font-medium tracking-wide">
+        Secure Operations Management Portal
+      </span>
+</div>
+<!-- Right: Telemetry, Plain text role, and avatar -->
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2 text-xs font-mono text-[#94A3B8] bg-[#141C29] px-3 py-1.5 rounded border border-[#1E293B]">
+<span class="material-symbols-outlined text-[16px] text-[#38BDF8]" data-icon="schedule">schedule</span>
+<span>12:05 WAT · 05 Oct 2026</span>
+</div>
+<div class="text-xs text-[#CBD5E1] tracking-wide">
+        Role: <span class="font-medium text-white">Super Admin</span> | Babatunde Lawal
+      </div>
+<div class="flex items-center gap-2 border-l border-[#334155] pl-4">
+<button aria-label="Security Status" class="p-2 text-[#94A3B8] hover:text-white rounded-md hover:bg-[#1E293B] touch-target flex items-center justify-center focus-ring" type="button">
+<span class="material-symbols-outlined text-[20px] text-[#34D399]" data-icon="verified_user">verified_user</span>
+</button>
+<button aria-label="Notifications" class="p-2 text-[#94A3B8] hover:text-white rounded-md hover:bg-[#1E293B] touch-target flex items-center justify-center relative focus-ring" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-[#2563EB] rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-[#1E293B] border border-[#475569] text-white text-xs font-semibold flex items-center justify-center ml-1">
+          BL
+        </div>
+</div>
+</div>
+</header>
+<!-- Interactive State Specification Bar (Prototype Context Switcher) -->
+<div class="bg-[#0B1320] border-b border-[#1E293B] px-8 py-2 text-xs text-[#94A3B8] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-[#60A5FA]" data-icon="tune">tune</span>
+<span class="font-mono uppercase tracking-wider text-[11px] text-[#CBD5E1]">Specification View Modes:</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded bg-[#2563EB] text-white font-medium text-[11px] transition-colors focus-ring" id="btn-state-list" onclick="setScreenState('list')" type="button">
+        State 1: Active Plans List
+      </button>
+<button class="px-3 py-1 rounded bg-[#1E293B] text-[#94A3B8] hover:text-white font-medium text-[11px] transition-colors focus-ring" id="btn-state-edit" onclick="setScreenState('edit')" type="button">
+        State 2: Editing "CISA Continuous Access"
+      </button>
+<button class="px-3 py-1 rounded bg-[#1E293B] text-[#94A3B8] hover:text-white font-medium text-[11px] transition-colors focus-ring" id="btn-state-guard" onclick="setScreenState('guard')" type="button">
+        State 3: Subscriber Lockout Demonstration
+      </button>
+</div>
+</div>
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Navigation Rail / Sidebar (Fixed enterprise navigation hierarchy) -->
+<aside class="w-64 bg-[#0B1320] border-r border-[#1E293B] flex flex-col justify-between shrink-0">
+<div class="p-4 space-y-6 overflow-y-auto">
+<!-- Academics Navigation Group -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-mono uppercase tracking-wider text-[#64748B] font-semibold">
+            Academics
+          </div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-body-sm font-body-sm transition-colors touch-target" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu_book">menu_book</span>
+<span>Curriculum &amp; Tracks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-body-sm font-body-sm transition-colors touch-target" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="quiz">quiz</span>
+<span>Question Banks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-body-sm font-body-sm transition-colors touch-target" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span>Candidate Cohorts</span>
+</a>
+</nav>
+</div>
+<!-- Finance & Billing Navigation Group (Active Section) -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-mono uppercase tracking-wider text-[#93C5FD] font-semibold flex items-center justify-between">
+<span>Finance &amp; Operations</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#38BDF8]"></span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-body-sm font-body-sm transition-colors touch-target" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Subscriptions parent with active child indicator -->
+<div class="space-y-1 pt-1">
+<div class="flex items-center gap-3 px-3 py-2 text-white font-medium text-body-sm font-body-sm bg-[#141C29] rounded-md">
+<span class="material-symbols-outlined text-[20px] text-[#60A5FA]" data-icon="credit_card">credit_card</span>
+<span>Subscriptions</span>
+</div>
+<div class="ml-4 pl-4 border-l border-[#334155] space-y-1 pt-1">
+<a class="flex items-center justify-between px-3 py-2 text-white bg-[#1E293B] rounded-md text-xs font-semibold text-[#93C5FD] touch-target" href="#">
+<span>Subscription Plans</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#60A5FA]"></span>
+</a>
+<a class="flex items-center gap-2 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-xs transition-colors touch-target" href="#">
+<span>Coupons &amp; Waivers</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-xs transition-colors touch-target" href="#">
+<span>Invoicing &amp; Receipts</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-xs transition-colors touch-target" href="#">
+<span>Concessions Log</span>
+</a>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-body-sm font-body-sm transition-colors touch-target" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Paystack Settlements</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-md text-body-sm font-body-sm transition-colors touch-target" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+<span>ISACA Audit Trail</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Rail Footer / Terminal Lock -->
+<div class="p-4 border-t border-[#1E293B] bg-[#0E1726]">
+<div class="flex items-center gap-3 px-3 py-2 text-[#94A3B8] text-xs">
+<span class="material-symbols-outlined text-[16px] text-[#34D399]" data-icon="lock">lock</span>
+<span>Paystack Sync: Connected</span>
+</div>
+<button class="w-full mt-2 h-11 px-3 bg-[#1E293B] hover:bg-[#334155] text-white text-xs font-medium rounded-md flex items-center justify-center gap-2 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="power_settings_new">power_settings_new</span>
+<span>Lock Staff Terminal</span>
+</button>
+</div>
+</aside>
+<!-- Main Workspace Content (1280px container, light paper grade) -->
+<main class="flex-1 overflow-y-auto bg-[#F8FAFC]">
+<div class="max-w-[1280px] mx-auto p-8 space-y-6">
+<!-- Breadcrumbs & Header Section -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-[#E2E8F0]">
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[#475569] mb-1 font-body-sm font-mono">
+<span>Finance &amp; Operations</span>
+<span class="text-[#94A3B8]">&gt;</span>
+<span>Subscriptions</span>
+<span class="text-[#94A3B8]">&gt;</span>
+<span class="text-[#0F172A] font-semibold">Subscription Plans</span>
+</nav>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">
+              Subscription Plans
+            </h1>
+<p class="text-body-sm font-body-sm text-[#475569] mt-0.5">
+              Configure recurrences, pricing structures, and learning asset entitlement gates synchronized with Paystack API.
+            </p>
+</div>
+<!-- Single primary action in page header -->
+<div class="flex items-center gap-3">
+<button class="touch-target h-11 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-white font-medium text-body-sm font-body-sm rounded-md inline-flex items-center justify-center gap-2 transition-colors shadow-sm focus-ring" onclick="setScreenState('edit')" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>+ Create plan</span>
+</button>
+</div>
+</header>
+<!-- Notice Banner: Paystack Card-Only Processing Policy -->
+<div aria-label="Paystack Notice" class="bg-[#EFF6FF] border border-[#1D4ED8]/20 rounded-xl p-4 flex items-start gap-4 shadow-sm" role="region">
+<div class="w-10 h-10 rounded-lg bg-[#DBEAFE] text-[#1D4ED8] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="info">info</span>
+</div>
+<div class="flex-1 text-body-sm font-body-sm text-[#0F172A] space-y-1">
+<div class="font-semibold text-[#1D4ED8] flex items-center gap-2">
+<span>All subscription plans bill by card only through Paystack</span>
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-mono bg-[#DBEAFE] text-[#1D4ED8] rounded border border-[#BFDBFE]">Live Gateway Active</span>
+</div>
+<p class="text-[#334155] leading-relaxed">
+              Candidate subscriptions process strictly via tokenized debit cards through Paystack recurring charge schedules. Automated webhooks continuously align local entitlement scopes. Bank transfers and USSD channels do not support automated monthly recurring billing and are restricted to one-off cohort tuitions.
+            </p>
+</div>
+<a class="text-xs font-semibold text-[#1D4ED8] hover:underline shrink-0 pt-1" href="#">
+            Settlement Specs →
+          </a>
+</div>
+<!-- Metric Overview Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="text-xs font-mono uppercase text-[#64748B]">Active Subscriptions</div>
+<div class="text-headline-md font-headline-md text-[#0F172A] mt-1 font-semibold">279</div>
+<div class="text-xs text-[#047857] flex items-center gap-1 mt-1 font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+<span>+14 this billing cycle</span>
+</div>
+</div>
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="text-xs font-mono uppercase text-[#64748B]">Monthly Recurring (MRR)</div>
+<div class="text-headline-md font-headline-md text-[#0F172A] mt-1 font-semibold">₦8,940,000</div>
+<div class="text-xs text-[#475569] mt-1">Excluding annual prorations</div>
+</div>
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="text-xs font-mono uppercase text-[#64748B]">Catalog Offerings</div>
+<div class="text-headline-md font-headline-md text-[#0F172A] mt-1 font-semibold">4 Plans</div>
+<div class="text-xs text-[#475569] mt-1">3 Active · 1 Paused</div>
+</div>
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="text-xs font-mono uppercase text-[#64748B]">Failed Charge Rate</div>
+<div class="text-headline-md font-headline-md text-[#0F172A] mt-1 font-semibold">1.8%</div>
+<div class="text-xs text-[#047857] mt-1">Below target threshold (&lt;3.5%)</div>
+</div>
+</div>
+<!-- STATE 1: PLANS TABLE SECTION -->
+<section class="bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden" id="section-plans-table">
+<!-- Filter and Table Toolbar -->
+<div class="p-4 border-b border-[#E2E8F0] bg-white flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 w-full md:w-auto">
+<!-- Search Input -->
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-[#64748B]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 h-11 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] placeholder-[#64748B] focus:border-[#2563EB] focus-ring" placeholder="Search by plan name or Paystack code..." type="text"/>
+</div>
+<!-- Billing Period Filter -->
+<select class="h-11 px-3 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus-ring">
+<option value="all">All Periods</option>
+<option value="monthly">Monthly</option>
+<option value="annual">Annual</option>
+</select>
+<!-- Status Filter -->
+<select class="h-11 px-3 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus-ring">
+<option value="all">All Statuses</option>
+<option value="active">Active Only</option>
+<option value="paused">Paused Only</option>
+</select>
+</div>
+<!-- Sort and Total Counter -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
+<span class="text-xs font-mono text-[#64748B]">Sort:</span>
+<select class="h-11 px-3 text-body-sm font-body-sm bg-white border border-[#64748B] rounded-md text-[#0F172A] focus:border-[#2563EB] focus-ring">
+<option value="subscribers-desc">Subscribers (High to Low)</option>
+<option value="price-desc">Price (High to Low)</option>
+<option value="name-asc">Plan Name (A-Z)</option>
+</select>
+</div>
+</div>
+<!-- Table with Strict Auditable Borders -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[12px] font-mono uppercase text-[#475569] tracking-wider">
+<th class="py-3.5 px-6 font-semibold">Plan Name &amp; Code</th>
+<th class="py-3.5 px-4 font-semibold">Price</th>
+<th class="py-3.5 px-4 font-semibold">Billing Period</th>
+<th class="py-3.5 px-6 font-semibold">What it Unlocks</th>
+<th class="py-3.5 px-4 font-semibold">Status</th>
+<th class="py-3.5 px-4 font-semibold text-right">Subscribers</th>
+<th class="py-3.5 px-6 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm">
+<!-- Row 1: CISA Continuous Access -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6">
+<div class="font-semibold text-[#0F172A]">CISA Continuous Access</div>
+<div class="text-[12px] font-mono text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-[#1D4ED8]" data-icon="link">link</span>
+<span>PLN_cisa_m35k</span>
+</div>
+</td>
+<td class="py-4 px-4 font-semibold text-[#0F172A]">
+                    ₦35,000
+                  </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#334155] border border-[#CBD5E1]">
+                      Monthly
+                    </span>
+</td>
+<td class="py-4 px-6 text-[#334155]">
+<div class="line-clamp-2 max-w-xs">
+                      CISA Question Bank, Practice Mocks &amp; Slide Vault
+                    </div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right font-mono font-medium text-[#0F172A]">
+                    142
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 h-9 bg-transparent hover:bg-[#F1F5F9] border border-[#64748B] text-[#0F172A] text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" onclick="setScreenState('edit')" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+<span>Edit</span>
+</button>
+<!-- Protected Plan Action with dynamic warning -->
+<button class="touch-target px-3 h-9 bg-[#FEF2F2]/60 text-[#B91C1C] border border-[#B91C1C]/40 hover:bg-[#FEF2F2] text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" onclick="setScreenState('guard')" title="Cannot delete active subscriber base" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="lock">lock</span>
+<span>Delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Executive Multi-Track Pass -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6">
+<div class="font-semibold text-[#0F172A]">Executive Multi-Track Pass</div>
+<div class="text-[12px] font-mono text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-[#1D4ED8]" data-icon="link">link</span>
+<span>PLN_exec_ann320k</span>
+</div>
+</td>
+<td class="py-4 px-4 font-semibold text-[#0F172A]">
+                    ₦320,000
+                  </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#BFDBFE]">
+                      Annual
+                    </span>
+</td>
+<td class="py-4 px-6 text-[#334155]">
+<div class="line-clamp-2 max-w-xs">
+                      All CISA, CISM &amp; CRISC Question Banks &amp; Live Clinics
+                    </div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right font-mono font-medium text-[#0F172A]">
+                    48
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 h-9 bg-transparent hover:bg-[#F1F5F9] border border-[#64748B] text-[#0F172A] text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+<span>Edit</span>
+</button>
+<button class="touch-target px-3 h-9 bg-[#FEF2F2]/60 text-[#B91C1C] border border-[#B91C1C]/40 text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="lock">lock</span>
+<span>Delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Question Bank Only Drill -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6">
+<div class="font-semibold text-[#0F172A]">Question Bank Only Drill</div>
+<div class="text-[12px] font-mono text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-[#1D4ED8]" data-icon="link">link</span>
+<span>PLN_qb_m15k</span>
+</div>
+</td>
+<td class="py-4 px-4 font-semibold text-[#0F172A]">
+                    ₦15,000
+                  </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#334155] border border-[#CBD5E1]">
+                      Monthly
+                    </span>
+</td>
+<td class="py-4 px-6 text-[#334155]">
+<div class="line-clamp-2 max-w-xs">
+                      Timed Diagnostic Exam Engine (No Video Access)
+                    </div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right font-mono font-medium text-[#0F172A]">
+                    89
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 h-9 bg-transparent hover:bg-[#F1F5F9] border border-[#64748B] text-[#0F172A] text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+<span>Edit</span>
+</button>
+<button class="touch-target px-3 h-9 bg-[#FEF2F2]/60 text-[#B91C1C] border border-[#B91C1C]/40 text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="lock">lock</span>
+<span>Delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Legacy Audit Masterclass Alumni -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-6">
+<div class="font-semibold text-[#0F172A]">Legacy Audit Masterclass Alumni</div>
+<div class="text-[12px] font-mono text-[#64748B] flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-[#1D4ED8]" data-icon="link">link</span>
+<span>PLN_alum_m20k</span>
+</div>
+</td>
+<td class="py-4 px-4 font-semibold text-[#0F172A]">
+                    ₦20,000
+                  </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#334155] border border-[#CBD5E1]">
+                      Monthly
+                    </span>
+</td>
+<td class="py-4 px-6 text-[#334155]">
+<div class="line-clamp-2 max-w-xs">
+                      Recordings Library &amp; Community Clinics
+                    </div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded text-[12px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]" data-icon="pause_circle">pause_circle</span>
+<span>Paused</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right font-mono font-medium text-[#475569]">
+                    0
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 h-9 bg-transparent hover:bg-[#F1F5F9] border border-[#64748B] text-[#0F172A] text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+<span>Edit</span>
+</button>
+<!-- Able to delete because subscribers count = 0 -->
+<button class="touch-target px-3 h-9 bg-[#FEF2F2] hover:bg-[#FEE2E2] border border-[#B91C1C] text-[#B91C1C] text-xs font-medium rounded-md inline-flex items-center gap-1 transition-colors focus-ring" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="archive">archive</span>
+<span>Archive</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Table Footer -->
+<div class="px-6 py-4 border-t border-[#E2E8F0] bg-[#F8FAFC] flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#475569]">
+<div class="font-mono">
+              Showing <span class="font-semibold text-[#0F172A]">1–4</span> of <span class="font-semibold text-[#0F172A]">4</span> active and archived plans
+            </div>
+<div class="flex items-center gap-2">
+<button class="px-3 h-9 border border-[#CBD5E1] rounded text-[#94A3B8] bg-white cursor-not-allowed" disabled="" type="button">Previous</button>
+<button class="px-3 h-9 border border-[#0B1320] bg-[#0B1320] text-white font-medium rounded">1</button>
+<button class="px-3 h-9 border border-[#CBD5E1] rounded text-[#94A3B8] bg-white cursor-not-allowed" disabled="" type="button">Next</button>
+</div>
+</div>
+</section>
+<!-- Loading Skeleton Preview Block (Design System Requirement) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs font-mono uppercase text-[#64748B]">
+<span class="material-symbols-outlined text-[16px]" data-icon="hourglass_empty">hourglass_empty</span>
+<span>Audit Ledger Webhook Synchronizer (Live Polling Skeleton)</span>
+</div>
+<span class="text-xs text-[#64748B] font-mono">Sync Interval: 60s</span>
+</div>
+<div class="grid grid-cols-6 gap-4 animate-pulse">
+<div class="h-4 bg-[#E2E8F0] rounded col-span-2"></div>
+<div class="h-4 bg-[#E2E8F0] rounded col-span-1"></div>
+<div class="h-4 bg-[#E2E8F0] rounded col-span-1"></div>
+<div class="h-4 bg-[#E2E8F0] rounded col-span-1"></div>
+<div class="h-4 bg-[#E2E8F0] rounded col-span-1"></div>
+</div>
+</div>
+<!-- STATE 2: PLAN EDITOR SPECIFICATION SECTION -->
+<section class="bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden" id="section-plan-editor">
+<div class="p-6 border-b border-[#E2E8F0] bg-white flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                  Existing Record
+                </span>
+<h2 class="text-headline-sm font-headline-sm text-[#0F172A]">
+                  Plan Specification Editor — CISA Continuous Access
+                </h2>
+</div>
+<p class="text-body-sm font-body-sm text-[#475569] mt-1">
+                Directly affects candidate access matrix upon automated payment completion. Paystack synchronization parameters are locked.
+              </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="touch-target px-4 h-11 bg-transparent hover:bg-[#F1F5F9] border border-[#64748B] text-[#0F172A] text-body-sm font-body-sm font-medium rounded-md focus-ring" onclick="setScreenState('list')" type="button">
+                Cancel
+              </button>
+<button class="touch-target px-6 h-11 bg-[#0B1320] hover:bg-[#1E293B] text-white text-body-sm font-body-sm font-medium rounded-md inline-flex items-center gap-2 transition-colors focus-ring" id="btn-save-plan" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="cloud_sync">cloud_sync</span>
+<span>Save &amp; Sync Plan</span>
+</button>
+</div>
+</div>
+<form class="p-8 space-y-8" onsubmit="event.preventDefault();">
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Plan Name Field -->
+<div class="space-y-2">
+<label class="block text-body-sm font-body-sm font-semibold text-[#0F172A]" for="plan-name">
+                  Plan Title / Label <span class="text-[#B91C1C]">*</span>
+</label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-[#0F172A] text-body-sm font-body-sm focus:border-[#2563EB] focus-ring" id="plan-name" required="" type="text" value="CISA Continuous Access"/>
+<p class="text-xs text-[#475569]">Institutional program name presented on invoices and candidate learning consoles.</p>
+</div>
+<!-- Price Field -->
+<div class="space-y-2">
+<label class="block text-body-sm font-body-sm font-semibold text-[#0F172A]" for="plan-price">
+                  Billing Rate (NGN) <span class="text-[#B91C1C]">*</span>
+</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-mono font-medium text-[#475569]">₦</span>
+<input class="w-full h-11 pl-8 pr-3 bg-white border border-[#64748B] rounded-md text-[#0F172A] font-mono text-body-sm font-body-sm focus:border-[#2563EB] focus-ring" id="plan-price" required="" type="text" value="35,000"/>
+</div>
+<p class="text-xs text-[#475569]">Standard Nigerian Naira debit fee, debited automatically on recurring schedule.</p>
+</div>
+<!-- Billing Period Toggle -->
+<div class="space-y-2">
+<label class="block text-body-sm font-body-sm font-semibold text-[#0F172A]">
+                  Billing Cadence <span class="text-[#B91C1C]">*</span>
+</label>
+<div class="grid grid-cols-2 gap-4">
+<label class="flex items-center gap-3 p-3 border-2 border-[#0B1320] bg-[#F8FAFC] rounded-md cursor-pointer">
+<input checked="" class="w-5 h-5 text-[#0B1320] focus:ring-[#2563EB]" name="billing-cadence" type="radio" value="monthly"/>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Monthly</div>
+<div class="text-xs text-[#475569]">Every 30 calendar days</div>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 border border-[#CBD5E1] bg-white rounded-md cursor-pointer hover:bg-[#F8FAFC]">
+<input class="w-5 h-5 text-[#0B1320] focus:ring-[#2563EB]" name="billing-cadence" type="radio" value="annual"/>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Annual</div>
+<div class="text-xs text-[#475569]">365 calendar days</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Trial Period Days -->
+<div class="space-y-2">
+<label class="block text-body-sm font-body-sm font-semibold text-[#0F172A]" for="trial-days">
+                  Trial Duration (Days)
+                </label>
+<input class="w-full h-11 px-3 bg-white border border-[#64748B] rounded-md text-[#0F172A] font-mono text-body-sm font-body-sm focus:border-[#2563EB] focus-ring" id="trial-days" max="30" min="0" type="number" value="0"/>
+<p class="text-xs text-[#475569]">Days before first automatic recurring card debit (0 represents immediate charge).</p>
+</div>
+<!-- Read-only Paystack Code Container -->
+<div class="space-y-2 md:col-span-2">
+<label class="block text-body-sm font-body-sm font-semibold text-[#0F172A]">
+                  Paystack Live Plan Identifier (Immutable After Sync)
+                </label>
+<div class="flex items-center gap-3 p-3 bg-[#F1F5F9] border border-[#CBD5E1] rounded-md">
+<span class="material-symbols-outlined text-[20px] text-[#047857]" data-icon="lock">lock</span>
+<div class="flex-1 font-mono text-sm text-[#0F172A] font-medium">
+                    PLN_cisa_m35k
+                    <span class="text-xs text-[#475569] font-sans ml-2">(Synchronized with Paystack Live API Engine)</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                    ACTIVE_HOOK
+                  </span>
+</div>
+<p class="text-xs text-[#64748B]">
+                  Plan code cannot be modified once synchronized. Modifying currency, pricing tier, or period requires creating a replacement plan to preserve billing ledger consistency.
+                </p>
+</div>
+</div>
+<!-- Access Scope: Multi-select Check Cards -->
+<div class="space-y-3 pt-4 border-t border-[#E2E8F0]">
+<div>
+<label class="block text-body-sm font-body-sm font-semibold text-[#0F172A]">
+                  Unlocked Learning Entitlement Gates (Access Scope) <span class="text-[#B91C1C]">*</span>
+</label>
+<p class="text-xs text-[#475569] mt-0.5">
+                  Designate platform microservices candidate accounts are permitted to query during an active subscription window.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+<!-- Scope 1: Video Vault -->
+<label class="p-4 border border-[#CBD5E1] rounded-lg bg-white hover:border-[#0B1320] transition-colors cursor-pointer flex items-start gap-3">
+<input checked="" class="mt-1 w-5 h-5 rounded text-[#0B1320] focus:ring-[#2563EB]" type="checkbox"/>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Video Lecture Vault</div>
+<div class="text-xs text-[#475569] mt-1">Full access to asynchronous syllabus recording archives.</div>
+</div>
+</label>
+<!-- Scope 2: Question Bank & Mocks -->
+<label class="p-4 border-2 border-[#0B1320] bg-[#F8FAFC] rounded-lg cursor-pointer flex items-start gap-3">
+<input checked="" class="mt-1 w-5 h-5 rounded text-[#0B1320] focus:ring-[#2563EB]" type="checkbox"/>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Question Bank &amp; Mocks</div>
+<div class="text-xs text-[#475569] mt-1">Timed diagnostic simulators, answer rationals &amp; scoring.</div>
+</div>
+</label>
+<!-- Scope 3: Live Revision Clinics -->
+<label class="p-4 border border-[#CBD5E1] rounded-lg bg-white hover:border-[#0B1320] transition-colors cursor-pointer flex items-start gap-3">
+<input checked="" class="mt-1 w-5 h-5 rounded text-[#0B1320] focus:ring-[#2563EB]" type="checkbox"/>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Live Revision Clinics</div>
+<div class="text-xs text-[#475569] mt-1">Weekend interactive sessions and direct faculty Q&amp;A.</div>
+</div>
+</label>
+<!-- Scope 4: Slide Reader -->
+<label class="p-4 border border-[#CBD5E1] rounded-lg bg-white hover:border-[#0B1320] transition-colors cursor-pointer flex items-start gap-3">
+<input class="mt-1 w-5 h-5 rounded text-[#0B1320] focus:ring-[#2563EB]" type="checkbox"/>
+<div>
+<div class="text-sm font-semibold text-[#0F172A]">Slide Reader &amp; Handouts</div>
+<div class="text-xs text-[#475569] mt-1">Institutional slide packs and curated reference summaries.</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Inline Validation Confirmation -->
+<div class="p-4 bg-[#ECFDF5] border border-[#047857]/30 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-[#047857]" data-icon="check_circle">check_circle</span>
+<span class="text-xs font-medium text-[#047857]">
+                Configuration conforms to live Paystack parameters. No pending sync collisions detected.
+              </span>
+</div>
+</form>
+</section>
+<!-- STATE 3: SUBSCRIBER LOCKOUT DEMONSTRATION CALLOUT -->
+<section class="bg-[#FEF2F2] border-2 border-[#B91C1C] rounded-xl p-6 shadow-sm space-y-4" id="section-guard-demo">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#FEE2E2] text-[#B91C1C] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="shield">shield</span>
+</div>
+<div class="space-y-1 flex-1">
+<h3 class="text-headline-sm font-headline-sm text-[#B91C1C] flex items-center gap-2">
+<span>Deletion Protection Guard Triggered</span>
+<span class="text-xs font-mono px-2 py-0.5 rounded bg-white border border-[#B91C1C]">409 Conflict</span>
+</h3>
+<p class="text-body-sm font-body-sm text-[#0F172A] leading-relaxed">
+                This plan has <strong>142 active subscribers</strong> and cannot be deleted. Deleting an active recurring subscription plan corrupts ongoing automated Paystack token debit cycles and terminates active candidate exam access without reconciliation.
+              </p>
+</div>
+</div>
+<div class="bg-white border border-[#FCA5A5] rounded-lg p-4 space-y-3">
+<div class="text-xs font-mono uppercase tracking-wider text-[#7F1D1D] font-semibold">
+              Permitted Remediation Actions:
+            </div>
+<ul class="text-xs text-[#334155] space-y-2 list-disc list-inside">
+<li>
+<strong>Pause Subscription Plan:</strong> Prevents new enrollments while keeping existing 142 card debits active until expiration.
+              </li>
+<li>
+<strong>Batch Migration:</strong> Re-assign active subscriber tokens to a different active cohort tier prior to archiving this record.
+              </li>
+</ul>
+<div class="flex items-center gap-3 pt-2">
+<button class="touch-target px-4 h-10 bg-[#B91C1C] text-white text-xs font-medium rounded-md hover:bg-[#991B1B] transition-colors focus-ring" type="button">
+                Execute Plan Pause (Freeze New Signups)
+              </button>
+<button class="touch-target px-4 h-10 bg-white border border-[#64748B] text-[#0F172A] text-xs font-medium rounded-md hover:bg-[#F1F5F9] transition-colors focus-ring" onclick="setScreenState('list')" type="button">
+                Dismiss Warning
+              </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Institutional Dossier Footer (Shared Component) -->
+<footer class="bg-[#141C29] text-[#7C8495] border-t border-[#1E293B] text-xs">
+<div class="w-full px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="text-white font-semibold">A.J. Silicon</span>
+<span>·</span>
+<span>© 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.</span>
+</div>
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-white transition-colors" href="#">DRM Compliance Policy</a>
+<a class="hover:text-white transition-colors" href="#">Zero-Trust Verification</a>
+<a class="hover:text-white transition-colors" href="#">Candidate Session Hash Log</a>
+<a class="hover:text-white transition-colors" href="#">Integrity Telemetry Docs</a>
+<a class="hover:text-white transition-colors" href="#">SecOps Oversight</a>
+</div>
+</div>
+</footer>
+<!-- Vanilla State Switcher Script -->
+<script>
+    function setScreenState(state) {
+      const tableSection = document.getElementById('section-plans-table');
+      const editorSection = document.getElementById('section-plan-editor');
+      const guardSection = document.getElementById('section-guard-demo');
+
+      const btnList = document.getElementById('btn-state-list');
+      const btnEdit = document.getElementById('btn-state-edit');
+      const btnGuard = document.getElementById('btn-state-guard');
+
+      // Reset button classes
+      [btnList, btnEdit, btnGuard].forEach(btn => {
+        btn.classList.remove('bg-[#2563EB]', 'text-white');
+        btn.classList.add('bg-[#1E293B]', 'text-[#94A3B8]');
+      });
+
+      if (state === 'list') {
+        tableSection.classList.remove('hidden');
+        editorSection.classList.add('hidden');
+        guardSection.classList.add('hidden');
+        btnList.classList.add('bg-[#2563EB]', 'text-white');
+        btnList.classList.remove('bg-[#1E293B]', 'text-[#94A3B8]');
+      } else if (state === 'edit') {
+        tableSection.classList.add('hidden');
+        editorSection.classList.remove('hidden');
+        guardSection.classList.add('hidden');
+        btnEdit.classList.add('bg-[#2563EB]', 'text-white');
+        btnEdit.classList.remove('bg-[#1E293B]', 'text-[#94A3B8]');
+      } else if (state === 'guard') {
+        tableSection.classList.remove('hidden');
+        editorSection.classList.add('hidden');
+        guardSection.classList.remove('hidden');
+        btnGuard.classList.add('bg-[#2563EB]', 'text-white');
+        btnGuard.classList.remove('bg-[#1E293B]', 'text-[#94A3B8]');
+        // Smooth scroll to warning section
+        guardSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Initialize in default 'list' mode
+    document.addEventListener('DOMContentLoaded', () => {
+      setScreenState('list');
+    });
+  </script>
+<script src="../demo-nav.js"></script></body></html>

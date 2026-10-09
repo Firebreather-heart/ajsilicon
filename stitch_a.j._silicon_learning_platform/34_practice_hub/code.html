@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon - 34 Practice Hub Specification Board</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-container": "#7c8495",
+            "primary-fixed": "#dbe2f5",
+            "on-primary": "#ffffff",
+            "primary": "#000000",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-secondary-container": "#fffbff",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#3f4756",
+            "primary-fixed-dim": "#bfc6d9",
+            "primary-container": "#141c29",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#001551",
+            "surface-container-low": "#f2f3ff",
+            "on-surface": "#131b2e",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#997f6a",
+            "on-background": "#131b2e",
+            "on-primary-fixed": "#141c29",
+            "tertiary-container": "#281809",
+            "on-tertiary-fixed": "#281809",
+            "surface-bright": "#faf8ff",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed-variant": "#0039b5",
+            "outline-variant": "#c5c6cc",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "on-surface-variant": "#45474c",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "secondary-container": "#4069f2",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed": "#fddcc4",
+            "inverse-surface": "#283044",
+            "inverse-primary": "#bfc6d9",
+            "tertiary": "#000000",
+            "on-error-container": "#93000a",
+            "surface-tint": "#575f6e",
+            "outline": "#75777c",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-fixed": "#dce1ff",
+            "secondary-fixed-dim": "#b7c4ff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "space-sm": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "space-xs": "0.5rem",
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem"
+          },
+          fontFamily: {
+            "body-lg": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md min-h-screen">
+<!-- ================= TOP APP BAR (Shared Shell Component) ================= -->
+<header class="bg-primary-container text-on-primary w-full h-16 px-6 border-b border-outline-variant flex justify-between items-center fixed top-0 left-0 z-50">
+<div class="flex items-center gap-6">
+<!-- Light logo container plate -->
+<div class="bg-surface-container-lowest px-3 py-1 rounded flex items-center h-10 border border-outline-variant">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVJNf7oVZ_DQxh3taa91fJhOctJ3a4E4YhZhHRBbYozwWVyeWiPkV7s7B0FaYoyfyVMXjfsQEkSmY778ffcUhEnKfgfrpuTCaJwl8edrpr-cStBeNMaCx0WJBSI2OvDupel1yxi3gfzbbTiwng2wAOGX6pE60uJmpblG6mdsM89KGOZGKuegZNO5mfTL8R6WQEjFWj6kyKkUrwqVk2IWpdZkbSWlIOjdb2U7Lp_06LbLFZX4ujiGwQTQ"/>
+</div>
+<div class="h-6 w-px bg-on-primary-container/30"></div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-label-md font-semibold text-on-primary leading-tight">CISA Candidate Portal</span>
+<span class="font-body-sm text-label-sm text-on-primary-container">ISACA Accredited Training Platform</span>
+</div>
+</div>
+<!-- Right utility & Student Profile -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 border-r border-outline-variant pr-4">
+<button aria-label="Notifications" class="h-11 w-11 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Help" class="h-11 w-11 flex items-center justify-center rounded text-on-primary-container hover:text-on-primary hover:bg-surface-tint/20 transition-colors" title="Help Desk">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<!-- Student Profile -->
+<div class="flex items-center gap-3 pl-2">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-headline-sm text-label-md font-semibold flex items-center justify-center border border-on-secondary/20">
+          CE
+        </div>
+<div class="hidden sm:flex flex-col text-left">
+<span class="font-headline-sm text-label-md text-on-primary font-semibold leading-tight">Chinedu Eze</span>
+<span class="font-body-sm text-label-sm text-on-primary-container">Cohort 14 Candidate</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= SIDEBAR NAVIGATION (Shared Shell Component) ================= -->
+<aside class="fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between p-4 z-40">
+<div class="flex flex-col gap-6">
+<!-- Cohort Metadata Pill Box -->
+<div class="p-3 bg-surface-container rounded-lg border border-outline-variant/60">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-headline-sm text-label-sm text-on-surface font-semibold">CISA Exam Prep</span>
+</div>
+<p class="font-body-sm text-label-sm text-on-surface-variant leading-snug">
+          Cohort 14: 12 Oct - 18 Dec 2026, Virtual
+        </p>
+</div>
+<!-- Main Navigation Links -->
+<nav class="flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded transition-colors duration-150 min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded transition-colors duration-150 min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<!-- Active Tab: Practice Exams -->
+<a class="bg-surface-container text-secondary font-label-md text-label-md border-l-4 border-secondary px-4 py-3 flex items-center gap-3 rounded-r transition-all duration-150 min-h-[44px]" href="#practice">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-semibold text-secondary">Practice Exams</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded transition-colors duration-150 min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+</nav>
+</div>
+<!-- Footer Links -->
+<div class="border-t border-outline-variant/60 pt-3 flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded transition-colors duration-150 min-h-[44px]" href="#settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md rounded transition-colors duration-150 min-h-[44px]" href="#signout">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- ================= MAIN VIEWPORT CANVAS ================= -->
+<main class="ml-64 mt-16 p-8 bg-surface min-h-[calc(100vh-4rem)]">
+<div class="max-w-[1280px] mx-auto space-y-12">
+<!-- Specification Master Header -->
+<div class="border-b border-outline-variant pb-6">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm mb-1 uppercase tracking-wider">
+<span>Canonical Specification Board</span>
+<span>•</span>
+<span>Student Portal Viewport (1440px)</span>
+</div>
+<h1 class="font-display text-display text-on-surface">34 Practice Hub</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-1">
+          Standardized learning simulation hub for CISA certification candidates. Demonstrates the three canonical lifecycle states: configured practice workspace, first-time access without prior attempts, and constrained daily quota state.
+        </p>
+</div>
+<!-- ========================================================================= -->
+<!-- VARIANT 1: DEFAULT STATE -->
+<!-- ========================================================================= -->
+<section class="space-y-6" id="variant-default">
+<div class="flex items-center justify-between pb-2 border-b-2 border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="bg-primary-container text-on-primary px-3 py-1 rounded text-label-sm font-label-sm font-semibold">Variant 1</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Default State — Configured Workspace &amp; Attempt History</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#ECFDF5] text-[#047857] border border-[#047857] text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Ready for Session
+          </span>
+</div>
+<div class="space-y-6">
+<!-- 1. Practice Mode Cards Selection -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-md text-headline-sm text-on-surface">1. Select Practice Mode</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Choose testing intensity</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Mode A: Study Mode (Selected) -->
+<div class="relative bg-surface-container-lowest border-2 border-secondary rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="h-10 w-10 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</span>
+<span class="inline-flex items-center gap-1 h-6 px-2.5 rounded bg-surface-container text-secondary border border-secondary text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">radio_button_checked</span>
+                      Selected
+                    </span>
+</div>
+<h4 class="font-headline-md text-headline-sm text-on-surface mb-1">Study mode</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Immediate question feedback with full authoritative ISACA rationale, task statement alignment, and audit standard references.
+                  </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/60 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">bolt</span>
+<span>Instant answer validation</span>
+</div>
+</div>
+<!-- Mode B: Timed Exam Mode -->
+<div class="bg-surface-container-lowest border border-outline-variant hover:border-[#64748B] rounded-xl p-6 transition-all flex flex-col justify-between cursor-pointer">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="h-10 w-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">timer</span>
+</span>
+<span class="h-5 w-5 rounded-full border border-[#64748B]"></span>
+</div>
+<h4 class="font-headline-md text-headline-sm text-on-surface mb-1">Timed exam mode</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Domain-targeted timed testing environment under countdown constraint. Review score and breakdown upon completion.
+                  </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/60 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>1.6 minutes per question average</span>
+</div>
+</div>
+<!-- Mode C: Full Mock -->
+<div class="bg-surface-container-lowest border border-outline-variant hover:border-[#64748B] rounded-xl p-6 transition-all flex flex-col justify-between cursor-pointer">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="h-10 w-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+</span>
+<span class="h-5 w-5 rounded-full border border-[#64748B]"></span>
+</div>
+<h4 class="font-headline-md text-headline-sm text-on-surface mb-1">Full mock</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    150 questions, 4 hours comprehensive simulation matching official ISACA certification scoring matrix (200 - 800 scale).
+                  </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/60 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">history_edu</span>
+<span>Cohort benchmark ranking</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Domain Checklist & Configuration Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left: Domain Checklist (2 columns) -->
+<div class="lg:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant/60 pb-3">
+<div>
+<h3 class="font-headline-md text-headline-sm text-on-surface">2. Select Domains &amp; Review Accuracy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure target testing scope against candidate accuracy records</p>
+</div>
+<button class="text-secondary font-label-md text-label-md hover:underline" type="button">Select all</button>
+</div>
+<div class="space-y-3">
+<!-- Domain 1 -->
+<label class="flex items-center justify-between p-3.5 rounded-lg border border-outline-variant/80 hover:bg-surface-container-low transition-colors cursor-pointer min-h-[44px]">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 text-primary border-[#64748B] rounded focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="checkbox"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Domain 1: Information System Auditing Process</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">21% of official exam weight</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<span class="font-label-md text-label-sm font-semibold text-on-surface">78%</span>
+<span class="text-label-sm text-on-surface-variant block">Accuracy</span>
+</div>
+<div class="w-16 bg-surface-container rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 78%"></div>
+</div>
+</div>
+</label>
+<!-- Domain 2 -->
+<label class="flex items-center justify-between p-3.5 rounded-lg border border-outline-variant/80 hover:bg-surface-container-low transition-colors cursor-pointer min-h-[44px]">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 text-primary border-[#64748B] rounded focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="checkbox"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Domain 2: Governance &amp; Management of IT</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">17% of official exam weight</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<span class="font-label-md text-label-sm font-semibold text-on-surface">64%</span>
+<span class="text-label-sm text-on-surface-variant block">Accuracy</span>
+</div>
+<div class="w-16 bg-surface-container rounded-full h-2">
+<div class="bg-[#B45309] h-2 rounded-full" style="width: 64%"></div>
+</div>
+</div>
+</label>
+<!-- Domain 3 -->
+<label class="flex items-center justify-between p-3.5 rounded-lg border border-outline-variant/80 hover:bg-surface-container-low transition-colors cursor-pointer min-h-[44px]">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 text-primary border-[#64748B] rounded focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="checkbox"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Domain 3: Information Systems Acquisition, Development &amp; Implementation</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">12% of official exam weight</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<span class="font-label-md text-label-sm font-semibold text-on-surface">72%</span>
+<span class="text-label-sm text-on-surface-variant block">Accuracy</span>
+</div>
+<div class="w-16 bg-surface-container rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</label>
+<!-- Domain 4 -->
+<label class="flex items-center justify-between p-3.5 rounded-lg border border-outline-variant/80 hover:bg-surface-container-low transition-colors cursor-pointer min-h-[44px]">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 text-primary border-[#64748B] rounded focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="checkbox"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Domain 4: Information Systems Operations &amp; Business Resilience</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">23% of official exam weight</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<span class="font-label-md text-label-sm font-semibold text-on-surface">81%</span>
+<span class="text-label-sm text-on-surface-variant block">Accuracy</span>
+</div>
+<div class="w-16 bg-surface-container rounded-full h-2">
+<div class="bg-[#047857] h-2 rounded-full" style="width: 81%"></div>
+</div>
+</div>
+</label>
+<!-- Domain 5 -->
+<label class="flex items-center justify-between p-3.5 rounded-lg border border-outline-variant/80 hover:bg-surface-container-low transition-colors cursor-pointer min-h-[44px]">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 text-primary border-[#64748B] rounded focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="checkbox"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Domain 5: Protection of Information Assets</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">27% of official exam weight (Priority focus)</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<span class="font-label-md text-label-sm font-semibold text-[#B91C1C]">58%</span>
+<span class="text-label-sm text-on-surface-variant block">Accuracy</span>
+</div>
+<div class="w-16 bg-surface-container rounded-full h-2">
+<div class="bg-[#B91C1C] h-2 rounded-full" style="width: 58%"></div>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Right: Session Execution Parameters (1 column) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col justify-between">
+<div class="space-y-5">
+<div class="border-b border-outline-variant/60 pb-3">
+<h3 class="font-headline-md text-headline-sm text-on-surface">3. Session Parameters</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set question density and trigger session</p>
+</div>
+<!-- 3. Question Count Select -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="q-count-v1">Question count</label>
+<select class="w-full h-11 px-3 bg-surface-container-lowest border border-[#64748B] rounded-lg text-on-surface text-body-sm focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="q-count-v1">
+<option value="20">20 questions (~30 mins)</option>
+<option selected="" value="50">50 questions (~1h 15 mins)</option>
+<option value="100">100 questions (~2h 30 mins)</option>
+<option value="150">150 questions (Full length simulation)</option>
+</select>
+<p class="mt-2 text-label-sm font-label-sm text-on-surface-variant">
+                    5 selected domains • Questions drawn randomly from verified pool.
+                  </p>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/60 text-label-sm font-label-sm text-on-surface space-y-1.5">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Daily quota used:</span>
+<span class="font-semibold">1 / 3 attempts</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Time limit:</span>
+<span class="font-semibold">Untimed (Study mode)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Passing standard:</span>
+<span class="font-semibold">75% (450 scaled)</span>
+</div>
+</div>
+</div>
+<!-- 4. Primary Start Practice Button -->
+<div class="mt-6 pt-4 border-t border-outline-variant/60">
+<button class="w-full h-11 min-h-[44px] bg-[#0B1320] hover:bg-[#1E293B] text-on-primary font-label-md text-label-md font-medium rounded-lg flex items-center justify-center gap-2 transition-colors focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+<span>Start practice</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 5. Attempt History Table -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 space-y-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/60 pb-4">
+<div>
+<h3 class="font-headline-md text-headline-sm text-on-surface">5. Attempt History</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Audit records for candidate assessment logs and performance analytics</p>
+</div>
+<!-- Table Controls: Search, Filter, Sort -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[20px] text-outline">search</span>
+<input class="h-11 pl-10 pr-3 w-56 text-body-sm bg-surface-container-lowest border border-[#64748B] rounded-lg focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" placeholder="Search attempts..." type="text"/>
+</div>
+<select class="h-11 px-3 text-body-sm bg-surface-container-lowest border border-[#64748B] rounded-lg focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<option value="all">All modes</option>
+<option value="study">Study mode</option>
+<option value="timed">Timed exam</option>
+<option value="mock">Full mock</option>
+</select>
+<select class="h-11 px-3 text-body-sm bg-surface-container-lowest border border-[#64748B] rounded-lg focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2">
+<option value="desc">Date (Newest first)</option>
+<option value="asc">Date (Oldest first)</option>
+<option value="score">Highest score</option>
+</select>
+</div>
+</div>
+<!-- Structured Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-outline-variant text-label-sm font-label-sm text-[#475569] uppercase tracking-wider">
+<th class="py-3 px-4 font-medium">Date &amp; Time</th>
+<th class="py-3 px-4 font-medium">Mode</th>
+<th class="py-3 px-4 font-medium">Score</th>
+<th class="py-3 px-4 font-medium">Time Taken</th>
+<th class="py-3 px-4 font-medium">Result Status</th>
+<th class="py-3 px-4 font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-body-sm text-body-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-medium">22 Oct 2026, 14:30 WAT</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-label-sm font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+                        Study mode
+                      </span>
+</td>
+<td class="py-3.5 px-4 font-semibold text-on-surface">82% <span class="font-normal text-on-surface-variant text-label-sm">(492/600)</span></td>
+<td class="py-3.5 px-4">42m 15s</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span> Pass
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<a class="inline-flex items-center gap-1 text-[#1D4ED8] hover:underline font-label-md text-label-sm min-h-[44px] px-2 py-1" href="#review-1">
+<span>Review</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-medium">20 Oct 2026, 18:15 WAT</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-label-sm font-medium bg-surface-container text-on-surface border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                        Timed exam
+                      </span>
+</td>
+<td class="py-3.5 px-4 font-semibold text-on-surface">68% <span class="font-normal text-on-surface-variant text-label-sm">(410/600)</span></td>
+<td class="py-3.5 px-4">51m 40s</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">warning</span> Review Needed
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<a class="inline-flex items-center gap-1 text-[#1D4ED8] hover:underline font-label-md text-label-sm min-h-[44px] px-2 py-1" href="#review-2">
+<span>Review</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-medium">18 Oct 2026, 09:00 WAT</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-label-sm font-medium bg-primary-container text-on-primary border border-primary-container">
+<span class="material-symbols-outlined text-[14px]">assignment_turned_in</span>
+                        Full mock
+                      </span>
+</td>
+<td class="py-3.5 px-4 font-semibold text-on-surface">76% <span class="font-normal text-on-surface-variant text-label-sm">(570/750)</span></td>
+<td class="py-3.5 px-4">3h 48m</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span> Pass
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<a class="inline-flex items-center gap-1 text-[#1D4ED8] hover:underline font-label-md text-label-sm min-h-[44px] px-2 py-1" href="#review-3">
+<span>Review</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-medium">15 Oct 2026, 11:20 WAT</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-label-sm font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+                        Study mode
+                      </span>
+</td>
+<td class="py-3.5 px-4 font-semibold text-on-surface">62% <span class="font-normal text-on-surface-variant text-label-sm">(372/600)</span></td>
+<td class="py-3.5 px-4">38m 05s</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">close</span> High Risk
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<a class="inline-flex items-center gap-1 text-[#1D4ED8] hover:underline font-label-md text-label-sm min-h-[44px] px-2 py-1" href="#review-4">
+<span>Review</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-medium">13 Oct 2026, 16:45 WAT</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-label-sm font-medium bg-surface-container text-on-surface border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                        Timed exam
+                      </span>
+</td>
+<td class="py-3.5 px-4 font-semibold text-on-surface">74% <span class="font-normal text-on-surface-variant text-label-sm">(444/600)</span></td>
+<td class="py-3.5 px-4">45m 10s</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-sm font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span> Pass
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<a class="inline-flex items-center gap-1 text-[#1D4ED8] hover:underline font-label-md text-label-sm min-h-[44px] px-2 py-1" href="#review-5">
+<span>Review</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination -->
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/60">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Showing 1 to 5 of 18 practice attempts</span>
+<div class="flex items-center gap-1">
+<button class="h-11 px-3 border border-outline-variant rounded text-label-sm font-label-sm text-on-surface-variant bg-surface-container-lowest hover:bg-surface-container-low disabled:opacity-50 min-h-[44px]" disabled="" type="button">
+                  Previous
+                </button>
+<button class="h-11 w-11 border border-secondary bg-surface-container text-secondary rounded text-label-sm font-label-sm font-semibold min-h-[44px] flex items-center justify-center" type="button">
+                  1
+                </button>
+<button class="h-11 w-11 border border-outline-variant rounded text-label-sm font-label-sm text-on-surface hover:bg-surface-container-low min-h-[44px] flex items-center justify-center" type="button">
+                  2
+                </button>
+<button class="h-11 w-11 border border-outline-variant rounded text-label-sm font-label-sm text-on-surface hover:bg-surface-container-low min-h-[44px] flex items-center justify-center" type="button">
+                  3
+                </button>
+<button class="h-11 px-3 border border-outline-variant rounded text-label-sm font-label-sm text-on-surface bg-surface-container-lowest hover:bg-surface-container-low min-h-[44px]" type="button">
+                  Next
+                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: NO ATTEMPTS YET STATE -->
+<!-- ========================================================================= -->
+<section class="space-y-6 pt-12 border-t-2 border-outline-variant" id="variant-empty">
+<div class="flex items-center justify-between pb-2 border-b-2 border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="bg-primary-container text-on-primary px-3 py-1 rounded text-label-sm font-label-sm font-semibold">Variant 2</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">No Attempts Yet State — Initial Candidate Onboarding</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-surface-container text-secondary border border-secondary text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">fiber_new</span>
+            First Session
+          </span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 space-y-6">
+<div class="border-b border-outline-variant/60 pb-3 flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-sm text-on-surface">Attempt History</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Archived simulation records for Candidate Chinedu Eze</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">0 attempts recorded</span>
+</div>
+<!-- Empty State Specification Component -->
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-12 text-center max-w-xl mx-auto my-6 space-y-4">
+<div class="h-16 w-16 bg-surface-container text-secondary rounded-full flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[32px]">quiz</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-headline-sm text-on-surface">No practice attempts yet</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Select a mode and domain above to start your first practice drill.
+              </p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#0B1320] hover:bg-[#1E293B] text-on-primary text-label-md font-label-md font-medium rounded-lg transition-colors focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" href="#variant-default">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Configure initial drill</span>
+</a>
+</div>
+</div>
+<!-- Audit Policy Notice Footer -->
+<div class="p-4 bg-[#EFF6FF] border border-[#1D4ED8] rounded-lg text-label-sm font-label-sm text-[#1D4ED8] flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span>All session completions are cryptographically preserved for Cohort 14 academic evaluation and mock readiness audit certification.</span>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 3: DAILY ATTEMPT LIMIT REACHED STATE -->
+<!-- ========================================================================= -->
+<section class="space-y-6 pt-12 border-t-2 border-outline-variant" id="variant-quota">
+<div class="flex items-center justify-between pb-2 border-b-2 border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="bg-primary-container text-on-primary px-3 py-1 rounded text-label-sm font-label-sm font-semibold">Variant 3</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Daily Attempt Limit Reached State — Quota Lockout</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C] text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Quota Exhausted
+          </span>
+</div>
+<div class="space-y-6">
+<!-- Informational Lockout Banner -->
+<div class="p-4 bg-[#EFF6FF] border border-[#1D4ED8] rounded-xl flex items-start gap-3 shadow-sm">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[24px] mt-0.5" style="font-variation-settings: 'FILL' 1;">info</span>
+<div class="space-y-0.5">
+<h4 class="font-headline-sm text-label-md font-semibold text-[#1D4ED8]">Session Cap Enforced</h4>
+<p class="font-body-md text-body-md text-on-surface">
+                You have used today's 3 attempts. Come back tomorrow.
+              </p>
+<p class="font-body-sm text-label-sm text-on-surface-variant">
+                Quota resets at 00:00 WAT. Review your existing session rationales and notes in the attempt history below.
+              </p>
+</div>
+</div>
+<!-- Configuration Panel in Disabled State -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 opacity-75">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Domains in read-only lock -->
+<div class="lg:col-span-2 space-y-3">
+<div class="flex justify-between items-center border-b border-outline-variant/60 pb-2">
+<span class="font-headline-sm text-label-md text-on-surface font-semibold">Domains (Locked for next session)</span>
+<span class="text-label-sm text-on-surface-variant">Reset in 5h 12m</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Domain 1: Information System Auditing Process</span>
+<span class="font-semibold text-on-surface">78% Accuracy</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Domain 2: Governance &amp; Management of IT</span>
+<span class="font-semibold text-on-surface">64% Accuracy</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Domain 3: Information Systems Acquisition, Development &amp; Implementation</span>
+<span class="font-semibold text-on-surface">72% Accuracy</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Domain 4: Information Systems Operations &amp; Business Resilience</span>
+<span class="font-semibold text-on-surface">81% Accuracy</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Domain 5: Protection of Information Assets</span>
+<span class="font-semibold text-on-surface">58% Accuracy</span>
+</div>
+</div>
+<!-- Action Execution Block with Disabled Start Button -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 flex flex-col justify-between">
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1 font-medium">Question count</label>
+<input class="w-full h-11 px-3 bg-surface-container border border-outline-variant rounded-lg text-on-surface-variant cursor-not-allowed" disabled="" type="text" value="50 questions"/>
+</div>
+<div class="p-3 bg-surface-container-lowest border border-outline-variant rounded-lg space-y-1">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Daily quota:</span>
+<span class="font-semibold text-[#B91C1C]">3 / 3 (Limit reached)</span>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Next available attempt:</span>
+<span class="font-semibold text-on-surface">Tomorrow, 00:00 WAT</span>
+</div>
+</div>
+</div>
+<!-- Disabled Start Button Specification -->
+<div class="mt-6 pt-4 border-t border-outline-variant/60">
+<button class="w-full h-11 min-h-[44px] bg-[#E2E8F0] text-[#94A3B8] font-label-md text-label-md font-medium rounded-lg flex items-center justify-center gap-2 cursor-not-allowed border border-outline-variant/40" disabled="" type="button">
+<span class="material-symbols-outlined text-[20px]">block</span>
+<span>Start practice</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-[#B45309] mt-2">
+                    Daily threshold reached. Further attempts restricted.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Specification Board Technical Metadata Footer -->
+<footer class="pt-8 pb-12 border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between text-label-sm font-label-sm text-on-surface-variant gap-4">
+<div>
+<span>A.J. Silicon Learning Management System</span>
+<span class="mx-2">•</span>
+<span>CISA Practice Hub Canonical Spec v2.4</span>
+</div>
+<div class="flex items-center gap-4">
+<span>All fees denominated in Naira (₦)</span>
+<span>•</span>
+<span>Time standard: West Africa Time (WAT)</span>
+</div>
+</footer>
+</div>
+</main>
+<script src="../demo-nav.js"></script></body></html>

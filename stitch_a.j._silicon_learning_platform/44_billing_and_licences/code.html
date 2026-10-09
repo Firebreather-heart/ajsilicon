@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#FAF8FF]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Learning Platform - 44 Billing and licences</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed-variant": "#3f4756",
+            "on-surface-variant": "#45474c",
+            "inverse-on-surface": "#eef0ff",
+            "surface-variant": "#dae2fd",
+            "primary-fixed": "#dbe2f5",
+            "error": "#ba1a1a",
+            "tertiary": "#000000",
+            "secondary-fixed": "#dce1ff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#0039b5",
+            "inverse-primary": "#bfc6d9",
+            "primary-container": "#141c29",
+            "surface-bright": "#faf8ff",
+            "on-tertiary-fixed": "#281809",
+            "primary": "#0B1320",
+            "on-primary": "#ffffff",
+            "secondary": "#1d4ed8",
+            "surface-dim": "#d2d9f4",
+            "on-primary-container": "#7c8495",
+            "on-primary-fixed": "#141c29",
+            "on-error-container": "#93000a",
+            "on-background": "#131b2e",
+            "surface-container-low": "#f2f3ff",
+            "secondary-container": "#4069f2",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed": "#fddcc4",
+            "outline": "#75777c",
+            "on-tertiary-fixed-variant": "#584231",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "outline-variant": "#c5c6cc",
+            "on-secondary-fixed": "#001551",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#575f6e",
+            "tertiary-container": "#281809",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#bfc6d9",
+            "surface-container-highest": "#dae2fd",
+            "surface": "#faf8ff",
+            "surface-container": "#eaedff",
+            "inverse-surface": "#283044",
+            "on-secondary-container": "#fffbff",
+            "on-tertiary-container": "#997f6a",
+            "secondary-fixed-dim": "#b7c4ff",
+            "background": "#faf8ff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-lg": "2rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xl": "3rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.5rem",
+            "space-sm": "1rem",
+            "margin": "2rem",
+            "space-md": "1.5rem"
+          },
+          fontFamily: {
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="min-h-full text-[#0F172A] bg-[#F1F5F9] antialiased">
+<!-- TOP SPECIFICATION ANCHOR BAR (Meta Specification Header) -->
+<header class="bg-[#0B1320] text-white border-b border-[#334155] px-6 py-3 flex items-center justify-between sticky top-0 z-50 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold tracking-wider uppercase bg-[#1E293B] text-[#93C5FD] border border-[#3B82F6]">SPEC BOARD</span>
+<h1 class="text-sm font-semibold tracking-tight text-white flex items-center gap-2">
+<span>Screen: 44 Billing and licences (Student Application Shell)</span>
+<span class="text-[#64748B]">·</span>
+<span class="text-[#94A3B8] font-normal">Candidate: Chinedu Eze</span>
+<span class="text-[#64748B]">·</span>
+<span class="text-[#94A3B8] font-normal">Desktop 1440px Specification</span>
+</h1>
+</div>
+<div class="flex items-center gap-4 text-xs font-mono text-[#94A3B8]">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span>Strict 8px Grid Enforced</span>
+<span class="hidden md:inline text-[#64748B]">|</span>
+<span>Jurisdiction: Lagos, Nigeria (WAT)</span>
+</div>
+</header>
+<!-- MAIN CANVAS: PRESENTING BOTH VARIANTS SIDE BY SIDE OR SEQUENTIALLY ON THE 1440PX BOARD -->
+<main class="max-w-[1560px] mx-auto p-6 md:p-8 space-y-16">
+<!-- ========================================================================= -->
+<!-- VARIANT 1: CANONICAL DEFAULT STATE                                       -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<div class="flex flex-wrap items-center justify-between gap-4 pb-2 border-b border-[#CBD5E1]">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 text-xs font-bold uppercase rounded bg-[#0B1320] text-white">VARIANT 1</span>
+<h2 class="text-xl font-bold tracking-tight text-[#0F172A]">Canonical Active State</h2>
+</div>
+<p class="text-sm text-[#475569] mt-0.5">Fully populated candidate dashboard displaying active courseware, access progress meters, and transaction records.</p>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#475569] font-medium bg-white px-3 py-1.5 rounded-lg border border-[#E2E8F0]">
+<span class="material-symbols-outlined text-sm text-[#047857]">check_circle</span>
+<span>44px Minimum Touch Targets · Verified Naira Currency Standards</span>
+</div>
+</div>
+<!-- DESKTOP 1440PX SIMULATED VIEWPORT CONTAINER -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-2xl shadow-xl overflow-hidden flex flex-col">
+<!-- 1. STUDENT APPLICATION TOP BAR (Deep navy #0B1320, 64px height) -->
+<header class="h-16 bg-[#0B1320] px-6 flex items-center justify-between border-b border-[#1E293B] shrink-0 select-none">
+<!-- Left: Official Logo on Crisp White Contrast Plate -->
+<div class="flex items-center gap-6">
+<div class="bg-white h-10 px-3 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcSIgCVs5mL9D6Yffeqot-HUz3v2td1A6Hqxb9lXyml7wxZ91jkOYTeD_vGPQVlaLGiMeLvkzHdtDIUAB-yAXSkw6mPnpeJI75sh_SJDq76BYerFou_-jJIWOQ7V2-YL2mCvHd6KnEksSkd6seASpCmkS1cPDa_eB28l7ZVm8fVN7Or6KkE6oOYLRnBuhRe1TTeIg_v4UlnDERldZ2yXl2c8-4cpp2vTLeBZtaHUXO7BWNdpAOV5Iffg"/>
+</div>
+<div class="h-6 w-[1px] bg-[#1E293B] hidden sm:block"></div>
+<span class="text-xs uppercase tracking-wider text-[#94A3B8] font-medium hidden sm:inline">Candidate Learning Portal</span>
+</div>
+<!-- Center/Right: WAT Clock, Notifications, Help, Candidate Avatar Pill -->
+<div class="flex items-center gap-4">
+<!-- WAT Clock -->
+<div class="hidden lg:flex items-center gap-1.5 text-xs text-[#94A3B8] font-mono bg-[#141C29] px-3 py-1.5 rounded border border-[#1E293B]">
+<span class="material-symbols-outlined text-[16px] text-[#93C5FD]">schedule</span>
+<span>14:30 WAT · 05 Oct 2026</span>
+</div>
+<!-- Help Icon -->
+<button aria-label="Help &amp; Knowledge Base" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-[#0B1320]" type="button">
+<span class="material-symbols-outlined">help</span>
+</button>
+<!-- Notification Bell with Activity Dot -->
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white hover:bg-[#1E293B] rounded-lg relative transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-[#0B1320]" type="button">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#3B82F6] ring-2 ring-[#0B1320]"></span>
+</button>
+<!-- Student Avatar Pill (No role switcher) -->
+<div class="flex items-center gap-3 pl-3 border-l border-[#1E293B]">
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center font-semibold text-xs tracking-wider text-[#93C5FD]">
+                CE
+              </div>
+<div class="text-left hidden md:block leading-tight">
+<div class="text-sm font-semibold text-white tracking-tight">Chinedu Eze</div>
+<div class="text-xs text-[#94A3B8]">CISA Cohort 14 · Virtual</div>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. APPLICATION SHELL BODY: SIDEBAR + MAIN CONTENT AREA -->
+<div class="flex flex-1 min-h-[960px]">
+<!-- LEFT SIDEBAR (Width 280px / 70 units, structured navigation) -->
+<aside class="w-72 bg-[#0B1320] border-r border-[#1E293B] flex flex-col justify-between p-4 shrink-0">
+<div class="space-y-6">
+<!-- Enrolled Cohort Header Card -->
+<div class="bg-[#141C29] p-3.5 rounded-xl border border-[#1E293B]">
+<div class="flex items-center justify-between text-[11px] text-[#93C5FD] font-semibold uppercase tracking-wider mb-1">
+<span>Enrolled Cohort</span>
+<span class="w-2 h-2 rounded-full bg-[#047857]"></span>
+</div>
+<div class="text-sm font-bold text-white tracking-tight">CISA Exam Prep</div>
+<div class="text-xs text-[#94A3B8] mt-0.5 leading-snug">Cohort 14: 12 Oct – 18 Dec 2026, Virtual</div>
+</div>
+<!-- Sidebar Navigation Links -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#practice">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>Practice Exams</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#progress">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span>Progress</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#certs">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Certificates and credits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#extend">
+<span class="material-symbols-outlined text-[20px]">update</span>
+<span>Extend Access</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#help">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span>Help centre</span>
+</a>
+<!-- Settings / Billing Active State -->
+<div class="pt-2">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold bg-[#1E293B] text-white border-l-4 border-[#3B82F6] min-h-[44px]">
+<span class="material-symbols-outlined text-[20px] text-[#93C5FD]">settings</span>
+<span>Billing and licences</span>
+</div>
+</div>
+</nav>
+</div>
+<!-- Sidebar Bottom: Sign out -->
+<div class="pt-4 border-t border-[#1E293B]">
+<button class="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-[#94A3B8] hover:text-[#EF4444] hover:bg-[#141C29] rounded-lg transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+</aside>
+<!-- MAIN CONTENT CANVAS -->
+<main class="flex-1 bg-[#F8FAFC] p-8 overflow-y-auto space-y-8">
+<!-- 1. Header & Breadcrumbs Area -->
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-medium text-[#475569] mb-2">
+<span class="hover:text-[#0F172A] cursor-pointer">Candidate Portal</span>
+<span class="text-[#94A3B8]">/</span>
+<span class="hover:text-[#0F172A] cursor-pointer">Settings</span>
+<span class="text-[#94A3B8]">/</span>
+<span aria-current="page" class="text-[#0F172A] font-semibold">44 Billing and licences</span>
+</nav>
+<h1 class="text-2xl font-bold tracking-tight text-[#0F172A]">Billing and licences</h1>
+<p class="text-sm text-[#475569] mt-1">Manage active courseware licences, review tuition receipts, and inspect historical payments.</p>
+</div>
+<!-- Action Link to Payment Methods and Subscriptions -->
+<div>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-[#1D4ED8] bg-white border border-[#CBD5E1] hover:bg-[#F1F5F9] transition-colors shadow-sm min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" href="#payment-methods">
+<span>Payment methods and subscriptions</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Banner / Informational Notification Link -->
+<div class="bg-[#EFF6FF] border border-[#BFDBFE] rounded-xl p-4 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#1D4ED8] shrink-0">credit_card</span>
+<p class="text-sm text-[#1E3A8A]">
+                  Looking to update your primary debit card or manage recurring billing? 
+                  <span class="font-medium text-[#0F172A]">Your next billing anchor evaluates automatically via Paystack Direct.</span>
+</p>
+</div>
+<a class="inline-flex items-center gap-1 text-sm font-semibold text-[#1D4ED8] hover:underline whitespace-nowrap min-h-[44px] py-2 px-1" href="#payment-methods">
+                Manage Subscriptions
+                <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- 2. LICENCE CARDS WITH METER AND END DATE (Bento Structure) -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-base font-bold text-[#0F172A] flex items-center gap-2">
+<span>Active Courseware Licences</span>
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#E2E8F0] text-xs font-bold text-[#0F172A]">2</span>
+</h2>
+<a class="text-xs font-semibold text-[#1D4ED8] hover:underline flex items-center gap-1" href="#extend-access">
+<span>View entitlement terms</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- PRIMARY LICENCE CARD: Active -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-4 mb-3">
+<div>
+<span class="text-xs font-mono font-medium text-[#475569] uppercase tracking-wider">Cohort 14 (Virtual)</span>
+<h3 class="text-lg font-bold text-[#0F172A] mt-0.5">CISA Exam Prep Courseware &amp; Practice Bank</h3>
+</div>
+<!-- Status Badge: Active -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857] shrink-0">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Active</span>
+</span>
+</div>
+<!-- Period details -->
+<div class="flex items-center gap-2 text-xs text-[#475569] mb-4">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">calendar_today</span>
+<span>Licence Period: Valid until <strong class="text-[#0F172A] font-semibold">18 Dec 2026</strong></span>
+<span class="text-[#CBD5E1]">·</span>
+<span class="font-medium text-[#047857]">74 days remaining</span>
+</div>
+<!-- Access Timeline / Progress Meter -->
+<div class="space-y-1.5 mb-5">
+<div class="flex justify-between text-xs text-[#475569]">
+<span>Timeline: <strong>16 of 90 days elapsed</strong></span>
+<span class="font-mono text-[#0F172A] font-semibold">82% Remaining</span>
+</div>
+<div class="w-full h-2.5 bg-[#E2E8F0] rounded-full overflow-hidden">
+<div class="h-full bg-[#0B1320] rounded-full" style="width: 17.7%"></div>
+</div>
+</div>
+<!-- Included Entitlements -->
+<div class="pt-4 border-t border-[#F1F5F9]">
+<div class="text-xs font-semibold text-[#475569] uppercase tracking-wider mb-2">Included Entitlements:</div>
+<div class="grid grid-cols-2 gap-2 text-xs text-[#334155]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">task_alt</span>
+<span>5 ISACA Practice Domains</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">task_alt</span>
+<span>Video Lecture Vault</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">task_alt</span>
+<span>Paginated Reading Reader</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">task_alt</span>
+<span>Proctored Mock Engine</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / CTA -->
+<div class="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="text-xs text-[#64748B]">Auto-renew: Disabled</span>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-[#0F172A] bg-white border border-[#64748B] hover:bg-[#F1F5F9] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[18px]">more_time</span>
+<span>Extend licence</span>
+</button>
+</div>
+</div>
+<!-- SECONDARY LICENCE CARD: Expired Add-on -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-4 mb-3">
+<div>
+<span class="text-xs font-mono font-medium text-[#475569] uppercase tracking-wider">Independent Module</span>
+<h3 class="text-lg font-bold text-[#0F172A] mt-0.5">CRISC Foundation Diagnostic Booster</h3>
+</div>
+<!-- Status Badge: Expired/Warning -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFFBEB] text-[#B45309] border border-[#B45309] shrink-0">
+<span class="material-symbols-outlined text-[16px]">history_toggle_off</span>
+<span>Expired</span>
+</span>
+</div>
+<!-- Period details -->
+<div class="flex items-center gap-2 text-xs text-[#475569] mb-4">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">event_busy</span>
+<span>Access Concluded: <strong class="text-[#0F172A] font-semibold">30 Sep 2026</strong></span>
+<span class="text-[#CBD5E1]">·</span>
+<span class="font-medium text-[#B45309]">0 days remaining</span>
+</div>
+<!-- Access Timeline / Progress Meter (100% elapsed) -->
+<div class="space-y-1.5 mb-5">
+<div class="flex justify-between text-xs text-[#475569]">
+<span>Timeline: <strong>30 of 30 days elapsed</strong></span>
+<span class="font-mono text-[#B45309] font-semibold">100% Completed</span>
+</div>
+<div class="w-full h-2.5 bg-[#E2E8F0] rounded-full overflow-hidden">
+<div class="h-full bg-[#B45309] rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Included Entitlements -->
+<div class="pt-4 border-t border-[#F1F5F9]">
+<div class="text-xs font-semibold text-[#475569] uppercase tracking-wider mb-2">Previous Scope:</div>
+<div class="grid grid-cols-2 gap-2 text-xs text-[#475569]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">lock</span>
+<span>CRISC Practice Question Vault</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">lock</span>
+<span>Diagnostic Baseline Scorecard</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / CTA -->
+<div class="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+<span class="text-xs text-[#64748B]">Archive Available</span>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-[#0B1320] bg-white border border-[#0B1320] hover:bg-[#F8FAFC] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>Renew licence</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. PAYMENT HISTORY TABLE (Document / Tabular Discipline) -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden">
+<!-- Table Controls Header -->
+<div class="p-5 border-b border-[#E2E8F0] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="text-base font-bold text-[#0F172A]">Payment History &amp; Official Receipts</h3>
+<p class="text-xs text-[#475569] mt-0.5">All transactions include Nigerian statutory 7.5% Value Added Tax (VAT).</p>
+</div>
+<!-- Search & Filters Container -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Search Bar (44px target) -->
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-[#64748B]">search</span>
+<input class="w-full h-11 pl-9 pr-3 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 placeholder-[#475569] text-ellipsis" placeholder="Search receipts or reference..." type="text"/>
+</div>
+<!-- Status Filter Dropdown (44px target) -->
+<div class="relative">
+<select aria-label="Filter receipts by status" class="h-11 pl-3 pr-8 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 appearance-none cursor-pointer">
+<option value="all">Status: All (4)</option>
+<option value="completed">Completed (4)</option>
+<option value="pending">Pending (0)</option>
+<option value="failed">Failed (0)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-[#64748B] pointer-events-none">expand_more</span>
+</div>
+<!-- Sort Dropdown (44px target) -->
+<div class="relative">
+<select aria-label="Sort receipts" class="h-11 pl-3 pr-8 text-sm text-[#0F172A] bg-white border border-[#64748B] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 appearance-none cursor-pointer">
+<option value="recent">Sort: Most recent</option>
+<option value="oldest">Sort: Oldest first</option>
+<option value="amount-high">Amount: High to low</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-[#64748B] pointer-events-none">swap_vert</span>
+</div>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-xs font-semibold text-[#475569] uppercase tracking-wider">
+<th class="py-3.5 px-4 w-32">Date</th>
+<th class="py-3.5 px-4 min-w-[280px]">Description &amp; Reference</th>
+<th class="py-3.5 px-4 text-right">Amount (NGN)</th>
+<th class="py-3.5 px-4 text-right">VAT (7.5%)</th>
+<th class="py-3.5 px-4">Status &amp; Channel</th>
+<th class="py-3.5 px-4 text-right">Receipt Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-sm text-[#0F172A]">
+<!-- Row 1 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-mono text-xs text-[#334155]">05 Oct 2026</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">CISA Cohort 14 Tuition &amp; Courseware Licence</div>
+<div class="text-xs font-mono text-[#64748B] mt-0.5">Ref: AJ-2026-CISA-09481 · Paystack Direct</div>
+</td>
+<td class="py-4 px-4 text-right font-mono font-semibold text-[#0F172A]">₦300,000</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-[#475569]">₦22,500</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Completed</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-xs font-semibold text-[#1D4ED8] hover:text-[#0B1320] hover:bg-[#EFF6FF] border border-transparent hover:border-[#BFDBFE] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download PDF Receipt</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-mono text-xs text-[#334155]">15 Sep 2026</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">Diagnostic Mock Practice Bank Extension (14 Days)</div>
+<div class="text-xs font-mono text-[#64748B] mt-0.5">Ref: AJ-2026-EXT-04112 · Card **** 4022</div>
+</td>
+<td class="py-4 px-4 text-right font-mono font-semibold text-[#0F172A]">₦45,000</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-[#475569]">₦3,375</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Completed</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-xs font-semibold text-[#1D4ED8] hover:text-[#0B1320] hover:bg-[#EFF6FF] border border-transparent hover:border-[#BFDBFE] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download PDF Receipt</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-mono text-xs text-[#334155]">31 Aug 2026</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">CRISC Foundation Diagnostic Booster Enrolment</div>
+<div class="text-xs font-mono text-[#64748B] mt-0.5">Ref: AJ-2026-CRISC-88021 · Electronic Transfer</div>
+</td>
+<td class="py-4 px-4 text-right font-mono font-semibold text-[#0F172A]">₦120,000</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-[#475569]">₦9,000</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Completed</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-xs font-semibold text-[#1D4ED8] hover:text-[#0B1320] hover:bg-[#EFF6FF] border border-transparent hover:border-[#BFDBFE] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download PDF Receipt</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-4 px-4 font-mono text-xs text-[#334155]">10 Jun 2026</td>
+<td class="py-4 px-4">
+<div class="font-medium text-[#0F172A]">IT Audit Assessment Primer &amp; Governance Handbook</div>
+<div class="text-xs font-mono text-[#64748B] mt-0.5">Ref: AJ-2026-LIT-00318 · Paystack Direct</div>
+</td>
+<td class="py-4 px-4 text-right font-mono font-semibold text-[#0F172A]">₦25,000</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-[#475569]">₦1,875</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Completed</span>
+</span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-xs font-semibold text-[#1D4ED8] hover:text-[#0B1320] hover:bg-[#EFF6FF] border border-transparent hover:border-[#BFDBFE] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#2563EB]" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download PDF Receipt</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Controls (44px target) -->
+<div class="p-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#475569]">
+<div>
+                  Showing <strong class="text-[#0F172A]">1–4</strong> of <strong class="text-[#0F172A]">4</strong> receipts
+                </div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-2 rounded border border-[#CBD5E1] bg-white text-[#94A3B8] cursor-not-allowed min-h-[44px] flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<button aria-current="page" class="w-11 h-11 rounded font-semibold bg-[#0B1320] text-white flex items-center justify-center" type="button">
+                    1
+                  </button>
+<button class="px-3 py-2 rounded border border-[#CBD5E1] bg-white text-[#94A3B8] cursor-not-allowed min-h-[44px] flex items-center gap-1" disabled="" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- SHARED CLOSURE FOOTER -->
+<footer class="w-full py-4 px-6 border-t border-[#1E293B] bg-[#0B1320] flex flex-col md:flex-row justify-between items-center text-xs text-[#94A3B8] gap-4 shrink-0">
+<div>
+            © 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. All Sessions Digitally Watermarked.
+          </div>
+<div class="flex items-center gap-6 text-[#94A3B8]">
+<span class="hover:text-white cursor-pointer transition-colors">Zero-Trust Protocol</span>
+<span class="hover:text-white cursor-pointer transition-colors">Forensic Integrity Policy</span>
+<span class="hover:text-white cursor-pointer transition-colors">Automated Verification Gateway</span>
+</div>
+</footer>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VARIANT 2: EMPTY STATE                                                    -->
+<!-- ========================================================================= -->
+<section class="space-y-4">
+<div class="flex flex-wrap items-center justify-between gap-4 pb-2 border-b border-[#CBD5E1]">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 text-xs font-bold uppercase rounded bg-[#475569] text-white">VARIANT 2</span>
+<h2 class="text-xl font-bold tracking-tight text-[#0F172A]">Empty State Specification</h2>
+</div>
+<p class="text-sm text-[#475569] mt-0.5">Prospective or freshly registered candidate view with no active courseware licences and an empty billing history ledger.</p>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#475569] font-medium bg-white px-3 py-1.5 rounded-lg border border-[#E2E8F0]">
+<span class="material-symbols-outlined text-sm text-[#1D4ED8]">info</span>
+<span>Zero-Data Boundary States with Re-engagement CTA</span>
+</div>
+</div>
+<!-- DESKTOP 1440PX SIMULATED VIEWPORT CONTAINER -->
+<div class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-2xl shadow-xl overflow-hidden flex flex-col">
+<!-- TOP BAR (Empty Candidate context) -->
+<header class="h-16 bg-[#0B1320] px-6 flex items-center justify-between border-b border-[#1E293B] shrink-0 select-none">
+<div class="flex items-center gap-6">
+<div class="bg-white h-10 px-3 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_5F1dFOFSIRmCNuC17scIjx5eQEv5pJQldVXHt6-iKARdQl0ti9Fc4OE1LZp0HzxKdKF3nwGY-WyuBOpe1sIX_lsEhPwAGHTvRIlzJNsBxansBSY3RzMB8NEyGOImUzIweesuXICLksktyzc0nB-ZFzvi1eLTJ7m-juL7EXPLUSD1mLdtEJnEEax2Yh26DM-ZYkGQ15_hXBgeBsgz0Pg5BYx_eo4Iz-FpuOs4yYCCpyLstwngg83wpg"/>
+</div>
+<div class="h-6 w-[1px] bg-[#1E293B] hidden sm:block"></div>
+<span class="text-xs uppercase tracking-wider text-[#94A3B8] font-medium hidden sm:inline">Candidate Learning Portal</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-1.5 text-xs text-[#94A3B8] font-mono bg-[#141C29] px-3 py-1.5 rounded border border-[#1E293B]">
+<span class="material-symbols-outlined text-[16px] text-[#93C5FD]">schedule</span>
+<span>14:30 WAT · 05 Oct 2026</span>
+</div>
+<button aria-label="Help &amp; Knowledge Base" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-[#94A3B8] hover:text-white rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-3 pl-3 border-l border-[#1E293B]">
+<div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center font-semibold text-xs text-[#93C5FD]">
+                CE
+              </div>
+<div class="text-left hidden md:block leading-tight">
+<div class="text-sm font-semibold text-white tracking-tight">Chinedu Eze</div>
+<div class="text-xs text-[#94A3B8]">Candidate Profile · Prospective</div>
+</div>
+</div>
+</div>
+</header>
+<!-- EMPTY STATE BODY: SIDEBAR + CONTENT -->
+<div class="flex flex-1 min-h-[820px]">
+<!-- SIDEBAR (Prospective context) -->
+<aside class="w-72 bg-[#0B1320] border-r border-[#1E293B] flex flex-col justify-between p-4 shrink-0">
+<div class="space-y-6">
+<div class="bg-[#141C29] p-3.5 rounded-xl border border-[#1E293B]">
+<div class="text-[11px] text-[#94A3B8] font-semibold uppercase tracking-wider mb-1">Enrolment Status</div>
+<div class="text-sm font-bold text-white tracking-tight">No Active Programme</div>
+<div class="text-xs text-[#64748B] mt-0.5">Explore available audit courses</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#modules">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Browse Programmes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#94A3B8] hover:text-white hover:bg-[#141C29] transition-colors min-h-[44px]" href="#help">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span>Help centre</span>
+</a>
+<div class="pt-2">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold bg-[#1E293B] text-white border-l-4 border-[#3B82F6] min-h-[44px]">
+<span class="material-symbols-outlined text-[20px] text-[#93C5FD]">settings</span>
+<span>Billing and licences</span>
+</div>
+</div>
+</nav>
+</div>
+<div class="pt-4 border-t border-[#1E293B]">
+<button class="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-[#94A3B8] hover:text-[#EF4444] rounded-lg transition-colors min-h-[44px]" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+</aside>
+<!-- MAIN EMPTY CONTENT CANVAS -->
+<main class="flex-1 bg-[#F8FAFC] p-8 overflow-y-auto space-y-8">
+<!-- Breadcrumbs & Header -->
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-medium text-[#475569] mb-2">
+<span>Candidate Portal</span>
+<span class="text-[#94A3B8]">/</span>
+<span>Settings</span>
+<span class="text-[#94A3B8]">/</span>
+<span aria-current="page" class="text-[#0F172A] font-semibold">44 Billing and licences</span>
+</nav>
+<h1 class="text-2xl font-bold tracking-tight text-[#0F172A]">Billing and licences</h1>
+<p class="text-sm text-[#475569] mt-1">Manage active courseware licences, review tuition receipts, and inspect historical payments.</p>
+</div>
+<div>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-[#1D4ED8] bg-white border border-[#CBD5E1] hover:bg-[#F1F5F9] transition-colors shadow-sm min-h-[44px]" href="#payment-methods">
+<span>Payment methods and subscriptions</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 1. EMPTY LICENCE CONTAINER / BANNER -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-10 shadow-sm text-center">
+<div class="max-w-md mx-auto flex flex-col items-center">
+<div class="w-14 h-14 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#1D4ED8] mb-4">
+<span class="material-symbols-outlined text-[30px]">card_membership</span>
+</div>
+<h2 class="text-lg font-bold text-[#0F172A]">No active licences found</h2>
+<p class="text-sm text-[#475569] mt-1.5 mb-6">
+                  You do not currently possess active access tokens or courseware licences. Enrol in an official CISA, CRISC, or CISM training cohort to activate course resources.
+                </p>
+<button class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold text-white bg-[#0B1320] hover:bg-[#1E293B] transition-colors min-h-[44px] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>Browse programmes</span>
+</button>
+</div>
+</div>
+<!-- 2. EMPTY PAYMENT HISTORY CONTAINER -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl shadow-sm overflow-hidden">
+<div class="p-5 border-b border-[#E2E8F0] flex items-center justify-between">
+<div>
+<h3 class="text-base font-bold text-[#0F172A]">Payment History &amp; Official Receipts</h3>
+<p class="text-xs text-[#475569] mt-0.5">All transactions include Nigerian statutory 7.5% Value Added Tax (VAT).</p>
+</div>
+</div>
+<!-- Empty Table Placeholder Content -->
+<div class="p-12 text-center flex flex-col items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-[#F1F5F9] border border-[#CBD5E1] flex items-center justify-center text-[#64748B] mb-3">
+<span class="material-symbols-outlined text-[28px]">receipt_long</span>
+</div>
+<h4 class="text-base font-bold text-[#0F172A]">No payment history found</h4>
+<p class="text-sm text-[#475569] max-w-sm mt-1">
+                  Once you enrol in a programme or purchase an extension, your tax invoices and receipts will appear here.
+                </p>
+</div>
+</div>
+</main>
+</div>
+<!-- FOOTER -->
+<footer class="w-full py-4 px-6 border-t border-[#1E293B] bg-[#0B1320] flex flex-col md:flex-row justify-between items-center text-xs text-[#94A3B8] gap-4 shrink-0">
+<div>
+            © 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. All Sessions Digitally Watermarked.
+          </div>
+<div class="flex items-center gap-6 text-[#94A3B8]">
+<span class="hover:text-white cursor-pointer">Zero-Trust Protocol</span>
+<span class="hover:text-white cursor-pointer">Forensic Integrity Policy</span>
+<span class="hover:text-white cursor-pointer">Automated Verification Gateway</span>
+</div>
+</footer>
+</div>
+</section>
+</main>
+<script src="../demo-nav.js"></script></body></html>

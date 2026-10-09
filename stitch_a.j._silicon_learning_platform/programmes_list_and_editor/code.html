@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon Secure Portal | Programmes Management &amp; Editor</title>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#141c29",
+            "primary-fixed-dim": "#bfc6d9",
+            "outline-variant": "#c5c6cc",
+            "outline": "#75777c",
+            "on-tertiary-fixed": "#281809",
+            "surface-container": "#eaedff",
+            "on-tertiary-fixed-variant": "#584231",
+            "primary-fixed": "#dbe2f5",
+            "on-tertiary-container": "#997f6a",
+            "surface-container-highest": "#dae2fd",
+            "secondary": "#1d4ed8",
+            "surface-container-high": "#e2e7ff",
+            "on-primary-container": "#7c8495",
+            "on-surface-variant": "#45474c",
+            "on-error": "#ffffff",
+            "surface": "#faf8ff",
+            "on-secondary-fixed": "#001551",
+            "surface-bright": "#faf8ff",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "on-secondary-fixed-variant": "#0039b5",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#575f6e",
+            "surface-variant": "#dae2fd",
+            "tertiary-fixed": "#fddcc4",
+            "on-primary-fixed": "#141c29",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#283044",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-dim": "#d2d9f4",
+            "tertiary-container": "#281809",
+            "surface-container-low": "#f2f3ff",
+            "on-error-container": "#93000a",
+            "tertiary": "#000000",
+            "background": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "inverse-primary": "#bfc6d9",
+            "on-surface": "#131b2e",
+            "secondary-fixed": "#dce1ff",
+            "on-primary": "#ffffff",
+            "on-background": "#131b2e",
+            "secondary-container": "#4069f2",
+            "secondary-fixed-dim": "#b7c4ff",
+            "error": "#ba1a1a",
+            "primary": "#000000"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "3rem",
+            "space-xs": "0.5rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "space-sm": "1rem",
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem"
+          },
+          fontFamily: {
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Mono", "monospace"]
+          },
+          fontSize: {
+            "display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "code-snippet": ["13px", { lineHeight: "18px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Enforce 44px touch floor */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-on-surface bg-surface flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- ========================================== -->
+<!-- Top Application Shell Navigation (#0B1320) -->
+<!-- ========================================== -->
+<header class="bg-primary-container text-surface-container-lowest h-16 w-full flex items-center justify-between px-6 z-50 sticky top-0 border-b border-outline">
+<!-- Left: Brand Plate -->
+<div class="flex items-center gap-6">
+<!-- High contrast white plate for logo -->
+<div class="bg-surface-container-lowest h-10 px-3 py-1 rounded flex items-center justify-center shadow-sm">
+<img alt="A.J. Silicon Security &amp; IT Governance" class="h-6 w-auto max-w-[170px] object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaSUoHj2Jh9YKnaicRRz8Uov590gzv3tZLoKRw4qaMO95o2ItW4L7hoaW4u32pCJGwVNhJqOLXEY6DaZJZ7u6i0DEUjbMUUExc-mt7QN9K4LwBw8A_SNSUqGJFHeZah1cTzhzuHh_nqKeA4IKikjrf5hmAAdX_CTSxDRMfUz7IPwEABFlKIHMg0OhSvvbWt1rcgA2OPpNjC6AtNBysaqggIh1UD7cIR7T345wArDmfTFJP5HhCCTGHBQ"/>
+</div>
+<div class="h-6 w-px bg-outline/40 hidden sm:block"></div>
+<div class="hidden lg:flex flex-col">
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest tracking-tight leading-tight">Secure Portal</span>
+<span class="font-label-sm text-label-sm text-on-primary-container leading-none">Enterprise Academic Oversight · Lagos</span>
+</div>
+</div>
+<!-- Right: Telemetry, Time, User Role & Avatar -->
+<div class="flex items-center gap-5">
+<!-- Time indicator -->
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded bg-inverse-surface/60 border border-outline/30">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">schedule</span>
+<span class="font-code-snippet text-code-snippet text-secondary-fixed">11:50 WAT · 05 Oct 2026</span>
+</div>
+<!-- Plain Text Role Indicator (No switcher) -->
+<div class="text-right hidden sm:block">
+<div class="font-label-md text-label-md font-medium text-surface-container-lowest">Olumide Adeyemi</div>
+<div class="font-label-sm text-label-sm text-on-primary-container">Role: Operations Manager</div>
+</div>
+<!-- Notification Action -->
+<button aria-label="View notifications" class="touch-target relative flex items-center justify-center rounded-lg hover:bg-inverse-surface text-surface-container-lowest transition-colors" type="button">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<!-- User Avatar Badge -->
+<div class="w-10 h-10 rounded-full bg-inverse-surface border border-outline/40 flex items-center justify-center font-headline-sm text-surface-container-lowest font-semibold">
+        OA
+      </div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- Interactive View State Bar (Prototype Test) -->
+<!-- ========================================== -->
+<div class="bg-surface-container-low border-b border-outline-variant/60 px-6 py-2.5 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">tune</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Specification State Preview:</span>
+</div>
+<div aria-label="Screen View State Switcher" class="flex flex-wrap items-center gap-2" role="tablist">
+<button class="state-pill px-3 py-1.5 rounded-md font-label-sm text-label-sm font-medium bg-primary-container text-surface-container-lowest shadow-sm transition-all flex items-center gap-1.5" id="state-btn-list" onclick="switchState('list')" type="button">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+        1. List View (Default)
+      </button>
+<button class="state-pill px-3 py-1.5 rounded-md font-label-sm text-label-sm font-medium bg-surface-container-lowest text-on-surface border border-outline-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="state-btn-editor-pricing" onclick="switchState('editor-pricing')" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+        2. Editor: Pricing Tab (CISA)
+      </button>
+<button class="state-pill px-3 py-1.5 rounded-md font-label-sm text-label-sm font-medium bg-surface-container-lowest text-on-surface border border-outline-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="state-btn-editor-create" onclick="switchState('editor-create')" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+        3. Create New Programme
+      </button>
+<button class="state-pill px-3 py-1.5 rounded-md font-label-sm text-label-sm font-medium bg-surface-container-lowest text-on-surface border border-outline-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="state-btn-unpublished" onclick="switchState('unpublished')" type="button">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+        4. Unpublished Warning State
+      </button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- App Body Layout (Persistent Rail + Content) -->
+<!-- ========================================== -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Persistent Sidebar Nav Rail (Staff Application Shell) -->
+<aside class="w-64 bg-primary-container text-on-primary-container flex flex-col justify-between border-r border-outline flex-shrink-0 select-none">
+<div class="p-4 space-y-6 overflow-y-auto">
+<!-- Academic Section Active Group -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-outline-variant flex items-center justify-between">
+<span>Academics Core</span>
+<span class="material-symbols-outlined text-[14px]">school</span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 bg-inverse-surface text-secondary-fixed font-semibold rounded-lg touch-target" href="javascript:void(0)" onclick="switchState('list')">
+<span class="material-symbols-outlined text-secondary-fixed">assignment</span>
+<span class="font-body-sm text-body-sm">Programmes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/40 rounded-lg transition-colors touch-target" href="javascript:void(0)">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-body-sm text-body-sm">Curricula</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/40 rounded-lg transition-colors touch-target" href="javascript:void(0)">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-body-sm text-body-sm">Question Bank</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/40 rounded-lg transition-colors touch-target" href="javascript:void(0)">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-body-sm text-body-sm">Exam Blueprints</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/40 rounded-lg transition-colors touch-target" href="javascript:void(0)">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-sm text-body-sm">Cohorts</span>
+</a>
+</nav>
+</div>
+<!-- Administrative Group -->
+<div>
+<div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-outline-variant flex items-center justify-between">
+<span>Governance &amp; Ops</span>
+<span class="material-symbols-outlined text-[14px]">shield</span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/40 rounded-lg transition-colors touch-target" href="javascript:void(0)">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-body-sm text-body-sm">Executive Telemetry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/40 rounded-lg transition-colors touch-target" href="javascript:void(0)">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-sm text-body-sm">Paystack Settlements</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container hover:text-surface-container-lowest hover:bg-inverse-surface/40 rounded-lg transition-colors touch-target" href="javascript:void(0)">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="font-body-sm text-body-sm">Compliance Audit</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Footer Rail Controls -->
+<div class="p-4 border-t border-outline/40 space-y-2">
+<button class="w-full flex items-center justify-center gap-2 px-3 py-2.5 bg-inverse-surface text-surface-container-lowest hover:bg-inverse-surface/80 rounded-lg font-label-md text-label-md transition-colors touch-target" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Lock Terminal</span>
+</button>
+<div class="px-2 pt-1 flex items-center justify-between text-on-primary-container font-label-sm text-label-sm">
+<span>Lagos Node #4</span>
+<span class="inline-flex items-center gap-1 text-[#047857]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#047857]"></span> Secure
+          </span>
+</div>
+</div>
+</aside>
+<!-- Main Workspace Container -->
+<main class="flex-1 overflow-y-auto bg-surface flex flex-col">
+<div class="max-w-[1280px] w-full mx-auto px-8 py-6 flex-1 space-y-6">
+<!-- Breadcrumb & Top Command Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant pb-5">
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>Academics</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Programmes &amp; Curriculum</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" id="main-view-title">
+              Programmes Specification
+            </h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="touch-target inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-primary-container text-surface-container-lowest font-label-md text-label-md font-medium rounded-md hover:bg-inverse-surface transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2" onclick="switchState('editor-create')" type="button">
+<span class="material-symbols-outlined">add</span>
+<span>+ Create programme</span>
+</button>
+</div>
+</div>
+<!-- ==================================================== -->
+<!-- VIEW 1: PROGRAMMES LIST VIEW (DEFAULT)               -->
+<!-- ==================================================== -->
+<section class="space-y-6" id="view-list">
+<!-- Filter & Search Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<!-- Search field -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+<input class="touch-target w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-sm font-body-sm text-on-surface placeholder-on-surface-variant focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" placeholder="Search programmes by title or code..." type="text"/>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-medium" for="filter-type">Type:</label>
+<select class="touch-target bg-surface-container-lowest border border-outline rounded-md px-3 py-2 font-body-sm text-body-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="filter-type">
+<option>All Types</option>
+<option>Exam prep</option>
+<option>Workshop</option>
+<option>Corporate</option>
+</select>
+</div>
+<div class="flex items-center gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-medium" for="filter-status">Status:</label>
+<select class="touch-target bg-surface-container-lowest border border-outline rounded-md px-3 py-2 font-body-sm text-body-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="filter-status">
+<option>All Statuses</option>
+<option>Published</option>
+<option>Unpublished / Draft</option>
+<option>Archived</option>
+</select>
+</div>
+<div class="flex items-center gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-medium" for="filter-sort">Sort:</label>
+<select class="touch-target bg-surface-container-lowest border border-outline rounded-md px-3 py-2 font-body-sm text-body-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="filter-sort">
+<option>Recently updated</option>
+<option>Programme name (A-Z)</option>
+<option>Active cohorts (High-Low)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Master Data Table Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table aria-label="Programmes Master Register" class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b-2 border-outline-variant text-on-surface-variant font-label-sm text-label-sm tracking-wider uppercase">
+<th class="py-3.5 px-6 font-semibold" scope="col">Programme Title &amp; Code</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">Type</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">Status</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">Active Cohorts</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">Price Range (NGN)</th>
+<th class="py-3.5 px-6 text-right font-semibold" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-body-sm text-body-sm">
+<!-- Row 1: CISA -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-headline-sm text-headline-sm text-on-surface">CISA Exam Prep</div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">PRG-CISA-2026 · 40 CPE Credits</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded border border-[#1D4ED8] bg-[#EFF6FF] text-[#1D4ED8] font-label-sm text-label-sm font-medium">
+                        Exam prep
+                      </span>
+</td>
+<td class="py-4 px-4">
+<!-- Status with icon + text -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded border border-[#047857] bg-[#ECFDF5] text-[#047857] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px] fill-icon">check_circle</span>
+                        Published
+                      </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">2 cohorts</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">Cohort 14, Cohort 15</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                      ₦280,000 – ₦350,000
+                    </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 py-1.5 text-secondary hover:bg-[#EFF6FF] rounded font-label-md text-label-md font-medium border border-transparent hover:border-[#1D4ED8]/30 transition-colors" onclick="switchState('editor-pricing')" type="button">
+                          Edit
+                        </button>
+<button class="touch-target px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-high rounded font-label-md text-label-md transition-colors" type="button">
+                          View cohorts
+                        </button>
+<button class="touch-target p-2 text-on-surface-variant hover:text-[#B91C1C] hover:bg-[#FEF2F2] rounded transition-colors" title="Archive Programme" type="button">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: CISM -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-headline-sm text-headline-sm text-on-surface">CISM Executive Track</div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">PRG-CISM-2026 · 40 CPE Credits</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded border border-[#1D4ED8] bg-[#EFF6FF] text-[#1D4ED8] font-label-sm text-label-sm font-medium">
+                        Exam prep
+                      </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded border border-[#047857] bg-[#ECFDF5] text-[#047857] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px] fill-icon">check_circle</span>
+                        Published
+                      </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">1 cohort</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">Cohort 09 Executive</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                      ₦320,000 – ₦400,000
+                    </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 py-1.5 text-secondary hover:bg-[#EFF6FF] rounded font-label-md text-label-md font-medium transition-colors" onclick="switchState('editor-pricing')" type="button">
+                          Edit
+                        </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: CRISC -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-headline-sm text-headline-sm text-on-surface">CRISC Risk Governance</div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">PRG-CRISC-2026 · 36 CPE Credits</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded border border-[#1D4ED8] bg-[#EFF6FF] text-[#1D4ED8] font-label-sm text-label-sm font-medium">
+                        Exam prep
+                      </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded border border-[#047857] bg-[#ECFDF5] text-[#047857] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px] fill-icon">check_circle</span>
+                        Published
+                      </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">1 cohort</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">Cohort 06 Risk Ops</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                      ₦290,000 – ₦360,000
+                    </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 py-1.5 text-secondary hover:bg-[#EFF6FF] rounded font-label-md text-label-md font-medium transition-colors" onclick="switchState('editor-pricing')" type="button">
+                          Edit
+                        </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: AAIA (Unpublished) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-[#FFFBEB]/30">
+<td class="py-4 px-6">
+<div class="font-headline-sm text-headline-sm text-on-surface">Artificial Intelligence Audit &amp; Governance (AAIA)</div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">PRG-AAIA-2026 · 24 CPE Credits</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded border border-outline text-on-surface-variant bg-surface font-label-sm text-label-sm font-medium">
+                        Workshop
+                      </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded border border-[#B45309] bg-[#FFFBEB] text-[#B45309] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                        Unpublished / Draft
+                      </span>
+</td>
+<td class="py-4 px-4">
+<div class="text-on-surface-variant font-medium">0 cohorts</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">Curriculum under audit</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                      ₦250,000
+                    </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 py-1.5 text-secondary hover:bg-[#EFF6FF] rounded font-label-md text-label-md font-medium transition-colors" onclick="switchState('unpublished')" type="button">
+                          Edit
+                        </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Corporate -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-headline-sm text-headline-sm text-on-surface">Corporate IT General Controls Masterclass</div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">PRG-ITGC-CORP · Custom Units</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded border border-outline text-on-surface-variant bg-surface font-label-sm text-label-sm font-medium">
+                        Corporate
+                      </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded border border-[#047857] bg-[#ECFDF5] text-[#047857] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px] fill-icon">check_circle</span>
+                        Published
+                      </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">Corporate batch</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">First Bank &amp; Zenith cohorts</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface italic">
+                      Custom quote
+                    </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="touch-target px-3 py-1.5 text-secondary hover:bg-[#EFF6FF] rounded font-label-md text-label-md font-medium transition-colors" onclick="switchState('editor-pricing')" type="button">
+                          Edit
+                        </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Floor -->
+<div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+                Showing <strong class="text-on-surface font-semibold">1–5</strong> of <strong class="text-on-surface font-semibold">12</strong> programmes
+              </div>
+<div class="flex items-center gap-1">
+<button class="touch-target px-3 py-1 rounded text-on-surface-variant border border-outline-variant opacity-50 cursor-not-allowed font-label-md text-label-md flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                  Previous
+                </button>
+<button class="touch-target w-9 h-9 rounded bg-primary-container text-surface-container-lowest font-medium font-label-md text-label-md flex items-center justify-center" type="button">1</button>
+<button class="touch-target w-9 h-9 rounded bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-high text-on-surface font-medium font-label-md text-label-md flex items-center justify-center" type="button">2</button>
+<button class="touch-target w-9 h-9 rounded bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-high text-on-surface font-medium font-label-md text-label-md flex items-center justify-center" type="button">3</button>
+<button class="touch-target px-3 py-1 rounded text-on-surface border border-outline-variant hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-1" type="button">
+                  Next
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================================================== -->
+<!-- VIEW 2: PROGRAMME EDITOR WORKSPACE CONTAINER        -->
+<!-- ==================================================== -->
+<section class="hidden space-y-6" id="view-editor">
+<!-- Unpublished Warning Banner (Conditionally displayed in unpublished state) -->
+<div class="hidden bg-[#FFFBEB] border-2 border-[#B45309] rounded-xl p-4 flex items-start gap-3" id="unpublished-warning-banner">
+<span class="material-symbols-outlined text-[#B45309] text-[24px] mt-0.5">warning</span>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-[#B45309]">Notice: Programme Unpublished</h3>
+<p class="font-body-sm text-body-sm text-[#B45309] mt-0.5">
+                Notice: This programme is currently unpublished. It will not appear in the public programme catalogue or accept candidate enrolments until published.
+              </p>
+</div>
+<button class="touch-target px-4 py-1.5 bg-[#B45309] text-surface-container-lowest rounded-md font-label-sm text-label-sm font-semibold hover:bg-[#B45309]/90 transition-colors" type="button">
+              Publish Programme
+            </button>
+</div>
+<!-- Editor Header Dossier -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h2 class="font-headline-lg text-headline-lg text-on-surface" id="editor-page-heading">Edit Programme: CISA Exam Prep</h2>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded border border-[#047857] bg-[#ECFDF5] text-[#047857] font-label-sm text-label-sm font-medium" id="editor-status-pill">
+<span class="material-symbols-outlined text-[14px] fill-icon">check_circle</span>
+                  Published
+                </span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span>Code: <code class="font-code-snippet text-code-snippet bg-surface-container px-2 py-0.5 rounded text-on-surface font-semibold" id="editor-code-label">PRG-CISA-2026</code></span>
+<span>Last revised: 05 Oct 2026 by Olumide Adeyemi</span>
+</div>
+</div>
+<!-- Header Action Controls -->
+<div class="flex items-center gap-3 self-stretch md:self-auto justify-end">
+<button class="touch-target px-5 py-2.5 bg-surface-container-lowest border border-outline rounded-md text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-colors" onclick="switchState('list')" type="button">
+                Cancel
+              </button>
+<button class="touch-target px-6 py-2.5 bg-primary-container text-surface-container-lowest rounded-md font-label-md text-label-md font-medium hover:bg-inverse-surface transition-colors focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="editor-save-btn" type="button">
+                Save changes
+              </button>
+</div>
+</div>
+<!-- Editor Navigation Tabs -->
+<div class="border-b border-outline-variant">
+<nav aria-label="Editor Configuration Tabs" class="flex space-x-2">
+<button class="editor-tab-btn touch-target px-4 py-3 font-label-md text-label-md font-medium border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" id="tab-btn-details" onclick="switchEditorTab('details')" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+                Details
+              </button>
+<button class="editor-tab-btn touch-target px-4 py-3 font-label-md text-label-md font-medium border-b-2 border-secondary text-secondary font-semibold transition-all flex items-center gap-2" id="tab-btn-pricing" onclick="switchEditorTab('pricing')" type="button">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+                Pricing
+              </button>
+<button class="editor-tab-btn touch-target px-4 py-3 font-label-md text-label-md font-medium border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" id="tab-btn-licence" onclick="switchEditorTab('licence')" type="button">
+<span class="material-symbols-outlined text-[18px]">vpn_key</span>
+                Licence &amp; Access
+              </button>
+<button class="editor-tab-btn touch-target px-4 py-3 font-label-md text-label-md font-medium border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" id="tab-btn-syllabus" onclick="switchEditorTab('syllabus')" type="button">
+<span class="material-symbols-outlined text-[18px]">view_timeline</span>
+                Syllabus
+              </button>
+<button class="editor-tab-btn touch-target px-4 py-3 font-label-md text-label-md font-medium border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" id="tab-btn-public-page" onclick="switchEditorTab('public-page')" type="button">
+<span class="material-symbols-outlined text-[18px]">language</span>
+                Public page
+              </button>
+<button class="editor-tab-btn touch-target px-4 py-3 font-label-md text-label-md font-medium border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" id="tab-btn-exam-settings" onclick="switchEditorTab('exam-settings')" type="button">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+                Exam settings
+              </button>
+</nav>
+</div>
+<!-- =============================================== -->
+<!-- TAB CONTENT PANELS                             -->
+<!-- =============================================== -->
+<!-- TAB 1: DETAILS -->
+<div class="editor-tab-panel hidden space-y-6" id="tab-content-details">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant space-y-6">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-3">Programme Specification Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="detail-name">Programme Name *</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="detail-name" type="text" value="CISA Exam Prep"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Official programme title displayed on student dossiers and proctor sheets.</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="detail-type">Programme Classification Type *</label>
+<select class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="detail-type">
+<option selected="">Exam prep</option>
+<option>Fundamentals</option>
+<option>Workshop</option>
+<option>Corporate</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="detail-code">Programme Code *</label>
+<input class="touch-target w-full px-4 py-2 font-code-snippet text-code-snippet bg-surface-container border border-outline rounded-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="detail-code" type="text" value="PRG-CISA-2026"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Immutable institutional tracking hash identifier.</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="detail-cpe">Continuing Professional Education (CPE) Units</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="detail-cpe" type="text" value="40 CPE Credits"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Accredited unit allocation for Nigerian audit governance registries.</p>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="detail-summary">Executive Summary Description</label>
+<textarea class="w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="detail-summary" rows="3">Comprehensive 16-week proctored training curriculum covering the five domains of the Certified Information Systems Auditor syllabus, aligned with West African regulatory frameworks.</textarea>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="detail-body">Detailed Academic Dossier (Markdown)</label>
+<textarea class="font-code-snippet text-code-snippet w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="detail-body" rows="6">### Learning Objectives
+1. Information System Auditing Process
+2. Governance and Management of IT
+3. Information Systems Acquisition, Development &amp; Implementation
+4. Information Systems Operations and Business Resilience
+5. Protection of Information Assets</textarea>
+</div>
+</div>
+</div>
+<!-- TAB 2: PRICING (DEFAULT ACTIVE TAB IN EDITOR) -->
+<div class="editor-tab-panel space-y-6" id="tab-content-pricing">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant space-y-6">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Tuition &amp; Nigerian Settlement Pricing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Configure physical classroom, virtual live streams, early-bird rate windows, and Nigerian Federal Inland Revenue Service (FIRS) VAT calculations.</p>
+</div>
+<!-- Pricing Inputs Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Physical classroom -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant space-y-2">
+<label class="block font-label-md text-label-md text-on-surface font-semibold" for="price-physical">Physical Classroom Price (NGN) *</label>
+<div class="relative">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-semibold text-on-surface-variant">₦</span>
+<input class="touch-target w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline rounded-md font-headline-sm text-headline-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 font-mono" id="price-physical" type="text" value="350,000"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">In-person lecture attendance at A.J. Silicon Victoria Island Campus, Lagos.</p>
+</div>
+<!-- Virtual classroom -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant space-y-2">
+<label class="block font-label-md text-label-md text-on-surface font-semibold" for="price-virtual">Virtual Classroom Price (NGN) *</label>
+<div class="relative">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-semibold text-on-surface-variant">₦</span>
+<input class="touch-target w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline rounded-md font-headline-sm text-headline-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 font-mono" id="price-virtual" type="text" value="300,000"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Synchronous remote session access across high-availability streaming nodes.</p>
+</div>
+<!-- Early bird price -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant space-y-2">
+<label class="block font-label-md text-label-md text-on-surface font-semibold" for="price-early">Early Bird Price (NGN)</label>
+<div class="relative">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-semibold text-on-surface-variant">₦</span>
+<input class="touch-target w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline rounded-md font-headline-sm text-headline-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 font-mono" id="price-early" type="text" value="270,000"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Discounted advance settlement tariff for corporate registration.</p>
+</div>
+<!-- Early bird cutoff -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant space-y-2">
+<label class="block font-label-md text-label-md text-on-surface font-semibold" for="date-early">Early Bird Expiration Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">calendar_month</span>
+<input class="touch-target w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 font-mono" id="date-early" type="text" value="15 Oct 2026"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Strict 23:59 WAT cutoff before full rate applies automatically.</p>
+</div>
+</div>
+<!-- VAT and Paystack Compliance Box -->
+<div class="border border-outline-variant rounded-xl p-5 bg-surface-container-low space-y-4">
+<div class="flex items-start gap-3">
+<div class="flex items-center h-5 mt-1">
+<input checked="" class="w-5 h-5 rounded text-primary-container border-outline focus:ring-secondary" id="vat-toggle" type="checkbox"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="vat-toggle">7.5% Nigerian VAT Inclusive Treatment</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant">When checked, the prices shown include standard statutory Nigerian VAT. Paystack settlement receipts will break out ₦24,418.60 as Remita/FIRS tax remitted automatically.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-outline-variant/60">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Net Base Physical:</span>
+<div class="font-headline-sm text-headline-sm font-mono text-on-surface">₦325,581.40</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FIRS VAT (7.5%):</span>
+<div class="font-headline-sm text-headline-sm font-mono text-on-surface">₦24,418.60</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gross Candidate Invoice:</span>
+<div class="font-headline-sm text-headline-sm font-mono text-secondary">₦350,000.00</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: LICENCE -->
+<div class="editor-tab-panel hidden space-y-6" id="tab-content-licence">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant space-y-6">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Licence &amp; Access Controls</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Candidate access horizons and concurrency restrictions after cohort completion.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="lic-duration">Access Length After Cohort End (Days)</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="lic-duration" type="number" value="90"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Default 90 days proctored access post final classroom lecture.</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="lic-grace">Grace Period (Days)</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="lic-grace" type="number" value="7"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Extra buffer time before exam simulation access is revoked.</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="lic-dev-limit">Registered Device Limit</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="lic-dev-limit" type="number" value="2"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Default 2 trusted devices per enrolled candidate profile.</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="lic-concurrent">Concurrent Sessions Permitted</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="lic-concurrent" type="number" value="1"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Default 1 active session; subsequent logins terminate previous socket.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 4: SYLLABUS -->
+<div class="editor-tab-panel hidden space-y-6" id="tab-content-syllabus">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant space-y-6">
+<div class="border-b border-outline-variant pb-4 flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Curriculum Domain Breakdown</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Domain weightings and contact hours configured for this programme iteration.</p>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cumulative Total:</span>
+<div class="font-headline-sm text-headline-sm text-secondary">176 Hours (100%)</div>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Domain 1 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Domain 1: Information System Auditing Process</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Planning, execution, and reporting of IT audit engagements</div>
+</div>
+<div class="flex items-center gap-6 text-right">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contact Hours</span>
+<div class="font-body-md text-body-md font-semibold text-on-surface">36 hrs</div>
+</div>
+<div class="w-20">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exam Weight</span>
+<div class="font-body-md text-body-md font-bold text-secondary">21%</div>
+</div>
+</div>
+</div>
+<!-- Domain 2 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Domain 2: Governance and Management of IT</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">IT strategy, risk management, and governance frameworks</div>
+</div>
+<div class="flex items-center gap-6 text-right">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contact Hours</span>
+<div class="font-body-md text-body-md font-semibold text-on-surface">28 hrs</div>
+</div>
+<div class="w-20">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exam Weight</span>
+<div class="font-body-md text-body-md font-bold text-secondary">16%</div>
+</div>
+</div>
+</div>
+<!-- Domain 3 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Domain 3: Information Systems Acquisition, Development &amp; Implementation</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Project governance, system architecture, and migration controls</div>
+</div>
+<div class="flex items-center gap-6 text-right">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contact Hours</span>
+<div class="font-body-md text-body-md font-semibold text-on-surface">32 hrs</div>
+</div>
+<div class="w-20">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exam Weight</span>
+<div class="font-body-md text-body-md font-bold text-secondary">18%</div>
+</div>
+</div>
+</div>
+<!-- Domain 4 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Domain 4: Information Systems Operations and Business Resilience</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Business continuity, disaster recovery, and operational logging</div>
+</div>
+<div class="flex items-center gap-6 text-right">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contact Hours</span>
+<div class="font-body-md text-body-md font-semibold text-on-surface">36 hrs</div>
+</div>
+<div class="w-20">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exam Weight</span>
+<div class="font-body-md text-body-md font-bold text-secondary">20%</div>
+</div>
+</div>
+</div>
+<!-- Domain 5 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Domain 5: Protection of Information Assets</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Access management, cyber resilience, and cryptographic mechanisms</div>
+</div>
+<div class="flex items-center gap-6 text-right">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contact Hours</span>
+<div class="font-body-md text-body-md font-semibold text-on-surface">44 hrs</div>
+</div>
+<div class="w-20">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exam Weight</span>
+<div class="font-body-md text-body-md font-bold text-secondary">25%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 5: PUBLIC PAGE -->
+<div class="editor-tab-panel hidden space-y-6" id="tab-content-public-page">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant space-y-6">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Catalogue Presentation &amp; SEO Metadata</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Settings for public discovery, search indexation, and candidate self-registration.</p>
+</div>
+<!-- Public Visibility Toggle -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Show in Public Programme Catalogue</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">When enabled, prospective candidates in Nigeria and abroad can view syllabus and register online.</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="public-catalogue-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-outline peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-secondary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="seo-slug">Canonical URL Slug</label>
+<div class="flex items-center">
+<span class="bg-surface-container border border-r-0 border-outline rounded-l-md px-3.5 py-2 font-code-snippet text-code-snippet text-on-surface-variant">https://ajsilicon.com/programmes/</span>
+<input class="touch-target flex-1 px-4 py-2 bg-surface-container-lowest border border-outline rounded-r-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="seo-slug" type="text" value="cisa-exam-prep"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="seo-title">Meta Document Title</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="seo-title" type="text" value="CISA Exam Preparation Programme (Lagos &amp; Virtual) | A.J. Silicon"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5" for="seo-desc">Meta Search Description</label>
+<textarea class="w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md text-body-md font-body-md text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="seo-desc" rows="3">Join Nigeria's leading proctored CISA certification training at A.J. Silicon in Lagos. 40 CPE credit syllabus taught by veteran IT audit partners with 94% pass rate.</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 6: EXAM SETTINGS -->
+<div class="editor-tab-panel hidden space-y-6" id="tab-content-exam-settings">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant space-y-6">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Simulation Engine &amp; Mock Exam Benchmarks</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Standardized testing constraints mirroring international examination criteria.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1" for="exam-qcount">Question Count</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md font-headline-sm text-headline-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="exam-qcount" type="number" value="150"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">150 multiple choice questions per standard mock run.</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1" for="exam-duration">Time Limit (Minutes)</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md font-headline-sm text-headline-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="exam-duration" type="number" value="240"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">240 minutes (4.0 hours uninterrupted testing window).</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1" for="exam-pass">Pass Mark (Scaled Score)</label>
+<input class="touch-target w-full px-4 py-2 bg-surface-container-lowest border border-outline rounded-md font-headline-sm text-headline-sm text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2" id="exam-pass" type="number" value="450"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">450 scaled score out of 800 minimum requirement.</p>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-[#EFF6FF] border border-[#1D4ED8] text-[#1D4ED8] flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span class="font-body-sm text-body-sm">
+                  Questions are dynamically pulled from the active question bank blueprint based on assigned domain percentage quotas.
+                </span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Institutional Dossier Footer -->
+<footer class="bg-primary-container text-on-primary-container w-full px-8 py-6 border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
+<div class="font-body-sm text-body-sm text-on-primary-container text-center md:text-left">
+          © 2025 A.J. Silicon. Cryptographically Verified &amp; Proctored Architecture. ISACA Lagos Gold Accredited Partner.
+        </div>
+<div class="flex flex-wrap items-center justify-center gap-6 font-body-sm text-body-sm">
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="javascript:void(0)">DRM Compliance Policy</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="javascript:void(0)">Zero-Trust Verification</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="javascript:void(0)">Candidate Session Hash Log</a>
+<a class="text-on-primary-container hover:text-surface-container-lowest transition-colors" href="javascript:void(0)">SecOps Oversight</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Inline State Management Interaction Logic -->
+<script>
+    function updateStateButtons(activeId) {
+      document.querySelectorAll('.state-pill').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-surface-container-lowest', 'shadow-sm');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'border', 'border-outline-variant');
+      });
+      const activeBtn = document.getElementById(activeId);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'border', 'border-outline-variant');
+        activeBtn.classList.add('bg-primary-container', 'text-surface-container-lowest', 'shadow-sm');
+      }
+    }
+
+    function switchState(state) {
+      const listView = document.getElementById('view-list');
+      const editorView = document.getElementById('view-editor');
+      const warningBanner = document.getElementById('unpublished-warning-banner');
+      const title = document.getElementById('main-view-title');
+      const editorHeading = document.getElementById('editor-page-heading');
+      const editorCodeLabel = document.getElementById('editor-code-label');
+      const editorStatusPill = document.getElementById('editor-status-pill');
+
+      if (state === 'list') {
+        listView.classList.remove('hidden');
+        editorView.classList.add('hidden');
+        title.textContent = 'Programmes Specification';
+        updateStateButtons('state-btn-list');
+      } else if (state === 'editor-pricing') {
+        listView.classList.add('hidden');
+        editorView.classList.remove('hidden');
+        warningBanner.classList.add('hidden');
+        title.textContent = 'Programmes & Curriculum > Editor';
+        editorHeading.textContent = 'Edit Programme: CISA Exam Prep';
+        editorCodeLabel.textContent = 'PRG-CISA-2026';
+        editorStatusPill.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded border border-[#047857] bg-[#ECFDF5] text-[#047857] font-label-sm text-label-sm font-medium';
+        editorStatusPill.innerHTML = '<span class="material-symbols-outlined text-[14px] fill-icon">check_circle</span> Published';
+        switchEditorTab('pricing');
+        updateStateButtons('state-btn-editor-pricing');
+      } else if (state === 'editor-create') {
+        listView.classList.add('hidden');
+        editorView.classList.remove('hidden');
+        warningBanner.classList.add('hidden');
+        title.textContent = 'Programmes & Curriculum > New Programme';
+        editorHeading.textContent = 'Create New Programme Specification';
+        editorCodeLabel.textContent = 'PRG-NEW-DRAFT';
+        editorStatusPill.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded border border-[#B45309] bg-[#FFFBEB] text-[#B45309] font-label-sm text-label-sm font-medium';
+        editorStatusPill.innerHTML = '<span class="material-symbols-outlined text-[14px]">edit</span> Draft';
+        // Clear fields or focus details tab
+        document.getElementById('detail-name').value = '';
+        document.getElementById('detail-name').placeholder = 'e.g., CRISC Risk Leadership';
+        switchEditorTab('details');
+        updateStateButtons('state-btn-editor-create');
+      } else if (state === 'unpublished') {
+        listView.classList.add('hidden');
+        editorView.classList.remove('hidden');
+        warningBanner.classList.remove('hidden');
+        title.textContent = 'Programmes & Curriculum > Editor (Unpublished)';
+        editorHeading.textContent = 'Edit Programme: AAIA Governance & AI Audit';
+        editorCodeLabel.textContent = 'PRG-AAIA-2026';
+        editorStatusPill.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded border border-[#B45309] bg-[#FFFBEB] text-[#B45309] font-label-sm text-label-sm font-medium';
+        editorStatusPill.innerHTML = '<span class="material-symbols-outlined text-[14px]">warning</span> Unpublished / Draft';
+        switchEditorTab('details');
+        document.getElementById('detail-name').value = 'Artificial Intelligence Audit & Governance (AAIA)';
+        updateStateButtons('state-btn-unpublished');
+      }
+    }
+
+    function switchEditorTab(tabName) {
+      // Hide all panels
+      document.querySelectorAll('.editor-tab-panel').forEach(p => p.classList.add('hidden'));
+      // Remove active tab highlight
+      document.querySelectorAll('.editor-tab-btn').forEach(btn => {
+        btn.classList.remove('border-secondary', 'text-secondary', 'font-semibold');
+        btn.classList.add('border-transparent', 'text-on-surface-variant');
+      });
+
+      // Show targeted panel
+      const targetPanel = document.getElementById('tab-content-' + tabName);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+      }
+
+      // Highlight targeted button
+      const targetBtn = document.getElementById('tab-btn-' + tabName);
+      if (targetBtn) {
+        targetBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+        targetBtn.classList.add('border-secondary', 'text-secondary', 'font-semibold');
+      }
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

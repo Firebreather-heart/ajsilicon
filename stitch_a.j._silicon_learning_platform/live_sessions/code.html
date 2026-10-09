@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Sessions Specification — A.J. Silicon Audit Portal</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-navy-dark": "#0B1320",
+            "surface-slate-tech": "#1E293B",
+            "surface-tint": "#575f6e",
+            "surface-dim": "#d2d9f4",
+            "inverse-surface": "#283044",
+            "primary": "#000000",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#281809",
+            "surface-variant": "#dae2fd",
+            "on-primary-container": "#7c8495",
+            "on-error": "#ffffff",
+            "background": "#F8FAFC",
+            "primary-fixed": "#dbe2f5",
+            "inverse-on-surface": "#eef0ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-surface": "#0F172A",
+            "on-primary-fixed": "#141c29",
+            "error": "#B91C1C",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "secondary-fixed": "#dce1ff",
+            "primary-container": "#0B1320",
+            "surface-container-high": "#e2e7ff",
+            "primary-fixed-dim": "#bfc6d9",
+            "secondary-container": "#4069f2",
+            "inverse-primary": "#bfc6d9",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed": "#281809",
+            "surface-container": "#eaedff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "surface-container-highest": "#dae2fd",
+            "outline-variant": "#E2E8F0",
+            "tertiary-fixed": "#fddcc4",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface": "#ffffff",
+            "on-background": "#0F172A",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "error-container": "#FEF2F2",
+            "on-secondary-fixed-variant": "#0039b5",
+            "tertiary": "#000000",
+            "on-secondary-container": "#fffbff",
+            "outline": "#64748B",
+            "on-secondary-fixed": "#001551",
+            "secondary": "#1D4ED8",
+            "on-surface-variant": "#475569",
+            "on-tertiary-container": "#997f6a",
+            "audit-pass-mint": "#047857",
+            "audit-pass-bg": "#ECFDF5",
+            "audit-warn-amber": "#B45309",
+            "audit-warn-bg": "#FFFBEB"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.5rem",
+            "space-xl": "3rem",
+            "space-sm": "1rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1rem",
+            "space-md": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      margin: 0;
+      padding: 0;
+    }
+    .material-symbols-outlined {
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    input:focus, select:focus, textarea:focus, button:focus {
+      outline: 2px solid #2563EB !important;
+      outline-offset: 2px !important;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .pulse-indicator {
+      animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col">
+<!-- ================= TOP APP BAR (STAFF NAVY SHELL) ================= -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-gutter bg-surface-navy-dark border-b border-surface-slate-tech text-on-primary">
+<!-- Left Plate: Logo & Institutional Identity -->
+<div class="flex items-center gap-4">
+<div class="bg-white rounded px-3 py-1 flex items-center justify-center h-10 border border-outline-variant shadow-sm">
+<img alt="A.J. SILICON" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZpXmLQyv986EeCTb3KJb02pjE8Qq0avWzyId4PSFowGdPO6RpE4M5kYvNhsKRxuS15FErzG5a3k88k520eURDl-KNKRtVVvtqVjqWZdV6Pl0PD3iu8-10BXprOW2uMPucMq81VWqlDLDCOENfUJE1pTNFLAoE5nv6k7mEQDW0_il-Ej7RVGJ1X9-KnaLrou0l7kCxR_S2BfWDHTTZr4bGV2swCBsG8gc0h5re2orrBog35UJwZENNHA"/>
+</div>
+<div class="h-6 w-px bg-surface-slate-tech hidden md:block"></div>
+<div class="hidden lg:flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-white leading-none">A.J. SILICON AUDIT PORTAL</span>
+<span class="font-label-sm text-label-sm text-outline-variant leading-tight">Enterprise Governance &amp; Staff SecOps Console</span>
+</div>
+</div>
+<!-- Center Navigation Links (Staff Governance Context) -->
+<nav class="hidden xl:flex items-center gap-6 font-label-md text-label-md">
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">CISA Vault</a>
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">CRISC Matrix</a>
+<a class="text-secondary-fixed font-semibold border-b-2 border-audit-pass-mint pb-1" href="#">CISM Ops</a>
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">AAIA Lab</a>
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">Forensics</a>
+</nav>
+<!-- Right Actions: Staff Info & Notification Anchor -->
+<div class="flex items-center gap-5">
+<div class="text-right hidden sm:block">
+<div class="font-label-md text-label-md text-white font-medium">Role: Security Officer | Chukwudi Nnamdi</div>
+<div class="font-label-sm text-label-sm text-outline-variant font-code-snippet">13:05 WAT · 05 Oct 2026</div>
+</div>
+<div class="h-6 w-px bg-surface-slate-tech"></div>
+<!-- Notification Anchor with Min 44px target -->
+<button aria-label="Security Notifications" class="relative flex items-center justify-center w-11 h-11 rounded hover:bg-surface-slate-tech text-white transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error border border-surface-navy-dark"></span>
+</button>
+<!-- Institutional Avatar Profile -->
+<div class="flex items-center gap-2 pl-1">
+<div class="w-9 h-9 rounded bg-surface-slate-tech border border-outline flex items-center justify-center text-white font-label-md font-semibold">
+          CN
+        </div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN LAYOUT WITH SIDE NAV ================= -->
+<div class="flex flex-1 w-full max-w-full">
+<!-- LEFT SIDEBAR: Persistent Staff Shell -->
+<aside class="w-72 bg-surface-slate-tech border-r border-surface-navy-dark flex flex-col justify-between shrink-0 min-h-[calc(100vh-4rem)]">
+<div>
+<!-- Institutional Rail Header -->
+<div class="p- space-md border-b border-surface-navy-dark p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-navy-dark text-white flex items-center justify-center border border-outline">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-white font-bold leading-tight">Security &amp; Ops</div>
+<div class="font-label-sm text-label-sm text-outline-variant">Staff Terminal Unit 04</div>
+</div>
+</div>
+</div>
+<!-- Navigation Cluster -->
+<nav class="p-3 space-y-1">
+<div class="px-3 pt-3 pb-1 font-label-sm text-label-sm text-outline-variant uppercase tracking-wider">Operational Surveillance</div>
+<a class="flex items-center gap-3 px-3 py-2.5 text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-colors duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-label-md text-label-md">Security Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-colors duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Audit Logs</span>
+</a>
+<!-- ACTIVE NAVIGATION: Session Monitor / Live Sessions -->
+<a class="flex items-center justify-between px-3 py-2.5 bg-surface-navy-dark text-secondary-fixed font-semibold rounded border-l-4 border-audit-pass-mint transition-colors duration-150 min-h-[44px]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md text-white">Live Sessions</span>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-audit-pass-bg text-audit-pass-mint border border-audit-pass-mint">
+              5 ON
+            </span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-colors duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined" data-icon="lock_clock">lock_clock</span>
+<span class="font-label-md text-label-md">Access Control</span>
+</a>
+<div class="px-3 pt-6 pb-1 font-label-sm text-label-sm text-outline-variant uppercase tracking-wider">Candidate Cohorts</div>
+<a class="flex items-center gap-3 px-3 py-2.5 text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-colors duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Candidate Registry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-outline-variant hover:text-white hover:bg-surface-navy-dark rounded transition-colors duration-150 min-h-[44px]" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="font-label-md text-label-md">Exam Simulation Proctor</span>
+</a>
+</nav>
+</div>
+<!-- Rail Footer & Session Status -->
+<div class="p-4 border-t border-surface-navy-dark space-y-3 bg-surface-navy-dark/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline-variant">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint"></span>
+            Zero-Trust Protocol: Valid
+          </span>
+<span class="font-code-snippet">v4.9.2</span>
+</div>
+<button class="w-full flex items-center justify-center gap-2 px-3 py-2 bg-surface-navy-dark hover:bg-surface-slate-tech text-outline-variant hover:text-white border border-outline rounded text-label-sm font-label-sm transition-colors min-h-[44px]" type="button">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span>Lock Terminal Session</span>
+</button>
+</div>
+</aside>
+<!-- MAIN CONTENT VIEWPORT (1440px Grid Context) -->
+<main class="flex-1 bg-background px-8 py-6 max-w-[1152px]">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="mb-3">
+<ol class="flex items-center space-x-2 font-label-sm text-label-sm text-on-surface-variant">
+<li><span>Security &amp; Operations</span></li>
+<li class="flex items-center"><span class="material-symbols-outlined text-sm text-outline">chevron_right</span></li>
+<li><span>Monitoring</span></li>
+<li class="flex items-center"><span class="material-symbols-outlined text-sm text-outline">chevron_right</span></li>
+<li aria-current="page" class="font-medium text-on-surface">Live sessions</li>
+</ol>
+</nav>
+<!-- Page Header & Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-outline-variant gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Live sessions</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Active candidate and staff platform sessions across web and desktop endpoints.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-6 bg-surface-navy-dark hover:bg-surface-slate-tech text-white rounded font-label-md text-label-md font-medium border border-surface-navy-dark min-h-[44px] transition-colors shadow-sm" onclick="document.getElementById('single-terminate-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined" data-icon="person_cancel">person_cancel</span>
+<span>Terminate all sessions for a user</span>
+</button>
+</div>
+</div>
+<!-- VARIANT 3 (TOAST FEEDBACK DEMOSTRATION) -->
+<div class="mt-4 flex items-center justify-between p-4 bg-audit-pass-bg border border-audit-pass-mint rounded-lg" id="toast-notification">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-audit-pass-mint" data-icon="check_circle">check_circle</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-audit-pass-mint">Session Revocation Executed:</span>
+<span class="font-body-sm text-body-sm text-on-surface ml-1">Session #SES-LAG-9910 successfully terminated. Candidate token revoked (Timestamp: 13:05:22 WAT).</span>
+</div>
+</div>
+<button aria-label="Dismiss Notification" class="text-audit-pass-mint hover:text-on-surface p-1 rounded min-h-[44px] min-w-[44px] flex items-center justify-center" onclick="document.getElementById('toast-notification').style.display='none'" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- SEARCH AND FILTER INTERFACE -->
+<div class="mt-6 bg-surface border border-outline-variant rounded-xl p-4 shadow-sm space-y-4">
+<!-- Top Search Line -->
+<div class="flex flex-col lg:flex-row items-center gap-4">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full h-11 pl-11 pr-4 bg-white border border-outline rounded font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:border-secondary focus:ring-0" placeholder="Search candidate name, email, session ID..." type="text"/>
+</div>
+<!-- Filter Dropdowns (44px Minimum Touch Height) -->
+<div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+<!-- City Filter -->
+<div class="flex-1 sm:flex-none">
+<label class="sr-only" for="filter-city">Filter by City</label>
+<select class="h-11 px-3 bg-white border border-outline rounded font-body-sm text-body-sm text-on-surface focus:border-secondary min-w-[130px]" id="filter-city">
+<option value="">City: All Cities</option>
+<option value="lagos">Lagos</option>
+<option value="abuja">Abuja</option>
+<option value="ph">Port Harcourt</option>
+<option value="london">London</option>
+</select>
+</div>
+<!-- Device Type Filter -->
+<div class="flex-1 sm:flex-none">
+<label class="sr-only" for="filter-device">Filter by Device</label>
+<select class="h-11 px-3 bg-white border border-outline rounded font-body-sm text-body-sm text-on-surface focus:border-secondary min-w-[140px]" id="filter-device">
+<option value="">Device: All</option>
+<option value="mac">Chrome macOS</option>
+<option value="win">Edge Windows</option>
+<option value="ios">Safari iOS</option>
+</select>
+</div>
+<!-- User Role Filter -->
+<div class="flex-1 sm:flex-none">
+<label class="sr-only" for="filter-role">Filter by Role</label>
+<select class="h-11 px-3 bg-white border border-outline rounded font-body-sm text-body-sm text-on-surface focus:border-secondary min-w-[130px]" id="filter-role">
+<option value="">Role: All Roles</option>
+<option value="candidate">Candidate</option>
+<option value="staff">Staff Proctor</option>
+<option value="auditor">Lead Auditor</option>
+</select>
+</div>
+<button class="h-11 px-4 border border-outline hover:bg-background rounded font-label-md text-label-md text-on-surface flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="filter_alt_off">filter_alt_off</span>
+<span>Reset</span>
+</button>
+</div>
+</div>
+<!-- Bulk Action Active Bar -->
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant bg-surface-container-low/50 px-3 py-2 rounded">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 rounded border-outline text-surface-navy-dark focus:ring-secondary" id="select-all" type="checkbox"/>
+<label class="font-label-md text-label-md text-on-surface font-medium cursor-pointer" for="select-all">
+<span class="font-bold text-on-surface">3 sessions selected</span> across 2 physical locations
+            </label>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 h-11 bg-error-container border border-error text-error hover:bg-error hover:text-white rounded font-label-md text-label-md font-medium transition-colors" onclick="document.getElementById('four-eyes-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined" data-icon="delete_sweep">delete_sweep</span>
+<span>Bulk terminate selected</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= VARIANT 1: TABLE OF ACTIVE SESSIONS ================= -->
+<div class="mt-6 bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background border-b-2 border-outline-variant">
+<th class="w-12 px-4 py-3.5 text-center" scope="col">
+<span class="sr-only">Select</span>
+</th>
+<th class="px-4 py-3.5 font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider" scope="col">Candidate / User</th>
+<th class="px-4 py-3.5 font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider" scope="col">Device Name</th>
+<th class="px-4 py-3.5 font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider" scope="col">City</th>
+<th class="px-4 py-3.5 font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider" scope="col">Started</th>
+<th class="px-4 py-3.5 font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider" scope="col">Content Being Viewed</th>
+<th class="px-4 py-3.5 font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider" scope="col">Status</th>
+<th class="px-4 py-3.5 font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider text-right" scope="col">Row Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-sm text-body-sm">
+<!-- Row 1: Chinedu Eze -->
+<tr class="hover:bg-background/80 transition-colors">
+<td class="px-4 py-3.5 text-center">
+<input checked="" class="w-5 h-5 rounded border-outline text-surface-navy-dark focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-headline-sm text-sm font-semibold text-on-surface">Chinedu Eze</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant">
+<span class="font-code-snippet" id="mail-1">c••••••••@gmail.com</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm focus:ring-2" onclick="toggleReveal('mail-1', 'chinedu.eze@gmail.com', this)" type="button">Reveal</button>
+</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5 font-code-snippet">SIL-NG-2026-4491</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface font-medium">
+                  MacBook Pro 16 (macOS Sonoma)
+                </td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-outline text-base" data-icon="location_on">location_on</span>
+<span>Ikeja, Lagos, Nigeria</span>
+</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface-variant">
+<span class="text-on-surface font-medium">42 mins ago</span>
+<div class="text-xs text-outline">12:23 WAT</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-on-surface font-medium max-w-[200px] truncate" title="CISA Domain 1: Slide Deck v4.2 (Page 14)">
+                    CISA Domain 1: Slide Deck v4.2 (Page 14)
+                  </div>
+</td>
+<td class="px-4 py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-audit-pass-bg text-audit-pass-mint border border-audit-pass-mint">
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint pulse-indicator"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="px-4 py-3.5 text-right">
+<button class="inline-flex items-center justify-center px-3 py-1.5 border border-outline hover:border-error hover:bg-error-container hover:text-error text-on-surface rounded font-label-md text-label-md min-h-[44px] transition-colors" onclick="openSingleTerminate('Chinedu Eze', 'SES-LAG-9910')" type="button">
+                    Terminate
+                  </button>
+</td>
+</tr>
+<!-- Row 2: Amina Bello -->
+<tr class="hover:bg-background/80 transition-colors">
+<td class="px-4 py-3.5 text-center">
+<input checked="" class="w-5 h-5 rounded border-outline text-surface-navy-dark focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-headline-sm text-sm font-semibold text-on-surface">Amina Bello</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant">
+<span class="font-code-snippet" id="mail-2">a••••••••@zenithbank.ng</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm" onclick="toggleReveal('mail-2', 'a.bello@zenithbank.ng', this)" type="button">Reveal</button>
+</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5 font-code-snippet">SIL-NG-2026-1082</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface font-medium">
+                  ThinkPad X1 Carbon (Windows 11)
+                </td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-outline text-base" data-icon="location_on">location_on</span>
+<span>Victoria Island, Lagos</span>
+</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface-variant">
+<span class="text-on-surface font-medium">1 hr 15 mins ago</span>
+<div class="text-xs text-outline">11:50 WAT</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-on-surface font-medium max-w-[200px] truncate" title="Practice Exam: Mock 2 (Q.38/150)">
+                    Practice Exam: Mock 2 (Q.38/150)
+                  </div>
+</td>
+<td class="px-4 py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-audit-pass-bg text-audit-pass-mint border border-audit-pass-mint">
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint pulse-indicator"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="px-4 py-3.5 text-right">
+<button class="inline-flex items-center justify-center px-3 py-1.5 border border-outline hover:border-error hover:bg-error-container hover:text-error text-on-surface rounded font-label-md text-label-md min-h-[44px] transition-colors" onclick="openSingleTerminate('Amina Bello', 'SES-LAG-8821')" type="button">
+                    Terminate
+                  </button>
+</td>
+</tr>
+<!-- Row 3: Babatunde Olumide -->
+<tr class="hover:bg-background/80 transition-colors">
+<td class="px-4 py-3.5 text-center">
+<input checked="" class="w-5 h-5 rounded border-outline text-surface-navy-dark focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-headline-sm text-sm font-semibold text-on-surface">Babatunde Olumide</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant">
+<span class="font-code-snippet" id="mail-3">b••••••••@kpmg.com</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm" onclick="toggleReveal('mail-3', 'bolumide@kpmg.com', this)" type="button">Reveal</button>
+</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5 font-code-snippet">SIL-NG-2026-3390</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface font-medium">
+                  Dell Latitude 7420 (Windows 11)
+                </td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-outline text-base" data-icon="location_on">location_on</span>
+<span>Central Business District, Abuja</span>
+</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface-variant">
+<span class="text-on-surface font-medium">18 mins ago</span>
+<div class="text-xs text-outline">12:47 WAT</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-on-surface font-medium max-w-[200px] truncate" title="CRISC Video Lecture: Risk Identification">
+                    CRISC Video Lecture: Risk Identification
+                  </div>
+</td>
+<td class="px-4 py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-audit-pass-bg text-audit-pass-mint border border-audit-pass-mint">
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint pulse-indicator"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="px-4 py-3.5 text-right">
+<button class="inline-flex items-center justify-center px-3 py-1.5 border border-outline hover:border-error hover:bg-error-container hover:text-error text-on-surface rounded font-label-md text-label-md min-h-[44px] transition-colors" onclick="openSingleTerminate('Babatunde Olumide', 'SES-ABJ-3101')" type="button">
+                    Terminate
+                  </button>
+</td>
+</tr>
+<!-- Row 4: Ngozi Okonkwo -->
+<tr class="hover:bg-background/80 transition-colors">
+<td class="px-4 py-3.5 text-center">
+<input class="w-5 h-5 rounded border-outline text-surface-navy-dark focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-headline-sm text-sm font-semibold text-on-surface">Ngozi Okonkwo</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant">
+<span class="font-code-snippet" id="mail-4">n••••••••@firstbank.ng</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm" onclick="toggleReveal('mail-4', 'ngozi.okonkwo@firstbank.ng', this)" type="button">Reveal</button>
+</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5 font-code-snippet">SIL-NG-2026-9214</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface font-medium">
+                  iPhone 15 Pro (iOS 17.5)
+                </td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-outline text-base" data-icon="location_on">location_on</span>
+<span>Trans-Amadi, Port Harcourt</span>
+</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface-variant">
+<span class="text-on-surface font-medium">2 hrs 04 mins ago</span>
+<div class="text-xs text-outline">11:01 WAT</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-on-surface font-medium max-w-[200px] truncate" title="CISM Ops: Incident Management Handbook">
+                    CISM Ops: Incident Management Handbook
+                  </div>
+</td>
+<td class="px-4 py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-audit-pass-bg text-audit-pass-mint border border-audit-pass-mint">
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint pulse-indicator"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="px-4 py-3.5 text-right">
+<button class="inline-flex items-center justify-center px-3 py-1.5 border border-outline hover:border-error hover:bg-error-container hover:text-error text-on-surface rounded font-label-md text-label-md min-h-[44px] transition-colors" onclick="openSingleTerminate('Ngozi Okonkwo', 'SES-PHC-4419')" type="button">
+                    Terminate
+                  </button>
+</td>
+</tr>
+<!-- Row 5: Dapo Adeyemi -->
+<tr class="hover:bg-background/80 transition-colors">
+<td class="px-4 py-3.5 text-center">
+<input class="w-5 h-5 rounded border-outline text-surface-navy-dark focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-4 py-3.5">
+<div class="font-headline-sm text-sm font-semibold text-on-surface">Dapo Adeyemi</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant">
+<span class="font-code-snippet" id="mail-5">d••••••••@standardchartered.com</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm" onclick="toggleReveal('mail-5', 'dapo.adeyemi@sc.com', this)" type="button">Reveal</button>
+</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5 font-code-snippet">SIL-UK-2026-0771</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface font-medium">
+                  MacBook Air M2 (macOS Sonoma)
+                </td>
+<td class="px-4 py-3.5">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-outline text-base" data-icon="location_on">location_on</span>
+<span>Canary Wharf, London, UK</span>
+</div>
+</td>
+<td class="px-4 py-3.5 text-on-surface-variant">
+<span class="text-on-surface font-medium">55 mins ago</span>
+<div class="text-xs text-outline">12:10 WAT</div>
+</td>
+<td class="px-4 py-3.5">
+<div class="text-on-surface font-medium max-w-[200px] truncate" title="AAIA Lab: Algorithmic Model Validation">
+                    AAIA Lab: Algorithmic Model Validation
+                  </div>
+</td>
+<td class="px-4 py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-audit-pass-bg text-audit-pass-mint border border-audit-pass-mint">
+<span class="w-2 h-2 rounded-full bg-audit-pass-mint pulse-indicator"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="px-4 py-3.5 text-right">
+<button class="inline-flex items-center justify-center px-3 py-1.5 border border-outline hover:border-error hover:bg-error-container hover:text-error text-on-surface rounded font-label-md text-label-md min-h-[44px] transition-colors" onclick="openSingleTerminate('Dapo Adeyemi', 'SES-LON-1209')" type="button">
+                    Terminate
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Audit Density Indicator -->
+<div class="px-4 py-3 bg-background border-t border-outline-variant flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div>Displaying 5 active telemetry records across 4 endpoints</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 border border-outline rounded bg-white text-on-surface disabled:opacity-50 min-h-[36px]" disabled="" type="button">Previous</button>
+<span class="px-2 font-medium text-on-surface">Page 1 of 1</span>
+<button class="px-3 py-1.5 border border-outline rounded bg-white text-on-surface disabled:opacity-50 min-h-[36px]" disabled="" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- ================= MODAL OVERLAY: VARIANT 2 (FOUR-EYES BULK APPROVAL CALLOUT) ================= -->
+<div class="fixed inset-0 z-50 bg-surface-navy-dark/70 flex items-center justify-center p-4" id="four-eyes-modal">
+<div class="bg-white rounded-xl border border-outline-variant shadow-xl max-w-xl w-full p-6 space-y-4">
+<!-- Modal Header -->
+<div class="flex items-start justify-between border-b border-outline-variant pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-audit-warn-bg border border-audit-warn-amber text-audit-warn-amber flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Four-Eyes Authorization Required</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Dual-signoff mandate for bulk session invalidation</p>
+</div>
+</div>
+<button aria-label="Close modal" class="text-outline hover:text-on-surface p-1 min-h-[44px] min-w-[44px] flex items-center justify-center" onclick="document.getElementById('four-eyes-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Institutional Policy Notice -->
+<div class="p-3.5 bg-audit-warn-bg border-l-4 border-audit-warn-amber rounded text-on-surface font-body-sm text-body-sm">
+<p class="font-semibold text-audit-warn-amber">Protocol Policy Enforced:</p>
+<p class="mt-1">
+              Bulk session termination (&gt; 2 concurrent sessions) requires dual-officer approval before token invalidation. Initiated by <strong>Chukwudi Nnamdi</strong>. Awaiting Second Sign-off from Lead Security Officer or Super Admin.
+            </p>
+</div>
+<!-- Form Area: Mandatory Reason Field with Counter -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md font-semibold text-on-surface" for="bulk-reason">
+              Reason for Bulk Termination <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-3 bg-white border border-outline rounded font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:border-secondary" id="bulk-reason" maxlength="250" oninput="updateCharCount(this, 'char-counter')" placeholder="State regulatory or operational justification (e.g. Coordinated integrity breach detection, proctored cohort emergency wipe)..." required="" rows="3"></textarea>
+<div class="flex justify-between items-center text-xs text-on-surface-variant">
+<span>Required for SecOps audit log #AUD-2026-TX</span>
+<span class="font-code-snippet" id="char-counter">0 / 250 characters</span>
+</div>
+</div>
+<!-- Impact Scope Summary -->
+<div class="text-xs bg-background p-2.5 rounded border border-outline-variant font-code-snippet text-on-surface-variant">
+            Target Sessions: [SES-LAG-9910, SES-LAG-8821, SES-ABJ-3101] · Users: Chinedu Eze, Amina Bello, Babatunde Olumide
+          </div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-outline-variant">
+<button class="px-5 h-11 border border-outline hover:bg-background text-on-surface rounded font-label-md text-label-md font-medium min-h-[44px]" onclick="document.getElementById('four-eyes-modal').classList.add('hidden')" type="button">
+              Cancel
+            </button>
+<button class="px-5 h-11 bg-surface-navy-dark hover:bg-surface-slate-tech text-white rounded font-label-md text-label-md font-semibold min-h-[44px] flex items-center gap-2" onclick="submitApproval()" type="button">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span>Submit for Second Approval</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= MODAL OVERLAY: VARIANT 3 (SINGLE TERMINATION CONFIRMATION) ================= -->
+<div class="hidden fixed inset-0 z-50 bg-surface-navy-dark/70 flex items-center justify-center p-4" id="single-terminate-modal">
+<div class="bg-white rounded-xl border border-outline-variant shadow-xl max-w-lg w-full p-6 space-y-4">
+<!-- Modal Header -->
+<div class="flex items-start justify-between border-b border-outline-variant pb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-error-container border border-error text-error flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="modal-target-title">Terminate Session for Chinedu Eze</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-code-snippet" id="modal-target-sub">Token Session: SES-LAG-9910</p>
+</div>
+</div>
+<button aria-label="Close dialog" class="text-outline hover:text-on-surface p-1 min-h-[44px] min-w-[44px] flex items-center justify-center" onclick="document.getElementById('single-terminate-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Terminating this session will immediately revoke candidate credentials and invalidate their JWT authentication payload on all web and desktop sockets.
+          </p>
+<!-- Reason Required Dropdown + Custom Field -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md font-semibold text-on-surface" for="single-reason-select">
+              Termination Reason <span class="text-error">*</span>
+</label>
+<select class="w-full h-11 px-3 bg-white border border-outline rounded font-body-sm text-body-sm text-on-surface focus:border-secondary" id="single-reason-select">
+<option selected="" value="Security Anomaly Investigation">Security Anomaly Investigation</option>
+<option value="Duplicate Concurrent Login Detected">Duplicate Concurrent Login Detected</option>
+<option value="Proctor Administrative Invalidation">Proctor Administrative Invalidation</option>
+<option value="Candidate Request / Session Reset">Candidate Request / Session Reset</option>
+<option value="Other Regulatory Directive">Other Regulatory Directive</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-on-surface-variant font-medium" for="single-note">SecOps Log Notes (Optional)</label>
+<input class="w-full h-10 px-3 bg-white border border-outline rounded font-body-sm text-body-sm text-on-surface focus:border-secondary" id="single-note" placeholder="e.g. Flagged by Lagos CBD security operations desk" type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-3 pt-3 border-t border-outline-variant">
+<button class="px-5 h-11 border border-outline hover:bg-background text-on-surface rounded font-label-md text-label-md font-medium min-h-[44px]" onclick="document.getElementById('single-terminate-modal').classList.add('hidden')" type="button">
+              Cancel
+            </button>
+<button class="px-5 h-11 bg-error hover:bg-red-800 text-white rounded font-label-md text-label-md font-semibold min-h-[44px] flex items-center gap-2 shadow-sm" onclick="confirmSingleTermination()" type="button">
+<span class="material-symbols-outlined" data-icon="cancel">cancel</span>
+<span>Confirm Termination</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ================= INSTITUTIONAL FOOTER ================= -->
+<footer class="w-full py-space-lg px-gutter border-t border-surface-slate-tech bg-surface-navy-dark flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-outline-variant font-body-sm text-body-sm">
+<div class="flex flex-col md:flex-row items-center gap-2">
+<span class="font-headline-sm text-white font-semibold mr-2">A.J. SILICON</span>
+<span>© 2025 A.J. Silicon Information Security Training &amp; Governance Ltd. Accredited ISACA Lagos Elite Partner. All Sessions Digitally Watermarked.</span>
+</div>
+<div class="flex flex-wrap justify-center gap-4 text-xs font-label-sm text-label-sm">
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">Zero-Trust Protocol</a>
+<span class="text-surface-slate-tech">·</span>
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">ISACA Lagos Charter</a>
+<span class="text-surface-slate-tech">·</span>
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">Automated Verification Gateway</a>
+<span class="text-surface-slate-tech">·</span>
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">Forensic Integrity Policy</a>
+<span class="text-surface-slate-tech">·</span>
+<a class="text-outline-variant hover:text-white transition-colors duration-150" href="#">SecOps Disclosure</a>
+</div>
+</footer>
+<!-- Inline Micro-Interactions Script -->
+<script>
+    // Reveal masked fields toggle
+    function toggleReveal(id, actualValue, button) {
+      const el = document.getElementById(id);
+      if (button.innerText === "Reveal") {
+        el.innerText = actualValue;
+        button.innerText = "Mask";
+      } else {
+        const masked = actualValue.charAt(0) + "••••••••@" + actualValue.split('@')[1];
+        el.innerText = masked;
+        button.innerText = "Reveal";
+      }
+    }
+
+    // Modal helpers
+    function openSingleTerminate(userName, sessionId) {
+      document.getElementById('modal-target-title').innerText = "Terminate Session for " + userName;
+      document.getElementById('modal-target-sub').innerText = "Token Session: " + sessionId;
+      document.getElementById('single-terminate-modal').classList.remove('hidden');
+    }
+
+    function confirmSingleTermination() {
+      document.getElementById('single-terminate-modal').classList.add('hidden');
+      const toast = document.getElementById('toast-notification');
+      toast.style.display = 'flex';
+      toast.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitApproval() {
+      const reason = document.getElementById('bulk-reason').value;
+      if (!reason.trim()) {
+        alert("A valid regulatory reason is mandatory before submitting for Four-Eyes review.");
+        return;
+      }
+      document.getElementById('four-eyes-modal').classList.add('hidden');
+      alert("Four-Eyes approval request broadcast to Lead Security Officer queue (Ticket #4EYES-LAG-1092).");
+    }
+
+    function updateCharCount(textarea, counterId) {
+      const counter = document.getElementById(counterId);
+      counter.innerText = textarea.value.length + " / 250 characters";
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

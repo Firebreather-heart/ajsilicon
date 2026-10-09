@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#F8FAFC]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.J. Silicon · Student Portal - Devices and Sessions</title>
+<!-- Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#7c8495",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "secondary-container": "#4069f2",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface-variant": "#dae2fd",
+            "on-error": "#ffffff",
+            "tertiary-container": "#281809",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed": "#dce1ff",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#283044",
+            "inverse-on-surface": "#eef0ff",
+            "primary": "#0B1320",
+            "surface-container": "#eaedff",
+            "outline": "#75777c",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-fixed": "#281809",
+            "outline-variant": "#E2E8F0",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "inverse-primary": "#bfc6d9",
+            "surface-dim": "#d2d9f4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "primary-fixed": "#dbe2f5",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#001551",
+            "tertiary-fixed": "#fddcc4",
+            "on-tertiary-container": "#997f6a",
+            "on-secondary-container": "#fffbff",
+            "error": "#B91C1C",
+            "on-primary-fixed": "#141c29",
+            "tertiary": "#000000",
+            "on-secondary-fixed-variant": "#0039b5",
+            "on-surface": "#0F172A",
+            "on-surface-variant": "#475569",
+            "primary-fixed-dim": "#bfc6d9",
+            "error-container": "#FEF2F2",
+            "surface": "#F8FAFC",
+            "primary-container": "#0B1320",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#3f4756",
+            "surface-tint": "#575f6e",
+            "on-background": "#0F172A",
+            "secondary": "#1D4ED8",
+            "background": "#F8FAFC"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-sm": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1rem",
+            "space-xl": "3rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "code-snippet": ["IBM Plex Sans", "monospace"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .focus-ring-custom:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="min-w-[1440px] text-on-surface antialiased bg-[#F8FAFC]">
+<!-- SPEC BOARD ANNOTATION HEADER -->
+<header class="bg-surface-container-lowest border-b border-outline-variant px-8 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+        DESIGN SPECIFICATION BOARD · 1440PX
+      </span>
+<h1 class="text-headline-sm font-headline-sm text-on-surface">Screen: Devices and sessions (Student Application Shell)</h1>
+</div>
+<div class="flex items-center gap-6 text-label-sm font-label-sm text-on-surface-variant">
+<span>Candidate: <strong class="text-on-surface font-semibold">Chinedu Eze (CE)</strong></span>
+<span>Cohort: <strong class="text-on-surface font-semibold">CISA Cohort 14 Virtual</strong></span>
+<span>Authority: <strong class="text-on-surface font-semibold">A.J. Silicon IT Audit Academy</strong></span>
+</div>
+</header>
+<!-- STATE VARIANT CONTROLS / TABS -->
+<section class="bg-surface-container-lowest border-b border-outline-variant px-8 py-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium mr-2">Interactive View State:</span>
+<button class="h-9 px-4 rounded text-label-md font-label-md font-medium transition-colors bg-primary text-on-primary" id="btn-tab-1" onclick="switchVariant('v1')">
+          State Variant 1: Default Canonical (2/2 Slots)
+        </button>
+<button class="h-9 px-4 rounded text-label-md font-label-md font-medium transition-colors bg-surface hover:bg-slate-200 text-on-surface border border-outline-variant" id="btn-tab-2" onclick="switchVariant('v2')">
+          State Variant 2: Remove Confirmation Dialog
+        </button>
+<button class="h-9 px-4 rounded text-label-md font-label-md font-medium transition-colors bg-surface hover:bg-slate-200 text-on-surface border border-outline-variant" id="btn-tab-3" onclick="switchVariant('v3')">
+          State Variant 3: Browser Deregistered Toast (1/2 Available)
+        </button>
+</div>
+<div class="text-xs text-on-surface-variant flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-[#047857]"></span>
+        Strict 8px Layout Grid · 44px Minimum Touch Targets · WAT Clock Synchronized
+      </div>
+</div>
+</section>
+<!-- SPECIFICATION CANVAS -->
+<main class="w-[1440px] mx-auto bg-surface relative min-h-screen border-x border-outline-variant shadow-sm flex flex-col">
+<!-- GLOBAL TOP APP BAR (Shared Component: TopNavBar) -->
+<header class="bg-primary-container text-on-primary border-b border-outline-variant h-16 w-full px-6 flex justify-between items-center sticky top-0 z-30">
+<!-- Left: Logo plate on isolated white background -->
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest px-3 py-1.5 rounded flex items-center justify-center shadow-sm h-10 border border-slate-200">
+<img alt="A.J. Silicon Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWvbAcJnVF1BwH61uXUkfV3iPP4rqX7Cmk91J5OVP742xfCAUgMDWRn2gh2T7mcnc5vWRACSAQ5ddaT969y480Ca5vwEsXQUMDo1cXq5yDL4OL20W-fdpLEA34osj2E-srbcw_uNzN-OPuk197Jkdf2XILtg51BnzpvQksR3oXQA9V6Sg44DLFMX848eCmOGC73oPgx4mGobNOgNRJsL4cP4F-WAL_ezWEOwy8JDzbIgb9yBEuL8i7kg"/>
+</div>
+<div class="h-5 w-[1px] bg-slate-700"></div>
+<div class="flex items-center gap-2 text-on-primary font-headline-sm text-headline-sm tracking-tight">
+<span>Student Portal</span>
+<span class="text-xs font-normal text-slate-400 px-2 py-0.5 rounded bg-slate-800 border border-slate-700">CISA Governance Suite</span>
+</div>
+</div>
+<!-- Right: Clock, Alerts, Profile -->
+<div class="flex items-center gap-5">
+<!-- WAT Realtime Clock -->
+<div class="flex items-center gap-2 px-3 py-1 rounded bg-[#101b2f] border border-slate-800 text-slate-300 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-400">schedule</span>
+<span>14:30 WAT · 05 Oct 2026</span>
+</div>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center gap-1">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded text-on-primary hover:bg-slate-800 focus-ring-custom relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#1D4ED8]"></span>
+</button>
+<button aria-label="Help" class="w-11 h-11 flex items-center justify-center rounded text-on-primary hover:bg-slate-800 focus-ring-custom">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-slate-700"></div>
+<!-- User Identity Pill -->
+<div class="flex items-center gap-3 pl-2">
+<div class="w-10 h-10 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center font-semibold text-sm border-2 border-slate-700">
+            CE
+          </div>
+<div class="text-left hidden lg:block">
+<p class="text-label-md font-label-md text-white font-medium leading-none">Chinedu Eze</p>
+<p class="text-[12px] text-slate-400 mt-1 leading-none">Cohort 14 Virtual</p>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN BODY AREA WITH LEFT SIDEBAR -->
+<div class="flex flex-1">
+<!-- VERTICAL NAVIGATION SHELL (Shared Component: SideNavBar) -->
+<aside class="w-64 min-w-[16rem] bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between py-4 select-none shrink-0">
+<!-- Sidebar Top: Enrolled Programme Badge & Main Menu -->
+<div>
+<!-- Course Header Box -->
+<div class="mx-4 mb-5 p-3 rounded-lg bg-surface border border-outline-variant">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-[#1D4ED8] text-[20px]">school</span>
+<span class="text-label-sm font-label-sm font-semibold text-on-surface">CISA Exam Prep</span>
+</div>
+<p class="text-[11px] leading-tight text-on-surface-variant font-medium">
+              Cohort 14: 12 Oct – 18 Dec 2026<br/><span class="text-slate-500">Mode: Virtual Training</span>
+</p>
+</div>
+<!-- Main Nav Links -->
+<nav class="space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Modules / Programme Home</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Practice Exams</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span>Progress</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Certificates and credits</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+<span>Extend Access</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-3 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span>Help centre</span>
+</a>
+<!-- Active Nav item: Settings -> Devices and sessions -->
+<div class="bg-surface-container text-[#1D4ED8] font-label-md text-label-md border-l-4 border-[#1D4ED8] px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-[#1D4ED8]">settings</span>
+<span class="font-semibold text-on-surface">Settings</span>
+</div>
+<!-- Sub-item under Settings -->
+<div class="pl-11 pr-4 py-1.5 flex items-center gap-2">
+<span class="text-[13px] font-medium text-[#1D4ED8] bg-blue-50 px-2 py-1 rounded w-full flex items-center justify-between">
+<span>Devices and sessions</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+</span>
+</div>
+</nav>
+</div>
+<!-- Sidebar Footer Items -->
+<div class="border-t border-outline-variant pt-3 space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-low px-4 py-2.5 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">lock_reset</span>
+<span>Password &amp; Security</span>
+</a>
+<a class="text-on-surface-variant hover:bg-red-50 hover:text-error px-4 py-2.5 flex items-center gap-3 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">logout</span>
+<span>Sign out</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT WORKSPACE -->
+<section class="flex-1 p-8 overflow-y-auto relative max-w-[1184px]">
+<!-- BREADCRUMBS & SECTION TITLE -->
+<div class="mb-6">
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant mb-2">
+<a class="hover:text-primary transition-colors" href="#">Settings</a>
+<span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+<span class="text-on-surface font-semibold">Devices and sessions</span>
+</nav>
+<div class="flex items-baseline justify-between">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Devices and sessions</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Manage registered browsers and inspect authenticated candidate sessions for security audit compliance.
+              </p>
+</div>
+<div class="flex items-center gap-3">
+<a class="text-secondary text-label-md font-label-md font-medium hover:underline flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[18px]">policy</span>
+<span>Session Policy Guidelines</span>
+</a>
+</div>
+</div>
+</div>
+<!-- SECTION 1: SLOT USAGE BANNER -->
+<!-- Variant 1 Banner: 2 of 2 used -->
+<div class="mb-8 rounded-xl border border-[#B45309]/30 bg-[#FFFBEB] p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm" id="banner-slots-full">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#FEF3C7] border border-[#B45309]/30 flex items-center justify-center shrink-0 text-[#B45309]">
+<span class="material-symbols-outlined text-[24px]">devices</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Registered browsers: 2 of 2 slots used</h3>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-[12px] font-semibold bg-[#FEF3C7] text-[#B45309] border border-[#B45309]">
+                  Maximum Allocated
+                </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 max-w-2xl">
+                CISA candidate portal accounts are authorized to register up to 2 desktop browsers simultaneously. To access your learning modules from a replacement browser, remove an existing registered browser below.
+              </p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<button class="h-11 px-5 rounded-lg border border-slate-300 bg-slate-100 text-slate-400 font-label-md text-label-md font-medium cursor-not-allowed flex items-center gap-2" disabled="">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Register a new browser</span>
+</button>
+<span class="text-[11px] text-on-surface-variant">Slot limit reached</span>
+</div>
+</div>
+<!-- Variant 3 Banner: 1 of 2 used (Hidden in Default, shown in Variant 3) -->
+<div class="hidden mb-8 rounded-xl border border-outline-variant bg-surface-container-lowest p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm" id="banner-slots-available">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#ECFDF5] border border-[#047857]/30 flex items-center justify-center shrink-0 text-[#047857]">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Registered browsers: 1 of 2 slots used</h3>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-[12px] font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+                  1 Slot Available
+                </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 max-w-2xl">
+                You have 1 open browser registration slot remaining. You may register your current browser or authenticate on another authorized workstation.
+              </p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="h-11 px-6 rounded-lg bg-primary hover:bg-slate-800 text-on-primary font-label-md text-label-md font-medium flex items-center gap-2 transition-colors focus-ring-custom">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Register a new browser</span>
+</button>
+</div>
+</div>
+<!-- SECTION 2: REGISTERED BROWSERS TABLE CONTAINER -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm mb-8 overflow-hidden">
+<!-- Table Header & Controls Bar -->
+<div class="p-6 border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<h3 class="text-headline-md font-headline-md text-on-surface">Registered Browsers</h3>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-300" id="registered-badge">
+                  2 of 2
+                </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Authorized browsers bound to Candidate ID: CE-77401-2026
+              </p>
+</div>
+<!-- Search, Filter, Sort Controls -->
+<div class="flex items-center gap-3">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-[18px]">search</span>
+<input class="w-full h-11 pl-9 pr-3 text-body-sm font-body-sm rounded-lg border border-slate-500 text-on-surface placeholder-slate-500 focus-ring-custom bg-white" placeholder="Filter registered browsers..." type="text"/>
+</div>
+<div class="relative">
+<select class="h-11 pl-3 pr-8 text-body-sm font-body-sm rounded-lg border border-slate-500 text-on-surface bg-white focus-ring-custom cursor-pointer appearance-none">
+<option>Sort by: Last Active (Recent)</option>
+<option>Sort by: Device Name</option>
+<option>Sort by: Registration Date</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 text-slate-500 pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Table View -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface border-b-2 border-outline-variant text-[12px] font-semibold text-on-surface-variant tracking-wider uppercase">
+<th class="py-3 px-6">Device / Friendly Name</th>
+<th class="py-3 px-6">Browser &amp; OS</th>
+<th class="py-3 px-6">Last Active (WAT)</th>
+<th class="py-3 px-6">City / Location</th>
+<th class="py-3 px-6 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm font-body-sm">
+<!-- Row 1: Current Browser -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-4 px-6 font-medium text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-blue-50 border border-blue-200 text-[#1D4ED8] flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">Work MacBook</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+                            Current browser
+                          </span>
+</div>
+<span class="text-xs text-on-surface-variant">Registered: 28 Sep 2026</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">Chrome 128</span>
+<span class="text-slate-400">·</span>
+<span class="text-on-surface-variant">macOS Sonoma</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 font-medium text-[#047857]">
+<span class="w-2 h-2 rounded-full bg-[#047857]"></span>
+                      Active now (Current session)
+                    </span>
+</td>
+<td class="py-4 px-6 text-on-surface">
+                    Lagos (Victoria Island)
+                  </td>
+<td class="py-4 px-6 text-right">
+<button class="h-11 px-4 rounded text-xs font-medium text-slate-400 border border-slate-200 bg-slate-50 cursor-not-allowed" disabled="">
+                      In Use
+                    </button>
+</td>
+</tr>
+<!-- Row 2: Home Desktop (removable) -->
+<tr class="hover:bg-slate-50 transition-colors" id="row-home-desktop">
+<td class="py-4 px-6 font-medium text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">desktop_windows</span>
+</div>
+<div>
+<span class="font-semibold text-on-surface block">Home Desktop</span>
+<span class="text-xs text-on-surface-variant">Registered: 01 Oct 2026</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">Edge 126</span>
+<span class="text-slate-400">·</span>
+<span class="text-on-surface-variant">Windows 11 Enterprise</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    04 Oct 2026, 21:15 WAT
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Ikeja, Lagos
+                  </td>
+<td class="py-4 px-6 text-right">
+<button class="h-11 px-4 rounded border border-[#B91C1C] text-[#B91C1C] hover:bg-[#FEF2F2] font-label-md text-label-md font-medium transition-colors focus-ring-custom inline-flex items-center gap-1.5" onclick="switchVariant('v2')">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+<span>Remove</span>
+</button>
+</td>
+</tr>
+<!-- Row Placeholder when slot is freed (State 3) -->
+<tr class="hidden bg-slate-50/60" id="row-slot-empty">
+<td class="py-5 px-6 text-center text-on-surface-variant" colspan="5">
+<div class="inline-flex items-center gap-2 text-slate-500 font-label-sm">
+<span class="material-symbols-outlined text-[18px]">add_circle_outline</span>
+<span>Slot 2 is available · Click "Register a new browser" to link a replacement workstation</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Policy notice under table -->
+<div class="p-4 bg-surface border-t border-outline-variant flex items-center gap-3 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">info</span>
+<span>
+<strong class="text-on-surface font-semibold">Browser deregulation notice:</strong> Removing a registered browser immediately revokes access from that browser. You may register a replacement browser at any time without administrative penalties.
+            </span>
+</div>
+<!-- Pagination Bar -->
+<div class="px-6 py-3 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Showing <strong class="text-on-surface">1-2</strong> of 2 items</span>
+<div class="flex items-center gap-1">
+<button class="h-9 px-3 rounded border border-slate-200 text-slate-300 cursor-not-allowed" disabled="">Previous</button>
+<button class="h-9 px-3 rounded border border-outline-variant text-on-surface font-medium bg-surface">1</button>
+<button class="h-9 px-3 rounded border border-slate-200 text-slate-300 cursor-not-allowed" disabled="">Next</button>
+</div>
+</div>
+</div>
+<!-- SECTION 3: ACTIVE SESSIONS LIST -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm mb-8 overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex items-center justify-between">
+<div>
+<div class="flex items-center gap-3">
+<h3 class="text-headline-md font-headline-md text-on-surface">Active Sessions</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                  2 Concurrent
+                </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Current active candidate tokens authenticated on our West Africa cloud node.
+              </p>
+</div>
+<button class="h-11 px-4 rounded border border-slate-500 hover:bg-slate-50 text-on-surface font-label-md text-label-md font-medium transition-colors focus-ring-custom flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-slate-700">logout</span>
+<span>Sign out all other sessions</span>
+</button>
+</div>
+<!-- Sessions List Items -->
+<div class="divide-y divide-outline-variant">
+<!-- Session Item 1: Current Session -->
+<div class="p-6 flex items-center justify-between hover:bg-slate-50/70 transition-colors">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#ECFDF5] border border-[#047857]/30 flex items-center justify-center text-[#047857] shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm text-on-surface">Chrome 128 on macOS Sonoma</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[12px] font-semibold bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#047857]"></span>
+                      Current session
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-slate-400">location_on</span>
+                      Victoria Island, Lagos
+                    </span>
+<span>•</span>
+<span class="font-mono text-xs text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded">IP: 102.89.42.18</span>
+<span>•</span>
+<span>Signed in 05 Oct 2026, 08:30 WAT</span>
+</div>
+</div>
+</div>
+<span class="text-xs font-medium text-slate-400 italic">This Device</span>
+</div>
+<!-- Session Item 2: Edge Session -->
+<div class="p-6 flex items-center justify-between hover:bg-slate-50/70 transition-colors" id="session-item-edge">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-600 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">devices_other</span>
+</div>
+<div>
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm text-on-surface">Edge 126 on Windows 11</span>
+<span class="text-xs text-slate-500 font-medium">Candidate Workstation (Home)</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-slate-400">location_on</span>
+                      Ikeja, Lagos
+                    </span>
+<span>•</span>
+<span class="font-mono text-xs text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded">IP: 102.89.40.112</span>
+<span>•</span>
+<span>Signed in 04 Oct 2026, 19:40 WAT</span>
+</div>
+</div>
+</div>
+<div>
+<button class="h-11 px-4 rounded border border-slate-300 hover:border-[#B91C1C] hover:bg-[#FEF2F2] hover:text-[#B91C1C] text-slate-700 font-label-md text-label-md font-medium transition-colors focus-ring-custom flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: RECENT SIGN-IN HISTORY TABLE -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm mb-8 overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Recent Sign-in History</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Audit trail for regulatory compliance and candidate account verification (Last 30 Days).
+              </p>
+</div>
+<!-- Filter cluster -->
+<div class="flex items-center gap-3">
+<div class="relative w-48">
+<select class="w-full h-11 pl-3 pr-8 text-body-sm font-body-sm rounded-lg border border-slate-500 text-on-surface bg-white focus-ring-custom appearance-none cursor-pointer">
+<option>All sign-in outcomes</option>
+<option>Successful</option>
+<option>Challenged 2FA</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 text-slate-500 pointer-events-none text-[18px]">expand_more</span>
+</div>
+<div class="relative w-40">
+<select class="w-full h-11 pl-3 pr-8 text-body-sm font-body-sm rounded-lg border border-slate-500 text-on-surface bg-white focus-ring-custom appearance-none cursor-pointer">
+<option>All dates</option>
+<option>Past 7 days</option>
+<option>Past 30 days</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 text-slate-500 pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface border-b-2 border-outline-variant text-[12px] font-semibold text-on-surface-variant tracking-wider uppercase">
+<th class="py-3 px-6">Date &amp; Time (WAT)</th>
+<th class="py-3 px-6">Browser &amp; OS</th>
+<th class="py-3 px-6">IP Address</th>
+<th class="py-3 px-6">Location</th>
+<th class="py-3 px-6">Authentication Method</th>
+<th class="py-3 px-6">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm font-body-sm">
+<!-- Log 1 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-4 px-6 font-medium text-on-surface">
+                    05 Oct 2026, 08:30 WAT
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Chrome 128 (macOS)
+                  </td>
+<td class="py-4 px-6 font-mono text-xs text-slate-600">
+                    102.89.42.18
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Victoria Island, Lagos
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-500">lock</span>
+                      Password + 2FA SMS
+                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Signed in
+                    </span>
+</td>
+</tr>
+<!-- Log 2 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-4 px-6 font-medium text-on-surface">
+                    04 Oct 2026, 19:40 WAT
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Edge 126 (Windows 11)
+                  </td>
+<td class="py-4 px-6 font-mono text-xs text-slate-600">
+                    102.89.40.112
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Ikeja, Lagos
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-500">lock</span>
+                      Password + 2FA SMS
+                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Signed in
+                    </span>
+</td>
+</tr>
+<!-- Log 3 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-4 px-6 font-medium text-on-surface">
+                    02 Oct 2026, 11:15 WAT
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Chrome 128 (macOS)
+                  </td>
+<td class="py-4 px-6 font-mono text-xs text-slate-600">
+                    102.89.42.18
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Victoria Island, Lagos
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-500">lock</span>
+                      Password + 2FA SMS
+                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Signed in
+                    </span>
+</td>
+</tr>
+<!-- Log 4 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-4 px-6 font-medium text-on-surface">
+                    28 Sep 2026, 14:02 WAT
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Safari 17 (iOS)
+                  </td>
+<td class="py-4 px-6 font-mono text-xs text-slate-600">
+                    105.112.33.91
+                  </td>
+<td class="py-4 px-6 text-on-surface">
+                    Lekki, Lagos
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-500">lock</span>
+                      Password + 2FA SMS
+                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Signed in
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Bar -->
+<div class="px-6 py-3 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Showing <strong class="text-on-surface">1-4</strong> of 18 authentication events</span>
+<div class="flex items-center gap-1">
+<button class="h-9 px-3 rounded border border-slate-200 text-slate-300 cursor-not-allowed" disabled="">Previous</button>
+<button class="h-9 px-3 rounded border border-outline-variant text-on-surface font-medium bg-surface">1</button>
+<button class="h-9 px-3 rounded border border-slate-200 text-slate-600 hover:bg-slate-50">2</button>
+<button class="h-9 px-3 rounded border border-slate-200 text-slate-600 hover:bg-slate-50">3</button>
+<button class="h-9 px-3 rounded border border-slate-200 text-slate-600 hover:bg-slate-50">Next</button>
+</div>
+</div>
+</div>
+<!-- DESIGN SYSTEM SPECIFICATION REFERENCE CALLOUT -->
+<div class="p-6 rounded-xl border border-dashed border-slate-300 bg-slate-100/50 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500 text-[24px]">verified</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">
+              Enterprise IT Audit Standard: <strong>ISACA IT Governance Alignment</strong> · CISA Cohort 14 candidate session concurrency limit: 2 desktop endpoints maximum.
+            </span>
+</div>
+<div class="flex items-center gap-4 text-xs font-mono text-slate-500">
+<span>Auth Node: NG-LOS-01</span>
+<span>Policy: SEC-CISA-2026-V1</span>
+</div>
+</div>
+</section>
+</div>
+<!-- STATE VARIANT 2: REMOVE CONFIRMATION DIALOG (MODAL OVERLAY) -->
+<div class="hidden fixed inset-0 z-50 bg-[#0B1320]/75 flex items-center justify-center p-4" id="modal-remove">
+<div class="bg-surface-container-lowest w-full max-w-[540px] rounded-xl border border-outline-variant shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="p-6 border-b border-outline-variant flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#FEF2F2] border border-[#B91C1C]/30 flex items-center justify-center text-[#B91C1C] shrink-0">
+<span class="material-symbols-outlined text-[28px]">warning</span>
+</div>
+<div>
+<h4 class="text-headline-md font-headline-md text-on-surface">Remove Home Desktop (Edge 126)?</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Registered Browser: <strong class="text-on-surface font-semibold">Edge 126 on Windows 11</strong> · Ikeja, Lagos
+            </p>
+</div>
+</div>
+<!-- Modal Body Content -->
+<div class="p-6 space-y-4 bg-surface">
+<div class="p-4 rounded-lg bg-[#FEF2F2] border border-[#B91C1C]/40 text-body-sm font-body-sm text-[#B91C1C]">
+<p class="font-medium">
+              Removing this browser will immediately sign it out and free 1 browser slot.
+            </p>
+<p class="mt-1 text-xs text-red-700">
+              Any unsaved draft assessments or simulated practice test sessions active on that device will be safely concluded.
+            </p>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant space-y-2">
+<p>Following deregulation:</p>
+<ul class="list-disc pl-5 space-y-1 text-xs text-slate-600">
+<li>Candidate credentials on that machine will be invalidated immediately.</li>
+<li>You can immediately register another device up to your 2-slot limit.</li>
+<li>This action is recorded in your audit log (CE-77401-2026).</li>
+</ul>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="p-6 border-t border-outline-variant bg-surface-container-lowest flex items-center justify-end gap-3">
+<button class="h-11 px-5 rounded-lg border border-slate-500 hover:bg-slate-100 text-on-surface font-label-md text-label-md font-medium transition-colors focus-ring-custom" onclick="switchVariant('v1')">
+            Cancel
+          </button>
+<button class="h-11 px-6 rounded-lg bg-[#B91C1C] hover:bg-red-800 text-white font-label-md text-label-md font-medium transition-colors focus-ring-custom flex items-center gap-2" onclick="switchVariant('v3')">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Remove browser</span>
+</button>
+</div>
+</div>
+</div>
+<!-- STATE VARIANT 3: DEVICE REMOVED TOAST (FLOATING TOP-RIGHT) -->
+<div class="hidden fixed top-20 right-8 z-50 w-[420px] bg-surface-container-lowest border border-[#047857] rounded-xl shadow-xl p-4 flex items-start gap-3" id="toast-removed">
+<div class="w-8 h-8 rounded bg-[#ECFDF5] border border-[#047857]/30 text-[#047857] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex-1">
+<h5 class="text-label-md font-label-md font-semibold text-on-surface">Browser successfully removed</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+          Home Desktop was removed. 1 of 2 browser slots now available.
+        </p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 p-1 rounded" onclick="switchVariant('v1')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</main>
+<!-- INTERACTIVE SPECIFICATION SWITCHER LOGIC -->
+<script>
+    function switchVariant(variant) {
+      const bannerFull = document.getElementById('banner-slots-full');
+      const bannerAvail = document.getElementById('banner-slots-available');
+      const modal = document.getElementById('modal-remove');
+      const toast = document.getElementById('toast-removed');
+      const rowDesktop = document.getElementById('row-home-desktop');
+      const rowEmpty = document.getElementById('row-slot-empty');
+      const sessionEdge = document.getElementById('session-item-edge');
+      const badge = document.getElementById('registered-badge');
+
+      const btn1 = document.getElementById('btn-tab-1');
+      const btn2 = document.getElementById('btn-tab-2');
+      const btn3 = document.getElementById('btn-tab-3');
+
+      // Reset Button Styles
+      [btn1, btn2, btn3].forEach(btn => {
+        btn.className = "h-9 px-4 rounded text-label-md font-label-md font-medium transition-colors bg-surface hover:bg-slate-200 text-on-surface border border-outline-variant";
+      });
+
+      if (variant === 'v1') {
+        // Canonical default state
+        btn1.className = "h-9 px-4 rounded text-label-md font-label-md font-medium transition-colors bg-primary text-on-primary";
+        bannerFull.classList.remove('hidden');
+        bannerAvail.classList.add('hidden');
+        modal.classList.add('hidden');
+        toast.classList.add('hidden');
+        rowDesktop.classList.remove('hidden');
+        rowEmpty.classList.add('hidden');
+        sessionEdge.classList.remove('hidden');
+        badge.textContent = "2 of 2";
+      } 
+      else if (variant === 'v2') {
+        // Confirmation dialog modal state
+        btn2.className = "h-9 px-4 rounded text-label-md font-label-md font-medium transition-colors bg-primary text-on-primary";
+        modal.classList.remove('hidden');
+        toast.classList.add('hidden');
+      } 
+      else if (variant === 'v3') {
+        // Removed state with success toast & updated slots
+        btn3.className = "h-9 px-4 rounded text-label-md font-label-md font-medium transition-colors bg-primary text-on-primary";
+        modal.classList.add('hidden');
+        toast.classList.remove('hidden');
+        bannerFull.classList.add('hidden');
+        bannerAvail.classList.remove('hidden');
+        rowDesktop.classList.add('hidden');
+        rowEmpty.classList.remove('hidden');
+        sessionEdge.classList.add('hidden');
+        badge.textContent = "1 of 2";
+      }
+    }
+  </script>
+<script src="../demo-nav.js"></script></body></html>

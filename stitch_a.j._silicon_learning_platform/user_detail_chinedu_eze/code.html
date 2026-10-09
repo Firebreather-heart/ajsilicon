@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=1440, initial-scale=1.0" name="viewport"/>
+<title>User Detail — Chinedu Eze (AJ-LOS-2026-081) | A.J. Silicon Academy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-primary": "#bfc6d9",
+            "secondary-fixed": "#dce1ff",
+            "surface-bright": "#faf8ff",
+            "on-primary-container": "#7c8495",
+            "on-surface-variant": "#45474c",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#e0c1a9",
+            "primary-fixed-dim": "#bfc6d9",
+            "primary-fixed": "#dbe2f5",
+            "on-secondary-fixed": "#001551",
+            "on-secondary-container": "#fffbff",
+            "secondary": "#1d4ed8",
+            "surface-dim": "#d2d9f4",
+            "inverse-surface": "#283044",
+            "surface-variant": "#dae2fd",
+            "tertiary-container": "#281809",
+            "on-tertiary-fixed": "#281809",
+            "outline": "#75777c",
+            "surface-container-highest": "#dae2fd",
+            "surface-tint": "#575f6e",
+            "surface-container-low": "#f2f3ff",
+            "on-primary": "#ffffff",
+            "background": "#faf8ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            "surface": "#faf8ff",
+            "inverse-on-surface": "#eef0ff",
+            "primary-container": "#141c29",
+            "on-background": "#131b2e",
+            "on-tertiary-container": "#997f6a",
+            "surface-container": "#eaedff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#fddcc4",
+            "surface-container-high": "#e2e7ff",
+            "on-primary-fixed-variant": "#3f4756",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#584231",
+            "primary": "#000000",
+            "outline-variant": "#c5c6cc",
+            "error-container": "#ffdad6",
+            "on-surface": "#131b2e",
+            "secondary-container": "#4069f2",
+            "tertiary": "#000000",
+            "on-primary-fixed": "#141c29",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#0039b5"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "space-lg": "2rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-xl": "3rem",
+            "space-xs": "0.5rem"
+          },
+          fontFamily: {
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "display": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "code-snippet": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "code-snippet": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A] font-body-md antialiased min-h-screen flex flex-col m-0 p-0 selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top bar: Institutional Navy #0B1320 -->
+<header class="w-full bg-[#0B1320] text-white h-16 px-8 flex items-center justify-between sticky top-0 z-30 shadow-sm border-b border-[#1E293B]">
+<div class="flex items-center space-x-6">
+<!-- Logo Encapsulated on Light Plate -->
+<div class="bg-white px-3 py-1.5 rounded h-10 flex items-center shadow-sm">
+<img alt="A.J. Silicon Academy" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtCthPzRUCXGnVG607Vfe33MM4W8xLLwgziRIvAaojQ8BQeuZYFPcnsifKspYpTNSE1DZrxGFdb9Hu8fdyvDyupvelZ0nx4uUG4W74t2QAc9-Zuua_0_-wZnmSQdhXYPpDs0wOUPHLeEucDBVDHFvoyjyebpcrsvB-HfXDb0HWg-VHvRLOcevAOJoJElsW9xKSmHyoNWIT3vlHSlmtDyXwFrHBQ_mqCjrB4SvEF6UwNPiNSKqW8badPA"/>
+</div>
+<div class="h-5 w-px bg-[#334155]"></div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white font-semibold tracking-tight">Staff Learning Management Portal</span>
+<span class="font-label-sm text-[11px] text-[#94A3B8]">Lagos Operational Centre · West Africa Region</span>
+</div>
+</div>
+<!-- Telemetry & Operator Identity -->
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-2 text-[#94A3B8] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-[#93C5FD]">schedule</span>
+<span class="font-code-snippet text-code-snippet tracking-tight text-white">12:15 WAT · 05 Oct 2026</span>
+</div>
+<div class="h-4 w-px bg-[#334155]"></div>
+<!-- Current Authenticated Role Display -->
+<div class="flex items-center space-x-3">
+<div class="w-7 h-7 rounded bg-[#1E293B] border border-[#475569] flex items-center justify-center text-xs font-semibold text-[#93C5FD]">
+          ZA
+        </div>
+<div class="text-left">
+<div class="font-body-sm text-body-sm text-white font-medium">Role: Support Agent | Zainab Abubakar</div>
+<div class="font-label-sm text-[11px] text-[#93C5FD] tracking-wide">ID: STF-LOS-049 · Console Active</div>
+</div>
+</div>
+<div class="h-4 w-px bg-[#334155]"></div>
+<div class="flex items-center space-x-2">
+<button class="h-9 px-3 rounded text-[#CBD5E1] hover:text-white hover:bg-[#1E293B] transition-colors flex items-center space-x-1.5 text-xs font-medium" type="button">
+<span class="material-symbols-outlined text-[16px]">help</span>
+<span>Help</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 w-full max-w-[1440px] mx-auto min-h-[calc(100vh-64px)]">
+<!-- Left Navigation Shell: Staff Workspace Navigation -->
+<aside class="w-64 bg-white border-r border-[#E2E8F0] flex flex-col justify-between shrink-0 select-none">
+<div class="p-4 space-y-6">
+<!-- Quick Search -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[#64748B] text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 text-xs bg-[#F8FAFC] border border-[#64748B] rounded text-[#0F172A] placeholder-[#64748B] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" placeholder="Search student or ID..." type="text"/>
+</div>
+<!-- Navigation Group: Students (Active) -->
+<div>
+<div class="px-2 mb-2 flex items-center justify-between text-[#475569] font-label-sm text-[11px] font-semibold uppercase tracking-wider">
+<span>Students</span>
+<span class="material-symbols-outlined text-[14px]">school</span>
+</div>
+<nav class="space-y-1">
+<!-- Active item: Users -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded text-xs font-semibold bg-[#0B1320] text-white" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>Users</span>
+</div>
+<span class="bg-[#1E293B] text-[#93C5FD] text-[11px] px-1.5 py-0.5 rounded font-mono">1,482</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Enrolments</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+<span>Attendance</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+<span>Activity Logs</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: Academics -->
+<div>
+<div class="px-2 mb-2 flex items-center justify-between text-[#475569] font-label-sm text-[11px] font-semibold uppercase tracking-wider">
+<span>Academics</span>
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors space-x-2.5" href="#">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Curriculum &amp; Cohorts</span>
+</a>
+<a class="flex items-center px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors space-x-2.5" href="#">
+<span class="material-symbols-outlined text-[18px]">quiz</span>
+<span>Mock Examinations</span>
+</a>
+<a class="flex items-center px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors space-x-2.5" href="#">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Certificates Register</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Group: Governance & Ops -->
+<div>
+<div class="px-2 mb-2 flex items-center justify-between text-[#475569] font-label-sm text-[11px] font-semibold uppercase tracking-wider">
+<span>Governance &amp; Ops</span>
+<span class="material-symbols-outlined text-[14px]">shield</span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors space-x-2.5" href="#">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Paystack Reconciliation</span>
+</a>
+<a class="flex items-center px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors space-x-2.5" href="#">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Support Desk</span>
+</a>
+<a class="flex items-center px-3 py-2 rounded text-xs font-medium text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] transition-colors space-x-2.5" href="#">
+<span class="material-symbols-outlined text-[18px]">policy</span>
+<span>Audit Trail Logs</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom System Status Box in Sidebar -->
+<div class="p-4 border-t border-[#E2E8F0] bg-[#F8FAFC]">
+<div class="flex items-center justify-between text-[11px] text-[#475569] mb-1 font-mono">
+<span>CONSOLE LATENCY</span>
+<span class="text-[#047857] font-semibold">24ms · STABLE</span>
+</div>
+<div class="text-[11px] text-[#64748B]">Node: Lagos-VI-01 · App v4.8.2</div>
+</div>
+</aside>
+<!-- Main Content Work Area -->
+<main class="flex-1 overflow-y-auto px-8 py-6 space-y-6">
+<!-- Breadcrumbs & System Stamp -->
+<div class="flex items-center justify-between">
+<nav aria-label="Breadcrumb" class="flex items-center space-x-2 text-xs text-[#475569] font-medium">
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Students</a>
+<span class="material-symbols-outlined text-[14px] text-[#94A3B8]">chevron_right</span>
+<a class="hover:text-[#1D4ED8] transition-colors" href="#">Users</a>
+<span class="material-symbols-outlined text-[14px] text-[#94A3B8]">chevron_right</span>
+<span class="text-[#0F172A] font-semibold bg-[#F1F5F9] px-2 py-0.5 rounded text-xs">Chinedu Eze (AJ-LOS-2026-081)</span>
+</nav>
+<div class="flex items-center space-x-2 text-xs text-[#64748B]">
+<span class="material-symbols-outlined text-[16px] text-[#047857]">lock</span>
+<span>Access Level: Support Read/Audit Write</span>
+</div>
+</div>
+<!-- Primary User Identity Card (Header) -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-6 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-start space-x-5">
+<!-- User Monogram / Institutional Avatar -->
+<div class="w-16 h-16 rounded-xl bg-[#0B1320] text-white flex flex-col items-center justify-center shrink-0 border border-[#1E293B]">
+<span class="font-headline-md text-headline-md tracking-wider">CE</span>
+<span class="text-[10px] text-[#93C5FD] font-mono mt-[-2px]">LOS</span>
+</div>
+<!-- Title & Main Identifiers -->
+<div class="space-y-1.5">
+<div class="flex items-center space-x-3 flex-wrap gap-y-1">
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] tracking-tight">Chinedu Eze</h1>
+<span class="font-code-snippet text-code-snippet text-[#475569] bg-[#F1F5F9] px-2.5 py-0.5 rounded border border-[#CBD5E1] font-mono">AJ-LOS-2026-081</span>
+<!-- Status Badge: Active -->
+<span class="inline-flex items-center space-x-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Active</span>
+</span>
+<!-- Role Chip -->
+<span class="inline-flex items-center space-x-1 h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">school</span>
+<span>Student</span>
+</span>
+</div>
+<!-- Metadata Line: Registration & Last Seen -->
+<p class="font-body-sm text-body-sm text-[#475569]">
+                Registered: <span class="text-[#0F172A] font-medium">12 Aug 2026</span>
+<span class="mx-2 text-[#CBD5E1]">•</span>
+                Last active: <span class="text-[#047857] font-medium">10 mins ago</span> (05 Oct 2026 12:00 WAT)
+                <span class="mx-2 text-[#CBD5E1]">•</span>
+                Location: <span class="text-[#0F172A] font-medium">Lagos, Nigeria</span>
+<span class="mx-2 text-[#CBD5E1]">•</span>
+                Organization: <span class="text-[#0F172A] font-medium">Access Bank PLC</span>
+</p>
+<!-- Sensitive Contact Details (Masked with Reveal Action) -->
+<div class="pt-2 flex items-center space-x-6 text-xs text-[#0F172A]">
+<div class="flex items-center space-x-2 bg-[#F8FAFC] border border-[#E2E8F0] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[#64748B] text-[16px]">mail</span>
+<span class="font-mono text-[#475569]" id="email-masked">c••••••••@gmail.com</span>
+<button class="ml-1 text-[#1D4ED8] hover:underline font-medium flex items-center space-x-0.5" onclick="const el = document.getElementById('email-masked'); el.textContent = el.textContent.includes('•') ? 'chinedu.eze@gmail.com' : 'c••••••••@gmail.com';" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+<div class="flex items-center space-x-2 bg-[#F8FAFC] border border-[#E2E8F0] px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[#64748B] text-[16px]">call</span>
+<span class="font-mono text-[#475569]" id="phone-masked">+234 803 ••• ••89</span>
+<button class="ml-1 text-[#1D4ED8] hover:underline font-medium flex items-center space-x-0.5" onclick="const el = document.getElementById('phone-masked'); el.textContent = el.textContent.includes('•') ? '+234 803 449 8289' : '+234 803 ••• ••89';" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Reveal</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions Cluster (Exactly ONE primary action: "+ Log staff note") -->
+<div class="flex items-center space-x-3">
+<button class="h-11 px-4 border border-[#64748B] text-[#0F172A] rounded-md font-medium text-xs hover:bg-[#F1F5F9] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center space-x-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>View as student</span>
+</button>
+<button class="h-11 px-5 bg-[#0B1320] text-white rounded-md font-medium text-xs hover:bg-[#1E293B] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 flex items-center space-x-2 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Log staff note</span>
+</button>
+</div>
+</div>
+<!-- Metric Strip Summary -->
+<div class="mt-6 pt-5 border-t border-[#E2E8F0] grid grid-cols-4 gap-4">
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] p-3 rounded-lg">
+<div class="text-[11px] font-semibold text-[#475569] uppercase tracking-wider">Total Programmes</div>
+<div class="mt-1 flex items-baseline space-x-2">
+<span class="text-xl font-bold text-[#0F172A]">2</span>
+<span class="text-xs text-[#047857] font-medium">1 Active · 1 Completed</span>
+</div>
+</div>
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] p-3 rounded-lg">
+<div class="text-[11px] font-semibold text-[#475569] uppercase tracking-wider">Exams Attempted</div>
+<div class="mt-1 flex items-baseline space-x-2">
+<span class="text-xl font-bold text-[#0F172A]">5</span>
+<span class="text-xs text-[#475569]">Avg. Score: 81.4%</span>
+</div>
+</div>
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] p-3 rounded-lg">
+<div class="text-[11px] font-semibold text-[#475569] uppercase tracking-wider">Open Support Tickets</div>
+<div class="mt-1 flex items-baseline space-x-2">
+<span class="text-xl font-bold text-[#0F172A]">0</span>
+<span class="text-xs text-[#047857]">All resolved</span>
+</div>
+</div>
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] p-3 rounded-lg">
+<div class="text-[11px] font-semibold text-[#475569] uppercase tracking-wider">Active Devices</div>
+<div class="mt-1 flex items-baseline space-x-2">
+<span class="text-xl font-bold text-[#0F172A]">1 of 2</span>
+<span class="text-xs text-[#475569]">Max limit: 2 seats</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Tabs -->
+<nav class="border-b border-[#CBD5E1] flex space-x-8 text-xs font-semibold select-none">
+<button class="pb-3 border-b-2 border-[#0B1320] text-[#0B1320] flex items-center space-x-2 focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[16px]">dashboard</span>
+<span>Overview</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#94A3B8] flex items-center space-x-2 focus:outline-none transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span>Enrolments (2)</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#94A3B8] flex items-center space-x-2 focus:outline-none transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">devices</span>
+<span>Devices and sessions</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#94A3B8] flex items-center space-x-2 focus:outline-none transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+<span>Payments</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#94A3B8] flex items-center space-x-2 focus:outline-none transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">support</span>
+<span>Support tickets (0)</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#94A3B8] flex items-center space-x-2 focus:outline-none transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span>Activity timeline</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-[#64748B] hover:text-[#0F172A] hover:border-[#94A3B8] flex items-center space-x-2 focus:outline-none transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">note_alt</span>
+<span>Notes (3)</span>
+</button>
+</nav>
+<!-- Main Workspace Grid: Content (Left 8 cols) vs Administrative Operations (Right 4 cols) -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- Left Content Area -->
+<div class="col-span-8 space-y-6">
+<!-- Enrolment Licences Spotlight Section -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[20px]">verified_user</span>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A]">Active Licences &amp; Enrolments</h2>
+</div>
+<span class="font-label-sm text-[12px] text-[#475569]">Institutional Terms Standard</span>
+</div>
+<div class="mt-5 space-x-0 space-y-4">
+<!-- Program 1: CISA Exam Prep (Active with Validity Countdown Meter) -->
+<div class="border border-[#CBD5E1] rounded-lg p-5 bg-[#FFFFFF] relative">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-headline-sm text-[16px] font-semibold text-[#0F172A]">CISA Exam Prep</span>
+<span class="font-code-snippet text-code-snippet text-[#1D4ED8] bg-[#EFF6FF] px-2 py-0.5 rounded border border-[#1D4ED8]">Cohort 14 (Weekend Stream)</span>
+</div>
+<div class="text-xs text-[#475569] mt-1">Licence Ref: LIC-2026-CISA-8812 · Instructor: Lead Faculty Engr. F. Alabi</div>
+</div>
+<span class="inline-flex items-center space-x-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Active Licence</span>
+</span>
+</div>
+<!-- Validity Countdown Meter -->
+<div class="mt-4 pt-4 border-t border-[#E2E8F0]">
+<div class="flex items-center justify-between text-xs mb-1.5">
+<span class="font-medium text-[#0F172A]">Licence Validity: <span class="font-semibold text-[#047857]">72 of 90 days remaining</span></span>
+<span class="text-[#475569] font-mono">Ends 18 Dec 2026</span>
+</div>
+<!-- Progress Meter -->
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#0B1320] h-2.5 rounded-full" style="width: 80%;"></div>
+</div>
+<div class="mt-2 flex items-center justify-between text-[11px] text-[#64748B]">
+<span>Activated: 19 Sep 2026</span>
+<span>Curriculum Progress: 64% Completed (16 of 25 Modules)</span>
+</div>
+</div>
+<!-- Actions row for enrolment -->
+<div class="mt-4 pt-3 border-t border-[#F1F5F9] flex items-center justify-between text-xs">
+<div class="text-[#475569]">
+                    Assigned Proctor Group: <span class="text-[#0F172A] font-medium">Lagos Main Lab 02</span>
+</div>
+<div class="flex items-center space-x-3">
+<button class="text-[#1D4ED8] hover:underline font-medium" type="button">Extend 30 Days</button>
+<span class="text-[#CBD5E1]">|</span>
+<button class="text-[#1D4ED8] hover:underline font-medium" type="button">Inspect Audit Ledger</button>
+</div>
+</div>
+</div>
+<!-- Program 2: CRISC Risk Governance (Completed) -->
+<div class="border border-[#E2E8F0] rounded-lg p-5 bg-[#F8FAFC]">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-headline-sm text-[16px] font-semibold text-[#0F172A]">CRISC Risk Governance</span>
+<span class="font-code-snippet text-code-snippet text-[#475569] bg-[#E2E8F0] px-2 py-0.5 rounded">Cohort 11 (Accelerated)</span>
+</div>
+<div class="text-xs text-[#475569] mt-1">Licence Ref: LIC-2025-CRISC-1049 · Completed: 30 Nov 2025</div>
+</div>
+<span class="inline-flex items-center space-x-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#475569] border border-[#94A3B8]">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Completed</span>
+</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-xs text-[#475569]">
+<span>Official Certificate Issued: <span class="font-mono text-[#0F172A]">CERT-AJ-CRISC-2025-901</span></span>
+<a class="text-[#1D4ED8] hover:underline font-medium flex items-center space-x-1" href="#">
+<span class="material-symbols-outlined text-[14px]">download</span>
+<span>Download Transcript</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Activity Log Preview Table -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[20px]">history_edu</span>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A]">Recent Activity Timeline</h2>
+</div>
+<button class="text-xs text-[#1D4ED8] hover:underline font-semibold" type="button">View complete trail (42 events)</button>
+</div>
+<div class="mt-4 overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b-2 border-[#E2E8F0] text-[11px] font-semibold uppercase tracking-wider text-[#475569]">
+<th class="py-3 px-3">Timestamp (WAT)</th>
+<th class="py-3 px-3">Event Action</th>
+<th class="py-3 px-3">Module / Target</th>
+<th class="py-3 px-3">Telemetry Context</th>
+<th class="py-3 px-3 text-right">Verification</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-xs">
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-3 font-mono text-[#475569]">05 Oct 2026 12:00</td>
+<td class="py-3 px-3 font-medium text-[#0F172A]">Mock Exam Attempt</td>
+<td class="py-3 px-3 text-[#475569]">CISA Domain 3: Systems Acquisition</td>
+<td class="py-3 px-3 font-mono text-[11px] text-[#64748B]">Score: 84% (42/50)</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">Verified</span>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-3 font-mono text-[#475569]">04 Oct 2026 19:42</td>
+<td class="py-3 px-3 font-medium text-[#0F172A]">Session Initiated</td>
+<td class="py-3 px-3 text-[#475569]">Courseware Portal Auth</td>
+<td class="py-3 px-3 font-mono text-[11px] text-[#64748B]">IP: 102.89.44.12 (Lagos, NG)</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">2FA Passed</span>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-3 font-mono text-[#475569]">02 Oct 2026 15:10</td>
+<td class="py-3 px-3 font-medium text-[#0F172A]">Module Finalised</td>
+<td class="py-3 px-3 text-[#475569]">Domain 2: IT Governance &amp; Mgmt</td>
+<td class="py-3 px-3 font-mono text-[11px] text-[#64748B]">Time spent: 3h 14m</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">Recorded</span>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-3 px-3 font-mono text-[#475569]">28 Sep 2026 09:30</td>
+<td class="py-3 px-3 font-medium text-[#0F172A]">Payment Confirmed</td>
+<td class="py-3 px-3 text-[#475569]">Cohort 14 Tuition (₦450,000)</td>
+<td class="py-3 px-3 font-mono text-[11px] text-[#64748B]">Paystack: pstk_891024801</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">Settled</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Internal Staff Notes Log -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[#0B1320] text-[20px]">sticky_note_2</span>
+<h2 class="font-headline-sm text-headline-sm text-[#0F172A]">Internal Staff Notes Log</h2>
+</div>
+<span class="text-xs text-[#64748B]">Visible only to Support, Audit &amp; Faculty</span>
+</div>
+<!-- Notes List -->
+<div class="mt-4 space-y-3">
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] p-4 rounded-lg">
+<div class="flex items-center justify-between text-xs text-[#475569] mb-1.5">
+<span class="font-semibold text-[#0F172A]">Zainab Abubakar (Support Agent)</span>
+<span class="font-mono text-[#64748B]">05 Oct 2026 10:14 WAT</span>
+</div>
+<p class="text-xs text-[#334155] leading-relaxed">
+                  Student contacted via official desk requesting confirmation on mock exam scheduling for CISA Domain 3. Confirmed eligibility and validated active Access Bank sponsorship voucher.
+                </p>
+</div>
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] p-4 rounded-lg">
+<div class="flex items-center justify-between text-xs text-[#475569] mb-1.5">
+<span class="font-semibold text-[#0F172A]">Emeka Nwosu (Lead Registrar)</span>
+<span class="font-mono text-[#64748B]">19 Sep 2026 14:22 WAT</span>
+</div>
+<p class="text-xs text-[#334155] leading-relaxed">
+                  Sponsorship reconciliation verified against Access Bank corporate training PO #AB-2026-IT-9012. Enrolment seat confirmed for CISA Cohort 14.
+                </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Side: Administrative Operations & Confirmation Dialog Sandbox -->
+<div class="col-span-4 space-y-6">
+<!-- Admin Actions Card -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<span class="font-headline-sm text-[16px] font-semibold text-[#0F172A]">Administrative Controls</span>
+<span class="material-symbols-outlined text-[#64748B] text-[18px]">admin_panel_settings</span>
+</div>
+<p class="text-xs text-[#475569]">
+              All administrative operations are permanently logged in the immutable system audit trail with your operator credentials.
+            </p>
+<div class="space-y-2.5 pt-1">
+<!-- Destructive Action: Suspend User -->
+<button class="w-full h-11 px-4 rounded-md border border-[#B91C1C] text-[#B91C1C] bg-[#FEF2F2] hover:bg-[#FEE2E2] font-medium text-xs flex items-center justify-between transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span>Suspend user account</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<!-- Secondary Action: Reset 2FA -->
+<button class="w-full h-11 px-4 rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] font-medium text-xs flex items-center justify-between transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Reset two-factor authentication</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<!-- Secondary Action: Force password reset -->
+<button class="w-full h-11 px-4 rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] font-medium text-xs flex items-center justify-between transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<span>Force password reset link</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<!-- Secondary Action: Sign out all sessions -->
+<button class="w-full h-11 px-4 rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] font-medium text-xs flex items-center justify-between transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Sign out all active sessions</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<!-- Secondary Action: Merge duplicate -->
+<button class="w-full h-11 px-4 rounded-md border border-[#64748B] text-[#0F172A] bg-white hover:bg-[#F1F5F9] font-medium text-xs flex items-center justify-between transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">call_merge</span>
+<span>Merge duplicate record</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- AUDIT TRAIL MANDATORY CONFIRMATION DIALOG PREVIEW -->
+<div class="bg-white rounded-xl border-2 border-[#B91C1C] p-5 shadow-sm space-y-4 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 text-[#B91C1C]">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span class="font-headline-sm text-[15px] font-semibold">Suspend Chinedu Eze</span>
+</div>
+<span class="text-[11px] font-mono text-[#64748B] bg-[#FEF2F2] px-2 py-0.5 rounded text-[#B91C1C]">Dialog Preview</span>
+</div>
+<p class="text-xs text-[#334155]">
+              This action will immediately terminate active courseware sessions and prevent portal authentication.
+            </p>
+<!-- Mandatory Reason Textarea -->
+<div>
+<label class="block text-xs font-semibold text-[#0F172A] mb-1" for="audit-suspension-reason">
+                Reason is required for audit trail <span class="text-[#B91C1C]">*</span>
+</label>
+<textarea class="w-full p-2.5 text-xs bg-white border border-[#64748B] rounded-md text-[#0F172A] placeholder-[#64748B] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" id="audit-suspension-reason" placeholder="Enter specific incident reference, policy clause, or SecOps ticket number..." rows="3"></textarea>
+<span class="text-[11px] text-[#64748B] mt-1 block">Audit entry captured as: Zainab Abubakar (Support Agent)</span>
+</div>
+<!-- Modal Action Buttons (44px min touch height) -->
+<div class="pt-2 flex items-center justify-end space-x-3">
+<button class="h-11 px-4 border border-[#64748B] text-[#0F172A] rounded-md text-xs font-medium hover:bg-[#F1F5F9] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+                Cancel
+              </button>
+<button class="h-11 px-4 bg-[#B91C1C] text-white rounded-md text-xs font-medium hover:bg-[#991B1B] transition-colors flex items-center space-x-1.5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span>Confirm suspension</span>
+</button>
+</div>
+</div>
+<!-- Active Registered Devices Widget -->
+<div class="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm space-y-3">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<span class="font-headline-sm text-[15px] font-semibold text-[#0F172A]">Registered Devices</span>
+<span class="text-xs font-mono text-[#047857]">1 / 2 Seats</span>
+</div>
+<div class="space-y-2">
+<div class="p-3 bg-[#F8FAFC] border border-[#CBD5E1] rounded-md flex items-start justify-between">
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-[#0B1320] text-[20px] mt-0.5">laptop_mac</span>
+<div>
+<div class="text-xs font-semibold text-[#0F172A]">MacBook Pro (Chrome 128)</div>
+<div class="text-[11px] text-[#64748B]">Last active: 10 mins ago · Lagos, NG</div>
+<div class="text-[10px] font-mono text-[#047857] mt-0.5">● Current Active Session</div>
+</div>
+</div>
+<button class="text-xs text-[#B91C1C] hover:underline font-medium" type="button">Revoke</button>
+</div>
+<div class="p-3 bg-white border border-dashed border-[#CBD5E1] rounded-md flex items-center justify-between text-xs text-[#64748B]">
+<span>Empty Device Seat (Available)</span>
+<span class="text-[11px] bg-[#F1F5F9] px-2 py-0.5 rounded">Seat 2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Specification States Documentation Board (Clear Dedicated Variants) -->
+<section class="mt-10 pt-8 border-t-2 border-[#CBD5E1] space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-[#0F172A]">User Account State Specifications</h3>
+<p class="text-xs text-[#475569]">Institutional visual tokens rendered for runtime account variants and dual-role provisioning.</p>
+</div>
+<span class="text-xs font-mono bg-[#E2E8F0] text-[#0F172A] px-2.5 py-1 rounded">Spec Reference: AJ-SPEC-UI-042</span>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<!-- State 2: Suspended Account State Variant Preview -->
+<div class="bg-white rounded-xl border border-[#CBD5E1] p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#B91C1C] flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span>State Variant 2: Account Suspended</span>
+</span>
+<span class="inline-flex items-center space-x-1 h-6 px-2.5 rounded text-xs font-medium bg-[#FEF2F2] text-[#B91C1C] border border-[#B91C1C]">
+<span class="material-symbols-outlined text-[14px]">block</span>
+<span>Suspended</span>
+</span>
+</div>
+<!-- Mandatory Suspended Banner -->
+<div class="bg-[#FEF2F2] border border-[#B91C1C] p-4 rounded-lg flex items-start space-x-3">
+<span class="material-symbols-outlined text-[#B91C1C] text-[22px] shrink-0">error</span>
+<div class="space-y-1 text-xs text-[#B91C1C]">
+<div class="font-bold">Account Suspended by SecOps on 03 Oct 2026</div>
+<div>Reason: Multiple concurrent session anomalies detected across separate IP endpoints.</div>
+<div class="text-[11px] font-mono text-[#7F1D1D] pt-1">Support Contact: security@ajsilicon.ng · Ticket: SEC-88910</div>
+</div>
+</div>
+<div class="text-xs text-[#475569] leading-relaxed">
+              When in suspended state, all mock exam timers are locked, device licence tokens are frozen, and student portal returns HTTP 403 with remediation instructions.
+            </div>
+<div class="pt-2 flex items-center justify-between border-t border-[#E2E8F0] text-xs">
+<span class="text-[#64748B]">Audited by: Lead SecOps Engineer</span>
+<button class="h-10 px-4 bg-white border border-[#B91C1C] text-[#B91C1C] rounded text-xs font-medium hover:bg-[#FEF2F2]" type="button">
+                Lift Suspension (Audit Log Required)
+              </button>
+</div>
+</div>
+<!-- State 3: Dual Role Variant (Student + Staff / Teaching Assistant) -->
+<div class="bg-white rounded-xl border border-[#CBD5E1] p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#1D4ED8] flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+<span>State Variant 3: Student with Staff Privileges</span>
+</span>
+<span class="inline-flex items-center space-x-1.5 h-6 px-2.5 rounded text-xs font-medium bg-[#ECFDF5] text-[#047857] border border-[#047857]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Active</span>
+</span>
+</div>
+<!-- Dual Role Chips Display -->
+<div class="p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-3">
+<div class="text-xs font-semibold text-[#0F172A]">Assigned Roles &amp; Privilege Boundaries:</div>
+<div class="flex items-center space-x-2">
+<span class="inline-flex items-center space-x-1 h-6 px-2.5 rounded text-xs font-medium bg-[#EFF6FF] text-[#1D4ED8] border border-[#1D4ED8]">
+<span class="material-symbols-outlined text-[14px]">school</span>
+<span>Student</span>
+</span>
+<span class="inline-flex items-center space-x-1 h-6 px-2.5 rounded text-xs font-medium bg-[#F1F5F9] text-[#0B1320] border border-[#0B1320]">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>Teaching Assistant</span>
+</span>
+<span class="inline-flex items-center space-x-1 h-6 px-2.5 rounded text-xs font-medium bg-[#FFFBEB] text-[#B45309] border border-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Lab Proctor</span>
+</span>
+</div>
+<div class="text-xs text-[#334155] leading-relaxed pt-1">
+<span class="font-semibold text-[#0F172A]">Permission Governance:</span> Dual role permits student to submit exam papers in CISA while proctoring cohort lab exercises in IT Governance fundamentals. Grade editing rights remain segregated.
+              </div>
+</div>
+<div class="text-xs text-[#475569]">
+              Dual role tokens enforce strict role segregation under ISO/IEC 27001 Access Control Standard §9.2.
+            </div>
+<div class="pt-2 flex items-center justify-between border-t border-[#E2E8F0] text-xs">
+<span class="text-[#64748B]">Supervising Dean: Dr. K. Adeleke</span>
+<button class="h-10 px-4 bg-white border border-[#64748B] text-[#0F172A] rounded text-xs font-medium hover:bg-[#F1F5F9]" type="button">
+                Modify Role Assignment
+              </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Mandatory Institutional Footer -->
+<footer class="w-full bg-white border-t border-[#E2E8F0] text-[#0F172A] mt-auto">
+<div class="max-w-[1440px] mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center space-x-2">
+<span class="font-headline-sm text-[14px] uppercase font-bold text-[#0B1320] tracking-tight">A.J. Silicon Academy</span>
+<span class="text-[#CBD5E1]">|</span>
+<span class="text-[#475569]">Governance, Audit &amp; Security Academic Platform</span>
+</div>
+<p class="text-[#64748B]">
+          © 2025 A.J. Silicon Academy. All Rights Reserved. Accredited Institutional Governance Platform. ISO/IEC 27001 Certified &amp; SOC 2 Type II Assured.
+        </p>
+</div>
+<nav aria-label="Legal and Audit Registry" class="flex flex-wrap items-center gap-x-5 gap-y-2 text-[#475569]">
+<a class="hover:text-[#0B1320] hover:underline underline-offset-4 transition-colors" href="#">ISO/IEC 27001 Registry</a>
+<a class="hover:text-[#0B1320] hover:underline underline-offset-4 transition-colors" href="#">SOC 2 Type II Telemetry</a>
+<a class="hover:text-[#0B1320] hover:underline underline-offset-4 transition-colors" href="#">Cryptographic Trust Seal</a>
+<a class="hover:text-[#0B1320] hover:underline underline-offset-4 transition-colors" href="#">Audit Trail Standards</a>
+<a class="hover:text-[#0B1320] hover:underline underline-offset-4 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-[#0B1320] hover:underline underline-offset-4 transition-colors" href="#">Institutional Terms</a>
+</nav>
+</div>
+</footer>
+<script src="../demo-nav.js"></script></body></html>
